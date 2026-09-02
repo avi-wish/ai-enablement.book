@@ -10,7 +10,8 @@
     {
       category: "Front Matter",
       items: [
-        { id: "title", title: "Title Page", file: "title.html", tag: "Publication", desc: "Book title, subtitle, author credits, and edition details." },
+        { id: "index", title: "Title Page", file: "index.html", tag: "Landing / Title", desc: "Book title, subtitle, author credits, and edition details." },
+        { id: "content", title: "Table of Contents", file: "content.html", tag: "Directory", desc: "Complete master index and book navigation hub across all chapters." },
         { id: "copyright", title: "Declaration & Standards", file: "copyright.html", tag: "Declaration", desc: "Authorship declaration, LLM collaboration, and framework standards notices." },
         { id: "forward", title: "Foreword", file: "forward.html", tag: "Front Matter", desc: "The strategic bridge between algorithms and boardroom accountability." },
         { id: "preface", title: "Preface", file: "preface.html", tag: "Author's Note", desc: "Why we wrote a boardroom graphic novel about enterprise architecture." },
@@ -50,7 +51,6 @@
       category: "Epilogue & Back Matter",
       items: [
         { id: "epilogue", num: "E", title: "Epilogue: The Roadmap to Sustained Intelligence", file: "epilogue.html", tag: "Epilogue / Summit", desc: "Ecosystem summit, unified covenants, and permanent adaptation roadmap." },
-        { id: "index", title: "Table of Contents", file: "index.html", tag: "Directory", desc: "Complete master index and book navigation hub." },
         { id: "glossary", title: "Glossary & Reference", file: "glossary.html", tag: "Reference", desc: "TOGAF ADM, DDD taxonomies, Fiduciary Duties, and architectural formulas." }
       ]
     }
