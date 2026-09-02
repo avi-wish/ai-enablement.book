@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad72" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow72" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="25" width="1140" height="65" rx="10" fill="url(#headerGrad72)" filter="url(#shadow72)"/>
+  <text x="600" y="55" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 7.2: JOINT WORK PACKAGE &amp; SOLUTION BUILDING BLOCK MATRIX (TOGAF ADM PHASE E)</text>
+  <text x="600" y="77" fill="#bae6fd" font-size="13" text-anchor="middle">12 Cross-Enterprise Work Packages &#8226; SBB Packaging &#8226; Dependency Lineage &#8226; CapEx Allocation</text>
+
+  <!-- Table Header -->
+  <rect x="30" y="105" width="1140" height="42" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="45" y="131" fill="#94a3b8" font-size="11" font-weight="bold">WP ID</text>
+  <text x="110" y="131" fill="#94a3b8" font-size="11" font-weight="bold">WORK PACKAGE NAME &amp; SBB BUNDLE</text>
+  <text x="420" y="131" fill="#94a3b8" font-size="11" font-weight="bold">PRIMARY OWNER</text>
+  <text x="560" y="131" fill="#94a3b8" font-size="11" font-weight="bold">DEPENDS ON</text>
+  <text x="690" y="131" fill="#94a3b8" font-size="11" font-weight="bold">TRANSITION STATE</text>
+  <text x="840" y="131" fill="#94a3b8" font-size="11" font-weight="bold">CapEx / OpEx</text>
+  <text x="980" y="131" fill="#94a3b8" font-size="11" font-weight="bold">DELIVERABLE ARTIFACT</text>
+
+  <!-- Row 1: WP-01 -->
+  <rect x="30" y="153" width="1140" height="48" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="182" fill="#fbbf24" font-size="12" font-weight="bold">WP-01</text>
+  <text x="110" y="174" fill="#f8fafc" font-size="12" font-weight="bold">DPP Schema &amp; Cryptographic Registry</text>
+  <text x="110" y="191" fill="#94a3b8" font-size="10">SBB: Protobuf Schemas, Hash Registry, Secp384r1 Vault</text>
+  <rect x="420" y="165" width="110" height="24" rx="4" fill="#78350f"/>
+  <text x="475" y="181" fill="#fef3c7" font-size="10" font-weight="bold" text-anchor="middle">Terra-Resource</text>
+  <text x="560" y="182" fill="#94a3b8" font-size="11">None (Genesis)</text>
+  <text x="690" y="182" fill="#fbbf24" font-size="11">TS-1 (Months 1–3)</text>
+  <text x="840" y="182" fill="#f8fafc" font-size="11">$2.5M CapEx</text>
+  <text x="980" y="182" fill="#38bdf8" font-size="11">DPP-Schema-v1.proto</text>
+
+  <!-- Row 2: WP-02 -->
+  <rect x="30" y="206" width="1140" height="48" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="235" fill="#38bdf8" font-size="12" font-weight="bold">WP-02</text>
+  <text x="110" y="227" fill="#f8fafc" font-size="12" font-weight="bold">Shop-Floor Industrial Edge GPU Racks</text>
+  <text x="110" y="244" fill="#94a3b8" font-size="10">SBB: NVIDIA RTX 6000 Ada, TensorRT INT8 Runtime</text>
+  <rect x="420" y="218" width="110" height="24" rx="4" fill="#0369a1"/>
+  <text x="475" y="234" fill="#e0f2fe" font-size="10" font-weight="bold" text-anchor="middle">Volt-Tech</text>
+  <text x="560" y="235" fill="#94a3b8" font-size="11">None</text>
+  <text x="690" y="235" fill="#fbbf24" font-size="11">TS-1 (Months 1–4)</text>
+  <text x="840" y="235" fill="#f8fafc" font-size="11">$4.2M CapEx</text>
+  <text x="980" y="235" fill="#38bdf8" font-size="11">OP30-Edge-Node-SBB</text>
+
+  <!-- Row 3: WP-03 -->
+  <rect x="30" y="259" width="1140" height="48" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="288" fill="#4ade80" font-size="12" font-weight="bold">WP-03</text>
+  <text x="110" y="280" fill="#f8fafc" font-size="12" font-weight="bold">Megawatt Fast-Charging Pilot Bays</text>
+  <text x="110" y="297" fill="#94a3b8" font-size="10">SBB: 1.2MW Liquid-Cooled MCS, 5MWh BESS Buffer</text>
+  <rect x="420" y="271" width="110" height="24" rx="4" fill="#14532d"/>
+  <text x="475" y="287" fill="#dcfce7" font-size="10" font-weight="bold" text-anchor="middle">Orbit-Logistics</text>
+  <text x="560" y="288" fill="#94a3b8" font-size="11">None</text>
+  <text x="690" y="288" fill="#fbbf24" font-size="11">TS-1 (Months 2–5)</text>
+  <text x="840" y="288" fill="#f8fafc" font-size="11">$3.8M CapEx</text>
+  <text x="980" y="288" fill="#38bdf8" font-size="11">Depot-MCS-Blueprint</text>
+
+  <!-- Row 4: WP-04 -->
+  <rect x="30" y="312" width="1140" height="48" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="341" fill="#c084fc" font-size="12" font-weight="bold">WP-04</text>
+  <text x="110" y="333" fill="#f8fafc" font-size="12" font-weight="bold">ASIL-D Lockstep Controller &amp; HSM Attestation</text>
+  <text x="110" y="350" fill="#94a3b8" font-size="10">SBB: Dual-Core Lockstep MCU, certified AUTOSAR firmware</text>
+  <rect x="420" y="324" width="110" height="24" rx="4" fill="#581c87"/>
+  <text x="475" y="340" fill="#f3e8ff" font-size="10" font-weight="bold" text-anchor="middle">Volt-Tech + Orbit</text>
+  <text x="560" y="341" fill="#38bdf8" font-size="11">WP-02, WP-03</text>
+  <text x="690" y="341" fill="#fbbf24" font-size="11">TS-1 (Months 3–6)</text>
+  <text x="840" y="341" fill="#f8fafc" font-size="11">$1.8M CapEx</text>
+  <text x="980" y="341" fill="#38bdf8" font-size="11">ISO26262-SafetyCase</text>
+
+  <!-- Row 5: WP-05 -->
+  <rect x="30" y="365" width="1140" height="48" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="394" fill="#fbbf24" font-size="12" font-weight="bold">WP-05</text>
+  <text x="110" y="386" fill="#f8fafc" font-size="12" font-weight="bold">Automated Pit-Side Ore Spectroscopy &amp; Sorting</text>
+  <text x="110" y="403" fill="#94a3b8" font-size="10">SBB: Coaxial XRF/LIBS Sensor Array, Edge AI Classifier</text>
+  <rect x="420" y="377" width="110" height="24" rx="4" fill="#78350f"/>
+  <text x="475" y="393" fill="#fef3c7" font-size="10" font-weight="bold" text-anchor="middle">Terra-Resource</text>
+  <text x="560" y="394" fill="#fbbf24" font-size="11">WP-01 (Gate 1)</text>
+  <text x="690" y="394" fill="#38bdf8" font-size="11">TS-2 (Months 7–10)</text>
+  <text x="840" y="394" fill="#f8fafc" font-size="11">$2.2M CapEx</text>
+  <text x="980" y="394" fill="#38bdf8" font-size="11">XRF-EdgeSort-Spec</text>
+
+  <!-- Row 6: WP-06 -->
+  <rect x="30" y="418" width="1140" height="48" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="447" fill="#fbbf24" font-size="12" font-weight="bold">WP-06</text>
+  <text x="110" y="439" fill="#f8fafc" font-size="12" font-weight="bold">Autonomous Hauler Dispatch &amp; Energy Arbitrage</text>
+  <text x="110" y="456" fill="#94a3b8" font-size="10">SBB: AI Route Optimizer, Grid Time-of-Use Gateway</text>
+  <rect x="420" y="430" width="110" height="24" rx="4" fill="#78350f"/>
+  <text x="475" y="446" fill="#fef3c7" font-size="10" font-weight="bold" text-anchor="middle">Terra-Resource</text>
+  <text x="560" y="447" fill="#fbbf24" font-size="11">WP-05</text>
+  <text x="690" y="447" fill="#38bdf8" font-size="11">TS-2 (Months 8–12)</text>
+  <text x="840" y="447" fill="#f8fafc" font-size="11">$1.9M CapEx</text>
+  <text x="980" y="447" fill="#38bdf8" font-size="11">BPMN-Haulage-Target</text>
+
+  <!-- Row 7: WP-07 -->
+  <rect x="30" y="471" width="1140" height="48" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="500" fill="#38bdf8" font-size="12" font-weight="bold">WP-07</text>
+  <text x="110" y="492" fill="#f8fafc" font-size="12" font-weight="bold">OP-30 Closed-Loop Actuator Integration</text>
+  <text x="110" y="509" fill="#94a3b8" font-size="10">SBB: 2.5ms Servo Actuator, PROFINET IRT Fast-Bus</text>
+  <rect x="420" y="483" width="110" height="24" rx="4" fill="#0369a1"/>
+  <text x="475" y="499" fill="#e0f2fe" font-size="10" font-weight="bold" text-anchor="middle">Volt-Tech</text>
+  <text x="560" y="500" fill="#38bdf8" font-size="11">WP-02, WP-04 (Gate 1)</text>
+  <text x="690" y="500" fill="#38bdf8" font-size="11">TS-2 (Months 7–11)</text>
+  <text x="840" y="500" fill="#f8fafc" font-size="11">$1.2M CapEx</text>
+  <text x="980" y="500" fill="#38bdf8" font-size="11">OP30-Servo-Control-Doc</text>
+
+  <!-- Row 8: WP-08 -->
+  <rect x="30" y="524" width="1140" height="48" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="553" fill="#4ade80" font-size="12" font-weight="bold">WP-08</text>
+  <text x="110" y="545" fill="#f8fafc" font-size="12" font-weight="bold">CAN-FD Fleet Telemetry Mesh &amp; TinyML BMS</text>
+  <text x="110" y="562" fill="#94a3b8" font-size="10">SBB: 100Hz EIS Firmware, 5G Industrial Gateway</text>
+  <rect x="420" y="536" width="110" height="24" rx="4" fill="#14532d"/>
+  <text x="475" y="552" fill="#dcfce7" font-size="10" font-weight="bold" text-anchor="middle">Orbit-Logistics</text>
+  <text x="560" y="553" fill="#4ade80" font-size="11">WP-03, WP-04</text>
+  <text x="690" y="553" fill="#38bdf8" font-size="11">TS-2 (Months 8–13)</text>
+  <text x="840" y="553" fill="#f8fafc" font-size="11">$1.4M CapEx</text>
+  <text x="980" y="553" fill="#38bdf8" font-size="11">TinyML-BMS-Firmware</text>
+
+  <!-- Row 9: WP-09 -->
+  <rect x="30" y="577" width="1140" height="48" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="606" fill="#c084fc" font-size="12" font-weight="bold">WP-09</text>
+  <text x="110" y="598" fill="#f8fafc" font-size="12" font-weight="bold">Mine-to-Factory Rail Logistics Synchronization</text>
+  <text x="110" y="615" fill="#94a3b8" font-size="10">SBB: SCOR sS1/sD1 dynamic scheduling engine</text>
+  <rect x="420" y="589" width="110" height="24" rx="4" fill="#581c87"/>
+  <text x="475" y="605" fill="#f3e8ff" font-size="10" font-weight="bold" text-anchor="middle">Terra + Volt-Tech</text>
+  <text x="560" y="606" fill="#fbbf24" font-size="11">WP-01, WP-05</text>
+  <text x="690" y="606" fill="#38bdf8" font-size="11">TS-2 (Months 9–13)</text>
+  <text x="840" y="606" fill="#f8fafc" font-size="11">$0.8M CapEx</text>
+  <text x="980" y="606" fill="#38bdf8" font-size="11">SCOR-RailSync-Contract</text>
+
+  <!-- Row 10: WP-10 -->
+  <rect x="30" y="630" width="1140" height="48" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="659" fill="#c084fc" font-size="12" font-weight="bold">WP-10</text>
+  <text x="110" y="651" fill="#f8fafc" font-size="12" font-weight="bold">Factory-to-Fleet Delivery Dispatch Engine</text>
+  <text x="110" y="668" fill="#94a3b8" font-size="10">SBB: 48-hr Predictive Battery Replacement Orchestrator</text>
+  <rect x="420" y="642" width="110" height="24" rx="4" fill="#581c87"/>
+  <text x="475" y="658" fill="#f3e8ff" font-size="10" font-weight="bold" text-anchor="middle">Volt-Tech + Orbit</text>
+  <text x="560" y="659" fill="#38bdf8" font-size="11">WP-07, WP-08</text>
+  <text x="690" y="659" fill="#38bdf8" font-size="11">TS-2 (Months 10–14)</text>
+  <text x="840" y="659" fill="#f8fafc" font-size="11">$0.7M CapEx</text>
+  <text x="980" y="659" fill="#38bdf8" font-size="11">Dispatch-Orchestrator</text>
+
+  <!-- Row 11: WP-11 -->
+  <rect x="30" y="683" width="1140" height="48" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="712" fill="#c084fc" font-size="12" font-weight="bold">WP-11</text>
+  <text x="110" y="704" fill="#f8fafc" font-size="12" font-weight="bold">Tri-Party Zero-Trust IDMZ &amp; Telemetry Mesh</text>
+  <text x="110" y="721" fill="#94a3b8" font-size="10">SBB: mTLS Bastion Gateway, Distributed DPP Ledger Node</text>
+  <rect x="420" y="695" width="110" height="24" rx="4" fill="#581c87"/>
+  <text x="475" y="711" fill="#f3e8ff" font-size="10" font-weight="bold" text-anchor="middle">All 3 Enterprises</text>
+  <text x="560" y="712" fill="#c084fc" font-size="11">WP-01 to WP-04</text>
+  <text x="690" y="712" fill="#38bdf8" font-size="11">TS-2 (Months 11–14)</text>
+  <text x="840" y="712" fill="#f8fafc" font-size="11">$1.1M CapEx</text>
+  <text x="980" y="712" fill="#38bdf8" font-size="11">IDMZ-Mesh-Topology</text>
+
+  <!-- Row 12: WP-12 -->
+  <rect x="30" y="736" width="1140" height="48" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+  <text x="45" y="765" fill="#4ade80" font-size="12" font-weight="bold">WP-12</text>
+  <text x="110" y="757" fill="#f8fafc" font-size="12" font-weight="bold">Master SCOR SLA &amp; Fiduciary Governance Audit</text>
+  <text x="110" y="774" fill="#94a3b8" font-size="10">SBB: Continuous Compliance Dashboard, Automated Escrow</text>
+  <rect x="420" y="748" width="110" height="24" rx="4" fill="#14532d"/>
+  <text x="475" y="764" fill="#dcfce7" font-size="10" font-weight="bold" text-anchor="middle">Joint EAB Board</text>
+  <text x="560" y="765" fill="#4ade80" font-size="11">WP-09, WP-10, WP-11</text>
+  <text x="690" y="765" fill="#4ade80" font-size="11">Target (Month 15+)</text>
+  <text x="840" y="765" fill="#4ade80" font-size="11">$0.4M CapEx</text>
+  <text x="980" y="765" fill="#4ade80" font-size="11">EAB-Master-Accord.pdf</text>
+
+  <!-- Total Summary Bar -->
+  <rect x="30" y="795" width="1140" height="85" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="50" y="820" fill="#38bdf8" font-size="13" font-weight="bold">JOINT PHASE E/F INVESTMENT &amp; GOVERNANCE SUMMARY:</text>
+  <text x="50" y="845" fill="#cbd5e1" font-size="12">&#8226; <tspan font-weight="bold" fill="#f8fafc">Total Ecosystem CapEx:</tspan> $18.0 Million across 12 Work Packages ($6.6M Terra-Resource, $7.2M Volt-Tech, $4.2M Orbit-Logistics)</text>
+  <text x="50" y="865" fill="#cbd5e1" font-size="12">&#8226; <tspan font-weight="bold" fill="#4ade80">Combined Annual Net Savings:</tspan> $31.4 Million / year &#8226; <tspan font-weight="bold" fill="#4ade80">Payback Period:</tspan> 6.9 Months &#8226; <tspan font-weight="bold" fill="#4ade80">5-Year NPV:</tspan> $100.9 Million (r=10%)</text>
+</svg>

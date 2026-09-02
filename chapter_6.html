@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 6: Solving Scalability Friction (From Pilot to Production) - The Reality of Enterprise AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+  <!-- KaTeX LaTeX JS Library & Auto-Render Extension -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+          });"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chapter_6_charts.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part II:</span> Chapter 6 &mdash; Solving Scalability Friction</div>
+      <nav><a href="index.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>Solving Scalability Friction</h1>
+      <p class="subtitle">
+        From Pilot to Production: Technology Architecture, Industrial OT/IT Edge &amp; Joint Fleet Engineering (TOGAF&reg; ADM Phase D)
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Volt-Tech Advanced Robotics Plant &amp; High-Voltage Vehicle Proving Grounds (Joint Engineering War Room)</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase D: Technology Architecture (Industrial Edge AI, ISA-95 OT/IT Integration, CAN-FD BMS Telematics &amp; Smart Depot Grid)</div>
+          
+          <div class="metadata-label">Core Conflict:</div>
+          <div class="metadata-value">The enterprise has established its Business Architecture (Phase B) and Data Governance Bedrock (Phase C), but now confronts the physical "implementation gap." Cloud-dependent AI vision introduces 800ms latency spikes that misalign robotic battery welds and halt conveyor belts every 20 minutes, while downstream, Orbit's high-turnaround Partial-State-of-Charge (PSoC) dispatches degrade battery packs. Engineering leadership from Volt-Tech and Orbit-Logistics must unite on the factory floor to deploy deterministic edge compute, cryptographic hardware security, and closed-loop smart depot grid orchestration.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Welcome to the beating industrial heart of the ecosystem: Volt-Tech Assembly Plant 4. Listen closely. The panic of previous quarters has subsided into disciplined execution. In Chapter 5, Terra-Resource established the cryptographic Data Bedrock, ensuring every mineral batch arrives with verified geochemical purity. But as our chief engineers know: pure data cannot save a manufacturing line if physical execution fails."</p>
+        <p class="narrator-text">"Look down at the conveyor line below. Robotic welding arms are moving at 500 millimeters per second. When computer vision models run in the cloud, an 800-millisecond latency round-trip translates into a catastrophic 400-millimeter positioning error—halting production and shattering unit economics. Today, Orbit-Logistics and Volt-Tech engineering delegations have converged on the shop floor to co-engineer the solution. Let us watch how they bridge the implementation gap in <strong>TOGAF ADM Phase D: Technology Architecture</strong>."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC SCENE: THE FACTORY FLOOR & PROVING GROUNDS ACCORD -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Storyline: Joint Technical Session at Assembly Plant 4</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Volt-Tech Robotics Catwalk - Joint War Room"></div>
+        <figure>
+          <img src="assets/Chapter6Images/panel_1.jpg" alt="Figure 6.A: Joint Engineering Session on the Catwalk">
+          <figcaption><strong>Figure 6.A:</strong> Volt-Tech Advanced Robotics Plant &mdash; Rajesh Iyer and Anjali Mehra oversee the high-speed battery pack conveyor from the observation catwalk while Priya Kapoor monitors live factory throughput telemetry.</figcaption>
+        </figure>
+        <div class="caption-block">Volt-Tech Assembly Plant 4. Main Manufacturing Floor. 08:30 Hours. The joint engineering task force convenes above the laser welding cells.</div>
+
+                          <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Volt-Tech Chief Engineer</span>
+          </div>
+          <div class="speech-content">
+            "Anjali, welcome to our proving grounds. We have eliminated raw material impurities thanks to Terra-Resource's Digital Product Passports, but we hit a physical brick wall when scaling automated cell welding. Look at gantry number three: whenever our vision system attempts to classify laser weld penetration via cloud APIs, the 800-millisecond latency spike causes the robotic focal head to drift. The safety interlocks trip, and the entire 500mm/s conveyor line shuts down every twenty minutes!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-anjali dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Orbit Fleet Lead</span>
+          </div>
+          <div class="speech-content">
+            "We are seeing the exact same latency friction downstream at our fleet depots, Rajesh. When our heavy electric tractors pull into Megawatt Charging dispensers, the cloud dispatch system takes four seconds to negotiate power curves with the local grid. Our dispatchers cannot afford four-second stalls when turning around forty trucks an hour. That is why Orbit brought our telemetry team here today: we must co-architect the technology stack from silicon to depot grid as a single unified system."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-priya">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+          <div class="speech-avatar-name">Priya Kapoor</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Volt-Tech Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "The financial stakes are absolute. Every conveyor shutdown costs Volt-Tech $14,000 in lost throughput and labor idle time. If we cannot deliver 10,000 Smart Battery packs at 99.98% first-pass yield this quarter, our unit margin collapses. Rajesh, show Anjali how our Phase D Technology Architecture solves the latency crisis."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Root Cause Analysis & Industrial Edge GPU Demonstration"></div>
+        <figure>
+          <img src="assets/Chapter6Images/panel_2.jpg" alt="Figure 6.B: The 800ms Latency Root Cause & Edge GPU Solution">
+          <figcaption><strong>Figure 6.B:</strong> High-Voltage Diagnostic Lab &mdash; Rajesh Iyer demonstrates the physics of latency to Sanjay Reddy and Rohan Gupta, contrasting fragile cloud round-trips with 1.8ms on-premise industrial edge GPU inference.</figcaption>
+        </figure>
+        <div class="caption-block">Process Control Lab. 09:45 Hours. Telemetry analyzers reveal the mathematical impossibility of cloud AI on physical factory lines.</div>
+
+                          <div class="dialogue-bubble dialogue-rajesh dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Here is the math: at a conveyor velocity of 500 millimeters per second, an 800ms cloud network round-trip means the battery pack travels 400 millimeters before the inspection result returns! Our allowable weld seam tolerance is \( \pm 0.05\text{ mm} \). We cannot send gigabytes of 500 FPS video streams across public WANs. We must move the AI models directly onto the factory floor."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-sanjay">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Volt-Tech Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "We deployed on-premise Industrial Edge GPU clusters right beside the gantry PLC racks. By compiling our deep learning models with TensorRT and quantizing weights to 8-bit integers (INT8), local inference takes exactly 1.8 milliseconds. Total closed-loop control—from photon capture to laser focal actuator correction—executes in 2.5 milliseconds. The conveyor never slows down, and laser weld penetration is verified in real time."
+          </div>
+        </div>
+      </div>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Industrial Latency &amp; Conveyor Physical Drift Benchmarks</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Network Roundtrip Latency (ms) vs. Physical Conveyor Travel Distance (mm at 500 mm/s)</div>
+            <div style="position: relative; height: 330px; width: 100%;">
+              <canvas id="latencyPhysicsChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.1B:</strong> Edge Inference vs. Cloud Latency &mdash; Highlighting the physical failure of 800ms cloud WAN roundtrips (400mm drift) versus 1.8ms on-premise edge GPU execution (&le; 0.9mm drift within &plusmn;0.05mm tolerance).</figcaption>
+        </figure>
+
+                          <div class="dialogue-bubble dialogue-rohan dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Orbit Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "And what happens if an edge GPU fails or experiences model drift? In a high-voltage environment, an unguided 4-kilowatt fiber laser will ignite lithium cells in less than fifty milliseconds. We need deterministic safety guarantees before Orbit accepts packs built on this line."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Hardware Security & ASIL-D Lockstep Command"></div>
+        <figure>
+          <img src="assets/Chapter6Images/panel_3.jpg" alt="Figure 6.C: Cryptographic HSM & ISO 26262 ASIL-D Safety Architecture">
+          <figcaption><strong>Figure 6.C:</strong> Hardware-in-the-Loop (HIL) Safety Chamber &mdash; Sanjay Reddy and Rohan Gupta validate the Hardware Security Module (HSM) and dual-core lockstep processor with sub-500 microsecond deterministic AUTOSAR fallback.</figcaption>
+        </figure>
+        <div class="caption-block">Hardware Security Chamber. 11:15 Hours. Automotive safety compliance meets cryptographic zero-trust validation.</div>
+
+                          <div class="dialogue-bubble dialogue-sanjay">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "We engineered a dual-layer safety architecture conforming to ISO 26262 ASIL-D. The edge AI model acts strictly as an advisory trajectory optimizer. Beneath it sits a dual-core lockstep automotive microcontroller running certified AUTOSAR Classic firmware with a 500-microsecond hardware watchdog timer. If the AI model produces an out-of-bounds offset or exceeds its 2.0ms inference budget, the hardware comparator immediately drops the laser shutter and reverts to calibrated deterministic rule tables."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rohan dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Furthermore, every pack incorporates a dedicated Hardware Security Module (HSM) with elliptic-curve cryptographic keys. When Orbit trucks plug into charging dispensers, the BMS and the charger perform mutual hardware attestation over ISO 15118-20. Malicious CAN-bus spoofing or unauthorized firmware flashes are physically rejected by the silicon."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="Co-Architecting the Smart Depot Fast-Charging Edge Pod"></div>
+        <figure>
+          <img src="assets/Chapter6Images/panel_4.jpg" alt="Figure 6.D: Joint Depot Fast-Charging Edge Architecture">
+          <figcaption><strong>Figure 6.D:</strong> Depot Power Simulation Bay &mdash; Anjali Mehra and Rajesh Iyer configure the Smart Depot Grid controller, pairing 1.2MW fast charging with real-time battery impedance telemetry to eliminate PSoC thermal degradation.</figcaption>
+        </figure>
+        <div class="caption-block">Megawatt Power Simulation Bay. 13:30 Hours. The engineering teams solve the second critical bottleneck: depot charging synchronization.</div>
+
+                          <div class="dialogue-bubble dialogue-anjali">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "In Chapter 4, Sanjay's forensic analysis proved that 72% of Orbit's micro-voltage collapses were triggered by partial-state-of-charge (PSoC) dispatches. Our trucks were leaving depots at 40% battery because standard chargers took three hours. With our new 1.2-Megawatt liquid-cooled dispensers and stationary 5MWh buffer batteries, we can safely charge a 600kWh pack from 10% to 85% in twenty-two minutes!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rajesh dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "And our BMS firmware now features real-time Electrochemical Impedance Spectroscopy (EIS) TinyML algorithms. As the Megawatt charger pulses current, the BMS measures internal cell resistance at 100 Hertz. If it detects localized heat build-up or micro-dendrite formation, it dynamically modulates the charging C-rate in real time. We have eliminated deep-discharge thermal spikes entirely."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 5 -->
+        <div id="panel-5" class="panel-marker" data-scene="Closed-Loop Digital Twin Telemetry Feed"></div>
+        <figure>
+          <img src="assets/Chapter6Images/panel_5.jpg" alt="Figure 6.E: Closed-Loop Multi-Enterprise Digital Twin">
+          <figcaption><strong>Figure 6.E:</strong> Joint Operations Center &mdash; Real-time fleet telemetry streaming over encrypted 5G CAN-FD gateways directly into Volt-Tech's digital twin simulation engine, closing the loop between road conditions and manufacturing tolerances.</figcaption>
+        </figure>
+        <div class="caption-block">Joint Telemetry Command Center. 15:00 Hours. Real-time data streams link factory robotics to cross-country highway fleets.</div>
+
+                          <div class="dialogue-bubble dialogue-anjali">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Every heavy tractor in Orbit's fleet is now streaming encrypted CAN-FD health telemetry to our unified operational layer. When a truck encounters heavy grade climbs or sub-zero ambient temperatures, the onboard TinyML model predicts cell degradation curves forty-eight hours in advance. We schedule predictive battery servicing during planned depot driver shifts without losing a single delivery mile."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-kavita dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+          <div class="speech-avatar-name">Kavita Joshi</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Orbit Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "This complete technological alignment transforms our balance sheet. Fleet asset uptime (SCOR AM.1.1) increases from 91.2% to 98.9%. Our stranded vehicle rescue costs drop to zero, and Orbit achieves a 99.85% Perfect Shipment Delivery rate."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 6 -->
+        <div id="panel-6" class="panel-marker" data-scene="Executive Sign-Off & Rollout Agreement"></div>
+        <figure>
+          <img src="assets/Chapter6Images/panel_6.jpg" alt="Figure 6.F: Pilot-to-Production Executive Accord">
+          <figcaption><strong>Figure 6.F:</strong> Assembly Plant Catwalk &mdash; Priya Kapoor, Kavita Joshi, Rajesh Iyer, and Anjali Mehra finalize the joint $38M Phase D production rollout, marking the definitive transition from experimental AI pilots to enterprise-scale industrial execution.</figcaption>
+        </figure>
+        <div class="caption-block">Executive Observation Deck. 16:30 Hours. Both enterprises sign off on the TOGAF Phase D Technology Architecture Definition.</div>
+
+                          <div class="dialogue-bubble dialogue-priya">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+          <div class="speech-avatar-name">Priya Kapoor</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "We have proven that enterprise AI is not about chasing generative hype—it is about rigorous systems engineering, deterministic edge compute, and end-to-end telemetry governance. The $38 million Phase D migration budget is officially authorized. Volt-Tech guarantees 99.98% assembly yield, and Orbit receives the intelligent Smart Battery packs that safeguard our supply chain."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-kavita dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+          <div class="speech-avatar-name">Kavita Joshi</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Approved. Our joint Enterprise Architecture Board charter is validated by physical production. The implementation gap is closed."
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: THE IMPLEMENTATION GAP & THE PHYSICS OF LATENCY -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. The Implementation Gap: Why Cloud AI Halts Industrial Floors</h2>
+        <p>In enterprise AI initiatives, the transition from proof-of-concept (PoC) to industrial production is notoriously treacherous. In a laboratory or cloud environment, an AI vision model achieving 98% accuracy with an 800ms inference latency is celebrated as a triumph. On a physical automotive assembly line running at 500 mm/s, however, that same 800ms latency represents a catastrophic physical failure.</p>
+
+        <h3>1.1 The Mathematical Formulation of Line Velocity &amp; Latency Budget</h3>
+        <p>On high-speed manufacturing lines, total permissible system latency is strictly bounded by conveyor velocity \( V_{\text{conveyor}} \) and allowable mechanical positioning tolerance \( \delta_{\text{tolerance}} \):</p>
+
+        <div class="formula-card" style="background: #f0f9ff; border: 1.5px solid #38bdf8; border-left: 4px solid #0284c7; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #0369a1; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ \Delta T_{\text{total}} = T_{\text{capture}} + T_{\text{network}} + T_{\text{inference}} + T_{\text{actuator}} \le \frac{\delta_{\text{tolerance}}}{V_{\text{conveyor}}} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #475569; margin-top: 0.5rem; font-weight: 500;">
+            Maximum Permissible Latency Budget for Deterministic Line Velocity
+          </div>
+        </div>
+
+        <p>For Volt-Tech's laser busbar welding cell:</p>
+        <ul>
+          <li><strong>Conveyor Velocity (\( V_{\text{conveyor}} \)):</strong> \( 500\text{ mm/s} \)</li>
+          <li><strong>Allowable Seam Tolerance (\( \delta_{\text{tolerance}} \)):</strong> \( \pm 0.05\text{ mm} \) (or dynamically corrected within a \( 1.25\text{ mm} \) travel window \( \implies \Delta T_{\text{budget}} \le 2.5\text{ ms} \))</li>
+          <li><strong>Cloud Architecture Latency:</strong> \( \Delta T_{\text{cloud}} = 0.4\text{ms} + 780\text{ms} + 45\text{ms} + 0.3\text{ms} = \mathbf{825.7\text{ ms}} \implies \text{Position Offset} = 412.85\text{ mm} \) (<span style="color:#ef4444; font-weight:bold;">Conveyor Crash / Line Shutdown</span>)</li>
+          <li><strong>Industrial Edge Architecture Latency:</strong> \( \Delta T_{\text{edge}} = 0.4\text{ms} + 0.1\text{ms} + 1.8\text{ms} + 0.2\text{ms} = \mathbf{2.5\text{ ms}} \implies \text{Position Offset} = 1.25\text{ mm} \) (<span style="color:#22c55e; font-weight:bold;">Real-Time Dynamic Servo Compensation Achieved</span>)</li>
+        </ul>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Architecture Tier</th>
+              <th>Network Hop</th>
+              <th>Compute Platform</th>
+              <th>Inference Time</th>
+              <th>Total Latency</th>
+              <th>Physical Impact on Line</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Legacy Cloud Pilot</strong></td>
+              <td>Public WAN &rarr; Cloud VPC</td>
+              <td>Centralized Cloud GPU Instance</td>
+              <td>45 ms</td>
+              <td><strong style="color:#ef4444;">825.7 ms</strong></td>
+              <td>Line halts every 20 min; 400mm positioning drift; $32M scrap bleed.</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>TOGAF Phase D Target (Edge)</strong></td>
+              <td>TSN / PROFINET IRT (&lt;100&mu;s)</td>
+              <td>Industrial Dual-GPU Edge Node</td>
+              <td>1.8 ms</td>
+              <td><strong style="color:#22c55e;">2.5 ms</strong></td>
+              <td>Zero line halts; &plusmn;0.05mm laser focus; 99.98% First-Pass Yield.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: TOGAF ADM PHASE D MASTER TECHNOLOGY TOPOLOGY -->
+      <!-- ========================================================================= -->
+      <section id="section-2">
+        <h2>2. Master Technology Infrastructure Architecture (TOGAF ADM Phase D)</h2>
+        <p>TOGAF ADM Phase D establishes the hardware, software, networking, and security topologies required to support the Application and Data Architectures defined in previous phases. Volt-Tech and Orbit-Logistics adopt a <strong>Multi-Tier Hybrid Cloud-Edge Topology</strong> that cleanly decouples hard real-time execution from enterprise analytics.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_6_1_technology_infrastructure_topology.svg" alt="Figure 6.1: Master Technology Infrastructure Architecture" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.1:</strong> Master Technology Infrastructure Architecture (TOGAF ADM Phase D) &mdash; Hybrid Cloud-Edge Topology connecting shop-floor industrial robotics, smart depot charging grids, and multi-enterprise digital twins.</figcaption>
+        </figure>
+
+        <h3>2.1 Architecture Building Blocks (ABB) &amp; Solution Building Blocks (SBB)</h3>
+        <p>In accordance with TOGAF standards, the technology stack is structured into standardized reusable building blocks:</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Architecture Building Block (ABB)</th>
+              <th>Solution Building Block (SBB)</th>
+              <th>Protocol / Standard</th>
+              <th>Performance SLA</th>
+              <th>Target Tier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Real-Time Vision Inference Node</strong></td>
+              <td>Dual NVIDIA RTX 6000 Ada Industrial Server</td>
+              <td>TensorRT INT8 / GigE Vision</td>
+              <td>Inference &le; 2.0 ms @ 500 FPS</td>
+              <td>Tier 3A (Shop Floor)</td>
+            </tr>
+            <tr>
+              <td><strong>Deterministic Motion Controller</strong></td>
+              <td>Siemens S7-1500F Safety PLC + Fanuc Robotics</td>
+              <td>PROFINET IRT / OPC UA PubSub</td>
+              <td>Deterministic Cycle &le; 250 &mu;s</td>
+              <td>Tier 3A (Shop Floor)</td>
+            </tr>
+            <tr>
+              <td><strong>Smart Depot Megawatt Controller</strong></td>
+              <td>Liquid-Cooled 1.2MW MCS Smart Charger</td>
+              <td>ISO 15118-20 / OCPP 2.0.1</td>
+              <td>Handshake &le; 50 ms; 10-85% in 22 min</td>
+              <td>Tier 3B (Orbit Depot)</td>
+            </tr>
+            <tr>
+              <td><strong>Onboard Vehicle Telematics Gateway</strong></td>
+              <td>Automotive Dual-Core Lockstep MCU + HSM</td>
+              <td>CAN-FD / ISO 26262 ASIL-D / 5G</td>
+              <td>Hardware Watchdog &le; 500 &mu;s</td>
+              <td>Tier 3B (Smart Truck)</td>
+            </tr>
+            <tr>
+              <td><strong>Plant Operations &amp; Traceability</strong></td>
+              <td>Manufacturing Execution System (MES) + EMQX</td>
+              <td>MQTT Sparkplug B / TimescaleDB</td>
+              <td>100 Hz Timeseries Ingestion</td>
+              <td>Tier 2 (Plant DMZ)</td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Enterprise Digital Twin Ledger</strong></td>
+              <td>Distributed DPP Cloud Registry &amp; MLflow Hub</td>
+              <td>gRPC / mTLS / Distributed Ledger</td>
+              <td>Asynchronous Batch Sync &le; 5 min</td>
+              <td>Tier 1 (Enterprise Cloud)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: INDUSTRIAL AUTOMATION & ISA-95 OT/IT INTEGRATION -->
+      <!-- ========================================================================= -->
+      <section id="section-3">
+        <h2>3. Industrial Automation &amp; OT/IT Architecture (ISA-95 / Purdue Model)</h2>
+        <p>A fatal error in naive AI implementations is connecting IT networks directly to shop-floor actuators. Volt-Tech enforces strict <strong>Purdue Model Zone Segmentation</strong> (IEC 62443 / ISA-95), isolating physical machinery into deterministic safety zones while streaming operational telemetry upwards through an Industrial Security DMZ (IDMZ).</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_6_2_isa95_plant_floor_architecture.svg" alt="Figure 6.2: Industrial Automation & OT/IT Architecture" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.2:</strong> Industrial Automation &amp; OT/IT Architecture (ISA-95 / Purdue Model) &mdash; Five-tier hierarchy spanning physical welding optics (Level 0) to enterprise business systems (Level 4).</figcaption>
+        </figure>
+
+        <h3>3.1 Purdue Zone Separation &amp; Threat Defense</h3>
+        <ul>
+          <li><strong>Level 0 &amp; Level 1 (Deterministic Safety Zone):</strong> Hardwired physical safety circuits, laser pyrometers, and Siemens Safety PLCs. Communicates strictly over isolated PROFINET IRT and CAN-bus networks. No direct IP routing to corporate IT.</li>
+          <li><strong>Level 2 (Cell Supervisory &amp; Edge AI Zone):</strong> Industrial Edge GPU servers executing TensorRT-quantized vision models. Connected to Level 1 via Time-Sensitive Networking (TSN) and to Level 3 via OPC UA PubSub.</li>
+          <li><strong>Level 3 (Manufacturing Operations MOM/MES Zone):</strong> Plant-wide MES, Work-in-Progress (WIP) tracking, and TimescaleDB historian. Manages local work orders, recipe parameters, and OEE metrics.</li>
+          <li><strong>Industrial DMZ (IDMZ):</strong> Zero-Trust bastion gateway, reverse proxies, and Hardware Security Module key-signing vaults. Terminates all incoming and outgoing connections; prevents lateral network compromise.</li>
+          <li><strong>Level 4 (Enterprise Cloud &amp; Business Systems):</strong> ERP, PLM, and global DPP ledgers. Pushes production orders and receives certified quality passports without direct access to factory floor PLCs.</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: JOINT SMART DEPOT FAST-CHARGING & TELEMETRY LOOP -->
+      <!-- ========================================================================= -->
+      <section id="section-4">
+        <h2>4. Joint Orbit &amp; Volt-Tech Smart Depot Grid &amp; IoT Telemetry Closed Loop</h2>
+        <p>In Chapter 4, forensic investigation proved that over 72% of downstream battery failures were caused by Partial-State-of-Charge (PSoC) dispatches due to inadequate depot charging infrastructure. To permanently solve this problem, Orbit-Logistics and Volt-Tech co-engineered an integrated <strong>Smart Depot Grid Architecture</strong> governed by ISO 15118-20 and real-time Electrochemical Impedance Spectroscopy (EIS).</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_6_3_smart_depot_iot_loop.svg" alt="Figure 6.3: Joint Smart Depot Grid & Telemetry Closed Loop" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.3:</strong> Joint Orbit &amp; Volt-Tech Smart Depot Grid &amp; Telemetry Closed Loop &mdash; High-power Megawatt charging synchronized with onboard CAN-FD EIS telematics to eliminate thermal runaway.</figcaption>
+        </figure>
+
+        <h3>4.1 Adaptive C-Rate Modulation &amp; Dynamic Peak Shaving</h3>
+        <p>Under conventional DC fast charging, fixed high-current profiles cause severe lithium plating and localized thermal hotspots when batteries are charged at cold temperatures or low initial states of charge. The joint Phase D architecture introduces <strong>Adaptive Pulse-Width Modulation Charging</strong>:</p>
+        
+        <div class="formula-card" style="background: #fff7ed; border: 1.5px solid #fb923c; border-left: 4px solid #ea580c; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #c2410c; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ I_{\text{charge}}(t) = \min\left(I_{\text{grid\_cap}}(t), \frac{V_{\text{max}} - V_{\text{OCV}}(t)}{R_{\text{int\_EIS}}(T_{\text{cell}}, \text{SOC})}\right) \times \eta_{\text{thermal\_margin}} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #7c2d12; margin-top: 0.5rem; font-weight: 500;">
+            Real-Time Adaptive Pulse-Width Modulation Fast-Charging Current Function
+          </div>
+        </div>
+
+        <p>Where \( R_{\text{int\_EIS}} \) is measured in real time at 100 Hz by the onboard TinyML BMS. If internal cell resistance exceeds \( 0.5\text{ m}\Omega \) or thermal dissipation exceeds \( 45^\circ\text{C} \), the charging controller instantly reduces current and pulses reverse depolarizing waveforms—allowing a 600 kWh heavy tractor pack to charge from 10% to 85% in 22 minutes with zero cell degradation.</p>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 5: TINYML MLOPS, QUANTIZATION & ASIL-D FAILSAFE PIPELINE -->
+      <!-- ========================================================================= -->
+      <section id="section-5">
+        <h2>5. Edge TinyML MLOps, Hardware Quantization &amp; Deterministic Fallback</h2>
+        <p>Deploying AI models onto automotive microcontrollers and factory edge servers requires a disciplined <strong>Hardware-Aware MLOps Pipeline</strong>. Models trained in FP32 precision on cloud compute clusters must be compressed, quantized, cryptographically signed, and staged through shadow canary deployments before receiving execution authority.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_6_4_tinyml_edge_mlops_pipeline.svg" alt="Figure 6.4: Zero-Downtime Edge TinyML MLOps Pipeline" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.4:</strong> Zero-Downtime Edge TinyML MLOps &amp; Quantization Pipeline &mdash; Four-stage lifecycle from cloud training (FP32) to INT8 quantization, HSM signing, and deterministic AUTOSAR fallback.</figcaption>
+        </figure>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">TinyML Hardware Quantization Benchmarks (TensorRT vs. Cloud FP32)</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Inference Latency (ms), Memory Footprint (MB), and Throughput (FPS) Across Precision Formats</div>
+            <div style="position: relative; height: 340px; width: 100%;">
+              <canvas id="quantizationBenchmarkChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.4B:</strong> TinyML Quantization &amp; Compression Performance &mdash; Comparison of FP32, FP16, and INT8 TensorRT execution showing a 95.7% latency reduction and 98.7% binary compression.</figcaption>
+        </figure>
+
+        <h3>5.1 The 4-Stage Edge Deployment Lifecycle</h3>
+        <ol>
+          <li><strong>Stage 1: Cloud Training &amp; Synthetic HIL Simulation:</strong> Deep neural networks are trained in PyTorch/TensorFlow (FP32) using 10M+ simulated battery thermal and vibration cycles. Governance gates enforce model card documentation and EU AI Act conformity.</li>
+          <li><strong>Stage 2: Hardware-Aware Quantization &amp; Compilation:</strong> Post-Training Quantization (PTQ) converts 32-bit floating-point weights into 8-bit integers (INT8). NVIDIA TensorRT and Apache microTVM eliminate 70% redundant parameters via 4:2 structured sparsity, shrinking model binary footprint from 480MB to 6.2MB.</li>
+          <li><strong>Stage 3: Cryptographic Hardware Security &amp; Canary Staging:</strong> Binaries are cryptographically signed inside an air-gapped Hardware Security Module (HSM) using ECC Secp384r1 keys. Over-The-Air (OTA) updates are staged in shadow mode (0% actuator authority) to verify telemetry divergence before production activation.</li>
+          <li><strong>Stage 4: Edge Runtime &amp; Sub-500&mu;s AUTOSAR Fallback:</strong> Dual-core lockstep microcontrollers execute the quantized model. If inference exceeds 2.0ms or anomaly drift is detected, a hardware watchdog drops actuator authority and activates certified deterministic AUTOSAR safety logic in under 500 microseconds.</li>
+        </ol>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 6: AIAG PROCESS FLOW & QUALITY CONTROL PLAN (PFD / CP) -->
+      <!-- ========================================================================= -->
+      <section id="section-6">
+        <h2>6. AIAG Process Flow Diagram &amp; Quality Control Plan (PFD / CP Matrix)</h2>
+        <p>In automotive manufacturing, software and technology architecture must directly translate into standardized shop-floor quality controls conforming to AIAG (Automotive Industry Action Group) APQP and IATF 16949 standards. The Smart Battery assembly line is decomposed into six sequential workstations (OP-10 through OP-60), each governed by automated vision AI and EIS inspection gates.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_6_5_aiag_pfd_control_plan.svg" alt="Figure 6.5: AIAG Process Flow & Quality Control Plan Matrix" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.5:</strong> AIAG Process Flow Diagram &amp; Quality Control Plan (PFD / CP Matrix) &mdash; Workstation sequence (OP-10 to OP-60), Key Product Characteristics (KPCs), and automated reaction plans.</figcaption>
+        </figure>
+
+        <h3>6.1 Workstation Breakdown &amp; Critical Quality Gates</h3>
+        <ul>
+          <li><strong>OP-10 (Cell Receiving &amp; OCV/IR Sorting):</strong> Verifies chemical batch provenance against Terra-Resource's DPP hash. High-speed probes test Open Circuit Voltage (\( 3.65\text{V} \pm 2\text{mV} \)) and internal resistance (\( \le 0.45\text{ m}\Omega \)). Defective cells are diverted to buffer bays.</li>
+          <li><strong>OP-20 (Automated Cell Stacking &amp; Compression):</strong> Precision servo gantries assemble cells with aerogel thermal barriers under \( 4.2\text{ kN} \) compression force, maintaining stack length tolerances of \( 640 \pm 0.05\text{ mm} \).</li>
+          <li><strong>OP-30 (Laser Busbar Welding &amp; 1.8ms Vision AI Gate):</strong> 4kW fiber laser welds copper busbars at 500 FPS. Coaxial edge AI cameras verify weld penetration depth (\( > 0.8\text{ mm} \)) and width (\( 1.2 \pm 0.1\text{ mm} \)) in 1.8ms, dynamically adjusting laser focus with zero conveyor halts.</li>
+          <li><strong>OP-40 (Electrochemical Impedance Spectroscopy EIS Gate):</strong> Multi-frequency AC sweep (0.1Hz–10kHz) verifies joint contact resistance (\( R_{\text{weld}} \le 0.25\text{ m}\Omega \)). Triggers automated re-weld loop if micro-voids are detected.</li>
+          <li><strong>OP-50 (BMS Mounting &amp; High-Voltage Dielectric Isolation):</strong> Smart nutrunners torque ASIL-D wiring harnesses to \( 9.5 \pm 0.2\text{ Nm} \); Hi-Pot tester subjects pack to \( 2,500\text{V DC} \) with leakage \( < 1\text{mA} \). HSM cryptographic keys are securely injected into the BMS.</li>
+          <li><strong>OP-60 (Final Enclosure Hermetic Sealing &amp; DPP Serialization):</strong> Mass spectrometer verifies helium leak rates below \( 1\times 10^{-6}\text{ mbar}\cdot\text{L/s} \) (IP69K rating). Complete manufacturing passport is cryptographically signed and published to the multi-enterprise cloud ledger.</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 7: SCOR LEVEL 3 PERFORMANCE METRICS & FIDUCIARY ROI -->
+      <!-- ========================================================================= -->
+      <section id="section-7">
+        <h2>7. SCOR Level 3 Process Flow &amp; Multi-Enterprise Performance Binding</h2>
+        <p>Enterprise architecture is only as valuable as the measurable supply chain and financial outcomes it delivers. The technology capabilities established in Phase D map directly into <strong>SCOR Model Level 3 Performance Metrics</strong>, binding millisecond-level edge execution to boardroom fiduciary success.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_6_6_scor_level3_metrics_alignment.svg" alt="Figure 6.6: SCOR Level 3 Process Flow & Performance Metrics Alignment" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 6.6:</strong> SCOR Level 3 Process Flow &amp; Multi-Enterprise Performance Binding &mdash; Alignment across Reliability (RL.1.1), Responsiveness (RS.1.1), Asset Management (AM.1.1), and Cost (CO.1.1).</figcaption>
+        </figure>
+
+        <h3>7.1 Multi-Enterprise Performance Scorecard</h3>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>SCOR Metric Category</th>
+              <th>Specific Metric Code</th>
+              <th>Legacy Baseline</th>
+              <th>Phase D Target Output</th>
+              <th>Governing Executive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Reliability (RL)</strong></td>
+              <td><code>RL.1.1</code> Perfect Order Fulfillment</td>
+              <td>91.2% (Mid-route cell collapses)</td>
+              <td><strong style="color:#22c55e;">&ge; 99.85%</strong> (Zero PSoC collapses)</td>
+              <td>Anjali Mehra (Orbit-Logistics)</td>
+            </tr>
+            <tr>
+              <td><strong>Responsiveness (RS)</strong></td>
+              <td><code>RS.1.1</code> Order Fulfillment Cycle Time</td>
+              <td>18.4 hrs/pack (Line shutdowns)</td>
+              <td><strong style="color:#22c55e;">3.2 hrs/pack</strong> (Continuous 45s cycle)</td>
+              <td>Rajesh Iyer (Volt-Tech)</td>
+            </tr>
+            <tr>
+              <td><strong>Asset Management (AM)</strong></td>
+              <td><code>AM.1.1</code> Overall Fleet &amp; Plant Uptime</td>
+              <td>Fleet 91.2% / Plant 68.2% OEE</td>
+              <td><strong style="color:#22c55e;">Fleet 98.9% / Plant 94.6% OEE</strong></td>
+              <td>Kavita Joshi (Orbit-Logistics)</td>
+            </tr>
+            <tr>
+              <td><strong>Cost (CO)</strong></td>
+              <td><code>CO.1.1</code> Total Cost to Serve &amp; Scrap</td>
+              <td>$50M quarterly fleet bleed</td>
+              <td><strong style="color:#22c55e;">Zero warranty bleed / Scrap -98%</strong></td>
+              <td>Priya Kapoor (Volt-Tech)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>7.2 Fiduciary ROI &amp; Payback Period Calculation</h3>
+        <p>The total capital expenditure (CapEx) authorized for the Phase D Technology Architecture implementation was <strong>$38.0 Million</strong> across both enterprises ($22M at Volt-Tech for industrial edge clusters and robotic retrofits; $16M at Orbit for Megawatt charging edge hubs and BESS stationary buffers). The annualized economic returns are calculated as follows:</p>
+
+        <ul>
+          <li><strong>Volt-Tech Scrap &amp; Downtime Reduction:</strong> Eliminating 20-minute conveyor shutdowns and reducing battery pack scrap from 8.6% to 0.02% recovers <strong>$34.2 Million annually</strong>.</li>
+          <li><strong>Cloud Bandwidth &amp; Inference OpEx Elimination:</strong> Moving 500 FPS vision pipelines from cloud APIs to local edge GPUs saves <strong>$2.16 Million annually</strong> in egress fees.</li>
+          <li><strong>Orbit Fleet Stranded Vehicle &amp; Warranty Recovery:</strong> Eliminating mid-route battery collapses and PSoC cell degradation saves <strong>$72.0 Million annually</strong> in fleet operational bleed.</li>
+          <li><strong>Combined Ecosystem Annual Benefit:</strong> \( \$34.2\text{M} + \$2.16\text{M} + \$72.0\text{M} = \mathbf{\$108.36\text{ Million / Year}} \)</li>
+          <li><strong>Ecosystem Payback Period:</strong> \( \frac{\$38.0\text{M}}{\$108.36\text{M}} \times 12\text{ months} = \mathbf{4.21\text{ Months}} \)</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 8: ARCHITECTURAL ARTIFACTS PRODUCED -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>8. Key Architecture Artifacts Produced in Phase D</h2>
+        <p>In TOGAF ADM Phase D, architectural artifacts transition from abstract models into tangible engineering specifications, hardware configurations, certified safety blueprints, and legally binding operational agreements. The table below outlines <strong>where and how each deliverable was produced</strong> across the joint engineering war room, shop-floor diagnostic cells, and proving grounds:</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Artifact Name &amp; Standard</th>
+              <th>Where Produced (Operational Setting)</th>
+              <th>Governing Lead &amp; Authority</th>
+              <th>Physical / Logical Storage Vault</th>
+              <th>Visualized in Chapter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Technology Architecture Definition Document (TADD)</strong><br><span style="font-size:0.75rem; color:#64748b;">TOGAF ADM Phase D Standard</span></td>
+              <td>Joint Engineering War Room (Volt-Tech Assembly Plant 4)</td>
+              <td>Rajesh Iyer (Volt-Tech) &amp; Anjali Mehra (Orbit)</td>
+              <td><code>/TOGAF/PhaseD/TADD-VT-ORB-2026.pdf</code><br>(EAM Enterprise Architecture Vault)</td>
+              <td><a href="#section-2" style="color:#0284c7; font-weight:bold;">Figure 6.1</a> (Section 2)</td>
+            </tr>
+            <tr>
+              <td><strong>Standard Building Block (SBB) Catalog</strong><br><span style="font-size:0.75rem; color:#64748b;">TOGAF SBB / IEEE Industrial Hardware</span></td>
+              <td>Industrial Robotics &amp; Hardware Procurement Cell</td>
+              <td>Volt-Tech Hardware Engineering Team</td>
+              <td><code>/PLM/BOM/SBB-Catalog-v4.2.json</code><br>(Teamcenter PLM / SAP S/4HANA)</td>
+              <td>Table 2.1 (Section 2.1)</td>
+            </tr>
+            <tr>
+              <td><strong>ISA-95 OT/IT Integration Blueprint</strong><br><span style="font-size:0.75rem; color:#64748b;">IEC 62443 / ISA-95 Purdue Model</span></td>
+              <td>Process Control Lab &amp; IDMZ Safety Boundary</td>
+              <td>Sanjay Reddy (Volt-Tech Risk Guardian)</td>
+              <td><code>/ISA95/Zones/Purdue-DMZ-Rules.yaml</code><br>(GitOps Infrastructure Repository)</td>
+              <td><a href="#section-3" style="color:#0284c7; font-weight:bold;">Figure 6.2</a> (Section 3)</td>
+            </tr>
+            <tr>
+              <td><strong>Smart Depot Fast-Charging Grid Blueprint</strong><br><span style="font-size:0.75rem; color:#64748b;">ISO 15118-20 / OCPP 2.0.1 / EIS</span></td>
+              <td>Megawatt Power Proving Grounds &amp; Depot Bay</td>
+              <td>Anjali Mehra (Orbit Fleet Lead)</td>
+              <td><code>/EMS/ISO15118/Depot-Profile-v1.xml</code><br>(Orbit SCADA Energy Grid System)</td>
+              <td><a href="#section-4" style="color:#0284c7; font-weight:bold;">Figure 6.3</a> (Section 4)</td>
+            </tr>
+            <tr>
+              <td><strong>Edge TinyML MLOps &amp; HSM Safety Standard</strong><br><span style="font-size:0.75rem; color:#64748b;">ISO 26262 ASIL-D / TensorRT INT8</span></td>
+              <td>Hardware-in-the-Loop (HIL) Safety Chamber</td>
+              <td>Rohan Gupta (Orbit Risk Guardian)</td>
+              <td><code>/MLOps/TinyML/INT8-TensorRT-Signed.bin</code><br>(Air-Gapped HSM &amp; MLflow Vault)</td>
+              <td><a href="#section-5" style="color:#0284c7; font-weight:bold;">Figure 6.4</a> (Section 5)</td>
+            </tr>
+            <tr>
+              <td><strong>AIAG Process Flow &amp; Control Plan (PFD/CP)</strong><br><span style="font-size:0.75rem; color:#64748b;">AIAG APQP / IATF 16949 Standards</span></td>
+              <td>Quality Engineering Office &amp; Assembly Line Floor</td>
+              <td>Assembly Plant Quality Director</td>
+              <td><code>/MES/Quality/PFD-CP-OP10-OP60.xlsx</code><br>(Manufacturing Execution System Vault)</td>
+              <td><a href="#section-6" style="color:#0284c7; font-weight:bold;">Figure 6.5</a> (Section 6)</td>
+            </tr>
+            <tr>
+              <td><strong>SCOR Level 3 Service Level Agreement (SLA)</strong><br><span style="font-size:0.75rem; color:#64748b;">ASCM SCOR Model Level 3</span></td>
+              <td>Executive Observation Deck (Accord Signing)</td>
+              <td>Priya Kapoor (Volt-Tech) &amp; Kavita Joshi (Orbit)</td>
+              <td><code>/EAB/Contracts/SCOR-L3-SLA-Binding.pdf</code><br>(Joint Governance Escrow Vault)</td>
+              <td><a href="#section-7" style="color:#0284c7; font-weight:bold;">Figure 6.6</a> (Section 7)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="metadata-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 4px solid #16a34a; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+          <h3 style="color: #15803d; margin-top: 0; font-size: 1.25rem; font-weight: bold;">Executive Architecture Sign-Off Summary</h3>
+          <p style="color: #1e293b; margin-bottom: 0.75rem;">By producing and ratifying these seven core artifacts on the factory floor, the joint Enterprise Architecture Board guarantees:</p>
+          <ul style="color: #1e293b; line-height: 1.7; margin-bottom: 0;">
+            <li><strong style="color: #0f172a;">Physical Feasibility:</strong> 1.8ms on-premise edge GPU inference eliminates cloud round-trip latency spikes, securing 99.98% assembly first-pass yield.</li>
+            <li><strong style="color: #0f172a;">Operational Safety:</strong> Dual-core lockstep microcontrollers ensure deterministic sub-500&mu;s AUTOSAR safety override if edge AI drift occurs.</li>
+            <li><strong style="color: #0f172a;">Lifecycle Protection:</strong> ISO 15118-20 adaptive fast charging eliminates downstream PSoC battery degradation across Orbit's heavy electric fleet.</li>
+            <li><strong style="color: #0f172a;">Fiduciary Return:</strong> A $38.0M combined CapEx deployment recovers $108.36M annually, reaching full capital payback in 4.21 months.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR WRAP-UP -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_thumbsup_green_1787204839525_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Look at the factory floor now: clean, continuous, rhythmic motion. Sparks fly from the welding heads, laser seams are inspected in 1.8 milliseconds, and flawless Smart Battery packs glide silently toward the packaging bays. By bridging the implementation gap and embedding deterministic intelligence directly at the physical edge, Volt-Tech and Orbit-Logistics have solved scalability friction."</p>
+        <p class="narrator-text">"With battery manufacturing stabilized and downstream fleet operations protected, our journey turns back upstream. In <strong>Chapter 7: Optimizing the Engine</strong>, we return to Terra-Resource to see how AI transforms physical mining logistics, autonomous haulage, and energy consumption through <strong>Business Process Re-engineering (Phase B)</strong>. Join us upstream!"</p>
+      </div>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- NAVIGATION FOOTER -->
+    <!-- ========================================================================= -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Chapter</span>
+        <a href="chapter_5.html" class="nav-title">&larr; Chapter 5: The Data Governance Bedrock</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Chapter</span>
+        <a href="chapter_7.html" class="nav-title">Chapter 7: Optimizing the Engine &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

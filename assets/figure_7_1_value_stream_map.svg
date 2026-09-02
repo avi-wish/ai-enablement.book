@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" width="1200" height="780" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad71b" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="shadow71b" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrVsm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="780" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="25" width="1140" height="65" rx="10" fill="url(#headerGrad71b)" filter="url(#shadow71b)"/>
+  <text x="600" y="55" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 7.1B: END-TO-END VALUE STREAM MAP (MINING EXTRACTION TO FACTORY GATE)</text>
+  <text x="600" y="77" fill="#bae6fd" font-size="13" text-anchor="middle">Value Stream Lead Time Analysis &#8226; 7 Wastes (Muda) Eradication &#8226; 4-Day Bottleneck Elimination</text>
+
+  <!-- VSM Stages (6 Horizontal Blocks) -->
+
+  <!-- Stage 1: Autonomous Extraction -->
+  <rect x="40" y="110" width="175" height="420" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow71b)"/>
+  <rect x="50" y="120" width="155" height="24" rx="4" fill="#78350f"/>
+  <text x="127" y="136" fill="#fef3c7" font-size="11" font-weight="bold" text-anchor="middle">1. EXTRACTION</text>
+  <text x="55" y="165" fill="#fbbf24" font-size="12" font-weight="bold">Rotary Drill Site</text>
+  <text x="55" y="185" fill="#cbd5e1" font-size="10">&#8226; Continuous telemetry</text>
+  <text x="55" y="200" fill="#cbd5e1" font-size="10">&#8226; 100% renewable power</text>
+  <rect x="50" y="230" width="155" height="75" rx="4" fill="#0f172a"/>
+  <text x="58" y="250" fill="#94a3b8" font-size="10">Processing (PT): <tspan fill="#4ade80" font-weight="bold">120s</tspan></text>
+  <text x="58" y="268" fill="#94a3b8" font-size="10">Wait Time (WT): <tspan fill="#4ade80" font-weight="bold">0s</tspan></text>
+  <text x="58" y="286" fill="#94a3b8" font-size="10">Value-Add: <tspan fill="#4ade80" font-weight="bold">100%</tspan></text>
+  <rect x="50" y="320" width="155" height="195" rx="4" fill="#0f172a"/>
+  <text x="58" y="340" fill="#fbbf24" font-size="10" font-weight="bold">BPR Impact:</text>
+  <text x="58" y="360" fill="#cbd5e1" font-size="10">&#8226; Zero diesel drilling</text>
+  <text x="58" y="378" fill="#cbd5e1" font-size="10">&#8226; Real-time torque/RPM</text>
+  <text x="58" y="396" fill="#cbd5e1" font-size="10">&#8226; Dynamic bed mapping</text>
+  <text x="58" y="425" fill="#4ade80" font-size="10" font-weight="bold">Energy Saved: 14%</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 215 320 L 230 320" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrVsm)"/>
+
+  <!-- Stage 2: In-Situ Spectroscopy -->
+  <rect x="230" y="110" width="175" height="420" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow71b)"/>
+  <rect x="240" y="120" width="155" height="24" rx="4" fill="#0369a1"/>
+  <text x="317" y="136" fill="#e0f2fe" font-size="11" font-weight="bold" text-anchor="middle">2. ORE GRADING</text>
+  <text x="245" y="165" fill="#38bdf8" font-size="12" font-weight="bold">Coaxial XRF/LIBS</text>
+  <text x="245" y="185" fill="#cbd5e1" font-size="10">&#8226; Edge AI classification</text>
+  <text x="245" y="200" fill="#cbd5e1" font-size="10">&#8226; 99.98% purity check</text>
+  <rect x="240" y="230" width="155" height="75" rx="4" fill="#0f172a"/>
+  <text x="248" y="250" fill="#94a3b8" font-size="10">Processing (PT): <tspan fill="#4ade80" font-weight="bold">90s</tspan></text>
+  <text x="248" y="268" fill="#94a3b8" font-size="10">Wait Time (WT): <tspan fill="#4ade80" font-weight="bold">0s</tspan></text>
+  <text x="248" y="286" fill="#94a3b8" font-size="10">Value-Add: <tspan fill="#4ade80" font-weight="bold">100%</tspan></text>
+  <rect x="240" y="320" width="155" height="195" rx="4" fill="#0f172a"/>
+  <text x="248" y="340" fill="#38bdf8" font-size="10" font-weight="bold">BPR Impact:</text>
+  <text x="248" y="360" fill="#cbd5e1" font-size="10">&#8226; Replaced 4-day lab</text>
+  <text x="248" y="378" fill="#cbd5e1" font-size="10">&#8226; Pit-side batch routing</text>
+  <text x="248" y="396" fill="#cbd5e1" font-size="10">&#8226; Zero assay holding</text>
+  <text x="248" y="425" fill="#4ade80" font-size="10" font-weight="bold">Lead Time: -99.9%</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 405 320 L 420 320" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrVsm)"/>
+
+  <!-- Stage 3: Autonomous Haulage -->
+  <rect x="420" y="110" width="175" height="420" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow71b)"/>
+  <rect x="430" y="120" width="155" height="24" rx="4" fill="#78350f"/>
+  <text x="507" y="136" fill="#fef3c7" font-size="11" font-weight="bold" text-anchor="middle">3. PIT HAULAGE</text>
+  <text x="435" y="165" fill="#fbbf24" font-size="12" font-weight="bold">Grid-Aware Fleet</text>
+  <text x="435" y="185" fill="#cbd5e1" font-size="10">&#8226; AI route optimizer</text>
+  <text x="435" y="200" fill="#cbd5e1" font-size="10">&#8226; Grid TOU price sync</text>
+  <rect x="430" y="230" width="155" height="75" rx="4" fill="#0f172a"/>
+  <text x="438" y="250" fill="#94a3b8" font-size="10">Processing (PT): <tspan fill="#4ade80" font-weight="bold">18 min</tspan></text>
+  <text x="438" y="268" fill="#94a3b8" font-size="10">Wait Time (WT): <tspan fill="#4ade80" font-weight="bold">2 min</tspan></text>
+  <text x="438" y="286" fill="#94a3b8" font-size="10">Value-Add: <tspan fill="#4ade80" font-weight="bold">90%</tspan></text>
+  <rect x="430" y="320" width="155" height="195" rx="4" fill="#0f172a"/>
+  <text x="438" y="340" fill="#fbbf24" font-size="10" font-weight="bold">BPR Impact:</text>
+  <text x="438" y="360" fill="#cbd5e1" font-size="10">&#8226; Zero truck idling</text>
+  <text x="438" y="378" fill="#cbd5e1" font-size="10">&#8226; Peak price avoidance</text>
+  <text x="438" y="396" fill="#cbd5e1" font-size="10">&#8226; Regenerative braking</text>
+  <text x="438" y="425" fill="#4ade80" font-size="10" font-weight="bold">Fuel OpEx: -$6.4M/yr</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 595 320 L 610 320" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrVsm)"/>
+
+  <!-- Stage 4: DPP Hash & Registry -->
+  <rect x="610" y="110" width="175" height="420" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow71b)"/>
+  <rect x="620" y="120" width="155" height="24" rx="4" fill="#0369a1"/>
+  <text x="697" y="136" fill="#e0f2fe" font-size="11" font-weight="bold" text-anchor="middle">4. DPP SEALING</text>
+  <text x="625" y="165" fill="#38bdf8" font-size="12" font-weight="bold">Crypto Registry</text>
+  <text x="625" y="185" fill="#cbd5e1" font-size="10">&#8226; Protobuf contract stream</text>
+  <text x="625" y="200" fill="#cbd5e1" font-size="10">&#8226; Secp384r1 signature</text>
+  <rect x="620" y="230" width="155" height="75" rx="4" fill="#0f172a"/>
+  <text x="628" y="250" fill="#94a3b8" font-size="10">Processing (PT): <tspan fill="#4ade80" font-weight="bold">50ms</tspan></text>
+  <text x="628" y="268" fill="#94a3b8" font-size="10">Wait Time (WT): <tspan fill="#4ade80" font-weight="bold">0s</tspan></text>
+  <text x="628" y="286" fill="#94a3b8" font-size="10">Value-Add: <tspan fill="#4ade80" font-weight="bold">100%</tspan></text>
+  <rect x="620" y="320" width="155" height="195" rx="4" fill="#0f172a"/>
+  <text x="628" y="340" fill="#38bdf8" font-size="10" font-weight="bold">BPR Impact:</text>
+  <text x="628" y="360" fill="#cbd5e1" font-size="10">&#8226; Zero paperwork</text>
+  <text x="628" y="378" fill="#cbd5e1" font-size="10">&#8226; Guaranteed compliance</text>
+  <text x="628" y="396" fill="#cbd5e1" font-size="10">&#8226; Automated audit trail</text>
+  <text x="628" y="425" fill="#4ade80" font-size="10" font-weight="bold">Quality: 100% Verified</text>
+
+  <!-- Arrow 4 -> 5 -->
+  <path d="M 785 320 L 800 320" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrVsm)"/>
+
+  <!-- Stage 5: Dynamic Rail Logistics -->
+  <rect x="800" y="110" width="175" height="420" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow71b)"/>
+  <rect x="810" y="120" width="155" height="24" rx="4" fill="#78350f"/>
+  <text x="887" y="136" fill="#fef3c7" font-size="11" font-weight="bold" text-anchor="middle">5. RAIL LOGISTICS</text>
+  <text x="815" y="165" fill="#fbbf24" font-size="12" font-weight="bold">Synchronized Rail</text>
+  <text x="815" y="185" fill="#cbd5e1" font-size="10">&#8226; 4-hour advance slot</text>
+  <text x="815" y="200" fill="#cbd5e1" font-size="10">&#8226; Zero buffer stockpile</text>
+  <rect x="810" y="230" width="155" height="75" rx="4" fill="#0f172a"/>
+  <text x="818" y="250" fill="#94a3b8" font-size="10">Processing (PT): <tspan fill="#4ade80" font-weight="bold">2.5 hrs</tspan></text>
+  <text x="818" y="268" fill="#94a3b8" font-size="10">Wait Time (WT): <tspan fill="#4ade80" font-weight="bold">15 min</tspan></text>
+  <text x="818" y="286" fill="#94a3b8" font-size="10">Value-Add: <tspan fill="#4ade80" font-weight="bold">92%</tspan></text>
+  <rect x="810" y="320" width="155" height="195" rx="4" fill="#0f172a"/>
+  <text x="818" y="340" fill="#fbbf24" font-size="10" font-weight="bold">BPR Impact:</text>
+  <text x="818" y="360" fill="#cbd5e1" font-size="10">&#8226; Stockpile bleed: $0</text>
+  <text x="818" y="378" fill="#cbd5e1" font-size="10">&#8226; 99.8% on-time delivery</text>
+  <text x="818" y="396" fill="#cbd5e1" font-size="10">&#8226; Direct factory feed</text>
+  <text x="818" y="425" fill="#4ade80" font-size="10" font-weight="bold">Holding Cost: -64%</text>
+
+  <!-- Arrow 5 -> 6 -->
+  <path d="M 975 320 L 990 320" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrVsm)"/>
+
+  <!-- Stage 6: Factory Intake Gate -->
+  <rect x="990" y="110" width="175" height="420" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2" filter="url(#shadow71b)"/>
+  <rect x="1000" y="120" width="155" height="24" rx="4" fill="#065f46"/>
+  <text x="1077" y="136" fill="#d1fae5" font-size="11" font-weight="bold" text-anchor="middle">6. VOLT FACTORY GATE</text>
+  <text x="1005" y="165" fill="#4ade80" font-size="12" font-weight="bold">Direct Cell Feeder</text>
+  <text x="1005" y="185" fill="#cbd5e1" font-size="10">&#8226; 45s assembly takt sync</text>
+  <text x="1005" y="200" fill="#cbd5e1" font-size="10">&#8226; Cryptographic verify</text>
+  <rect x="1000" y="230" width="155" height="75" rx="4" fill="#0f172a"/>
+  <text x="1008" y="250" fill="#94a3b8" font-size="10">Processing (PT): <tspan fill="#4ade80" font-weight="bold">1.2s</tspan></text>
+  <text x="1008" y="268" fill="#94a3b8" font-size="10">Wait Time (WT): <tspan fill="#4ade80" font-weight="bold">0s</tspan></text>
+  <text x="1008" y="286" fill="#94a3b8" font-size="10">Value-Add: <tspan fill="#4ade80" font-weight="bold">100%</tspan></text>
+  <rect x="1000" y="320" width="155" height="195" rx="4" fill="#0f172a"/>
+  <text x="1008" y="340" fill="#4ade80" font-size="10" font-weight="bold">Target Outcome:</text>
+  <text x="1008" y="360" fill="#cbd5e1" font-size="10">&#8226; Zero defect intake</text>
+  <text x="1008" y="378" fill="#cbd5e1" font-size="10">&#8226; 99.98% assembly yield</text>
+  <text x="1008" y="396" fill="#cbd5e1" font-size="10">&#8226; Zero buffer warehouse</text>
+  <text x="1008" y="425" fill="#4ade80" font-size="10" font-weight="bold">JIT Perfection</text>
+
+  <!-- Lead Time Ladder (Bottom) -->
+  <rect x="40" y="550" width="1125" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="575" fill="#38bdf8" font-size="13" font-weight="bold">VALUE STREAM LEAD TIME &amp; PROCESS EFFICIENCY SUMMARY:</text>
+
+  <!-- Timeline Comparison Rows -->
+  <rect x="60" y="595" width="220" height="40" rx="4" fill="#3f1d1d" stroke="#ef4444" stroke-width="1"/>
+  <text x="70" y="615" fill="#f87171" font-size="11" font-weight="bold">Legacy Baseline Lead Time:</text>
+  <text x="70" y="628" fill="#fca5a5" font-size="10">104.2 Hours (4.34 Days) &#8226; Value-Add: 6.2%</text>
+
+  <rect x="300" y="595" width="860" height="40" rx="4" fill="#064e3b" stroke="#22c55e" stroke-width="1"/>
+  <text x="315" y="615" fill="#4ade80" font-size="11" font-weight="bold">Re-engineered Target Lead Time (Phase E Target State):</text>
+  <text x="315" y="628" fill="#dcfce7" font-size="10">3.12 Hours (97.0% Total Lead Time Reduction) &#8226; Process Cycle Efficiency (PCE): 91.4%</text>
+
+  <!-- 7 Wastes (Muda) Metrics Grid -->
+  <rect x="60" y="650" width="1100" height="85" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="75" y="672" fill="#fbbf24" font-size="11" font-weight="bold">SEVEN WASTES (MUDA) ELIMINATED ACROSS EXTRACTION LOGISTICS:</text>
+  <text x="75" y="694" fill="#cbd5e1" font-size="11">1. <tspan fill="#f8fafc" font-weight="bold">Overproduction:</tspan> Stockpiles reduced 64% &#8226; 2. <tspan fill="#f8fafc" font-weight="bold">Waiting:</tspan> Assay 4d &#8594; 90s &#8226; 3. <tspan fill="#f8fafc" font-weight="bold">Transport:</tspan> Dynamic topo routing</text>
+  <text x="75" y="714" fill="#cbd5e1" font-size="11">4. <tspan fill="#f8fafc" font-weight="bold">Overprocessing:</tspan> Auto DPP hash &#8226; 5. <tspan fill="#f8fafc" font-weight="bold">Inventory:</tspan> JIT rail delivery &#8226; 6. <tspan fill="#f8fafc" font-weight="bold">Motion:</tspan> Unmanned haulers &#8226; 7. <tspan fill="#f8fafc" font-weight="bold">Defects:</tspan> 99.98% purity</text>
+</svg>

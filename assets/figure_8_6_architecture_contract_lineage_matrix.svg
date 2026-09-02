@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 890" width="1200" height="890" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad86" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="shadow86" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="890" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="1140" height="65" rx="10" fill="url(#headerGrad86)" filter="url(#shadow86)"/>
+  <text x="600" y="48" fill="#ffffff" font-size="19" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 8.6: TOGAF PHASE F ARCHITECTURE CONTRACTS &amp; PHASE G LINEAGE</text>
+  <text x="600" y="70" fill="#bae6fd" font-size="12.5" text-anchor="middle">Binding Building Blocks (ABBs &amp; SBBs) to Contractual Covenants (AC-101 to AC-106) and Phase G Governance Gates</text>
+
+  <!-- 5 Columns Lineage Matrix -->
+  <!-- Col 1: ABBs (Width: 200, x: 30) -->
+  <!-- Col 2: SBBs & WPs (Width: 200, x: 250) -->
+  <!-- Col 3: Architecture Contracts (Width: 240, x: 470) -->
+  <!-- Col 4: SLA Covenants & Penalties (Width: 220, x: 730) -->
+  <!-- Col 5: Phase G Audit Gates (Width: 200, x: 970) -->
+
+  <!-- Headers -->
+  <rect x="30" y="105" width="200" height="32" rx="5" fill="#1e293b"/>
+  <text x="130" y="126" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">1. ARCH BUILDING BLOCKS</text>
+
+  <rect x="250" y="105" width="200" height="32" rx="5" fill="#1e293b"/>
+  <text x="350" y="126" fill="#34d399" font-size="11" font-weight="bold" text-anchor="middle">2. SOLUTION SBBs &amp; WPs</text>
+
+  <rect x="470" y="105" width="240" height="32" rx="5" fill="#1e293b"/>
+  <text x="590" y="126" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">3. ARCH CONTRACTS (AC)</text>
+
+  <rect x="730" y="105" width="220" height="32" rx="5" fill="#1e293b"/>
+  <text x="840" y="126" fill="#f87171" font-size="11" font-weight="bold" text-anchor="middle">4. SLA &amp; PENALTY COVENANT</text>
+
+  <rect x="970" y="105" width="200" height="32" rx="5" fill="#1e293b"/>
+  <text x="1070" y="126" fill="#a78bfa" font-size="11" font-weight="bold" text-anchor="middle">5. PHASE G AUDIT GATES</text>
+
+  <!-- Contract Row 1: DPP Ingestion -->
+  <rect x="30" y="150" width="200" height="85" rx="5" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+  <text x="40" y="172" fill="#38bdf8" font-size="11" font-weight="bold">ABB-DATA-01</text>
+  <text x="40" y="190" fill="#e2e8f0" font-size="10">Geochemical Ore Ingestion</text>
+  <text x="40" y="206" fill="#94a3b8" font-size="9.5">XRF Spectral Lineage</text>
+
+  <rect x="250" y="150" width="200" height="85" rx="5" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <text x="260" y="172" fill="#34d399" font-size="11" font-weight="bold">WP-101 &amp; WP-102</text>
+  <text x="260" y="190" fill="#e2e8f0" font-size="10">DPP Token Generator</text>
+  <text x="260" y="206" fill="#94a3b8" font-size="9.5">Terra-Resource Owner</text>
+
+  <rect x="470" y="150" width="240" height="85" rx="5" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="480" y="172" fill="#fbbf24" font-size="11" font-weight="bold">CONTRACT AC-101: DPP Stream</text>
+  <text x="480" y="190" fill="#fef3c7" font-size="10">Protobuf v3 over IDMZ mTLS</text>
+  <text x="480" y="206" fill="#d97706" font-size="9.5">Signed by Secp384r1 Keys</text>
+
+  <rect x="730" y="150" width="220" height="85" rx="5" fill="#450a0a" stroke="#dc2626" stroke-width="1"/>
+  <text x="740" y="172" fill="#f87171" font-size="10.5" font-weight="bold">SLA: 100% Purity Attestation</text>
+  <text x="740" y="190" fill="#fca5a5" font-size="9.5">Max latency &#8804; 50ms</text>
+  <text x="740" y="206" fill="#fca5a5" font-size="9.5">Penalty: $5k/unhashed batch</text>
+
+  <rect x="970" y="150" width="200" height="85" rx="5" fill="#2e1065" stroke="#7c3aed" stroke-width="1"/>
+  <text x="980" y="172" fill="#c4b5fd" font-size="11" font-weight="bold">GATE 1 (Month 4)</text>
+  <text x="980" y="190" fill="#ddd6fe" font-size="10">10,000 Batch Hash Audit</text>
+  <text x="980" y="206" fill="#a78bfa" font-size="9.5">Signoff: Aarav Patel</text>
+
+  <!-- Contract Row 2: Factory Edge Vision -->
+  <rect x="30" y="250" width="200" height="85" rx="5" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+  <text x="40" y="272" fill="#38bdf8" font-size="11" font-weight="bold">ABB-APP-04</text>
+  <text x="40" y="290" fill="#e2e8f0" font-size="10">Real-Time Edge Inference</text>
+  <text x="40" y="306" fill="#94a3b8" font-size="9.5">Weld Quality Vision AI</text>
+
+  <rect x="250" y="250" width="200" height="85" rx="5" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <text x="260" y="272" fill="#34d399" font-size="11" font-weight="bold">WP-104 &amp; WP-107</text>
+  <text x="260" y="290" fill="#e2e8f0" font-size="10">Sub-2ms OP-30 Server</text>
+  <text x="260" y="306" fill="#94a3b8" font-size="9.5">Volt-Tech Owner</text>
+
+  <rect x="470" y="250" width="240" height="85" rx="5" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="480" y="272" fill="#fbbf24" font-size="11" font-weight="bold">CONTRACT AC-102: Assembly Takt</text>
+  <text x="480" y="290" fill="#fef3c7" font-size="10">OPC UA PubSub / AUTOSAR</text>
+  <text x="480" y="306" fill="#d97706" font-size="9.5">Hardware Watchdog Binding</text>
+
+  <rect x="730" y="250" width="220" height="85" rx="5" fill="#450a0a" stroke="#dc2626" stroke-width="1"/>
+  <text x="740" y="272" fill="#f87171" font-size="10.5" font-weight="bold">SLA: Inference &#8804; 2.0ms</text>
+  <text x="740" y="290" fill="#fca5a5" font-size="9.5">Defect Escape &#8804; 0.05%</text>
+  <text x="740" y="306" fill="#fca5a5" font-size="9.5">Penalty: Line Halt Escrow</text>
+
+  <rect x="970" y="250" width="200" height="85" rx="5" fill="#2e1065" stroke="#7c3aed" stroke-width="1"/>
+  <text x="980" y="272" fill="#c4b5fd" font-size="11" font-weight="bold">GATE 2 (Month 9)</text>
+  <text x="980" y="290" fill="#ddd6fe" font-size="10">50,000 Module Pack Audit</text>
+  <text x="980" y="306" fill="#a78bfa" font-size="9.5">Signoff: Rajesh Iyer</text>
+
+  <!-- Contract Row 3: Smart Depot Charging -->
+  <rect x="30" y="350" width="200" height="85" rx="5" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+  <text x="40" y="372" fill="#38bdf8" font-size="11" font-weight="bold">ABB-TECH-03</text>
+  <text x="40" y="390" fill="#e2e8f0" font-size="10">Megawatt Charging Node</text>
+  <text x="40" y="406" fill="#94a3b8" font-size="9.5">ISO 15118-20 / OCPP 2.0.1</text>
+
+  <rect x="250" y="350" width="200" height="85" rx="5" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <text x="260" y="372" fill="#34d399" font-size="11" font-weight="bold">WP-105</text>
+  <text x="260" y="390" fill="#e2e8f0" font-size="10">450kW Dynamic Dispensers</text>
+  <text x="260" y="406" fill="#94a3b8" font-size="9.5">Volt-Tech / Orbit Joint</text>
+
+  <rect x="470" y="350" width="240" height="85" rx="5" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="480" y="372" fill="#fbbf24" font-size="11" font-weight="bold">CONTRACT AC-103: Depot MCS</text>
+  <text x="480" y="390" fill="#fef3c7" font-size="10">Peak-Shaving Grid Arbitrage</text>
+  <text x="480" y="406" fill="#d97706" font-size="9.5">EIS Impedance Handshake</text>
+
+  <rect x="730" y="350" width="220" height="85" rx="5" fill="#450a0a" stroke="#dc2626" stroke-width="1"/>
+  <text x="740" y="372" fill="#f87171" font-size="10.5" font-weight="bold">SLA: 22-min Turnaround</text>
+  <text x="740" y="390" fill="#fca5a5" font-size="9.5">Zero PSoC Degradation</text>
+  <text x="740" y="406" fill="#fca5a5" font-size="9.5">Penalty: Grid Overrun Share</text>
+
+  <rect x="970" y="350" width="200" height="85" rx="5" fill="#2e1065" stroke="#7c3aed" stroke-width="1"/>
+  <text x="980" y="372" fill="#c4b5fd" font-size="11" font-weight="bold">GATE 2 (Month 9)</text>
+  <text x="980" y="390" fill="#ddd6fe" font-size="10">Grid Shaving Verification</text>
+  <text x="980" y="406" fill="#a78bfa" font-size="9.5">Signoff: Anjali Mehra</text>
+
+  <!-- Contract Row 4: Closed-Loop SCOR Telemetry -->
+  <rect x="30" y="450" width="200" height="85" rx="5" fill="#082f49" stroke="#0284c7" stroke-width="1"/>
+  <text x="40" y="472" fill="#38bdf8" font-size="11" font-weight="bold">ABB-BIZ-06</text>
+  <text x="40" y="490" fill="#e2e8f0" font-size="10">Tri-Party SCOR Bridge</text>
+  <text x="40" y="506" fill="#94a3b8" font-size="9.5">Mine-to-Fleet Feedback</text>
+
+  <rect x="250" y="450" width="200" height="85" rx="5" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <text x="260" y="472" fill="#34d399" font-size="11" font-weight="bold">WP-108 &amp; WP-110</text>
+  <text x="260" y="490" fill="#e2e8f0" font-size="10">Fleet Telemetry Mesh</text>
+  <text x="260" y="506" fill="#94a3b8" font-size="9.5">Tripartite Consortium</text>
+
+  <rect x="470" y="450" width="240" height="85" rx="5" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+  <text x="480" y="472" fill="#fbbf24" font-size="11" font-weight="bold">CONTRACT AC-106: Closed-Loop</text>
+  <text x="480" y="490" fill="#fef3c7" font-size="10">MQTT Sparkplug B Canonical</text>
+  <text x="480" y="506" fill="#d97706" font-size="9.5">Direct Electrolyte Calibration</text>
+
+  <rect x="730" y="450" width="220" height="85" rx="5" fill="#450a0a" stroke="#dc2626" stroke-width="1"/>
+  <text x="740" y="472" fill="#f87171" font-size="10.5" font-weight="bold">SLA: SCOR RL.1.1 &#8805; 99.85%</text>
+  <text x="740" y="490" fill="#fca5a5" font-size="9.5">Fleet Uptime &#8805; 98.9%</text>
+  <text x="740" y="506" fill="#fca5a5" font-size="9.5">Penalty: Downtime Fee Share</text>
+
+  <rect x="970" y="450" width="200" height="85" rx="5" fill="#2e1065" stroke="#7c3aed" stroke-width="1"/>
+  <text x="980" y="472" fill="#c4b5fd" font-size="11" font-weight="bold">GATE 3 (Month 14)</text>
+  <text x="980" y="490" fill="#ddd6fe" font-size="10">Target State Commissioning</text>
+  <text x="980" y="506" fill="#a78bfa" font-size="9.5">Signoff: Joint Board of Directors</text>
+
+  <!-- Flow Connector Lines -->
+  <line x1="230" y1="192" x2="250" y2="192" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="450" y1="192" x2="470" y2="192" stroke="#34d399" stroke-width="2"/>
+  <line x1="710" y1="192" x2="730" y2="192" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="950" y1="192" x2="970" y2="192" stroke="#f87171" stroke-width="2"/>
+
+  <line x1="230" y1="292" x2="250" y2="292" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="450" y1="292" x2="470" y2="292" stroke="#34d399" stroke-width="2"/>
+  <line x1="710" y1="292" x2="730" y2="292" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="950" y1="292" x2="970" y2="292" stroke="#f87171" stroke-width="2"/>
+
+  <line x1="230" y1="392" x2="250" y2="392" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="450" y1="392" x2="470" y2="392" stroke="#34d399" stroke-width="2"/>
+  <line x1="710" y1="392" x2="730" y2="392" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="950" y1="392" x2="970" y2="392" stroke="#f87171" stroke-width="2"/>
+
+  <line x1="230" y1="492" x2="250" y2="492" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="450" y1="492" x2="470" y2="492" stroke="#34d399" stroke-width="2"/>
+  <line x1="710" y1="492" x2="730" y2="492" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="950" y1="492" x2="970" y2="492" stroke="#f87171" stroke-width="2"/>
+
+  <!-- ========================================================================= -->
+  <!-- PHASE G HANDOVER ACCORD SUMMARY CARD (CLEANLY WRAPPED MULTI-LINE TEXT) -->
+  <!-- ========================================================================= -->
+  <rect x="30" y="560" width="1140" height="305" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" filter="url(#shadow86)"/>
+  <text x="50" y="588" fill="#ffffff" font-size="13" font-weight="bold">PHASE G IMPLEMENTATION GOVERNANCE HANDOVER ACCORD (PART II RATIFICATION):</text>
+  
+  <rect x="50" y="602" width="1100" height="210" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+
+  <!-- Item 1 -->
+  <text x="70" y="626" fill="#38bdf8" font-size="11.5" font-weight="bold">1. Contractual Enforceability:</text>
+  <text x="70" y="643" fill="#cbd5e1" font-size="10.5">All six Architecture Contracts (AC-101 through AC-106) carry legally binding covenants ratified by corporate counsels and risk guardians.</text>
+  <text x="70" y="658" fill="#94a3b8" font-size="10">Deviations trigger automatic financial penalty charges and escrow drawdown freezes.</text>
+
+  <!-- Item 2 -->
+  <text x="70" y="682" fill="#34d399" font-size="11.5" font-weight="bold">2. Upstream Architecture Closure:</text>
+  <text x="70" y="699" fill="#cbd5e1" font-size="10.5">With Phase F Migration Planning complete, Part II of the Architecture Development Method (ADM) is officially closed.</text>
+  <text x="70" y="714" fill="#94a3b8" font-size="10">The entire upstream ecosystem—from lithium extraction to automated battery lines to highway transport—is codified.</text>
+
+  <!-- Item 3 -->
+  <text x="70" y="738" fill="#fbbf24" font-size="11.5" font-weight="bold">3. Handover to Phase G &amp; Regulatory Compliance (Part III):</text>
+  <text x="70" y="755" fill="#cbd5e1" font-size="10.5">In Chapter 9 (Part III), execution shifts to Phase G (Implementation Governance) and regulatory alignment with the EU AI Act,</text>
+  <text x="70" y="770" fill="#94a3b8" font-size="10">where Risk Guardians Aarav Patel, Sanjay Reddy, and Rohan Gupta must enforce compliance shields.</text>
+
+  <!-- Certification Seal Bar -->
+  <rect x="50" y="822" width="1100" height="32" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="600" y="842" fill="#4ade80" font-size="11.5" font-weight="bold" text-anchor="middle">EAB CERTIFICATION SEAL: 100% Traceability across 12 Work Packages &#8226; Joint $18.0M Escrow Locked &#8226; Zero Float on Critical Path</text>
+</svg>

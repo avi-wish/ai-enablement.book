@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 5: The Data Governance Bedrock (The Fiduciary Crisis) - The Reality of Enterprise AI</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chapter_5_charts.js" defer></script>
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part II:</span> Chapter 5 &mdash; The Data Governance Bedrock</div>
+      <nav><a href="index.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>The Data Governance Bedrock</h1>
+      <p class="subtitle">
+        Domain Discovery, Message Flow &amp; Strategic Context Mapping (TOGAF&reg; ADM Phase C &amp; DDD Strategic Design)
+      </p>
+
+      <!-- Metadata Card -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Terra-Resource (Mining &amp; Extraction Command Center) &mdash; Global Operations Hub &amp; Underground Telemetry Lab</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase C: Information Systems Architecture (Data Architecture &amp; Governance) with Domain-Driven Design Strategic Decomposition</div>
+          
+          <div class="metadata-label">Core Conflict:</div>
+          <div class="metadata-value">Volt-Tech demands clean data passports for raw minerals, but Terra-Resource's decades-old legacy data is siloed, dirty, and a massive regulatory liability. The enterprise architecture team must apply Event Storming, Domain Message Flow Modeling, and Context Mapping to decompose the extraction domain and build the Data Bedrock for the Smart Mobility Ecosystem.</div>
+        </div>
+      </div>
+
+      <!-- Narrator Introduction -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"We arrive at the top of the supply chain: Terra-Resource. Look at the mining pits below. Decades of heavy machinery have generated petabytes of fragmented, dirty data. In Chapter 4, Volt-Tech's Phase B Business Architecture established a horizontal partner scaling strategy and a Smart Battery blueprint with edge TinyML intelligence. But as Rajesh Iyer emphasized: predictive edge models cannot guarantee zero defects if the raw lithium, nickel, and cobalt from these mines contains untracked chemical impurities and unverified provenance."</p>
+        <p class="narrator-text">"Now, Aarav Patel (Risk Guardian) and Neha Desai (Fiscal Architect) face a crisis session: Volt-Tech will reject their shipments unless every batch of lithium comes with a cryptographically verified 'Data Passport.' But before they can build Data Architecture, they must first <strong>discover</strong> their domain. Let us watch them apply Domain-Driven Design strategic techniques to build the Data Bedrock."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC SCENE: THE BOARDROOM CRISIS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Storyline: Crisis at the Extraction Command Center</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Terra-Resource Command Center"></div>
+        <figure>
+          <img src="assets/Chapter5Images/panel_1.jpg" alt="Figure 5.A: Terra-Resource Extraction Command Center Crisis">
+          <figcaption><strong>Figure 5.A:</strong> Terra-Resource Extraction Command Center &mdash; Aarav Patel exposes thirty years of corrupted mineral purity data while Neha Desai reviews the Volt-Tech ultimatum and Vikram Sharma monitors live extraction sensor feeds.</figcaption>
+        </figure>
+        <div class="caption-block">Terra-Resource Global Operations Hub. Extraction Command Center. 08:00 Hours. Thirty years of dirty data have created an existential crisis.</div>
+        
+                          <div class="dialogue-bubble dialogue-aarav">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "Our historical data is an environmental and legal minefield. If our ESG models report flawed purity metrics to regulators, the fines will wipe out our operating margins. We cannot feed uncurated data into Volt-Tech's digital passports. And Volt-Tech's new Smart Battery specification requires cryptographically signed provenance records for every mineral batch &mdash; lithium, nickel, and cobalt &mdash; traced from extraction drill to pack assembly."
+          </div>
+        </div>
+      </div>
+        
+                          <div class="dialogue-bubble dialogue-neha dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Neha Desai.jpg" alt="Neha Desai" class="speech-avatar-img">
+          <div class="speech-avatar-name">Neha Desai</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "Then we treat Data Governance as a core fiduciary asset. I am authorizing $25 million to build an immutable data catalog and automated data pipeline architecture. Clean data is no longer an IT overhead &mdash; it is our primary product differentiator. But $25 million requires a rigorous architecture plan. We cannot spray money at dashboards and hope for the best."
+          </div>
+        </div>
+      </div>
+        
+                          <div class="dialogue-bubble dialogue-vikram">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist</span>
+          </div>
+          <div class="speech-content">
+            "We'll deploy edge sensors directly onto the extraction drills to capture purity metrics at source, streaming real-time verified data to the unified catalog. But our domain is enormous &mdash; geochemistry, logistics, regulatory compliance, environmental monitoring, partner integration. We need a structured decomposition method to identify what systems own what data, how information flows between them, and where the integration boundaries lie."
+          </div>
+        </div>
+      </div>
+        
+                          <div class="dialogue-bubble dialogue-neha dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Neha Desai.jpg" alt="Neha Desai" class="speech-avatar-img">
+          <div class="speech-avatar-name">Neha Desai</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Which brings us to the architecture methodology question. Every enterprise book talks about 'data governance' in the abstract. I want to see the <strong>concrete domain model</strong>. Show me the boundaries. Show me the messages. Show me who owns what."
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- Narrator: Introducing DDD Strategic Design -->
+      <div class="narrator-block">
+        <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+        <p class="narrator-text">"<strong>Enterprise Architecture Mentor Insight: Why Domain-Driven Design?</strong> Neha's demand cuts to the heart of a critical gap in traditional enterprise architecture. TOGAF ADM Phase C prescribes building Data Architecture and Application Architecture, but it does not prescribe <em>how</em> to discover the domain boundaries that organize that architecture. This is where <strong>Domain-Driven Design (DDD)</strong> &mdash; the strategic design methodology pioneered by Eric Evans &mdash; becomes indispensable."</p>
+        <p class="narrator-text">"DDD provides three powerful techniques that we will apply in sequence: <strong>Event Storming</strong> (discovery), <strong>Domain Message Flow Modeling</strong> (communication design), and <strong>Context Mapping</strong> (strategic integration). Together, they form a rigorous pipeline from domain discovery to architectural blueprint. Let us watch Terra-Resource's team apply each one."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: THE DDD STRATEGIC DESIGN PIPELINE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. The DDD Strategic Design Pipeline: From Discovery to Architecture</h2>
+        <p>Before diving into the techniques, it is essential to understand how they connect. Domain-Driven Design's strategic tools form a <strong>discovery-to-design pipeline</strong> that progressively transforms raw domain knowledge into deployable architecture. Each stage builds upon the outputs of the previous one, creating a traceable chain from business reality to system boundaries.</p>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_5_1_ddd_pipeline.svg" alt="Figure 5.1: The DDD Strategic Design Pipeline" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.1:</strong> The DDD Strategic Design Pipeline &mdash; From Domain Discovery (Event Storming) to Deployable Architecture (Context Mapping).</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: EVENT STORMING - DOMAIN DISCOVERY -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Event Storming: Discovering the Terra-Resource Domain</h2>
+        <p>Event Storming, created by <strong>Alberto Brandolini</strong>, is a collaborative workshop technique where domain experts, architects, and engineers explore the entire business domain using colored sticky notes on a long timeline wall. Unlike traditional requirements gathering, Event Storming forces cross-functional discovery by starting with <strong>what happens</strong> (domain events) rather than <em>what the system should do</em> (requirements).</p>
+
+        <h3>2.1 The Workshop: Three Progressive Levels</h3>
+        <p>Brandolini defines three levels of Event Storming, each progressively more detailed. Terra-Resource's architecture team will execute all three to build a complete domain model.</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Focus</th>
+              <th>Participants</th>
+              <th>Key Artifacts Produced</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Big Picture</strong></td>
+              <td>Entire domain landscape</td>
+              <td>All stakeholders, domain experts, executives</td>
+              <td>Domain events timeline, pivotal events, hotspots, swimlanes</td>
+              <td>&ge;60 min</td>
+            </tr>
+            <tr>
+              <td><strong>Process Level</strong></td>
+              <td>Specific business workflows</td>
+              <td>Domain experts, architects, product owners</td>
+              <td>Commands, events, policies, actors, external systems, bounded context boundaries</td>
+              <td>&ge;90 min</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>Design Level</strong></td>
+              <td>Tactical design within bounded contexts</td>
+              <td>Domain experts, architects, developers</td>
+              <td>Aggregates, event schemas, read models, command validation rules, integration contracts</td>
+              <td>&ge;120 min</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architecture Mentor Insight: Design-Level Event Storming.</strong> For Terra-Resource, we need all three levels. The Big Picture reveals the thirty-year timeline of extraction operations. The Process Level maps the mineral-to-passport workflow. But only <strong>Design-Level Event Storming</strong> gives us the aggregates, read models, and integration contracts required to build TOGAF Phase C data schemas. This is where Brandolini's 'Picture That Explains Everything' emerges."</p>
+        </div>
+
+        <!-- Panel 2: Event Storming War Room -->
+        <div id="panel-2" class="panel-marker" data-scene="Terra-Resource Event Storming Workshop"></div>
+        <figure>
+          <img src="assets/Chapter5Images/panel_2.jpg" alt="Figure 5.B: Event Storming Workshop in Action">
+          <figcaption><strong>Figure 5.B:</strong> Event Storming Workshop in Action &mdash; The full cross-functional team discovers the mineral-to-passport domain through colored sticky notes on a massive timeline wall. Aarav Patel slaps a red hotspot marker over thirty years of unstructured data.</figcaption>
+        </figure>
+        <div class="caption-block">Terra-Resource Architecture Workshop Room. Day 1. 10:00 Hours. Drill operators, geochemists, compliance officers, and architects crowd a wall-to-wall sticky note timeline.</div>
+
+                          <div class="dialogue-bubble dialogue-vikram">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist</span>
+          </div>
+          <div class="speech-content">
+            "Let's start with what <em>actually happens</em> underground. Dr. Kavitha, walk us through a typical extraction sequence. Every time something significant occurs, we write it on an orange sticky &mdash; past tense &mdash; and place it on the timeline. <code>MineralBatchExtracted</code>. <code>DrillPressureRecorded</code>. <code>SensorCalibrationCompleted</code>. We are not designing a system yet &mdash; we are discovering the domain."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "<strong>Stop.</strong> Everyone look at this section of the timeline. Between 1994 and 2018, we have <em>four different data formats</em> for the same purity readings: handwritten paper logs, scanned PDFs, inconsistent CSV exports, and three separate database schemas that contradict each other. This is our data minefield. Thirty years of legacy chaos. I am marking this entire zone as a <strong>red hotspot</strong>."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-neha">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Neha Desai.jpg" alt="Neha Desai" class="speech-avatar-img">
+          <div class="speech-avatar-name">Neha Desai</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "I can already see four distinct territories forming on this wall. Look: extraction operations cluster together, geochemical analysis forms its own island, ESG compliance is completely separate, and the digital passport workflow stands alone at the end. Four bounded contexts. Four budget lines. Each one needs its own funded data steward and its own architecture work package."
+          </div>
+        </div>
+      </div>
+
+        <h3>2.2 Event Storming Notation: The Sticky Note Color Code</h3>
+        <p>Every element in Event Storming is represented by a specific color of sticky note. This visual language ensures instant recognition across workshop participants:</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Artifact</th>
+              <th>Color</th>
+              <th>Description</th>
+              <th>Terra-Resource Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Domain Events</strong></td>
+              <td>🟠 Orange</td>
+              <td>Facts about things that happened in the domain. Written in <strong>past tense</strong>.</td>
+              <td><code>MineralBatchExtracted</code>, <code>PurityAnalysisCompleted</code></td>
+            </tr>
+            <tr>
+              <td><strong>Commands</strong></td>
+              <td>🔵 Blue</td>
+              <td>Intentful actions that trigger events. Written in <strong>imperative mood</strong>.</td>
+              <td><code>ExtractMineralBatch</code>, <code>AnalyzePurity</code></td>
+            </tr>
+            <tr>
+              <td><strong>Aggregates</strong></td>
+              <td>🟡 Yellow (large)</td>
+              <td>Consistency boundaries that accept commands and produce events.</td>
+              <td><code>MineralBatch</code>, <code>ExtractionDrill</code></td>
+            </tr>
+            <tr>
+              <td><strong>Policies</strong></td>
+              <td>🟣 Lilac/Purple</td>
+              <td>Reactive rules: "When [event] then [command]" automation.</td>
+              <td>"When PurityBelowThreshold, then QuarantineBatch"</td>
+            </tr>
+            <tr>
+              <td><strong>Read Models</strong></td>
+              <td>🟢 Green</td>
+              <td>Views/projections that support decision-making.</td>
+              <td><code>Extraction Yield Dashboard</code>, <code>ESG Compliance Report</code></td>
+            </tr>
+            <tr>
+              <td><strong>External Systems</strong></td>
+              <td>🩷 Pink</td>
+              <td>Systems outside the domain boundary.</td>
+              <td><code>Volt-Tech DPP Registry</code>, <code>Government ESG Portal</code></td>
+            </tr>
+            <tr>
+              <td><strong>Actors</strong></td>
+              <td>👤 Small Yellow</td>
+              <td>Users or roles that issue commands.</td>
+              <td>Drill Operator, Geochemist, Compliance Officer</td>
+            </tr>
+            <tr>
+              <td><strong>Hotspots</strong></td>
+              <td>🔴 Red (rotated)</td>
+              <td>Areas of confusion, conflict, or risk needing further investigation.</td>
+              <td>"30 years of unstructured purity logs?"</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>2.3 Terra-Resource Event Storming Output: The Mineral-to-Passport Timeline</h3>
+        <p>After two days of intensive workshops with drill operators, geochemists, logistics coordinators, compliance officers, and the enterprise architecture team, Terra-Resource produced the following Event Storming timeline for the end-to-end mineral extraction and digital passport creation process:</p>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_5_2_event_storming_output.svg" alt="Figure 5.2: Terra-Resource Event Storming Output" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.2:</strong> Terra-Resource Event Storming Output &mdash; The Mineral-to-Passport Timeline showing events, commands, aggregates, policies, and the legacy assay hotspot.</figcaption>
+        </figure>
+
+        <h3>2.4 Aggregate Design: Consistency Boundaries</h3>
+        <p>From the Event Storming output, the architecture team identifies the core <strong>Aggregates</strong> &mdash; the consistency boundaries that enforce business invariants within each bounded context:</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Bounded Context</th>
+              <th>Aggregate Root</th>
+              <th>Key Entities</th>
+              <th>Key Value Objects</th>
+              <th>Invariants Enforced</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2"><strong>Extraction Operations</strong></td>
+              <td><code>MineralBatch</code></td>
+              <td>BatchSegment, DrillHole</td>
+              <td>GeoCoordinate, Depth, Weight</td>
+              <td>Batch must have valid GPS &amp; timestamp; weight &gt; 0</td>
+            </tr>
+            <tr>
+              <td><code>ExtractionDrill</code></td>
+              <td>SensorArray, MaintenanceLog</td>
+              <td>DrillPressure, RPM, Temperature</td>
+              <td>Sensor calibration must be current; drill pressure within safety limits</td>
+            </tr>
+            <tr>
+              <td><strong>Geochemical Analysis</strong></td>
+              <td><code>PurityRecord</code></td>
+              <td>LabSample, ContaminantReport</td>
+              <td>PurityPercentage, ElementComposition</td>
+              <td>Lithium purity &ge; 99.5% for battery-grade; contaminants &lt; 50ppm</td>
+            </tr>
+            <tr>
+              <td><strong>ESG &amp; Compliance</strong></td>
+              <td><code>ComplianceFiling</code></td>
+              <td>AuditTrail, RegulatorySubmission</td>
+              <td>ESGScore, EmissionLevel, FilingDate</td>
+              <td>Filing must be immutable after submission; all fields validated</td>
+            </tr>
+            <tr>
+              <td><strong>Digital Passport</strong></td>
+              <td><code>DigitalProductPassport</code></td>
+              <td>ProvenanceChain, CryptoSignature</td>
+              <td>BatchHash, IssuerCertificate</td>
+              <td>DPP must be cryptographically signed; chain must be complete from drill to shipment</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 2.5 STANDARD TOGAF CRUD MATRIX (TOGAF RULE DAT-02) -->
+        <h3>2.5 TOGAF&reg; Data Entity to Business Function CRUD Matrix</h3>
+        <p>In accordance with TOGAF&reg; Phase C standards (Rule DAT-02), every core data entity must have unambiguous lifecycle ownership across enterprise functions, verifying that each entity has at least one authoritative Create (C) and Read (R) operation:</p>
+
+        <div class="card" style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 0.5rem 0.75rem; font-size: 0.84rem; color: #166534; margin-bottom: 1rem;">
+          <strong>Auditor Traceability Note:</strong> This TOGAF CRUD Matrix is derived directly from the DDD Aggregate &amp; Context boundaries established during Event Storming.
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Data Entity / Aggregate</th>
+              <th>Mineral Extraction</th>
+              <th>Geochemical Assay</th>
+              <th>ESG Compliance</th>
+              <th>DPP Issuance Engine</th>
+              <th>Volt-Tech Cell Intake</th>
+              <th>Regulatory Audit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code>MineralBatch</code></strong></td>
+              <td><span style="color:#16a34a; font-weight:800;">C, R, U</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R, U</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>ExtractionDrill</code></strong></td>
+              <td><span style="color:#16a34a; font-weight:800;">C, R, U</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong><code>PurityRecord</code></strong></td>
+              <td>—</td>
+              <td><span style="color:#16a34a; font-weight:800;">C, R, U</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>ComplianceFiling</code></strong></td>
+              <td>—</td>
+              <td>—</td>
+              <td><span style="color:#16a34a; font-weight:800;">C, R, U</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td>—</td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>DigitalProductPassport</code></strong></td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td><span style="color:#16a34a; font-weight:800;">C, R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>LegacyAssayRecord</code></strong></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R, U (ACL)</span></td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td><span style="color:#2563eb; font-weight:700;">R</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 2.6 SYSTEM OF RECORD (SOR) DESIGNATION TABLE (TOGAF RULE DAT-01) -->
+        <h3>2.6 Data Entity System of Record (SoR) Designation Table</h3>
+        <p>In accordance with TOGAF&reg; Rule DAT-01, every enterprise data entity must have exactly one authoritative <strong>System of Record (SoR)</strong> with strictly bounded downstream systems of engagement:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Core Data Entity</th>
+              <th>Designated System of Record (SoR)</th>
+              <th>Context Custodian</th>
+              <th>Downstream Systems of Engagement (SoE)</th>
+              <th>Manual Override Permitted?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><code>MineralBatch</code></strong></td>
+              <td>Edge HSM-signed telemetry lakehouse (Extraction Context)</td>
+              <td>Terra-Resource Field Engineering</td>
+              <td>Volt-Tech Intake API, EU Regulatory Portal</td>
+              <td><span style="color:#991b1b; font-weight:700;">No &mdash; Immutable at Source</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>PurityRecord</code></strong></td>
+              <td>Automated LIBS Assay Pipeline (Geochem Context)</td>
+              <td>Terra-Resource Laboratory Team</td>
+              <td>Volt-Tech PPAP, DPP Minting Service</td>
+              <td><span style="color:#991b1b; font-weight:700;">No &mdash; ACL Quarantine Only</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>DigitalProductPassport</code></strong></td>
+              <td>DPP Trust Engine (HSM-signed Protobuf)</td>
+              <td>Joint Standards Council / EAB</td>
+              <td>Volt-Tech, Orbit-Logistics, EU Regulators</td>
+              <td><span style="color:#991b1b; font-weight:700;">No &mdash; Cryptographically Sealed</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>ComplianceFiling</code></strong></td>
+              <td>ESG Append-Only Regulatory Ledger</td>
+              <td>Terra-Resource ESG Governance Lead</td>
+              <td>Government Environmental Portal</td>
+              <td><span style="color:#991b1b; font-weight:700;">No &mdash; Append-Only Audit</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>BatteryPackRecord</code></strong></td>
+              <td>Volt-Tech Pack Assembly MES System</td>
+              <td>Volt-Tech Manufacturing EARB</td>
+              <td>Orbit-Logistics Fleet Registry, EAB Vault</td>
+              <td><span style="color:#991b1b; font-weight:700;">No &mdash; DPP Trace Appended</span></td>
+            </tr>
+            <tr>
+              <td><strong><code>FleetTelemetryEvent</code></strong></td>
+              <td>Orbit-Logistics Sovereign Telemetry Lakehouse</td>
+              <td>Orbit-Logistics Architecture EARB</td>
+              <td>EAB Joint Governance Dashboard</td>
+              <td><span style="color:#991b1b; font-weight:700;">No &mdash; Raw Events Immutable</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 2.7 DATA SECURITY CLASSIFICATION REGISTER (TOGAF RULE DAT-03) -->
+        <h3>2.7 Data Security &amp; Regulatory Classification Register</h3>
+        <p>In accordance with TOGAF&reg; Rule DAT-03, all data assets across the extraction and passport pipeline are assigned formal security tiers with explicit encryption, retention, and access policies:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Data Asset / Stream</th>
+              <th>Classification Tier</th>
+              <th>Regulatory Governance</th>
+              <th>In-Transit Encryption</th>
+              <th>At-Rest Encryption</th>
+              <th>Retention SLA</th>
+              <th>Access Authorization</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mineral Batch Telemetry</strong></td>
+              <td><span class="badge" style="background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700;">Confidential (Tier 3)</span></td>
+              <td>EU Battery Reg. 2023/1542</td>
+              <td>TLS 1.3 + HSM Signatures</td>
+              <td>AES-256 (Cloud Lakehouse)</td>
+              <td>10 Years</td>
+              <td>Field Engineers; EAB Read-Only</td>
+            </tr>
+            <tr>
+              <td><strong>Purity Chemical Assay</strong></td>
+              <td><span class="badge" style="background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700;">Confidential (Tier 3)</span></td>
+              <td>EU REACH; Vendor IP</td>
+              <td>TLS 1.3 (mTLS)</td>
+              <td>AES-256 (Lab Store)</td>
+              <td>10 Years</td>
+              <td>Lab Scientists; Volt-Tech (via OHS)</td>
+            </tr>
+            <tr>
+              <td><strong>ESG Environmental Filings</strong></td>
+              <td><span class="badge" style="background:#dbeafe; color:#1e40af; padding:2px 6px; border-radius:4px; font-weight:700;">Internal (Tier 2)</span></td>
+              <td>EU CSRD Reporting</td>
+              <td>TLS 1.3</td>
+              <td>AES-256</td>
+              <td>7 Years</td>
+              <td>ESG Compliance; Regulators (API)</td>
+            </tr>
+            <tr>
+              <td><strong>Digital Product Passport (Minted)</strong></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700;">Public (Tier 1)</span></td>
+              <td>EU Battery Directive / AI Act</td>
+              <td>TLS 1.3 + SHA-256 Proof</td>
+              <td>AES-256 + Blockchain Anchor</td>
+              <td>Battery Lifetime + 5 Yrs</td>
+              <td>Public OHS API; Ecosystem Partners</td>
+            </tr>
+            <tr>
+              <td><strong>GPS Drill Operation Coordinates</strong></td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700;">Restricted (Tier 4)</span></td>
+              <td>Trade Secret / Mineral Rights</td>
+              <td>TLS 1.3 + HSM Isolation</td>
+              <td>AES-256 (Dedicated HSM Store)</td>
+              <td>5 Years</td>
+              <td>Senior Terra-Resource Execs Only</td>
+            </tr>
+            <tr>
+              <td><strong>Historical Legacy Assay (Pre-ACL)</strong></td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700;">Restricted (Tier 4)</span></td>
+              <td>Litigation Hold / Audit</td>
+              <td>TLS 1.3</td>
+              <td>AES-256 (Quarantine Bucket)</td>
+              <td>30 Years</td>
+              <td>Legal Counsel; EAB Audit Committee</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Panel 3: The Legacy Data Horror -->
+      <div id="panel-3" class="panel-marker" data-scene="Terra-Resource Underground Telemetry Lab - Legacy Data Discovery"></div>
+      <figure>
+        <img src="assets/Chapter5Images/panel_3.jpg" alt="Figure 5.C: The Legacy Data Horror">
+        <figcaption><strong>Figure 5.C:</strong> The Legacy Data Horror &mdash; Vikram Sharma uncovers corrupted 1997 assay records with impossible timestamps and contradictory purity readings. Neha Desai confronts the full scope of thirty years of data rot spreading through their systems.</figcaption>
+      </figure>
+      <div class="caption-block">Underground Telemetry Lab. Day 2 of Event Storming. 14:30 Hours. The team investigates the red hotspot zone &mdash; and discovers something far worse than expected.</div>
+
+                        <div class="dialogue-bubble dialogue-vikram dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist</span>
+          </div>
+          <div class="speech-content">
+            "I pulled up the actual records for the legacy hotspot zone. Look at this terminal. Batch TR-1997-4401: the lithium purity field reads '99.8%' in the Johannesburg database but 'N/A' in the Cape Town mirror. The extraction timestamp says <em>January 32nd, 1997</em>. And there are fourteen thousand duplicate entries across three incompatible schemas. This is what we have been feeding downstream for three decades."
+          </div>
+        </div>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-aarav">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "If even <em>one</em> of these ghost records leaks into a Digital Product Passport, Volt-Tech will reject the entire shipment and trigger the contract termination clause. Every corrupted purity reading is a potential regulatory violation. Every duplicate batch is a phantom liability on our ESG filings. This legacy data is not just dirty &mdash; it is a ticking fiduciary bomb."
+          </div>
+        </div>
+      </div>
+
+      <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+        <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Legacy Mining Data Rot Audit (30-Year Forensic Analysis)</div>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Defect Breakdown Across 14,000 Historical Assay Records (Hotspot Zone TR-1997)</div>
+          <div style="position: relative; height: 340px; width: 100%;">
+            <canvas id="legacyDataRotChart"></canvas>
+          </div>
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.3B:</strong> Legacy Data Rot Audit &mdash; Distribution of corrupted records across incompatible schemas, contradictory purity assays, duplicate batch IDs, and clean records.</figcaption>
+      </figure>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: DOMAIN MESSAGE FLOW MODELING -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. Domain Message Flow Modeling: Designing Inter-Context Communication</h2>
+        <p>With bounded context boundaries identified through Event Storming, the next critical question is: <strong>How do these contexts communicate?</strong> Domain Message Flow Modeling &mdash; a technique popularized by <strong>Nick Tune</strong> and the <strong>DDD Crew</strong> &mdash; answers this by tracing the flow of commands, events, and queries across context boundaries for specific business scenarios.</p>
+
+        <h3>3.1 Why Message Flow Modeling Matters</h3>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>What Message Flow Reveals</h4>
+            <ul>
+              <li><strong>Integration Dependencies:</strong> Which contexts depend on which, and in what direction?</li>
+              <li><strong>Sync vs. Async Design:</strong> Should communication be synchronous (commands/queries) or asynchronous (events)?</li>
+              <li><strong>Boundary Validation:</strong> If message flows are overly complex or circular, the boundaries may need adjustment.</li>
+              <li><strong>Contract Design:</strong> What data must cross each boundary, informing Protobuf/JSON schema contracts.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Message Types</h4>
+            <ul>
+              <li><strong>🔵 Commands:</strong> Directed at a specific context. Imperative mood. (<code>AnalyzePurity</code>)</li>
+              <li><strong>🟠 Domain Events:</strong> Published by one context, consumed by many. Past tense. (<code>PurityValidated</code>)</li>
+              <li><strong>🟢 Queries:</strong> Read-only requests for information. (<code>GetBatchProvenance</code>)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architecture Mentor Insight: The Bridge Between Discovery and Design.</strong> Nick Tune calls Domain Message Flow Modeling 'the bridge between the tactical discoveries of Event Storming and the strategic decisions of Context Mapping.' Without it, teams draw context maps based on gut feeling rather than evidence. By tracing real business scenarios across proposed boundaries, we validate that our bounded contexts actually support the operational reality."</p>
+        </div>
+
+        <h3>3.2 Scenario: End-to-End Mineral Batch Processing</h3>
+        <p>Let us trace the complete message flow for Terra-Resource's most critical business scenario: a mineral batch extracted from the mine, analyzed for purity, cleared for ESG compliance, and issued a Digital Product Passport for shipment to Volt-Tech.</p>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_5_3_domain_message_flow.svg" alt="Figure 5.3: Domain Message Flow Diagram" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.3:</strong> Domain Message Flow Diagram &mdash; Complete message flow for mineral batch processing across four bounded contexts and external systems.</figcaption>
+        </figure>
+
+        <h3>3.3 Message Flow Analysis: Key Findings</h3>
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Integration Pattern Evidence</h4>
+            <ul>
+              <li><strong>Predominantly Event-Driven:</strong> Steps ②→③, ④→⑤, and ⑥→⑦ are all asynchronous event-to-command chains. This validates a publish-subscribe architecture pattern.</li>
+              <li><strong>Clear Upstream/Downstream Flow:</strong> Data flows from Extraction → Geo Analysis → ESG → DPP, establishing a natural upstream-to-downstream supply chain within the domain.</li>
+              <li><strong>Single External Integration Point:</strong> Only the Digital Passport context communicates with external systems (Volt-Tech), creating a natural Anti-Corruption Layer boundary.</li>
+              <li><strong>Cross-Domain Query:</strong> ESG queries government regulatory thresholds, indicating a Conformist relationship with external regulations.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Boundary Validation Results</h4>
+            <ul>
+              <li><strong>No Circular Dependencies:</strong> Messages flow strictly left-to-right, confirming well-defined boundaries.</li>
+              <li><strong>Minimal Cross-Boundary Payloads:</strong> Each message carries compact data (<code>BatchId</code>, <code>PurityPercentage</code>, <code>ESGScore</code>), not entire domain objects.</li>
+              <li><strong>Policy-Driven Automation:</strong> The Quarantine and Auto-Passport policies span boundaries, indicating process managers that should be modeled explicitly.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: CONTEXT MAPPING -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. Context Mapping: Strategic Integration Design</h2>
+        <p>With bounded context boundaries validated through message flow modeling, we now formalize the relationships between contexts using <strong>Context Mapping</strong> &mdash; the strategic design technique introduced by <strong>Eric Evans</strong> and elaborated by <strong>Vaughn Vernon</strong>. A Context Map is not just a technical diagram; it captures <strong>organizational power dynamics, team relationships, and integration strategies</strong> &mdash; the socio-technical reality that determines whether architecture succeeds or fails in practice.</p>
+
+        <h3>4.1 The Nine Context Mapping Patterns</h3>
+        <p>DDD defines nine standard patterns that describe how bounded contexts relate to each other. Terra-Resource must select the appropriate pattern for each relationship based on team dynamics, organizational constraints, and technical requirements:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Pattern</th>
+              <th>Abbrev.</th>
+              <th>Description</th>
+              <th>When to Use</th>
+              <th>Relationship</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Partnership</strong></td>
+              <td>P</td>
+              <td>Two teams succeed or fail together. Joint planning and synchronized evolution.</td>
+              <td>Mutually dependent teams with aligned objectives</td>
+              <td>Symmetric</td>
+            </tr>
+            <tr>
+              <td><strong>Shared Kernel</strong></td>
+              <td>SK</td>
+              <td>Two contexts share a small, explicitly defined model subset.</td>
+              <td>Overlapping models where duplication is worse than coupling</td>
+              <td>Symmetric</td>
+            </tr>
+            <tr>
+              <td><strong>Customer&ndash;Supplier</strong></td>
+              <td>CS</td>
+              <td>Upstream provides, downstream negotiates requirements.</td>
+              <td>Clear provider/consumer with downstream bargaining power</td>
+              <td>U → D</td>
+            </tr>
+            <tr>
+              <td><strong>Conformist</strong></td>
+              <td>CF</td>
+              <td>Downstream adopts upstream model wholesale, no negotiation.</td>
+              <td>External systems, regulatory APIs, legacy constraints</td>
+              <td>U → D</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-Corruption Layer</strong></td>
+              <td>ACL</td>
+              <td>Downstream builds a translation layer to isolate its model.</td>
+              <td>Integrating with legacy systems or incompatible models</td>
+              <td>U → D (with protection)</td>
+            </tr>
+            <tr>
+              <td><strong>Open Host Service</strong></td>
+              <td>OHS</td>
+              <td>Upstream provides a well-defined, stable API for multiple consumers.</td>
+              <td>When upstream serves multiple downstream consumers</td>
+              <td>U → D</td>
+            </tr>
+            <tr>
+              <td><strong>Published Language</strong></td>
+              <td>PL</td>
+              <td>A well-documented shared data format (Protobuf, JSON Schema, Avro).</td>
+              <td>Standard interchange format; often combined with OHS</td>
+              <td>Data standard</td>
+            </tr>
+            <tr>
+              <td><strong>Separate Ways</strong></td>
+              <td>SW</td>
+              <td>No integration. Each context operates independently.</td>
+              <td>Integration cost exceeds benefit</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td><strong>Big Ball of Mud</strong></td>
+              <td>BBoM</td>
+              <td>No clear boundaries. A pragmatic recognition of legacy chaos.</td>
+              <td>Map it, isolate it, and put an ACL around it</td>
+              <td>Diagnostic</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4.2 Terra-Resource Strategic Context Map</h3>
+        <p>Based on the Event Storming outputs and Domain Message Flow analysis, the architecture team now constructs the formal Context Map for the Terra-Resource extraction domain and its integration with the broader Smart Mobility Ecosystem:</p>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_5_4_terra_context_map.svg" alt="Figure 5.4: Terra-Resource Strategic Context Map" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.4:</strong> Terra-Resource Strategic Context Map &mdash; Formal integration patterns, boundary classifications, and Anti-Corruption Layer (ACL) isolation.</figcaption>
+        </figure>
+
+        <!-- Panel 4: The Context Map Standoff -->
+        <div id="panel-4" class="panel-marker" data-scene="Architecture Board Context Map Review"></div>
+        <figure>
+          <img src="assets/Chapter5Images/panel_4.jpg" alt="Figure 5.D: The Context Map Standoff">
+          <figcaption><strong>Figure 5.D:</strong> The Context Map Standoff &mdash; Neha Desai scrutinizes budget implications of each bounded context boundary while Aarav Patel defends the critical Anti-Corruption Layer around legacy systems. Vikram Sharma validates boundaries through message flow evidence.</figcaption>
+        </figure>
+        <div class="caption-block">Architecture Board Review Chamber. Day 5. 16:00 Hours. The context map is projected. Every boundary line is a budget line &mdash; and every budget line demands justification.</div>
+
+                          <div class="dialogue-bubble dialogue-neha dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Neha Desai.jpg" alt="Neha Desai" class="speech-avatar-img">
+          <div class="speech-avatar-name">Neha Desai</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "Every line on this context map is a budget line in my ledger. The Anti-Corruption Layer around legacy systems alone will cost us $3.5 million. The four internal bounded contexts each require dedicated data stewards, schema registries, and independent deployment pipelines. I need you to justify every single boundary before I authorize a dollar."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "Without that ACL boundary, thirty years of dirty data will contaminate every downstream system like a slow poison. Imagine a corrupted 1997 purity reading leaking into a 2025 Digital Product Passport. Volt-Tech rejects the shipment. EU regulators flag the ESG filing. The $180 million supply contract evaporates. The Anti-Corruption Layer is not a cost, Neha &mdash; it is a $180 million insurance policy."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-vikram dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist</span>
+          </div>
+          <div class="speech-content">
+            "The message flow analysis proves these boundaries are not arbitrary. Look at the evidence: data flows strictly left-to-right &mdash; Extraction to Geochemical Analysis to ESG to Digital Passport. Zero circular dependencies. Minimal cross-boundary payloads. Every message carries compact identifiers, not bloated domain objects. These boundaries are validated by operational reality, not organizational politics."
+          </div>
+        </div>
+      </div>
+
+        <h3>4.3 Context Mapping Decisions: The Architecture Board Review</h3>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Relationship</th>
+              <th>Pattern</th>
+              <th>Rationale</th>
+              <th>Implementation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Extraction → Geo Analysis</td>
+              <td><strong>Customer&ndash;Supplier (U/CS)</strong></td>
+              <td>Extraction team (upstream) provides batch samples; Geo Analysis team (downstream) negotiates purity testing requirements. Both teams are internal and can coordinate.</td>
+              <td>Async event bus (Kafka). <code>MineralBatchExtracted</code> event triggers <code>AnalyzePurity</code> command.</td>
+            </tr>
+            <tr>
+              <td>Extraction → ESG</td>
+              <td><strong>Customer&ndash;Supplier (U/CS)</strong></td>
+              <td>Extraction provides environmental telemetry; Compliance team requests specific metrics for regulatory reporting.</td>
+              <td>Event-driven. Environmental readings published alongside extraction events.</td>
+            </tr>
+            <tr>
+              <td>Geo Analysis → Digital Passport</td>
+              <td><strong>Customer&ndash;Supplier (U/CS)</strong></td>
+              <td>Purity records flow downstream to passport generation. DPP team defines what purity data format it needs.</td>
+              <td>Protobuf schema contract. <code>PurityValidated</code> event carries standardized element composition.</td>
+            </tr>
+            <tr>
+              <td>ESG → Digital Passport</td>
+              <td><strong>Customer&ndash;Supplier (U/CS)</strong></td>
+              <td>ESG clearance is a prerequisite for passport issuance. DPP team needs a signed compliance certificate.</td>
+              <td><code>ESGComplianceCleared</code> event includes cryptographic compliance hash.</td>
+            </tr>
+            <tr>
+              <td>Digital Passport → Volt-Tech</td>
+              <td><strong>Open Host Service / Published Language (OHS/PL)</strong></td>
+              <td>DPP context serves multiple external consumers (Volt-Tech, Tier-1 gigafactories, Orbit-Logistics) via a single stable API.</td>
+              <td>REST API with Protobuf Published Language. Versioned schema (v1, v2).</td>
+            </tr>
+            <tr>
+              <td>Digital Passport → Orbit-Logistics</td>
+              <td><strong>Open Host Service / Published Language (OHS/PL)</strong></td>
+              <td>Same API serves Orbit for downstream traceability verification.</td>
+              <td>Same OHS endpoint as Volt-Tech; read-only provenance query.</td>
+            </tr>
+            <tr>
+              <td>ESG → Govt. Regulatory Portal</td>
+              <td><strong>Conformist (CF)</strong></td>
+              <td>Government API is non-negotiable. Terra-Resource must conform to regulatory data formats and thresholds.</td>
+              <td>ESG context adopts government XML schema directly. No negotiation possible.</td>
+            </tr>
+            <tr>
+              <td>Legacy Systems → All Contexts</td>
+              <td><strong>Anti-Corruption Layer (ACL)</strong></td>
+              <td>30 years of unstructured CSV files, paper logs, and inconsistent databases. Must be isolated to prevent legacy corruption from leaking into new domain models.</td>
+              <td>Dedicated data pipeline with schema validation, deduplication, and canonical format transformation.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architecture Mentor Insight: Context Maps Are Organizational Maps.</strong> As Mathias Verraes emphasizes, context mapping is as much about <em>politics and organizational culture</em> as it is about technology. By explicitly mapping who is upstream and who is downstream, we proactively manage coupling, reduce friction, and leverage Conway's Law as a strategic asset."</p>
+          <p class="narrator-text">"Notice how the <strong>Digital Passport</strong> context uses an <strong>Open Host Service with Published Language (OHS/PL)</strong> to serve multiple external consumers through a single stable API. This is a deliberate architectural decision: rather than building custom integrations for Volt-Tech, Orbit-Logistics, and future Tier-1 partners separately, we invest in a well-documented, versioned Protobuf schema that any qualified consumer can adopt."</p>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- SUBSECTION 4.4: MULTI-ENTERPRISE ECOSYSTEM CONTEXT MAP -->
+        <!-- ========================================================================= -->
+        <h3>4.4 Multi-Enterprise Ecosystem Context Map: The Full Supply Chain View</h3>
+        <p>While Figure 5.4 maps the internal boundaries of Terra-Resource, true enterprise architecture requires zooming out to the <strong>entire multi-enterprise ecosystem</strong>. In modern industrial AI, data governance cannot stop at corporate perimeter firewalls. Below is the master strategic context map connecting all three enterprises &mdash; Terra-Resource (Upstream), Volt-Tech Manufacturing (Midstream), and Orbit-Logistics (Downstream) &mdash; anchored by the cross-enterprise Enterprise Architecture Board (EAB) governance layer.</p>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_5_5_multienterprise_context_map.svg" alt="Figure 5.5: Multi-Enterprise Strategic Context Map" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.5:</strong> Multi-Enterprise Strategic Context Map &mdash; End-to-end integration topology across Terra-Resource (Mining), Volt-Tech (OEM), and Orbit-Logistics (Fleet).</figcaption>
+        </figure>
+
+        <h3>4.5 End-to-End Multi-Enterprise Message Flow (The Full Value Stream)</h3>
+        <p>To demonstrate the operational coherence of this multi-enterprise context map, let us trace a single mineral particle from its underground extraction at Terra-Resource all the way to its real-time telemetry execution on a 40-ton autonomous truck operated by Orbit-Logistics:</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Enterprise &amp; Bounded Context</th>
+              <th>Message / Event Triggered</th>
+              <th>Architectural Mechanism</th>
+              <th>Fiduciary Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>Terra-Resource:</strong> Extraction Ops</td>
+              <td><code>MineralBatchExtracted</code> (Event)</td>
+              <td>Edge sensors capture GPS, depth, and drill pressure in real-time.</td>
+              <td>Physical batch provenance anchored at source.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Terra-Resource:</strong> Geochemical Lab</td>
+              <td><code>PurityAnalysisCompleted</code> (Event)</td>
+              <td>Chemical assay validates lithium purity &ge; 99.82%, iron &lt; 12ppm.</td>
+              <td>Eliminates dirty raw material liability before shipment.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Terra-Resource:</strong> ESG &amp; Compliance</td>
+              <td><code>ESGComplianceCleared</code> (Event)</td>
+              <td>Automated audit confirms environmental permit and water reclamation bounds.</td>
+              <td>Zero ESG regulatory penalty risk under EU supply chain mandates.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Terra-Resource:</strong> Digital Passport</td>
+              <td><code>DigitalPassportIssued</code> (Event / OHS)</td>
+              <td>Batch hash cryptographically signed into <code>DPP-88210</code> and published via Protobuf.</td>
+              <td>Creates immutable upstream data asset.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>Volt-Tech:</strong> Cell Supply &amp; PPAP</td>
+              <td><code>CellBatchQualified</code> (Command / Ingestion)</td>
+              <td>Tier-1 Gigafactory fabricates cylindrical cells using DPP-88210; Volt-Tech QA verifies.</td>
+              <td>99.4% cell yield; zero in-house chemical CapEx drain.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><strong>Volt-Tech:</strong> Battery BMS Intelligence</td>
+              <td><code>SmartBatteryPackCommissioned</code> (Event)</td>
+              <td>Silicon-to-Cloud Fusion Pod flashes INT8 TinyML model with low-SoC power derating.</td>
+              <td>Sub-10ms hesitation detection operational inside 180KB RAM.</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><strong>Volt-Tech:</strong> Smart Truck Assembly</td>
+              <td><code>SmartTruckDelivered</code> (Event)</td>
+              <td>Pack mated to Truck Chassis #VT-904 with ASIL-D lockstep microcontroller security.</td>
+              <td>Fulfills commercial delivery contract to Orbit-Logistics.</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><strong>Orbit-Logistics:</strong> Depot Charging Ops</td>
+              <td><code>DepotChargingSessionLogged</code> (Event)</td>
+              <td>Truck dispatched at 48% SoC due to turnaround constraints; logged to immutable ledger.</td>
+              <td>PSoC condition recorded with cryptographic timestamp (ACR-04).</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><strong>Orbit-Logistics:</strong> Autonomous Fleet</td>
+              <td><code>BMSDegradationMitigated</code> (Event / Telemetry)</td>
+              <td>Truck pulls heavy uphill torque; TinyML detects sub-cycle voltage sag in 8.2ms and throttles power by 25%.</td>
+              <td><strong>Zero roadside battery collapse; $50M fleet bleed prevented!</strong></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><strong>Joint EAB:</strong> Warranty Escrow Layer</td>
+              <td><code>WarrantySLAValidated</code> (Audit Event)</td>
+              <td>Escrow engine cross-references DPP logs with charging session; mutual SLA honored.</td>
+              <td>Eliminates finger-pointing and customer-supplier litigation.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4.3 Orbit-Logistics: Mapping DDD Bounded Contexts to SCOR Delivery Processes &amp; Metrics</h3>
+        <p>In downstream fleet execution, Domain-Driven Design bounded contexts align directly with the six SCOR Delivery Service stages to enforce continuous performance metrics:</p>
+        <div class="responsive-list">
+          <div class="card" style="border-left: 4px solid #ef4444;">
+            <h4>1. Autonomous Dispatch &amp; Dynamic Routing Context &mdash; SCOR Plan (sP) &amp; Deliver (sD)</h4>
+            <ul>
+              <li><strong>SCOR Focus:</strong> Forecasting delivery volumes, dynamic courier/AV route optimization, and last-mile parcel drop-offs.</li>
+              <li><strong>Core Domain Events:</strong> <code>DeliveryVolumeForecasted</code>, <code>OptimalRouteComputed</code>, <code>ShipmentDispatched</code>, <code>ProofOfDeliveryVerified</code>.</li>
+              <li><strong>Enforced Metrics:</strong> <strong>Perfect Shipment Delivery (&ge;99.8%)</strong> and <strong>Order Fulfillment Cycle Time (&le;1.5 hrs)</strong>.</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 4px solid #3b82f6;">
+            <h4>2. Fleet Telematics &amp; Ingestion Context &mdash; SCOR Enable (sE)</h4>
+            <ul>
+              <li><strong>SCOR Focus:</strong> Running edge tracking software, ingesting sub-50ms CAN sensor streams, and auditing EU AI Act safety compliance.</li>
+              <li><strong>Core Domain Events:</strong> <code>CANTelemetryIngested</code>, <code>BatterySOHSampled</code>, <code>SafetyComplianceVerified</code>.</li>
+              <li><strong>Enforced Metrics:</strong> Continuous telemetry latency (&le;50ms) and active regulatory audit trails.</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 4px solid #10b981;">
+            <h4>3. Risk-Adjusted Margin Engine Context &mdash; SCOR Cost (CO)</h4>
+            <ul>
+              <li><strong>SCOR Focus:</strong> Loaded per-stop and per-mile P&amp;L attribution, factoring power consumption, teleoperator interventions, and depreciation.</li>
+              <li><strong>Core Domain Events:</strong> <code>RouteCostCalculated</code>, <code>MarginThresholdAudited</code>, <code>InterventionExpenseAttributed</code>.</li>
+              <li><strong>Enforced Metrics:</strong> <strong>Cost per Stop / Cost per Mile (&le;$1.85/mile)</strong> to eliminate the $50M quarterly bleed.</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 4px solid #8b5cf6;">
+            <h4>4. Diagnostic &amp; HITL Triage Context &mdash; SCOR Return (sR) &amp; Asset Management (AM)</h4>
+            <ul>
+              <li><strong>SCOR Focus:</strong> Failed delivery handling, automated redelivery rescheduling, remote tele-assist intervention, and upstream battery defect traceback.</li>
+              <li><strong>Core Domain Events:</strong> <code>DeliveryFailed</code>, <code>HITLInterventionTriggered</code>, <code>ReverseLogisticsInitiated</code>, <code>WarrantyClaimEscrowed</code>.</li>
+              <li><strong>Enforced Metrics:</strong> <strong>Fleet Utilization (&ge;88%)</strong> and <strong>Vehicle Uptime (&ge;98%)</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 5: THE UBIQUITOUS LANGUAGE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>5. The Ubiquitous Language: Terra-Resource Domain Glossary</h2>
+        <p>Eric Evans' most fundamental DDD principle is that each bounded context must maintain its own <strong>Ubiquitous Language</strong> &mdash; a precise, shared vocabulary agreed upon by domain experts and developers. When the same term means different things in different contexts, it confirms a context boundary.</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Domain Term</th>
+              <th>Definition</th>
+              <th>Bounded Context</th>
+              <th>⚠ Misuse Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mineral Batch</strong></td>
+              <td>A discrete extraction unit with GPS coordinates, timestamp, weight, and drill parameters. The atomic unit of provenance.</td>
+              <td>Extraction Operations</td>
+              <td>Often confused with "shipment" (which may contain multiple batches)</td>
+            </tr>
+            <tr>
+              <td><strong>Purity Record</strong></td>
+              <td>A certified geochemical analysis result containing element composition percentages, contaminant parts-per-million, and lab technician signature.</td>
+              <td>Geochemical Analysis</td>
+              <td>Not a "quality score" &mdash; it is a multi-dimensional chemical profile</td>
+            </tr>
+            <tr>
+              <td><strong>Battery-Grade Qualification</strong></td>
+              <td>A binary pass/fail determination: lithium purity &ge; 99.5%, iron contamination &lt; 50ppm, moisture &lt; 10ppm.</td>
+              <td>Geochemical Analysis</td>
+              <td>Specific to Volt-Tech specifications; other customers may have different thresholds</td>
+            </tr>
+            <tr>
+              <td><strong>Digital Product Passport (DPP)</strong></td>
+              <td>A cryptographically signed, immutable provenance record linking a mineral batch to its extraction origin, purity analysis, ESG clearance, and downstream consumption.</td>
+              <td>Digital Passport</td>
+              <td>Not a "shipping document" &mdash; it is a blockchain-anchored data artifact</td>
+            </tr>
+            <tr>
+              <td><strong>ESG Compliance Filing</strong></td>
+              <td>A regulatory submission to government authorities containing environmental impact metrics, emission levels, and rehabilitation commitments.</td>
+              <td>ESG &amp; Compliance</td>
+              <td>Different from internal "ESG Dashboard" which is a read model, not a filing</td>
+            </tr>
+            <tr>
+              <td><strong>Provenance Chain</strong></td>
+              <td>The complete, ordered sequence of verified events from drill extraction through chemical analysis, ESG clearance, to DPP issuance.</td>
+              <td>Digital Passport</td>
+              <td>Must be immutable and cryptographically verifiable at every link</td>
+            </tr>
+            <tr>
+              <td><strong>Edge Telemetry</strong></td>
+              <td>Real-time sensor data captured at the extraction point: drill pressure, RPM, temperature, vibration, and geochemical probe readings.</td>
+              <td>Extraction Operations</td>
+              <td>Raw sensor data, not processed analytics. Processing happens in Geochemical Analysis.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 6: TOGAF PHASE C DECISION THEATRE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>6. TOGAF&reg; ADM Phase C: Step-by-Step Architecture Process &amp; Decision Theatre</h2>
+        <p>With the Domain-Driven Design (DDD) strategic decomposition complete &mdash; bounded contexts established, ubiquitous language codified, and context maps ratified &mdash; the Terra-Resource architecture team executes <strong>TOGAF ADM Phase C: Information Systems Architecture (Data Architecture)</strong>. Every architectural choice is evaluated through rigorous fiduciary options analysis before capital commitment.</p>
+
+        <!-- Decision Point 1 -->
+        <h3>Step 1: Select Target Data Architecture Paradigm</h3>
+        <h4>Decision Point 1: What Data Architecture Model Best Supports the Mineral-to-Passport Lifecycle?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Data Governance</th>
+              <th>Scalability</th>
+              <th>Domain Alignment</th>
+              <th>Risk Profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A. Centralized Monolithic Data Lake</td>
+              <td>Dump all raw drill sensor telemetry, lab assay CSVs, and ESG logs into a single centralized cloud bucket; manage schema on read.</td>
+              <td>🔴 Low &mdash; High risk of "Data Swamp", zero domain ownership</td>
+              <td>🟡 Moderate</td>
+              <td>🔴 Poor &mdash; IT team disconnected from geochemists</td>
+              <td>🔴 Catastrophic dirty data contamination into digital passports</td>
+            </tr>
+            <tr>
+              <td>B. Pure Decentralized Data Mesh</td>
+              <td>Each domain builds fully independent data products with self-serve infrastructure and federated governance.</td>
+              <td>🟡 Moderate &mdash; Complex federated compliance</td>
+              <td>🟢 High</td>
+              <td>🟢 Strong domain ownership</td>
+              <td>🟡 High operational overhead for mining operations staff</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>C. Domain-Driven Data Lakehouse (Canonical Hybrid)</strong></td>
+              <td>Bounded contexts own their operational data models; standardized Open Host Service (OHS) pipelines publish verified data products into a unified ACID-compliant Lakehouse governed by immutable audit ledgers.</td>
+              <td>🟢 Maximum &mdash; Strict schema validation at context boundaries</td>
+              <td>🟢 High &mdash; Handles streaming IoT &amp; analytics</td>
+              <td>🟢 High &mdash; Perfectly mirrors DDD Bounded Contexts</td>
+              <td>🟢 Low &mdash; Controlled blast radius with strong governance</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option C &mdash; Domain-Driven Data Lakehouse (Canonical Hybrid).</strong> Option A is the very trap that created Terra-Resource's $25M crisis: decades of dumping raw files into uncurated storage until historical records became an unusable swamp. Option B offers clean domain autonomy, but our mining drillers are not distributed cloud platform engineers."</p>
+          <p class="narrator-text">"<strong>Option C</strong> combines the best of both worlds: each bounded context (Extraction, Geochemistry, ESG) retains ownership of its transactional aggregates and validation logic, while publishing standardized Protobuf events into a unified, ACID-compliant Lakehouse. This provides single-pane-of-glass lineage for Volt-Tech's digital passports without compromising domain autonomy."</p>
+        </div>
+
+        <div class="rejection-block">
+          <h4>Why Not the Others?</h4>
+          <ul>
+            <li><strong>Option A (Monolithic Data Lake):</strong> Centralized IT data lakes strip domain context from geochemical data. When data engineers with no metallurgy background attempt to clean assay logs, subtle chemical contamination flags get smoothed out as 'statistical anomalies.'</li>
+            <li><strong>Option B (Pure Data Mesh):</strong> Imposes unacceptable infrastructure management cognitive load on operational mining teams who need turn-key data ingestion rather than managing independent data infrastructure platforms.</li>
+          </ul>
+        </div>
+
+        <!-- Decision Point 2 -->
+        <h3>Step 2: Legacy Data Remediation &amp; Migration Strategy</h3>
+        <h4>Decision Point 2: How Should Terra-Resource Remediate 30 Years of Unstructured Extraction Data?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Time to Value</th>
+              <th>CapEx Cost</th>
+              <th>Operational Risk</th>
+              <th>Data Integrity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A. Big-Bang Historic Rewrite</td>
+              <td>Halt new development; deploy 50 data consultants to manually audit, reformat, and backfill 30 years of historical logs before launching the digital passport.</td>
+              <td>🔴 24&ndash;36 Months</td>
+              <td>🔴 Extreme ($14M+)</td>
+              <td>🔴 Blocks Volt-Tech supply contract immediately</td>
+              <td>🟡 Prone to human transcription errors</td>
+            </tr>
+            <tr>
+              <td>B. As-Is Ingestion ("Clean Slate")</td>
+              <td>Ignore all historical data; apply digital passports only to brand-new mineral extraction batches mined from Day 1 onward.</td>
+              <td>🟢 Immediate</td>
+              <td>🟢 Minimal ($1M)</td>
+              <td>🔴 Leaves historical environmental liabilities open to regulatory fines</td>
+              <td>🔴 Zero historic audit capability</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>C. Anti-Corruption Layer (ACL) with Phased Dual-Write Ingestion</strong></td>
+              <td>Deploy an automated Anti-Corruption Layer that quarantines legacy data, validates historical schemas through deterministic parser pipelines, and runs dual-write streaming for all new extraction sensor feeds.</td>
+              <td>🟢 3&ndash;6 Months</td>
+              <td>🟡 Moderate ($3.5M)</td>
+              <td>🟢 Low &mdash; New extraction is clean immediately while historical data is remediated in parallel</td>
+              <td>🟢 100% Validated &amp; Deduplicated</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option C &mdash; Anti-Corruption Layer with Phased Dual-Write.</strong> Big-bang rewrites (Option A) are enterprise suicide &mdash; Volt-Tech will terminate our contract within 90 days if we cannot provide digital passports for current shipments. Conversely, 'clean slate' (Option B) leaves Aarav Patel exposed to catastrophic ESG regulatory penalties from unaddressed historical spills."</p>
+          <p class="narrator-text">"Under <strong>Option C</strong>, we isolate the legacy Big Ball of Mud behind a deterministic Anti-Corruption Layer (WP-TR-03). New extraction drills stream verified data immediately, while automated ETL pipelines cleanse and backfill historical data in the background without contaminating new canonical models."</p>
+        </div>
+
+        <!-- Decision Point 3 -->
+        <h3>Step 3: Digital Product Passport (DPP) Cryptographic Trust Mechanism</h3>
+        <h4>Decision Point 3: How Should Mineral Provenance Be Cryptographically Verified and Shared?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Throughput / Latency</th>
+              <th>Inter-Enterprise Trust</th>
+              <th>Integration Overhead</th>
+              <th>Fiduciary Governance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A. Public Permissionless Blockchain</td>
+              <td>Mint an NFT or public token on Ethereum/Polygon for every mineral batch; store hashes on-chain.</td>
+              <td>🔴 Poor (high gas fees, variable latency)</td>
+              <td>🟡 Public &mdash; but exposes commercial volume IP to competitors</td>
+              <td>🔴 Extreme &mdash; complex wallet/key management</td>
+              <td>🔴 Regulatory uncertainty under EU privacy rules</td>
+            </tr>
+            <tr>
+              <td>B. Private Point-to-Point VPN &amp; SFTP Dumps</td>
+              <td>Send encrypted CSV/JSON files over secure SFTP directly to Volt-Tech servers on a scheduled nightly cron.</td>
+              <td>🟡 Moderate batch delay</td>
+              <td>🔴 Low &mdash; prone to manual file tampering and bilateral disputes</td>
+              <td>🟢 Low upfront</td>
+              <td>🔴 Zero cryptographic non-repudiation</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>C. Signed Protobuf Schema Registry with Hardware Roots of Trust (HSM)</strong></td>
+              <td>Sign batch provenance hashes at the edge using Hardware Security Modules (HSM); publish immutable event streams via versioned Protocol Buffer contracts (OHS/PL) anchored to a joint EAB ledger.</td>
+              <td>🟢 Sub-10ms Streaming</td>
+              <td>🟢 Maximum &mdash; Non-repudiable cryptographic proof</td>
+              <td>🟢 Standard gRPC/REST APIs</td>
+              <td>🟢 100% Compliant with EU AI Act &amp; Battery Passports</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option C &mdash; Signed Protobuf Schema Registry with Hardware Roots of Trust.</strong> Public blockchains (Option A) introduce unacceptable transaction costs, latency, and proprietary volume leaks. Nightly SFTP dumps (Option B) recreate the very finger-pointing culture that caused the $50M fleet bleed."</p>
+          <p class="narrator-text">"<strong>Option C</strong> anchors trust directly in physical hardware. When lithium is extracted, the drill's Hardware Security Module (HSM) cryptographically signs the batch GPS and sensor telemetry at the physical bit level. Volt-Tech and Orbit-Logistics can verify provenance in microseconds via standard Protocol Buffer contracts without intermediary blockchain gas fees."</p>
+        </div>
+      </section>
+
+      <!-- Panel 5: The Volt-Tech Ultimatum Call -->
+      <div id="panel-5" class="panel-marker" data-scene="Volt-Tech Video Conference Ultimatum"></div>
+      <figure>
+        <img src="assets/Chapter5Images/panel_5.jpg" alt="Figure 5.E: The Volt-Tech Ultimatum">
+        <figcaption><strong>Figure 5.E:</strong> The Volt-Tech Ultimatum &mdash; Rajesh Iyer delivers a 90-day deadline for the first certified Digital Product Passport via video conference. Aarav Patel and Neha Desai absorb the pressure in the Terra-Resource war room.</figcaption>
+      </figure>
+      <div class="caption-block">Terra-Resource War Room. Week 3 of the Architecture Sprint. 19:00 Hours. An urgent video call from Volt-Tech shatters the evening.</div>
+
+                        <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Volt-Tech &mdash; Operational Strategist, via video conference</span>
+          </div>
+          <div class="speech-content">
+            "Aarav, Neha &mdash; I need to be direct. Our Tier-1 gigafactories in Gujarat and Tamil Nadu cannot accept a single batch of lithium without a cryptographically verified Digital Product Passport. The EU Battery Regulation enforcement date is immovable. You have <strong>ninety days</strong>. After that, we activate our secondary lithium supplier in Chile. No extensions. No exceptions."
+          </div>
+        </div>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-neha dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Neha Desai.jpg" alt="Neha Desai" class="speech-avatar-img">
+          <div class="speech-avatar-name">Neha Desai</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            <em>[After Rajesh's image fades from the screen]</em> "Ninety days. That is exactly why I insisted on the Anti-Corruption Layer with dual-write ingestion over the big-bang rewrite. We cannot wait twenty-four months to cleanse thirty years of legacy data. Under Option C, new extraction batches stream verified data through the Lakehouse <em>immediately</em>, while the ACL cleanses historical records in the background. We can meet that deadline."
+          </div>
+        </div>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-aarav">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "The HSM-signed Protobuf contracts are our answer. No blockchain gas fees, no nightly CSV dumps, no finger-pointing disputes. Cryptographic proof of provenance anchored in physical hardware at the drill head. Sub-10-millisecond verification. Standard gRPC endpoints that Volt-Tech's gigafactories can integrate in days, not months. We can deliver DPP-88210 well within Rajesh's window."
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 7: PREDEFINED WORK PACKAGES & TRANSITION ARCHITECTURE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>7. From Domain Architecture to Execution: Predefined Work Packages (WP-TR-01 to WP-TR-04)</h2>
+        <p>In accordance with <strong>TOGAF&reg; ADM Phase E (Opportunities and Solutions)</strong> and <strong>Phase F (Migration Planning)</strong>, the architecture team translates the DDD Bounded Contexts and capability gaps into four <strong>Predefined Transition Work Packages</strong>. Each work package is independently scoped, budget-allocated, and governed by strict stage-gate criteria.</p>
+
+        <!-- Work Package Portfolio Table -->
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Work Package ID</th>
+              <th>Work Package Name</th>
+              <th>Target Bounded Context</th>
+              <th>Delivered Solution Building Block (SBB)</th>
+              <th>CapEx Allocation</th>
+              <th>Primary Fiduciary Objective</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>WP-TR-01</strong></td>
+              <td><strong>Drill Edge Sensor &amp; Telematics Streamer</strong></td>
+              <td>Extraction Operations [CORE]</td>
+              <td>Ruggedized industrial CAN/Modbus edge IoT gateway with real-time GPS, torque, and drill pressure logging</td>
+              <td>$6.2M</td>
+              <td>Anchors physical provenance at source; eliminates manual drill log errors.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-02</strong></td>
+              <td><strong>Automated Geochemical Lab Assay Pipeline</strong></td>
+              <td>Geochemical Analysis [CORE]</td>
+              <td>Automated spectrometer data parser with real-time battery-grade lithium (&ge;99.5%) validation engine</td>
+              <td>$4.8M</td>
+              <td>Guarantees raw mineral purity; prevents sub-cycle cell degradation downstream.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-03</strong></td>
+              <td><strong>30-Year Legacy Data Anti-Corruption Layer (ACL)</strong></td>
+              <td>Legacy Systems [BBoM]</td>
+              <td>Schema validation, deduplication ETL pipeline, and historical data quarantine gateway</td>
+              <td>$3.5M</td>
+              <td>Isolates 30 years of dirty legacy data; backfills audit records without corrupting new schemas.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-04</strong></td>
+              <td><strong>Digital Product Passport (DPP) Publisher &amp; Trust Engine</strong></td>
+              <td>Digital Passport (DPP) [CORE]</td>
+              <td>HSM-anchored cryptographic signature engine exposing versioned Protobuf OHS/PL endpoints</td>
+              <td>$5.5M</td>
+              <td>Provides verifiable, monetizable digital passports fulfilling Volt-Tech &amp; EU mandates.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-EN</strong></td>
+              <td><strong>Architecture Enablement &amp; Data Governance Academy</strong></td>
+              <td>Cross-Context Governance</td>
+              <td>Operational change management, data steward upskilling, and TOGAF Phase C audit tooling</td>
+              <td>$5.0M</td>
+              <td>Upskills 400+ mining technicians and establishes continuous data governance.</td>
+            </tr>
+          </tbody>
+        </table>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_5_6_transition_roadmap.svg" alt="Figure 5.6: Terra-Resource Transition Architecture Roadmap" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.6:</strong> Terra-Resource Transition Architecture Roadmap &mdash; 3-Wave Phased Migration to Target Data Architecture.</figcaption>
+        </figure>
+
+        <h3>7.2 Architectural Verification Rules for Work Packages</h3>
+        <div class="responsive-list">
+          <div class="card">
+            <h4>RULE OPP-01: Continuous Value Realization</h4>
+            <p>Every transition state must deliver standalone measurable business value. Completing Transition State 1 (WP-TR-03) immediately eliminates $3.8M in manual CSV cleansing costs and prevents unvalidated data from contaminating laboratory pipelines, even before digital passports are minted.</p>
+          </div>
+          <div class="card">
+            <h4>RULE OPP-02: Zero Prerequisite Conflicts</h4>
+            <p>No downstream work package may begin execution until its upstream data dependencies are verified by the Enterprise Architecture Board. Specifically, WP-TR-04 (DPP Publisher) cannot mint valid certificates until WP-TR-02 (Geochemical Assay) is operational and validated.</p>
+          </div>
+          <div class="card">
+            <h4>RULE OPP-03: 100% Gap Coverage</h4>
+            <p>100% of capability deficits identified during Event Storming and Information Mapping are explicitly covered by funded work packages. There are zero unmapped "orphan requirements" across the $25M transformation.</p>
+          </div>
+        </div>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Data Pipeline Quality &amp; Ingestion Stabilization</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Transition States: Daily Ingestion Volume vs. Purity Measurement Variance (±%)</div>
+            <div style="position: relative; height: 340px; width: 100%;">
+              <canvas id="pipelineQualityChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.6B:</strong> Data Pipeline Quality Stabilization &mdash; Daily event ingestion scaling from 250 to 12,500 records while assay purity variance collapses from &plusmn;4.8% to &plusmn;0.1%.</figcaption>
+        </figure>
+
+        <!-- 7.3 LEGACY RECORD HITL EXCEPTION WORKFLOW (TOGAF RULE REQ-02) -->
+        <h3>7.3 Legacy Record HITL Exception Remediation Workflow (WP-TR-03)</h3>
+        <p>In accordance with TOGAF&reg; Rule REQ-02 (Operational bounds for edge failure cases), historical assay records that fail automated ACL deterministic parsing are routed through a structured <strong>Human-in-the-Loop (HITL) Exception Pipeline</strong> with strict resolution SLAs:</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_5_7_hitl_exception_tree.svg" alt="Figure 5.7: Legacy Record HITL Exception Remediation Decision Tree" style="max-width: 100%; max-height: 620px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.7:</strong> Legacy Record HITL Exception Remediation Decision Tree &mdash; Deterministic ACL parsing, quarantine triage, automated rule repair, and human-in-the-loop escalation paths (WP-TR-03).</figcaption>
+        </figure>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Exception Classification</th>
+              <th>Trigger Criteria</th>
+              <th>Resolution Workflow</th>
+              <th>Target Resolution SLA</th>
+              <th>Escalation Authority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Minor Schema Drift</strong></td>
+              <td>Missing units (ppm vs. %), alternative date formatting</td>
+              <td>Automated deterministic normalization in ACL parser</td>
+              <td><strong>&le; 1 Minute</strong> (Automated)</td>
+              <td>Data Pipeline Lead</td>
+            </tr>
+            <tr>
+              <td><strong>Contradictory Assay Values</strong></td>
+              <td>Regional database replica divergence (&gt;0.5% delta)</td>
+              <td>Routed to Geochemist HITL queue; cross-reference physical borehole core samples</td>
+              <td><strong>&le; 5 Business Days</strong></td>
+              <td>Senior Lab Metallurgist</td>
+            </tr>
+            <tr>
+              <td><strong>Total Data Corruption</strong></td>
+              <td>Illegible scanned logs, impossible dates (e.g. "Jan 32"), missing GPS</td>
+              <td>Formal record retirement; assign 'Historical Incomplete' status; isolate in litigation WORM store</td>
+              <td><strong>&le; 10 Business Days</strong></td>
+              <td>Aarav Patel (Risk Guardian) + Legal</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 7.4 MULTILINGUAL DATA GOVERNANCE NOTE -->
+        <div class="card" style="background: #eff6ff; border-left: 4px solid #3b82f6; margin: 1.25rem 0;">
+          <h4 style="color: #1e40af; margin-bottom: 0.4rem;">🌐 Multilingual Data Governance &amp; Extraction Site Normalization</h4>
+          <p style="font-size: 0.88rem; color: #1e293b; line-height: 1.5; margin: 0;">
+            <strong>Canonical Enterprise Language:</strong> English (<code>ISO 639-1: en</code>) serves as the immutable canonical standard for all Protobuf schemas, DPP metadata, and EAB audit filings.<br>
+            <strong>Local Site Ingestion:</strong> Primary mining logs across South American, African, and Australian operations ingest raw records with mandatory <code>iso_language_code</code> headers. A dedicated NLP Translation Microservice (<code>ABB-NLP-01</code>) converts local field annotations into canonical English before promotion to the Silver Lakehouse tier.
+          </p>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 8: CODIFIED SCHEMA CONTRACTS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>8. Codified Interface Contracts: Protocol Buffer Specifications</h2>
+        <p>In modern enterprise architecture, data contracts are not documented in ambiguous spreadsheets; they are codified into version-controlled, compiled <strong>Interface Definition Languages (IDL)</strong>. Below are the production Protocol Buffer contracts implementing the Open Host Service / Published Language (OHS/PL) across the ecosystem.</p>
+
+        <h3>8.1 Mineral Extraction Event Contract (`MineralBatchExtractionEvent.proto`)</h3>
+        <div class="caption-block">
+          <p><strong>Package:</strong> <code>terra_resource.extraction.v1</code> &mdash; Published by drill edge gateways (WP-TR-01) upon batch completion.</p>
+        </div>
+        <pre style="background: #0f172a; color: #f8fafc; padding: 18px; border-radius: 8px; font-size: 0.85rem; overflow-x: auto; line-height: 1.45;">
+syntax = "proto3";
+
+package terra_resource.extraction.v1;
+
+import "google/protobuf/timestamp.proto";
+
+enum MineralType {
+  MINERAL_TYPE_UNSPECIFIED = 0;
+  MINERAL_TYPE_LITHIUM = 1;
+  MINERAL_TYPE_NICKEL = 2;
+  MINERAL_TYPE_COBALT = 3;
+}
+
+message GeoCoordinate {
+  double latitude = 1;
+  double longitude = 2;
+  double elevation_meters = 3;
+  string shaft_identifier = 4;
+}
+
+message DrillTelemetrySnapshot {
+  string drill_rig_id = 1;
+  double average_rpm = 2;
+  double peak_pressure_bar = 3;
+  double drill_head_temp_celsius = 4;
+  double vibration_rms = 5;
+  string hsm_sensor_auth_signature = 6;
+}
+
+message MineralBatchExtractedEvent {
+  string event_id = 1;
+  string batch_id = 2;
+  MineralType mineral_type = 3;
+  double gross_weight_metric_tons = 4;
+  GeoCoordinate extraction_location = 5;
+  DrillTelemetrySnapshot drill_telemetry = 6;
+  google.protobuf.Timestamp extraction_timestamp = 7;
+  string extraction_operator_id = 8;
+  bytes cryptographic_batch_hash = 9;
+}</pre>
+
+        <h3>8.2 Digital Product Passport Contract (`DigitalProductPassport.proto`)</h3>
+        <div class="caption-block">
+          <p><strong>Package:</strong> <code>ecosystem.dpp.v1</code> &mdash; Shared Kernel contract published by DPP Trust Engine (WP-TR-04) and consumed by Volt-Tech &amp; Orbit.</p>
+        </div>
+        <pre style="background: #0f172a; color: #f8fafc; padding: 18px; border-radius: 8px; font-size: 0.85rem; overflow-x: auto; line-height: 1.45;">
+syntax = "proto3";
+
+package ecosystem.dpp.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message ElementalAssay {
+  string element_symbol = 1;         // e.g. "Li", "Fe", "Ni"
+  double purity_percentage = 2;       // e.g. 99.82
+  double contaminant_ppm = 3;         // e.g. 12.4
+  bool battery_grade_qualified = 4;   // Must be true for Volt-Tech intake
+}
+
+message ESGComplianceCertificate {
+  string certificate_id = 1;
+  string regulatory_filing_reference = 2;
+  double carbon_intensity_kg_co2_per_ton = 3;
+  double water_reclamation_ratio = 4;
+  string issuing_authority = 5;
+  google.protobuf.Timestamp clearance_date = 6;
+}
+
+message DigitalProductPassport {
+  string passport_id = 1;             // Unique DPP UUID (e.g. "DPP-88210")
+  string origin_batch_id = 2;
+  string mineral_type = 3;
+  double net_weight_tons = 4;
+  
+  // Geochemical Quality Layer
+  repeated ElementalAssay assay_results = 5;
+  string certified_laboratory_id = 6;
+  
+  // Environmental Compliance Layer
+  ESGComplianceCertificate esg_clearance = 7;
+  
+  // Cryptographic Chain of Custody
+  string origin_drill_hsm_signature = 8;
+  bytes root_merkle_provenance_hash = 9;
+  string issuer_digital_signature = 10;
+  google.protobuf.Timestamp issuance_timestamp = 11;
+  uint32 schema_version = 12;         // Version 1
+}</pre>
+
+        <!-- 8.3 PROTOBUF SCHEMA EVOLUTION POLICY & VERSION COMPATIBILITY (TOGAF RULE DEL-03 & GOV-02) -->
+        <h3>8.3 Protobuf Schema Evolution Policy &amp; Version Compatibility</h3>
+        <p>In accordance with TOGAF&reg; Governance standards (Rule GOV-02: Zero Unrecorded Deviations), the Joint Standards Council ratifies strict schema evolution rules to ensure cross-enterprise forward and backward compatibility:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Governance Principle</th>
+              <th>Evolution Rule &amp; Constraint</th>
+              <th>Architectural Enforcement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Backward Compatibility</strong></td>
+              <td>Existing consumers must parse newer messages without crashing (unknown fields ignored).</td>
+              <td>Never change existing tag numbers or field types; new fields are strictly additive.</td>
+            </tr>
+            <tr>
+              <td><strong>Field Deprecation</strong></td>
+              <td>Obsolete fields must be marked <code>[deprecated = true]</code> for &ge; 90 days.</td>
+              <td>Deprecation notice logged in EAB Joint Standards Registry; compiler warnings emitted.</td>
+            </tr>
+            <tr>
+              <td><strong>Breaking Schema Changes</strong></td>
+              <td>Requires major version package bump (e.g. <code>.v2</code>) + formal EAB JSC vote.</td>
+              <td>Dual-version ingestion gateway maintained during mandatory 180-day consumer migration.</td>
+            </tr>
+            <tr>
+              <td><strong>DPP Payload Immutability</strong></td>
+              <td>Minted DPP records are cryptographically sealed with root Merkle hashes.</td>
+              <td>Schema version updates apply only to newly minted batches; historical DPPs remain immutable.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Schema Version Interoperability Matrix</h4>
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Producer Version</th>
+              <th>v1 Consumer (Orbit / Volt-Tech)</th>
+              <th>v2 Consumer (Volt-Tech Target)</th>
+              <th>v3 Consumer (Future EU Spec)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>v1 Producer</strong></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Full Native Interop</span></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Backward-Compatible</span></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Backward-Compatible</span></td>
+            </tr>
+            <tr>
+              <td><strong>v2 Producer</strong></td>
+              <td><span class="badge" style="background:#dbeafe; color:#1e40af; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Forward-Compatible (Ignores v2 fields)</span></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Full Native Interop</span></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Backward-Compatible</span></td>
+            </tr>
+            <tr>
+              <td><strong>v3 Producer</strong></td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:700;">⚠️ Review Required (Major Field Gap)</span></td>
+              <td><span class="badge" style="background:#dbeafe; color:#1e40af; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Forward-Compatible</span></td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">✅ Full Native Interop</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 9: FIDUCIARY BUSINESS CASE & $25M CAPEX SCHEDULE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>9. Fiduciary Business Case &amp; Financial Schedule ($25M Investment)</h2>
+        <p>Neha Desai's $25 million capital authorization is not an operational expense; it is a high-return capital restructuring that protects Terra-Resource's core commercial revenue while eliminating regulatory liabilities.</p>
+
+        <!-- Financial Allocation Table -->
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Work Package / Investment Line</th>
+              <th>Year 0 (CapEx)</th>
+              <th>Year 1 (OpEx)</th>
+              <th>Year 2 (OpEx)</th>
+              <th>Year 3 (OpEx)</th>
+              <th>3-Year Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>WP-TR-01:</strong> Drill Sensors &amp; IoT Streamers</td>
+              <td>$6.2M</td>
+              <td>$0.4M</td>
+              <td>$0.4M</td>
+              <td>$0.4M</td>
+              <td>$7.4M</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-02:</strong> Automated Assay Pipeline</td>
+              <td>$4.8M</td>
+              <td>$0.3M</td>
+              <td>$0.3M</td>
+              <td>$0.3M</td>
+              <td>$5.7M</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-03:</strong> 30-Yr Legacy Data ACL</td>
+              <td>$3.5M</td>
+              <td>$0.2M</td>
+              <td>$0.1M</td>
+              <td>$0.0M (Sunset)</td>
+              <td>$3.8M</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-04:</strong> DPP Engine &amp; OHS APIs</td>
+              <td>$5.5M</td>
+              <td>$0.6M</td>
+              <td>$0.6M</td>
+              <td>$0.6M</td>
+              <td>$7.3M</td>
+            </tr>
+            <tr>
+              <td><strong>WP-TR-EN:</strong> Governance Academy &amp; Change Mgmt</td>
+              <td>$5.0M</td>
+              <td>$0.5M</td>
+              <td>$0.4M</td>
+              <td>$0.3M</td>
+              <td>$6.2M</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>TOTAL INVESTMENT SCHEDULE</strong></td>
+              <td><strong>$25.0M</strong></td>
+              <td><strong>$2.0M</strong></td>
+              <td><strong>$1.8M</strong></td>
+              <td><strong>$1.6M</strong></td>
+              <td><strong>$30.4M</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Value Realization Cards -->
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Quantifiable Cash Flow Protections</h4>
+            <ul>
+              <li><strong>Revenue Protection:</strong> Preserves the $180M multi-year mineral supply contract with Volt-Tech.</li>
+              <li><strong>Batch Rejection Reduction:</strong> Slashes batch rejection rates from 14.2% to &lt;0.1%, saving $11.4M annually in shipping and reprocessing penalties.</li>
+              <li><strong>ESG Regulatory Fine Avoidance:</strong> Automated audit compliance eliminates estimated $18.0M/year in EU supply chain transparency liabilities.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Fiduciary Financial Return Metrics</h4>
+            <ul>
+              <li><strong>Net Payback Period:</strong> 13.8 Months.</li>
+              <li><strong>Internal Rate of Return (IRR):</strong> 38.4%.</li>
+              <li><strong>5-Year Net Present Value (NPV @ 10% Discount):</strong> $52.4M.</li>
+              <li><strong>Benefit-to-Cost Ratio (BCR):</strong> 2.82x.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 10: KEY ARCHITECTURE ARTIFACTS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>10. Summary: Key Architecture Artifacts Produced in Phase C</h2>
+        <ul>
+          <li><strong>DDD Strategic Design Pipeline (Figure 5.1):</strong> The 4-stage pipeline connecting discovery to architecture.</li>
+          <li><strong>Event Storming Output (Figure 5.2):</strong> Complete mineral-to-passport timeline with domain events, commands, aggregates, policies, read models, and candidate boundaries.</li>
+          <li><strong>Domain Message Flow Model (Figure 5.3):</strong> Validated inter-context communication design showing asynchronous event-driven flows and synchronous integration points.</li>
+          <li><strong>Terra-Resource Strategic Context Map (Figure 5.4):</strong> Internal DDD context map with Customer&ndash;Supplier, Open Host Service / Published Language, Conformist, and Anti-Corruption Layer patterns.</li>
+          <li><strong>Multi-Enterprise Ecosystem Context Map (Figure 5.5):</strong> End-to-end strategic context map connecting Terra-Resource, Volt-Tech, and Orbit-Logistics with the Joint EAB Governance &amp; Escrow Layer.</li>
+          <li><strong>Transition Architecture Roadmap (Figure 5.6):</strong> Phased migration timeline (States 1, 2, 3) with mandatory EAB stage-gate verifications.</li>
+          <li><strong>Legacy Record HITL Exception Decision Tree (Figure 5.7):</strong> Multi-tier quarantine, automated rule repair, and human-in-the-loop escalation workflow for legacy assay normalization (WP-TR-03).</li>
+          <li><strong>Predefined Work Package Portfolio (WP-TR-01 to WP-TR-04):</strong> Fully scoped and budgeted transition work packages.</li>
+          <li><strong>Codified Schema Contracts:</strong> Production Protocol Buffer definitions for `MineralBatchExtractionEvent.proto` and `DigitalProductPassport.proto`.</li>
+          <li><strong>Fiduciary Business Case &amp; CapEx Schedule:</strong> $25.0M CapEx allocation delivering $52.4M in 5-year NPV with a 13.8-month payback.</li>
+        </ul>
+      </section>
+
+      <!-- Panel 6: The Data Bedrock Triumph -->
+      <div id="panel-6" class="panel-marker" data-scene="First Digital Product Passport Issued"></div>
+      <figure>
+        <img src="assets/Chapter5Images/panel_6.jpg" alt="Figure 5.F: The Data Bedrock Triumph">
+        <figcaption><strong>Figure 5.F:</strong> The Data Bedrock Triumph &mdash; DPP-88210 clears all verification gates. The complete provenance chain glows green from drill extraction through purity analysis and ESG clearance to passport issuance. Neha Desai authorizes the $25M investment. Day 47 of 90.</figcaption>
+      </figure>
+      <div class="caption-block">Terra-Resource Extraction Command Center. Day 47 of the 90-Day Sprint. 17:42 Hours. The console chimes. A green verification cascade lights up the room.</div>
+
+                        <div class="dialogue-bubble dialogue-vikram dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist</span>
+          </div>
+          <div class="speech-content">
+            "DPP-88210 just cleared all gates. Lithium purity: 99.82 percent. Iron contamination: 11.8 parts per million. ESG compliance: verified and cryptographically sealed. The Merkle provenance hash traces an unbroken chain from Drill Rig Delta-7, Shaft 14, GPS coordinates negative 26.2041 south, 28.0473 east, all the way through the geochemical lab and ESG compliance engine to this passport. Every link is immutable and independently verifiable."
+          </div>
+        </div>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-neha">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Neha Desai.jpg" alt="Neha Desai" class="speech-avatar-img">
+          <div class="speech-avatar-name">Neha Desai</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "Twenty-five million dollars &mdash; authorized and executing. Every dollar traced to a bounded context. Every bounded context traced to a funded work package. Every work package delivering measurable, auditable fiduciary value. WP-TR-01 anchors provenance at the drill. WP-TR-02 validates chemistry. WP-TR-03 quarantines legacy poison. WP-TR-04 mints the passport. <em>This</em> is what Data Governance looks like when architecture actually works."
+          </div>
+        </div>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "Send it to Rajesh at Volt-Tech. Day forty-seven of ninety. <strong>Ahead of schedule.</strong> Terra-Resource is no longer sitting on a data minefield &mdash; we are sitting on a <strong>Data Bedrock</strong>. And every mineral batch that leaves our mines from this day forward carries cryptographic proof that it is clean, compliant, and commercially verified."
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing Narrator -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_thumbsup_green_1787204839525_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Terra-Resource has turned data chaos into an enterprise asset. By applying Domain-Driven Design's strategic pipeline &mdash; Event Storming for discovery, Domain Message Flow Modeling for communication design, Context Mapping for strategic integration, and Predefined Work Packages for execution &mdash; the team has built a rigorous Data Architecture grounded in real domain knowledge."</p>
+        <p class="narrator-text">"With clean mineral provenance secured through HSM-signed Digital Product Passports, Volt-Tech can now manufacture high-yield smart batteries without fearing upstream chemical liabilities."</p>
+        <p class="narrator-text">"In <strong>Chapter 6: Solving Scalability Friction</strong>, our feed shifts back to Volt-Tech Manufacturing, where Rajesh Iyer must integrate advanced robotics and edge diagnostics onto the physical assembly line &mdash; executing TOGAF Phase D Technology Architecture with the clean data foundation Terra-Resource has now established."</p>
+      </div>
+    </main>
+
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Chapter</span>
+        <a href="chapter_4.html" class="nav-title">&larr; Chapter 4: The Economics of AI</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Chapter</span>
+        <a href="chapter_6.html" class="nav-title">Chapter 6: Solving Scalability Friction &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

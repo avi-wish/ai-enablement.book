@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 880" width="1240" height="880" style="background:#0b1120; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <filter id="shadow4" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowPip" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#10b981"/>
+    </marker>
+  </defs>
+  <!-- Full Canvas Background -->
+  <rect width="1240" height="880" fill="#0b1120" rx="12"/>
+
+  <!-- Header Banner -->
+  <rect x="25" y="20" width="1190" height="70" rx="10" fill="url(#headerGrad4)" filter="url(#shadow4)"/>
+  <text x="620" y="48" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 6.4: ZERO-DOWNTIME EDGE TINYML MLOPS &amp; QUANTIZATION PIPELINE</text>
+  <text x="620" y="72" fill="#d1fae5" font-size="13" text-anchor="middle">Cloud Model Optimization &#8226; HSM Cryptographic Verification &#8226; ASIL-D Dual-Core Lockstep Fallback</text>
+
+  <!-- ================= 4 STAGE HORIZONTAL PIPELINE ================= -->
+
+  <!-- ================= STAGE 1: CLOUD TRAINING & VALIDATION ================= -->
+  <rect x="25" y="110" width="280" height="510" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="35" y="120" width="260" height="28" rx="5" fill="#0284c7"/>
+  <text x="165" y="139" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">STAGE 1: CLOUD MODEL DEV</text>
+
+  <g transform="translate(38, 160)">
+    <!-- Card 1.1 (y=0..78) -->
+    <rect x="0" y="0" width="254" height="78" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="22" fill="#38bdf8" font-size="12" font-weight="bold">PyTorch / TF Training</text>
+    <text x="12" y="44" fill="#cbd5e1" font-size="11">&#8226; 32-Bit Floating Point (FP32)</text>
+    <text x="12" y="64" fill="#cbd5e1" font-size="11">&#8226; Laser Weld &amp; EIS Models</text>
+
+    <!-- Card 1.2 (y=88..180) -->
+    <rect x="0" y="88" width="254" height="92" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="110" fill="#38bdf8" font-size="12" font-weight="bold">Synthetic HIL Simulation</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">&#8226; 10M Virtual Cell Cycles</text>
+    <text x="12" y="148" fill="#cbd5e1" font-size="11">&#8226; Extreme Thermal/PSoC Stress</text>
+    <text x="12" y="166" fill="#4ade80" font-size="11" font-weight="bold">&#8226; Model F1-Score &#8805; 99.995%</text>
+
+    <!-- Card 1.3 (y=190..268) -->
+    <rect x="0" y="190" width="254" height="78" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="212" fill="#38bdf8" font-size="12" font-weight="bold">MLflow Governance Vault</text>
+    <text x="12" y="234" fill="#cbd5e1" font-size="11">&#8226; Version Tagging &amp; Lineage</text>
+    <text x="12" y="254" fill="#cbd5e1" font-size="11">&#8226; EU AI Act Model Dossier</text>
+
+    <!-- Card 1.4: Cloud Benchmark (y=278..448) -->
+    <rect x="0" y="278" width="254" height="170" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1.2"/>
+    <rect x="0" y="278" width="254" height="26" rx="6" fill="#7f1d1d"/>
+    <text x="12" y="296" fill="#fecaca" font-size="11" font-weight="bold">Cloud Benchmark (Unusable)</text>
+    <text x="12" y="328" fill="#94a3b8" font-size="11">Model Size: <tspan fill="#f8fafc" font-weight="bold">480 MB</tspan></text>
+    <text x="12" y="350" fill="#94a3b8" font-size="11">Cloud Ingest + WAN: <tspan fill="#ef4444" font-weight="bold">825 ms</tspan></text>
+    <text x="12" y="372" fill="#94a3b8" font-size="11">Conveyor Slip: <tspan fill="#ef4444" font-weight="bold">412 mm Offset</tspan></text>
+    <text x="12" y="394" fill="#94a3b8" font-size="11">Line Halts: <tspan fill="#ef4444" font-weight="bold">Every 20 Minutes</tspan></text>
+    <text x="12" y="420" fill="#ef4444" font-size="11" font-weight="bold">&#215; Fatal Latency for OT</text>
+  </g>
+
+  <!-- Pipeline Connector 1 -> 2 -->
+  <path d="M 305 365 L 327 365" stroke="#10b981" stroke-width="3" marker-end="url(#arrowPip)"/>
+
+  <!-- ================= STAGE 2: QUANTIZATION & COMPILATION ================= -->
+  <rect x="330" y="110" width="280" height="510" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="340" y="120" width="260" height="28" rx="5" fill="#4338ca"/>
+  <text x="470" y="139" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">STAGE 2: QUANTIZATION</text>
+
+  <g transform="translate(343, 160)">
+    <!-- Card 2.1 (y=0..78) -->
+    <rect x="0" y="0" width="254" height="78" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="22" fill="#a5b4fc" font-size="12" font-weight="bold">Post-Training Quant (PTQ)</text>
+    <text x="12" y="44" fill="#cbd5e1" font-size="11">&#8226; FP32 &#8594; 8-Bit Integer (INT8)</text>
+    <text x="12" y="64" fill="#cbd5e1" font-size="11">&#8226; Symmetric Calibration Scale</text>
+
+    <!-- Card 2.2 (y=88..180) -->
+    <rect x="0" y="88" width="254" height="92" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="110" fill="#a5b4fc" font-size="12" font-weight="bold">Target Hardware Compilers</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">&#8226; NVIDIA TensorRT (Vision GPU)</text>
+    <text x="12" y="148" fill="#cbd5e1" font-size="11">&#8226; Apache TVM / microTVM</text>
+    <text x="12" y="166" fill="#cbd5e1" font-size="11">&#8226; ARM CMSIS-NN (BMS MCU)</text>
+
+    <!-- Card 2.3 (y=190..268) -->
+    <rect x="0" y="190" width="254" height="78" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="212" fill="#a5b4fc" font-size="12" font-weight="bold">Pruning &amp; Sparsity Engine</text>
+    <text x="12" y="234" fill="#cbd5e1" font-size="11">&#8226; 4:2 Structured Sparsity</text>
+    <text x="12" y="254" fill="#cbd5e1" font-size="11">&#8226; 70% Zero-Weight Removal</text>
+
+    <!-- Card 2.4: Quantized Profile (y=278..448) -->
+    <rect x="0" y="278" width="254" height="170" rx="6" fill="#0f172a" stroke="#818cf8" stroke-width="1.2"/>
+    <rect x="0" y="278" width="254" height="26" rx="6" fill="#312e81"/>
+    <text x="12" y="296" fill="#c7d2fe" font-size="11" font-weight="bold">Quantized Profile (Optimized)</text>
+    <text x="12" y="328" fill="#94a3b8" font-size="11">Model Size: <tspan fill="#4ade80" font-weight="bold">6.2 MB (-98.7%)</tspan></text>
+    <text x="12" y="350" fill="#94a3b8" font-size="11">Target Inference: <tspan fill="#4ade80" font-weight="bold">1.8 ms</tspan></text>
+    <text x="12" y="372" fill="#94a3b8" font-size="11">Accuracy Retention: <tspan fill="#4ade80" font-weight="bold">99.98%</tspan></text>
+    <text x="12" y="394" fill="#94a3b8" font-size="11">RAM Footprint: <tspan fill="#4ade80" font-weight="bold">&lt; 32 MB SRAM</tspan></text>
+    <text x="12" y="420" fill="#4ade80" font-size="11" font-weight="bold">&#10003; Fit for Automotive Edge</text>
+  </g>
+
+  <!-- Pipeline Connector 2 -> 3 -->
+  <path d="M 610 365 L 632 365" stroke="#10b981" stroke-width="3" marker-end="url(#arrowPip)"/>
+
+  <!-- ================= STAGE 3: CRYPTOGRAPHIC SIGNING & OTA STAGING ================= -->
+  <rect x="635" y="110" width="280" height="510" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="645" y="120" width="260" height="28" rx="5" fill="#b45309"/>
+  <text x="775" y="139" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">STAGE 3: HSM SECURITY &amp; OTA</text>
+
+  <g transform="translate(648, 160)">
+    <!-- Card 3.1 (y=0..78) -->
+    <rect x="0" y="0" width="254" height="78" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="22" fill="#fcd34d" font-size="12" font-weight="bold">Hardware Security Module</text>
+    <text x="12" y="44" fill="#cbd5e1" font-size="11">&#8226; ECC Secp384r1 Signature</text>
+    <text x="12" y="64" fill="#cbd5e1" font-size="11">&#8226; Air-Gapped Root of Trust</text>
+
+    <!-- Card 3.2 (y=88..180) -->
+    <rect x="0" y="88" width="254" height="92" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="110" fill="#fcd34d" font-size="12" font-weight="bold">Canary &amp; Shadow Staging</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">&#8226; A/B Shadow Mode on Line 1</text>
+    <text x="12" y="148" fill="#cbd5e1" font-size="11">&#8226; 0% Actuator Authority</text>
+    <text x="12" y="166" fill="#cbd5e1" font-size="11">&#8226; Divergence &lt; 0.01% Check</text>
+
+    <!-- Card 3.3 (y=190..268) -->
+    <rect x="0" y="190" width="254" height="78" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="212" fill="#fcd34d" font-size="12" font-weight="bold">Encrypted OTA Payload</text>
+    <text x="12" y="234" fill="#cbd5e1" font-size="11">&#8226; AES-256-GCM Binary Package</text>
+    <text x="12" y="254" fill="#cbd5e1" font-size="11">&#8226; Delta Firmware Flash Patch</text>
+
+    <!-- Card 3.4: Security Verification (y=278..448) -->
+    <rect x="0" y="278" width="254" height="170" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect x="0" y="278" width="254" height="26" rx="6" fill="#78350f"/>
+    <text x="12" y="296" fill="#fef3c7" font-size="11" font-weight="bold">Security Verification (Signed)</text>
+    <text x="12" y="328" fill="#94a3b8" font-size="11">Signature Hash: <tspan fill="#f8fafc" font-weight="bold">SHA-384 OK</tspan></text>
+    <text x="12" y="350" fill="#94a3b8" font-size="11">Rollback Guard: <tspan fill="#f8fafc" font-weight="bold">Monotonic Counter</tspan></text>
+    <text x="12" y="372" fill="#94a3b8" font-size="11">Tamper Resistance: <tspan fill="#f8fafc" font-weight="bold">FIPS 140-3 L3</tspan></text>
+    <text x="12" y="394" fill="#94a3b8" font-size="11">Transport Layer: <tspan fill="#f8fafc" font-weight="bold">TLS 1.3 over CAN-FD</tspan></text>
+    <text x="12" y="420" fill="#4ade80" font-size="11" font-weight="bold">&#10003; Risk Guardian Certified</text>
+  </g>
+
+  <!-- Pipeline Connector 3 -> 4 -->
+  <path d="M 915 365 L 937 365" stroke="#10b981" stroke-width="3" marker-end="url(#arrowPip)"/>
+
+  <!-- ================= STAGE 4: EDGE RUNTIME & DETERMINISTIC FALLBACK ================= -->
+  <rect x="940" y="110" width="275" height="510" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="1.8" filter="url(#shadow4)"/>
+  <rect x="950" y="120" width="255" height="28" rx="5" fill="#15803d"/>
+  <text x="1077" y="139" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">STAGE 4: EDGE EXECUTION</text>
+
+  <g transform="translate(952, 160)">
+    <!-- Card 4.1 (y=0..78) -->
+    <rect x="0" y="0" width="251" height="78" rx="6" fill="#052e16" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="12" y="22" fill="#4ade80" font-size="12" font-weight="bold">Edge AI Inference Engine</text>
+    <text x="12" y="44" fill="#dcfce7" font-size="11">&#8226; 1.8ms Seam Weld Tracking</text>
+    <text x="12" y="64" fill="#dcfce7" font-size="11">&#8226; Laser Offset: &#177;0.05mm</text>
+
+    <!-- Card 4.2 (y=88..180) -->
+    <rect x="0" y="88" width="251" height="92" rx="6" fill="#052e16" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="12" y="110" fill="#4ade80" font-size="12" font-weight="bold">Dual-Core Lockstep CPU</text>
+    <text x="12" y="130" fill="#dcfce7" font-size="11">&#8226; ISO 26262 ASIL-D Redundant</text>
+    <text x="12" y="148" fill="#dcfce7" font-size="11">&#8226; Cycle Comparator (Sub-10ns)</text>
+    <text x="12" y="166" fill="#dcfce7" font-size="11">&#8226; Instant Bit-Flip Detection</text>
+
+    <!-- Card 4.3 (y=190..268) -->
+    <rect x="0" y="190" width="251" height="78" rx="6" fill="#052e16" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="12" y="212" fill="#4ade80" font-size="12" font-weight="bold">Hardware Watchdog Timer</text>
+    <text x="12" y="234" fill="#dcfce7" font-size="11">&#8226; 500 &#956;s Hard Execution Cutoff</text>
+    <text x="12" y="254" fill="#dcfce7" font-size="11">&#8226; Stack &amp; Memory Bounds Trap</text>
+
+    <!-- Card 4.4: Deterministic Fallback (y=278..448) -->
+    <rect x="0" y="278" width="251" height="170" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="0" y="278" width="251" height="26" rx="6" fill="#7f1d1d"/>
+    <text x="12" y="296" fill="#fca5a5" font-size="11" font-weight="bold">AUTOSAR Safety Override</text>
+    <text x="12" y="324" fill="#fecaca" font-size="11">If AI drifts or latency &gt; 2.0ms:</text>
+    <text x="12" y="346" fill="#fee2e2" font-size="11">&#8226; Freeze robotic arm trajectory</text>
+    <text x="12" y="368" fill="#fee2e2" font-size="11">&#8226; Drop optical laser safety shutter</text>
+    <text x="12" y="390" fill="#fee2e2" font-size="11">&#8226; Switch to calibrated LUT table</text>
+    <text x="12" y="420" fill="#fca5a5" font-size="11" font-weight="bold">Override Latency: &lt; 500 &#956;s</text>
+  </g>
+
+  <!-- ================= BOTTOM SECTION: RESILIENCE & TCO BENCHMARK ================= -->
+  <rect x="25" y="645" width="1190" height="205" rx="10" fill="#0f172a" stroke="#475569" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="40" y="658" width="420" height="26" rx="4" fill="#334155"/>
+  <text x="50" y="676" fill="#ffffff" font-size="12" font-weight="bold">PRODUCTION RESILIENCE &amp; LATENCY BUDGET BREAKDOWN</text>
+
+  <g transform="translate(40, 700)">
+    <!-- Column 1: Latency Equation -->
+    <rect x="0" y="0" width="370" height="135" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="16" y="24" fill="#38bdf8" font-size="13" font-weight="bold">Shop-Floor Latency Budget Formula</text>
+    <text x="16" y="48" fill="#f8fafc" font-size="11">&#916;T_total = T_capture + T_infer + T_actuate</text>
+    <text x="16" y="72" fill="#4ade80" font-size="12" font-weight="bold">&#916;T = 0.4ms + 1.8ms + 0.3ms = 2.5 ms</text>
+    <text x="16" y="96" fill="#94a3b8" font-size="11">Max Allowable Latency at 500 mm/s: &#8804; 3.0 ms</text>
+    <text x="16" y="118" fill="#38bdf8" font-size="11">&#10003; Real-Time Dynamic Correction Achieved</text>
+
+    <!-- Column 2: First-Pass Yield -->
+    <rect x="395" y="0" width="370" height="135" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="411" y="24" fill="#4ade80" font-size="13" font-weight="bold">Weld Quality &amp; Yield Benchmark</text>
+    <text x="411" y="48" fill="#f8fafc" font-size="11">Legacy Cloud Pilot: <tspan fill="#ef4444" font-weight="bold">91.4%</tspan> (Halt/20 min)</text>
+    <text x="411" y="72" fill="#f8fafc" font-size="12">Quantized Edge Cluster: <tspan fill="#4ade80" font-weight="bold">99.98% Yield</tspan></text>
+    <text x="411" y="96" fill="#94a3b8" font-size="11">Scrap Rate Reduced by 98.2% ($34.2M Saved)</text>
+    <text x="411" y="118" fill="#4ade80" font-size="11">&#10003; Zero Physical Conveyor Halts</text>
+
+    <!-- Column 3: Fiduciary ROI -->
+    <rect x="790" y="0" width="370" height="135" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="806" y="24" fill="#fcd34d" font-size="13" font-weight="bold">Fiduciary Economic Return</text>
+    <text x="806" y="48" fill="#f8fafc" font-size="11">Cloud API &amp; Egress OpEx: <tspan fill="#ef4444" font-weight="bold">$180,000 / Month</tspan></text>
+    <text x="806" y="72" fill="#f8fafc" font-size="12">Industrial Edge CapEx: <tspan fill="#4ade80" font-weight="bold">$220,000 (1-Time)</tspan></text>
+    <text x="806" y="96" fill="#94a3b8" font-size="11">Full Capital Payback Period: 38 Days</text>
+    <text x="806" y="118" fill="#fcd34d" font-size="11" font-weight="bold">&#10003; High-ROI Infrastructure Investment</text>
+  </g>
+
+</svg>

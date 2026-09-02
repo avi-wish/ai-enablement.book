@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" width="1200" height="840" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="shadow5" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowPfd" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowRedPfd" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <!-- Full Canvas Background -->
+  <rect width="1200" height="840" fill="#0f172a" rx="12"/>
+
+
+  <!-- Header Banner -->
+  <rect x="30" y="20" width="1140" height="65" rx="10" fill="url(#headerGrad5)" filter="url(#shadow5)"/>
+  <text x="600" y="50" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 6.5: AIAG PROCESS FLOW &amp; QUALITY CONTROL PLAN (PFD / CP MATRIX)</text>
+  <text x="600" y="72" fill="#dbeafe" font-size="13" text-anchor="middle">Volt-Tech Smart Battery Assembly Line &#8226; Key Product Characteristics (KPCs) &#8226; Automated Edge AI Inspection Gates</text>
+
+  <!-- ================= HORIZONTAL PROCESS FLOW (LEVEL 0/1) ================= -->
+  <rect x="30" y="105" width="1140" height="240" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow5)"/>
+  <rect x="45" y="115" width="340" height="24" rx="4" fill="#0369a1"/>
+  <text x="55" y="132" fill="#ffffff" font-size="12" font-weight="bold">AIAG PROCESS FLOW DIAGRAM (PFD SEQUENCE)</text>
+  <text x="1150" y="132" fill="#7dd3fc" font-size="11" text-anchor="end">Cycle Time: 45 sec/pack &#8226; First-Pass Target: 99.98%</text>
+
+  <!-- OP-10 -->
+  <g transform="translate(45, 150)">
+    <rect x="0" y="0" width="165" height="175" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1.2"/>
+    <rect x="0" y="0" width="165" height="28" rx="8" fill="#334155"/>
+    <text x="82" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">OP-10: CELL SORTING</text>
+    <text x="10" y="48" fill="#94a3b8" font-size="10">Machine: Laser OCV/IR</text>
+    <text x="10" y="65" fill="#38bdf8" font-size="10">KPC: &#916;V &lt; 2mV</text>
+    <text x="10" y="82" fill="#94a3b8" font-size="10">DPP Verification</text>
+    <text x="10" y="99" fill="#cbd5e1" font-size="9">&#8226; Purity Hash Check</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="9">&#8226; Internal &#916;R Match</text>
+    <rect x="10" y="130" width="145" height="32" rx="4" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="82" y="150" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">Gate 1: 100% In-Line</text>
+  </g>
+
+  <!-- Arrow OP10 -> OP20 -->
+  <path d="M 215 235 L 235 235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowPfd)"/>
+
+  <!-- OP-20 -->
+  <g transform="translate(240, 150)">
+    <rect x="0" y="0" width="165" height="175" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1.2"/>
+    <rect x="0" y="0" width="165" height="28" rx="8" fill="#334155"/>
+    <text x="82" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">OP-20: CELL STACK</text>
+    <text x="10" y="48" fill="#94a3b8" font-size="10">Machine: Servo Gantry</text>
+    <text x="10" y="65" fill="#38bdf8" font-size="10">KPC: Gap &#177;0.05mm</text>
+    <text x="10" y="82" fill="#94a3b8" font-size="10">Compression Force</text>
+    <text x="10" y="99" fill="#cbd5e1" font-size="9">&#8226; 4.2 kN Uniform Load</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="9">&#8226; Aerogel Barrier Insert</text>
+    <rect x="10" y="130" width="145" height="32" rx="4" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="82" y="150" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">Gate 2: Force Transducer</text>
+  </g>
+
+  <!-- Arrow OP20 -> OP30 -->
+  <path d="M 410 235 L 430 235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowPfd)"/>
+
+  <!-- OP-30 (HIGHLIGHTED CORE AI STEP) -->
+  <g transform="translate(435, 150)">
+    <rect x="0" y="0" width="185" height="175" rx="8" fill="#052e16" stroke="#22c55e" stroke-width="1.8"/>
+    <rect x="0" y="0" width="185" height="28" rx="8" fill="#15803d"/>
+    <text x="92" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">OP-30: BUSBAR WELD</text>
+    <text x="10" y="48" fill="#bbf7d0" font-size="10">Machine: 4kW Laser Arm</text>
+    <text x="10" y="65" fill="#4ade80" font-size="10" font-weight="bold">KPC: Seam Depth &gt;0.8mm</text>
+    <text x="10" y="82" fill="#bbf7d0" font-size="10">Weld Width: 1.2&#177;0.1mm</text>
+    <text x="10" y="99" fill="#dcfce7" font-size="9">&#8226; 500 FPS Coaxial Vision</text>
+    <text x="10" y="114" fill="#dcfce7" font-size="9">&#8226; 1.8ms Edge Inference</text>
+    <rect x="10" y="130" width="165" height="32" rx="4" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <text x="92" y="150" fill="#4ade80" font-size="9" font-weight="bold" text-anchor="middle">Gate 3: Edge Vision AI</text>
+  </g>
+
+  <!-- Arrow OP30 -> OP40 -->
+  <path d="M 625 235 L 645 235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowPfd)"/>
+
+  <!-- OP-40 -->
+  <g transform="translate(650, 150)">
+    <rect x="0" y="0" width="165" height="175" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1.2"/>
+    <rect x="0" y="0" width="165" height="28" rx="8" fill="#334155"/>
+    <text x="82" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">OP-40: EIS TEST</text>
+    <text x="10" y="48" fill="#94a3b8" font-size="10">Machine: Multi-Freq EIS</text>
+    <text x="10" y="65" fill="#38bdf8" font-size="10">KPC: &#916;R &lt; 0.5 m&#937;</text>
+    <text x="10" y="82" fill="#94a3b8" font-size="10">Impedance Spectrum</text>
+    <text x="10" y="99" fill="#cbd5e1" font-size="9">&#8226; 0.1Hz–10kHz Sweep</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="9">&#8226; Contact Resistance</text>
+    <rect x="10" y="130" width="145" height="32" rx="4" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="82" y="150" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">Gate 4: EIS Spectrum</text>
+  </g>
+
+  <!-- Arrow OP40 -> OP50 -->
+  <path d="M 820 235 L 840 235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowPfd)"/>
+
+  <!-- OP-50 -->
+  <g transform="translate(845, 150)">
+    <rect x="0" y="0" width="150" height="175" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1.2"/>
+    <rect x="0" y="0" width="150" height="28" rx="8" fill="#334155"/>
+    <text x="75" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">OP-50: BMS MOUNT</text>
+    <text x="10" y="48" fill="#94a3b8" font-size="10">Machine: Torque Arm</text>
+    <text x="10" y="65" fill="#38bdf8" font-size="10">KPC: 9.5 &#177;0.2 Nm</text>
+    <text x="10" y="82" fill="#94a3b8" font-size="10">Dual BMS Lock</text>
+    <text x="10" y="99" fill="#cbd5e1" font-size="9">&#8226; ASIL-D Harness</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="9">&#8226; HSM Key Injection</text>
+    <rect x="10" y="130" width="130" height="32" rx="4" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="75" y="150" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">Gate 5: Hi-Pot Test</text>
+  </g>
+
+  <!-- Arrow OP50 -> OP60 -->
+  <path d="M 1000 235 L 1020 235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowPfd)"/>
+
+  <!-- OP-60 -->
+  <g transform="translate(1025, 150)">
+    <rect x="0" y="0" width="145" height="175" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1.2"/>
+    <rect x="0" y="0" width="145" height="28" rx="8" fill="#334155"/>
+    <text x="72" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">OP-60: FINAL PACK</text>
+    <text x="10" y="48" fill="#94a3b8" font-size="10">Machine: Leak &amp; Pack</text>
+    <text x="10" y="65" fill="#38bdf8" font-size="10">KPC: IP69K Sealed</text>
+    <text x="10" y="82" fill="#94a3b8" font-size="10">DPP Serialization</text>
+    <text x="10" y="99" fill="#cbd5e1" font-size="9">&#8226; Helium Sniff Test</text>
+    <text x="10" y="114" fill="#cbd5e1" font-size="9">&#8226; Cloud Hash Publish</text>
+    <rect x="10" y="130" width="125" height="32" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    <text x="72" y="150" fill="#4ade80" font-size="9" font-weight="bold" text-anchor="middle">&#10003; Orbit Dispatch</text>
+  </g>
+
+  <!-- ================= DETAILED CONTROL PLAN MATRIX TABLE ================= -->
+  <rect x="30" y="360" width="1140" height="450" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5" filter="url(#shadow5)"/>
+  <rect x="45" y="370" width="380" height="24" rx="4" fill="#334155"/>
+  <text x="55" y="387" fill="#ffffff" font-size="12" font-weight="bold">AIAG QUALITY CONTROL PLAN (CP) MATRIX</text>
+
+  <!-- Table Header -->
+  <g transform="translate(45, 405)">
+    <rect x="0" y="0" width="1110" height="30" rx="4" fill="#0f172a" stroke="#64748b" stroke-width="1"/>
+    <text x="35" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Op #</text>
+    <text x="120" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Process Name</text>
+    <text x="280" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Characteristic (KPC)</text>
+    <text x="490" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Specification / Tolerance</text>
+    <text x="710" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Inspection Technique</text>
+    <text x="910" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Reaction Plan</text>
+  </g>
+
+  <!-- Table Rows -->
+  <g transform="translate(45, 442)">
+    <!-- Row 1: OP-10 -->
+    <rect x="0" y="0" width="1110" height="50" rx="3" fill="#0f172a"/>
+    <text x="35" y="28" fill="#ffffff" font-size="11" font-weight="bold">10</text>
+    <text x="120" y="28" fill="#e2e8f0" font-size="11">Cell Receiving</text>
+    <text x="280" y="28" fill="#94a3b8" font-size="11">Open Circuit Voltage / IR</text>
+    <text x="490" y="28" fill="#38bdf8" font-size="11">OCV 3.65V &#177;2mV; IR &#8804; 0.45 m&#937;</text>
+    <text x="710" y="28" fill="#e2e8f0" font-size="11">Automated Multi-Channel Probe</text>
+    <text x="910" y="28" fill="#fb923c" font-size="11">Divert cell to Buffer; Flag DPP batch</text>
+
+    <!-- Row 2: OP-20 -->
+    <rect x="0" y="55" width="1110" height="50" rx="3" fill="#1e293b"/>
+    <text x="35" y="83" fill="#ffffff" font-size="11" font-weight="bold">20</text>
+    <text x="120" y="83" fill="#e2e8f0" font-size="11">Module Stacking</text>
+    <text x="280" y="83" fill="#94a3b8" font-size="11">Stack Dimensional Alignment</text>
+    <text x="490" y="83" fill="#38bdf8" font-size="11">Length: 640 &#177;0.05mm; Force: 4.2kN</text>
+    <text x="710" y="83" fill="#e2e8f0" font-size="11">Laser Displacement Sensor</text>
+    <text x="910" y="83" fill="#fb923c" font-size="11">Halt Gantry; Auto-Reclamp Module</text>
+
+    <!-- Row 3: OP-30 (CORE AI ROW) -->
+    <rect x="0" y="110" width="1110" height="60" rx="3" fill="#052e16" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="35" y="142" fill="#4ade80" font-size="12" font-weight="bold">30</text>
+    <text x="120" y="142" fill="#ffffff" font-size="12" font-weight="bold">Laser Busbar Weld</text>
+    <text x="280" y="135" fill="#dcfce7" font-size="11" font-weight="bold">Weld Penetration Depth</text>
+    <text x="280" y="152" fill="#86efac" font-size="10">Zero Porosity / Splatter</text>
+    <text x="490" y="135" fill="#4ade80" font-size="11" font-weight="bold">Depth &gt; 0.8mm; Width 1.2 &#177;0.1mm</text>
+    <text x="490" y="152" fill="#dcfce7" font-size="10">Micro-Voids &lt; 0.02 mm&#178;</text>
+    <text x="710" y="135" fill="#ffffff" font-size="11" font-weight="bold">Coaxial 500 FPS Vision AI</text>
+    <text x="710" y="152" fill="#4ade80" font-size="10">1.8ms INT8 TensorRT Inference</text>
+    <text x="910" y="135" fill="#4ade80" font-size="11" font-weight="bold">Dynamic &#177;0.05mm Focus Offset</text>
+    <text x="910" y="152" fill="#dcfce7" font-size="10">Zero Conveyor Halts; Defect Isolated</text>
+
+    <!-- Row 4: OP-40 -->
+    <rect x="0" y="175" width="1110" height="50" rx="3" fill="#0f172a"/>
+    <text x="35" y="203" fill="#ffffff" font-size="11" font-weight="bold">40</text>
+    <text x="120" y="203" fill="#e2e8f0" font-size="11">EIS Impedance Gate</text>
+    <text x="280" y="203" fill="#94a3b8" font-size="11">Weld Contact Resistance</text>
+    <text x="490" y="203" fill="#38bdf8" font-size="11">R_weld &#8804; 0.25 m&#937;; &#916;R_busbar &#8804; 0.1m&#937;</text>
+    <text x="710" y="203" fill="#e2e8f0" font-size="11">High-Frequency 10kHz AC EIS</text>
+    <text x="910" y="203" fill="#fb923c" font-size="11">Automatic Laser Re-weld Loop (Max 1)</text>
+
+    <!-- Row 5: OP-50 -->
+    <rect x="0" y="230" width="1110" height="50" rx="3" fill="#1e293b"/>
+    <text x="35" y="258" fill="#ffffff" font-size="11" font-weight="bold">50</text>
+    <text x="120" y="258" fill="#e2e8f0" font-size="11">BMS &amp; High-Voltage</text>
+    <text x="280" y="258" fill="#94a3b8" font-size="11">Dielectric Isolation &amp; Torque</text>
+    <text x="490" y="258" fill="#38bdf8" font-size="11">Hi-Pot 2,500V DC &lt; 1mA; 9.5 &#177;0.2 Nm</text>
+    <text x="710" y="258" fill="#e2e8f0" font-size="11">Hi-Pot Tester &amp; Smart Nutrunner</text>
+    <text x="910" y="258" fill="#ef4444" font-size="11">Lock Pack Out; Send to Teardown Bay</text>
+
+    <!-- Row 6: OP-60 -->
+    <rect x="0" y="285" width="1110" height="50" rx="3" fill="#0f172a"/>
+    <text x="35" y="313" fill="#ffffff" font-size="11" font-weight="bold">60</text>
+    <text x="120" y="313" fill="#e2e8f0" font-size="11">Final Enclosure</text>
+    <text x="280" y="313" fill="#94a3b8" font-size="11">Helium Hermetic Seal &amp; DPP</text>
+    <text x="490" y="313" fill="#38bdf8" font-size="11">Leak &lt; 1x10^-6 mbar*L/s; Cryptographic Sign</text>
+    <text x="710" y="313" fill="#e2e8f0" font-size="11">Mass Spectrometer &amp; HSM Vault</text>
+    <text x="910" y="313" fill="#10b981" font-size="11" font-weight="bold">Publish DPP Hash; Release to Orbit</text>
+  </g>
+
+</svg>

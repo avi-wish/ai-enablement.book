@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad75" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="shadow75" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrBpmn" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="860" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="25" width="1140" height="65" rx="10" fill="url(#headerGrad75)" filter="url(#shadow75)"/>
+  <text x="600" y="55" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 7.5: TARGET BPMN 2.0 PROCESS — AUTONOMOUS HAULAGE &amp; ENERGY ARBITRAGE</text>
+  <text x="600" y="77" fill="#bae6fd" font-size="13" text-anchor="middle">TOGAF Phase E Process Re-engineering (Executed in Transition State 2) &#8226; Dynamic Real-Time Grid Pricing</text>
+
+  <!-- Swimlanes Container -->
+  <rect x="30" y="105" width="1140" height="690" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5" filter="url(#shadow75)"/>
+
+  <!-- Lane 1: AI Route & Dispatch Optimizer (Top) -->
+  <rect x="30" y="105" width="160" height="170" rx="0" fill="#082f49" stroke="#334155" stroke-width="1"/>
+  <text x="110" y="180" fill="#38bdf8" font-size="13" font-weight="bold" text-anchor="middle" transform="rotate(-90 110 180)">AI DISPATCH OPTIMIZER</text>
+  <rect x="190" y="105" width="980" height="170" fill="#0f172a" stroke="#334155" stroke-width="0.5"/>
+
+  <!-- Lane 2: Autonomous Heavy Hauler Fleet (Middle-Top) -->
+  <rect x="30" y="275" width="160" height="170" rx="0" fill="#451a03" stroke="#334155" stroke-width="1"/>
+  <text x="110" y="350" fill="#fbbf24" font-size="13" font-weight="bold" text-anchor="middle" transform="rotate(-90 110 350)">AUTONOMOUS HAULER FLEET</text>
+  <rect x="190" y="275" width="980" height="170" fill="#18181b" stroke="#334155" stroke-width="0.5"/>
+
+  <!-- Lane 3: Real-Time Grid & Energy SCADA (Middle-Bottom) -->
+  <rect x="30" y="445" width="160" height="170" rx="0" fill="#064e3b" stroke="#334155" stroke-width="1"/>
+  <text x="110" y="520" fill="#4ade80" font-size="13" font-weight="bold" text-anchor="middle" transform="rotate(-90 110 520)">GRID &amp; BESS SCADA</text>
+  <rect x="190" y="445" width="980" height="170" fill="#0f172a" stroke="#334155" stroke-width="0.5"/>
+
+  <!-- Lane 4: Safety & Environmental Watchdog (Bottom) -->
+  <rect x="30" y="615" width="160" height="180" rx="0" fill="#312e81" stroke="#334155" stroke-width="1"/>
+  <text x="110" y="695" fill="#a78bfa" font-size="13" font-weight="bold" text-anchor="middle" transform="rotate(-90 110 695)">SAFETY &amp; ASIL-D GATE</text>
+  <rect x="190" y="615" width="980" height="180" fill="#18181b" stroke="#334155" stroke-width="0.5"/>
+
+  <!-- BPMN START EVENT -->
+  <circle cx="230" cy="190" r="18" fill="#10b981" stroke="#34d399" stroke-width="2"/>
+  <polygon points="225 180, 240 190, 225 200" fill="#064e3b"/>
+  <text x="230" y="225" fill="#a7f3d0" font-size="10" text-anchor="middle">Ore Batch Ready</text>
+
+  <!-- Flow 1 -> Task 1 -->
+  <line x1="248" y1="190" x2="280" y2="190" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+
+  <!-- Task 1: In-Situ Spectroscopy & Grade Check -->
+  <rect x="280" y="155" width="130" height="70" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="345" y="180" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">90s XRF Ore</text>
+  <text x="345" y="196" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">Spectroscopy</text>
+  <text x="345" y="213" fill="#38bdf8" font-size="9" text-anchor="middle">Grade: 99.98% Li/Ni</text>
+
+  <!-- Flow -> Parallel Gateway -->
+  <line x1="410" y1="190" x2="445" y2="190" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <polygon points="465 170, 485 190, 465 210, 445 190" fill="#0369a1" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="465" y="195" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">+</text>
+
+  <!-- Branch 1: Route Optimization -->
+  <path d="M 465 170 L 465 150 L 515 150" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <rect x="515" y="120" width="130" height="60" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="580" y="145" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">AI 3D Topo Route</text>
+  <text x="580" y="163" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">Gradient Planning</text>
+
+  <!-- Branch 2: Grid Pricing Check (Goes down to Lane 3) -->
+  <path d="M 465 210 L 465 520 L 515 520" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <rect x="515" y="490" width="130" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="580" y="515" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">Listen to Grid TOU</text>
+  <text x="580" y="533" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">Real-Time Pricing</text>
+
+  <!-- Decision Gateway in Lane 3: Is Grid Peak or Off-Peak? -->
+  <line x1="645" y1="520" x2="685" y2="520" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <polygon points="705 500, 725 520, 705 540, 685 520" fill="#065f46" stroke="#34d399" stroke-width="1.5"/>
+  <text x="705" y="525" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">&#215;</text>
+
+  <!-- Peak Path -> Discharge BESS Buffer -->
+  <path d="M 705 500 L 705 470 L 760 470" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <rect x="760" y="450" width="125" height="45" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+  <text x="822" y="470" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">Peak: Discharge BESS</text>
+  <text x="822" y="484" fill="#cbd5e1" font-size="9" text-anchor="middle">Avoid $0.42/kWh Spike</text>
+
+  <!-- Off-Peak Path -> Direct Renewable Grid -->
+  <path d="M 705 540 L 705 570 L 760 570" stroke="#4ade80" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <rect x="760" y="550" width="125" height="45" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="822" y="570" fill="#4ade80" font-size="10" font-weight="bold" text-anchor="middle">Off-Peak: Solar/Wind</text>
+  <text x="822" y="584" fill="#cbd5e1" font-size="9" text-anchor="middle">Charge at $0.04/kWh</text>
+
+  <!-- Merge to Hauler Execution (Lane 2) -->
+  <path d="M 645 150 L 720 150 L 720 340 L 760 340" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+  <path d="M 885 470 L 910 470 L 910 370 L 880 370" stroke="#fbbf24" stroke-width="1.5"/>
+  <path d="M 885 570 L 910 570 L 910 370 L 880 370" stroke="#4ade80" stroke-width="1.5"/>
+
+  <rect x="760" y="320" width="130" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="825" y="345" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">Autonomous Hauler</text>
+  <text x="825" y="363" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">Dynamic Dispatch</text>
+  <text x="825" y="379" fill="#fbbf24" font-size="9" text-anchor="middle">Speed modulated by grid</text>
+
+  <!-- Flow to Safety Gate (Lane 4) -->
+  <path d="M 825 390 L 825 680 L 860 680" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+
+  <rect x="860" y="650" width="130" height="60" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="925" y="675" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">ASIL-D Watchdog</text>
+  <text x="925" y="693" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">&amp; Geofence Gate</text>
+
+  <!-- Flow to End Event -->
+  <line x1="990" y1="680" x2="1030" y2="680" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrBpmn)"/>
+
+  <circle cx="1060" cy="680" r="18" fill="#064e3b" stroke="#10b981" stroke-width="4"/>
+  <rect x="1052" y="672" width="16" height="16" fill="#10b981" rx="2"/>
+  <text x="1060" y="718" fill="#a7f3d0" font-size="10" text-anchor="middle">DPP Sealed &amp; Rail Synched</text>
+
+  <!-- Bottom Metric Bar -->
+  <rect x="30" y="805" width="1140" height="45" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="50" y="832" fill="#fbbf24" font-size="12" font-weight="bold">BUSINESS PROCESS RE-ENGINEERING IMPACT (TRANSITION STATE 2):</text>
+  <text x="560" y="832" fill="#cbd5e1" font-size="11">&#8226; Energy Waste: <tspan font-weight="bold" fill="#4ade80">Slashing 22% &#8594; 0.4%</tspan></text>
+  <text x="780" y="832" fill="#cbd5e1" font-size="11">&#8226; Hauler Fleet Fuel OpEx: <tspan font-weight="bold" fill="#4ade80">-$18.2M/yr</tspan></text>
+  <text x="980" y="832" fill="#cbd5e1" font-size="11">&#8226; Lead Time: <tspan font-weight="bold" fill="#4ade80">4 Days &#8594; 90s</tspan></text>
+</svg>

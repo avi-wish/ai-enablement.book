@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad73" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="terraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+    <linearGradient id="voltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082f49"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <filter id="shadow73" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrSync" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrGold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#fbbf24"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="860" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="25" width="1140" height="65" rx="10" fill="url(#headerGrad73)" filter="url(#shadow73)"/>
+  <text x="600" y="55" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 7.3: THREE-ENTERPRISE SCOR SYNCHRONIZATION BLUEPRINT (LEVEL 2 &amp; 3)</text>
+  <text x="600" y="77" fill="#bae6fd" font-size="13" text-anchor="middle">Terra-Resource (Source &amp; Make) &#8594; Volt-Tech (Make &amp; Deliver) &#8594; Orbit-Logistics (Deliver &amp; Return)</text>
+
+  <!-- 3 Enterprise Tiers -->
+
+  <!-- TIER 1: TERRA-RESOURCE -->
+  <rect x="30" y="105" width="1140" height="210" rx="10" fill="url(#terraGrad)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow73)"/>
+  <rect x="45" y="115" width="360" height="26" rx="5" fill="#78350f"/>
+  <text x="55" y="133" fill="#fef3c7" font-size="12" font-weight="bold">UPSTREAM: TERRA-RESOURCE (EXTRACTION &amp; REFINING)</text>
+  <text x="1150" y="133" fill="#fbbf24" font-size="12" text-anchor="end">SCOR: sS1 (Source Stocked) &#8226; sM1 (Make Stocked) &#8226; sD1 (Deliver)</text>
+
+  <!-- Terra SCOR Blocks -->
+  <rect x="50" y="150" width="250" height="150" rx="8" fill="#1c1917" stroke="#b45309" stroke-width="1"/>
+  <text x="65" y="173" fill="#fbbf24" font-size="13" font-weight="bold">sS1.1: Automated Drill &amp; XRF</text>
+  <text x="65" y="193" fill="#d6d3d1" font-size="11">&#8226; 90-second ore spectroscopy</text>
+  <text x="65" y="211" fill="#d6d3d1" font-size="11">&#8226; In-situ grade classification</text>
+  <text x="65" y="229" fill="#d6d3d1" font-size="11">&#8226; Purity &gt;99.98% verified</text>
+  <text x="65" y="255" fill="#38bdf8" font-size="11" font-weight="bold">Takt Time: 120s / Batch</text>
+  <text x="65" y="275" fill="#94a3b8" font-size="10">Lead Time: 4d &#8594; 90s</text>
+
+  <rect x="330" y="150" width="250" height="150" rx="8" fill="#1c1917" stroke="#b45309" stroke-width="1"/>
+  <text x="345" y="173" fill="#fbbf24" font-size="13" font-weight="bold">sM1.2: Autonomous Haulage</text>
+  <text x="345" y="193" fill="#d6d3d1" font-size="11">&#8226; Grid TOU price arbitrage</text>
+  <text x="345" y="211" fill="#d6d3d1" font-size="11">&#8226; Dynamic route optimization</text>
+  <text x="345" y="229" fill="#d6d3d1" font-size="11">&#8226; 100% renewable power align</text>
+  <text x="345" y="255" fill="#38bdf8" font-size="11" font-weight="bold">Energy Waste: -18%</text>
+  <text x="345" y="275" fill="#94a3b8" font-size="10">Fuel &amp; Power: $18.2M/yr saved</text>
+
+  <rect x="610" y="150" width="250" height="150" rx="8" fill="#1c1917" stroke="#b45309" stroke-width="1"/>
+  <text x="625" y="173" fill="#fbbf24" font-size="13" font-weight="bold">sD1.3: DPP Hash Issuance</text>
+  <text x="625" y="193" fill="#d6d3d1" font-size="11">&#8226; Cryptographic provenance seal</text>
+  <text x="625" y="211" fill="#d6d3d1" font-size="11">&#8226; ECC Secp384r1 signed batch</text>
+  <text x="625" y="229" fill="#d6d3d1" font-size="11">&#8226; Protobuf contract stream</text>
+  <text x="625" y="255" fill="#38bdf8" font-size="11" font-weight="bold">Zero Dirty Data SLA</text>
+  <text x="625" y="275" fill="#94a3b8" font-size="10">Passports: 100% Validated</text>
+
+  <rect x="890" y="150" width="260" height="150" rx="8" fill="#292524" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="905" y="173" fill="#fbbf24" font-size="13" font-weight="bold">sD1.4: Dynamic Rail Dispatch</text>
+  <text x="905" y="193" fill="#d6d3d1" font-size="11">&#8226; 4-hour scheduled rail wagons</text>
+  <text x="905" y="211" fill="#d6d3d1" font-size="11">&#8226; Directly synched to Volt takt</text>
+  <text x="905" y="229" fill="#d6d3d1" font-size="11">&#8226; Zero buffer stockpile bleed</text>
+  <text x="905" y="255" fill="#4ade80" font-size="11" font-weight="bold">Delivery SLA: 99.8% On-Time</text>
+  <text x="905" y="275" fill="#94a3b8" font-size="10">Inventory Holding: -64%</text>
+
+  <!-- Flow Arrow: Terra -> Volt -->
+  <path d="M 1020 315 L 1020 345" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrGold)"/>
+  <text x="1030" y="335" fill="#fbbf24" font-size="10" font-weight="bold">Direct Rail Intake (Zero Buffer)</text>
+
+  <!-- TIER 2: VOLT-TECH -->
+  <rect x="30" y="345" width="1140" height="210" rx="10" fill="url(#voltGrad)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow73)"/>
+  <rect x="45" y="355" width="380" height="26" rx="5" fill="#0369a1"/>
+  <text x="55" y="373" fill="#e0f2fe" font-size="12" font-weight="bold">MIDSTREAM: VOLT-TECH (SMART BATTERY PACK ASSEMBLY)</text>
+  <text x="1150" y="373" fill="#38bdf8" font-size="12" text-anchor="end">SCOR: sS1 (Intake) &#8226; sM2 (Make-to-Order) &#8226; sD1 (Deliver)</text>
+
+  <!-- Volt SCOR Blocks -->
+  <rect x="50" y="390" width="250" height="150" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+  <text x="65" y="413" fill="#38bdf8" font-size="13" font-weight="bold">sS1.1: Automated Cell Intake</text>
+  <text x="65" y="433" fill="#cbd5e1" font-size="11">&#8226; DPP hash cryptographic verify</text>
+  <text x="65" y="451" fill="#cbd5e1" font-size="11">&#8226; High-speed OCV / IR probe</text>
+  <text x="65" y="469" fill="#cbd5e1" font-size="11">&#8226; 3.65V &#177; 2mV sorting gate</text>
+  <text x="65" y="495" fill="#4ade80" font-size="11" font-weight="bold">Reject Rate: &lt;0.01%</text>
+  <text x="65" y="515" fill="#94a3b8" font-size="10">Cycle: 1.2s per Cell</text>
+
+  <rect x="330" y="390" width="250" height="150" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+  <text x="345" y="413" fill="#38bdf8" font-size="13" font-weight="bold">sM2.2: Laser Weld &amp; 1.8ms AI</text>
+  <text x="345" y="433" fill="#cbd5e1" font-size="11">&#8226; On-prem TensorRT INT8 GPU</text>
+  <text x="345" y="451" fill="#cbd5e1" font-size="11">&#8226; Closed-loop 2.5ms correction</text>
+  <text x="345" y="469" fill="#cbd5e1" font-size="11">&#8226; ASIL-D lockstep MCU watchdog</text>
+  <text x="345" y="495" fill="#4ade80" font-size="11" font-weight="bold">First-Pass Yield: 99.98%</text>
+  <text x="345" y="515" fill="#94a3b8" font-size="10">Line Halts: 0 per shift</text>
+
+  <rect x="610" y="390" width="250" height="150" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+  <text x="625" y="413" fill="#38bdf8" font-size="13" font-weight="bold">sM2.3: BMS Injection &amp; EIS</text>
+  <text x="625" y="433" fill="#cbd5e1" font-size="11">&#8226; TinyML BMS key provisioning</text>
+  <text x="625" y="451" fill="#cbd5e1" font-size="11">&#8226; 100Hz EIS baseline benchmark</text>
+  <text x="625" y="469" fill="#cbd5e1" font-size="11">&#8226; Helium mass-spec hermetic test</text>
+  <text x="625" y="495" fill="#4ade80" font-size="11" font-weight="bold">IP69K Enclosure Certified</text>
+  <text x="625" y="515" fill="#94a3b8" font-size="10">Takt Time: 45s / Pack</text>
+
+  <rect x="890" y="390" width="260" height="150" rx="8" fill="#0c2233" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="905" y="413" fill="#38bdf8" font-size="13" font-weight="bold">sD1.4: Pack Serialization</text>
+  <text x="905" y="433" fill="#cbd5e1" font-size="11">&#8226; Complete pack DPP published</text>
+  <text x="905" y="451" fill="#cbd5e1" font-size="11">&#8226; Direct staging to Orbit carrier</text>
+  <text x="905" y="469" fill="#cbd5e1" font-size="11">&#8226; 48-hr predictive service slot</text>
+  <text x="905" y="495" fill="#4ade80" font-size="11" font-weight="bold">Cycle: 3.2 hrs (vs 18.4h)</text>
+  <text x="905" y="515" fill="#94a3b8" font-size="10">Plant OEE: 94.6%</text>
+
+  <!-- Flow Arrow: Volt -> Orbit -->
+  <path d="M 1020 555 L 1020 585" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrSync)"/>
+  <text x="1030" y="575" fill="#38bdf8" font-size="10" font-weight="bold">Smart Pack JIT Staging</text>
+
+  <!-- TIER 3: ORBIT-LOGISTICS -->
+  <rect x="30" y="585" width="1140" height="210" rx="10" fill="url(#orbitGrad)" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow73)"/>
+  <rect x="45" y="595" width="380" height="26" rx="5" fill="#14532d"/>
+  <text x="55" y="613" fill="#dcfce7" font-size="12" font-weight="bold">DOWNSTREAM: ORBIT-LOGISTICS (FLEET &amp; DEPOT OPERATIONS)</text>
+  <text x="1150" y="613" fill="#4ade80" font-size="12" text-anchor="end">SCOR: sS1 (Intake) &#8226; sD1 (Deliver) &#8226; sR1 (Return/Service)</text>
+
+  <!-- Orbit SCOR Blocks -->
+  <rect x="50" y="630" width="250" height="150" rx="8" fill="#022c22" stroke="#15803d" stroke-width="1"/>
+  <text x="65" y="653" fill="#4ade80" font-size="13" font-weight="bold">sS1.1: Vehicle Pack Install</text>
+  <text x="65" y="673" fill="#cbd5e1" font-size="11">&#8226; Mutual HSM silicon attestation</text>
+  <text x="65" y="691" fill="#cbd5e1" font-size="11">&#8226; Auto-pair with CAN-FD gateway</text>
+  <text x="65" y="709" fill="#cbd5e1" font-size="11">&#8226; Zero manual wiring config</text>
+  <text x="65" y="735" fill="#4ade80" font-size="11" font-weight="bold">Install Time: 15 min</text>
+  <text x="65" y="755" fill="#94a3b8" font-size="10">Attestation: 100% Cryptographic</text>
+
+  <rect x="330" y="630" width="250" height="150" rx="8" fill="#022c22" stroke="#15803d" stroke-width="1"/>
+  <text x="345" y="653" fill="#4ade80" font-size="13" font-weight="bold">sD1.2: Highway Autonomous</text>
+  <text x="345" y="673" fill="#cbd5e1" font-size="11">&#8226; 5G CAN-FD telemetry stream</text>
+  <text x="345" y="691" fill="#cbd5e1" font-size="11">&#8226; Onboard TinyML cell degradation</text>
+  <text x="345" y="709" fill="#cbd5e1" font-size="11">&#8226; Zero mid-route cell collapses</text>
+  <text x="345" y="735" fill="#4ade80" font-size="11" font-weight="bold">Uptime: 98.9% (vs 91.2%)</text>
+  <text x="345" y="755" fill="#94a3b8" font-size="10">Cost to Serve: -24%</text>
+
+  <rect x="610" y="630" width="250" height="150" rx="8" fill="#022c22" stroke="#15803d" stroke-width="1"/>
+  <text x="625" y="653" fill="#4ade80" font-size="13" font-weight="bold">sD1.3: Megawatt Smart Depot</text>
+  <text x="625" y="673" fill="#cbd5e1" font-size="11">&#8226; 1.2MW fast charging handshake</text>
+  <text x="625" y="691" fill="#cbd5e1" font-size="11">&#8226; 10% to 85% in 22 minutes</text>
+  <text x="625" y="709" fill="#cbd5e1" font-size="11">&#8226; EIS thermal modulation loop</text>
+  <text x="625" y="735" fill="#4ade80" font-size="11" font-weight="bold">PSoC Bleed: 0%</text>
+  <text x="625" y="755" fill="#94a3b8" font-size="10">Hub Turnaround: 40 trucks/hr</text>
+
+  <rect x="890" y="630" width="260" height="150" rx="8" fill="#042f24" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="905" y="653" fill="#4ade80" font-size="13" font-weight="bold">sR1.4: Closed-Loop Return</text>
+  <text x="905" y="673" fill="#cbd5e1" font-size="11">&#8226; 48-hr predictive service swap</text>
+  <text x="905" y="691" fill="#cbd5e1" font-size="11">&#8226; Second-life stationary BESS</text>
+  <text x="905" y="709" fill="#cbd5e1" font-size="11">&#8226; Closed telemetry feed to plant</text>
+  <text x="905" y="735" fill="#4ade80" font-size="11" font-weight="bold">RL.1.1: 99.85% (Perfect Order)</text>
+  <text x="905" y="755" fill="#94a3b8" font-size="10">Rescue Costs: $0</text>
+
+  <!-- Bottom Metric Bar -->
+  <rect x="30" y="805" width="1140" height="45" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="50" y="832" fill="#38bdf8" font-size="12" font-weight="bold">END-TO-END SCOR SYNCHRONIZATION RESULTS:</text>
+  <text x="420" y="832" fill="#f8fafc" font-size="12">&#8226; Order Fulfillment (RS.1.1): <tspan font-weight="bold" fill="#4ade80">3.2 hrs</tspan></text>
+  <text x="680" y="832" fill="#f8fafc" font-size="12">&#8226; Upside Flexibility (AG.1.1): <tspan font-weight="bold" fill="#4ade80">+35%</tspan></text>
+  <text x="920" y="832" fill="#f8fafc" font-size="12">&#8226; Delivery Reliability (RL.1.1): <tspan font-weight="bold" fill="#4ade80">99.85%</tspan></text>
+</svg>

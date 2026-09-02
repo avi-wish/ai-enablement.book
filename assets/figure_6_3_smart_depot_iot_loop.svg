@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <filter id="shadow3" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowOrange3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#fb923c"/>
+    </marker>
+    <marker id="arrowGreen3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#4ade80"/>
+    </marker>
+  </defs>
+  <!-- Full Canvas Background -->
+  <rect width="1200" height="800" fill="#0f172a" rx="12"/>
+
+  <!-- Header Banner -->
+  <rect x="30" y="20" width="1140" height="65" rx="10" fill="url(#headerGrad3)" filter="url(#shadow3)"/>
+  <text x="600" y="50" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 6.3: JOINT ORBIT &amp; VOLT-TECH SMART DEPOT GRID &amp; TELEMETRY CLOSED LOOP</text>
+  <text x="600" y="72" fill="#ffedd5" font-size="13" text-anchor="middle">Bidirectional ISO 15118-20 Fast-Charging &#8226; CAN-FD BMS Telematics &#8226; Dynamic Thermal Mitigation</text>
+
+  <!-- ================= LEFT DOMAIN: ORBIT ELECTRIC TRUCK (ONBOARD EDGE) ================= -->
+  <rect x="30" y="105" width="535" height="520" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.8" filter="url(#shadow3)"/>
+  <rect x="45" y="118" width="340" height="26" rx="4" fill="#0284c7"/>
+  <text x="55" y="136" fill="#ffffff" font-size="12" font-weight="bold">HEAVY ELECTRIC TRUCK (ONBOARD EDGE NODE)</text>
+
+  <!-- Battery Pack Subgraph -->
+  <rect x="50" y="160" width="495" height="155" rx="8" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.2"/>
+  <text x="65" y="185" fill="#38bdf8" font-size="13" font-weight="bold">Smart Battery Pack (600 kWh &#8226; 800V Architecture)</text>
+
+  <g transform="translate(65, 200)">
+    <!-- Left Card: BMS -->
+    <rect x="0" y="0" width="220" height="100" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="12" y="22" fill="#ffffff" font-size="11" font-weight="bold">Battery Management (BMS)</text>
+    <text x="12" y="42" fill="#94a3b8" font-size="10">&#8226; Dual-Core Lockstep CPU</text>
+    <text x="12" y="58" fill="#94a3b8" font-size="10">&#8226; ISO 26262 ASIL-D Core</text>
+    <text x="12" y="74" fill="#38bdf8" font-size="10">&#8226; AUTOSAR Microcontroller</text>
+    <text x="12" y="90" fill="#4ade80" font-size="10">Hard Safety Cutoff: &lt;500&#956;s</text>
+
+    <!-- Right Card: TinyML EIS Core (x=245..465) -->
+    <rect x="245" y="0" width="220" height="100" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="257" y="22" fill="#ffffff" font-size="11" font-weight="bold">TinyML EIS Anomaly Core</text>
+    <text x="257" y="42" fill="#94a3b8" font-size="10">&#8226; 100 Hz Cell Voltage / Temp</text>
+    <text x="257" y="58" fill="#94a3b8" font-size="10">&#8226; Micro-Dendrite Inference</text>
+    <text x="257" y="74" fill="#94a3b8" font-size="10">&#8226; Dynamic State-of-Health</text>
+    <text x="257" y="90" fill="#fb923c" font-size="10">PSoC Stress Detection</text>
+  </g>
+
+  <!-- Telematics Unit -->
+  <rect x="50" y="330" width="495" height="120" rx="8" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.2"/>
+  <text x="65" y="355" fill="#38bdf8" font-size="13" font-weight="bold">Telematics Control Unit (TCU) &amp; Gateway</text>
+  <g transform="translate(65, 370)">
+    <text x="0" y="20" fill="#cbd5e1" font-size="11">&#8226; High-Speed CAN FD Ingestion (500 kbps to 5 Mbps)</text>
+    <text x="0" y="40" fill="#cbd5e1" font-size="11">&#8226; Hardware Security Module (HSM) Cryptographic Key Vault</text>
+    <text x="0" y="60" fill="#cbd5e1" font-size="11">&#8226; Encrypted 5G Cellular Uplink to Orbit Global Fleet Portal</text>
+  </g>
+
+  <!-- Power Inverter & Motors -->
+  <rect x="50" y="465" width="495" height="140" rx="8" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.2"/>
+  <text x="65" y="490" fill="#38bdf8" font-size="13" font-weight="bold">High-Voltage Traction Inverter &amp; Thermal Loop</text>
+  <g transform="translate(65, 505)">
+    <text x="0" y="20" fill="#cbd5e1" font-size="11">&#8226; Silicon Carbide (SiC) Inverter with 98.7% Efficiency</text>
+    <text x="0" y="40" fill="#cbd5e1" font-size="11">&#8226; Closed-Loop Glycol Liquid Cooling with Proportional Valves</text>
+    <text x="0" y="60" fill="#cbd5e1" font-size="11">&#8226; Acceleration Torque Limiter triggered by Low State-of-Charge</text>
+    <text x="0" y="80" fill="#4ade80" font-size="11" font-weight="bold">Prevents Deep-Discharge Spikes under Partial Charge (PSoC)</text>
+  </g>
+
+  <!-- ================= RIGHT DOMAIN: ORBIT SMART DEPOT CHARGING GRID ================= -->
+  <rect x="635" y="105" width="535" height="520" rx="10" fill="#271003" stroke="#f97316" stroke-width="1.8" filter="url(#shadow3)"/>
+  <rect x="650" y="118" width="360" height="26" rx="4" fill="#ea580c"/>
+  <text x="660" y="136" fill="#ffffff" font-size="12" font-weight="bold">ORBIT SMART DEPOT CHARGING GRID (EDGE HUB)</text>
+
+  <!-- Megawatt Charger Controller -->
+  <rect x="655" y="160" width="495" height="155" rx="8" fill="#431407" stroke="#fb923c" stroke-width="1.2"/>
+  <text x="670" y="185" fill="#fb923c" font-size="13" font-weight="bold">1.2 MW Megawatt Charging System (MCS Dispenser)</text>
+  <g transform="translate(670, 200)">
+    <!-- Left Card: ISO Controller -->
+    <rect x="0" y="0" width="220" height="100" rx="6" fill="#271003" stroke="#7c2d12" stroke-width="1"/>
+    <text x="12" y="22" fill="#ffffff" font-size="11" font-weight="bold">ISO 15118-20 Controller</text>
+    <text x="12" y="42" fill="#fed7aa" font-size="10">&#8226; Plug &amp; Charge Auth</text>
+    <text x="12" y="58" fill="#fed7aa" font-size="10">&#8226; Bi-Directional V2G Power</text>
+    <text x="12" y="74" fill="#fed7aa" font-size="10">&#8226; PLC Physical Carrier</text>
+    <text x="12" y="90" fill="#4ade80" font-size="10">Digital Handshake: &lt;50ms</text>
+
+    <!-- Right Card: Adaptive C-Rate Engine (x=245..465) -->
+    <rect x="245" y="0" width="220" height="100" rx="6" fill="#271003" stroke="#7c2d12" stroke-width="1"/>
+    <text x="257" y="22" fill="#ffffff" font-size="11" font-weight="bold">Adaptive C-Rate Engine</text>
+    <text x="257" y="42" fill="#fed7aa" font-size="10">&#8226; Real-Time Impedance Sync</text>
+    <text x="257" y="58" fill="#fed7aa" font-size="10">&#8226; Multi-Stage Pulse Ramp</text>
+    <text x="257" y="74" fill="#fed7aa" font-size="10">&#8226; 0% &#8594; 85% in 22 Minutes</text>
+    <text x="257" y="90" fill="#38bdf8" font-size="10">Zero Thermal Runaway</text>
+  </g>
+
+  <!-- Depot Microgrid & Peak Shaving -->
+  <rect x="655" y="330" width="495" height="120" rx="8" fill="#431407" stroke="#fb923c" stroke-width="1.2"/>
+  <text x="670" y="355" fill="#fb923c" font-size="13" font-weight="bold">Depot Energy Storage System (BESS) &amp; Grid Tie</text>
+  <g transform="translate(670, 370)">
+    <text x="0" y="20" fill="#fed7aa" font-size="11">&#8226; 5 MWh Stationary Buffer Battery (Shaves 15 MW Peak Demand)</text>
+    <text x="0" y="40" fill="#fed7aa" font-size="11">&#8226; 1.5 MW Solar Canopy Microgrid Integration</text>
+    <text x="0" y="60" fill="#fed7aa" font-size="11">&#8226; Demand Response &amp; Utility Time-of-Use (TOU) Arbitrage</text>
+  </g>
+
+  <!-- Depot Dispatch & Scheduling -->
+  <rect x="655" y="465" width="495" height="140" rx="8" fill="#431407" stroke="#fb923c" stroke-width="1.2"/>
+  <text x="670" y="490" fill="#fb923c" font-size="13" font-weight="bold">Depot Automated Dispatch &amp; Route Telemetry</text>
+  <g transform="translate(670, 505)">
+    <text x="0" y="20" fill="#fed7aa" font-size="11">&#8226; Real-Time Turnaround Optimization Engine</text>
+    <text x="0" y="40" fill="#fed7aa" font-size="11">&#8226; Enforces Minimum 80% SOC Threshold prior to Dispatch</text>
+    <text x="0" y="60" fill="#fed7aa" font-size="11">&#8226; Automated Bay Re-Routing for Trucks requiring Cell Balancing</text>
+    <text x="0" y="80" fill="#4ade80" font-size="11" font-weight="bold">Guarantees Orbit Perfect Shipment Delivery (SCOR RL.1.1 &#8805; 99.8%)</text>
+  </g>
+
+  <!-- ================= BI-DIRECTIONAL INTERACTION ARROWS ================= -->
+  <g transform="translate(565, 220)">
+    <!-- Top Arrow: ISO 15118-20 Charging & Impedance -->
+    <path d="M 0 0 L 70 0" stroke="#fb923c" stroke-width="3" marker-end="url(#arrowOrange3)"/>
+    <path d="M 70 20 L 0 20" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <rect x="-10" y="-18" width="90" height="16" rx="3" fill="#0f172a"/>
+    <text x="35" y="-6" fill="#fb923c" font-size="9" font-weight="bold" text-anchor="middle">ISO 15118-20</text>
+    <rect x="-10" y="22" width="90" height="16" rx="3" fill="#0f172a"/>
+    <text x="35" y="34" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">CAN/Impedance</text>
+  </g>
+
+  <!-- ================= BOTTOM: MULTI-ENTERPRISE CLOSED-LOOP SYNCHRONIZATION ================= -->
+  <rect x="30" y="645" width="1140" height="135" rx="10" fill="#032b1e" stroke="#10b981" stroke-width="1.8" filter="url(#shadow3)"/>
+  <rect x="45" y="655" width="380" height="24" rx="4" fill="#047857"/>
+  <text x="55" y="672" fill="#ffffff" font-size="12" font-weight="bold">CLOSED-LOOP MULTI-ENTERPRISE DIGITAL TWIN &amp; WARRANTY LEDGER</text>
+
+  <g transform="translate(50, 690)">
+    <rect x="0" y="0" width="340" height="75" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <text x="15" y="24" fill="#ffffff" font-size="12" font-weight="bold">Volt-Tech Battery Digital Twin</text>
+    <text x="15" y="44" fill="#d1fae5" font-size="10">&#8226; Aggregates 100,000+ Pack Telemetry Feeds</text>
+    <text x="15" y="60" fill="#d1fae5" font-size="10">&#8226; Continuous SOH Model Retraining &amp; Drift</text>
+
+    <rect x="375" y="0" width="350" height="75" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <text x="390" y="24" fill="#ffffff" font-size="12" font-weight="bold">Multi-Enterprise DPP Smart Contract</text>
+    <text x="390" y="44" fill="#d1fae5" font-size="10">&#8226; Validates Charging SLA Compliance</text>
+    <text x="390" y="60" fill="#d1fae5" font-size="10">&#8226; Automated Warranty Claim Adjudication</text>
+
+    <rect x="760" y="0" width="350" height="75" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <text x="775" y="24" fill="#ffffff" font-size="12" font-weight="bold">Orbit Fleet Health Dashboard (GCC)</text>
+    <text x="775" y="44" fill="#d1fae5" font-size="10">&#8226; Predictive Route Energy Budgeting</text>
+    <text x="775" y="60" fill="#d1fae5" font-size="10">&#8226; Zero Mid-Route Voltage Collapses</text>
+  </g>
+
+</svg>

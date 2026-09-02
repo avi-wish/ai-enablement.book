@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="100%" height="auto" style="background:#0b1120; border-radius:8px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="mglHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="step1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="step2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+    <linearGradient id="step3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="step4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="step5Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#2e1065"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title & Header -->
+  <rect x="20" y="15" width="960" height="60" rx="6" fill="url(#mglHeaderGrad)" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="42" fill="#38bdf8" font-size="18px" font-weight="700">FIGURE E.4: CONTINUOUS MODEL UPGRADE &amp; RETRAINING GOVERNANCE LOOP</text>
+  <text x="40" y="62" fill="#94a3b8" font-size="12px">Architecture Protocol for Integrating Emerging Foundation Models &amp; Mitigating Algorithmic Drift</text>
+
+  <!-- STEP 1: TRIGGER -->
+  <rect x="20" y="95" width="180" height="360" rx="6" fill="url(#step1Grad)" stroke="#818cf8" stroke-width="1.5"/>
+  <rect x="30" y="105" width="160" height="28" rx="4" fill="#4338ca"/>
+  <text x="110" y="124" fill="#e0e7ff" font-size="11.5px" font-weight="700" text-anchor="middle">STEP 1: UPGRADE TRIGGER</text>
+
+  <rect x="30" y="145" width="160" height="70" rx="4" fill="#0f172a" stroke="#6366f1" stroke-width="1"/>
+  <text x="38" y="165" fill="#a5b4fc" font-size="11px" font-weight="700">A. Drift Alert</text>
+  <text x="38" y="180" fill="#cbd5e1" font-size="10px">PSI &#8805; 0.15 on APM</text>
+  <text x="38" y="195" fill="#cbd5e1" font-size="10px">Feature drift detected</text>
+
+  <rect x="30" y="225" width="160" height="70" rx="4" fill="#0f172a" stroke="#6366f1" stroke-width="1"/>
+  <text x="38" y="245" fill="#a5b4fc" font-size="11px" font-weight="700">B. Frontier Model</text>
+  <text x="38" y="260" fill="#cbd5e1" font-size="10px">New LLM/VLM release</text>
+  <text x="38" y="275" fill="#cbd5e1" font-size="10px">Multimodal efficiency</text>
+
+  <rect x="30" y="305" width="160" height="70" rx="4" fill="#0f172a" stroke="#6366f1" stroke-width="1"/>
+  <text x="38" y="325" fill="#a5b4fc" font-size="11px" font-weight="700">C. Regulatory Mandate</text>
+  <text x="38" y="340" fill="#cbd5e1" font-size="10px">EU AI Act update</text>
+  <text x="38" y="355" fill="#cbd5e1" font-size="10px">ISO 42001 revision</text>
+
+  <text x="110" y="420" fill="#a5b4fc" font-size="10.5px" text-anchor="middle" font-weight="600">&#8595; Emits Change Request</text>
+
+  <!-- STEP 2: SHADOW PIPELINE -->
+  <rect x="215" y="95" width="180" height="360" rx="6" fill="url(#step2Grad)" stroke="#38bdf8" stroke-width="1.5"/>
+  <rect x="225" y="105" width="160" height="28" rx="4" fill="#0284c7"/>
+  <text x="305" y="124" fill="#e0f2fe" font-size="11.5px" font-weight="700" text-anchor="middle">STEP 2: SHADOW EVAL</text>
+
+  <rect x="225" y="145" width="160" height="85" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="233" y="165" fill="#7dd3fc" font-size="11px" font-weight="700">Synthetic Edge Benchmarks</text>
+  <text x="233" y="180" fill="#cbd5e1" font-size="10px">&#8226; 1M Synthetic Stress Cases</text>
+  <text x="233" y="195" fill="#cbd5e1" font-size="10px">&#8226; Battery Thermal Faults</text>
+  <text x="233" y="210" fill="#cbd5e1" font-size="10px">&#8226; Blizzard Sensor Noise</text>
+
+  <rect x="225" y="240" width="160" height="85" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="233" y="260" fill="#7dd3fc" font-size="11px" font-weight="700">Shadow Mirror Replay</text>
+  <text x="233" y="275" fill="#cbd5e1" font-size="10px">&#8226; Live Telemetry Mirroring</text>
+  <text x="233" y="290" fill="#cbd5e1" font-size="10px">&#8226; Zero Impact on Production</text>
+  <text x="233" y="305" fill="#cbd5e1" font-size="10px">&#8226; Side-by-side inference</text>
+
+  <text x="305" y="420" fill="#7dd3fc" font-size="10.5px" text-anchor="middle" font-weight="600">&#8595; Compiles Eval Report</text>
+
+  <!-- STEP 3: FITNESS GATES -->
+  <rect x="410" y="95" width="180" height="360" rx="6" fill="url(#step3Grad)" stroke="#34d399" stroke-width="1.5"/>
+  <rect x="420" y="105" width="160" height="28" rx="4" fill="#059669"/>
+  <text x="500" y="124" fill="#ecfdf5" font-size="11.5px" font-weight="700" text-anchor="middle">STEP 3: FITNESS GATES</text>
+
+  <rect x="420" y="145" width="160" height="58" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="428" y="165" fill="#6ee7b7" font-size="11px" font-weight="700">1. Latency Gate</text>
+  <text x="428" y="180" fill="#cbd5e1" font-size="10px">&#916;T &#8804; 2.5ms deterministic</text>
+
+  <rect x="420" y="210" width="160" height="58" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="428" y="230" fill="#6ee7b7" font-size="11px" font-weight="700">2. Explainability Gate</text>
+  <text x="428" y="245" fill="#cbd5e1" font-size="10px">SHAP fidelity &#8805; 99.2%</text>
+
+  <rect x="420" y="275" width="160" height="58" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="428" y="295" fill="#6ee7b7" font-size="11px" font-weight="700">3. Unit Economics Gate</text>
+  <text x="428" y="310" fill="#cbd5e1" font-size="10px">Cost/KM &#8804; $0.92/km</text>
+
+  <rect x="420" y="340" width="160" height="58" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="428" y="360" fill="#6ee7b7" font-size="11px" font-weight="700">4. Safety &amp; PPAP Gate</text>
+  <text x="428" y="375" fill="#cbd5e1" font-size="10px">AIAG KPC 100% compliant</text>
+
+  <text x="500" y="420" fill="#6ee7b7" font-size="10.5px" text-anchor="middle" font-weight="600">&#8595; Gate Decision</text>
+
+  <!-- STEP 4: EAB COVENANT SIGN-OFF -->
+  <rect x="605" y="95" width="180" height="360" rx="6" fill="url(#step4Grad)" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="615" y="105" width="160" height="28" rx="4" fill="#d97706"/>
+  <text x="695" y="124" fill="#fffbeb" font-size="11.5px" font-weight="700" text-anchor="middle">STEP 4: EAB SIGN-OFF</text>
+
+  <rect x="615" y="145" width="160" height="85" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="623" y="165" fill="#fde68a" font-size="11px" font-weight="700">Tripartite EAB Ratification</text>
+  <text x="623" y="180" fill="#cbd5e1" font-size="10px">&#8226; Fiscal Seat (Priya/Anjali)</text>
+  <text x="623" y="195" fill="#cbd5e1" font-size="10px">&#8226; Operational Seat (Vikram)</text>
+  <text x="623" y="210" fill="#cbd5e1" font-size="10px">&#8226; Risk &amp; Legal Seat (Sanjay)</text>
+
+  <rect x="615" y="240" width="160" height="85" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="623" y="260" fill="#fde68a" font-size="11px" font-weight="700">HSM Smart Contract</text>
+  <text x="623" y="275" fill="#cbd5e1" font-size="10px">&#8226; Multi-sig Cryptographic Seal</text>
+  <text x="623" y="290" fill="#cbd5e1" font-size="10px">&#8226; DPP Schema Hash Signed</text>
+  <text x="623" y="305" fill="#cbd5e1" font-size="10px">&#8226; Article 14 Compliance Seal</text>
+
+  <text x="695" y="420" fill="#fde68a" font-size="10.5px" text-anchor="middle" font-weight="600">&#8595; Authorizes Cutover</text>
+
+  <!-- STEP 5: CANARY DEPLOY & ROLLBACK -->
+  <rect x="800" y="95" width="180" height="360" rx="6" fill="url(#step5Grad)" stroke="#c084fc" stroke-width="1.5"/>
+  <rect x="810" y="105" width="160" height="28" rx="4" fill="#7e22ce"/>
+  <text x="890" y="124" fill="#f3e8ff" font-size="11.5px" font-weight="700" text-anchor="middle">STEP 5: CANARY CUTOVER</text>
+
+  <rect x="810" y="145" width="160" height="85" rx="4" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="818" y="165" fill="#e9d5ff" font-size="11px" font-weight="700">Canary Traffic Staging</text>
+  <text x="818" y="180" fill="#cbd5e1" font-size="10px">&#8226; Phase 1: 5% Fleet Traffic</text>
+  <text x="818" y="195" fill="#cbd5e1" font-size="10px">&#8226; Phase 2: 25% Factory Lines</text>
+  <text x="818" y="210" fill="#cbd5e1" font-size="10px">&#8226; Phase 3: 100% Full Cutover</text>
+
+  <rect x="810" y="240" width="160" height="85" rx="4" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="818" y="260" fill="#e9d5ff" font-size="11px" font-weight="700">Automated Rollback Gate</text>
+  <text x="818" y="275" fill="#ef4444" font-size="10px; font-weight:600">&#8226; Instant &lt; 50ms Rollback</text>
+  <text x="818" y="290" fill="#cbd5e1" font-size="10px">&#8226; Triggered if RL.1.1 &lt; 99.5%</text>
+  <text x="818" y="305" fill="#cbd5e1" font-size="10px">&#8226; Dual-Active Model Storage</text>
+
+  <text x="890" y="420" fill="#e9d5ff" font-size="10.5px" text-anchor="middle" font-weight="600">&#10003; Sustained Production</text>
+
+  <!-- Connective Arrows -->
+  <path d="M200 275 L215 275" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M395 275 L410 275" stroke="#34d399" stroke-width="2"/>
+  <path d="M590 275 L605 275" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M785 275 L800 275" stroke="#c084fc" stroke-width="2"/>
+
+  <!-- Footer -->
+  <text x="500" y="530" fill="#94a3b8" font-size="11px" text-anchor="middle">Rule CHG-04: Closed-Loop Model Modernization Protocol &#8226; Zero Downtime &#8226; Absolute Fiduciary Traceability</text>
+</svg>

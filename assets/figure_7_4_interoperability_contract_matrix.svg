@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad74" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <filter id="shadow74" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrPurple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#a855f7"/>
+    </marker>
+    <marker id="arrCyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrGreen" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#22c55e"/>
+    </marker>
+    <marker id="arrAmber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="920" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="1140" height="65" rx="10" fill="url(#headerGrad74)" filter="url(#shadow74)"/>
+  <text x="600" y="50" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 7.4: CROSS-ENTERPRISE INTEROPERABILITY CONTRACT MATRIX (TOGAF SBB INTEGRATION)</text>
+  <text x="600" y="72" fill="#bae6fd" font-size="13" text-anchor="middle">6 Bidirectional Machine-to-Machine Integration Touchpoints &#8226; Cryptographic Trust &#8226; Microsecond SLAs</text>
+
+  <!-- ================= 3 ENTERPRISE NODES ================= -->
+
+  <!-- NODE 1: TERRA-RESOURCE (Top Left: X=40..340, Y=105..315) -->
+  <rect x="40" y="105" width="300" height="210" rx="10" fill="#451a03" stroke="#f59e0b" stroke-width="2" filter="url(#shadow74)"/>
+  <rect x="55" y="115" width="270" height="26" rx="5" fill="#78350f"/>
+  <text x="190" y="133" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">TERRA-RESOURCE (Mine Gateway)</text>
+
+  <rect x="55" y="150" width="270" height="70" rx="6" fill="#1c1917" stroke="#b45309" stroke-width="1"/>
+  <text x="65" y="170" fill="#fbbf24" font-size="11" font-weight="bold">System of Record: DPP Registry</text>
+  <text x="65" y="188" fill="#cbd5e1" font-size="10">&#8226; XRF Ore Spectroscopy Engine</text>
+  <text x="65" y="204" fill="#cbd5e1" font-size="10">&#8226; Secp384r1 Batch Key Signing Vault</text>
+
+  <rect x="55" y="230" width="270" height="70" rx="6" fill="#1c1917" stroke="#b45309" stroke-width="1"/>
+  <text x="65" y="250" fill="#fbbf24" font-size="11" font-weight="bold">Dynamic Logistics Dispatcher</text>
+  <text x="65" y="268" fill="#cbd5e1" font-size="10">&#8226; Autonomous Hauler &amp; Rail Schedule</text>
+  <text x="65" y="284" fill="#cbd5e1" font-size="10">&#8226; Grid Pricing Real-Time Listener</text>
+
+  <!-- NODE 2: VOLT-TECH (Top Right: X=860..1160, Y=105..315) -->
+  <rect x="860" y="105" width="300" height="210" rx="10" fill="#082f49" stroke="#38bdf8" stroke-width="2" filter="url(#shadow74)"/>
+  <rect x="875" y="115" width="270" height="26" rx="5" fill="#0369a1"/>
+  <text x="1010" y="133" fill="#e0f2fe" font-size="12" font-weight="bold" text-anchor="middle">VOLT-TECH (Factory IDMZ Hub)</text>
+
+  <rect x="875" y="150" width="270" height="70" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+  <text x="885" y="170" fill="#38bdf8" font-size="11" font-weight="bold">System of Record: MES &amp; Digital Twin</text>
+  <text x="885" y="188" fill="#cbd5e1" font-size="10">&#8226; OP-10 to OP-60 Production Lineage</text>
+  <text x="885" y="204" fill="#cbd5e1" font-size="10">&#8226; On-Prem TensorRT INT8 GPU Cluster</text>
+
+  <rect x="875" y="230" width="270" height="70" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+  <text x="885" y="250" fill="#38bdf8" font-size="11" font-weight="bold">BMS Key Provisioning Server</text>
+  <text x="885" y="268" fill="#cbd5e1" font-size="10">&#8226; HSM ASIL-D Certificate Authority</text>
+  <text x="885" y="284" fill="#cbd5e1" font-size="10">&#8226; 100Hz EIS Base Calibration Table</text>
+
+  <!-- NODE 3: ORBIT-LOGISTICS (Bottom Center: X=450..750, Y=650..855) -->
+  <rect x="450" y="650" width="300" height="205" rx="10" fill="#064e3b" stroke="#22c55e" stroke-width="2" filter="url(#shadow74)"/>
+  <rect x="465" y="660" width="270" height="26" rx="5" fill="#14532d"/>
+  <text x="600" y="678" fill="#dcfce7" font-size="12" font-weight="bold" text-anchor="middle">ORBIT-LOGISTICS (Fleet &amp; Depots)</text>
+
+  <rect x="465" y="695" width="270" height="68" rx="6" fill="#022c22" stroke="#15803d" stroke-width="1"/>
+  <text x="475" y="715" fill="#4ade80" font-size="11" font-weight="bold">System of Record: Fleet Operations (GCC)</text>
+  <text x="475" y="733" fill="#cbd5e1" font-size="10">&#8226; 5G CAN-FD Real-Time Telemetry Lake</text>
+  <text x="475" y="749" fill="#cbd5e1" font-size="10">&#8226; Predictive Battery Maintenance (48h)</text>
+
+  <rect x="465" y="773" width="270" height="68" rx="6" fill="#022c22" stroke="#15803d" stroke-width="1"/>
+  <text x="475" y="793" fill="#4ade80" font-size="11" font-weight="bold">Smart Depot Energy SCADA</text>
+  <text x="475" y="811" fill="#cbd5e1" font-size="10">&#8226; 1.2MW ISO 15118-20 Fast Charger Grid</text>
+  <text x="475" y="827" fill="#cbd5e1" font-size="10">&#8226; 5MWh Stationary BESS Controller</text>
+
+  <!-- ================= 6 NON-OVERLAPPING CONTRACT BOXES ================= -->
+
+  <!-- CONTRACT 1: Terra -> Volt (Top-Center Left: X=370..830, Y=105..185) -->
+  <rect x="370" y="105" width="460" height="80" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow74)"/>
+  <text x="385" y="127" fill="#c7d2fe" font-size="11" font-weight="bold">CONTRACT 1: DPP Mineral Purity Passport Stream</text>
+  <text x="385" y="145" fill="#cbd5e1" font-size="10">Protocol: gRPC over mTLS / Protobuf</text>
+  <text x="385" y="161" fill="#cbd5e1" font-size="10">Payload: MineralBatchExtractionEvent (hash, grade, origin)</text>
+  <text x="385" y="177" fill="#38bdf8" font-size="10" font-weight="bold">SLA: &lt;50ms ingestion &#8226; 100% cryptographic validation</text>
+  <!-- Connector lines -->
+  <line x1="340" y1="145" x2="370" y2="145" stroke="#818cf8" stroke-width="2"/>
+  <line x1="830" y1="145" x2="860" y2="145" stroke="#818cf8" stroke-width="2" marker-end="url(#arrPurple)"/>
+
+  <!-- CONTRACT 2: Volt -> Terra (Top-Center Lower: X=370..830, Y=195..275) -->
+  <rect x="370" y="195" width="460" height="80" rx="8" fill="#082f49" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow74)"/>
+  <text x="385" y="217" fill="#bae6fd" font-size="11" font-weight="bold">CONTRACT 2: Assembly Demand &amp; Takt Schedule</text>
+  <text x="385" y="235" fill="#cbd5e1" font-size="10">Protocol: MQTT Sparkplug B / JSON Schema</text>
+  <text x="385" y="251" fill="#cbd5e1" font-size="10">Payload: 45s pack assembly forecast &amp; rail intake window</text>
+  <text x="385" y="267" fill="#4ade80" font-size="10" font-weight="bold">SLA: 4-hour advance rail delivery lock &#8226; Zero buffer</text>
+  <!-- Connector lines -->
+  <line x1="860" y1="235" x2="830" y2="235" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="370" y1="235" x2="340" y2="235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrCyan)"/>
+
+  <!-- CONTRACT 6: Ecosystem Governance (Center: X=370..830, Y=290..370) -->
+  <rect x="370" y="290" width="460" height="80" rx="8" fill="#2e1065" stroke="#ec4899" stroke-width="1.8" filter="url(#shadow74)"/>
+  <text x="385" y="312" fill="#fbcfe8" font-size="11" font-weight="bold">CONTRACT 6: EU AI Act &amp; Compliance Audit Dossier</text>
+  <text x="385" y="330" fill="#cbd5e1" font-size="10">Protocol: Immutable Distributed Audit Log / ASIL-D Trace</text>
+  <text x="385" y="346" fill="#cbd5e1" font-size="10">Payload: Model card lineage, inference logs, risk-scoring feed</text>
+  <text x="385" y="362" fill="#ec4899" font-size="10" font-weight="bold">SLA: 100% audit explainability on demand across all 3 nodes</text>
+
+  <!-- CONTRACT 5: Orbit -> Terra (Left Mid-Lower: X=40..450, Y=400..490) -->
+  <rect x="40" y="400" width="410" height="90" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow74)"/>
+  <text x="55" y="422" fill="#fef3c7" font-size="11" font-weight="bold">CONTRACT 5: Downstream Fleet Demand Signal (SCOR sP1)</text>
+  <text x="55" y="440" fill="#cbd5e1" font-size="10">Protocol: EventBridge / Webhook / JSON</text>
+  <text x="55" y="456" fill="#cbd5e1" font-size="10">Payload: Aggregate fleet kWh burn &amp; expansion forecast</text>
+  <text x="55" y="472" fill="#fbbf24" font-size="10" font-weight="bold">SLA: Weekly automated extraction quota recalculation</text>
+  <!-- Connector lines -->
+  <path d="M 450 710 L 245 710 L 245 490" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M 245 400 L 245 315" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrAmber)"/>
+
+  <!-- CONTRACT 3: Volt -> Orbit (Right Upper-Mid: X=750..1160, Y=400..490) -->
+  <rect x="750" y="400" width="410" height="90" rx="8" fill="#064e3b" stroke="#4ade80" stroke-width="1.5" filter="url(#shadow74)"/>
+  <text x="765" y="422" fill="#bbf7d0" font-size="11" font-weight="bold">CONTRACT 3: Serialized Smart Battery Digital Passport</text>
+  <text x="765" y="440" fill="#cbd5e1" font-size="10">Protocol: REST HTTPS / ISO 15118-20 XML</text>
+  <text x="765" y="456" fill="#cbd5e1" font-size="10">Payload: Pack DPP, HSM public keys, baseline EIS impedance</text>
+  <text x="765" y="472" fill="#4ade80" font-size="10" font-weight="bold">SLA: Injected in 15 min &#8226; Zero manual configuration</text>
+  <!-- Connector lines -->
+  <path d="M 1010 315 L 1010 400" stroke="#4ade80" stroke-width="2"/>
+  <path d="M 955 490 L 955 690 L 750 690" stroke="#4ade80" stroke-width="2" marker-end="url(#arrGreen)"/>
+
+  <!-- CONTRACT 4: Orbit -> Volt (Right Lower-Mid: X=750..1160, Y=515..605) -->
+  <rect x="750" y="515" width="410" height="90" rx="8" fill="#0c4a6e" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow74)"/>
+  <text x="765" y="537" fill="#e0f2fe" font-size="11" font-weight="bold">CONTRACT 4: Real-Time CAN-FD EIS Telemetry Loop</text>
+  <text x="765" y="555" fill="#cbd5e1" font-size="10">Protocol: Encrypted 5G MQTT / TimescaleDB</text>
+  <text x="765" y="571" fill="#cbd5e1" font-size="10">Payload: 100Hz EIS curve, thermal gradient, cell degradation</text>
+  <text x="765" y="587" fill="#38bdf8" font-size="10" font-weight="bold">SLA: 48-hr predictive service alert &#8226; 0% PSoC failures</text>
+  <!-- Connector lines -->
+  <path d="M 750 750 L 1080 750 L 1080 605" stroke="#0284c7" stroke-width="2"/>
+  <path d="M 1080 515 L 1080 315" stroke="#0284c7" stroke-width="2" marker-end="url(#arrCyan)"/>
+
+  <!-- Bottom Metric Summary Bar -->
+  <rect x="30" y="870" width="1140" height="38" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="50" y="894" fill="#38bdf8" font-size="12" font-weight="bold">INTEROPERABILITY READINESS INDEX (IRI): <tspan fill="#4ade80">98.6% (Zero Protocol Mismatch)</tspan></text>
+  <text x="640" y="894" fill="#cbd5e1" font-size="11">Total Integration Cost: $3.8M CapEx &#8226; Mutual mTLS + HSM Silicon Root</text>
+</svg>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 9: Navigating the Regulatory Landscape (Implementation Governance &amp; Global AI Compliance) - The Reality of Enterprise AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+  <!-- KaTeX LaTeX JS Library & Auto-Render Extension (Project Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+          });"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chapter_9_charts.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part III:</span> Chapter 9 &mdash; Navigating the Regulatory Landscape</div>
+      <nav><a href="index.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>Navigating the Regulatory Landscape</h1>
+      <p class="subtitle">
+        Implementation Governance: Architecture Contracts, CI/CD Fitness Functions, Time-Bound Dispensations &amp; Global AI Compliance (TOGAF&reg; ADM Phase G)
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Joint Virtual Governance Council &amp; Multi-Enterprise Legal/Architecture Chamber (Ecosystem Wide)</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase G: Implementation Governance (Binding Architecture Contracts, Automated CI/CD Fitness Functions, 6-Tier Compliance Audits, Rule GOV-02 Dispensations &amp; EU AI Act Conformity)</div>
+          
+          <div class="metadata-label">Core Conflict:</div>
+          <div class="metadata-value">With the 16-month Implementation &amp; Migration Plan ratified in Chapter 8, the multi-enterprise consortium enters physical execution. However, deploying autonomous heavy trucks, high-voltage battery telematics, and digital mineral passports across international freight corridors triggers intense regulatory scrutiny under the EU AI Act (Regulation 2024/1689) and EU Battery Passport Regulation (2023/1542). If models lack explainability or drift unmonitored, the consortium faces catastrophic liability: up to $35 million or 7% of global turnover in statutory fines, immediate vehicle groundings, and factory shutdowns. Enterprise architects must construct an impenetrable governance shield by codifying architecture contracts, deploying automated CI/CD fitness functions, and managing architectural variances through strictly time-bound dispensations.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Welcome to <strong>Part III: Implementation Governance and the Real World</strong>. In Part II, our three corporations planned every work package, calculated critical paths, and locked in capital tranches. But as every battle-hardened Chief Architect knows: <em>blueprints do not build systems; engineering teams do</em>. And when high-stakes AI meets physical asphalt and high-voltage manufacturing, the real world pushes back with immense friction."</p>
+        <p class="narrator-text">"In <strong>TOGAF ADM Phase G (Implementation Governance)</strong>, architecture transitions from strategic planning to rigorous oversight. How do you guarantee that junior developers don't bypass security boundaries? How do you prevent autonomous braking models from drifting in winter blizzards? And how do you satisfy European Union regulators who demand 100% forensic explainability for every algorithmic decision? Watch as Aarav Patel, Sanjay Reddy, and Rohan Gupta activate the enterprise compliance shield, turning regulatory constraints into an unassailable commercial advantage."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE JOINT GOVERNANCE COUNCIL -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Storyline: Joint Virtual Governance Council</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Virtual Governance Chamber - The EU AI Act Ultimatum"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter9Images/panel_1.jpg" alt="Figure 9.A: Virtual Governance Chamber &amp; The EU AI Act High-Risk Ultimatum" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.A:</strong> Virtual Governance Chamber &mdash; Rohan Gupta presents the EU AI Act High-Risk statutory ultimatum while Aarav Patel validates 100% Digital Product Passport (DPP) token lineage.</figcaption>
+        </figure>
+        <div class="caption-block">Virtual Governance Chamber. 09:00 Hours. Holographic regulatory feeds flash red with high-risk classification alerts under EU AI Act Regulation 2024/1689.</div>
+
+                          <div class="dialogue-bubble dialogue-rohan">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+          </div>
+          <div class="speech-content">
+            "Aarav, Sanjay, look at this official notification from the European AI Office. Because our autonomous heavy trucks operate on public highways with neural vision guidance and active thermal speed governors, the European Union has classified Orbit's entire fleet control stack as a <strong>High-Risk AI System under Annex III, Section 2</strong>! If we fail the conformity assessment before commercial rollout in Rotterdam next quarter, the statutory penalty is up to <strong>$35 million or 7% of our global annual turnover</strong>, whichever is higher!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian, Terra-Resource &amp; Joint EAB</span>
+          </div>
+          <div class="speech-content">
+            "Do not panic, Rohan. Regulatory compliance in TOGAF ADM Phase G is not an afterthought or a bureaucratic inspection; it is an intrinsic architectural capability. In Phase E and F, we did not build a black-box system. Every lithium ion batch produced by Terra-Resource is cryptographically sealed into a Digital Product Passport token under <strong>EU Battery Regulation 2023/1542</strong>. Our data lineage is 100% auditable back to the open-pit extraction drill core."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Firmware Architecture Deck - Cryptographic Contracts & Hardware Seals"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter9Images/panel_2.jpg" alt="Figure 9.B: Binding Architecture Contract AC-104 & Hardware Security Module (HSM) Cryptographic Seals" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.B:</strong> Firmware Security Terminal &mdash; Sanjay Reddy and Rajesh Iyer inspect the on-chip Hardware Security Module (HSM) Secp384r1 cryptographic keys locking Architecture Contract AC-104.</figcaption>
+        </figure>
+        <div class="caption-block">Firmware Security Terminal. 11:15 Hours. Sanjay Reddy demonstrates the cryptographic binding of Architecture Contract AC-104 into automotive-grade microcontrollers.</div>
+
+                          <div class="dialogue-bubble dialogue-sanjay">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Enterprise Systems Lead, Volt-Tech</span>
+          </div>
+          <div class="speech-content">
+            "And on the hardware front, Volt-Tech has codified <strong>Architecture Contract AC-104 (CAN-FD Telemetry &amp; Speed Governor Accord)</strong> directly into our automotive-grade microcontrollers. Every time our embedded BMS computes an internal impedance matrix or thermal curve, the telemetry packet is signed using our on-chip <strong>Hardware Security Module (HSM) Secp384r1 key</strong>. We record continuous, immutable time-series logs into a write-once-read-many (WORM) audit vault. When the notified body audits us, we will provide sub-millisecond forensic lineage for every kilowatt discharged."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rajesh dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Chief Automation Engineer, Volt-Tech</span>
+          </div>
+          <div class="speech-content">
+            "Under ISO 26262 ASIL-D, the hardware lockstep comparator checks every neural inference. If inference latency spikes or model drift exceeds 0.08, the system triggers a deterministic fallback within \(48.2\text{ms}\), well below our \(250\text{ms}\) contract limit!"
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="CI/CD Engineering Rig - Automated Fitness Functions in Action"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter9Images/panel_3.jpg" alt="Figure 9.C: Automated Architectural Fitness Functions Intercepting Non-Conformant Code in 4.1s" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.C:</strong> Continuous Delivery Test Bay &mdash; Rajesh Iyer and Aarav Patel evaluate an automated CI/CD pipeline intercept where an ArchUnit fitness function blocked non-conformant cross-DB SQL in 4.1 seconds.</figcaption>
+        </figure>
+        <div class="caption-block">Continuous Delivery Test Bay. 13:45 Hours. Rajesh Iyer demonstrates Rule GOV-03 pipeline fitness functions catching an architectural violation.</div>
+
+                          <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Aarav, watch this live demonstration of <strong>Rule GOV-03 (Automated Pipeline Verification)</strong>. Earlier today, an offshore contractor committed code that attempted a direct SQL query from Orbit's dispatch service straight into Volt-Tech's proprietary cell manufacturing database to fetch raw thermal lookup tables."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "That is a severe violation of bounded context isolation and our Zero-Trust IDMZ topology! Did the code reach production staging?"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Not a chance! Our ArchUnit architectural fitness function intercepted the pull request in <strong>4.1 seconds</strong>. The rule <code>noClasses().thatResideIn('..telemetry..').should().accessClassesThat().resideIn('..database..')</code> failed instantly, aborting the build and notifying the developer that all telemetry must traverse the canonical IDMZ OpenAPI 3.1 gateway. Architecture in Phase G is not a static PDF; it is executable code!"
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="EAB Dispensation Session - Evaluating Technical Variance"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter9Images/panel_4.jpg" alt="Figure 9.D: Rule GOV-02 Dispensation Audit &amp; Strict 180-Day Technical Debt Ceiling" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.D:</strong> EAB Audit Chamber &mdash; Priya Kapoor and Sanjay Reddy evaluate Dispensation DSP-001 for legacy Plant 2 sensors under Rule GOV-02, enforcing a 180-day hard limit and funded remediation work package.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Audit Chamber. 15:30 Hours. Sanjay Reddy requests a temporary dispensation for legacy plant sensors under Rule GOV-02.</div>
+
+                          <div class="dialogue-bubble dialogue-sanjay dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Aarav, Priya, we have encountered an operational hurdle in Battery Pack Plant 2. Thirty-two legacy thermal chamber sensors communicate via unencrypted Modbus RTU, which violates our AES-256 Zero-Trust standard. Retooling the sensors will take 90 days. We are formally requesting <strong>Dispensation DSP-001</strong> to operate in production under an isolated VLAN sandbox."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-priya">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+          <div class="speech-avatar-name">Priya Kapoor</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect, Volt-Tech</span>
+          </div>
+          <div class="speech-content">
+            "Under TOGAF Phase G and our project governance charter, dispensations cannot be indefinite blank checks. Under <strong>Rule GOV-02 (Dispensation Expiration)</strong>, three conditions must be met: first, the duration cannot exceed <strong>180 calendar days</strong>; second, Sanjay must commit a funded remediation work package (WP-107b, budgeted at $280,000); third, our API gateway must be configured with an automated kill-switch that revokes access if remediation is not certified by Day 120."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Agreed. Risk assessment confirms that the isolated sandbox limits lateral breach risk to \(R_{\text{res}} \le 0.012\). Dispensation DSP-001 is formally approved with a strict 120-day remediation horizon. We do not accumulate invisible technical debt."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 5 -->
+        <div id="panel-5" class="panel-marker" data-scene="Explainability Command Center - Human-in-the-Loop Triage"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter9Images/panel_5.jpg" alt="Figure 9.E: Human-in-the-Loop (HITL) Explainability Console Satisfying Article 14 Oversight" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.E:</strong> Tele-Assist Operations Floor &mdash; Kavita Joshi and Rohan Gupta review the real-time SHAP explainability dashboard (\(\text{SHAP} \ge 0.95\)) and sub-200ms emergency human override controls.</figcaption>
+        </figure>
+        <div class="caption-block">Tele-Assist Operations Floor. 16:45 Hours. Kavita Joshi reviews the explainability confidence scoring interface for autonomous dispatch.</div>
+
+                          <div class="dialogue-bubble dialogue-kavita">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+          <div class="speech-avatar-name">Kavita Joshi</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">VP Product &amp; Data Strategy, Orbit-Logistics</span>
+          </div>
+          <div class="speech-content">
+            "Rohan, look at our Human-in-the-Loop (HITL) dispatch console (WP-109). Whenever our neural thermal optimizer recommends throttling hauler speed or rerouting a truck around steep alpine grades, the driver's head-up display shows the exact Shapley feature attributions (\(\text{SHAP} \ge 0.95\)). The human operator maintains 100% veto authority with a physical emergency override switch responding in under \(200\text{ms}\). This completely satisfies the EU AI Act <strong>Human Oversight Mandate (Article 14)</strong>!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rohan dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "And because our operators trust the system's explainability, override interventions have stabilized at less than 0.2% of total drive time. Our Perfect Shipment Delivery metric is holding at \(\text{RL.1.1} = 99.88\%\)!"
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 6 -->
+        <div id="panel-6" class="panel-marker" data-scene="Ecosystem Council Podium - Ratification of CE-Mark Conformity Dossier"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter9Images/panel_6.jpg" alt="Figure 9.F: Ratification of the CE-Mark Conformity Dossier &amp; Phase G Implementation Governance" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.F:</strong> Multi-Enterprise Assembly Dais &mdash; Aarav Patel, Sanjay Reddy, and Rohan Gupta formally ratify the CE-Mark Conformity Dossier and Phase G Compliance Assessment Report.</figcaption>
+        </figure>
+        <div class="caption-block">Multi-Enterprise Assembly Dais. 18:00 Hours. The Enterprise Architecture Board signs the Phase G Compliance Assessment Report and CE-Mark Dossier.</div>
+
+                          <div class="dialogue-bubble dialogue-aarav">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Architects and Directors: our quantitative conformity assessment scoring engine reports an aggregate compliance score of \(S_{\text{conformity}} = 0.9984\), far exceeding the statutory pass threshold of \(0.995\). The EU Notified Body has formally issued our <strong>CE Mark Conformity Attestation</strong>!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-joint dialogue-right">
+        <div class="speech-avatar-col">
+          <div class="speech-avatar-dual">
+            <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+            <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          </div>
+          <div class="speech-avatar-name">Sanjay &amp; Rohan</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "We have proven that strict compliance is not a brake on innovation&mdash;it is the very steering wheel that allows us to move at maximum speed! With implementation governance fully secured, we are ready to tackle the ultimate transformation frontier in <strong>Chapter 10: The Augmented Workforce and Cultural Change Management</strong>!"
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: PHASE G IN CONTEXT: IMPLEMENTATION GOVERNANCE -->
+      <!-- ========================================================================= -->
+      <section id="section-1">
+        <h2>1. Phase G in Context: Implementation Governance &amp; The Compliance Moat</h2>
+        <p>In enterprise digital transformations, the most perilous phase is the transition from planning to execution. While TOGAF ADM Phase F establishes the <strong>Implementation and Migration Plan (IMP)</strong>, <strong>Phase G (Implementation Governance)</strong> provides the continuous, auditable architectural oversight required to ensure that every deployed container, edge neural model, and hardware interface conforms strictly to the target architecture.</p>
+        <p>Without rigorous implementation governance, multi-enterprise initiatives succumb to <em>architectural decay</em>: shadow IT implementations, unmonitored neural drift, broken data contracts, and creeping security vulnerabilities. By embedding automated compliance verification directly into the delivery pipeline, the consortium transforms regulatory compliance from a reactive legal burden into an unassailable commercial advantage.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_9_1_implementation_governance_framework.svg" alt="Figure 9.1: TOGAF ADM Phase G Implementation Governance Framework" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.1:</strong> TOGAF&reg; ADM Phase G Implementation Governance Framework &mdash; Dual-track audit hierarchy uniting automated CI/CD fitness functions with formal EAB milestone stage-gate reviews.</figcaption>
+        </figure>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Governance Dimension</th>
+              <th>Unregulated AI Implementation</th>
+              <th>TOGAF ADM Phase G Governed AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Architecture Integrity</strong></td>
+              <td>Developers bypass integration layers; direct cross-database SQL queries introduce severe vendor lock-in.</td>
+              <td><strong style="color:#22c55e;">Rule GOV-01:</strong> 100% of engineering builds bound by signed Architecture Contracts with automated ArchUnit fitness functions.</td>
+            </tr>
+            <tr>
+              <td><strong>Regulatory Risk Exposure</strong></td>
+              <td>Black-box models face up to $35M fines (7% revenue) under EU AI Act for unexplainable automated decisions.</td>
+              <td><strong style="color:#22c55e;">Statutory Conformity:</strong> 7 mandatory compliance pillars embedded with \(S_{\text{conformity}} \ge 0.995\) and certified CE Mark.</td>
+            </tr>
+            <tr>
+              <td><strong>Variance &amp; Technical Debt</strong></td>
+              <td>Informal 'temporary hacks' become permanent unmonitored production liabilities across plants.</td>
+              <td><strong style="color:#22c55e;">Rule GOV-02:</strong> Strict 180-day maximum dispensation ceiling backed by funded remediation work packages and automatic kill-switches.</td>
+            </tr>
+            <tr>
+              <td><strong>Continuous Verification</strong></td>
+              <td>Manual periodic audits take months, discovering architectural drift long after deployment.</td>
+              <td><strong style="color:#22c55e;">Rule GOV-03:</strong> Continuous automated CI/CD pipeline verification executing within 4.1 seconds on every commit.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: ARCHITECTURE CONTRACTS -->
+      <!-- ========================================================================= -->
+      <section id="section-2">
+        <h2>2. Architecture Contracts: Enforceable Technical &amp; Fiduciary Covenants</h2>
+        <p>Under <strong>TOGAF&reg; Standard 10th Edition (Phase G)</strong>, an <strong>Architecture Contract</strong> is not merely a technical guideline; it is a legally binding covenant between the Enterprise Architecture Board (EAB) and the project implementation teams. It establishes unambiguous acceptance criteria, non-functional performance envelopes, and automated financial remedy triggers.</p>
+
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #6366f1; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h3 style="margin-top: 0; color: #4338ca; font-size: 1.2rem; font-weight: bold;">Anatomy of a Binding Architecture Contract (Rule GOV-01)</h3>
+          <p style="color: #1e293b; font-size: 0.95rem; margin-bottom: 0.75rem;">Every Architecture Contract ratified under Phase G must contain the following six core components:</p>
+          <ol style="color: #334155; font-size: 0.95rem; line-height: 1.7; margin-left: 1.5rem; margin-bottom: 0;">
+            <li><strong style="color: #0f172a;">Scope &amp; Bounded Context:</strong> Delineation of microservices, edge hardware, and data entities governed by the contract.</li>
+            <li><strong style="color: #0f172a;">Architecture Baseline &amp; Target References:</strong> Cryptographic hash links to baselined Architecture Definition Documents (ADD) and Architecture Requirements Specifications (ARS).</li>
+            <li><strong style="color: #0f172a;">Conformance Standards &amp; Building Blocks:</strong> Approved Solution Building Blocks (SBBs), OpenAPI 3.1 schemas, and zero-trust protocol specifications.</li>
+            <li><strong style="color: #0f172a;">Non-Functional Performance Envelopes (SLAs):</strong> Measurable bounds for inferencing latency (\(\le 250\text{ms}\)), jitter (\(\le 2.5\text{ms}\)), and data delivery (\(\text{PSD} \ge 99.8\%\)).</li>
+            <li><strong style="color: #0f172a;">Automated Fitness Verification Cadence:</strong> Specification of automated CI/CD assertions and sprint milestone compliance reviews.</li>
+            <li><strong style="color: #0f172a;">Signatures &amp; HSM Cryptographic Seals:</strong> Dual digital sign-off from Lead Enterprise Architect, Program Manager, and Engineering Lead using Secp384r1 keys.</li>
+          </ol>
+        </div>
+
+        <div style="overflow-x: auto; margin: 1.5rem 0;">
+          <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.95rem;">
+            <thead>
+              <tr style="background-color: var(--card-bg);">
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">Contract ID</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">Work Package &amp; Domain</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Signatories</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">Binding SLA &amp; Guardrail</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Verification Tool</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">AC-101</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">WP-101/102: DPP Stream Accord</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Terra-Resource &amp; Volt-Tech</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">100% lithium lots sealed with ERC-721/W3C DPP tokens; schema drift = 0.</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">OpenAPI Spectral Linter</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Active (100%)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">AC-102</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">WP-104: Edge Vision Takt Covenants</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Volt-Tech Assembly Pod</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Sub-2ms edge weld defect inferencing; false negative escape rate \(\le 0.05\%\).</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">ASIL-D Hardware Bench</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Active (100%)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">AC-103</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">WP-105: Depot Megawatt Grid Protocol</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Orbit-Logistics &amp; Grid Utility</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">450kW dynamic charge throttling responding to spot price in \(\le 500\text{ms}\).</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">OpenADR 2.0b Testbed</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Active (100%)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">AC-104</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">WP-108: CAN-FD Telemetry &amp; Governor</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Volt-Tech &amp; Orbit-Logistics</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">250Hz telemetry streaming; ASIL-D deterministic watchdog fallback \(\le 250\text{ms}\).</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">AUTOSAR Lockstep Rig</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Active (100%)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">AC-105</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">WP-109: HITL Tele-Assist Accord</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Orbit Operations &amp; Safety EAB</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Operator emergency override \(\le 200\text{ms}\); explainability score \(\text{SHAP} \ge 0.95\).</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Telemetry Log Audit Vault</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Active (100%)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">AC-106</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">WP-110: Closed-Loop SCOR Telemetry</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Joint Tripartite Consortium</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Bidirectional feedback loop linking fleet thermal degradation to raw ore blending.</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">SCOR sE Audit Engine</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Active (100%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: AUTOMATED FITNESS FUNCTIONS -->
+      <!-- ========================================================================= -->
+      <section id="section-3">
+        <h2>3. Automated Architectural Fitness Functions &amp; CI/CD Guardrails</h2>
+        <p>In modern continuous delivery environments, architecture governance cannot rely on quarterly slide presentations. Under <strong>Rule GOV-03 (Automated Pipeline Verification)</strong>, enterprise architects codify structural rules, security postures, and interface contracts as <em>automated fitness functions</em> executed directly within the CI/CD pipeline.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_9_3_automated_fitness_function_cicd_gate.svg" alt="Figure 9.3: Automated Architectural Fitness Functions & CI/CD Guardrails" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.3:</strong> Automated Architectural Fitness Functions &mdash; Multi-stage CI/CD validation gating commit-level changes against schema contracts, bounded context isolation, and ASIL-D latency bounds.</figcaption>
+        </figure>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Automated Architectural Fitness Function CI/CD Execution</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Execution Latency per Gate (Seconds) vs. Max 5.0s Pipeline Ceiling (\(\Delta t_{\text{total}} = 4.1\text{s}\))</div>
+            <div style="position: relative; height: 320px; width: 100%;">
+              <canvas id="fitnessFunctionsChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.3B:</strong> Automated Fitness Function Gate Timing &mdash; Total verification executes in 4.1 seconds across ArchUnit layer isolation, Spectral OpenAPI linters, and ASIL-D HIL timing assertions.</figcaption>
+        </figure>
+
+        <p>The mathematical verification condition for automated pipeline promotion is defined as the logical conjunction of all codified architectural assertions:</p>
+
+        <div class="formula-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 4px solid #16a34a; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #15803d; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ \Phi_{\text{pipeline}} = \bigwedge_{j=1}^{M} \text{Assert}_j(\text{Artifact}) = \mathbf{TRUE}, \quad \text{Latency}_{\text{eval}} \le 5.0\text{ seconds} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #166534; margin-top: 0.5rem; font-weight: 500;">
+            Where any \(\text{Assert}_j = \text{FALSE}\) triggers immediate pipeline termination, build rejection, and automated incident filing to the EAB triage queue.
+          </div>
+        </div>
+
+        <h4>Codified Fitness Function Implementation Examples:</h4>
+        <ul>
+          <li><strong>Layer Isolation Fitness Function (ArchUnit):</strong> Enforces strict hexagonal architecture boundaries. Prohibits telemetry domain classes from importing persistence infrastructure directly.</li>
+          <li><strong>API Contract Schema Linter (Spectral):</strong> Evaluates OpenAPI 3.1 definitions on every pull request, failing if non-backward-compatible changes or missing TLS 1.3 mutual authentication tags are introduced.</li>
+          <li><strong>Deterministic Timing Assertion (HIL Testbed):</strong> Simulates adversarial sensor jitter; verifies that firmware failover to AUTOSAR Classic occurs in \(\Delta t_{\text{failover}} \le 48.2\text{ms}\) (well within the \(250\text{ms}\) ASIL-D limit).</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: EU AI ACT CONFORMITY ASSESSMENT -->
+      <!-- ========================================================================= -->
+      <section id="section-4">
+        <h2>4. EU AI Act High-Risk Conformity Assessment &amp; Algorithmic Audit Lifecycle</h2>
+        <p>Under <strong>EU Regulation 2024/1689 (The EU Artificial Intelligence Act)</strong>, AI systems managing critical physical infrastructure, transport safety, and autonomous heavy machinery are categorized under <strong>Annex III High-Risk Systems</strong>. Deploying such systems in commercial corridors without third-party notified body attestation is illegal.</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_9_2_eu_ai_act_conformity_pipeline.svg" alt="Figure 9.2: EU AI Act High-Risk Conformity Assessment & Audit Pipeline" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.2:</strong> The 7 Statutory Pillars of the EU AI Act High-Risk Conformity Assessment &mdash; Mapped directly to TOGAF Phase G Architecture Building Blocks (ABBs) and quantitative scoring.</figcaption>
+        </figure>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">EU AI Act 7 Statutory Compliance Pillars Audit</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Audited Conformance (%) vs. 99.50% Legal Conformity Threshold (Composite: 99.84%)</div>
+            <div style="position: relative; height: 360px; width: 100%;">
+              <canvas id="euAiActRadarChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.2B:</strong> EU AI Act High-Risk Compliance Radar &mdash; All 7 statutory articles exceed the required 99.50% threshold with 100% record-keeping and 99.9% data governance verification.</figcaption>
+        </figure>
+
+        <p>The joint architecture board formalizes a continuous quantitative conformity scoring engine that evaluates the ecosystem across the seven statutory pillars:</p>
+
+        <div class="formula-card" style="background: #f0f9ff; border: 1.5px solid #38bdf8; border-left: 4px solid #0284c7; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #0369a1; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ S_{\text{conformity}} = \sum_{k=1}^{7} w_k \cdot P_k = \mathbf{0.9984} \ge 0.995 \]
+          </div>
+          <div style="font-size: 0.88rem; color: #475569; margin-top: 0.5rem; font-weight: 500;">
+            Where \(w_k\) represents statutory pillar weights (\(\sum w_k = 1.0\)) and \(P_k \in [0, 1]\) is the audited compliance score across the 7 mandatory EU AI Act mandates.
+          </div>
+        </div>
+
+        <h4>Detailed Formulation of the 7 Statutory Compliance Pillars:</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+          <div class="card" style="border-top: 4px solid #3b82f6;">
+            <h4 style="margin-top: 0; color: #3b82f6;">1. Risk Management System (\(w_1 = 0.20\))</h4>
+            <p>Continuous identification of hazards throughout the lifecycle. Thermal runaway risk model: \(R_{\text{thermal}} = P_{\text{ignition}} \times \text{Impact} \le 10^{-6}\). Automated ASIL-D interlocks isolate battery strings within \(12.5\text{ms}\) of abnormal impedance spikes.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #0ea5e9;">
+            <h4 style="margin-top: 0; color: #0ea5e9;">2. Data &amp; Data Governance (\(w_2 = 0.15\))</h4>
+            <p>Training dataset validation eliminating statistical bias and geographic skew. Full provenance tracking via Digital Product Passport (DPP) tokens ensuring 100% verified chemical assay origin.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #6366f1;">
+            <h4 style="margin-top: 0; color: #6366f1;">3. Technical Documentation (\(w_3 = 0.15\))</h4>
+            <p>Automated generation of EU Annex IV compliance dossiers directly from Architecture Repository baselines, including neural network model cards, hyperparameter logs, and interface contracts.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #8b5cf6;">
+            <h4 style="margin-top: 0; color: #8b5cf6;">4. Automated Record-Keeping (\(w_4 = 0.15\))</h4>
+            <p>Continuous high-frequency logging of CAN-FD telemetry into write-once-read-many (WORM) audit ledgers. Guarantees 10-year immutable retention with HSM Secp384r1 timestamping.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #10b981;">
+            <h4 style="margin-top: 0; color: #10b981;">5. Transparency &amp; Explainability (\(w_5 = 0.15\))</h4>
+            <p>Real-time SHAP attribution explaining autonomous speed and brake interventions. Operators receive intuitive visual explanations with confidence bounds \(\ge 0.95\).</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #f59e0b;">
+            <h4 style="margin-top: 0; color: #f59e0b;">6. Human Oversight (HITL) (\(w_6 = 0.10\))</h4>
+            <p>Human-in-the-Loop tele-assist triage console (WP-109) equipped with physical emergency override controls achieving complete takeover in \(\le 200\text{ms}\).</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #ec4899;">
+            <h4 style="margin-top: 0; color: #ec4899;">7. Robustness &amp; Cybersecurity (\(w_7 = 0.10\))</h4>
+            <p>Adversarial noise stress testing (\(>99.9\%\) pass rate), Zero-Trust mutual TLS 1.3, and sub-250ms deterministic failover to AUTOSAR Classic under Rule MIG-03.</p>
+          </div>
+        </div>
+
+        <p>Furthermore, autonomous braking kinematics are mathematically bounded to guarantee collision-free stopping under worst-case wet asphalt friction coefficients (\(\mu = 0.35\)):</p>
+
+        <div class="formula-card" style="background: #fff7ed; border: 1.5px solid #fb923c; border-left: 4px solid #ea580c; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #c2410c; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ d_{\text{stopping}} = v \cdot \Delta t_{\text{reaction}} + \frac{v^2}{2 \mu g} \le 42.8\text{ meters at } 80\text{ km/h} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #7c2d12; margin-top: 0.5rem; font-weight: 500;">
+            Where \(\Delta t_{\text{reaction}} \le 250\text{ms}\) (governed by ASIL-D watchdog), \(g = 9.81\text{ m/s}^2\), guaranteeing certified highway safety margins.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 5: DISPENSATIONS & TECHNICAL DEBT CONTROL -->
+      <!-- ========================================================================= -->
+      <section id="section-5">
+        <h2>5. Architecture Compliance Reviews &amp; Time-Bound Dispensations</h2>
+        <p>During implementation, unexpected physical or legacy constraints inevitably arise. Rather than ignoring these deviations or granting indefinite exemptions, TOGAF Phase G establishes a formal <strong>6-Tier Compliance Classification Matrix</strong> and enforces strict variance governance:</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_9_4_dispensation_lifecycle_state_machine.svg" alt="Figure 9.4: Time-Bound Dispensation & Variance Management State Machine" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 9.4:</strong> Time-Bound Dispensation &amp; Variance Management State Machine &mdash; Rule GOV-02 enforcing a 180-day hard waiver horizon, funded remediation work packages, and automated quarantine kill-switches.</figcaption>
+        </figure>
+
+        <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 4px solid #d97706; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h3 style="margin-top: 0; color: #92400e; font-size: 1.2rem; font-weight: bold;">RULE GOV-02: Dispensation Expiration &amp; Technical Debt Bounds</h3>
+          <p style="color: #78350f; font-size: 0.95rem; margin: 0.5rem 0 0.75rem;">Every architecture waiver or dispensation granted by the EAB must comply with the following mathematical and operational constraints:</p>
+          <div style="background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.75rem 0;">
+            <div class="formula-math" style="font-size: 1.15rem; color: #b45309; font-weight: bold;">
+              \[ \Delta t_{\text{dispensation}} \le 180\text{ calendar days}, \quad \text{CapEx}_{\text{remediation}} > 0 \]
+            </div>
+          </div>
+          <ol style="color: #78350f; font-size: 0.95rem; line-height: 1.7; margin-left: 1.5rem; margin-bottom: 0;">
+            <li><strong style="color: #92400e;">Strict Expiration:</strong> No permanent dispensations. If \(\Delta t > 180\text{ days}\), API gateway certificates automatically expire, quarantining the non-compliant subsystem.</li>
+            <li><strong style="color: #92400e;">Funded Work Package:</strong> Every waiver must have an assigned engineering owner and a funded remediation work package registered in the PMO backlog.</li>
+            <li><strong style="color: #92400e;">Re-Architecting Trigger:</strong> If a variance cannot be remediated within 180 days, it is escalated to trigger a formal Phase A change cycle under TOGAF Phase H.</li>
+          </ol>
+        </div>
+
+        <h4>Active Consortium Dispensation Register (Phase G Audit Baseline):</h4>
+        <div style="overflow-x: auto; margin: 1.5rem 0;">
+          <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.95rem;">
+            <thead>
+              <tr style="background-color: var(--card-bg);">
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">Dispensation ID</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">Affected Subsystem &amp; Variance</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Granted Date</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Expiry Horizon</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Remediation WP</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Allocated CapEx</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Risk Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">DSP-001</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Plant 2 Legacy Modbus RTU Thermal Sensors (Non-AES-256)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Month 8</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">120 Days (M12)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">WP-107b</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$280,000</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #fbbf24; font-weight: bold;">Sandbox Isolated (\(R_{\text{res}} \le 0.012\))</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 6: DELIVERABLES & PHASE H HANDOVER -->
+      <!-- ========================================================================= -->
+      <section id="section-6">
+        <h2>6. Phase G Deliverables &amp; Handover to Architecture Change Management</h2>
+        <p>With the implementation governance gates certified, the consortium packages the formal <strong>Phase G Deliverables</strong> into the central Architecture Repository, creating the verified baseline for continuous operational optimization:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+          <div class="card" style="border-top: 4px solid #a855f7;">
+            <h4 style="margin-top: 0; color: #a855f7;">1. Architecture Compliance Assessment Reports</h4>
+            <p>Comprehensive audit logs from sprint gates, verifying 99.94% automated fitness function pass rates across 1,240 CI/CD pipeline deployments.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #06b6d4;">
+            <h4 style="margin-top: 0; color: #06b6d4;">2. Certified EU AI Act &amp; Battery Passport Dossier</h4>
+            <p>Official third-party notified body CE-mark attestation for high-risk autonomous fleet routing and W3C digital mineral passports, shielding the enterprise from $35M fine exposure.</p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #10b981;">
+            <h4 style="margin-top: 0; color: #10b981;">3. Closed-Loop SCOR sE Safety Telemetry Bridge</h4>
+            <p>Operational integration binding real-time fleet battery health directly to extraction chemical assay blending, sustaining Perfect Shipment Delivery at \(\text{RL.1.1} = 99.88\%\).</p>
+          </div>
+        </div>
+
+        <div class="narrator-block">
+          <img src="assets/Shruti/shruti_thumbsup_green_1787204839525_transparent.png" alt="Shruti" class="shruti-avatar">
+          <p class="narrator-text">"The governance shield is locked and impenetrable. By enforcing binding Architecture Contracts, codifying automated fitness functions, and rigorously managing dispensations, our three corporations turned the EU AI Act from a terrifying threat into a dominant competitive moat."</p>
+          <p class="narrator-text">"But as the technical architecture goes live in factories, mines, and freight depots, the most complex challenge of all emerges: <strong>the human workforce</strong>. What happens when veteran truck drivers fear automated speed governors? How do factory technicians adapt to robotic AI assistants? In <strong>Chapter 10: The Augmented Workforce and Cultural Change Management</strong>, we explore the human dimension of enterprise AI."</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- NAVIGATION FOOTER -->
+    <!-- ========================================================================= -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Chapter</span>
+        <a href="chapter_8.html" class="nav-title">&larr; Chapter 8: Sequencing the Transformation</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Chapter</span>
+        <a href="chapter_10.html" class="nav-title">Chapter 10: The Augmented Workforce &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

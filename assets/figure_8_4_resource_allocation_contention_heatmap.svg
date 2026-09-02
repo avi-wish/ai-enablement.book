@@ -1,0 +1,328 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad84" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="shadow84" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="860" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="1140" height="65" rx="10" fill="url(#headerGrad84)" filter="url(#shadow84)"/>
+  <text x="600" y="48" fill="#ffffff" font-size="19" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 8.4: CROSS-ENTERPRISE SPECIALIST RESOURCE LEVELING HEATMAP</text>
+  <text x="600" y="70" fill="#fef3c7" font-size="12.5" text-anchor="middle">TOGAF® ADM Phase F: Capacity Utilization (%) Across 5 Specialist Engineering Pods (Rule MIG-01 Leveling)</text>
+
+  <!-- Heatmap Matrix Grid -->
+  <!-- 5 Rows (Pods) x 16 Cols (Months) -->
+  <!-- Left label width: 280px. Col width: 53px. Start x: 300px -->
+
+  <!-- Header Month Row -->
+  <rect x="300" y="110" width="850" height="35" rx="5" fill="#1e293b"/>
+<text x="326.5" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M1</text>
+<text x="379.625" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M2</text>
+<text x="432.75" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M3</text>
+<text x="485.875" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M4</text>
+<text x="539.0" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M5</text>
+<text x="592.125" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M6</text>
+<text x="645.25" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M7</text>
+<text x="698.375" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M8</text>
+<text x="751.5" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M9</text>
+<text x="804.625" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M10</text>
+<text x="857.75" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M11</text>
+<text x="910.875" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M12</text>
+<text x="964.0" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M13</text>
+<text x="1017.125" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M14</text>
+<text x="1070.25" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M15</text>
+<text x="1123.375" y="132" fill="#94a3b8" font-size="11" font-weight="bold" text-anchor="middle">M16</text>
+
+    <rect x="30" y="160" width="255" height="100" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="42" y="185" fill="#ffffff" font-size="12" font-weight="bold">OT / PLC Automation Engineers</text>
+    <text x="42" y="205" fill="#94a3b8" font-size="9.5">Robotics, Conveyor Gantry &amp; XRF Calibration</text>
+    <rect x="42" y="218" width="120" height="20" rx="3" fill="#334155"/>
+    <text x="102" y="232" fill="#38bdf8" font-size="9.5" font-weight="bold" text-anchor="middle">Volt-Tech / Terra</text>
+    
+        <rect x="302.0" y="160" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="326.5" y="215" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">65%</text>
+        
+        <rect x="355.125" y="160" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="379.625" y="215" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="408.25" y="160" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="432.75" y="215" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">80%</text>
+        
+        <rect x="461.375" y="160" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="485.875" y="215" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="514.5" y="160" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="539.0" y="215" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">90%</text>
+        
+        <rect x="567.625" y="160" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="592.125" y="215" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">88%</text>
+        
+        <rect x="620.75" y="160" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="645.25" y="215" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">82%</text>
+        
+        <rect x="673.875" y="160" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="698.375" y="215" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">78%</text>
+        
+        <rect x="727.0" y="160" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="751.5" y="215" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">70%</text>
+        
+        <rect x="780.125" y="160" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="804.625" y="215" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">65%</text>
+        
+        <rect x="833.25" y="160" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="857.75" y="215" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">60%</text>
+        
+        <rect x="886.375" y="160" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="910.875" y="215" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">55%</text>
+        
+        <rect x="939.5" y="160" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="964.0" y="215" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">50%</text>
+        
+        <rect x="992.625" y="160" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1017.125" y="215" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">45%</text>
+        
+        <rect x="1045.75" y="160" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1070.25" y="215" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">40%</text>
+        
+        <rect x="1098.875" y="160" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1123.375" y="215" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">35%</text>
+        
+    <rect x="30" y="275" width="255" height="100" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="42" y="300" fill="#ffffff" font-size="12" font-weight="bold">TinyML &amp; Edge Vision Architects</text>
+    <text x="42" y="320" fill="#94a3b8" font-size="9.5">RTX 6000 Ada, Microcontroller Quantization</text>
+    <rect x="42" y="333" width="120" height="20" rx="3" fill="#334155"/>
+    <text x="102" y="347" fill="#38bdf8" font-size="9.5" font-weight="bold" text-anchor="middle">Volt-Tech</text>
+    
+        <rect x="302.0" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="326.5" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">50%</text>
+        
+        <rect x="355.125" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="379.625" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">60%</text>
+        
+        <rect x="408.25" y="275" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="432.75" y="330" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="461.375" y="275" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="485.875" y="330" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="514.5" y="275" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="539.0" y="330" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">92%</text>
+        
+        <rect x="567.625" y="275" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="592.125" y="330" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">90%</text>
+        
+        <rect x="620.75" y="275" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="645.25" y="330" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="673.875" y="275" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="698.375" y="330" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">80%</text>
+        
+        <rect x="727.0" y="275" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="751.5" y="330" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="780.125" y="275" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="804.625" y="330" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">68%</text>
+        
+        <rect x="833.25" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="857.75" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">60%</text>
+        
+        <rect x="886.375" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="910.875" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">55%</text>
+        
+        <rect x="939.5" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="964.0" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">50%</text>
+        
+        <rect x="992.625" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1017.125" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">45%</text>
+        
+        <rect x="1045.75" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1070.25" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">40%</text>
+        
+        <rect x="1098.875" y="275" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1123.375" y="330" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">35%</text>
+        
+    <rect x="30" y="390" width="255" height="100" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="42" y="415" fill="#ffffff" font-size="12" font-weight="bold">High-Voltage Depot Technicians</text>
+    <text x="42" y="435" fill="#94a3b8" font-size="9.5">1.2MW MCS Dispensers, BESS &amp; Fleet Wiring</text>
+    <rect x="42" y="448" width="120" height="20" rx="3" fill="#334155"/>
+    <text x="102" y="462" fill="#38bdf8" font-size="9.5" font-weight="bold" text-anchor="middle">Orbit / Volt-Tech</text>
+    
+        <rect x="302.0" y="390" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="326.5" y="445" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">40%</text>
+        
+        <rect x="355.125" y="390" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="379.625" y="445" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">45%</text>
+        
+        <rect x="408.25" y="390" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="432.75" y="445" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">55%</text>
+        
+        <rect x="461.375" y="390" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="485.875" y="445" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">65%</text>
+        
+        <rect x="514.5" y="390" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="539.0" y="445" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="567.625" y="390" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="592.125" y="445" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="620.75" y="390" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="645.25" y="445" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">88%</text>
+        
+        <rect x="673.875" y="390" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="698.375" y="445" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">90%</text>
+        
+        <rect x="727.0" y="390" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="751.5" y="445" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="780.125" y="390" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="804.625" y="445" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">80%</text>
+        
+        <rect x="833.25" y="390" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="857.75" y="445" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="886.375" y="390" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="910.875" y="445" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">70%</text>
+        
+        <rect x="939.5" y="390" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="964.0" y="445" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">65%</text>
+        
+        <rect x="992.625" y="390" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1017.125" y="445" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">60%</text>
+        
+        <rect x="1045.75" y="390" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1070.25" y="445" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">50%</text>
+        
+        <rect x="1098.875" y="390" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1123.375" y="445" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">45%</text>
+        
+    <rect x="30" y="505" width="255" height="100" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="42" y="530" fill="#ffffff" font-size="12" font-weight="bold">Cryptographic Security Architects</text>
+    <text x="42" y="550" fill="#94a3b8" font-size="9.5">DPP Tokens, mTLS IDMZ Bastion &amp; HSM Vault</text>
+    <rect x="42" y="563" width="120" height="20" rx="3" fill="#334155"/>
+    <text x="102" y="577" fill="#38bdf8" font-size="9.5" font-weight="bold" text-anchor="middle">Joint Tripartite EAB</text>
+    
+        <rect x="302.0" y="505" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="326.5" y="560" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">90%</text>
+        
+        <rect x="355.125" y="505" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="379.625" y="560" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">92%</text>
+        
+        <rect x="408.25" y="505" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="432.75" y="560" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">88%</text>
+        
+        <rect x="461.375" y="505" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="485.875" y="560" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="514.5" y="505" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="539.0" y="560" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="567.625" y="505" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="592.125" y="560" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">70%</text>
+        
+        <rect x="620.75" y="505" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="645.25" y="560" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">65%</text>
+        
+        <rect x="673.875" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="698.375" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">60%</text>
+        
+        <rect x="727.0" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="751.5" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">55%</text>
+        
+        <rect x="780.125" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="804.625" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">50%</text>
+        
+        <rect x="833.25" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="857.75" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">45%</text>
+        
+        <rect x="886.375" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="910.875" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">40%</text>
+        
+        <rect x="939.5" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="964.0" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">40%</text>
+        
+        <rect x="992.625" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1017.125" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">35%</text>
+        
+        <rect x="1045.75" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1070.25" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">35%</text>
+        
+        <rect x="1098.875" y="505" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="1123.375" y="560" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">30%</text>
+        
+    <rect x="30" y="620" width="255" height="100" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="42" y="645" fill="#ffffff" font-size="12" font-weight="bold">HITL Dispatch &amp; Fleet Operators</text>
+    <text x="42" y="665" fill="#94a3b8" font-size="9.5">Tele-Assist Console, SCOR Exception Triage</text>
+    <rect x="42" y="678" width="120" height="20" rx="3" fill="#334155"/>
+    <text x="102" y="692" fill="#38bdf8" font-size="9.5" font-weight="bold" text-anchor="middle">Orbit / Terra</text>
+    
+        <rect x="302.0" y="620" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="326.5" y="675" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">30%</text>
+        
+        <rect x="355.125" y="620" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="379.625" y="675" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">35%</text>
+        
+        <rect x="408.25" y="620" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="432.75" y="675" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">40%</text>
+        
+        <rect x="461.375" y="620" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="485.875" y="675" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">45%</text>
+        
+        <rect x="514.5" y="620" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="539.0" y="675" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">50%</text>
+        
+        <rect x="567.625" y="620" width="49" height="100" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="592.125" y="675" fill="#d1fae5" font-size="12" font-weight="bold" text-anchor="middle">60%</text>
+        
+        <rect x="620.75" y="620" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="645.25" y="675" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">70%</text>
+        
+        <rect x="673.875" y="620" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="698.375" y="675" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="727.0" y="620" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="751.5" y="675" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">82%</text>
+        
+        <rect x="780.125" y="620" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="804.625" y="675" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">88%</text>
+        
+        <rect x="833.25" y="620" width="49" height="100" rx="4" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+        <text x="857.75" y="675" fill="#fca5a5" font-size="12" font-weight="bold" text-anchor="middle">90%</text>
+        
+        <rect x="886.375" y="620" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="910.875" y="675" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">88%</text>
+        
+        <rect x="939.5" y="620" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="964.0" y="675" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">85%</text>
+        
+        <rect x="992.625" y="620" width="49" height="100" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+        <text x="1017.125" y="675" fill="#fef3c7" font-size="12" font-weight="bold" text-anchor="middle">80%</text>
+        
+        <rect x="1045.75" y="620" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="1070.25" y="675" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">75%</text>
+        
+        <rect x="1098.875" y="620" width="49" height="100" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+        <text x="1123.375" y="675" fill="#dbeafe" font-size="12" font-weight="bold" text-anchor="middle">70%</text>
+        
+  <!-- Bottom Legend Bar -->
+  <rect x="30" y="760" width="1140" height="75" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="50" y="788" fill="#ffffff" font-size="12" font-weight="bold">CAPACITY LEVELING THRESHOLDS:</text>
+  
+  <rect x="50" y="802" width="18" height="14" rx="3" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="75" y="814" fill="#a7f3d0" font-size="11">&#60; 65% Normal / Headroom</text>
+
+  <rect x="250" y="802" width="18" height="14" rx="3" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="275" y="814" fill="#bfdbfe" font-size="11">65% – 79% Optimal Workload</text>
+
+  <rect x="470" y="802" width="18" height="14" rx="3" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+  <text x="495" y="814" fill="#fef3c7" font-size="11">80% – 89% High Load (Leveling Active)</text>
+
+  <rect x="730" y="802" width="18" height="14" rx="3" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+  <text x="755" y="814" fill="#fca5a5" font-size="11" font-weight="bold">&#8805; 90% Contention Warning (Capped)</text>
+</svg>

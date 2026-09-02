@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2: The Diagnostic Dilemma (The Ghost in the Machine) - The Reality of Enterprise AI</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chapter_2_charts.js" defer></script>
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part I:</span> Chapter 2 &mdash; The Diagnostic Dilemma</div>
+      <nav><a href="index.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>The Diagnostic Dilemma</h1>
+      <p class="subtitle">
+        The Ghost in the Machine
+      </p>
+
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Orbit-Logistics (Global Command Center)</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Requirements Management (Diagnostic &amp; Telemetry Interrogation)</div>
+          
+          <div class="metadata-label">Core Conflict:</div>
+          <div class="metadata-value">The fleet is losing $50M/quarter, but legacy dashboards report 98% efficiency. The audit team must uncover the true root causes.</div>
+        </div>
+      </div>
+
+      <div class="narrator-block">
+        
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+        <p class="narrator-text">"Synchronizing feeds. We are inside the Global Command Center of Orbit-Logistics. Outside, the night sky is silent, but inside, tension fills the air. The executive team poured two billion dollars into autonomous delivery, yet they are hemorrhaging capital. Look at the wall of screens: every single green metric is a lie. Let us watch Rohan Gupta and Anjali Mehra interrogate their legacy software stack."</p>
+        
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE GHOST IN THE MACHINE -->
+      <!-- ========================================================================= -->
+      <h2>The Storyline: The Ghost in the Machine</h2>
+      <p>The air in the Global Command Center (GCC) of Orbit-Logistics was thick, tasting of stale coffee and impending doom. Across the vast, curved screens displaying a matrix of real-time logistics data, the vibrant greens of "Optimal Route" and "On-Time Delivery" were a sickening, persistent lie.</p>
+      
+      <figure>
+        <img src="assets/image9.png" alt="Figure 2.1: Orbit-Logistics Global Command Center">
+        <figcaption><strong>Figure 2.1:</strong> Orbit-Logistics Global Command Center (GCC) &mdash; Real-time operations floor and telemetry monitoring screens.</figcaption>
+      </figure>
+      
+                        <div class="dialogue-bubble dialogue-anjali">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "It's impossible. We've poured two billion dollars into the Autonomous Delivery Network—the AD-Net. The TMS says our route efficiency is ninety-eight percent. The EAM app says maintenance is just standard wear and tear. Yet, we are losing fifty million dollars a quarter."
+          </div>
+        </div>
+      </div>
+                        <div class="dialogue-bubble dialogue-rohan dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "It's not a paradox, Anjali. It's a cover-up. Not malicious, but structural. We designed these systems to report human efficiency, and now we’re forcing them to interpret machine failure. They’re reporting symptoms, not the disease."
+          </div>
+        </div>
+      </div>
+      
+      <figure>
+        <img src="assets/image1.png" alt="Figure 2.2: Rohan Gupta and Anjali Mehra Interrogating Telemetry">
+        <figcaption><strong>Figure 2.2:</strong> Telemetry Interrogation &mdash; Rohan Gupta and Anjali Mehra analyzing systemic autonomous fleet losses.</figcaption>
+      </figure>
+
+      <div class="narrator-block">
+        
+        <img src="assets/Shruti/shruti_stop_yellow_1787204878334_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+        <p class="narrator-text">"Let us pause the scene. Traditional systems like Transportation Management (TMS) and Asset Management (EAM) were built around human variables. When a vehicle stops, the TMS assumes traffic; when components wear out, the EAM blames the driver. Neither system has a category for 'AI Decision Hesitation' or 'Micro-battery degradations.' For you, the business leader, this is the core of the Productivity Paradox: running a next-generation AI fleet on a previous-generation IT backbone simply automates the same operational blind spots."</p>
+        
+      </div>
+
+      <h2>The Legacy Failure: Symptoms, Not Causes</h2>
+      <p>The core team—a mix of audit specialists, data engineers, and operations managers—were locked in a high-stakes interrogation of their own technological stack.</p>
+      
+      <ul>
+        <li><strong>Transportation Management System (TMS) &mdash; SCOR Responsiveness (RS) &amp; Reliability (RL) Blind Spot:</strong> Used to monitor route efficiency. The legacy system flags that vehicles are constantly late or stopping mid-route, but it incorrectly categorizes these as "routing errors" or "traffic delays," concealing severe drops in <strong>Perfect Shipment Delivery (RL.1.1)</strong> and massive spikes in <strong>Order Fulfillment Cycle Time (RS.1.1)</strong>.</li>
+        <li><strong>Enterprise Asset Management (EAM) &mdash; SCOR Asset Management (AM) Blind Spot:</strong> Used to track vehicle maintenance. The system flags a massive spike in maintenance costs and attributes it to generic "wear and tear" from drivers, obscuring the true collapse in <strong>Fleet Utilization (AM.1.1)</strong> as vehicles sit stranded in depot triage bays.</li>
+        <li><strong>Financials System &mdash; SCOR Cost (CO) Blind Spot:</strong> Simply shows that CapEx is rising while revenue drops, masking that <strong>Cost per Stop and Cost per Mile (CO.1.1)</strong> have inflated to $4.20/mile—more expensive than human drivers—creating the "Productivity Paradox" without explaining why.</li>
+      </ul>
+      
+      <figure>
+        <img src="assets/image11.png" alt="Figure 2.3: Legacy System Interrogation">
+        <figcaption><strong>Figure 2.3:</strong> Legacy System Interrogation &mdash; Cross-examination of TMS, EAM, and Enterprise Financials reporting silos.</figcaption>
+      </figure>
+
+                        <div class="dialogue-bubble dialogue-rohan">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Three hundred percent is not 'wear and tear'. That is systematic destruction. A human driver can feather the brakes; a machine, when confused, will execute a violent, sudden stop. That shockwave is rattling the components. The EAM system has no category for 'AI Decision Hesitation Leading to Component Stress.' So it lies, and calls it 'wear and tear'."
+          </div>
+        </div>
+      </div>
+      
+      <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+        <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1rem 1.75rem; width: 100%; text-align: center;">
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Component Stress &amp; Braking Hesitation Telemetry</div>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem;">Sensor Recordings of Deceleration Shockwaves vs. Inverter Thermal Spikes (°C)</div>
+          <div style="position: relative; height: 320px; width: 100%;">
+            <canvas id="componentStressChart"></canvas>
+          </div>
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2.4:</strong> Component Stress Telemetry &mdash; Sensor readings capturing component shockwaves from emergency braking hesitation loops.</figcaption>
+      </figure>
+
+      <p>The Financials System was the silent killer, simply displaying the horrifying trend: CapEx rising, OpEx spiking, and Revenue dropping—the textbook definition of the "Productivity Paradox."</p>
+      
+      <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+        <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1rem 1.75rem; width: 100%; text-align: center;">
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">The Productivity Paradox: Financial Trend Analysis</div>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem;">Surging Tech CapEx &amp; Hidden OpEx Spikes against Eroding Delivery Revenue</div>
+          <div style="position: relative; height: 340px; width: 100%;">
+            <canvas id="financialTrendChart"></canvas>
+          </div>
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2.5:</strong> Financial Trend Analysis &mdash; The Productivity Paradox curve tracking rising CapEx and OpEx against falling revenue.</figcaption>
+      </figure>
+
+      <h3>Diagnostic Phase Stakeholder Engagement Matrix</h3>
+      <p>To ensure the forensic audit satisfies both board fiduciary oversight and engineering precision, the diagnostic investigation maps stakeholder concerns to target requirement vectors:</p>
+
+      <table class="options-table">
+        <thead>
+          <tr>
+            <th>Stakeholder</th>
+            <th>Role</th>
+            <th>Power</th>
+            <th>Interest</th>
+            <th>Documented Diagnostic Concern</th>
+            <th>Key Requirements Driven</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Anjali Mehra</strong></td>
+            <td>CFO (Fiscal Architect)</td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td>$50M quarterly EBITDA bleed; unit economics inflated to $4.20/mile</td>
+            <td><code>REQ-DIAG-04</code> (Real-Time Cost Engine)</td>
+          </tr>
+          <tr>
+            <td><strong>Rohan Gupta</strong></td>
+            <td>CRO (Risk Guardian)</td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td>EU AI Act Article 12 compliance; GDPR biometric liability; safe-stop loops</td>
+            <td><code>REQ-DIAG-03</code> (PII Scrubber), <code>REQ-DIAG-05</code> (TPM Notary)</td>
+          </tr>
+          <tr>
+            <td><strong>Engineering Team</strong></td>
+            <td>System Architects</td>
+            <td><span class="badge" style="background:#f1f5f9; color:#475569; padding:2px 8px; border-radius:4px; font-weight:600;">Low</span></td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td>Legacy TMS/EAM blind spots; deterministic failure taxonomy</td>
+            <td><code>REQ-DIAG-01</code> (Telemetry), <code>REQ-DIAG-02</code> (Classifier)</td>
+          </tr>
+          <tr>
+            <td><strong>Fleet Operations</strong></td>
+            <td>Depot Managers</td>
+            <td><span class="badge" style="background:#f1f5f9; color:#475569; padding:2px 8px; border-radius:4px; font-weight:600;">Low</span></td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td>HITL triage queue backlog; teleoperator intervention costs</td>
+            <td><code>REQ-DIAG-02</code> (HITL Console)</td>
+          </tr>
+          <tr>
+            <td><strong>Volt-Tech</strong></td>
+            <td>External Supplier</td>
+            <td><span class="badge" style="background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:4px; font-weight:600;">Medium</span></td>
+            <td><span class="badge" style="background:#f1f5f9; color:#475569; padding:2px 8px; border-radius:4px; font-weight:600;">Low</span></td>
+            <td>Battery warranty dispute liability; obfuscated degradation data</td>
+            <td><code>ABB-BAT-01</code> (Battery Ingestion Bridge)</td>
+          </tr>
+          <tr>
+            <td><strong>EU Regulators</strong></td>
+            <td>Regulatory Body</td>
+            <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:600;">High</span></td>
+            <td><span class="badge" style="background:#f1f5f9; color:#475569; padding:2px 8px; border-radius:4px; font-weight:600;">Low</span></td>
+            <td>High-risk AI conformity; unredacted public video streams</td>
+            <td><code>NFR-SEC-01</code> (PII Redaction), <code>NFR-SEC-02</code> (TPM Signing)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The Unification: Establishing a Single Source of Truth</h2>
+      <p>Rohan's plan was radical and immediate: bypass the legacy reports and establish a cross-system Unified Operational Data Layer.</p>
+      
+                        <div class="dialogue-bubble dialogue-rohan dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "We have disconnected interpretations of the same event. The Transportation system has a routing problem. The Asset system says maintenance problems. The Financials say ROI problem. They are all talking about the same moment in time: when the autonomous vehicle decided to stop."
+          </div>
+        </div>
+      </div>
+      
+      <figure>
+        <img src="assets/image6.png" alt="Figure 2.6: Whiteboard Architecture Unification">
+        <figcaption><strong>Figure 2.6:</strong> Whiteboard Architecture Unification &mdash; Architectural synthesis correlating vehicle hesitation events with component degradation.</figcaption>
+      </figure>
+
+                        <div class="dialogue-bubble dialogue-rohan">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "We need a data lakehouse that swallows everything. GPS, speed, idle time, yes. But also the Autonomous System Logs: the millisecond-by-millisecond sensor decisions, the confidence scores, the safety overrides, and the communication status. We correlate every mechanical failure with the AV's decision history in the minutes prior. We need the data stream that explains why the machine hesitated."
+          </div>
+        </div>
+      </div>
+      
+      <figure>
+        <img src="assets/image10.png" alt="Figure 2.7: Cross-System Unified Data Layer Architecture">
+        <figcaption><strong>Figure 2.7:</strong> Cross-System Unified Data Layer Architecture &mdash; Ingestion framework integrating millisecond-level perception logs and safety overrides.</figcaption>
+      </figure>
+
+      <div>
+        <h3>Instrumenting the Blind Spot</h3>
+        <p>Rohan knew the legacy systems’ fundamental limitation: they were built for human-driven fleets. They understood speed limits and fuel consumption. They did not understand Sensor Degradation, AI Decision Hesitation, or the mechanics of a Safe Stop Loop.</p>
+        
+        <figure>
+          <img src="assets/image15.png" alt="Figure 2.8: Blind Spot Telemetry Instrumentation">
+          <figcaption><strong>Figure 2.8:</strong> Blind Spot Telemetry Instrumentation &mdash; Event-level autonomy logging protocol and 10-second multimodal snapshot capture.</figcaption>
+        </figure>
+        
+        <p>His proposal included a new, mandatory logging protocol:</p>
+        <ul>
+          <li><strong>Event-Level Autonomy Logging:</strong> Capture the exact reason for any unplanned stop.</li>
+          <li><strong>Classification of Stops:</strong> Move beyond "Stopped" to categories like Obstacle Detection (True Positive), System Uncertainty (Low Confidence Score), Safety Fallback (Pre-programmed), and Connectivity Loss.</li>
+          <li><strong>Video/Sensor Snapshot Sampling:</strong> At every unplanned stop, pull a ten-second video and sensor data snapshot for human review. "Without this," Rohan stressed, "everything defaults to 'traffic'."</li>
+        </ul>
+      </div>
+      
+      <div class="narrator-block">
+        
+        <img src="assets/Shruti/shruti_point_red_1787204826758_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+        <p class="narrator-text">"To solve this, Rohan introduces a strict <strong>Failure Taxonomy</strong> and bans generic labels like 'traffic.' In a fiduciary audit, the AI's primary duty is <strong>Anti-Obfuscation</strong>. If edge data is missing or desynced, the AI flags the dataset as untrustworthy rather than providing partial analysis. This ensures that 'Blind Spots' are never buried under generic legacy labels. Here is the taxonomy we deployed to enforce root-cause classification:"</p>
+        
+      </div>
+
+      <h2>Forcing Truth: The Failure Taxonomy</h2>
+      <p>The most critical step was to kill the generic labels that masked the crisis. "From this moment forward, no report can use the tags 'traffic delay' or 'generic wear and tear'," Rohan decreed. "The teams must classify the root cause. If they cannot classify it precisely, they escalate it—they do not bury it."</p>
+      
+      <ul>
+        <li><strong>Sensor Ambiguity:</strong> When cameras or LiDAR return conflicting confidence levels.</li>
+        <li><strong>Mapping Error:</strong> Discrepancies between edge map models and physical routing lines.</li>
+        <li><strong>Software Hesitation:</strong> Safe-stop loops triggered by AI decision uncertainty.</li>
+        <li><strong>Connectivity Loss:</strong> Intermittent packet losses between vehicles and routing servers.</li>
+        <li><strong>Mechanical Fault (Actual):</strong> Confirmed physical degradation.</li>
+      </ul>
+      
+      <figure>
+        <img src="assets/image13.png" alt="Figure 2.9: Failure Taxonomy Diagram">
+        <figcaption><strong>Figure 2.9:</strong> Failure Taxonomy Diagram &mdash; Granular root-cause categorization replacing generic "traffic" and "wear-and-tear" classifications.</figcaption>
+      </figure>
+
+      <h2>Unmasking the Hidden Human Safety Net</h2>
+      <p>The autonomous system was hemorrhaging money in two ways: the mechanical cost of failure, and the hidden cost of the human safety net put in place to catch those failures.</p>
+      
+      <figure>
+        <img src="assets/image2.jpg" alt="Figure 2.10: Operational Exposure Analysis">
+        <figcaption><strong>Figure 2.10:</strong> Operational Exposure Analysis &mdash; Unmasking the hidden cost and reliance on the manual human teleoperation safety net.</figcaption>
+      </figure>
+      
+      <p>"The 'autonomous' network is quietly supported by a large, expensive human safety net," Rohan stated. "The cost of that human intervention—the remote operators, the reprocessing, the SLA penalties—is entirely missing from our current unit economics."</p>
+
+      <h2>Risk-Adjusted Unit Economics (SCOR Cost &amp; Reliability Realignment)</h2>
+      <p>This brought him and Anjali Mehra to the core financial redefinition. The board saw "Cost Per Delivery" as a simple calculation of fuel and depreciation. To align with <strong>SCOR Cost (CO.1.1 &mdash; Cost per Stop / Cost per Mile)</strong> and protect <strong>SCOR Reliability (RL.1.1 &mdash; Perfect Shipment Delivery)</strong>, they needed to see <strong>Risk-Adjusted Unit Economics</strong>:</p>
+      
+      <blockquote>
+        Cost per delivery = (CapEx + OpEx + Intervention Cost + Failure Recovery Cost)
+      </blockquote>
+      
+      <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+        <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1rem 1.75rem; width: 100%; text-align: center;">
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Risk-Adjusted Unit Economics: Cost per Delivery Mile</div>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem;">Cost Stack Breakdown (SCOR CO.1.1): Manual vs. Flawed Autonomous vs. Optimized Autonomy</div>
+          <div style="position: relative; height: 350px; width: 100%;">
+            <canvas id="unitEconomicsChart"></canvas>
+          </div>
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2.11:</strong> Risk-Adjusted Unit Economics Model &mdash; True total cost per delivery factoring in teleoperation intervention, emergency towing, and failure recovery under SCOR CO.1.1.</figcaption>
+      </figure>
+      
+      <p>This new model segmented the AD-Net's performance ruthlessly: profitable vs. loss-making routes, and stable vs. high-risk geographies. "Under SCOR CO.1.1, loaded autonomous costs currently reach $4.20/mile versus $2.10/mile for manual contractors because of unbudgeted teleoperator rescue buffers and towing," Anjali concluded. "This risk-adjusted metric will tell us, without emotion, where autonomy actually realizes value and where it is bleeding capital."</p>
+
+      <div class="narrator-block">
+        
+        <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+        
+        <p class="narrator-text">"We now enter the execution phase. Rushing AI without structure simply automates the same legacy blind spots. Rohan lays out a surgical <strong>9-Step Plan</strong>. I hold the fiduciary duties of Anti-Obfuscation, Completeness, Precision, and Humility here as the Executive Chair. Observe Step 8: Human-in-the-loop (HITL). Consider this comparison: in a 2024 postal logistics pilot in Germany, automated path adjustments without human feedback suffered from drift, eventually grounding 14% of vans due to harmless fog. Rohan's HITL safeguard ensures the model learns from human corrections rather than repeating errors."</p>
+        
+      </div>
+
+      <h2>The AI Imperative: Forensic Investigator, Not Dashboard</h2>
+      <p>"The goal isn’t 'add AI'," Rohan said, gesturing to the lying dashboards. "It makes AI see what your systems currently can’t. Speed matters, but rushing in a generic AI without structure will only automate the same blind spots."</p>
+      
+      <ol>
+        <li><strong>Start Narrow and Define the Use Case:</strong> Focus on the single, high-impact, business-critical use case: "Why are vehicles stopping mid-route, and what is the true, actionable cause?"</li>
+        <li><strong>Define the AI Objective:</strong> Classify every stop event into a verifiable, true root cause category, moving beyond generic metrics like "traffic" or "delay."</li>
+        <li><strong>Aggregate Raw Telemetry:</strong> Ingest vehicle telemetry, autonomy logs, sensor snapshots, and maintenance records into a single, unified pipeline.</li>
+        <li><strong>Discover Failure Modes:</strong> Use unsupervised learning (clustering) to detect unknown failure modes and hidden patterns across routes and vehicles.</li>
+        <li><strong>Implement Multimodal AI:</strong> Cross-analyze high-resolution camera frames simultaneously against LiDAR and ultrasonic sensor readings to see what the vehicle saw vs. what physically existed.</li>
+        <li><strong>Achieve Actionable Diagnosis:</strong> Definitively determine if an object is a genuine physical obstacle or a misclassified sensor artifact (such as a shadow or road spray).</li>
+        <li><strong>Set an Aggressive Timeline:</strong> Deliver a functional classification model and dashboard within six weeks.</li>
+        <li><strong>Utilize Human-in-the-Loop (HITL):</strong> Send low-confidence classifications to expert engineers, creating a rapid feedback loop where the human corrects and the model learns.</li>
+        <li><strong>Ensure Continuous Improvement:</strong> Defer to human expertise when thresholds are breached, ensuring model precision reflects verified truth.</li>
+      </ol>
+      
+      <figure>
+        <img src="assets/image8.png" alt="Figure 2.12: Nine-Step AI Deployment Roadmap">
+        <figcaption><strong>Figure 2.12:</strong> Nine-Step AI Deployment Roadmap &mdash; Surgical engineering roadmap from raw telemetry aggregation to human-in-the-loop validation.</figcaption>
+      </figure>
+
+      <div>
+        <h3>Multimodal AI &amp; The Four Fiduciary Duties</h3>
+        <p>The roadmap executes across four strategic phases, each tied to a strict fiduciary obligation:</p>
+        <ul>
+          <li><strong>Phase 1: Foundation and Focus &mdash; Duty of Anti-Obfuscation:</strong> The AI must refuse to accept legacy labels. If data is insufficient, it triggers a hard escalation.</li>
+          <li><strong>Phase 2: Data Unification &mdash; Duty of Completeness:</strong> The AI acts as guardian of the Unified Data Layer. If telemetry is missing or desynced, it flags the set as untrustworthy.</li>
+          <li><strong>Phase 3: Diagnostic Implementation &mdash; Duty of Diagnostic Precision:</strong> Distinguishes between physical obstacles and sensor artifacts. If the autonomous layer fails, the diagnostic AI acts as an objective whistleblower.</li>
+          <li><strong>Phase 4: Rapid Deployment &amp; HITL &mdash; Duty of Humility:</strong> Defers to human expertise when confidence thresholds are breached, preventing self-fulfilling algorithmic drift.</li>
+        </ul>
+        
+        <figure>
+          <img src="assets/image7.png" alt="Figure 2.13: Multimodal AI Diagnostic Precision Architecture">
+          <figcaption><strong>Figure 2.13:</strong> Multimodal AI Diagnostic Precision Architecture &mdash; Codifying the four fiduciary duties (Anti-Obfuscation, Completeness, Precision, Humility).</figcaption>
+        </figure>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATIVE CLIMAX: THE FIDUCIARY CHAIN REACTION -->
+      <!-- ========================================================================= -->
+      <h2>The Fiduciary Chain Reaction: Unmasking the Upstream Failure</h2>
+      <p>With the 9-step diagnostic pipeline active and the four fiduciary duties locked into the data engine, the audit team deployed the new predictive analytics tool directly into Orbit’s live fleet telemetry stream. In less than forty-eight hours, the system processed over fourteen million millisecond-level telemetry packets, cross-referencing unplanned stops against LiDAR point-clouds and motor torque logs.</p>
+
+      <p>The diagnostic AI instantly stripped away the legacy obfuscation, bypassing the lying dashboards and exposing the true, shocking root cause:</p>
+
+      <div>
+        <h4>Forensic Root-Cause Discovery:</h4>
+        <p><strong>The vehicle perception and autonomous navigation models were operating flawlessly. The primary point of failure was physical: Volt-Tech’s "Smart Batteries" were suffering from catastrophic sub-cycle voltage collapses and micro-degradations under sudden acceleration load.</strong></p>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-rohan dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Look at this correlated telemetry feed, Anjali. It was never an AI hesitation bug, and it was never generic driver wear-and-tear. When the vehicle demands torque to merge onto an arterial road, the Volt-Tech battery cells suffer an unlogged micro-voltage drop. The vehicle’s emergency power-cut fail-safe instantly engages, forcing the autonomous van into a sudden, violent safe-stop. The machine was saving itself from an onboard electrical fire, but the legacy TMS called it 'traffic,' and the EAM called it 'driver abuse'."
+          </div>
+        </div>
+      </div>
+
+                        <div class="dialogue-bubble dialogue-anjali">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Then the legacy cover-up ends tonight. Volt-Tech sold us batteries marketed as 'smart,' yet their hardware is completely blind to its own internal degradation. We now have mathematically indisputable forensic proof. We will compile the formal <strong>Q3 Autonomous Fleet &amp; Battery Diagnostic Audit Dossier</strong>. We will not present subjective opinions to the board—we will present this immutable, structured architecture framework."
+          </div>
+        </div>
+      </div>
+
+      <div class="narrator-block">
+        
+        <img src="assets/Shruti/shruti_stop_yellow_1787204878334_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+        <p class="narrator-text">"The ghost in the machine has been caught. Rohan and Anjali have proven that the $50M quarterly loss is an ecosystemic failure originating upstream at Volt-Tech. But raw telemetry is not enough to convince an executive board. To enforce fiduciary accountability and prepare for the boardroom showdown in Chapter 3, the audit team synthesizes their findings into three formal TOGAF Requirements Management deliverables: <strong>(1) The Requirements Traceability Matrix</strong>, <strong>(2) The Non-Functional Operational Bounds</strong>, and <strong>(3) The Baseline vs. Target Gap Matrix</strong>."</p>
+        
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: REQUIREMENTS TRACEABILITY MATRIX (RTM) -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>TOGAF Requirements Management: The Traceability Matrix</h2>
+        <p>In the TOGAF ADM framework, <strong>Requirements Management</strong> is the central steering hub that governs every phase. At Orbit-Logistics, diagnostic investigation is not an abstract research project; it is a fiduciary intervention to stem a $50M quarterly loss. Every engineering requirement must trace directly from a boardroom financial bleed down to the millisecond-level telemetry stream and physical sensor arbitration.</p>
+
+        <div class="narrator-block">
+          
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+          <p class="narrator-text">"Let us examine how an enterprise stops bleeding capital. You cannot fix what you cannot trace. In TOGAF Requirements Management, the <strong>Requirements Traceability Matrix (RTM)</strong> is the enterprise's fiduciary contract. Look closely at how Rohan Gupta and Anjali Mehra construct this matrix: every single row ties a high-level boardroom pain point ($50M bleed, masked safety stops, supplier obfuscation) directly to an Architectural Building Block (ABB) and an unambiguous, mathematically verifiable SLA. Without this bidirectional lineage, engineering teams build shiny AI toys while the business dies."</p>
+          
+        </div>
+
+        <figure>
+          <img src="assets/figure_2_14_requirements_traceability_lineage.svg" alt="Figure 2.14: Architecture Blueprint - Requirements Traceability Lineage">
+          <figcaption><strong>Figure 2.14:</strong> Architecture Blueprint &mdash; Requirements Traceability Lineage: From Boardroom Loss to Edge Telemetry Stream.</figcaption>
+        </figure>
+
+        <div class="narrator-block">
+          
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+        
+          <p class="narrator-text">"<strong>Activity 1: Deconstructing the $50M Bleed.</strong> Rohan refuses to treat the quarterly loss as a single line item. He maps the loss into three distinct causal buckets: unlogged hardware failures (62%), unnecessary human teleoperation interventions (24%), and catastrophic route re-dispatches (14%)."</p>
+          <p class="narrator-text">"<strong>Core Decision 1: Mandatory Event-Level Binding.</strong> Notice the crucial architectural choice here: every functional requirement is bound to a specific Architectural Building Block (ABB). If an engineer proposes adding a neural network model that does not map directly to a verified requirement ID in this matrix, it is vetoed immediately at Stage-Gate 1. This prevents 'AI vanity projects' from hijacking capital."</p>
+          
+        </div>
+
+        <!-- Clarification: ABB vs. Requirement -->
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 20px 24px; margin: 24px 0;">
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem;">Architectural Foundations: Disentangling ABBs and Requirements</h3>
+          <p style="margin-bottom: 16px; color: #334155;">In enterprise architecture and TOGAF ADM, practitioners often ask: <em>Are an ABB and a Requirement the same thing?</em> <strong>No.</strong> They govern two fundamentally different domains: <strong>the problem space</strong> versus <strong>the conceptual solution space</strong>.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
+            <div style="background: #ffffff; border-left: 4px solid #0284c7; padding: 14px 16px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+              <h4 style="margin: 0 0 8px 0; color: #0369a1; font-size: 1.05rem;">1. Architecture Building Block (ABB) &mdash; <em>The Conceptual Solution</em></h4>
+              <p style="margin: 0; font-size: 0.92rem; color: #475569; line-height: 1.5;">An <strong>ABB</strong> is a vendor-neutral, reusable package of architectural capability. It specifies <strong>how</strong> capabilities are conceptually structured, defining interfaces, interaction protocols, and service boundaries (e.g., <code>ABB-TEL-01: Ingestion Lakehouse</code>) before any physical technology or vendor product (SBB) is selected.</p>
+            </div>
+            <div style="background: #ffffff; border-left: 4px solid #0d9488; padding: 14px 16px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+              <h4 style="margin: 0 0 8px 0; color: #0f766e; font-size: 1.05rem;">2. Requirement &mdash; <em>The Stakeholder Need</em></h4>
+              <p style="margin: 0; font-size: 0.92rem; color: #475569; line-height: 1.5;">A <strong>Requirement</strong> is a formal, quantifiable statement describing <strong>what</strong> the system or business must achieve, along with operational constraints and testable SLAs (e.g., <code>REQ-DIAG-01: Capture 100% of unlogged stop events</code>). It represents the problem space and acceptance criteria.</p>
+            </div>
+          </div>
+
+          <!-- Explicit ABB Specifications Catalog -->
+          <div style="margin-top: 24px; margin-bottom: 24px;">
+            <h4 style="margin: 0 0 12px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px;">Target Architecture Building Block (ABB) Catalog</h4>
+            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 14px;">Before linking to requirements in the RTM, the diagnostic solution architecture defines five core, reusable conceptual building blocks:</p>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+              <!-- ABB 1 -->
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 6px; padding: 12px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                  <strong style="color: #0369a1; font-size: 0.98rem;"><code>ABB-TEL-01</code>: Unified Telemetry Lakehouse Ingestion</strong>
+                  <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Telemetry Tier</span>
+                </div>
+                <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> High-throughput time-series ingestion engine capturing sub-millisecond edge vehicle kinematics, CAN-bus states, GPS trajectories, and safe-stop ring buffers without data loss.</p>
+                <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Edge gRPC Ingress Stream, Ring-Buffer Deserializer, Partitioned Columnar Lakehouse Storage.</div>
+              </div>
+
+              <!-- ABB 2 -->
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 6px; padding: 12px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                  <strong style="color: #0369a1; font-size: 0.98rem;"><code>ABB-ML-01</code>: Multimodal Forensic Classifier</strong>
+                  <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">AI / Perception Tier</span>
+                </div>
+                <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Cross-sensor arbitration service analyzing 10-second synchronized buffers across LiDAR, cameras, ultrasonics, and IMU to deterministically classify failure root causes (e.g., optical glare, sensor ghosting, mechanical hesitation).</p>
+                <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Synchronized Tensor Ingress Buffer, Sensor Arbitration Pipeline, Confidence Scoring Bus (&ge; 98.5% precision).</div>
+              </div>
+
+              <!-- ABB 3 -->
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 6px; padding: 12px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                  <strong style="color: #0369a1; font-size: 0.98rem;"><code>ABB-FIN-01</code>: Risk-Adjusted Unit Economics Engine</strong>
+                  <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Analytics Tier</span>
+                </div>
+                <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Real-time financial attribution service that continuously joins operational edge telemetry (teleoperation minutes, tow events, route delays, battery degradation) with financial ledger line items to compute true per-route delivery profitability.</p>
+                <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Telemetry Event Consumer, General Ledger Sync API, Dynamic Route Margin Calculator.</div>
+              </div>
+
+              <!-- ABB 4 -->
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 6px; padding: 12px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                  <strong style="color: #0369a1; font-size: 0.98rem;"><code>ABB-BAT-01</code>: Battery Telemetry &amp; SOH Ingestion Bridge</strong>
+                  <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Hardware / BMS Tier</span>
+                </div>
+                <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Specialized BMS integration adapter that extracts high-resolution cell voltage deltas, internal impedance, and thermal micro-gradients to detect upstream supplier cell manufacturing flaws before emergency stops occur.</p>
+                <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> CAN-Bus BMS Ingestion Stream, State-of-Health (SOH) Micro-Degradation Evaluator, Automated Warranty Dossier Generator.</div>
+              </div>
+
+              <!-- ABB 5 -->
+              <div style="background: #ffffff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 6px; padding: 12px 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                  <strong style="color: #0369a1; font-size: 0.98rem;"><code>ABB-HITL-01</code>: Active Human-in-the-Loop (HITL) Diagnostic Triage Console</strong>
+                  <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Governance &amp; Operations Tier</span>
+                </div>
+                <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Forensic escalation workspace that queues low-confidence (&lt; 85%) model classifications for urgent review by senior diagnostic engineers, capturing expert corrective labels to continuously benchmark and retrain upstream ML models.</p>
+                <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Priority Triage Queue Dispatcher, Multi-Sensor Synchronized Replay UI, Active Learning Weight Publisher.</div>
+              </div>
+            </div>
+          </div>
+
+                  <figure class="my-8 text-center">
+          <img src="assets/figure_2_14a_requirement_abb_mapping.svg" alt="Figure 2.14A: Requirement to ABB Traceability Cross-Mapping" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2.14A:</strong> Architecture Traceability &mdash; Requirement &harr; ABB M:N Cross-Mapping (Problem Space to Conceptual Solution Space).</figcaption>
+        </figure>
+        </div>
+
+        <h3>Requirements Traceability Matrix (RTM)</h3>
+        <p style="color: #475569; margin-bottom: 16px;">Each matrix entry explicitly decouples the <strong>Stakeholder Requirement (The Problem Space)</strong> from the <strong>Architecture Building Blocks (The Solution Space)</strong>, showing how single requirements span multiple reusable architectural components:</p>
+        
+        <div>
+          <div class="responsive-list">
+            <!-- Card 1 -->
+            <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: #0f766e; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px;">REQ-DIAG-01</span>
+                <span style="font-size: 0.75rem; background: #134e4a; padding: 3px 8px; border-radius: 12px; font-weight: 600; text-transform: uppercase;">Problem Space (Requirement)</span>
+              </div>
+              <div style="padding: 16px;">
+                <!-- Problem Space -->
+                <div style="margin-bottom: 14px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0f766e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">1. Requirement Definition (The "What" &amp; "Why")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #334155;">
+                    <li><strong>Business Driver / Loss Vector:</strong> <em>Eliminate Legacy Obfuscation</em> &mdash; $50M bleed masked behind generic "traffic delay" tags.</li>
+                    <li><strong>Functional Specification:</strong> Continuous millisecond-level telemetry ingestion capturing exact trigger timestamps, vehicle kinematics, sensor confidence ratings, and safe-stop loop states.</li>
+                  </ul>
+                </div>
+
+                <!-- Solution Space -->
+                <div style="margin-bottom: 14px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">2. Fulfilling Architecture Building Blocks (The "How")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #0f172a;">
+                    <li><strong>Primary ABB:</strong> <code>ABB-TEL-01</code> &mdash; Unified Telemetry Lakehouse Ingestion</li>
+                    <li><strong>Cross-Mapped ABB:</strong> <code>ABB-BAT-01</code> &mdash; Battery Telemetry Ingestion Bridge <em>(supplies raw electrical telemetry to ingestion pipelines)</em></li>
+                  </ul>
+                </div>
+
+                <!-- Validation Space -->
+                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">3. Verification &amp; Acceptance SLA (The "Proof")</div>
+                  <p style="margin: 0; font-size: 0.9rem; color: #78350f;"><strong>Target Metric:</strong> 100% of unplanned stop events captured; 0% default "traffic" fallback tags permitted.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: #0f766e; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px;">REQ-DIAG-02</span>
+                <span style="font-size: 0.75rem; background: #134e4a; padding: 3px 8px; border-radius: 12px; font-weight: 600; text-transform: uppercase;">Problem Space (Requirement)</span>
+              </div>
+              <div style="padding: 16px;">
+                <!-- Problem Space -->
+                <div style="margin-bottom: 14px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0f766e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">1. Requirement Definition (The "What" &amp; "Why")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #334155;">
+                    <li><strong>Business Driver / Loss Vector:</strong> <em>Forensic Root-Cause Isolation</em> &mdash; Distinguish physical obstacles from sensor artifacts and safe-stop loops.</li>
+                    <li><strong>Functional Specification:</strong> Multimodal cross-sensor arbitration engine analyzing 10-second synchronized camera, LiDAR, and ultrasonic buffers to assign deterministic 5-category failure tags.</li>
+                  </ul>
+                </div>
+
+                <!-- Solution Space -->
+                <div style="margin-bottom: 14px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">2. Fulfilling Architecture Building Blocks (The "How")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #0f172a;">
+                    <li><strong>Primary ABB:</strong> <code>ABB-ML-01</code> &mdash; Multimodal Forensic Classifier</li>
+                    <li><strong>Cross-Mapped ABB:</strong> <code>ABB-TEL-01</code> &mdash; Telemetry Lakehouse <em>(supplies synchronized 10s ring-buffer replays)</em></li>
+                  </ul>
+                </div>
+
+                <!-- Validation Space -->
+                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">3. Verification &amp; Acceptance SLA (The "Proof")</div>
+                  <p style="margin: 0; font-size: 0.9rem; color: #78350f;"><strong>Target Metric:</strong> Classification Precision &ge; 98.5%; Root-cause arbitration delivered within &le; 100ms of telemetry ingestion.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: #0f766e; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px;">REQ-DIAG-03</span>
+                <span style="font-size: 0.75rem; background: #134e4a; padding: 3px 8px; border-radius: 12px; font-weight: 600; text-transform: uppercase;">Problem Space (Requirement)</span>
+              </div>
+              <div style="padding: 16px;">
+                <!-- Problem Space -->
+                <div style="margin-bottom: 14px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0f766e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">1. Requirement Definition (The "What" &amp; "Why")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #334155;">
+                    <li><strong>Business Driver / Loss Vector:</strong> <em>Risk-Adjusted Unit Economics</em> &mdash; Boardroom blindness to actual per-route delivery costs and human safety-net overhead.</li>
+                    <li><strong>Functional Specification:</strong> Dynamic cost allocation engine continuously integrating CapEx depreciation, OpEx, remote teleoperator minutes, tow fees, and battery degradation per mile.</li>
+                  </ul>
+                </div>
+
+                <!-- Solution Space -->
+                <div style="margin-bottom: 14px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">2. Fulfilling Architecture Building Blocks (The "How")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #0f172a;">
+                    <li><strong>Primary ABB:</strong> <code>ABB-FIN-01</code> &mdash; Risk-Adjusted Unit Economics Engine</li>
+                    <li><strong>Cross-Mapped ABB:</strong> <code>ABB-TEL-01</code> &mdash; Telemetry Lakehouse <em>(provides per-route operational duration and distance data)</em></li>
+                  </ul>
+                </div>
+
+                <!-- Validation Space -->
+                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">3. Verification &amp; Acceptance SLA (The "Proof")</div>
+                  <p style="margin: 0; font-size: 0.9rem; color: #78350f;"><strong>Target Metric:</strong> Real-time route profitability calculation updated hourly; variance against actual financial ledger &le; 1.5%.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: #0f766e; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px;">REQ-DIAG-04</span>
+                <span style="font-size: 0.75rem; background: #134e4a; padding: 3px 8px; border-radius: 12px; font-weight: 600; text-transform: uppercase;">Problem Space (Requirement)</span>
+              </div>
+              <div style="padding: 16px;">
+                <!-- Problem Space -->
+                <div style="margin-bottom: 14px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0f766e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">1. Requirement Definition (The "What" &amp; "Why")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #334155;">
+                    <li><strong>Business Driver / Loss Vector:</strong> <em>Upstream Supplier Accountability</em> &mdash; Premature battery failures blamed on driver wear and tear rather than supplier cell defects.</li>
+                    <li><strong>Functional Specification:</strong> Real-time cell-level voltage delta, impedance, and thermal degradation telemetry pipeline correlated with vehicle acceleration load profiles.</li>
+                  </ul>
+                </div>
+
+                <!-- Solution Space -->
+                <div style="margin-bottom: 14px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">2. Fulfilling Architecture Building Blocks (The "How")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #0f172a;">
+                    <li><strong>Primary ABB:</strong> <code>ABB-BAT-01</code> &mdash; Battery Telemetry &amp; SOH Ingestion Bridge</li>
+                    <li><strong>Cross-Mapped ABB:</strong> <code>ABB-TEL-01</code> &mdash; Telemetry Lakehouse <em>(aggregates battery streams into centralized forensic lakehouse)</em></li>
+                  </ul>
+                </div>
+
+                <!-- Validation Space -->
+                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">3. Verification &amp; Acceptance SLA (The "Proof")</div>
+                  <p style="margin: 0; font-size: 0.9rem; color: #78350f;"><strong>Target Metric:</strong> Sub-cycle micro-degradation detected &le; 50ms before safety shutoff; automated warranty claim dossier generated.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: #0f766e; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 800; font-size: 1.05rem; letter-spacing: 0.5px;">REQ-DIAG-05</span>
+                <span style="font-size: 0.75rem; background: #134e4a; padding: 3px 8px; border-radius: 12px; font-weight: 600; text-transform: uppercase;">Problem Space (Requirement)</span>
+              </div>
+              <div style="padding: 16px;">
+                <!-- Problem Space -->
+                <div style="margin-bottom: 14px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0f766e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">1. Requirement Definition (The "What" &amp; "Why")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #334155;">
+                    <li><strong>Business Driver / Loss Vector:</strong> <em>Mitigate Algorithmic Drift &amp; False Positives</em> &mdash; Model overconfidence in ambiguous edge weather/lighting conditions.</li>
+                    <li><strong>Functional Specification:</strong> Human-in-the-Loop (HITL) triage workflow routing low-confidence classifications (&lt; 85%) to senior diagnostic engineers for active retraining feedback.</li>
+                  </ul>
+                </div>
+
+                <!-- Solution Space -->
+                <div style="margin-bottom: 14px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">2. Fulfilling Architecture Building Blocks (The "How")</div>
+                  <ul style="margin: 0 0 0 16px; padding: 0; font-size: 0.92rem; color: #0f172a;">
+                    <li><strong>Primary ABB:</strong> <code>ABB-HITL-01</code> &mdash; Active HITL Diagnostic Triage Console</li>
+                    <li><strong>Cross-Mapped ABB:</strong> <code>ABB-ML-01</code> &mdash; Multimodal Classifier <em>(receives active feedback weights from triage console)</em></li>
+                  </ul>
+                </div>
+
+                <!-- Validation Space -->
+                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 12px;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">3. Verification &amp; Acceptance SLA (The "Proof")</div>
+                  <p style="margin: 0; font-size: 0.9rem; color: #78350f;"><strong>Target Metric:</strong> Human review queue turnaround &le; 15 minutes; active feedback incorporated into nightly continuous evaluation benchmark.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REQUIREMENTS CONFLICT RESOLUTION LOG (TOGAF RM) -->
+        <h3>Requirements Conflict Resolution Log (TOGAF Rule REQ-03)</h3>
+        <p>In high-throughput autonomous systems, functional ambitions often collide with physical, economic, and cryptographic realities. The Requirements Management process formally logs and resolves these tensions:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Conflict ID</th>
+              <th>Requirement A (Performance)</th>
+              <th>Requirement B (Security/Cost)</th>
+              <th>Architectural Resolution &amp; Decision</th>
+              <th>EAB Fiduciary Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CONF-01</code></td>
+              <td><code>NFR-LAT-01</code>: Onboard perception &le; 15ms</td>
+              <td><code>NFR-SEC-02</code>: 100% SHA-256 TPM signing</td>
+              <td><strong>Asynchronous Core Isolation:</strong> TPM signing offloaded to dedicated crypto MCU core via POSIX IPC.</td>
+              <td>Safety-critical vehicle actuation must never block on cryptographic I/O pipelines.</td>
+            </tr>
+            <tr>
+              <td><code>CONF-02</code></td>
+              <td><code>NFR-NET-01</code>: &lt; 5 KB/s continuous cellular budget</td>
+              <td><code>REQ-DIAG-01</code>: &le; 5s full forensic multimodal snapshot</td>
+              <td><strong>Tier-2 Event-Triggered Burst:</strong> Continuous stream strictly binary; 2–5MB rich snapshots burst only on anomaly trigger.</td>
+              <td>Guarantees annual telco budget stays under $820K while preserving 100% forensic visibility on true failures.</td>
+            </tr>
+            <tr>
+              <td><code>CONF-03</code></td>
+              <td><code>NFR-SEC-01</code>: 100% PII redaction in volatile RAM</td>
+              <td><code>NFR-LAT-01</code>: &le; 15ms perception pipeline</td>
+              <td><strong>Dedicated Vision NPU Pipeline:</strong> Redaction model runs in parallel on discrete vision co-processor before frame serialization.</td>
+              <td>Zero latency penalty imposed on real-time obstacle avoidance and path planning.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ABB-TO-ABB COMMUNICATION MATRIX -->
+        <h3>ABB-to-ABB Communication &amp; Interface Matrix</h3>
+        <p>To prevent architectural ambiguity during downstream Phase C (Application) and Phase D (Technology) implementation, the diagnostic building blocks define formal inter-ABB communication contracts:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Source ABB</th>
+              <th>Target ABB</th>
+              <th>Protocol / Pattern</th>
+              <th>Data Payload</th>
+              <th>Latency / Delivery SLA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ABB-EDGE-01</code> (Perception Arbiter)</td>
+              <td><code>ABB-TEL-01</code> (Lakehouse Ingestion)</td>
+              <td>Protobuf v3 over gRPC / mTLS</td>
+              <td>10s multimodal snapshot (video + LiDAR slices &le; 5MB)</td>
+              <td>Event-triggered; delivery &le; 5 seconds</td>
+            </tr>
+            <tr>
+              <td><code>ABB-EDGE-01</code> (Perception Arbiter)</td>
+              <td><code>ABB-SEC-02</code> (PII Scrubber)</td>
+              <td>In-memory POSIX IPC (Zero-Copy)</td>
+              <td>Raw camera video frame buffer</td>
+              <td>Synchronous inline; &le; 5 ms</td>
+            </tr>
+            <tr>
+              <td><code>ABB-ML-01</code> (Classifier)</td>
+              <td><code>ABB-HITL-01</code> (Triage Console)</td>
+              <td>REST / WebSocket over HTTPS</td>
+              <td>Failure classification + confidence score + snapshot URI</td>
+              <td>When confidence &lt; 85%; &le; 5 seconds</td>
+            </tr>
+            <tr>
+              <td><code>ABB-BAT-01</code> (Battery Bridge)</td>
+              <td><code>ABB-FIN-01</code> (Cost Engine)</td>
+              <td>Protobuf over Kafka Event Mesh</td>
+              <td>Battery SOH telemetry, impedance delta &amp; micro-drop logs</td>
+              <td>Continuous stream; &le; 50 ms detection</td>
+            </tr>
+            <tr>
+              <td><code>ABB-SEC-03</code> (TPM Signer)</td>
+              <td><code>ABB-TEL-01</code> (Lakehouse Ingestion)</td>
+              <td>SHA-256 signed envelope</td>
+              <td>Hardware-signed cryptographic notarization token</td>
+              <td>100% of outbound telemetry packets</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: NON-FUNCTIONAL REQUIREMENTS (NFRS) -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Non-Functional Requirements (NFRs): Operational Bounds &amp; Edge Reality</h2>
+        <p>While functional requirements define <em>what</em> the diagnostic architecture must perform, <strong>Non-Functional Requirements (NFRs)</strong> define the physical, regulatory, and economic laws under which it must operate. Rohan and Anjali codify three mission-critical NFR pillars: <strong>Edge Latency</strong>, <strong>PII Privacy</strong>, and <strong>5G Uplink Bandwidth</strong>.</p>
+
+        <div class="narrator-block">
+          
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+          <p class="narrator-text">"Pay close attention to where corporate AI dreams crash into physics. An algorithm running in a comfortable cloud lab has infinite bandwidth and zero latency constraints. But put that same model inside a four-ton autonomous van hurtling down a rainy highway, and suddenly milliseconds mean the difference between smooth delivery and a catastrophic emergency stop. Furthermore, streaming uncompressed 4K video from 10,000 vehicles over 5G will bankrupt the company faster than the battery failures! Let us review the non-negotiable architectural boundaries."</p>
+          
+        </div>
+
+        <figure>
+          <img src="assets/figure_2_15_edge_to_cloud_telemetry_pipeline.svg" alt="Figure 2.15: Architecture Blueprint - Edge-to-Cloud Telemetry Pipeline">
+          <figcaption><strong>Figure 2.15:</strong> Architecture Blueprint &mdash; Edge-to-Cloud Telemetry Pipeline, Tiered Ingestion Topology &amp; Zero-Trust Privacy Scrubbing.</figcaption>
+        </figure>
+
+        <div class="narrator-block">
+          
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+        
+          <p class="narrator-text">"<strong>Activity 2: Engineering the Edge Pipeline.</strong> The architecture separates compute into three distinct physical zones: On-Vehicle Edge RAM, 5G Cellular Slices, and the Central Sovereign Lakehouse."</p>
+          <p class="narrator-text">"<strong>Core Decision 2: Zero-Trust RAM Anonymization &amp; 3-Tier Uplink.</strong> Anjali and Rohan make two uncompromising architectural decisions: First, no camera image may touch non-volatile disk or the cellular transmitter without passing through the Edge PII Scrubber in volatile RAM. Second, they reject continuous video streaming in favor of a 3-tier offload strategy, slashing projected cellular telemetry OpEx from $14.2M/year down to under $820K/year."</p>
+          
+        </div>
+
+        <h3>1. Edge Latency &amp; Deterministic Execution Bounds</h3>
+        <p>To guarantee safety while providing forensic clarity, telemetry and inference latency budgets are split into deterministic time bands:</p>
+        <ul>
+          <li><strong>Deterministic Onboard Perception &amp; Hesitation Scoring (&le; 15 ms):</strong> The vehicle's edge computer must evaluate sensor confidence, cross-reference LiDAR against vision streams, and detect decision hesitation within a strict 15-millisecond window to prevent unsafe control oscillations.</li>
+          <li><strong>Local Telemetry Ring-Buffer Serialization (&le; 50 ms):</strong> When an anomaly or safe-stop loop triggers, the onboard circular buffer must snapshot and cryptographically seal 10 seconds of pre-event and post-event kinematics and sensor data to local NVMe storage within 50 ms.</li>
+          <li><strong>Near Real-Time Cloud Telemetry Ingestion (&le; 100 ms):</strong> High-priority telemetry events (fault codes, emergency stops, battery micro-voltage collapses) transmitted over cellular slices must be ingested and acknowledged by the central lakehouse stream within 100 ms.</li>
+          <li><strong>Forensic Snapshot Retrieval &amp; HITL Alerting (&le; 5 seconds):</strong> Full multimodal snapshot reconstruction (video clips + point-cloud slices) must be delivered to the HITL triage console within 5 seconds of event occurrence.</li>
+          <li><strong>Disconnected Mode Autonomous Resilience:</strong> In complete cellular dead-zones, onboard edge nodes must buffer up to 4 hours of compressed diagnostic telemetry locally without loss or performance degradation, auto-syncing upon signal recovery.</li>
+        </ul>
+
+        <h3>2. PII Privacy, Edge Redaction &amp; Regulatory Compliance</h3>
+        <p>Operating camera-equipped autonomous vehicles in public spaces creates severe legal liability under global privacy statutes (GDPR, EU AI Act High-Risk Classifications, and CCPA). The architecture enforces <strong>Privacy-by-Design</strong>:</p>
+        <ul>
+          <li><strong>Zero-Trust In-Memory Edge Anonymization:</strong> All outward-facing camera streams pass through a dedicated, hardware-accelerated computer vision model running in volatile edge RAM. Faces of pedestrians and license plates of surrounding vehicles are permanently blurred or synthetically masked <em>before</em> frames are written to local disk or transmitted across the cellular network.</li>
+          <li><strong>EU AI Act Article 12 Compliance (Automatic Event Logging):</strong> The diagnostic system maintains an immutable, tamper-evident log of all autonomous decision cycles, safety overrides, and sensor failure classifications throughout the entire operational lifetime of the vehicle.</li>
+          <li><strong>Cryptographic Chain of Custody &amp; Data Integrity:</strong> Every telemetry packet and diagnostic video snippet is hashed (SHA-256) and signed with the vehicle’s hardware-backed cryptographic security module (TPM 2.0). All network transit is enforced via TLS 1.3 mutual authentication (mTLS) with strict Role-Based Access Control (RBAC).</li>
+        </ul>
+
+        <h3>3. 5G Uplink Bandwidth Optimization &amp; Tiered Telemetry Strategy</h3>
+        <p>With a fleet of over 10,000 autonomous delivery vehicles generating multiple gigabytes of sensor data every minute, streaming raw continuous data over cellular networks is physically impossible and economically ruinous. Rohan's team engineers a <strong>3-Tiered Telemetry Ingestion Architecture</strong>:</p>
+        
+        <div>
+          <ul>
+            <li><strong>Tier 1: Continuous Lightweight Streaming Telemetry (&lt; 5 KB/s over 5G/LTE):</strong> High-density, binary-encoded (Protobuf) telemetry stream containing vehicle coordinates, speed, battery cell voltage summary, confidence index, and active state flags. Consumes negligible cellular bandwidth while maintaining continuous real-time fleet visibility.</li>
+            <li><strong>Tier 2: Event-Triggered Anomaly Burst Uploads (2 &ndash; 5 MB per event):</strong> Triggered only when the onboard classifier registers an unplanned stop, confidence drop (&lt; 85%), harsh deceleration, or battery micro-degradation. Transmits the 10-second anonymized multimodal video and sensor snapshot over prioritized 5G cellular network slices for immediate root-cause diagnosis.</li>
+            <li><strong>Tier 3: Depot Bulk Offload via Wi-Fi 6 / 60 GHz mmWave (50 &ndash; 100 GB per vehicle):</strong> Raw high-resolution LiDAR point-clouds, uncompressed raw audio logs, and complete diagnostic dumps are retained on vehicle flash storage and bulk-offloaded automatically upon return to the charging depot at zero cellular data cost.</li>
+          </ul>
+        </div>
+
+        <!-- Explicit NFR Architecture Building Blocks Catalog -->
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 20px 24px; margin: 24px 0;">
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem;">Non-Functional Architecture Building Blocks (NFR ABBs)</h3>
+          <p style="margin-bottom: 16px; color: #334155;">Just as functional requirements demand functional ABBs, <strong>Non-Functional Requirements (NFRs)</strong> mandate dedicated architectural building blocks in security, networking, edge computing, and infrastructure to enforce systemic constraints:</p>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px;">
+            <!-- NFR ABB 1 -->
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #475569; border-radius: 6px; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                <strong style="color: #1e293b; font-size: 0.98rem;"><code>ABB-EDGE-01</code>: Deterministic Onboard Perception Arbiter &amp; Safe-Stop Controller</strong>
+                <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Real-Time Edge Tier</span>
+              </div>
+              <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Hard real-time execution engine running onboard vehicle compute, arbitrating cross-sensor perception streams within &le; 15 ms to trigger deterministic safe-stop commands without control oscillation.</p>
+              <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Real-Time Sensor Kernel Loop, IMU Kinematics Hook, Hardware Safe-Stop Actuator Bus.</div>
+            </div>
+
+            <!-- NFR ABB 2 -->
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #475569; border-radius: 6px; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                <strong style="color: #1e293b; font-size: 0.98rem;"><code>ABB-SEC-02</code>: Zero-Trust Ephemeral In-Memory PII Scrubber</strong>
+                <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Privacy &amp; Security Tier</span>
+              </div>
+              <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Ultra-fast vision redaction model operating exclusively in volatile edge RAM, blurring pedestrian faces and surrounding vehicle license plates in &le; 5 ms before any frame is serialized to disk or network.</p>
+              <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Camera DMA Memory Hook, Ephemeral Frame Redactor, Sanitized Egress Buffer.</div>
+            </div>
+
+            <!-- NFR ABB 3 -->
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #475569; border-radius: 6px; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                <strong style="color: #1e293b; font-size: 0.98rem;"><code>ABB-NET-01</code>: 3-Tier Adaptive Telemetry Offloader &amp; Compression Scheduler</strong>
+                <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Networking Tier</span>
+              </div>
+              <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Dynamic network traffic orchestrator that multiplexes lightweight Protobuf streaming (&lt; 5 KB/s over 5G), event anomaly burst offloads (2&ndash;5 MB), and bulk Depot Wi-Fi 6 offloads (50&ndash;100 GB) to strictly enforce cellular OpEx bounds.</p>
+              <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Cellular QoS Slice Socket, Dynamic Delta Compressor, Depot Wi-Fi Bulk Transfer Daemon.</div>
+            </div>
+
+            <!-- NFR ABB 4 -->
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #475569; border-radius: 6px; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                <strong style="color: #1e293b; font-size: 0.98rem;"><code>ABB-INF-01</code>: Multi-Region Active-Active Cloud Ingestion Cluster</strong>
+                <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Cloud Infrastructure Tier</span>
+              </div>
+              <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Highly available, geo-distributed stream broker fabric providing 99.99% continuous ingestion uptime with automated multi-region broker failover and partitioned cold/hot lakehouse storage.</p>
+              <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Distributed MQTT/Kafka Cluster Ingress, Multi-Region Consensus Broker, Geo-Replicated Object Store.</div>
+            </div>
+
+            <!-- NFR ABB 5 -->
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #475569; border-radius: 6px; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                <strong style="color: #1e293b; font-size: 0.98rem;"><code>ABB-SEC-03</code>: Cryptographic TPM 2.0 Signer &amp; Immutable Audit Notary</strong>
+                <span style="font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">Hardware Security Tier</span>
+              </div>
+              <p style="margin: 0 0 6px 0; font-size: 0.88rem; color: #334155;"><strong>Conceptual Role:</strong> Hardware-rooted cryptographic security service that binds SHA-256 signatures to every telemetry packet via onboard TPM 2.0, establishing an immutable chain of custody for accident litigation and warranty claims.</p>
+              <div style="font-size: 0.82rem; color: #64748b;"><strong>Key Interfaces:</strong> Onboard TPM 2.0 Security Subsystem, mTLS 1.3 Handshake Module, Immutable Audit Log Notary.</div>
+            </div>
+          </div>
+
+                  <figure class="my-8 text-center">
+          <img src="assets/figure_2_15a_nfr_lineage.svg" alt="Figure 2.15A: Non-Functional Requirements Lineage" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2.15A:</strong> Architecture Blueprint &mdash; Non-Functional Requirements (NFR) Lineage &amp; Operational Bounds.</figcaption>
+        </figure>
+        </div>
+
+        <h3>NFR Engineering Quality Attribute &amp; SLA Matrix</h3>
+        <p style="color: #475569; margin-bottom: 16px;"><strong>Do Non-Functional Requirements require Architecture Building Blocks?</strong> <em>Absolutely.</em> In enterprise architecture, NFRs (latency, privacy, bandwidth, uptime, cryptographic provenance) are the primary drivers for specialized infrastructure, security, and networking ABBs. Without dedicated building blocks, NFRs remain unenforced aspirations.</p>
+
+        <div>
+          <div class="responsive-list">
+  <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff;">
+    <div style="background: #334155; color: #ffffff; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; border-radius: 6px 6px 0 0;">
+      <span style="font-weight: 800; font-size: 0.95rem;">NFR-LAT-01: Edge Latency</span>
+      <span style="font-size: 0.72rem; background: #475569; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Performance Bound</span>
+    </div>
+    <div style="padding: 12px 14px;">
+      <ul style="margin: 0 0 10px 16px; padding: 0; font-size: 0.9rem; color: #334155;">
+        <li><strong>Enforcing Building Block (ABB):</strong> <code>ABB-EDGE-01</code> (Deterministic Onboard Perception Arbiter &amp; Safe-Stop Controller)</li>
+        <li><strong>Target Engineering SLA:</strong> &le; 15 ms onboard perception inference; &le; 100 ms cloud telemetry sync</li>
+        <li><strong>Worst-Case Tolerable Bound:</strong> 25 ms edge / 250 ms cloud</li>
+        <li><strong>Degraded / Fallback Mode:</strong> Autonomous edge safe-stop; local NVMe buffer</li>
+        <li><strong>Fiduciary Risk Mitigated:</strong> Collision liability &amp; unsafe control oscillations</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff;">
+    <div style="background: #334155; color: #ffffff; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; border-radius: 6px 6px 0 0;">
+      <span style="font-weight: 800; font-size: 0.95rem;">NFR-SEC-01: PII Privacy</span>
+      <span style="font-size: 0.72rem; background: #475569; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Regulatory Bound</span>
+    </div>
+    <div style="padding: 12px 14px;">
+      <ul style="margin: 0 0 10px 16px; padding: 0; font-size: 0.9rem; color: #334155;">
+        <li><strong>Enforcing Building Block (ABB):</strong> <code>ABB-SEC-02</code> (Zero-Trust Ephemeral In-Memory PII Scrubber)</li>
+        <li><strong>Target Engineering SLA:</strong> 100% faces &amp; license plates redacted in volatile RAM (&le; 5ms)</li>
+        <li><strong>Worst-Case Tolerable Bound:</strong> Zero unredacted frames written to disk or transmitted</li>
+        <li><strong>Degraded / Fallback Mode:</strong> Total visual stream suppression if scrubber model faults</li>
+        <li><strong>Fiduciary Risk Mitigated:</strong> GDPR / CCPA statutory fines (up to 4% of global turnover) &amp; brand reputation loss</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff;">
+    <div style="background: #334155; color: #ffffff; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; border-radius: 6px 6px 0 0;">
+      <span style="font-weight: 800; font-size: 0.95rem;">NFR-NET-01: 5G Uplink Bandwidth</span>
+      <span style="font-size: 0.72rem; background: #475569; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Economic Bound</span>
+    </div>
+    <div style="padding: 12px 14px;">
+      <ul style="margin: 0 0 10px 16px; padding: 0; font-size: 0.9rem; color: #334155;">
+        <li><strong>Enforcing Building Block (ABB):</strong> <code>ABB-NET-01</code> (3-Tier Adaptive Telemetry Offloader &amp; Compression Scheduler)</li>
+        <li><strong>Target Engineering SLA:</strong> &lt; 5 KB/s continuous streaming; &lt; 5 MB event anomaly burst</li>
+        <li><strong>Worst-Case Tolerable Bound:</strong> 10 MB burst ceiling</li>
+        <li><strong>Degraded / Fallback Mode:</strong> Throttle cellular to lightweight telemetry; defer media offload to Depot Wi-Fi 6</li>
+        <li><strong>Fiduciary Risk Mitigated:</strong> Multi-million dollar cellular data plan overruns ($14.2M &rarr; $820K/yr)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff;">
+    <div style="background: #334155; color: #ffffff; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; border-radius: 6px 6px 0 0;">
+      <span style="font-weight: 800; font-size: 0.95rem;">NFR-OPS-01: Pipeline Availability</span>
+      <span style="font-size: 0.72rem; background: #475569; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Resilience Bound</span>
+    </div>
+    <div style="padding: 12px 14px;">
+      <ul style="margin: 0 0 10px 16px; padding: 0; font-size: 0.9rem; color: #334155;">
+        <li><strong>Enforcing Building Block (ABB):</strong> <code>ABB-INF-01</code> (Multi-Region Active-Active Cloud Lakehouse Ingestion Cluster)</li>
+        <li><strong>Target Engineering SLA:</strong> 99.99% lakehouse ingestion stream availability</li>
+        <li><strong>Worst-Case Tolerable Bound:</strong> 99.9% uptime</li>
+        <li><strong>Degraded / Fallback Mode:</strong> Automatic multi-region broker failover &amp; local edge ring buffering</li>
+        <li><strong>Fiduciary Risk Mitigated:</strong> Fleet-wide operational telemetry blindness during peak dispatch windows</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff;">
+    <div style="background: #334155; color: #ffffff; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; border-radius: 6px 6px 0 0;">
+      <span style="font-weight: 800; font-size: 0.95rem;">NFR-SEC-02: Forensic Lineage &amp; Integrity</span>
+      <span style="font-size: 0.72rem; background: #475569; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Security Bound</span>
+    </div>
+    <div style="padding: 12px 14px;">
+      <ul style="margin: 0 0 10px 16px; padding: 0; font-size: 0.9rem; color: #334155;">
+        <li><strong>Enforcing Building Block (ABB):</strong> <code>ABB-SEC-03</code> (Cryptographic TPM 2.0 Signer &amp; Immutable Audit Notary)</li>
+        <li><strong>Target Engineering SLA:</strong> 100% telemetry packets SHA-256 signed with hardware TPM key</li>
+        <li><strong>Worst-Case Tolerable Bound:</strong> Zero unsigned packets accepted by lakehouse</li>
+        <li><strong>Degraded / Fallback Mode:</strong> Quarantine unverified packets to isolated audit quarantine bucket</li>
+        <li><strong>Fiduciary Risk Mitigated:</strong> Unauditable warranty claims, evidence tampering in liability lawsuits</li>
+      </ul>
+    </div>
+  </div>
+</div>
+        </div>
+
+        <!-- QUANTIFIED ARCHITECTURE RISK REGISTER (TOGAF Rule TECH-01) -->
+        <h3>Quantified Diagnostic Risk Register (Initial vs. Residual Risk)</h3>
+        <p>In accordance with TOGAF&reg; Practitioner Standards (RULE TECH-01), all identified enterprise risks must be formally quantified using the standard formula \(\text{Risk Level} = \text{Likelihood} \times \text{Impact}\) (scaled 1&ndash;5), demonstrating that architectural mitigations reduce all critical risks to acceptable residual bounds:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Risk ID</th>
+              <th>Risk Description</th>
+              <th>Initial L</th>
+              <th>Initial I</th>
+              <th>Initial Score</th>
+              <th>Enforcing Architectural Mitigation (ABB)</th>
+              <th>Residual L</th>
+              <th>Residual I</th>
+              <th>Residual Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>RSK-D-01</code></td>
+              <td><strong>Productivity Paradox Loss:</strong> Undetected $50M quarterly EBITDA bleed from hidden teleop rescues.</td>
+              <td>5</td>
+              <td>5</td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:700;">25 (Critical)</span></td>
+              <td><code>ABB-FIN-01</code> Real-Time Unit Economics Engine + automated ledger reconciliation.</td>
+              <td>1</td>
+              <td>2</td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">2 (Low)</span></td>
+            </tr>
+            <tr>
+              <td><code>RSK-D-02</code></td>
+              <td><strong>Algorithmic Drift &amp; False Stops:</strong> Model uncertainty causing hesitation loops on highways.</td>
+              <td>4</td>
+              <td>4</td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:700;">16 (High)</span></td>
+              <td><code>ABB-HITL-01</code> Active Triage Console routing &lt;85% confidence to human specialists.</td>
+              <td>1</td>
+              <td>2</td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">2 (Low)</span></td>
+            </tr>
+            <tr>
+              <td><code>RSK-D-03</code></td>
+              <td><strong>PII Biometric Exposure:</strong> Public video streams triggering GDPR Art. 83 fines (up to 4% turnover).</td>
+              <td>3</td>
+              <td>5</td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:700;">15 (High)</span></td>
+              <td><code>ABB-SEC-02</code> Ephemeral in-memory RAM scrubber executing &le;5ms redaction before disk I/O.</td>
+              <td>1</td>
+              <td>2</td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">2 (Low)</span></td>
+            </tr>
+            <tr>
+              <td><code>RSK-D-04</code></td>
+              <td><strong>Cellular Bandwidth Explosion:</strong> Continuous 4K streaming inflating telco bills to $14.2M/year.</td>
+              <td>5</td>
+              <td>3</td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:700;">15 (High)</span></td>
+              <td><code>ABB-NET-01</code> 3-Tier Adaptive Telemetry Offloader slashing annual cost to &lt;$820K.</td>
+              <td>1</td>
+              <td>1</td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">1 (Negligible)</span></td>
+            </tr>
+            <tr>
+              <td><code>RSK-D-05</code></td>
+              <td><strong>Supplier Hardware Obfuscation:</strong> Volt-Tech cell degradation concealed behind aggregate charge %.</td>
+              <td>4</td>
+              <td>5</td>
+              <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:4px; font-weight:700;">20 (Critical)</span></td>
+              <td><code>ABB-BAT-01</code> Battery Ingestion Bridge with millisecond-level impedance anomaly detection.</td>
+              <td>1</td>
+              <td>2</td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">2 (Low)</span></td>
+            </tr>
+            <tr>
+              <td><code>RSK-D-06</code></td>
+              <td><strong>Dead-Zone Telemetry Blindness:</strong> Complete operational blackout during rural/tunnel routes.</td>
+              <td>3</td>
+              <td>3</td>
+              <td><span class="badge" style="background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:4px; font-weight:700;">9 (Medium)</span></td>
+              <td><code>ABB-EDGE-01</code> Onboard 4-hour NVMe circular buffer with auto-reconciliation on reconnect.</td>
+              <td>1</td>
+              <td>2</td>
+              <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:4px; font-weight:700;">2 (Low)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: BASELINE VS TARGET GAP MATRIX -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Baseline vs. Target State Gap Matrix</h2>
+        <p>The diagnostic interrogation inside Orbit's command center exposes the stark contrast between the current operational failure and the required architectural target. In accordance with TOGAF Phase B/C/D gap analysis standards, this matrix articulates the exact architectural deltas across technology, processes, governance, and financials, defining the formal <strong>Transition Work Packages</strong> required to bridge the divide.</p>
+
+        <div class="narrator-block">
+          
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+          <p class="narrator-text">"Look at the gap between where Orbit-Logistics stands today and where it must go. The baseline is a cautionary tale of enterprise self-deception: legacy IT systems reporting 98% efficiency while millions of dollars vanish into unaccounted tow trucks and failing batteries. The Target Architecture is an unyielding, unified diagnostic system where machine truth cannot be buried. Notice how this Gap Matrix directly creates the four <strong>Transition Work Packages (WP-01 to WP-04)</strong>. This matrix is the bridge that carries us directly into Chapter 3's Architecture Vision."</p>
+          
+        </div>
+
+        <figure>
+          <img src="assets/figure_2_16_baseline_vs_target_gap.svg" alt="Figure 2.16: Architecture Blueprint - Baseline vs. Target Diagnostic Gap Architecture">
+          <figcaption><strong>Figure 2.16:</strong> Architecture Blueprint &mdash; Baseline vs. Target Diagnostic Gap Architecture &amp; Transformation Work Packages.</figcaption>
+        </figure>
+
+        <div class="narrator-block">
+          
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+        
+          <p class="narrator-text">"<strong>Activity 3: Quantifying the Capability Deficit.</strong> Anjali Mehra and Rohan Gupta systematically compare every legacy process against its AI-enabled target counterpart, calculating the exact dollar cost of each architectural gap."</p>
+          <p class="narrator-text">"<strong>Core Decision 3: Transition Work Package Structuring.</strong> Rather than attempting an impossible 'big-bang' system rewrite, the architecture team bundles remediation into four modular, independently deployable Work Packages (WP-01 to WP-04). This allows Orbit to begin recovering lost capital in under six weeks while laying the technical foundation for the upstream supplier mandates in Chapter 3."</p>
+          
+        </div>
+
+        <h3>Baseline vs. Target Diagnostic Gap Analysis</h3>
+        <div>
+          <div class="responsive-list">
+  <div class="card">
+    <h4>1. Telemetry Ingestion</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Fragmented, batched logs (TMS, EAM) updating hourly with zero cross-system timestamp sync.</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> Unified high-throughput event lakehouse ingesting millisecond-synchronized telemetry streams.</li>
+      <li><strong>Identified Capability Gap:</strong> Lack of unified time-series ingestion; temporal desync between routing and mechanical sensors.</li>
+      <li><strong>Work Package:</strong> WP-01<br>(Lakehouse Pipeline)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>2. Root-Cause Classification</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Generic, misleading legacy buckets ('traffic delay', 'driver wear and tear').</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> Deterministic 5-category taxonomy (Sensor, Map, Software, Network, Mechanical).</li>
+      <li><strong>Identified Capability Gap:</strong> Absence of failure taxonomy; structural masking of autonomous software/hardware failures.</li>
+      <li><strong>Work Package:</strong> WP-02<br>(Taxonomy Engine)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>3. Edge Perception &amp; Diagnostics</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Unmonitored safe-stop loops and undetected decision hesitation oscillation.</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> Real-time multimodal arbitration (camera vs. LiDAR) with automated 10-second snapshot capture.</li>
+      <li><strong>Identified Capability Gap:</strong> No edge hesitation scoring or snapshot buffer extraction on anomalous deceleration events.</li>
+      <li><strong>Work Package:</strong> WP-02<br>(Multimodal Classifier)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>4. Privacy &amp; Biometrics</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Raw video streams stored without automated redaction, creating severe regulatory exposure.</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> In-memory edge scrubbing of faces/plates with SHA-256 tamper-evident audit chaining.</li>
+      <li><strong>Identified Capability Gap:</strong> Absence of edge anonymization pipeline; non-compliance with GDPR Article 25 and EU AI Act.</li>
+      <li><strong>Work Package:</strong> WP-03<br>(Edge Privacy Scrubber)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>5. Bandwidth &amp; Telco Cost</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Uncontrolled streaming attempts causing cellular bandwidth spikes and network throttling.</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> 3-tiered intelligent offload (lightweight 5G stream, burst anomaly upload, depot Wi-Fi 6).</li>
+      <li><strong>Identified Capability Gap:</strong> Lack of tiered data lifecycle management; prohibitive cellular data expenditure.</li>
+      <li><strong>Work Package:</strong> WP-01<br>(Tiered Data Gateway)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>6. Financial Unit Economics</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Traditional CapEx/OpEx models blind to human teleoperator costs and recovery towing expenses.</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> Real-time Risk-Adjusted Unit Economics engine calculating true total cost per delivery.</li>
+      <li><strong>Identified Capability Gap:</strong> Missing integration between telematics stop frequency and per-route financial ledgering.</li>
+      <li><strong>Work Package:</strong> WP-04<br>(Cost Engine &amp; Ledger)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>7. Supplier Hardware Telemetry</h4>
+    <ul>
+      <li><strong>Baseline State (Legacy System):</strong> Complete black box; Volt-Tech batteries provide aggregate percentage charge only.</li>
+      <li><strong>Target State (Fiduciary AI Architecture):</strong> Real-time cell-level impedance, voltage delta, and thermal degradation telemetry streams.</li>
+      <li><strong>Identified Capability Gap:</strong> Zero visibility into sub-cycle battery degradation; inability to enforce supplier warranty terms.</li>
+      <li><strong>Work Package:</strong> WP-04<br>(Battery Telemetry Bridge)</li>
+    </ul>
+  </div>
+</div>
+        </div>
+
+        <h3>Transition Work Packages Overview</h3>
+        <div>
+          <div>
+            <h4>WP-01: Unified Ingestion &amp; Tiered Gateway</h4>
+            <p>Deploys high-throughput lakehouse ingestion brokers, time-series synchronization layers, and 3-tiered data offloading gateways across the 10,000 AV fleet.</p>
+          </div>
+          <div>
+            <h4>WP-02: Multimodal Root-Cause Engine &amp; HITL</h4>
+            <p>Builds the 5-category failure taxonomy classifier, edge hesitation detection loops, and the Human-in-the-Loop diagnostic triage console.</p>
+          </div>
+          <div>
+            <h4>WP-03: Edge Privacy &amp; Cryptographic Scrubber</h4>
+            <p>Implements volatile RAM computer vision redaction for pedestrian faces/plates and SHA-256 immutable cryptographic telemetry sealing.</p>
+          </div>
+          <div>
+            <h4>WP-04: Risk-Adjusted Unit Economics &amp; Battery Bridge</h4>
+            <p>Integrates real-time delivery cost allocation models and establishes the forensic battery cell degradation analytics bridge for supplier accountability.</p>
+          </div>
+        </div>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_2_16a_ea_delivery_mindmap.svg" alt="Figure 2.16A: Enterprise Architecture Delivery Mindmap" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2.16A:</strong> Enterprise Architecture Delivery Mindmap &mdash; Illustrating lineage from EA governance to Transition Work Packages (WPs) and delivered ABBs.</figcaption>
+        </figure>
+
+        <!-- WORK PACKAGE DEPENDENCY & CRITICAL PATH SPECIFICATION -->
+        <h3>Work Package Sequencing &amp; Critical Path Analysis (TOGAF Rules OPP-02 &amp; MIG-01)</h3>
+        <p>To eliminate execution risk and avoid circular blocking dependencies, the four Transition Work Packages are sequenced with strict prerequisite rules:</p>
+
+        <div class="card" style="background: #f8fafc; border-left: 4px solid #0284c7; margin: 1.25rem 0;">
+          <pre style="margin: 0; font-family: monospace; font-size: 0.85rem; line-height: 1.5; color: #0f172a; overflow-x: auto;">
+[WP-01: Lakehouse Ingestion &amp; Tiered Gateway] (Weeks 1–6)
+        │
+        ├──► [WP-02: Failure Taxonomy &amp; HITL Console] (Weeks 5–10)
+        │           │
+        │           └──► [WP-04: Real-Time Cost Engine &amp; Battery Bridge] (Weeks 9–14)
+        │
+        └──► [WP-03: Edge Privacy &amp; TPM Scrubber] (Weeks 5–10)
+                    │
+                    └──► [WP-04: Real-Time Cost Engine &amp; Battery Bridge] (Weeks 9–14)
+
+► Critical Path: WP-01 ──► WP-02 ──► WP-04 (Total Duration: 14 Weeks)
+► Parallel Track: WP-03 runs concurrently with WP-02 in Weeks 5–10</pre>
+        </div>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Work Package</th>
+              <th>Prerequisites (Predecessors)</th>
+              <th>Parallelizable With</th>
+              <th>Target Duration</th>
+              <th>Standalone Business Value Delivered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>WP-01: Unified Ingestion &amp; Gateway</strong></td>
+              <td><em>None (Foundational)</em></td>
+              <td>—</td>
+              <td>Weeks 1–6</td>
+              <td>Cuts cellular telemetry cost from $14.2M to &lt;$820K/yr; unifies fleet time-series stream.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-02: Taxonomy Engine &amp; HITL</strong></td>
+              <td><code>WP-01</code> (Ingestion stream active)</td>
+              <td><code>WP-03</code></td>
+              <td>Weeks 5–10</td>
+              <td>Eliminates generic "traffic delay" masks; routes low-confidence stops to human triage.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-03: Edge Privacy &amp; TPM Scrubber</strong></td>
+              <td><code>WP-01</code> (Gateway pipeline active)</td>
+              <td><code>WP-02</code></td>
+              <td>Weeks 5–10</td>
+              <td>Guarantees 100% GDPR Art. 25 &amp; EU AI Act compliance; eliminates public video liability.</td>
+            </tr>
+            <tr>
+              <td><strong>WP-04: Cost Engine &amp; Battery Bridge</strong></td>
+              <td><code>WP-01</code>, <code>WP-02</code>, <code>WP-03</code></td>
+              <td>—</td>
+              <td>Weeks 9–14</td>
+              <td>Enables per-mile loaded cost accounting and unmasks upstream Volt-Tech battery cell defects.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- CHAPTER OUTRO: SHUTI SYSTEM SUMMARY -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        
+        <img src="assets/Shruti/shruti_thumbsup_green_1787204839525_transparent.png" alt="Shruti" class="shruti-avatar">
+        
+        <p class="narrator-text">"The investigation is complete and the diagnostic audit dossier is sealed. Armed with the <strong>Requirements Traceability Matrix</strong>, the strict <strong>Non-Functional Guardrails</strong>, and the four <strong>Transition Work Packages (WP-01 to WP-04)</strong>, Anjali Mehra and Rohan Gupta now possess the definitive forensic weapon. In Chapter 3, watch the fiduciary chain reaction ignite inside the Orbit-Logistics Executive Boardroom as Anjali slams this dossier onto the table, freezes all battery orders from Volt-Tech, and forces the entire ecosystem to adopt the Phase A Architecture Vision."</p>
+        
+      </div>
+    </main>
+
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Chapter</span>
+        <a href="chapter_1.html" class="nav-title">Chapter 1: The Ecosystem Unveiled</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Chapter</span>
+        <a href="chapter_3.html" class="nav-title">Chapter 3: The Productivity Paradox &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

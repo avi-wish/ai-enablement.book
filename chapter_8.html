@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 8: Sequencing the Transformation (Migration Planning) - The Reality of Enterprise AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+  <!-- KaTeX LaTeX JS Library & Auto-Render Extension (Project Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+          });"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chapter_8_charts.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part II:</span> Chapter 8 &mdash; Sequencing the Transformation</div>
+      <nav><a href="index.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>Sequencing the Transformation</h1>
+      <p class="subtitle">
+        Migration Planning: Implementation &amp; Migration Plan (IMP), Critical Path Scheduling &amp; Multi-Wave Rollout (TOGAF&reg; ADM Phase F)
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Joint Program Management Office (PMO) &amp; Multi-Enterprise War Room (Ecosystem Wide Virtual Command)</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase F: Migration Planning (Work Package Prioritization, Implementation &amp; Migration Plan [IMP], Critical Path Gantt/PERT Analysis, Capital Drawdown Phasing &amp; Rollback Risk Controls)</div>
+          
+          <div class="metadata-label">Core Conflict:</div>
+          <div class="metadata-value">In Chapter 7 (Phase E), leadership successfully packaged 12 Solution Building Blocks into joint work packages. However, attempting to execute all work packages in parallel invites severe resource contention, cash flow exhaustion, and operational deadlock across lithium extraction, battery manufacturing, and highway freight. Enterprise architects and PMO directors must construct a rigorous Implementation and Migration Plan (IMP), sequence work packages across a 3-wave critical path, enforce non-negotiable rollback gates, and finalize draft Architecture Contracts before passing execution governance to Phase G.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Welcome back to the ecosystem war room. In Chapter 7, our three enterprises completed <strong>TOGAF ADM Phase E: Opportunities &amp; Solutions</strong>, identifying 12 strategic work packages and ratifying an $18 million joint capital pool. But identifying solutions is only half the battle. Now comes the most pragmatically demanding discipline in enterprise architecture: <strong>TOGAF ADM Phase F: Migration Planning</strong>."</p>
+        <p class="narrator-text">"How do you deploy heavy automated haulers at Terra-Resource, retool high-voltage robotics at Volt-Tech, and roll out real-time autonomous routing at Orbit-Logistics without stalling daily commercial operations? If you sequence incorrectly, dependencies freeze and capital burns at $1.2 million per month in idle overhead. Watch as Aarav Patel, Rajesh Iyer, Priya Kapoor, Vikram Sharma, Anjali Mehra, and Rohan Gupta construct the formal <strong>Implementation and Migration Plan (IMP)</strong>, map the critical path, and establish hardened rollback controls."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC SCENE: THE PMO WAR ROOM -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Storyline: Joint PMO Migration War Room</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Joint PMO War Room - Critical Path Dependency Dilemma"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter8Images/panel_1.jpg" alt="Figure 8.A: Joint PMO War Room &amp; Critical Path Dependency Dilemma" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.A:</strong> Joint PMO War Room &mdash; Rajesh Iyer and Aarav Patel evaluate the PERT dependency network, where Aarav enforces Rule MIG-01 to halt premature edge vision rollout until upstream DPP tokens are active.</figcaption>
+        </figure>
+        <div class="caption-block">Joint Enterprise PMO Command Deck. 08:30 Hours. Holographic Gantt charts and PERT dependency networks illuminate the planning chamber.</div>
+
+                          <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Chief Engineer, Volt-Tech</span>
+          </div>
+          <div class="speech-content">
+            "Aarav, Volt-Tech's robotics engineering pod is ready to deploy our sub-2ms computer vision inspection nodes (WP-104) across Plant 4 tomorrow morning. Every week of delay costs us $420,000 in manual weld inspections. We want to skip the phased staging and go live across all six assembly cells immediately!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian, Terra-Resource &amp; Joint EAB</span>
+          </div>
+          <div class="speech-content">
+            "Halt right there, Rajesh. Look at our PERT critical path diagram: WP-104 is strictly preceded by WP-101 and WP-102 (Terra's Lithium Assay Ingestion &amp; Digital Product Passport Token Generator). If our spectroscopy pipeline hasn't verified the chemical baseline and signed the DPP tokens into the IDMZ canonical bus (WP-103), your vision neural networks will have no immutable ground truth. Under <strong>Rule MIG-01 (Acyclic Precedence)</strong>, I am locking Gate 1 until DPP token generation passes 100% verification."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Understood. Architectural dependencies are not suggestions; they are hard mathematical prerequisites. We hold WP-104 in shadow mode until Wave 1 passes Gate 1 audit."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Financial Planning Chamber - Capital Tranche Drawdown"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter8Images/panel_2.jpg" alt="Figure 8.B: Capital Tranche Drawdown &amp; Fiduciary Governance" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.B:</strong> Financial Planning Chamber &mdash; Anjali Mehra and Priya Kapoor establish the 3-tranche $18M escrow release schedule governed by Rule MIG-02 milestone certifications.</figcaption>
+        </figure>
+        <div class="caption-block">Financial Command Terminal. 10:15 Hours. The corporate treasurers establish the capital drawdown schedule to eliminate cash flow bleed.</div>
+
+                          <div class="dialogue-bubble dialogue-anjali dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fleet Operations Lead, Orbit-Logistics</span>
+          </div>
+          <div class="speech-content">
+            "Priya, the CFOs have agreed on the $18.0 million joint co-investment, but Orbit cannot release our $4.2M share upfront in a single lump sum. If Wave 1 slips, our capital is frozen in escrow while our fleet burns diesel on legacy routes. Phase F must deliver a phased capital drawdown schedule."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-priya">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+          <div class="speech-avatar-name">Priya Kapoor</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect, Volt-Tech</span>
+          </div>
+          <div class="speech-content">
+            "We have structured the funding into three distinct tranches governed by <strong>Rule MIG-02</strong>. Tranche 1 releases $4.2M for Wave 1 Bedrock &amp; DPP. Tranche 2 releases $7.8M for Wave 2 Edge Robotics &amp; Depot MCS grids only after Gate 1 is certified. Tranche 3 releases $6.0M for Wave 3 Autonomous Fleet refits. Every dollar released is bounded by our risk-adjusted NPV model: $100.91M 5-year return with a 6.88-month payback!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-anjali dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          <div class="speech-avatar-name">Anjali Mehra</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "That protects all three balance sheets. Orbit formally signs the staged escrow accord."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Logistics Scheduling Floor - Operational Leveling"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter8Images/panel_3.jpg" alt="Figure 8.C: Operational Leveling &amp; Depot Staged Refit Scheduling" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.C:</strong> Logistics Scheduling Floor &mdash; Rohan Gupta and Vikram Sharma level specialist resource schedules, staggering 2,000 truck telematics refits during depot night shifts to protect peak freight volume.</figcaption>
+        </figure>
+        <div class="caption-block">Logistics Scheduling Center. 11:45 Hours. Field operations directors level workforce capacity to protect quarterly commercial revenue.</div>
+
+                          <div class="dialogue-bubble dialogue-rohan">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+          </div>
+          <div class="speech-content">
+            "Vikram, look at Orbit's freight demand curve for Q3. We are contracted for 120,000 pallet deliveries. If we take 500 trucks out of service simultaneously for telematics and BMS firmware refits, our fulfillment SLA drops to 82%, triggering $3.2M in late-delivery penalties!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-vikram dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist, Terra-Resource</span>
+          </div>
+          <div class="speech-content">
+            "Terra-Resource faced the exact same bottleneck with our open-pit haulers. In our Phase F resource leveling model, we don't refit active fleets during daytime commercial peaks. We stagger refits across depot night shifts in batches of 125 trucks per week during 450kW fast-charging dwell times. And at the mine, we convert haulers to autonomous guidance in 40% tranches during solar generation troughs."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rohan">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rohan Gupta</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Brilliant! Night-shift batch refits keep our daytime active fleet at 100% capacity, maintaining \(\text{SCOR RL.1.1} \ge 99.85\%\) while completing fleet-wide cutover in 16 weeks."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="OT/IT Integration Test Rig - Live ASIL-D Dual-Run Failover"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter8Images/panel_4.jpg" alt="Figure 8.D: Live ASIL-D Dual-Active Parallel Run &amp; Sub-250ms Failover Test" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.D:</strong> OT/IT Integration Test Rig &mdash; Sanjay Reddy and Rajesh Iyer execute a live fault injection test, verifying that Rule MIG-03 triggers a deterministic fallback within 48.2ms upon simulated AI drift.</figcaption>
+        </figure>
+        <div class="caption-block">High-Voltage Automation Rig. 14:00 Hours. Lead engineers test the hardware watchdog under simulated adversarial neural network drift.</div>
+
+                          <div class="dialogue-bubble dialogue-sanjay dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Enterprise Systems Lead, Volt-Tech</span>
+          </div>
+          <div class="speech-content">
+            "Rajesh, initiating simulated covariate drift and 15ms latency spike on OP-30 laser welding neural inferencing at timestamp 14:02:15... Now!"
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-rajesh">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Watch the lockstep comparator: the hardware watchdog detects the latency deviation at 12ms! Actuator control instantly shifts to the deterministic AUTOSAR Classic PLC fallback. Execution time: <strong>48.2 milliseconds</strong>! The welding gantry maintained continuous trajectory without a single scorched cell."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-sanjay dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Measured failover is well within our <strong>Rule MIG-03 limit of \(\le 250\text{ms}\)</strong>. Dual-active parallel run guarantees that no AI anomaly can halt the factory floor or cause thermal runaway on the highway."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 5 -->
+        <div id="panel-5" class="panel-marker" data-scene="Joint Architecture Repository - Binding Architecture Contracts"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter8Images/panel_5.jpg" alt="Figure 8.E: Binding Architecture Contracts &amp; Phase G Handover Baseline" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.E:</strong> Joint Architecture Repository &mdash; Aarav Patel and Kavita Joshi codify the six binding Architecture Contracts (AC-101 to AC-106) with cryptographic Secp384r1 signing before Phase G handover.</figcaption>
+        </figure>
+        <div class="caption-block">Joint Architecture Repository. 15:45 Hours. Architecture and product leads bind technical building blocks into enforceable contracts.</div>
+
+                          <div class="dialogue-bubble dialogue-kavita">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+          <div class="speech-avatar-name">Kavita Joshi</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">VP Product &amp; Data Strategy, Orbit-Logistics</span>
+          </div>
+          <div class="speech-content">
+            "Aarav, we have formalized all six Architecture Contracts: AC-101 (DPP Stream), AC-102 (Assembly Takt), AC-103 (Depot MCS), AC-104 (CAN-FD Telemetry), AC-105 (Grid Arbitrage), and AC-106 (Closed-Loop SCOR). Each contract includes explicit SLA covenants and automated financial penalty triggers."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-aarav dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+          <div class="speech-avatar-name">Aarav Patel</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "These contracts transform enterprise architecture into legal operational covenants. With Hardware Security Module (HSM) Secp384r1 key signing active, no developer, vendor, or partner can alter schemas or bypass safety gates during Phase G. Our Governance Traceability score is 100%."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 6 -->
+        <div id="panel-6" class="panel-marker" data-scene="Multi-Enterprise Council Dais - Master IMP Ratification"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/Chapter8Images/panel_6.jpg" alt="Figure 8.F: Ratification of the Master Implementation and Migration Plan" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.F:</strong> Multi-Enterprise Council Dais &mdash; Vikram Sharma, Rajesh Iyer, Priya Kapoor, Anjali Mehra, and Aarav Patel ratify the Master IMP, successfully concluding Part II of the book.</figcaption>
+        </figure>
+        <div class="caption-block">Multi-Enterprise Council Dais. 17:30 Hours. The joint Enterprise Architecture Board ratifies the Master IMP, concluding Part II Upstream Architecture Definition.</div>
+
+                          <div class="dialogue-bubble dialogue-vikram">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" class="speech-avatar-img">
+          <div class="speech-avatar-name">Vikram Sharma</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Delegates of Terra-Resource, Volt-Tech, and Orbit-Logistics: the Implementation and Migration Plan is ratified! We have mapped 12 work packages, sequenced 3 transition waves across a 15.6-month critical path, and locked in $18.0 million across verified risk gates."
+          </div>
+        </div>
+      </div>
+
+                          <div class="dialogue-bubble dialogue-joint dialogue-right">
+        <div class="speech-avatar-col">
+          <div class="speech-avatar-dual">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+            <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="speech-avatar-img">
+          </div>
+          <div class="speech-avatar-name">Rajesh &amp; Anjali</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "The upstream architecture is complete. The engine is built, tested, and contractually bound. We are ready to enter <strong>Part III: Implementation Governance and Regulatory Compliance (Phase G &amp; The EU AI Act)</strong>!"
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: PHASE F IN CONTEXT: MIGRATION PLANNING & EXECUTION SEQUENCING -->
+      <!-- ========================================================================= -->
+      <section id="section-1">
+        <h2>1. Phase F in Context: Migration Planning &amp; Execution Sequencing</h2>
+        <p>In enterprise digital transformations, the most common reason initiatives collapse is not flawed architecture design, but <strong>uncoordinated execution</strong>. While TOGAF ADM Phase E defines <em>what</em> Solution Building Blocks (SBBs) and Transition Architectures are required, <strong>Phase F (Migration Planning)</strong> governs <em>how, in what exact sequence, and under what contractual covenants</em> the multi-enterprise system is deployed.</p>
+        <p>Attempting to deploy all twelve work packages concurrently creates catastrophic resource contention, drains corporate liquidity, and induces production line halts. Phase F transforms architecture from conceptual blueprints into an auditable, stage-gated, fiduciary execution engine.</p>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Governance Dimension</th>
+              <th>Unstructured Ad-Hoc Migration</th>
+              <th>TOGAF ADM Phase F Migration Plan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Scheduling &amp; Precedence</strong></td>
+              <td>Parallel deployments create circular deadlocks between firmware, data pipelines, and physical plant refits.</td>
+              <td><strong style="color:#22c55e;">Acyclic Critical Path:</strong> 15.6-month PERT schedule with zero critical float and statistical variance bounds.</td>
+            </tr>
+            <tr>
+              <td><strong>Capital Management</strong></td>
+              <td>$18M capital deployed upfront; cost overruns in early phases deplete funding before fleet rollout.</td>
+              <td><strong style="color:#22c55e;">Milestone-Gated Tranches:</strong> 3 capital releases ($4.2M / $7.8M / $6.0M) unlocked only upon passing Transition Risk Gates.</td>
+            </tr>
+            <tr>
+              <td><strong>Operational Disruption</strong></td>
+              <td>Simultaneous fleet refits take 25% of vehicles off-road during peak commercial freight surges.</td>
+              <td><strong style="color:#22c55e;">Resource Leveling:</strong> Night-shift depot refits and staged 40% hauler conversions preserve 100% daytime commercial capacity.</td>
+            </tr>
+            <tr>
+              <td><strong>Safety &amp; Fallback</strong></td>
+              <td>Unchecked AI model drift causes factory stops and battery thermal instability without rollback.</td>
+              <td><strong style="color:#22c55e;">Rule MIG-03 Rollback:</strong> Dual-active parallel run with sub-250ms deterministic hardware watchdog fallback.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: WORK PACKAGE PRIORITIZATION MATRIX -->
+      <!-- ========================================================================= -->
+      <section id="section-2">
+        <h2>2. Work Package Prioritization Matrix &amp; Portfolio Scoring</h2>
+        <p>In accordance with <strong>TOGAF&reg; ADM Phase F</strong> guidelines, the joint architecture board evaluates all 12 Work Packages (WPs) from Phase E using a multi-dimensional quantitative scoring model across <strong>Business Value Realization</strong> (1–10) and <strong>Implementation Risk / Complexity</strong> (1–10):</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_8_2_work_package_prioritization_matrix.svg" alt="Figure 8.2: Work Package Prioritization Matrix" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.2:</strong> TOGAF Phase F Work Package Prioritization Matrix &mdash; Quantitative portfolio evaluation across 4 quadrants with bubble sizing proportional to CapEx allocation.</figcaption>
+        </figure>
+
+        <div style="overflow-x: auto; margin: 1.5rem 0;">
+          <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.95rem;">
+            <thead>
+              <tr style="background-color: var(--card-bg);">
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">WP ID</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: left;">Work Package Name</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Lead Enterprise</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">CapEx ($M)</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Value (1-10)</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Risk (1-10)</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Quadrant</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border-color); text-align: center;">Scheduled Wave</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-101</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Lithium Assay Ingestion &amp; Ore Classification Pipeline</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Terra-Resource</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$1.8M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">9.2</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">3.4</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Quick Win (P1)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 1 (M1–M4) [CP]</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-102</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Digital Product Passport (DPP) Token Generator</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Terra-Resource</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$1.2M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">9.5</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">4.2</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #10B981; font-weight: bold;">Quick Win (P1)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 1 (M1–M4)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-103</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Ecosystem Canonical Data Exchange Bus (IDMZ)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Joint Tripartite</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$1.2M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">9.8</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">5.1</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #3B82F6; font-weight: bold;">Foundation (P1)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 1 (M2–M6) [CP]</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-104</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Sub-2ms Deterministic Edge Vision Inspection Nodes</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Volt-Tech</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$3.4M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">8.9</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">6.8</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #3B82F6; font-weight: bold;">Strategic Bet (P2)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 2 (M5–M9) [CP]</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-105</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Smart Depot 450kW Dynamic Megawatt Charging Grids</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Orbit-Logistics</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$2.4M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">8.7</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">6.2</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #3B82F6; font-weight: bold;">Strategic Bet (P2)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 2 (M6–M10)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-106</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Autonomous Open-Pit Heavy Haulage Fleet Dispatch</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Terra-Resource</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$2.6M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">8.4</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">7.1</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #3B82F6; font-weight: bold;">Strategic Bet (P2)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 2 (M6–M11)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-107</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Dynamic BMS Firmware Flashing &amp; HSM Security</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Volt-Tech</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$1.4M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">8.6</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">5.9</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #3B82F6; font-weight: bold;">Strategic Bet (P2)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 2 (M7–M10)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-108</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Real-Time Fleet Thermal Telemetry &amp; Speed Governor API</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Orbit-Logistics</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$2.8M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">9.6</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">7.8</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #EF4444; font-weight: bold;">High-Impact Core (P1)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 3 (M9–M14) [CP]</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-109</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Human-in-the-Loop (HITL) Tele-Assist Exception Console</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Orbit-Logistics</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$1.0M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">8.8</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">5.4</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #3B82F6; font-weight: bold;">Strategic Fit (P2)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 3 (M10–M14)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-110</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Closed-Loop Cross-Enterprise SCOR Telemetry Bridge</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Joint Tripartite</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$2.2M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">9.4</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">6.9</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #8B5CF6; font-weight: bold;">Target Core (P1)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 3 (M11–M16) [CP]</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-111</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Mine Dynamic Solar-Grid Micro-Storage Optimizer</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Terra-Resource</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$1.0M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">6.8</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">4.1</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: var(--muted); font-weight: bold;">Fill-In (P3)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Wave 2 (M8–M11)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">WP-112</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Autonomous Drone Delivery for Off-Road Spares</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Orbit-Logistics</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">$0.8M</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">4.2</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">8.5</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #9CA3AF; font-weight: bold;">De-prioritized (P4)</td>
+                <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Post-Target State</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: MASTER IMPLEMENTATION & MIGRATION PLAN (IMP) -->
+      <!-- ========================================================================= -->
+      <section id="section-3">
+        <h2>3. Master Implementation and Migration Plan (IMP): 3-Wave Execution Roadmap</h2>
+        <p>Rather than attempting a high-risk 'big-bang' transition, the enterprise architecture team formalizes the <strong>Implementation and Migration Plan (IMP)</strong> structured across three overlapping transition waves. Each wave delivers self-contained business value and is bounded by strict exit criteria:</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_8_1_implementation_migration_plan_gantt.svg" alt="Figure 8.1: Master Implementation & Migration Plan Gantt & Critical Path" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.1:</strong> Master Implementation &amp; Migration Plan (IMP) &mdash; 16-Month Multi-Wave Gantt with Critical Path Lineage (Slack = 0) and Stage-Gate Audit Points (Gates 1, 2, 3).</figcaption>
+        </figure>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+          <div class="card" style="border-top: 4px solid #10B981;">
+            <h3 style="margin-top: 0; color: #10B981;">Wave 1: Bedrock &amp; Cryptographic Passports (Months 1–6)</h3>
+            <p><strong>Primary Focus:</strong> Establishing clean data pipelines, cryptographic Digital Product Passports, and the secure IDMZ cross-enterprise bus.</p>
+            <ul>
+              <li>Deploy automated spectrometry &amp; assay lineage pipelines at Terra extraction hubs (WP-101).</li>
+              <li>Operationalize ERC-721/W3C Digital Product Passport tokens for 100% of raw lithium shipments (WP-102).</li>
+              <li>Establish cross-enterprise IDMZ message brokers with sub-10ms pub/sub latency (WP-103).</li>
+              <li><strong>Capital Tranche Released:</strong> $4.2 Million.</li>
+              <li><strong>Stage-Gate Milestone Gate 1:</strong> 100% verified DPP token generation without slowing physical rail loading times.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #3B82F6;">
+            <h3 style="margin-top: 0; color: #3B82F6;">Wave 2: Edge Robotics &amp; Smart Charging Grids (Months 5–11)</h3>
+            <p><strong>Primary Focus:</strong> Factory floor edge compute, real-time quality vision models, and depot-level charging synchronization.</p>
+            <ul>
+              <li>Flash and validate TinyML inferencing models onto high-voltage BMS microcontrollers (WP-107).</li>
+              <li>Retrofit 6 factory assembly lines with sub-2ms computer vision inspection edge servers (WP-104).</li>
+              <li>Commission 450kW depot charging micro-grids linked to spot electricity price signals (WP-105).</li>
+              <li>Transition 40% of Terra open-pit haulage to autonomous guidance (WP-106).</li>
+              <li><strong>Capital Tranche Released:</strong> $7.8 Million.</li>
+              <li><strong>Stage-Gate Milestone Gate 2:</strong> Defect escape rate \(\le 0.05\%\) across 50,000 manufactured battery modules.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #8B5CF6;">
+            <h3 style="margin-top: 0; color: #8B5CF6;">Wave 3: Autonomous Fleet &amp; Closed-Loop Telemetry (Months 9–16)</h3>
+            <p><strong>Primary Focus:</strong> Highway fleet thermal monitoring, HITL tele-assist dispatch, and ecosystem-wide SCOR closed-loop optimization.</p>
+            <ul>
+              <li>Refit 2,000 Orbit highway commercial vehicles with real-time thermal telemetry and active speed governors (WP-108).</li>
+              <li>Deploy the Human-in-the-Loop (HITL) exception triage console in regional dispatch centers (WP-109).</li>
+              <li>Activate the closed-loop telemetry bridge linking fleet battery health directly back to raw lithium chemical blending (WP-110).</li>
+              <li><strong>Capital Tranche Released:</strong> $6.0 Million.</li>
+              <li><strong>Stage-Gate Milestone Gate 3:</strong> Unbudgeted fleet breakdown rate slashed by \(\ge 75\%\) with \(\text{PSD} \ge 99.8\%\).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: CRITICAL PATH & MATHEMATICAL COST-SCHEDULE MODEL -->
+      <!-- ========================================================================= -->
+      <section id="section-4">
+        <h2>4. Critical Path Scheduling &amp; Financial Risk Formulations</h2>
+        <p>In Phase F, migration uncertainty is managed through rigorous statistical scheduling and variance bounds. The expected task completion time \(T_e\) and standard deviation \(\sigma_i\) for each critical path work package are computed using standard three-point PERT estimators:</p>
+
+        <div class="formula-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 4px solid #16a34a; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #15803d; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ T_e = \frac{O + 4M + P}{6}, \quad \sigma_i = \frac{P - O}{6} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #166534; margin-top: 0.5rem; font-weight: 500;">
+            Where \(O\) is the optimistic duration, \(M\) is the most likely duration, and \(P\) is the pessimistic duration in weeks.
+          </div>
+        </div>
+
+        <p>For the entire multi-enterprise migration critical path \(\text{CP} = \{\text{WP-101} \rightarrow \text{WP-103} \rightarrow \text{WP-104} \rightarrow \text{WP-108} \rightarrow \text{WP-110}\}\), the total expected project timeline \(T_{\text{total}}\) and aggregate risk standard deviation \(\sigma_{\text{CP}}\) are strictly bounded:</p>
+
+        <div class="formula-card" style="background: #f0f9ff; border: 1.5px solid #38bdf8; border-left: 4px solid #0284c7; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #0369a1; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ T_{\text{total}} = \sum_{i \in \text{CP}} T_{e,i} = 15.6\text{ months}, \quad \sigma_{\text{CP}} = \sqrt{\sum\nolimits_{i \in \text{CP}} \sigma_i^2} \le 0.85\text{ months} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #475569; margin-top: 0.5rem; font-weight: 500;">
+            Giving a 95.4% statistical confidence interval that full ecosystem target architecture cutover will complete within \(15.6 \pm 1.7\) months (\(T_{\text{total}} \pm 2\sigma_{\text{CP}}\)).
+          </div>
+        </div>
+
+        <h4>Detailed Critical Path Variable Definitions:</h4>
+        <ul>
+          <li><strong>\(i \in \text{CP}\):</strong> The work packages strictly located on the zero-float Critical Path (\(\text{WP-101}, \text{WP-103}, \text{WP-104}, \text{WP-108}, \text{WP-110}\)).</li>
+          <li><strong>\(T_{e,i}\):</strong> The expected duration (in months) of work package \(i\) calculated via three-point PERT estimation.</li>
+          <li><strong>\(T_{\text{total}} = 15.6\text{ months}\):</strong> Total deterministic sequence time of the critical path from Project Kickoff to Phase G commissioning.</li>
+          <li><strong>\(\sigma_i = \frac{P_i - O_i}{6}\):</strong> The standard deviation of uncertainty for individual work package \(i\).</li>
+          <li><strong>\(\sigma_{\text{CP}} = \sqrt{\sum\nolimits_{i \in \text{CP}} \sigma_i^2} \le 0.85\text{ months}\):</strong> The root-sum-squared aggregate critical path standard deviation, ensuring scheduling stability under Central Limit Theorem.</li>
+          <li><strong>\(15.6 \pm 1.7\text{ months}\):</strong> The \(2\sigma\) (95.4% probability) bounded delivery window for Part II architecture migration.</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 5: CAPITAL DRAWDOWN & FINANCIAL PHASING -->
+      <!-- ========================================================================= -->
+      <section id="section-5">
+        <h2>5. Capital Drawdown Phasing &amp; Net Value Realization S-Curve</h2>
+        <p>To prevent premature capital expenditure and safeguard liquidity across all three corporations, the joint architecture board governs capital allocation via a phased 3-tranche escrow mechanism:</p>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1.25rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Capital Drawdown Phasing &amp; Cumulative Net Value S-Curve</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">Staged 3-Tranche CapEx ($18.0M Total) vs. Cumulative Return ($139.0M 5-Yr Cash Flow, Breakeven Month 6.88)</div>
+            <div style="position: relative; height: 360px; width: 100%;">
+              <canvas id="capitalScurveChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.3:</strong> Capital Drawdown Phasing &amp; Net Value S-Curve &mdash; Staged 3-tranche drawdown ($18.0M total), Breakeven achieved at Month 6.88 (~Month 7), and 5-Year NPV of $100.91M.</figcaption>
+        </figure>
+
+        <p>The Risk-Adjusted Net Present Value (\(\text{NPV}_{\text{risk}}\)) for each work package tranche is governed by:</p>
+
+        <div class="formula-card" style="background: #fff7ed; border: 1.5px solid #fb923c; border-left: 4px solid #ea580c; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <div class="formula-math" style="font-size: 1.25rem; color: #c2410c; font-weight: bold; overflow-x: auto; max-width: 100%;">
+            \[ \text{NPV}_{\text{risk}} = \sum_{t=1}^{N} \frac{\text{CF}_t \cdot (1 - \text{RiskFactor}_t)}{(1 + r)^t} - \text{CapEx}_{\text{staged}} = \mathbf{\$100.91\text{ Million}} \]
+          </div>
+          <div style="font-size: 0.88rem; color: #7c2d12; margin-top: 0.5rem; font-weight: 500;">
+            Where \(\text{RiskFactor}_t \in [0, 1]\) is determined by EAB telemetry conformance scores and \(r = 10.0\%\) is corporate WACC.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 6: RESOURCE CONTENTION & SPECIALIST LEVELING -->
+      <!-- ========================================================================= -->
+      <section id="section-6">
+        <h2>6. Cross-Enterprise Resource Leveling &amp; Contention Heatmap</h2>
+        <p>Resource bottlenecks—particularly among scarce Operational Technology (OT) automation engineers, TinyML architects, and high-voltage grid technicians—represent the primary operational failure mode during deployment. Phase F enforces resource leveling across all five specialist pods:</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_8_4_resource_allocation_contention_heatmap.svg" alt="Figure 8.4: Cross-Enterprise Resource Leveling Heatmap" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.4:</strong> Cross-Enterprise Specialist Resource Leveling Heatmap &mdash; Capacity utilization across 5 specialist engineering pods demonstrating that peak workloads remain safely bounded below 90%.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 7: ROLLBACK ARCHITECTURE & DUAL-RUN VERIFICATION -->
+      <!-- ========================================================================= -->
+      <section id="section-7">
+        <h2>7. Hardware Fail-Safe &amp; ASIL-D Dual-Active Rollback State Machine</h2>
+        <p>A mission-critical supply chain cannot tolerate irreversible deployment failures. Under <strong>Rule MIG-03</strong>, all high-voltage, edge vision, and autonomous vehicle control loops must operate in a dual-active parallel run mode bounded by a sub-250ms deterministic hardware fail-safe fallback:</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_8_5_dual_run_rollback_state_machine.svg" alt="Figure 8.5: ASIL-D Dual-Active Parallel Run & Rollback State Machine" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.5:</strong> ASIL-D Dual-Active Parallel Run &amp; Rollback State Machine (Rule MIG-03) &mdash; Sub-250ms hardware watchdog fallback and cryptographic incident quarantine workflow.</figcaption>
+        </figure>
+
+        <h3>7.1 Codified Migration Verification Rules</h3>
+        <div class="card" style="margin: 1rem 0; background: var(--bg-alt); border-left: 4px solid var(--primary);">
+          <h4>RULE MIG-01: Critical Path Feasibility &amp; Acyclic Dependencies</h4>
+          <p>Every work package in the Implementation and Migration Plan MUST have an unambiguous predecessor/successor mapping. Circular dependencies between hardware firmware flashing, edge server deployment, and cloud telemetry ingestion are strictly prohibited.</p>
+        </div>
+
+        <div class="card" style="margin: 1rem 0; background: var(--bg-alt); border-left: 4px solid var(--primary);">
+          <h4>RULE MIG-02: Sponsor &amp; PMO Co-Approval for Tranche Release</h4>
+          <p>No capital tranche may be released until the Enterprise Architecture Board (EAB) and the joint PMO/Finance authority formally co-sign the Transition Gate audit certificate.</p>
+        </div>
+
+        <div class="card" style="margin: 1rem 0; background: var(--bg-alt); border-left: 4px solid #DC2626;">
+          <h4>RULE MIG-03: Tested Rollback &amp; Parallel-Run Mandate</h4>
+          <p>Every deployment modifying high-voltage battery firmware (WP-107) or active fleet dispatch controls (WP-108) MUST maintain a dual-active parallel run mode capable of instant fallback to baseline deterministic control logic within \(\le 250\text{ms}\) without human intervention.</p>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 8: ARCHITECTURE CONTRACTS & PHASE G HANDOVER -->
+      <!-- ========================================================================= -->
+      <section id="section-8">
+        <h2>8. TOGAF Phase F Architecture Contracts &amp; Phase G Lineage</h2>
+        <p>The final milestone of TOGAF ADM Phase F is the formulation of binding <strong>Architecture Contracts (AC-101 through AC-106)</strong>. These contracts legally and operationally bind system integrators, development teams, and corporate partners to strict performance and safety covenants before execution governance begins in Phase G:</p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_8_6_architecture_contract_lineage_matrix.svg" alt="Figure 8.6: TOGAF Phase F Architecture Contracts & Phase G Lineage" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8.6:</strong> TOGAF Phase F Architecture Contracts &amp; Phase G Governance Lineage &mdash; Binding ABBs and SBBs to Contractual Covenants (AC-101 to AC-106), Service Level Agreements, and Phase G Audit Checkpoints.</figcaption>
+        </figure>
+
+        <div class="metadata-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 4px solid #16a34a; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+          <h3 style="color: #15803d; margin-top: 0; font-size: 1.25rem; font-weight: bold;">Executive Architecture Sign-Off Summary: Part II Completion</h3>
+          <p style="color: #1e293b; margin-bottom: 0.75rem;">By ratifying the Master Implementation and Migration Plan across all three enterprises, the joint Enterprise Architecture Board guarantees:</p>
+          <ul style="color: #1e293b; line-height: 1.7; margin-bottom: 0;">
+            <li><strong style="color: #0f172a;">Acyclic Critical Path:</strong> Total migration completed in 15.6 months with zero float on critical path and variance bounded at \(\sigma_{\text{CP}} \le 0.85\text{ months}\).</li>
+            <li><strong style="color: #0f172a;">Risk-Gated Capital Release:</strong> $18.0M escrow staged across 3 tranches unlocked only upon certified Transition Gate audit passage.</li>
+            <li><strong style="color: #0f172a;">Guaranteed Operational Continuity:</strong> Night-shift depot refits protect 100% daytime commercial freight capacity (\(\text{SCOR RL.1.1} \ge 99.85\%\)).</li>
+            <li><strong style="color: #0f172a;">Sub-250ms Fail-Safe Protection:</strong> ASIL-D dual-active parallel run fallback verified at 48.2ms under live simulated AI drift.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR WRAP-UP: PART II CLOSURE TO PART III TRANSITION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_thumbsup_green_1787204839525_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Look at what our three enterprises have accomplished together. <strong>Part II: Upstream Architecture &amp; Supply Chain Execution is now fully realized!</strong> Across Chapters 4 through 8, the architecture team has traversed the complete upstream engineering lifecycle: structuring business viability in Phase B (Chapter 4), building immutable data bedrock in Phase C (Chapter 5), mastering deterministic edge robotics in Phase D (Chapter 6), packaging opportunities into solutions in Phase E (Chapter 7), and locking down the multi-enterprise Implementation and Migration Plan in Phase F (Chapter 8)."</p>
+        <p class="narrator-text">"The blueprint is drawn. The schedules are locked. The capital tranches are staged. But as our systems go live in the physical world, a massive new challenge awaits: <strong>Implementation Governance (Phase G) and strict compliance with international AI regulations like the EU AI Act</strong>. In <strong>Part III: Chapter 9</strong>, we step into the regulatory ring where the Risk Guardians must deploy the compliance shield. Join us in Part III!"</p>
+      </div>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- NAVIGATION FOOTER -->
+    <!-- ========================================================================= -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Chapter</span>
+        <a href="chapter_7.html" class="nav-title">&larr; Chapter 7: Optimizing the Engine</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Chapter</span>
+        <a href="chapter_9.html" class="nav-title">Chapter 9: Navigating the Regulatory Landscape &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

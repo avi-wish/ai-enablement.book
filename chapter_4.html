@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 4: The Economics of AI (Building the Business Case) - The Reality of Enterprise AI</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chapter_4_charts.js" defer></script>
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part II:</span> Chapter 4 &mdash; The Economics of AI</div>
+      <nav><a href="index.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>The Economics of AI</h1>
+      <p class="subtitle">
+        Building the Business Architecture &amp; Strategic Case (TOGAF&reg; ADM Phase B)
+      </p>
+
+      <!-- Metadata Card -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Volt-Tech Manufacturing — Global Engineering &amp; Commercial HQ</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase B: Business Architecture (Target Business Model, Capability Gaps, Dynamic Change Management &amp; Strategic Partnering)</div>
+          
+          <div class="metadata-label">Core Conflict:</div>
+          <div class="metadata-value">Following customer alignment with Orbit-Logistics, Volt-Tech must re-architect its core business. Burdened by costly vertical battery cell fabrication, congested truck assembly floors, cultural friction between embedded and cloud engineers, and forensic proof that Orbit's inadequate depot charging infrastructure forces high-risk Partial-State-of-Charge (PSoC) dispatches, Volt-Tech must define a viable Phase B Business Architecture and execute dynamic Architecture Change Management.</div>
+        </div>
+      </div>
+
+      <!-- Narrator Introduction -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Welcome back to the corporate stage. In Chapter 3, downstream fleet operator Orbit-Logistics halted battery purchase orders to stop their $50M quarterly bleed. But behind closed boardroom doors, customer diplomacy prevailed: Orbit-Logistics and Volt-Tech reached an executive agreement. Orbit agreed to continue services and partner on joint business objectives—on the non-negotiable condition that Volt-Tech eliminate sub-cycle battery collapses and deliver a truly intelligent 'Smart Battery' with real-time edge telemetry."</p>
+      </div>
+      <!-- ========================================================================= -->
+      <!-- COMIC SCENE: THE BOARDROOM & FACTORY FLOOR REALITY -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Storyline: Pressure in the Executive War Room</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Volt-Tech Executive War Room - Post Orbit Agreement"></div>
+        <figure>
+          <img src="assets/Chapter4Images/panel_1.png" alt="Figure 4.1: Volt-Tech Executive War Room">
+          <figcaption><strong>Figure 4.1:</strong> Volt-Tech Executive War Room &mdash; Priya Kapoor, Rajesh Iyer, and Sanjay Reddy convene following the high-stakes contract continuation agreement with Orbit-Logistics.</figcaption>
+        </figure>
+        <div class="caption-block">Volt-Tech Global Headquarters. Executive War Room. 09:30 Hours. The contract with Orbit-Logistics is saved, but the operational clock is ticking.</div>
+
+                          <div class="dialogue-bubble dialogue-priya">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+          <div class="speech-avatar-name">Priya Kapoor</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Fiscal Architect</span>
+          </div>
+          <div class="speech-content">
+            "We reached an agreement with Orbit-Logistics to continue services and support their fleet transformation, but let's be honest about the stakes: this is a conditional lifeline. Anjali Mehra signed the continuation framework because we committed to delivering edge-instrumented Smart Batteries that stop their $50M quarterly bleed. If our next batch suffers micro-voltage collapses on their delivery routes, Volt-Tech will face catastrophic warranty penalties and total contract termination."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Rajesh Iyer at the Factory Floor Assembly Lines"></div>
+        <figure>
+          <img src="assets/Chapter4Images/panel_2.png" alt="Figure 4.2: Factory Floor Assembly Chaos">
+          <figcaption><strong>Figure 4.2:</strong> Factory Floor Assembly Chaos &mdash; Rajesh Iyer observing congested smart truck assembly lines and makeshift high-voltage battery test bays.</figcaption>
+        </figure>
+        <div class="caption-block">Volt-Tech Assembly Plant 4. 10:15 Hours. Floor space cannibalization and improvised battery cell test chambers create manufacturing gridlock.</div>
+
+                          <div class="dialogue-bubble dialogue-rajesh dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Operational Strategist</span>
+          </div>
+          <div class="speech-content">
+            "Look out at our manufacturing floor, Priya! We are an electronic smart truck manufacturing powerhouse—our chassis, powertrains, suspension, and high-voltage vehicle control units are best-in-class. But when we scaled into in-house battery manufacturing, we made a critical mistake. We spent forty-five million dollars in R&amp;D and crammed battery module assembly onto our existing truck manufacturing floors. Our bays are overcrowded, truck mechanics are stepping over makeshift battery test rigs, and our new hires lack specialized cell-fabrication protocols. We are simply not equipped to build durable, chemical-grade battery packs from scratch!"
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Engineering Divide &amp; Orbit Depot Telemetry Revelation"></div>
+        <figure>
+          <img src="assets/Chapter4Images/panel_3.1.png" alt="Figure 4.3: Sanjay Reddy Revealing Orbit Depot Charging Deficit">
+          <figcaption><strong>Figure 4.3:</strong> The Operational Bombshell &mdash; Sanjay Reddy reveals forensic telemetry to Priya Kapoor proving that over 72% of micro-voltage collapses occurred when trucks were dispatched at 35%–50% State of Charge due to Orbit's depot charging shortages.</figcaption>
+        </figure>
+        <div class="caption-block">Hardware-Software Integration Lab. 11:30 Hours. Cultural friction, architectural misalignment, and forensic field telemetry uncover the root causes of failure.</div>
+
+                          <div class="dialogue-bubble dialogue-sanjay">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-header">
+            <span class="speech-char-role">Risk Guardian</span>
+          </div>
+          <div class="speech-content">
+            "And the skills fracture inside engineering is just as dangerous as the floor layout. Our embedded veterans write deterministic AUTOSAR firmware, while the twenty cloud engineers we hired deployed bloated container stacks that crashed our 32-bit automotive microcontrollers. But there is a second operational bombshell, Priya: when we analyzed Orbit-Logistics' failure telemetry, <strong>over 72% of the micro-voltage collapses occurred when trucks were dispatched at only 35% to 50% State of Charge!</strong> Orbit manages their own depot charging facilities, but they failed to install sufficient charging stations and fast-chargers. Trucks are queued up, turnaround times are missed, and Orbit dispatchers send trucks out half-charged! When heavy delivery trucks pull maximum acceleration torque on starved batteries, deep-discharge thermal spikes destroy the cells. Our cell yields were weak, yes, but Orbit's depot charging failure turned minor imbalances into catastrophic breakdowns!"
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="Priya Kapoor presenting Horizontal Scaling Strategy"></div>
+        <figure>
+          <img src="assets/Chapter4Images/panel_4.png" alt="Figure 4.4: Fiduciary Business Case & Horizontal Partner Strategy">
+          <figcaption><strong>Figure 4.4:</strong> Fiduciary Business Case &amp; Horizontal Partner Strategy &mdash; Priya Kapoor presenting the CapEx reallocation from vertical cell gigafactories to horizontal Tier-1 partner ecosystems.</figcaption>
+        </figure>
+        <div class="caption-block">Executive Boardroom. 14:00 Hours. Priya Kapoor details the mathematical pivot and issues an Architecture Change Request to address the depot charging reality.</div>
+
+                          <div class="dialogue-bubble dialogue-priya dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+          <div class="speech-avatar-name">Priya Kapoor</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "That discovery shifts our entire fiduciary and architectural posture! In TOGAF terms, this operational reality triggers an immediate <strong>Architecture Change Request (ACR)</strong>. We cannot accept unilateral warranty liability when Orbit's depot infrastructure is starving our batteries. Our Phase B Business Architecture must accomplish two imperatives: first, stop vertical overreach and leverage <strong>horizontal partner scaling</strong> with certified Tier-1 cell gigafactories; second, establish a mutual <strong>Depot Charging Service SLA</strong> with Orbit, while re-architecting our BMS firmware for <strong>Partial-State-of-Charge (PSoC) resilience</strong>."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 5 -->
+        <div id="panel-5" class="panel-marker" data-scene="Sanjay Reddy's Security & Functional Safety Lock"></div>
+        <figure>
+          <img src="assets/Chapter4Images/panel_5.png" alt="Figure 4.5: Cybersecurity and ASIL-D Functional Safety Command">
+          <figcaption><strong>Figure 4.5:</strong> Cybersecurity and ASIL-D Functional Safety Command &mdash; Sanjay Reddy locking down hardware security modules (HSM) and encrypted partner firewall gates.</figcaption>
+        </figure>
+        <div class="caption-block">Cybersecurity Operations Center. 15:30 Hours. Sanjay Reddy establishes cryptographic boundaries to protect proprietary IP and enforce ISO 26262 ASIL-D standards across partner and depot telemetry interfaces.</div>
+
+                          <div class="dialogue-bubble dialogue-sanjay">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+          <div class="speech-avatar-name">Sanjay Reddy</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Every partner interface must have cryptographic hardware isolation. With integrated Hardware Security Modules (HSM) and ASIL-D protocols on our dual-core lockstep microcontrollers, every external data entry point is cryptographically authenticated. We will safeguard our proprietary BMS models, accept verified raw material passports from Terra-Resource, and log every depot charging session into an immutable ledger so we have cryptographic proof of charging conditions."
+          </div>
+        </div>
+      </div>
+
+        <!-- Panel 6 -->
+        <div id="panel-6" class="panel-marker" data-scene="Silicon to Cloud Fusion Pod Breakthrough"></div>
+        <figure>
+          <img src="assets/Chapter4Images/panel_6.png" alt="Figure 4.6: Silicon-to-Cloud Fusion Pod Breakthrough">
+          <figcaption><strong>Figure 4.6:</strong> Silicon-to-Cloud Fusion Pod Breakthrough &mdash; Cross-functional engineering pod achieves sub-10ms TinyML in-RAM inference and stable Protobuf telemetry on Hardware-in-the-Loop test bench.</figcaption>
+        </figure>
+        <div class="caption-block">Advanced Co-Simulation Lab. 17:00 Hours. The first Silicon-to-Cloud Fusion Pod achieves sub-10ms real-time battery degradation detection with dynamic partial-charge power derating.</div>
+
+                          <div class="dialogue-bubble dialogue-rajesh dialogue-right">
+        <div class="speech-avatar-col">
+          <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+          <div class="speech-avatar-name">Rajesh Iyer</div>
+        </div>
+        <div class="speech-balloon">
+          <div class="speech-content">
+            "Look at the HIL test bench! When we paired Karthik from embedded firmware directly with Devika from cloud AI under a single Protobuf interface contract, they quantized the neural model to INT8. The inference executes in 8.2 milliseconds inside 180KB of RAM! It even features dynamic power derating when SoC drops below 40%, protecting the pack from high-torque damage even if Orbit dispatches a half-charged truck. Zero CAN bus jitter, zero memory overflow. We have our Smart Battery blueprint!"
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- Narrator Pause -->
+      <div class="narrator-block">
+        <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+        <p class="narrator-text">"<strong>Enterprise Architecture Mentor Insight: The Vertical Integration Trap.</strong> In industrial transformation, organizations often mistake vertical integration for strategic control. When Volt-Tech saw the smart mobility boom, they attempted to vertically absorb everything: chemical cell manufacturing, pack housing, embedded firmware, cloud ingestion, and machine learning models under one roof. The result was capital depletion, floor congestion, and organizational friction."</p>
+        <p class="narrator-text">"In <strong>TOGAF ADM Phase B: Business Architecture</strong>, we align business strategy, capabilities, organizational structure, and partner ecosystems. Volt-Tech will now systematically dismantle its vertical bottlenecks and transition into an agile, partner-enabled Smart Vehicle OEM."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: FRAMING THE BUSINESS OF VOLT-TECH -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. Business Framing: The Smart Truck OEM at the Crossroads</h2>
+        <p>Volt-Tech Manufacturing is an industry-leading original equipment manufacturer (OEM) specializing in high-performance <strong>Electronic Smart Trucks</strong> and commercial fleet vehicles. Over the past decade, Volt-Tech established an unmatched market reputation for rugged vehicle dynamics, high-voltage powertrain engineering, electronic control units (ECUs), and deterministic microcontroller programming.</p>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Core Manufacturing Heritage &amp; Strengths</h4>
+            <ul>
+              <li><strong>Smart Truck Chassis &amp; Drivetrain:</strong> Industry-standard commercial truck chassis, electronic axles, dynamic regenerative braking, and heavy-load structural integrity.</li>
+              <li><strong>Automotive Electronics Mastery:</strong> Deep expertise in 32-bit automotive microcontrollers (Infineon AURIX, STM32, NXP), AUTOSAR standards, and deterministic CAN/CAN-FD vehicle buses.</li>
+              <li><strong>Commercial Scale:</strong> High-throughput vehicle assembly lines serving enterprise fleet logistics across North America and Europe.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>The Scaling Crisis: In-House Battery Fabrication</h4>
+            <ul>
+              <li><strong>Aggressive Vertical Integration:</strong> Attempted to build proprietary chemical pouch cells and pack fabrication lines to capture battery margins.</li>
+              <li><strong>R&amp;D Capital Drain:</strong> Invested over $45M in battery cell chemistry and specialized cleanroom tooling with diminishing returns.</li>
+              <li><strong>Factory Floor Cannibalization:</strong> Converted 40% of truck manufacturing floor space into jury-rigged battery pack assembly bays, creating physical congestion and workflow hazards.</li>
+              <li><strong>Durability Deficiencies:</strong> Inconsistent cell balancing and micro-voltage degradation under heavy acceleration torque, triggering client disputes with Orbit-Logistics.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>The Downstream Operational Discovery: Depot Charging Starvation</h4>
+            <ul>
+              <li><strong>Depot Infrastructure Deficit:</strong> Orbit-Logistics manages fleet charging depots but installed only a fraction of required fast-charging stalls for 500+ commercial trucks.</li>
+              <li><strong>Partial-State-of-Charge (PSoC) Dispatches:</strong> Over 72% of trucks were dispatched at 35%–50% SoC to meet rigid delivery schedules without adequate turnaround charging.</li>
+              <li><strong>Deep-Discharge Stress:</strong> Pulling maximum acceleration torque on depleted cells caused severe thermal spikes and dendrite growth, turning minor manufacturing variations into catastrophic collapses.</li>
+              <li><strong>Architecture Change Trigger:</strong> Proves that battery durability cannot be solved in isolation; it requires a joint operational SLA and PSoC-adaptive BMS intelligence.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: HORIZONTAL PARTNER SCALING VS. VERTICAL OVERREACH -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Strategic Realignment: Horizontal Ecosystem Scaling</h2>
+        <p>A fundamental breakthrough in Volt-Tech's Phase B Business Architecture is recognizing the power of <strong>Horizontal Ecosystem Scaling</strong> over brittle vertical integration. Rather than attempting to dominate every link of the value chain, Volt-Tech forms strategic alliances with specialized tier-1 partners for commodity cell production and cloud infrastructure, while retaining proprietary control over embedded vehicle intelligence and pack integration.</p>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Vertical Integration (Flawed Baseline)</h4>
+            <ul>
+              <li><strong>Prohibitive Capital Outlay:</strong> Continual multi-million dollar CapEx required to update rapidly evolving chemical cell tooling.</li>
+              <li><strong>Shop Floor Disruption:</strong> Automotive truck mechanics working alongside hazardous electrolyte handling stations.</li>
+              <li><strong>Low Cell Yield (81%):</strong> High manufacturing defect rates resulting in warranty write-offs and customer dissatisfaction.</li>
+              <li><strong>Technology Lock-in:</strong> Inability to adopt newer solid-state or LFP chemistries without writing off bespoke factory tooling.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Horizontal Scaling (Target Business Architecture)</h4>
+            <ul>
+              <li><strong>Tier-1 Cell Partnerships:</strong> Sourcing standardized, high-yield cylindrical/prismatic cells from specialized battery gigafactories.</li>
+              <li><strong>Modular Smart Pack Architecture:</strong> Proprietary in-house design of modular pack enclosures, thermal cooling jackets, and intelligent BMS controllers.</li>
+              <li><strong>Cloud IoT Ecosystem Alliances:</strong> Utilizing certified enterprise cloud IoT brokers (MQTT/Kafka) and analytics platforms rather than custom datacenter hosting.</li>
+              <li><strong>Strategic Agility:</strong> Reduces capital intensity by 65%, allows plug-and-play adoption of next-generation cell chemistries, and frees up truck assembly floors.</li>
+            </ul>
+          </div>
+        </div>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_4_7_partner_ecosystem.svg" alt="Figure 4.7: Horizontal Partner Ecosystem vs In-House Vertical Silos" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4.7:</strong> Business Architecture Blueprint &mdash; Horizontal Partner Scaling &amp; Modular Ecosystem Blueprint (TOGAF Phase B).</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: THE SKILLS GAP & ORGANIZATIONAL FRICTION -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. The Cultural &amp; Skills Gap: Embedded Silicon vs. Cloud AI</h2>
+        <p>Volt-Tech's effort to modernize highlighted a critical organizational fracture. While the company encouraged internal electronics engineers to master IoT and AI automation, there was a fundamental skills divide between deterministic automotive electronics and modern cloud computing. Management's attempt to bridge this via rapid external hiring of cloud, AI, and DevOps engineers created severe architectural and cultural silos.</p>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Internal Electronics &amp; Microcontroller Team ("Silicon &amp; Metal")</h4>
+            <ul>
+              <li><strong>Technical Domain:</strong> Embedded C/C++, Real-Time Operating Systems (FreeRTOS, QNX), AUTOSAR, Infineon/STM32 microcontrollers, CAN-FD, SPI/I2C, Hardware-in-the-Loop (HIL) test benches.</li>
+              <li><strong>Mindset &amp; Philosophy:</strong> Microsecond determinism, zero memory leaks, static memory allocation, ISO 26262 ASIL-D functional safety, extreme physical vibration tolerance.</li>
+              <li><strong>The Blind Spot:</strong> Lack of experience with distributed cloud architectures, REST APIs, JSON/Protobuf schemas, containerization, time-series streaming, and cloud MLOps pipelines.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>External Cloud, AI &amp; DevOps Team ("Cloud &amp; Pipeline")</h4>
+            <ul>
+              <li><strong>Technical Domain:</strong> Python, PyTorch, Docker, Kubernetes, Apache Kafka, Time-Series Databases (TimescaleDB), CI/CD pipelines, elastic cloud computing.</li>
+              <li><strong>Mindset &amp; Philosophy:</strong> Continuous deployment, agile sprints, rapid model retraining, elastic resource scaling, asynchronous data processing.</li>
+              <li><strong>The Blind Spot:</strong> Disregard for embedded memory constraints (&lt;512KB SRAM), ignorance of deterministic cycle deadlines, unfamiliarity with CAN bus bandwidth limits, and lack of automotive safety awareness.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="caption-block">
+          <strong>The Execution Stalemate:</strong> Cloud engineers pushed hundred-megabyte Docker containers and Python runtimes that crashed automotive microcontrollers, while embedded engineers built proprietary binary memory dumps that broke cloud ingestion. Without a common architecture, release velocity dropped to zero and customer deployments stalled.
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: STRATEGY TO REDUCE GAPS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. Concrete Strategy to Bridge Organizational &amp; Skill Gaps</h2>
+        <p>To eliminate the divide and enable cross-functional delivery of the Smart Battery, Volt-Tech establishes a comprehensive, four-pillar enablement strategy:</p>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>1. "Silicon-to-Cloud" Cross-Functional Fusion Pods</h4>
+            <p>Dismantle traditional functional silos. Form dedicated product pods comprising an Embedded Firmware Lead, an Edge ML Engineer, a Cloud IoT Architect, and an Automotive Safety Engineer. Pods share unified performance KPIs tied to end-to-end telemetry reliability and latency rather than departmental metrics.</p>
+          </div>
+          <div class="card">
+            <h4>2. Formal Interface Contracts &amp; Digital Twin Co-Simulation</h4>
+            <p>Codify strict Interface Definition Language (IDL) contracts using compact Protocol Buffers (Protobuf) over CAN-FD and MQTT. Establish automated Digital Twin Hardware-in-the-Loop (HIL) test environments where cloud telemetry pipelines and edge TinyML models are co-simulated against physical microcontroller hardware before flashing.</p>
+          </div>
+          <div class="card">
+            <h4>3. The Volt-Tech Internal Edge-AI Academy</h4>
+            <p>Implement a structured, two-way upskilling curriculum: internal automotive engineers are trained in TinyML, quantized neural networks (INT8), and Protobuf serialization; external cloud/AI engineers undergo mandatory certifications in ISO 26262 ASIL-D safety, memory-safe embedded C++, and CAN bus timing.</p>
+          </div>
+          <div class="card">
+            <h4>4. Modular Partner Interface Standard</h4>
+            <p>Define standardized mechanical, electrical, and data interfaces for battery pack integration. Partner with tier-1 battery cell providers who supply pre-validated cells equipped with upstream digital passports from Terra-Resource, allowing Volt-Tech to focus on proprietary BMS intelligence and truck assembly.</p>
+          </div>
+        </div>
+
+                <figure class="my-8 text-center">
+          <img src="assets/figure_4_8_fusion_pod_operating_model.svg" alt="Figure 4.8: Silicon-to-Cloud Fusion Pod Operating Model" style="max-width: 100%; max-height: 540px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4.8:</strong> Organizational Architecture Blueprint &mdash; Silicon-to-Cloud Fusion Pod Operating Model &amp; Interface Contracts.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 5: TOGAF ADM PHASE B STEP-BY-STEP PRACTICES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>5. TOGAF&reg; ADM Phase B Step-by-Step Architecture Process</h2>
+        <p>Following the standardized TOGAF ADM Phase B methodology, the Enterprise Architecture team executes <strong>eight mandatory steps</strong> to deliver Volt-Tech's target Business Architecture. For each step, multiple competing approaches are evaluated before the Enterprise Architect presents the selected option with evidence-based rationale.</p>
+
+        <h3>Step 1: Select Reference Models, Viewpoints &amp; Tools</h3>
+
+        <h4>Decision Point: Which Reference Model Framework to Adopt?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Strengths</th>
+              <th>Weaknesses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>TOGAF Business Capability Framework (Pure)</td>
+              <td>Standard TOGAF capability maps, value streams, org models</td>
+              <td>Industry-proven, broad applicability, strong stakeholder communication</td>
+              <td>Generic &mdash; lacks automotive domain-specific constructs (safety, CAN bus, ASIL levels)</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>AIAG (Automotive Industry Action Group) Reference Model</td>
+              <td>Automotive-specific quality, supply chain, manufacturing standards (APQP, PPAP, FMEA)</td>
+              <td>Deep automotive domain fit, supplier qualification built-in, regulatory alignment</td>
+              <td>Narrow scope &mdash; doesn't cover cloud/AI/telemetry dimensions</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>SCOR (Supply Chain Operations Reference) Model</td>
+              <td>End-to-end supply chain: Plan, Source, Make, Deliver, Return</td>
+              <td>Excellent for partner ecosystem and logistics modeling</td>
+              <td>Manufacturing-floor and embedded engineering blind spots</td>
+            </tr>
+            <tr class="selected-row">
+              <td>D</td>
+              <td><strong>Hybrid: TOGAF + AIAG + SCOR Composite</strong></td>
+              <td>Layered composition: TOGAF for capabilities, AIAG for automotive quality, SCOR for partner supply chain</td>
+              <td>Comprehensive multi-domain coverage, maps to all stakeholder viewpoints</td>
+              <td>Higher complexity, requires cross-framework mapping discipline</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option D &mdash; Hybrid Composite Framework.</strong> We're not a pure software company, and we're not a pure automotive shop anymore either. Our problem spans chemical supply chains, embedded silicon, cloud telemetry, and fleet logistics. A single reference model would leave critical blind spots."</p>
+          <p class="narrator-text">"The <strong>AIAG APQP process</strong> gives us the supplier qualification gates we need for Tier-1 cell partners. <strong>SCOR</strong> maps our end-to-end flow from Terra-Resource pits through to Orbit-Logistics delivery routes. And <strong>TOGAF's capability framework</strong> is the connective tissue that presents this coherently to the board."</p>
+        </div>
+
+        <div class="rejection-block">
+          <h4>Why Not the Others?</h4>
+          <ul>
+            <li><strong>Option A (Pure TOGAF)</strong> would miss automotive safety constructs (ISO 26262, ASIL-D) that Sanjay requires for HSM architecture &mdash; we'd be inventing automotive-specific extensions from scratch.</li>
+            <li><strong>Option B (Pure AIAG)</strong> has zero cloud/AI vocabulary &mdash; it cannot model our TinyML edge inference or MQTT telemetry streams, which are 50% of the Smart Battery value proposition.</li>
+            <li><strong>Option C (Pure SCOR)</strong> excels at supply chain but cannot model our internal engineering reorganization (Fusion Pods) or embedded firmware architecture decisions.</li>
+          </ul>
+        </div>
+
+
+        <!-- TOGAF Phase B Core Catalogs Suite (Handbook Edition) -->
+        <h3>TOGAF&reg; ADM Phase B Business Architecture Catalogs</h3>
+        <p>In accordance with the TOGAF standard, the Enterprise Architecture team establishes seven mandatory architecture catalogs to govern requirements, services, roles, assets, and processes across the transformation lifecycle.</p>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Handbook Implementation Guide: The 7 Core Phase B Architecture Catalogs.</strong> In a theoretical enterprise architecture course, catalogs are often introduced as abstract lists. In practice, they are the vital operational contracts that bind strategy to engineering."</p>
+          <p class="narrator-text">"To turn Volt-Tech's transformation into an executable program, we formally define the complete <strong>TOGAF Business Architecture Catalogs</strong> &mdash; defining every driver, service, location, actor-in-role, process control, contract measure, and downstream architecture constraint."</p>
+        </div>
+
+        <!-- 1. Driver / Goal / Objective Catalog -->
+        <h4>1. Driver / Goal / Objective Catalog</h4>
+        <p>This catalog establishes the traceability from external market, operational, and regulatory pressures down to quantifiable operational outcomes.</p>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Business Driver</th>
+              <th>Strategic Goal</th>
+              <th>Measurable Objective &amp; Target KPI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DGO-01</strong></td>
+              <td>Autonomous fleet downtime crisis &amp; $120M Orbit-Logistics contract termination risk</td>
+              <td>Eliminate catastrophic sub-cycle battery collapses in customer fleets</td>
+              <td>Reduce fleet battery incident rate from <strong>6.8% to &lt;0.05%</strong> within 12 months</td>
+            </tr>
+            <tr>
+              <td><strong>DGO-02</strong></td>
+              <td>Unsustainable internal manufacturing scrap and $34M annual warranty reserve drain</td>
+              <td>Achieve automotive-grade battery cell yield via Tier-1 partnership</td>
+              <td>Elevate cell manufacturing quality from <strong>81% in-house to 99.4%</strong> partner standard</td>
+            </tr>
+            <tr>
+              <td><strong>DGO-03</strong></td>
+              <td>EU Battery Regulation &amp; Digital Product Passport (DPP) compliance mandates</td>
+              <td>Establish end-to-end mineral-to-pack provenance and ESG traceability</td>
+              <td>Achieve <strong>100% DPP compliance</strong> from Terra-Resource raw lithium to finished vehicle pack</td>
+            </tr>
+            <tr>
+              <td><strong>DGO-04</strong></td>
+              <td>Capital depletion from unviable vertical gigafactory investments</td>
+              <td>Transition to high-return, IP-retained horizontal operating model</td>
+              <td>Deliver an <strong>11.4-month net payback</strong> on $14.2M reallocated CapEx spend</td>
+            </tr>
+            <tr>
+              <td><strong>DGO-05</strong></td>
+              <td>Fleet breakdowns exacerbated by Orbit depot charging deficits &amp; Partial-State-of-Charge (PSoC) dispatches</td>
+              <td>Establish mutual depot charging governance &amp; PSoC-adaptive BMS intelligence</td>
+              <td>Guarantee <strong>zero failures under &ge;30% PSoC operations</strong>; achieve <strong>100% depot charge session capture</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 2. Business Service / Function Catalog -->
+        <h4>2. Business Service / Function Catalog</h4>
+        <p>Defines the modular business capabilities exposed to internal operations and external ecosystem partners, abstracting the underlying data structures and technical infrastructure.</p>
+        <div class="responsive-list">
+          <div class="card">
+            <h4>BS-01: Upstream Material &amp; Cell Qualification Service</h4>
+            <p><strong>Owner:</strong> Supplier Quality &amp; Procurement | <strong>Consumers:</strong> Pack Manufacturing Operations</p>
+            <ul>
+              <li>Validates upstream digital provenance and mineral authenticity from extraction partners.</li>
+              <li>Executes automated quality inspection and physical tolerance screening on incoming cell batches.</li>
+              <li>Enforces zero-tolerance quarantine gates on chemical and structural defects.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>BS-02: Smart Modular Pack Assembly Service</h4>
+            <p><strong>Owner:</strong> Manufacturing Operations | <strong>Consumers:</strong> Chassis Integration Line</p>
+            <ul>
+              <li>Executes robotic module framing, busbar bonding, and thermal management integration.</li>
+              <li>Embeds safety-rated processing intelligence and cryptographically sealed execution units.</li>
+              <li>Performs end-of-line electrical, thermal, and automated hardware-in-the-loop qualification.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>BS-03: Edge BMS Predictive Telemetry &amp; PSoC Service</h4>
+            <p><strong>Owner:</strong> Cross-Functional Engineering Pods | <strong>Consumers:</strong> Vehicle Control Unit &amp; Fleet Operations</p>
+            <ul>
+              <li>Executes real-time, on-device degradation scoring during peak vehicle duty cycles.</li>
+              <li>Detects sub-cycle micro-voltage and thermal anomalies prior to catastrophic operational failure.</li>
+              <li>Dynamically throttles peak torque when trucks operate at low State of Charge (PSoC &lt;40%) to prevent thermal cell shock.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>BS-04: Digital Product Passport (DPP) &amp; Lifecycle Ledger Service</h4>
+            <p><strong>Owner:</strong> Enterprise Governance Office | <strong>Consumers:</strong> Orbit-Logistics Fleet Platform, Regulators</p>
+            <ul>
+              <li>Aggregates end-to-end battery lifecycle data from raw mineral sourcing through field operation.</li>
+              <li>Maintains immutable battery State-of-Health (SoH) and charging-session ledgers for warranty audits.</li>
+              <li>Publishes real-time battery health indicators to customer depot triage systems.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>BS-05: Smart Depot Charging Synchronization &amp; Energy Triage Service</h4>
+            <p><strong>Owner:</strong> Joint Volt-Tech / Orbit Operations Working Group | <strong>Consumers:</strong> Depot Dispatchers &amp; Fleet Systems</p>
+            <ul>
+              <li>Monitors depot charging stall availability and projects turnaround charging profiles per truck.</li>
+              <li>Enforces dispatch validation rules (blocks vehicle departure if projected route energy exceeds available charge).</li>
+              <li>Streams charging session telemetry (kW delivered, thermals, duration) to the DPP ledger to eliminate finger-pointing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Organization / Actor & Role Catalog -->
+        <h4>3. Organization / Actor &amp; Role Catalog</h4>
+        <p>Maps institutional accountability across executive leadership, engineering pods, and ecosystem partners.</p>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Assigned Actor</th>
+              <th>Organizational Unit</th>
+              <th>Architecture Governance Accountability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chief Enterprise Architect</strong></td>
+              <td>Narayan Debnath</td>
+              <td>Enterprise Architecture Board (EAB)</td>
+              <td>Overall TOGAF Phase B&ndash;D alignment, Architecture Change Request (ACR) governance, composite model orchestration</td>
+            </tr>
+            <tr>
+              <td><strong>Fiscal Architect</strong></td>
+              <td>Priya Kapoor</td>
+              <td>Corporate Finance / Treasury</td>
+              <td>CapEx/OpEx tranche gating, $14.2M investment releases, mutual warranty liability terms validation</td>
+            </tr>
+            <tr>
+              <td><strong>Operational Strategist</strong></td>
+              <td>Rajesh Iyer</td>
+              <td>Manufacturing Operations</td>
+              <td>Reclaiming 40% factory floor, modular pack assembly line conversion, Tier-1 supplier SLA management</td>
+            </tr>
+            <tr>
+              <td><strong>Risk Guardian</strong></td>
+              <td>Sanjay Reddy</td>
+              <td>Cybersecurity &amp; Functional Safety</td>
+              <td>Safety integrity level (ASIL-D) compliance, HSM hardware isolation, depot IoT charging interface validation</td>
+            </tr>
+            <tr>
+              <td><strong>Fusion Pod Lead</strong></td>
+              <td>Cross-Functional Lead</td>
+              <td>Silicon-to-Cloud Fusion Pods</td>
+              <td>Cross-domain engineering alignment, PSoC-resilient edge inference, co-simulation verification</td>
+            </tr>
+            <tr>
+              <td><strong>Depot Energy &amp; Charging Liaison</strong></td>
+              <td>Joint Fleet/Depot Operations Lead</td>
+              <td>Joint Governance Taskforce</td>
+              <td>Depot charging stall rollout SLA, minimum 30% SoC dispatch enforcement, charging telemetry synchronization</td>
+            </tr>
+            <tr>
+              <td><strong>Partner Cell Supplier Lead</strong></td>
+              <td>Tier-1 Gigafactory VP</td>
+              <td>External Cell Manufacturing Partner</td>
+              <td>99.4% cell quality yield SLA, standardized form-factor cell delivery, batch provenance provisioning</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 4. Location Catalog -->
+        <h4>4. Location Catalog</h4>
+        <p>Maps the geographical and organizational nodes where business capabilities, assets, and processes are executed.</p>
+        <div class="responsive-list">
+          <div class="card">
+            <h4>LOC-01: Volt-Tech Main Manufacturing Plant (Detroit, MI)</h4>
+            <p><strong>Primary Business Functions:</strong> Modular pack robotics line, laser busbar welding cells, chassis integration bays, validation labs, Edge-AI Academy.</p>
+            <p><strong>Physical Transformation:</strong> Decommissions chemical cell cleanrooms; reclaims 40% floor space for smart chassis assembly.</p>
+          </div>
+          <div class="card">
+            <h4>LOC-02: Tier-1 Gigafactory Facilities (External Partner Sites)</h4>
+            <p><strong>Primary Business Functions:</strong> High-volume cylindrical cell synthesis, automated batch qualification, upstream provenance stamping.</p>
+            <p><strong>Logistics Linkage:</strong> Dedicated Just-In-Time (JIT) freight corridors into Volt-Tech Detroit plant.</p>
+          </div>
+          <div class="card">
+            <h4>LOC-03: Orbit-Logistics Central Depots (Field Fleet Hubs)</h4>
+            <p><strong>Primary Business Functions:</strong> 500-truck pilot fleet deployment, upgraded 350kW DC fast-charging bays, dynamic turnaround dispatch, vehicle triage hubs.</p>
+            <p><strong>Operational Linkage:</strong> Receives live battery health alerts and synchronizes charging stall schedules to prevent partial-charge dispatches.</p>
+          </div>
+          <div class="card">
+            <h4>LOC-04: Enterprise Telemetry Zone (Secure Hybrid Cloud)</h4>
+            <p><strong>Primary Business Functions:</strong> Centralized telemetry ingestion, lifecycle DPP ledger storage, depot charging session validation, OTA firmware distribution.</p>
+            <p><strong>Governance Linkage:</strong> Governs secure data exchange boundaries with ecosystem partners and fleet customers.</p>
+          </div>
+        </div>
+
+        <!-- 5. Process / Event / Control / Product Catalog -->
+        <h4>5. Process / Event / Control / Product Catalog</h4>
+        <p>Specifies the operational processes, triggering business events, governance controls, and deliverable products.</p>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Process (P)</th>
+              <th>Triggering Event (E)</th>
+              <th>Enforced Control (C)</th>
+              <th>Deliverable Product / Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P1: Incoming Cell QA &amp; Provenance Ingestion</strong></td>
+              <td>E1: Cell batch delivery from Tier-1 Gigafactory</td>
+              <td>C1: Digital passport verification &amp; automated batch sampling (&ge;99.4% yield SLA)</td>
+              <td>Certified cell inventory with verified provenance ready for modular assembly</td>
+            </tr>
+            <tr>
+              <td><strong>P2: Modular Pack Assembly &amp; Firmware Commissioning</strong></td>
+              <td>E2: Chassis build order scheduled in MES</td>
+              <td>C2: Functional safety validation &amp; cryptographic key injection gate</td>
+              <td>Prod-01: Certified Smart Battery Pack with edge predictive &amp; PSoC intelligence</td>
+            </tr>
+            <tr>
+              <td><strong>P3: Real-Time Sub-Cycle Anomaly Detection &amp; PSoC Derate</strong></td>
+              <td>E3: Sub-cycle anomaly or low-SoC torque demand detected (&lt;10ms window)</td>
+              <td>C3: Autonomous fail-safe threshold check &amp; adaptive power derate policy</td>
+              <td>Prod-02: Immediate vehicle safety derate actuation &amp; priority field telemetry alert</td>
+            </tr>
+            <tr>
+              <td><strong>P4: Fleet Telemetry Ingestion &amp; Preventative Triage</strong></td>
+              <td>E4: High-priority fleet health anomaly received</td>
+              <td>C4: Fiduciary SLA compliance check &amp; dynamic routing policy</td>
+              <td>Prod-03: Automated maintenance work order dispatched before roadside breakdown</td>
+            </tr>
+            <tr>
+              <td><strong>P5: Dynamic Depot Charging Validation &amp; PSoC Dispatch Triage</strong></td>
+              <td>E5: Truck plugged into depot charger or scheduled for morning dispatch</td>
+              <td>C5: Minimum SoC threshold check (&ge;30% SoC) &amp; charging session cryptographic signature</td>
+              <td>Prod-04: Validated charging audit log &amp; authorized fleet departure token</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 6. Contract / Measure Catalog -->
+        <h4>6. Contract / Measure Catalog</h4>
+        <p>Defines the formal commercial agreements and key performance indicators (KPIs) used to measure transformation success.</p>
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Commercial &amp; Operating Agreements</h4>
+            <ul>
+              <li><strong>Tier-1 Cell Master Supply Agreement (MSA):</strong> Enforces 99.4% first-pass quality yield, mandatory batch provenance data, and supplier defect penalties.</li>
+              <li><strong>Customer Fleet SLA &amp; Mutual Depot Charging Amendment:</strong> Guarantees 99.95% fleet uptime availability; mandates Orbit maintain &ge;85% charging stall uptime and enforce &ge;30% SoC dispatch minimums; binds warranty claims to DPP charging logs.</li>
+              <li><strong>Cloud Platform SLA:</strong> Guarantees 99.99% telemetry stream availability with sub-second ingestion latency.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Measurement &amp; KPI Framework (Aligned with Downstream SCOR Delivery)</h4>
+            <ul>
+              <li><strong>Warranty Defect Rate:</strong> Baseline: 6.8% &rarr; <strong>Target: &lt;0.15%</strong> (delivering $34M/yr net cost recovery).</li>
+              <li><strong>Sub-Cycle Anomaly Detection Speed:</strong> Baseline: Unmonitored &rarr; <strong>Target: Real-time on-device inference (&lt;10ms)</strong>.</li>
+              <li><strong>PSoC Degradation Resilience:</strong> Baseline: High failure rate at &lt;50% SoC &rarr; <strong>Target: Zero unmanaged collapses above 30% SoC</strong>.</li>
+              <li><strong>Downstream SCOR Alignment (Orbit-Logistics Impact):</strong>
+                <ul>
+                  <li><em>Reliability (RL.1.1):</em> Enables Orbit's &ge;99.8% Perfect Shipment Delivery by eliminating roadside power collapses.</li>
+                  <li><em>Cost (CO.1.1):</em> Drives Orbit's Cost-per-Mile down to &le;$1.85 by removing emergency teleoperator rescue buffers and tows.</li>
+                  <li><em>Asset Management (AM.1.1):</em> Guarantees &ge;98% vehicle uptime availability, boosting daily fleet utilization to &ge;88%.</li>
+                </ul>
+              </li>
+              <li><strong>Assembly Floor Space Reclaimed:</strong> Baseline: 0% &rarr; <strong>Target: 40% floor reclaimed</strong> for smart chassis assembly.</li>
+              <li><strong>Capital Recovery Velocity:</strong> <strong>Target: 11.4 Months</strong> net payback on $14.2M reallocated CapEx.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 7. Phase Forward Handshake Nodes -->
+        <div class="caption-block">
+          <h4>📌 Phase Forward Handshake Nodes (Directives for Subsequent ADM Phases)</h4>
+          <p>To preserve the business focus of Phase B while preventing architectural disconnects, the Business Architecture produces explicit functional requirements and constraints that are formally handed over to subsequent phases:</p>
+          <ul>
+            <li><strong>Forward Directives for Phase C1 (Data Architecture):</strong>
+              <ul>
+                <li><em>Contract &amp; Schema Design:</em> Standardize binary serialization contracts (Protobuf IDL) for sub-cycle telemetry and depot charging session events (`DepotChargingSession`).</li>
+                <li><em>Provenance &amp; Traceability:</em> Model the graph schema for the Digital Product Passport (DPP) linking Terra-Resource raw materials, Tier-1 cell batches, assembled packs, and field charging cycles.</li>
+                <li><em>Time-Series Storage:</em> Define the operational time-series data model (TimescaleDB) to store high-frequency voltage/temperature/charging telemetry for predictive analysis.</li>
+              </ul>
+            </li>
+            <li><strong>Forward Directives for Phase C2 (Application Architecture):</strong>
+              <ul>
+                <li><em>Edge AI Runtime:</em> Design the embedded runtime environment executing quantized INT8 neural models with dynamic PSoC power derating.</li>
+                <li><em>Supplier QA Applications:</em> Architect the incoming cell automated testing application and DPP verification workflow.</li>
+                <li><em>Depot Triage &amp; Charging Services:</em> Design cloud microservices that ingest charger session telemetry and integrate with Orbit-Logistics dispatch and maintenance scheduling systems.</li>
+              </ul>
+            </li>
+            <li><strong>Forward Directives for Phase D (Technology Architecture):</strong>
+              <ul>
+                <li><em>Silicon &amp; Compute:</em> Specify dual-core ASIL-D lockstep microcontrollers with dedicated SRAM allocation (&ge;512KB) to support in-memory AI inference and dynamic torque derate loops without bus latency.</li>
+                <li><em>Hardware Security:</em> Design Hardware Security Module (HSM) crypto engines to isolate proprietary BMS algorithms from third-party cell suppliers and cryptographically sign depot charging logs.</li>
+                <li><em>Connectivity Infrastructure:</em> Select automotive-grade cellular connectivity modules and resilient, distributed message brokers (MQTT) for vehicle-to-cloud and depot-to-cloud streaming.</li>
+              </ul>
+            </li>
+            <li><strong>Forward Directives for Phase E &amp; F (Opportunities, Solutions &amp; Migration Planning):</strong>
+              <ul>
+                <li><em>Gated Roadmap Alignment:</em> Sequence implementation across 3 overlapping phases (B.1 Foundation, B.2 Capability Build, B.3 Pilot Delivery).</li>
+                <li><em>Fiduciary Tranche Gating:</em> Release CapEx tranches ($6.5M Tranche 1, $1.8M Tranche 2) strictly upon verification of technical gate criteria including depot charging synchronization.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- PHASE C2 APPLICATION PORTFOLIO PRE-CLASSIFICATION (TIME MATRIX) -->
+          <h5 style="color: #0f172a; font-weight: 700; margin-top: 1rem; margin-bottom: 0.5rem;">Phase C2 Application Portfolio Pre-Classification (TIME Model)</h5>
+          <p style="font-size: 0.85rem; color: #475569; margin-bottom: 0.5rem;">To guide Phase C2 rationalization, existing software assets are categorized under the Gartner/TOGAF TIME model:</p>
+          <table class="options-table" style="font-size: 0.85rem;">
+            <thead>
+              <tr>
+                <th>Application / Asset</th>
+                <th>Strategic Fit</th>
+                <th>Technical Health</th>
+                <th>TIME Classification</th>
+                <th>Phase C2 Architecture Directive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Legacy BMS Firmware (C++ Monolith)</strong></td>
+                <td>High (Core Moat)</td>
+                <td>Medium (Tech Debt)</td>
+                <td><span class="badge" style="background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700;">Tolerate &rarr; Invest</span></td>
+                <td>Refactor into modular INT8 TinyML edge runtime (<code>ABB-ML-01</code>) with ASIL-D lockstep boundaries.</td>
+              </tr>
+              <tr>
+                <td><strong>SAP PM Maintenance Module</strong></td>
+                <td>Medium</td>
+                <td>Low (Legacy ERP)</td>
+                <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700;">Migrate</span></td>
+                <td>Wrap with CMMS adapter service; route maintenance events to Orbit telemetry lakehouse.</td>
+              </tr>
+              <tr>
+                <td><strong>In-House Cell QA System (Excel/Email)</strong></td>
+                <td>Low</td>
+                <td>Low</td>
+                <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700;">Eliminate</span></td>
+                <td>Decommission paper/email PPAP; replace with automated DPP Genesis Token workflow.</td>
+              </tr>
+              <tr>
+                <td><strong>SCADA OBD Diagnostics Interface</strong></td>
+                <td>High</td>
+                <td>Low (Proprietary)</td>
+                <td><span class="badge" style="background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700;">Migrate</span></td>
+                <td>Encapsulate with OPC-UA / MQTT gateway adapter into <code>ABB-TEL-01</code>.</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud IoT Telemetry Broker (MQTT)</strong></td>
+                <td>High</td>
+                <td>High</td>
+                <td><span class="badge" style="background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700;">Invest</span></td>
+                <td>Scale active-active broker cluster for multi-region fleet telemetry ingestion.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- NFR INHERITANCE PASS-THROUGH TABLE -->
+          <h5 style="color: #0f172a; font-weight: 700; margin-top: 1rem; margin-bottom: 0.5rem;">NFR Inheritance Pass-Through Table (Traceability to Chapter 2)</h5>
+          <p style="font-size: 0.85rem; color: #475569; margin-bottom: 0.5rem;">Business Architecture passes through these non-negotiable NFR constraints to downstream technical phases:</p>
+          <table class="options-table" style="font-size: 0.85rem;">
+            <thead>
+              <tr>
+                <th>NFR Requirement (Ch. 2)</th>
+                <th>Inheriting ADM Phase</th>
+                <th>Downstream Architectural Mandate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>NFR-LAT-01</code>: Onboard inference &le; 15ms</td>
+                <td>Phase C2 (App) &amp; Phase D (Tech)</td>
+                <td>Quantized INT8 TinyML BMS model must fit in &le;180KB SRAM; zero cloud dependency.</td>
+              </tr>
+              <tr>
+                <td><code>NFR-SEC-01</code>: 100% PII Redaction in RAM &le; 5ms</td>
+                <td>Phase D (Tech Architecture)</td>
+                <td>Dedicated NPU vision core; hardware TPM 2.0 cryptographic isolation on vehicle ECU.</td>
+              </tr>
+              <tr>
+                <td><code>NFR-OPS-01</code>: 99.99% Telemetry Stream Availability</td>
+                <td>Phase C1 (Data) &amp; Phase D (Tech)</td>
+                <td>Active-active MQTT broker cluster; cross-region lakehouse replication.</td>
+              </tr>
+              <tr>
+                <td><code>NFR-SEC-02</code>: 100% SHA-256 TPM Telemetry Signing</td>
+                <td>Phase D (Tech Architecture)</td>
+                <td>HSM crypto engine integrated directly into battery pack BMS hardware architecture.</td>
+              </tr>
+              <tr>
+                <td><code>NFR-NET-01</code>: 3-Tier Cellular Telemetry Budget</td>
+                <td>Phase C1 (Data) &amp; Phase D (Tech)</td>
+                <td>Tier-1 Protobuf &lt;5KB/s; Tier-2 anomaly burst 2–5MB; Tier-3 Wi-Fi 6 bulk depot offload.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- DDD-TO-TOGAF PHASE B CROSSWALK CALLOUT BOX -->
+        <!-- ========================================================================= -->
+        <div class="card" style="background: #eff6ff; border-left: 4px solid #2563eb; margin: 1.5rem 0;">
+          <h4 style="color: #1e40af; margin-bottom: 0.5rem;">💡 Architectural Method Crosswalk: Domain-Driven Design (DDD) + TOGAF&reg; Phase B</h4>
+          <p style="font-size: 0.9rem; color: #1e293b; line-height: 1.5; margin-bottom: 0.75rem;">
+            In modern complex enterprise systems, TOGAF&reg; Phase B Information Mapping is powerfully enriched by <strong>Domain-Driven Design (DDD) Strategic Design</strong>. The table below illustrates how DDD concepts directly realize and extend TOGAF Business Architecture deliverables:
+          </p>
+          <table class="options-table" style="font-size: 0.85rem; background: #ffffff;">
+            <thead>
+              <tr>
+                <th>DDD Strategic Concept</th>
+                <th>TOGAF&reg; Phase B Equivalent</th>
+                <th>How DDD Extends Standard TOGAF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bounded Context</strong></td>
+                <td>Business Capability Domain</td>
+                <td>Enforces strict linguistic and semantic boundaries per context rather than assuming a single global schema.</td>
+              </tr>
+              <tr>
+                <td><strong>Ubiquitous Language</strong></td>
+                <td>Information Map / Business Glossary</td>
+                <td>Eliminates cross-departmental vocabulary drift by defining terms with context-specific precision.</td>
+              </tr>
+              <tr>
+                <td><strong>Domain Event</strong></td>
+                <td>Business Event / Process Trigger</td>
+                <td>Adds temporal causality, immutability, and publish-subscribe event-driven semantics.</td>
+              </tr>
+              <tr>
+                <td><strong>Aggregate &amp; Invariants</strong></td>
+                <td>Logical Business Entity (Phase C Forward)</td>
+                <td>Defines transactional consistency boundaries, preventing illegal domain state transitions.</td>
+              </tr>
+              <tr>
+                <td><strong>Context Map (ACL, OHS, PL)</strong></td>
+                <td>Organization Map + Interface Matrix</td>
+                <td>Models power dynamics, vendor conformance, and Anti-Corruption Layer (ACL) isolation patterns.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- INFORMATION MAPPING: BUSINESS GLOSSARY & DOMAIN BOUNDARIES -->
+        <!-- ========================================================================= -->
+        <h3>TOGAF&reg; ADM Phase B: Information Mapping</h3>
+        <p>In accordance with TOGAF&reg; 10 Business Architecture standards, <strong>Information Mapping</strong> represents the fourth foundational pillar of Phase B (alongside Business Capabilities, Value Streams, and Organization Mapping). Information Mapping articulates the <strong>high-level business concepts, semantic terms, and business glossary</strong>, while establishing strict <strong>domain boundaries and data ownership</strong> across organizational silos before physical schemas and pipelines are modeled in Phase C (Data Architecture).</p>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Information Mapping &amp; Semantic Disambiguation.</strong> Why do multi-enterprise AI initiatives collapse? Because different organizations use the exact same words to mean completely different things."</p>
+          <p class="narrator-text">"Volt-Tech defines 'Battery State of Health' as nominal laboratory electrochemical impedance. Orbit-Logistics defines it as remaining kilowatt-hours delivered under peak acceleration torque on highway inclines. If we don't establish formal <strong>Information Mapping</strong> in Phase B, data engineers in Phase C will build conflicting schemas, and machine learning models will make lethal dispatch decisions. Let us lock down the business glossary and domain boundaries."</p>
+        </div>
+
+        <!-- 1. Ecosystem Business Glossary -->
+        <h4>1. Ecosystem Business Glossary &amp; Semantic Terminology</h4>
+        <p>This glossary formalizes non-negotiable business definitions across the Upstream, Midstream, and Downstream entities to prevent semantic drift and algorithmic misinterpretation:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Semantic Business Concept</th>
+              <th>Standardized Business Definition</th>
+              <th>Primary Domain Context</th>
+              <th>Operational Misinterpretation Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>State of Health (SoH)</strong></td>
+              <td>The composite operational health score of a battery pack (&ge;0% to 100%), factoring in chemical capacity fade, DC internal resistance (DCIR) rise, and sub-cycle micro-voltage collapse propensity.</td>
+              <td>Midstream &amp; Downstream</td>
+              <td>If treated only as static capacity fade, sudden micro-voltage collapses under high C-rate torque will remain completely unpredicted.</td>
+            </tr>
+            <tr>
+              <td><strong>State of Charge (SoC)</strong></td>
+              <td>The percentage of usable electrical energy remaining in the pack relative to its current maximum available capacity.</td>
+              <td>Midstream &amp; Downstream</td>
+              <td>Failing to account for temperature and cell aging causes distorted dashboard range estimates and stranded fleet vehicles.</td>
+            </tr>
+            <tr>
+              <td><strong>Partial State of Charge (PSoC) Window</strong></td>
+              <td>The operational operating band between 30% and 50% SoC where battery packs experience heightened vulnerability to micro-voltage sag under sudden acceleration demand.</td>
+              <td>Downstream Fleet Operations</td>
+              <td>Dispatching vehicles in this window without edge-enforced torque derating triggers over 72% of autonomous fleet collapses.</td>
+            </tr>
+            <tr>
+              <td><strong>Micro-Voltage Collapse Event</strong></td>
+              <td>A transient sub-10ms drop in individual cell terminal voltage below the safe operational threshold (&lt;2.8V) caused by dynamic load surges and localized lithium plating.</td>
+              <td>Midstream Embedded BMS</td>
+              <td>Misdiagnosed by legacy fleet management systems as generic 'traffic hesitation' or sensor noise, masking severe hardware degradation.</td>
+            </tr>
+            <tr>
+              <td><strong>Digital Product Passport (DPP) Genesis Token</strong></td>
+              <td>The cryptographically signed root metadata minted at the point of raw mineral extraction (Terra-Resource) certifying chemical purity (LIBS), carbon intensity, and origin provenance.</td>
+              <td>Upstream Mining &amp; Refining</td>
+              <td>Unverified manual certificates allow unrefined batches to contaminate battery cell chemistry and trigger catastrophic manufacturing yields.</td>
+            </tr>
+            <tr>
+              <td><strong>DPP Operational Trace Record</strong></td>
+              <td>The immutable, append-only lifecycle telemetry ledger recording all thermal cycles, fast-charging sessions, and fault events across the battery pack's operational life.</td>
+              <td>Cross-Enterprise Ecosystem</td>
+              <td>Without this audit trail, warranty claims cannot be legally arbitrated between cell supplier, OEM, and fleet operator.</td>
+            </tr>
+            <tr>
+              <td><strong>Human-in-the-Loop (HITL) Safe-Stop</strong></td>
+              <td>A controlled vehicle pull-over triggered by edge AI inference where human triage operators review explainable diagnostic telemetry to approve or override recovery maneuvers.</td>
+              <td>Downstream Fleet Autonomy</td>
+              <td>Unmanaged automation causes frontline operator panic, mistrust, and manual dispatch workarounds.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 2. Domain Boundaries & Data Ownership Matrix -->
+        <h4>2. Domain Boundaries &amp; Data Ownership Matrix (Bounded Contexts)</h4>
+        <p>To eliminate organizational friction, Information Mapping defines unambiguous <strong>Bounded Contexts</strong>, naming the authoritative data owner and primary business entity for each information domain:</p>
+
+        <div class="responsive-list">
+          <div class="card" style="border-top: 4px solid #15803d;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+              <div>
+                <h4 style="margin: 0;">Domain 1: Upstream Geochemical &amp; Provenance Domain</h4>
+                <span style="font-size: 0.85rem; color: #64748b;">Entity: Terra-Resource</span>
+              </div>
+            </div>
+            <ul>
+              <li><strong>Authoritative Data Owner:</strong> Aarav Patel (Risk Guardian) &amp; Neha Desai (Fiscal Architect)</li>
+              <li><strong>Core Business Entities:</strong> <code>MineralExtractionBatch</code>, <code>LIBSPuritySpectrum</code>, <code>DPPRootGenesisToken</code>, <code>ESGCarbonCertificate</code></li>
+              <li><strong>Domain Boundary:</strong> Bounded within extraction pits, refining refineries, and raw material transport staging. Governs data integrity until physical custody transfer at OEM intake.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #1d4ed8;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+              <div>
+                <h4 style="margin: 0;">Domain 2: Midstream Battery Manufacturing &amp; Firmware Domain</h4>
+                <span style="font-size: 0.85rem; color: #64748b;">Entity: Volt-Tech Manufacturing</span>
+              </div>
+            </div>
+            <ul>
+              <li><strong>Authoritative Data Owner:</strong> Priya Kapoor (Fiscal Architect) &amp; Sanjay Reddy (Embedded Lead)</li>
+              <li><strong>Core Business Entities:</strong> <code>Tier1CellPPAPRecord</code>, <code>SmartPackAssemblyManifest</code>, <code>BMSINT8FirmwareImage</code>, <code>HSMCryptographicIdentity</code></li>
+              <li><strong>Domain Boundary:</strong> Bounded within modular pack assembly bays, hardware-in-the-loop (HIL) test cells, and factory flashing lines. Governs pack integrity up to vehicle delivery.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #b45309;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+              <div>
+                <h4 style="margin: 0;">Domain 3: Downstream Fleet Telemetry &amp; Depot Operations Domain</h4>
+                <span style="font-size: 0.85rem; color: #64748b;">Entity: Orbit-Logistics</span>
+              </div>
+            </div>
+            <ul>
+              <li><strong>Authoritative Data Owner:</strong> Anjali Mehra (CFO) &amp; Rajesh Iyer / Kavita Joshi (Operations)</li>
+              <li><strong>Core Business Entities:</strong> <code>FleetRouteTelemetry</code>, <code>DepotChargingSessionLog</code>, <code>HITLDiagnosticIncident</code>, <code>RouteCostLedger</code></li>
+              <li><strong>Domain Boundary:</strong> Bounded within autonomous vehicle edge nodes, depot Wi-Fi 6 offload stations, and cloud dispatch systems. Governs field operational data.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top: 4px solid #7e22ce;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+              <div>
+                <h4 style="margin: 0;">Domain 4: Cross-Enterprise Governance &amp; Warranty Escrow Domain</h4>
+                <span style="font-size: 0.85rem; color: #64748b;">Entity: Joint Enterprise Architecture Board (EAB)</span>
+              </div>
+            </div>
+            <ul>
+              <li><strong>Authoritative Data Owner:</strong> Narayan Debnath (Executive Chair) &amp; Rohan Gupta (Chief Risk Officer)</li>
+              <li><strong>Core Business Entities:</strong> <code>CrossEnterpriseDPPGraph</code>, <code>WarrantyArbitrationLedger</code>, <code>ArchitectureVarianceRecord</code>, <code>RegulatoryAuditLog</code></li>
+              <li><strong>Domain Boundary:</strong> Federated trust boundary spanning all three enterprises. Governs cross-company data contracts, cryptographic audit trails, and fiduciary compliance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Information Concepts to Capability Realization Matrix -->
+        <h4>3. Business Information Concepts to Capability Realization Matrix</h4>
+        <p>This matrix maps each high-level business information entity to the core capabilities that create (C), read (R), update (U), and govern (G) it:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Business Information Entity</th>
+              <th>Creating Capability</th>
+              <th>Consuming / Updating Capabilities</th>
+              <th>Governing Authority</th>
+              <th>Phase C Schema Linkage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>DPPRootGenesisToken</code></td>
+              <td>Raw Material Provenance Validation (Terra-Resource)</td>
+              <td>Tier-1 Supplier Quality Auditing, Pack Assembly</td>
+              <td>Aarav Patel (Risk)</td>
+              <td>Protobuf: <code>MineralGenesisBatch</code></td>
+            </tr>
+            <tr>
+              <td><code>Tier1CellPPAPRecord</code></td>
+              <td>Supplier Capability Auditing (Volt-Tech)</td>
+              <td>Modular Pack Assembly, BMS Calibration</td>
+              <td>Rajesh Iyer (Procurement)</td>
+              <td>Protobuf: <code>CellProvenanceBatch</code></td>
+            </tr>
+            <tr>
+              <td><code>BMSInferenceTelemetry</code></td>
+              <td>In-RAM TinyML Degradation Inference (Volt-Tech)</td>
+              <td>Depot Fleet Dispatch, HITL Triage Console</td>
+              <td>Sanjay Reddy (Embedded)</td>
+              <td>Protobuf: <code>SubCycleTelemetryFrame</code></td>
+            </tr>
+            <tr>
+              <td><code>DepotChargingSessionLog</code></td>
+              <td>Smart Depot Charging Synchronization (Orbit-Logistics)</td>
+              <td>Warranty Claim Arbitration, Route Scheduling</td>
+              <td>Anjali Mehra (Fiscal)</td>
+              <td>Protobuf: <code>DepotChargingSession</code></td>
+            </tr>
+            <tr>
+              <td><code>WarrantyArbitrationLedger</code></td>
+              <td>Mutual Fleet SLA Governance (Joint Taskforce)</td>
+              <td>CapEx Allocation, Unit Economics Ledger</td>
+              <td>Narayan Debnath (EAB)</td>
+              <td>Lakehouse: <code>fct_warranty_arbitration</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Step 2: Develop Baseline Business Architecture Description</h3>
+
+        <h4>Decision Point: How to Model the Current-State Architecture?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Strengths</th>
+              <th>Weaknesses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A. Functional Department View</td>
+              <td>Model by org department (Electronics Dept, Battery Chemistry Dept, Cloud/AI Team)</td>
+              <td>Simple, maps to org chart, easy stakeholder recognition</td>
+              <td>Hides cross-functional process failures and handoff gaps</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>B. End-to-End Value Stream Mapping</strong></td>
+              <td>Model as continuous value flow from raw material to customer, exposing every handoff, delay, quality gate failure</td>
+              <td>Exposes bottlenecks, waste, broken handoffs; aligns with lean manufacturing</td>
+              <td>Requires extensive data collection across siloed departments</td>
+            </tr>
+            <tr>
+              <td>C. Financial Cost-Center Decomposition</td>
+              <td>Model by cost allocation: R&amp;D spend, manufacturing OpEx, warranty reserves, headcount</td>
+              <td>Speaks directly to CFO/board language, quantifies bleed immediately</td>
+              <td>Doesn't reveal WHY costs are high &mdash; misses root-cause deficiencies</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option B &mdash; End-to-End Value Stream Mapping.</strong> Priya was initially drawn to Option C because the numbers tell a compelling story &mdash; $45M sunk in cell R&amp;D, $34M in warranty reserves, $50M quarterly bleed at Orbit-Logistics. But numbers alone don't tell the board WHERE to cut."</p>
+          <p class="narrator-text">"When we laid out the <strong>end-to-end value stream map</strong>, the board could visually trace how a lithium shipment from Terra-Resource flows through our congested factory floor, gets assembled by mechanics who lack cell-fabrication protocols, passes through a non-existent quality gate, and arrives at Orbit-Logistics with micro-voltage defects. The causal chain became undeniable."</p>
+        </div>
+
+        <div class="rejection-block">
+          <h4>Why Not the Others?</h4>
+          <ul>
+            <li><strong>Option A (Departmental View)</strong> is the organizational lens that CREATED the silos. Modeling the baseline by department would reinforce the fiction that each department is independently functional.</li>
+            <li><strong>Option C (Cost-Center View)</strong> will be used as a supporting lens within the business case (Step 8), but as the primary baseline model, it would let the board debate budget line items without understanding operational root causes.</li>
+          </ul>
+        </div>
+
+        <!-- Value Stream Mapping (VSM) Architectural Deep Dive & Split Diagram Suite -->
+        <h4>End-to-End Value Stream Mapping (VSM) Architecture Suite</h4>
+        <p>In accordance with Lean Manufacturing and TOGAF&reg; Phase B standards, <strong>Value Stream Mapping (VSM)</strong> visualizes the entire end-to-end journey of a product&mdash;from raw mineral extraction to autonomous customer operational handover&mdash;decoupling <strong>material flow</strong> from <strong>information flow</strong> while exposing hidden waste (<em>Muda</em>), excessive inventory buffers, and quality gate failures. To maintain absolute visual clarity, the architecture is partitioned into four dedicated, highly readable diagrams:</p>
+
+        <!-- Diagram 1: Master Ecosystem -->
+        <figure style="margin: 24px 0;">
+          <img src="assets/vsm_01_master_ecosystem.svg" alt="Figure 4.8B: Master Multi-Enterprise Value Stream Map (VSM)" style="width: 100%; max-width: 950px; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block; -webkit-mask-image: none; mask-image: none; mix-blend-mode: normal;">
+          <figcaption style="text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 8px;"><strong>Figure 4.8B:</strong> Master Multi-Enterprise Value Stream Map &mdash; Visualizing Cross-Enterprise Information Flows (Cloud MES / DPP Ledger), Material Logistics between the 3 Segments, and the Master Lead Time Ladder reducing Ecosystem Lead Time from 78.5 Days to 14.2 Days.</figcaption>
+        </figure>
+
+        <!-- Diagram 2: Terra-Resource -->
+        <figure style="margin: 24px 0;">
+          <img src="assets/vsm_02_terra_resource.svg" alt="Figure 4.8C: Terra-Resource Dedicated Value Stream Map" style="width: 100%; max-width: 950px; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block; -webkit-mask-image: none; mask-image: none; mix-blend-mode: normal;">
+          <figcaption style="text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 8px;"><strong>Figure 4.8C:</strong> Terra-Resource Upstream Value Stream Map &mdash; Raw Ore Crushing, Chemical Leaching, In-Line Optical LIBS Purity Spectroscopy (&ge;99.8% purity), and Cryptographic DPP Token Minting.</figcaption>
+        </figure>
+
+        <!-- Diagram 3: Volt-Tech -->
+        <figure style="margin: 24px 0;">
+          <img src="assets/vsm_03_volt_tech.svg" alt="Figure 4.8D: Volt-Tech Dedicated Value Stream Map" style="width: 100%; max-width: 950px; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block; -webkit-mask-image: none; mask-image: none; mix-blend-mode: normal;">
+          <figcaption style="text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 8px;"><strong>Figure 4.8D:</strong> Volt-Tech Midstream Value Stream Map &mdash; AIAG APQP Gating, Modular Robotic Pack Assembly (40% space reclaimed), In-RAM INT8 TinyML Flashing (8.2ms), Automated HIL Gates (0% escapes), and Chassis Integration.</figcaption>
+        </figure>
+
+        <!-- Diagram 4: Orbit-Logistics -->
+        <figure style="margin: 24px 0;">
+          <img src="assets/vsm_04_orbit_logistics.svg" alt="Figure 4.8E: Orbit-Logistics Dedicated Value Stream Map" style="width: 100%; max-width: 950px; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block; -webkit-mask-image: none; mask-image: none; mix-blend-mode: normal;">
+          <figcaption style="text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 8px;"><strong>Figure 4.8E:</strong> Orbit-Logistics Downstream Value Stream Map &mdash; Smart Depot Fast Charging (&ge;85% SoC SLA), Robotic Cargo Ingestion, L4 Autonomous Freight Corridor Driving, and Real-Time Telemetry Arbitration.</figcaption>
+        </figure>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Anatomy of Volt-Tech's Value Stream</h4>
+            <ul>
+              <li><strong>Information Flow (Top Layer):</strong> Production Control orchestrates the value stream by ingesting 90-day rolling forecasts and real-time fleet telemetry from Orbit-Logistics HQ, issuing mineral allocation contracts upstream to Terra-Resource, and dispatching synchronized electronic work orders (MES / EDI) to assembly bays.</li>
+              <li><strong>Physical Material Flow (Middle Layer):</strong> Raw minerals and pre-certified cylindrical cells flow through 5 discrete transformation stages: (1) Material Intake &amp; Purity Verification, (2) Precision Modular Pack Assembly, (3) In-RAM TinyML Flashing, (4) Automated HIL Gate, and (5) High-Voltage Chassis Integration &amp; DPP Issuance.</li>
+              <li><strong>Process Data Boxes (Metrics):</strong> Each workstation is instrumented with key Lean metrics: Cycle Time (<strong>C/T</strong>), Changeover Time (<strong>C/O</strong>), Machine Uptime / Availability (<strong>%</strong>), and Defect/Scrap Rate.</li>
+              <li><strong>Lead Time Ladder (Bottom Layer):</strong> Contrasts non-value-added wait time (upper rungs: inventory buffers between stations) with value-added execution time (lower rungs: active processing time).</li>
+            </ul>
+          </div>
+          <div class="card" style="border-left: 4px solid #0284c7;">
+            <h4>How VSM Exposed the Root Cause of the $50M Bleed</h4>
+            <ul>
+              <li><strong>Inventory &amp; Space Waste:</strong> Defective in-house pouch cell fabrication clogged 40% of factory floor space with a catastrophic 19% scrap rate and 32 days of stagnant WIP buffers.</li>
+              <li><strong>Blind Handshakes:</strong> Lack of sub-cycle micro-voltage impedance testing allowed latent cell degradation to escape to Orbit-Logistics undetected.</li>
+              <li><strong>Architecture Kaizen Impact:</strong> By outsourcing commodity cells to Tier-1 gigafactories (99.4% yield), deploying In-RAM INT8 TinyML inference (&lt;10ms), and automating HIL testing, Production Lead Time drops from <strong>45.5 days to 10.0 days</strong> with <strong>0.0% field escapes</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Value Stream Kaizen Impact: Lead Time &amp; Quality Yield</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem;">Factory Waste Elimination: Baseline In-House Fabrication vs. Target Partner Architecture</div>
+            <div style="position: relative; height: 320px; width: 100%;">
+              <canvas id="vsmKaizenChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4.8:</strong> Value Stream Kaizen Impact &mdash; Production lead time collapse from 45.5 to 10.0 days and elimination of field escapes.</figcaption>
+        </figure>
+
+        <h4>Baseline Scorecard</h4>
+
+        <figure class="my-8 text-center" style="max-width: 100%; width: 850px; margin: 2rem auto;">
+          <div class="d3-glass-container chart-glass-card" style="padding: 1.5rem 1.75rem 1rem 1.75rem; width: 100%; text-align: center;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 1.15rem; color: #0f172a; margin-bottom: 0.25rem;">Volt-Tech Baseline Capability Scorecard &amp; Maturity Heatmap</div>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem;">CMMI-Aligned Maturity Scores across Manufacturing, Edge AI, Cloud, and Organization</div>
+            <div style="position: relative; height: 320px; width: 100%;">
+              <canvas id="baselineScorecardChart"></canvas>
+            </div>
+          </div>
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4.8A:</strong> Baseline Capability Scorecard &amp; Maturity Heatmap &mdash; Highlighting the L4 chassis assembly strength alongside critical L0/L1 deficits in cell fabrication, edge BMS AI, cloud telemetry, and cross-functional integration.</figcaption>
+        </figure>
+
+        <div class="responsive-list">
+          <div class="card" style="border-left: 4px solid #16a34a;">
+            <p><strong>Domain 1:</strong> Smart Truck &amp; Chassis Assembly &mdash; <span style="color: #16a34a; font-weight: 700;">L4 (Managed) ✅</span></p>
+          </div>
+          <div class="card" style="border-left: 4px solid #dc2626;">
+            <p><strong>Domain 2:</strong> Battery Cell Fabrication &mdash; <span style="color: #dc2626; font-weight: 700;">L1 (81% yield) 🔴</span></p>
+          </div>
+          <div class="card" style="border-left: 4px solid #991b1b;">
+            <p><strong>Domain 3:</strong> Edge BMS &amp; Predictive AI &mdash; <span style="color: #991b1b; font-weight: 700;">L0 (Non-existent) 🔴</span></p>
+          </div>
+          <div class="card" style="border-left: 4px solid #dc2626;">
+            <p><strong>Domain 4:</strong> Cloud Telemetry &amp; DPP &mdash; <span style="color: #dc2626; font-weight: 700;">L1 (Unstable) 🔴</span></p>
+          </div>
+          <div class="card" style="border-left: 4px solid #dc2626;">
+            <p><strong>Domain 5:</strong> Cross-Functional Integration &mdash; <span style="color: #dc2626; font-weight: 700;">L1 (Siloed) 🔴</span></p>
+          </div>
+        </div>
+
+        <h3>Step 3: Develop Target Business Architecture</h3>
+
+        <h4>Decision Point: What Target Operating Model Should Volt-Tech Adopt?</h4>
+        <p><em>The most consequential architectural decision in Phase B.</em></p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Capital Intensity</th>
+              <th>Strategic Control</th>
+              <th>Time to Market</th>
+              <th>Risk Profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A. Full Vertical Integration (Double Down)</td>
+              <td>Invest additional $80M+ for dedicated gigafactory, 200+ cell chemists, proprietary cloud datacenter</td>
+              <td>🔴 Extreme ($120M+)</td>
+              <td>🟢 Maximum</td>
+              <td>🔴 36&ndash;48 months</td>
+              <td>🔴 Catastrophic if cell chemistry fails</td>
+            </tr>
+            <tr>
+              <td>B. Complete Outsource (Asset-Light OEM)</td>
+              <td>Outsource battery cells, pack assembly, BMS firmware, AND cloud telemetry &mdash; brand/integrator only</td>
+              <td>🟢 Minimal ($5M)</td>
+              <td>🔴 Near-zero IP</td>
+              <td>🟢 6&ndash;8 months</td>
+              <td>🔴 Commodity trap, zero differentiation</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>C. Horizontal Partner Scaling (Selective Outsource + Retained Moat)</strong></td>
+              <td>Outsource commodity cell fabrication to Tier-1; RETAIN proprietary BMS intelligence, TinyML edge AI, pack design, truck integration</td>
+              <td>🟡 Moderate ($14.2M)</td>
+              <td>🟡 Strong moat on high-value IP</td>
+              <td>🟡 11&ndash;14 months</td>
+              <td>🟡 Manageable partner dependency</td>
+            </tr>
+            <tr>
+              <td>D. Platform Ecosystem Model</td>
+              <td>Build open battery platform standard, license BMS to other OEMs, monetize telemetry data as service</td>
+              <td>🟡 Moderate ($18M)</td>
+              <td>🟢 High (platform owner)</td>
+              <td>🔴 24&ndash;30 months</td>
+              <td>🟡 Market adoption uncertainty</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option C &mdash; Horizontal Partner Scaling (Selective Outsource + Retained Moat).</strong> This is the fiduciary turning point for Volt-Tech. Option A asks us to double down on an 81% yield line with another $80M, while Tier-1 gigafactories hit 99.4%. Option B commoditizes us into a low-margin chassis assembler."</p>
+          <p class="narrator-text">"Option C threads the needle perfectly: we spend <strong>$14.2M</strong> for an <strong>11.4-month payback</strong>. We outsource commodity cell fabrication to Tier-1 suppliers while retaining our true competitive moat &mdash; proprietary BMS intelligence, TinyML edge models, and pack-to-chassis integration. Crucially, Sanjay's HSM hardware boundaries ensure our firmware algorithms are never exposed to external suppliers."</p>
+        </div>
+
+        <h3>Step 4: Perform Business Capability Gap Analysis</h3>
+
+        <h4>Decision Point: Which Gap Analysis Methodology?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Strengths</th>
+              <th>Weaknesses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A. Simple Gap List (Exists / Missing / Changed)</td>
+              <td>Binary classification per capability</td>
+              <td>Fast, straightforward, easy to communicate</td>
+              <td>No severity ranking &mdash; minor tweak and critical L0 deficit look identical</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>B. Capability Maturity Heatmap (L0&ndash;L5 Scoring)</strong></td>
+              <td>Score each capability L0 (Non-existent) &rarr; L5 (Optimized), color-coded heatmap with deficit indicators</td>
+              <td>Visual impact, quantifies severity, enables prioritization, shows transformation trajectory</td>
+              <td>Requires maturity assessment workshops &mdash; scoring can be subjective</td>
+            </tr>
+            <tr>
+              <td>C. Weighted Risk-Impact Matrix</td>
+              <td>Score gaps by (Business Impact &times; Probability &times; Time Urgency), risk-weighted priority ranking</td>
+              <td>Rigorous prioritization, directly feeds investment allocation</td>
+              <td>Complex to calibrate, harder for non-technical stakeholders</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option B &mdash; Capability Maturity Heatmap.</strong> When I showed the board Option A &mdash; a simple list of 'we have this, we don't have that' &mdash; their eyes glazed over. Forty line items of equal visual weight. Nobody could tell whether 'missing DPP traceability' was more critical than 'semi-manual laser welding.'"</p>
+          <p class="narrator-text">"The <strong>L0&ndash;L5 heatmap</strong> changed everything. When the board saw 'In-RAM TinyML Degradation Inference: L0 &mdash; CRITICAL DEFICIT' in bright red next to 'Powertrain &amp; Drivetrain Mating: L4 &mdash; Optimized' in green, the strategic priorities became self-evident. Option C is more rigorous for internal calculations, but for executive alignment and board sign-off, the heatmap is unbeatable."</p>
+        </div>
+
+        <!-- SVG Diagram: Capability Radar Heatmap -->
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 480" style="width: 100%; height: auto; font-family: ui-sans-serif, system-ui, sans-serif;">
+            <defs>
+              <linearGradient id="heatBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1e293b"/>
+                <stop offset="50%" stop-color="#334155"/>
+                <stop offset="100%" stop-color="#1e293b"/>
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="930" height="460" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+            <!-- Header -->
+            <rect x="25" y="25" width="900" height="32" rx="4" fill="url(#heatBannerGrad)"/>
+            <text x="475" y="46" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">VOLT-TECH BUSINESS CAPABILITY MATURITY &amp; DEFICIT HEATMAP (PHASE B)</text>
+
+            <!-- Domain 1 -->
+            <g transform="translate(35, 75)">
+              <rect width="420" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+              <text x="15" y="24" fill="#0f172a" font-size="12" font-weight="800">DOMAIN 1: SMART TRUCK &amp; CHASSIS ASSEMBLY</text>
+              <rect x="310" y="10" width="95" height="18" rx="3" fill="#dcfce7"/>
+              <text x="357" y="23" fill="#15803d" font-size="9.5" font-weight="700" text-anchor="middle">L4 (Managed)</text>
+              
+              <text x="15" y="52" fill="#334155" font-size="11">• Powertrain &amp; Drivetrain Mating: <tspan fill="#15803d" font-weight="700">L4 (Optimized)</tspan></text>
+              <text x="15" y="74" fill="#334155" font-size="11">• High-Voltage Chassis Integration: <tspan fill="#15803d" font-weight="700">L4 (Managed)</tspan></text>
+              <text x="15" y="96" fill="#334155" font-size="11">• Floor Layout &amp; Safety Compliance: <tspan fill="#b45309" font-weight="700">L2 (Congested)</tspan></text>
+              <text x="15" y="125" fill="#475569" font-size="10.5" font-weight="700">Architectural Gap &amp; Strategy:</text>
+              <text x="15" y="145" fill="#1e293b" font-size="10.5">Reclaim 40% floor space by offloading chemical cell fabrication to Tier-1 gigafactory partners.</text>
+            </g>
+
+            <!-- Domain 2 -->
+            <g transform="translate(495, 75)">
+              <rect width="420" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+              <text x="15" y="24" fill="#0f172a" font-size="12" font-weight="800">DOMAIN 2: BATTERY PACK FABRICATION</text>
+              <rect x="310" y="10" width="95" height="18" rx="3" fill="#fee2e2"/>
+              <text x="357" y="23" fill="#991b1b" font-size="9.5" font-weight="700" text-anchor="middle">L1 (Red Deficit)</text>
+              
+              <text x="15" y="52" fill="#334155" font-size="11">• In-House Chemical Cell Yield: <tspan fill="#dc2626" font-weight="700">L1 (81% Defect Rate)</tspan></text>
+              <text x="15" y="74" fill="#334155" font-size="11">• Automated Laser Welding &amp; Sealing: <tspan fill="#b45309" font-weight="700">L2 (Semi-Manual)</tspan></text>
+              <text x="15" y="96" fill="#334155" font-size="11">• Thermal Cooling Jacket Integration: <tspan fill="#15803d" font-weight="700">L3 (Standardized)</tspan></text>
+              <text x="15" y="125" fill="#475569" font-size="10.5" font-weight="700">Architectural Gap &amp; Strategy:</text>
+              <text x="15" y="145" fill="#1e293b" font-size="10.5">Decommission pouch cell line; standardize on partner cylindrical cells in modular bays.</text>
+            </g>
+
+            <!-- Domain 3 -->
+            <g transform="translate(35, 265)">
+              <rect width="420" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+              <text x="15" y="24" fill="#0f172a" font-size="12" font-weight="800">DOMAIN 3: EDGE BMS &amp; PREDICTIVE AI</text>
+              <rect x="310" y="10" width="95" height="18" rx="3" fill="#fef3c7"/>
+              <text x="357" y="23" fill="#b45309" font-size="9.5" font-weight="700" text-anchor="middle">L2 (Repeatable)</text>
+              
+              <text x="15" y="52" fill="#334155" font-size="11">• Static Voltage Threshold Alarms: <tspan fill="#15803d" font-weight="700">L4 (Mature C)</tspan></text>
+              <text x="15" y="74" fill="#334155" font-size="11">• In-RAM TinyML Degradation Inference: <tspan fill="#dc2626" font-weight="700">L0 (Critical Deficit)</tspan></text>
+              <text x="15" y="96" fill="#334155" font-size="11">• Sub-Cycle Micro-Voltage Detection: <tspan fill="#dc2626" font-weight="700">L1 (Ad-hoc)</tspan></text>
+              <text x="15" y="125" fill="#475569" font-size="10.5" font-weight="700">Architectural Gap &amp; Strategy:</text>
+              <text x="15" y="145" fill="#1e293b" font-size="10.5">Deploy INT8 quantized neural models into dual-core ASIL-D lockstep microcontrollers.</text>
+            </g>
+
+            <!-- Domain 4 -->
+            <g transform="translate(495, 265)">
+              <rect width="420" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+              <text x="15" y="24" fill="#0f172a" font-size="12" font-weight="800">DOMAIN 4: CLOUD TELEMETRY &amp; DPP INGESTION</text>
+              <rect x="310" y="10" width="95" height="18" rx="3" fill="#fee2e2"/>
+              <text x="357" y="23" fill="#991b1b" font-size="9.5" font-weight="700" text-anchor="middle">L1 (Red Deficit)</text>
+              
+              <text x="15" y="52" fill="#334155" font-size="11">• Physical OBD-II Diagnostic Dumps: <tspan fill="#15803d" font-weight="700">L4 (Legacy)</tspan></text>
+              <text x="15" y="74" fill="#334155" font-size="11">• Real-Time MQTT / Cellular Offload: <tspan fill="#dc2626" font-weight="700">L1 (Unstable)</tspan></text>
+              <text x="15" y="96" fill="#334155" font-size="11">• Upstream DPP Traceability (Terra-Resource): <tspan fill="#dc2626" font-weight="700">L0 (Unintegrated)</tspan></text>
+              <text x="15" y="125" fill="#475569" font-size="10.5" font-weight="700">Architectural Gap &amp; Strategy:</text>
+              <text x="15" y="145" fill="#1e293b" font-size="10.5">Integrate compact Protobuf schemas over MQTT; validate Terra-Resource digital passports.</text>
+            </g>
+          </svg>
+          <figcaption><strong>Figure 4.9:</strong> Volt-Tech Business Capability Maturity &amp; Deficit Heatmap across 4 Core Manufacturing Domains.</figcaption>
+        </figure>
+
+        <!-- Gap Summary Table -->
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Baseline</th>
+              <th>Target</th>
+              <th>Gap Severity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Smart Truck Assembly</td>
+              <td>L4 (Managed)</td>
+              <td>L4 (Optimized)</td>
+              <td>🟢 Minor</td>
+            </tr>
+            <tr>
+              <td>Battery Cell Fabrication</td>
+              <td>L1 (81% yield)</td>
+              <td>L3 (Partner cells, 99.4%)</td>
+              <td>🔴 Critical</td>
+            </tr>
+            <tr>
+              <td>Edge BMS &amp; TinyML AI</td>
+              <td>L0 (Non-existent)</td>
+              <td>L3 (INT8 in-RAM)</td>
+              <td>🔴 Critical</td>
+            </tr>
+            <tr>
+              <td>Cloud Telemetry &amp; DPP</td>
+              <td>L1 (Unstable)</td>
+              <td>L3 (MQTT/Kafka)</td>
+              <td>🔴 Critical</td>
+            </tr>
+            <tr>
+              <td>Cross-Functional Teams</td>
+              <td>L1 (Siloed)</td>
+              <td>L3 (Fusion Pods)</td>
+              <td>🟡 Significant</td>
+            </tr>
+            <tr>
+              <td>Partner Integration</td>
+              <td>L0 (Unintegrated)</td>
+              <td>L3 (HSM-secured)</td>
+              <td>🔴 Critical</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- CAPABILITY DECOMMISSION REGISTER (TOGAF RULES BUS-03 & APP-03) -->
+        <h4>Capability Decommission &amp; Divestment Register</h4>
+        <p>In accordance with TOGAF&reg; Rule BUS-03 (Gap Exhaustiveness) and APP-03, every baseline capability eliminated or outsourced must have an explicit decommission and transition plan governing personnel, physical plant, capital equipment, and data archives:</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Eliminated / Outsourced Capability</th>
+              <th>Baseline State</th>
+              <th>Strategic Justification</th>
+              <th>Mandated Decommission &amp; Redeployment Actions</th>
+              <th>Timeline</th>
+              <th>Accountable Lead</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>In-House Pouch Cell Fabrication</strong></td>
+              <td>Level 1 (81% yield; $45M R&amp;D drain)</td>
+              <td>Pivoting to horizontal partnership with Tier-1 gigafactories (99.4% yield).</td>
+              <td>
+                1. Cancel $25M Phase-2 pouch cell equipment purchase orders.<br>
+                2. Reclaim 40% cleanroom floor space for automated modular pack assembly bays.<br>
+                3. Redeploy 120 cell line technicians into cross-functional BMS fusion pods.<br>
+                4. Archive proprietary electrochemical FMEA test data to WORM compliance store.
+              </td>
+              <td>Months 0–2</td>
+              <td>Rajesh Iyer (COO)</td>
+            </tr>
+            <tr>
+              <td><strong>Manual Battery SoC Dispatch Protocol</strong></td>
+              <td>Legacy spreadsheet checklist (no automation)</td>
+              <td>Replaced by automated DPP-linked SoC dispatch tokens (&ge;30% SoC threshold).</td>
+              <td>
+                1. Retire legacy manual dispatch forms across all 48 depots.<br>
+                2. Migrate historical charging logs into the central fleet lakehouse.<br>
+                3. Retrain 2,500 dispatchers on automated HITL charging queue management.
+              </td>
+              <td>Months 3–6</td>
+              <td>Kavita Joshi (CPO)</td>
+            </tr>
+            <tr>
+              <td><strong>Paper/Email PPAP Quality Reports</strong></td>
+              <td>Paper reports &amp; batched email attachments</td>
+              <td>Replaced by immutable DPP Genesis Tokens with HSM cryptographic signatures.</td>
+              <td>
+                1. Digitize and scan 5 years of historical supplier quality filings.<br>
+                2. Map historical pass/fail criteria to canonical Protobuf DPP schemas.<br>
+                3. Deactivate legacy email-based defect notification distribution lists.
+              </td>
+              <td>Months 2–4</td>
+              <td>Engineering Lead</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Value Stream to Business Capability Cross-Reference Matrix -->
+        <h4>Value Stream to Business Capability Cross-Reference Matrix</h4>
+        <p>In TOGAF&reg; Phase B, business capabilities do not operate in isolation; they are instantiated and sequenced through enterprise <strong>Value Streams</strong>. To ensure complete traceability from raw material intake to customer fleet operations, the Enterprise Architecture team establishes the cross-reference matrix for Volt-Tech's core value stream: <strong>End-to-End Smart Battery &amp; Connected Truck Realization</strong>.</p>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Value Stream Stage</th>
+              <th>Enabling Business Capabilities &amp; Maturity Shift</th>
+              <th>Lead Actor &amp; Org Unit</th>
+              <th>Information &amp; Data Artifacts</th>
+              <th>Architectural Gap Realization &amp; Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Stage 1: Upstream Material Ingestion &amp; Batch Verification</strong><br><span style="font-size: 0.85rem; color: #64748b;">Intake of refined lithium/cobalt from Terra-Resource with verified geochemical purity.</span></td>
+              <td>
+                • Raw Material Provenance Validation (<span style="color: #dc2626; font-weight: 700;">L0 &rarr; L3</span>)<br>
+                • Digital Product Passport Ingestion (<span style="color: #dc2626; font-weight: 700;">L0 &rarr; L3</span>)
+              </td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img src="assets/ComicChars/faces/Aarav Patel.jpg" alt="Aarav Patel" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+                  <span>Supply Quality Auditor / Materials Team</span>
+                </div>
+              </td>
+              <td>
+                • <code>MaterialBatchPassport</code><br>
+                • <code>SpectroscopyPurityCert</code>
+              </td>
+              <td><strong>CREATE:</strong> Ingest LIBS purity tokens into Volt-Tech's factory MES, verifying raw mineral baseline before pack manufacturing.</td>
+            </tr>
+            <tr>
+              <td><strong>Stage 2: Tier-1 Partner Cell Sourcing &amp; APQP Gating</strong><br><span style="font-size: 0.85rem; color: #64748b;">Receiving pre-certified cylindrical cells from Tier-1 gigafactories under AIAG APQP Level 3 gates.</span></td>
+              <td>
+                • Supplier Capability Auditing (<span style="color: #dc2626; font-weight: 700;">L1 &rarr; L4</span>)<br>
+                • Chemical Cell Sourcing (<span style="color: #dc2626; font-weight: 700;">L1 &rarr; L4</span>)
+              </td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+                  <span>Rajesh Iyer / Procurement Quality Squad</span>
+                </div>
+              </td>
+              <td>
+                • <code>PPAPLevel3Approval</code><br>
+                • <code>CellBatchProvenanceLog</code>
+              </td>
+              <td><strong>OUTSOURCE / ELIMINATE:</strong> Shut down defective in-house pouch line; enforce AIAG PPAP Level 3 supplier qualification standards.</td>
+            </tr>
+            <tr>
+              <td><strong>Stage 3: Smart Pack Modular Assembly &amp; Chassis Mating</strong><br><span style="font-size: 0.85rem; color: #64748b;">Modular pack assembly, thermal cooling jacket integration, and high-voltage chassis mating in reclaimed bays.</span></td>
+              <td>
+                • High-Voltage Chassis Integration (<span style="color: #15803d; font-weight: 700;">L4 &rarr; L4</span>)<br>
+                • Reclaimed Modular Bay Assembly (<span style="color: #b45309; font-weight: 700;">L2 &rarr; L4</span>)
+              </td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img src="assets/ComicChars/faces/Vikram Sharma.jpg" alt="Vikram Sharma" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+                  <span>Plant Assembly Technicians / Robotic MES</span>
+                </div>
+              </td>
+              <td>
+                • <code>PackAssemblyManifest</code><br>
+                • <code>HSMHardwareUID</code>
+              </td>
+              <td><strong>ENHANCE:</strong> Reclaim 40% floor space for automated modular pack assembly bays; integrate ASIL-D lockstep hardware.</td>
+            </tr>
+            <tr>
+              <td><strong>Stage 4: In-RAM TinyML Flashing &amp; Fusion Pod HIL Testing</strong><br><span style="font-size: 0.85rem; color: #64748b;">Flashing AUTOSAR firmware with INT8 TinyML degradation inference and low-SoC power throttling.</span></td>
+              <td>
+                • In-RAM TinyML Degradation Inference (<span style="color: #dc2626; font-weight: 700;">L0 &rarr; L3</span>)<br>
+                • PSoC Low-SoC Power Throttling (<span style="color: #dc2626; font-weight: 700;">L0 &rarr; L3</span>)<br>
+                • Cross-Functional Engineering (<span style="color: #dc2626; font-weight: 700;">L1 &rarr; L3</span>)
+              </td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+                  <span>Sanjay Reddy / Silicon-to-Cloud Fusion Pod</span>
+                </div>
+              </td>
+              <td>
+                • <code>BMSFirmware_INT8_v2.bin</code><br>
+                • <code>HILValidationReport</code>
+              </td>
+              <td><strong>CREATE:</strong> Form Silicon-to-Cloud Fusion Pods; deploy sub-10ms INT8 TinyML edge models into dual-core lockstep microcontrollers.</td>
+            </tr>
+            <tr>
+              <td><strong>Stage 5: Fleet Handshake, DPP Issuance &amp; Depot Charging Sync</strong><br><span style="font-size: 0.85rem; color: #64748b;">Delivering connected smart trucks to Orbit-Logistics with cryptographically signed DPP and synchronizing depot charging SLAs.</span></td>
+              <td>
+                • Smart Depot Charging Synchronization (<span style="color: #dc2626; font-weight: 700;">L0 &rarr; L3</span>)<br>
+                • Real-Time Telemetry Streaming (<span style="color: #dc2626; font-weight: 700;">L1 &rarr; L3</span>)<br>
+                • Mutual Fleet SLA Governance (<span style="color: #dc2626; font-weight: 700;">L0 &rarr; L4</span>)
+              </td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover;">
+                  <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #16a34a; object-fit: cover; margin-left: -14px;">
+                  <span>Priya Kapoor &amp; Anjali Mehra (Joint Taskforce)</span>
+                </div>
+              </td>
+              <td>
+                • <code>SmartBatteryPassport_Final</code><br>
+                • <code>MutualDepotChargingSLA</code>
+              </td>
+              <td><strong>CREATE / GOVERN (ACR-04):</strong> Bind warranty terms to DPP charging logs and enforce &ge;85% charger uptime &amp; &ge;30% SoC dispatch thresholds.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Step 5 -->
+        <h3>Step 5: Define Candidate Roadmap Components &amp; Business Strategy</h3>
+        <h4>Decision Point: What Transformation Sequencing Strategy?</h4>
+        
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Duration</th>
+              <th>Risk</th>
+              <th>Change Management</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>Big Bang (Parallel Execution)</td>
+              <td>Execute all streams simultaneously &mdash; cell partner, Fusion Pod, TinyML, cloud, DPP all at once</td>
+              <td>6&ndash;8 months</td>
+              <td>🔴 Extreme integration risk, resource conflicts</td>
+              <td>🔴 Organization overwhelmed</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>Sequential Waterfall</td>
+              <td>Complete each stream fully before starting next: Cells &rarr; Pods &rarr; Edge AI &rarr; Cloud &rarr; DPP</td>
+              <td>24&ndash;30 months</td>
+              <td>🟢 Low per-phase risk</td>
+              <td>🔴 Far exceeds Orbit-Logistics patience</td>
+            </tr>
+            <tr class="selected-row">
+              <td>C</td>
+              <td><strong>Phased Overlapping Waves (3 Phases)</strong></td>
+              <td>Three overlapping phases with gate reviews: B.1 (Foundation), B.2 (Capability Build), B.3 (Production &amp; Delivery)</td>
+              <td>11&ndash;14 months</td>
+              <td>🟡 Managed risk with gates</td>
+              <td>🟡 Manageable with Fusion Pod structure</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>MVP &rarr; Scale (Lean Startup)</td>
+              <td>Build minimum viable Smart Battery for single Orbit-Logistics route, validate, then scale</td>
+              <td>8&ndash;10 months MVP, 18+ full</td>
+              <td>🟡 Low initial risk, slow scale</td>
+              <td>🟡 May frustrate contractual deadlines</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option C &mdash; Phased Overlapping Waves (3 Phases).</strong> Orbit-Logistics gave us a conditional lifeline, not an open-ended extension. Anjali Mehra expects measurable progress within 12 months."</p>
+          <p class="narrator-text">"Option B's 24-month timeline is a death sentence. Option A's big-bang approach creates catastrophic integration chaos. <strong>Option C</strong> balances urgency and risk through 3 overlapping waves with mandatory gate reviews: Phase B.1 (Foundation), Phase B.2 (Capability Build), and Phase B.3 (Production Flashing &amp; Fleet Delivery)."</p>
+        </div>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Phase B.1 (Months 1&ndash;4): Foundation</h4>
+            <ul>
+              <li>Sign Tier-1 cell partner</li>
+              <li>Decommission pouch cell line, reclaim 40% floor space</li>
+              <li>Begin Fusion Pod pilot</li>
+              <li>Establish partner qualification gates</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Phase B.2 (Months 3&ndash;8): Capability Build</h4>
+            <ul>
+              <li>HIL co-simulation labs operational</li>
+              <li>Edge-AI Academy cohort 1 graduates</li>
+              <li>TinyML model quantized to INT8 (8.2ms inference)</li>
+              <li>MQTT broker deployed</li>
+              <li>Protobuf IDL contracts codified</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Phase B.3 (Months 7&ndash;12): Production &amp; Delivery</h4>
+            <ul>
+              <li>Smart Battery production flashing</li>
+              <li>Orbit-Logistics pilot fleet (500 trucks)</li>
+              <li>DPP integration with Terra-Resource</li>
+              <li>Full telemetry streaming validated</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="caption-block">
+<pre>
+Month:  1   2   3   4   5   6   7   8   9   10  11  12
+B.1:    ████████████████ GATE ✓
+B.2:            ████████████████████████ GATE ✓
+B.3:                            ████████████████████████ DELIVERY ✓
+</pre>
+        </div>
+
+        <!-- Step 6 -->
+        <h3>Step 6: Resolve Impacts Across Architecture Landscape</h3>
+        <h4>Decision Point: How to Manage Cross-Domain Cascade Effects?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>Sequential Domain Handoff</td>
+              <td>Clean separation of concerns, clear accountability</td>
+              <td>Slow, late discovery of integration conflicts</td>
+            </tr>
+            <tr class="selected-row">
+              <td>B</td>
+              <td><strong>Concurrent Domain Working Groups</strong></td>
+              <td>Early conflict detection, faster cycle time, cross-domain alignment</td>
+              <td>Requires more senior architects, governance overhead</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>Integrated Architecture Sprint Teams</td>
+              <td>Maximum integration, zero handoff delays</td>
+              <td>Blurs Phase B/C/D boundaries, may create scope creep</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option B &mdash; Concurrent Domain Working Groups.</strong> In enterprise AI, business decisions immediately cascade into technical constraints: adopting Protobuf directly shapes Data Architecture (Phase C1), and edge MCU limits shape Technology Architecture (Phase D)."</p>
+          <p class="narrator-text">"Sequential handoffs (Option A) create catastrophic rework in Month 8, while full sprint embedding (Option C) derails business modeling with database debates. <strong>Option B</strong> establishes parallel working groups that shadow Phase B, flagging cross-domain interface conflicts early without stalling business decisions."</p>
+        </div>
+
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Phase B Business Decision / ACR</th>
+              <th>Data Architecture (C1)</th>
+              <th>Application Architecture (C2)</th>
+              <th>Technology Architecture (D)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Horizontal cell sourcing</td>
+              <td>DPP data model, cell batch traceability schema</td>
+              <td>Incoming cell QA inspection application</td>
+              <td>Partner network firewall, HSM gateway</td>
+            </tr>
+            <tr>
+              <td>Silicon-to-Cloud Fusion Pods</td>
+              <td>Shared Protobuf IDL schema registry</td>
+              <td>Unified firmware + cloud CI/CD pipeline</td>
+              <td>Edge MCU with TinyML runtime + cloud MQTT broker</td>
+            </tr>
+            <tr>
+              <td>Edge TinyML BMS inference</td>
+              <td>INT8 model binary format, inference telemetry schema</td>
+              <td>BMS firmware with ML inference loop</td>
+              <td>Dual-core ASIL-D lockstep MCU, 512KB SRAM minimum</td>
+            </tr>
+            <tr>
+              <td>MQTT cellular telemetry</td>
+              <td>Time-series data model (TimescaleDB)</td>
+              <td>Cloud ingestion microservices, OTA update service</td>
+              <td>Cellular modem module, managed MQTT broker</td>
+            </tr>
+            <tr>
+              <td><strong>ACR-04: Depot Charging Starvation &amp; PSoC Resilience</strong></td>
+              <td>`DepotChargingSession` event schema &amp; DPP charging history ledger</td>
+              <td>Depot Energy &amp; Dispatch Optimizer microservice; dynamic SoC route validation</td>
+              <td>BMS dynamic power derating on low SoC; HSM cryptographic signing of depot charging logs</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ========================================================================= -->
+        <!-- SUBSECTION: DYNAMIC ARCHITECTURE CHANGE MANAGEMENT (TOGAF PHASE H IN ACTION) -->
+        <!-- ========================================================================= -->
+        <h4>Dynamic Architecture Change Management: Real-World Operational Feedback</h4>
+        <p>In classical theory, enterprise architecture is sometimes caricatured as a rigid, linear progression from Phase A to Phase H. In real-world enterprise engineering, however, <strong>Architecture Change Management (TOGAF Phase H)</strong> and the central <strong>Requirements Management</strong> repository operate continuously across <em>every</em> phase of the ADM.</p>
+
+        <p>When Volt-Tech's forensic telemetry revealed that 72% of field battery collapses occurred because Orbit-Logistics dispatched trucks under Partial-State-of-Charge (PSoC) conditions due to depot charging shortages, the architecture team did not halt the transformation or ignore the data. Instead, they triggered the formal <strong>TOGAF Architecture Change Management Process</strong>.</p>
+
+        <!-- 3 Change Categories Table -->
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>Change Category</th>
+              <th>Impact Scope</th>
+              <th>Volt-Tech / Orbit Scenario</th>
+              <th>ADM Governance Action Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Simplification Change</strong></td>
+              <td>Low / Localized</td>
+              <td>Fine-tuning static CAN-FD message intervals or sensor sampling rates in existing BMS firmware.</td>
+              <td>Managed within routine sprint maintenance; architecture repository updated directly without board gating.</td>
+            </tr>
+            <tr class="selected-row">
+              <td><strong>2. Incremental Change</strong><br><em>(Selected for Volt-Tech)</em></td>
+              <td>Moderate / Cross-Domain</td>
+              <td><strong>ACR-04 (PSoC Resilience &amp; Depot Handshake):</strong> Adapting BMS edge inference to throttle power at &lt;40% SoC; adding charging session telemetry to DPP; amending mutual warranty SLA.</td>
+              <td>Formal <strong>Architecture Update Contract</strong> issued; cascaded updates across Phase B (Business Catalogs), Phase C (Data/App schemas), and Phase D (MCU logic) within current cycle.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Re-Architecting Change</strong><br><em>(Mandated for Orbit-Logistics)</em></td>
+              <td>High / Enterprise-Wide</td>
+              <td><strong>Orbit Depot Infrastructure Overhaul:</strong> Upgrading regional grid interconnects, installing 350kW DC fast-charging bays, and automating fleet charging slot dispatch.</td>
+              <td>Exceeds in-flight Phase B scope; triggers a <strong>New Request for Architecture Work (RfAW)</strong> and a dedicated <strong>Phase A (Architecture Vision)</strong> cycle at Orbit-Logistics.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ORBIT PHASE A RE-TRIGGER MINI-CHARTER (TOGAF PHASE H RE-ARCHITECTING) -->
+        <div class="card" style="background: #fdf2f8; border: 1.5px solid #f472b6; border-radius: 8px; padding: 1.25rem; margin: 1.25rem 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #fbcfe8; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
+            <span style="font-weight: 700; color: #831843; font-size: 1rem;">⚡ Phase A Re-Trigger Mini-Charter: Orbit Depot Electrical Grid Overhaul</span>
+            <span style="background: #fbcfe8; color: #831843; font-size: 0.78rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Trigger: ACR-04 Re-Architecting</span>
+          </div>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+            <tbody>
+              <tr>
+                <td style="padding: 6px 10px; font-weight: 600; color: #701a75; width: 28%; border-bottom: 1px solid #fdf2f8;">Governance Mechanism:</td>
+                <td style="padding: 6px 10px; color: #0f172a; border-bottom: 1px solid #fdf2f8;">TOGAF&reg; Phase H Architecture Change Management &rarr; Phase A Re-Trigger.</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 10px; font-weight: 600; color: #701a75; border-bottom: 1px solid #fdf2f8;">New Problem Statement:</td>
+                <td style="padding: 6px 10px; color: #991b1b; font-weight: 600; border-bottom: 1px solid #fdf2f8;">Inadequate 48-depot charging infrastructure forcing 72% of battery collapses via PSoC dispatch.</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 10px; font-weight: 600; color: #701a75; border-bottom: 1px solid #fdf2f8;">New Strategic Objectives:</td>
+                <td style="padding: 6px 10px; color: #0f172a; border-bottom: 1px solid #fdf2f8;">Achieve &ge;85% charging stall uptime; enforce &ge;30% SoC dispatch threshold; integrate 350kW DC fast-charging bays.</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 10px; font-weight: 600; color: #701a75; border-bottom: 1px solid #fdf2f8;">Technical Dependency:</td>
+                <td style="padding: 6px 10px; color: #0f172a; border-bottom: 1px solid #fdf2f8;">Volt-Tech BMS derating firmware (<code>WP-B.2</code>) must deploy first to protect cells during transition.</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 10px; font-weight: 600; color: #701a75;">Charter Authority:</td>
+                <td style="padding: 6px 10px; color: #0f172a;">Orbit-Logistics CTO &amp; Joint Standards Council (Independent SoAW from <code>SoAW-ORBIT-2026-001</code>).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SVG Diagram: Figure 4.10 Dynamic Architecture Change Management Workflow -->
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 460" style="width: 100%; height: auto; font-family: ui-sans-serif, system-ui, sans-serif;">
+            <defs>
+              <linearGradient id="chgHdrGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0f172a"/>
+                <stop offset="100%" stop-color="#334155"/>
+              </linearGradient>
+              <linearGradient id="incidentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#991b1b"/>
+                <stop offset="100%" stop-color="#dc2626"/>
+              </linearGradient>
+              <linearGradient id="acrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e40af"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+              <linearGradient id="incChgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#047857"/>
+                <stop offset="100%" stop-color="#10b981"/>
+              </linearGradient>
+              <linearGradient id="reArchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#b45309"/>
+                <stop offset="100%" stop-color="#f59e0b"/>
+              </linearGradient>
+              <filter id="chgShadow" x="-2%" y="-2%" width="104%" height="104%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+              </filter>
+            </defs>
+
+            <rect x="10" y="10" width="930" height="440" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+            <!-- Header -->
+            <rect x="25" y="22" width="900" height="34" rx="4" fill="url(#chgHdrGrad)"/>
+            <text x="475" y="44" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">FIGURE 4.10: DYNAMIC ARCHITECTURE CHANGE MANAGEMENT &amp; DEPOT CHARGING WORKFLOW (TOGAF PHASE H / RM)</text>
+
+            <!-- Box 1: Incident / Discovery -->
+            <g transform="translate(30, 75)" filter="url(#chgShadow)">
+              <rect width="260" height="135" rx="6" fill="url(#incidentGrad)"/>
+              <text x="130" y="24" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">1. OPERATIONAL REALITY</text>
+              <text x="130" y="42" fill="#fee2e2" font-size="10.5" font-weight="700" text-anchor="middle">Orbit Depot Charging Deficit</text>
+              <line x1="15" y1="52" x2="245" y2="52" stroke="#fca5a5" stroke-width="1"/>
+              <text x="15" y="70" fill="#ffffff" font-size="10">• 72% collapses occur at &lt;50% SoC</text>
+              <text x="15" y="88" fill="#ffffff" font-size="10">• Insufficient depot fast-charging bays</text>
+              <text x="15" y="106" fill="#ffffff" font-size="10">• Deep discharge under high torque load</text>
+              <text x="15" y="124" fill="#fef08a" font-size="10" font-weight="700">⚡ Starvation exacerbates cell defect</text>
+            </g>
+
+            <!-- Arrow 1 to ACR -->
+            <line x1="290" y1="142" x2="330" y2="142" stroke="#0f172a" stroke-width="2.5"/>
+            <polygon points="330,142 322,137 322,147" fill="#0f172a"/>
+
+            <!-- Box 2: Architecture Change Request (ACR-04) -->
+            <g transform="translate(335, 75)" filter="url(#chgShadow)">
+              <rect width="270" height="135" rx="6" fill="url(#acrGrad)"/>
+              <text x="135" y="24" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">2. ARCHITECTURE CHANGE REQUEST</text>
+              <text x="135" y="42" fill="#bfdbfe" font-size="10.5" font-weight="700" text-anchor="middle">ACR-04: PSoC Resilience &amp; Depot SLA</text>
+              <line x1="15" y1="52" x2="255" y2="52" stroke="#93c5fd" stroke-width="1"/>
+              <text x="15" y="70" fill="#ffffff" font-size="10">• Routed to Architecture Board (EAB)</text>
+              <text x="15" y="88" fill="#ffffff" font-size="10">• Dynamic Requirements Management log</text>
+              <text x="15" y="106" fill="#ffffff" font-size="10">• Joint Root-Cause Impact Analysis</text>
+              <text x="15" y="124" fill="#93c5fd" font-size="10" font-weight="700">🔍 Classification: Phase H Standard</text>
+            </g>
+
+            <!-- Arrow 2 to Classification Forks -->
+            <line x1="605" y1="142" x2="645" y2="142" stroke="#0f172a" stroke-width="2"/>
+            <line x1="645" y1="142" x2="645" y2="105" stroke="#0f172a" stroke-width="2"/>
+            <line x1="645" y1="142" x2="645" y2="185" stroke="#0f172a" stroke-width="2"/>
+            <line x1="645" y1="105" x2="675" y2="105" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="675,105 667,100 667,110" fill="#0f172a"/>
+            <line x1="645" y1="185" x2="675" y2="185" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="675,185 667,180 667,190" fill="#0f172a"/>
+
+            <!-- Fork A: Volt-Tech Incremental Change -->
+            <g transform="translate(680, 60)" filter="url(#chgShadow)">
+              <rect width="240" height="90" rx="6" fill="url(#incChgGrad)"/>
+              <text x="120" y="20" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">INCREMENTAL CHANGE (VOLT-TECH)</text>
+              <text x="10" y="38" fill="#ffffff" font-size="9.5">• In-Flight Phase B/C/D Update Contract</text>
+              <text x="10" y="54" fill="#ffffff" font-size="9.5">• BMS INT8 PSoC Power Derating (&lt;40%)</text>
+              <text x="10" y="70" fill="#ffffff" font-size="9.5">• DPP Ingestion of Charging Telemetry</text>
+              <text x="10" y="84" fill="#fef08a" font-size="9" font-weight="700">✔ Handled in current ADM cycle</text>
+            </g>
+
+            <!-- Fork B: Orbit Re-Architecting Change -->
+            <g transform="translate(680, 160)" filter="url(#chgShadow)">
+              <rect width="240" height="90" rx="6" fill="url(#reArchGrad)"/>
+              <text x="120" y="20" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">RE-ARCHITECTING (ORBIT DEPOT)</text>
+              <text x="10" y="38" fill="#ffffff" font-size="9.5">• High CapEx Depot Grid Modernization</text>
+              <text x="10" y="54" fill="#ffffff" font-size="9.5">• Automated Charger Turnaround Dispatch</text>
+              <text x="10" y="70" fill="#ffffff" font-size="9.5">• 350kW Fast Charging Stall Rollout</text>
+              <text x="10" y="84" fill="#1e293b" font-size="9" font-weight="700">⚡ Triggers New Phase A Cycle for Orbit</text>
+            </g>
+
+            <!-- Lower Container: Multi-Domain Architecture Cascade -->
+            <g transform="translate(30, 265)">
+              <rect width="890" height="170" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#chgShadow)"/>
+              <text x="445" y="24" fill="#0f172a" font-size="12" font-weight="800" text-anchor="middle">ACR-04 MULTI-DOMAIN ARCHITECTURAL CASCADE (CLOSED-LOOP TRACEABILITY)</text>
+              
+              <!-- Column 1: Phase B -->
+              <g transform="translate(15, 38)">
+                <rect width="200" height="118" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <text x="100" y="18" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">Phase B: Business</text>
+                <line x1="10" y1="26" x2="190" y2="26" stroke="#e2e8f0" stroke-width="1"/>
+                <text x="8" y="44" fill="#334155" font-size="9.5">• Mutual Charging SLA</text>
+                <text x="8" y="60" fill="#334155" font-size="9.5">• Minimum &ge;30% SoC Gate</text>
+                <text x="8" y="76" fill="#334155" font-size="9.5">• Conditional Warranty</text>
+                <text x="8" y="96" fill="#15803d" font-size="9" font-weight="700">✔ BS-05 Service Added</text>
+              </g>
+
+              <!-- Column 2: Phase C1 -->
+              <g transform="translate(230, 38)">
+                <rect width="200" height="118" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <text x="100" y="18" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">Phase C1: Data</text>
+                <line x1="10" y1="26" x2="190" y2="26" stroke="#e2e8f0" stroke-width="1"/>
+                <text x="8" y="44" fill="#334155" font-size="9.5">• `DepotChargingSession`</text>
+                <text x="8" y="60" fill="#334155" font-size="9.5">• DPP Charging Provenance</text>
+                <text x="8" y="76" fill="#334155" font-size="9.5">• Real-time SoC Event Feed</text>
+                <text x="8" y="96" fill="#15803d" font-size="9" font-weight="700">✔ Protobuf IDL Contract</text>
+              </g>
+
+              <!-- Column 3: Phase C2 & D -->
+              <g transform="translate(445, 38)">
+                <rect width="210" height="118" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <text x="105" y="18" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">Phase C2 &amp; D: App &amp; Tech</text>
+                <line x1="10" y1="26" x2="200" y2="26" stroke="#e2e8f0" stroke-width="1"/>
+                <text x="8" y="44" fill="#334155" font-size="9.5">• Depot Energy Optimizer</text>
+                <text x="8" y="60" fill="#334155" font-size="9.5">• PSoC INT8 Derating Logic</text>
+                <text x="8" y="76" fill="#334155" font-size="9.5">• ASIL-D MCU Lockstep Core</text>
+                <text x="8" y="96" fill="#15803d" font-size="9" font-weight="700">✔ Sub-10ms Torque Derate</text>
+              </g>
+
+              <!-- Column 4: Phase G & H -->
+              <g transform="translate(670, 38)">
+                <rect width="205" height="118" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+                <text x="102" y="18" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">Phase G &amp; H: Governance</text>
+                <line x1="10" y1="26" x2="195" y2="26" stroke="#e2e8f0" stroke-width="1"/>
+                <text x="8" y="44" fill="#334155" font-size="9.5">• Joint Governance Board</text>
+                <text x="8" y="60" fill="#334155" font-size="9.5">• Audit DPP Charging Logs</text>
+                <text x="8" y="76" fill="#334155" font-size="9.5">• Eliminate Finger-Pointing</text>
+                <text x="8" y="96" fill="#15803d" font-size="9" font-weight="700">✔ 100% Audit Compliance</text>
+              </g>
+            </g>
+          </svg>
+          <figcaption><strong>Figure 4.10:</strong> Dynamic Architecture Change Management &amp; Depot Charging SLA Workflow (TOGAF Phase H &amp; Requirements Management).</figcaption>
+        </figure>
+
+        <!-- Step 7 -->
+        <h3>Step 7: Conduct Formal Stakeholder Review</h3>
+        <h4>Decision Point: How to Structure the Stakeholder Review &amp; Approval?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>Single Board Presentation (One-Shot Approval)</td>
+              <td>Efficient, single event, decisive outcome</td>
+              <td>High-stakes single point of failure</td>
+            </tr>
+            <tr class="selected-row">
+              <td>B</td>
+              <td><strong>Iterative Stakeholder Workshops (3-Round Review)</strong></td>
+              <td>Builds consensus incrementally, reduces rejection risk, incorporates feedback</td>
+              <td>Slower (3 sessions), requires sustained executive attention</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>Delegated Domain Reviews + Board Ratification</td>
+              <td>Distributes review load, domain-specific depth</td>
+              <td>Risk of inconsistent messaging, conflicts surfacing only at ratification</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option B &mdash; Iterative Stakeholder Workshops (3-Round Review).</strong> Too many enterprise transformations die on the boardroom floor because they are dropped as an unexpected fait accompli."</p>
+          <p class="narrator-text">"<strong>Option B</strong> structures three progressive gates: Round 1 aligns the board on problem framing and options; Round 2 validates technical, security, and depot operational boundaries; Round 3 locks the fiduciary business case ($14.2M reallocated, 11.4-month payback). Crucially, presenting the ACR-04 depot charging telemetry allowed Priya and Anjali Mehra to agree on shared operational accountability rather than hostile warranty litigation."</p>
+        </div>
+
+        <div class="responsive-list">
+          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+            <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="stakeholder-avatar" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #16a34a; object-fit: cover; flex-shrink: 0; margin: 0; mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none;">
+            <div>
+              <h4 style="margin-top: 0; margin-bottom: 6px;">Priya Kapoor (Fiscal Architect)</h4>
+              <p style="margin: 0;">CapEx payback &lt; 12 months &amp; mutual warranty protection ✅ VALIDATED &mdash; 11.4 months payback; warranty tied to DPP charging logs</p>
+            </div>
+          </div>
+          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="stakeholder-avatar" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #16a34a; object-fit: cover; flex-shrink: 0; margin: 0; mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none;">
+            <div>
+              <h4 style="margin-top: 0; margin-bottom: 6px;">Rajesh Iyer (Operational Strategist)</h4>
+              <p style="margin: 0;">Factory floor space reclaimed &amp; PSoC derate tested ✅ VALIDATED &mdash; 40% floor reclaimed; sub-10ms INT8 low-SoC power throttling</p>
+            </div>
+          </div>
+          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+            <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="stakeholder-avatar" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #16a34a; object-fit: cover; flex-shrink: 0; margin: 0; mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none;">
+            <div>
+              <h4 style="margin-top: 0; margin-bottom: 6px;">Sanjay Reddy (Risk Guardian)</h4>
+              <p style="margin: 0;">HSM cryptographic boundaries &amp; depot audit logs ✅ VALIDATED &mdash; ASIL-D dual-core lockstep with signed charging session verification</p>
+            </div>
+          </div>
+          <div class="card" style="display: flex; align-items: center; gap: 16px;">
+            <img src="assets/ComicChars/faces/Anjali Mehra.jpg" alt="Anjali Mehra" class="stakeholder-avatar" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #16a34a; object-fit: cover; flex-shrink: 0; margin: 0; mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none;">
+            <div>
+              <h4 style="margin-top: 0; margin-bottom: 6px;">Orbit-Logistics / Anjali Mehra</h4>
+              <p style="margin: 0;">Mutual Depot Charging SLA &amp; Zero Roadside Collapses ✅ AGREED &mdash; Orbit commits to &ge;85% charger uptime &amp; &ge;30% SoC dispatch thresholds; Volt-Tech guarantees PSoC-adaptive Smart Batteries</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 8 -->
+        <h3>Step 8: Finalize Business Architecture &amp; Fiduciary Business Case</h3>
+        <h4>Decision Point: Which Financial Investment Model?</h4>
+
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Description</th>
+              <th>Upfront Cost</th>
+              <th>Cash Flow Profile</th>
+              <th>Board Appeal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td>Full CapEx Investment</td>
+              <td>Purchase all equipment, build all labs, hire all staff as CapEx in Year 0</td>
+              <td>$14.2M (Year 0)</td>
+              <td>Front-loaded cost, back-loaded returns</td>
+              <td>🟡 Moderate &mdash; large upfront ask</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>OpEx Leasing &amp; SaaS Model</td>
+              <td>Lease robotics, subscribe to cloud platforms, contract consultants</td>
+              <td>$3.8M/yr recurring</td>
+              <td>Smooth cash flow, perpetual expense</td>
+              <td>🟡 Lower upfront, higher 5-year TCO</td>
+            </tr>
+            <tr class="selected-row">
+              <td>C</td>
+              <td><strong>Hybrid CapEx/OpEx with Phased Release</strong></td>
+              <td>Proprietary moat assets as CapEx; commodity services as OpEx; investment in 3 gate-reviewed tranches</td>
+              <td>$6.5M CapEx + $2.6M/yr OpEx</td>
+              <td>Balanced, risk-gated, matches phased roadmap</td>
+              <td>🟢 High &mdash; demonstrates fiscal discipline</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>Revenue-Funded (Self-Financing)</td>
+              <td>Fund entirely from warranty reserve savings ($34M/yr) and existing revenue</td>
+              <td>$0 new capital</td>
+              <td>Zero board approval needed, delayed start</td>
+              <td>🔴 Too slow &mdash; savings don't exist until transformation completes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="narrator-block">
+          <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
+          <p class="narrator-text">"<strong>Enterprise Architect Decision: Option C &mdash; Hybrid CapEx/OpEx with Phased Release.</strong> The board demands fiscal discipline. Option A requires an undifferentiated $14.2M upfront check; Option B rents commodity services that compound to $19M over 5 years without asset ownership."</p>
+          <p class="narrator-text">"Under <strong>Option C</strong>, every CapEx dollar ($6.5M Tranche 1 + $1.8M Tranche 2) funds assets <em>inside</em> our proprietary moat (modular pack robotics, HIL labs, Edge-AI Academy). Every OpEx dollar ($2.6M/yr) pays for commoditized cloud hosting and partner APIs. Capital is unlocked exclusively when roadmap gates are verified."</p>
+        </div>
+
+        <div class="responsive-list">
+          <div class="card">
+            <h4>Capital Expenditure Realignment</h4>
+            <ul>
+              <li><strong>CapEx Decommitment:</strong> Cancel $25M in planned Phase-2 chemical cell manufacturing equipment.</li>
+              <li><strong>Tranche 1 Investment:</strong> $6.5M &mdash; Automated modular pack robotics ($3.8M) and HIL co-simulation labs ($2.7M).</li>
+              <li><strong>Tranche 2 Investment (Gate B.1 ✓):</strong> $1.8M &mdash; Internal Edge-AI Academy ($1.1M) and Partner Integration Systems ($0.7M).</li>
+              <li><strong>Recurring OpEx:</strong> $2.6M/yr &mdash; Managed cloud infrastructure, partner API subscriptions.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Quantifiable Value Realization</h4>
+            <ul>
+              <li><strong>Warranty Defect Reduction:</strong> Decreases battery pack failure rate from 6.8% to 0.15%, saving $34M annually.</li>
+              <li><strong>Revenue Protection:</strong> Preserves the $120M annual smart truck contract with Orbit-Logistics.</li>
+              <li><strong>Net Payback Period:</strong> 11.4 Months.</li>
+              <li><strong>Internal Rate of Return (IRR):</strong> 42.6%.</li>
+              <li><strong>5-Year Net Present Value (10% discount):</strong> $68.4M.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Summary: Enterprise Architect Decision Map</h3>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Decision Point</th>
+              <th>Options Evaluated</th>
+              <th>Selected</th>
+              <th>Primary Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Reference Model</td>
+              <td>Pure TOGAF / AIAG / SCOR / Hybrid</td>
+              <td>Hybrid Composite</td>
+              <td>Multi-domain coverage across automotive, supply chain, and digital</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Baseline Modeling</td>
+              <td>Departmental / Value Stream / Cost-Center</td>
+              <td>Value Stream Mapping</td>
+              <td>Exposes root-cause handoff failures, not just symptoms</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Target Operating Model</td>
+              <td>Vertical / Full Outsource / Horizontal / Platform</td>
+              <td>Horizontal Partner Scaling</td>
+              <td>Optimal capital efficiency while retaining proprietary moat</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Gap Analysis Method</td>
+              <td>Simple List / Maturity Heatmap / Risk-Impact Matrix</td>
+              <td>Capability Maturity Heatmap</td>
+              <td>Visual stakeholder impact, quantified severity, prioritization</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Roadmap Sequencing</td>
+              <td>Big Bang / Sequential / Phased Waves / MVP</td>
+              <td>Phased Overlapping Waves</td>
+              <td>Meets Orbit-Logistics timeline with managed risk gates</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Cross-Domain &amp; Change Governance</td>
+              <td>Sequential / Concurrent Groups / Integrated Sprint</td>
+              <td>Concurrent Groups + Dynamic ACR-04 Process</td>
+              <td>Early interface conflict detection and formal Phase H change categorization for depot charging constraints</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Stakeholder Review</td>
+              <td>One-Shot / Iterative 3-Round / Delegated</td>
+              <td>Iterative 3-Round Workshops</td>
+              <td>Builds consensus incrementally and aligns customer on mutual depot charging SLA</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Financial Model</td>
+              <td>Full CapEx / OpEx Leasing / Hybrid / Revenue-Funded</td>
+              <td>Hybrid CapEx/OpEx Phased</td>
+              <td>CapEx for moat assets, OpEx for commodities, gate-released</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATIVE CONCLUSION & UPSTREAM TRANSITION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_thumbsup_green_1787204839525_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"The transformation is officially underway. Volt-Tech has stepped away from the vertical integration trap, embraced horizontal partner scaling, and united its engineering talent through Silicon-to-Cloud Fusion Pods. Priya Kapoor's fiduciary business case received unanimous board approval."</p>
+        <p class="narrator-text">"However, a crucial architectural dependency remains. As Rajesh Iyer emphasized, Volt-Tech's predictive edge models and durable battery packs cannot guarantee zero defects if the raw lithium, nickel, and cobalt coming from the mines contain untracked chemical impurities and unverified data."</p>
+        <p class="narrator-text">"In <strong>Chapter 5: The Data Governance Bedrock</strong>, our narrative travels upstream to <strong>Terra-Resource</strong>, where we confront the data architecture, sensor telemetry, and fiduciary governance challenges at the very extraction root of the supply chain."</p>
+      </div>
+
+      <!-- Key Artifacts Summary -->
+      <section>
+        <h2>Summary: Key Architecture Artifacts Produced in Phase B</h2>
+        <ul>
+          <li><strong>Target Business Model &amp; Horizontal Partner Strategy:</strong> Establishes the shift from vertical cell fabrication to modular smart truck OEM assembly and ecosystem partnering.</li>
+          <li><strong>Business Capability Gap Matrix:</strong> Maps deficiencies across battery fabrication, edge diagnostics, telemetry streaming, and cross-domain engineering skills.</li>
+          <li><strong>Target Operating Model (Silicon-to-Cloud Fusion Pods):</strong> Restructures embedded and cloud engineering teams into unified cross-functional squads with shared KPIs.</li>
+          <li><strong>Architecture Change Request (ACR-04) &amp; Mutual Depot Charging SLA:</strong> Formalizes dynamic Phase H / RM change management to handle partial-charge operations, adaptive BMS power derating, and cryptographic charging session provenance.</li>
+          <li><strong>Fiduciary Business Case &amp; ROI Model:</strong> Validates a $14.2M reallocated investment delivering $68.4M in 3-year net value with an 11.4-month payback period.</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Navigation Footer -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Chapter</span>
+        <a href="chapter_3.html" class="nav-title">&larr; Chapter 3: The Productivity Paradox</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Chapter</span>
+        <a href="chapter_5.html" class="nav-title">Chapter 5: The Data Governance Bedrock &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
+

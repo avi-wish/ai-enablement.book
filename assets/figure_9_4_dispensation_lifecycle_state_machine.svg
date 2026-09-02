@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 890" width="1260" height="890" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad94" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <filter id="shadow94" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrAmber94" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrGreen94" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#4ade80"/>
+    </marker>
+    <marker id="arrRed94" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#f87171"/>
+    </marker>
+  </defs>
+
+  <rect width="1260" height="890" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="1200" height="68" rx="10" fill="url(#headerGrad94)" filter="url(#shadow94)"/>
+  <text x="630" y="48" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 9.4: TIME-BOUND DISPENSATION &amp; VARIANCE MANAGEMENT STATE MACHINE</text>
+  <text x="630" y="72" fill="#fef3c7" font-size="13" text-anchor="middle">TOGAF Phase G Rule GOV-02: 180-Day Hard Horizon, Funded Remediation &amp; Automated Quarantine</text>
+
+  <!-- State 1: Request Filed -->
+  <rect x="40" y="120" width="250" height="210" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow94)"/>
+  <rect x="40" y="120" width="250" height="36" rx="8" fill="#0284c7"/>
+  <text x="165" y="144" fill="#ffffff" font-size="12.5" font-weight="bold" text-anchor="middle">STATE 1: VARIANCE FILED</text>
+  <text x="55" y="175" fill="#f1f5f9" font-size="11.5">&#8226; Unanticipated constraint</text>
+  <text x="55" y="195" fill="#f1f5f9" font-size="11.5">&#8226; Plant 2 legacy sensor gap</text>
+  <text x="55" y="215" fill="#f1f5f9" font-size="11.5">&#8226; Formal EAB Request logged</text>
+  <rect x="55" y="235" width="220" height="80" rx="4" fill="#0f172a"/>
+  <text x="165" y="258" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">DSP-001 Application</text>
+  <text x="65" y="280" fill="#cbd5e1" font-size="10.5">&#8226; Subsystem: BMS Plant 2</text>
+  <text x="65" y="298" fill="#cbd5e1" font-size="10.5">&#8226; Variance: Modbus RTU</text>
+
+  <!-- Transition 1 -> 2 -->
+  <path d="M 290 225 L 340 225" fill="none" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrAmber94)"/>
+
+  <!-- State 2: EAB Review & Gating -->
+  <rect x="340" y="120" width="270" height="210" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow94)"/>
+  <rect x="340" y="120" width="270" height="36" rx="8" fill="#d97706"/>
+  <text x="475" y="144" fill="#ffffff" font-size="12.5" font-weight="bold" text-anchor="middle">STATE 2: EAB EVALUATION</text>
+  <text x="355" y="175" fill="#f1f5f9" font-size="11.5">&#8226; Mandatory 3-Prong Check:</text>
+  <text x="355" y="195" fill="#fde68a" font-size="11">&#9679; 1. Horizon: &#916;t &#8804; 180 Days</text>
+  <text x="355" y="215" fill="#fde68a" font-size="11">&#9679; 2. Remediation WP Funded</text>
+  <text x="355" y="235" fill="#fde68a" font-size="11">&#9679; 3. Lateral Breach Sandboxed</text>
+  <rect x="355" y="250" width="240" height="65" rx="4" fill="#0f172a"/>
+  <text x="475" y="272" fill="#4ade80" font-size="11.5" font-weight="bold" text-anchor="middle">&#10003; Quorum Approved</text>
+  <text x="475" y="292" fill="#a7f3d0" font-size="10.5" text-anchor="middle">Risk Index R_res = 0.012 &#8804; 0.02</text>
+
+  <!-- Transition 2 -> 3 -->
+  <path d="M 610 225 L 660 225" fill="none" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrAmber94)"/>
+
+  <!-- State 3: Active Monitored Dispensation -->
+  <rect x="660" y="120" width="270" height="210" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow94)"/>
+  <rect x="660" y="120" width="270" height="36" rx="8" fill="#4338ca"/>
+  <text x="795" y="144" fill="#ffffff" font-size="12.5" font-weight="bold" text-anchor="middle">STATE 3: ACTIVE MONITORING</text>
+  <text x="675" y="175" fill="#f1f5f9" font-size="11.5">&#8226; Sandbox VLAN isolated</text>
+  <text x="675" y="195" fill="#f1f5f9" font-size="11.5">&#8226; Daily automated countdown</text>
+  <text x="675" y="215" fill="#f1f5f9" font-size="11.5">&#8226; WP-107b execution tracked</text>
+  <rect x="675" y="235" width="240" height="80" rx="4" fill="#0f172a"/>
+  <text x="795" y="258" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle">Countdown Watchdog</text>
+  <text x="685" y="280" fill="#fde68a" font-size="11">&#9200; Day 0 &#10142; Day 120 / 180</text>
+  <text x="685" y="298" fill="#cbd5e1" font-size="10.5">Budget: $280,000 Allocated</text>
+
+  <!-- Transition 3 -> 4A (Success) -->
+  <path d="M 930 190 L 980 190" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrGreen94)"/>
+
+  <!-- Transition 3 -> 4B (Expiry Alert) -->
+  <path d="M 795 330 L 795 380" fill="none" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrRed94)"/>
+
+  <!-- State 4A: Remediated & Closed (Top Right) -->
+  <rect x="980" y="120" width="245" height="210" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5" filter="url(#shadow94)"/>
+  <rect x="980" y="120" width="245" height="36" rx="8" fill="#059669"/>
+  <text x="1102" y="144" fill="#ffffff" font-size="12.5" font-weight="bold" text-anchor="middle">STATE 4A: REMEDIATED</text>
+  <text x="995" y="175" fill="#f1f5f9" font-size="11.5">&#8226; WP-107b completed</text>
+  <text x="995" y="195" fill="#f1f5f9" font-size="11.5">&#8226; AES-256 CAN-FD live</text>
+  <text x="995" y="215" fill="#f1f5f9" font-size="11.5">&#8226; Dispensation closed</text>
+  <rect x="995" y="235" width="215" height="80" rx="4" fill="#0f172a"/>
+  <text x="1102" y="258" fill="#4ade80" font-size="11.5" font-weight="bold" text-anchor="middle">&#10003; 100% Conformance</text>
+  <text x="1102" y="280" fill="#a7f3d0" font-size="10.5" text-anchor="middle">Zero Technical Debt</text>
+  <text x="1102" y="298" fill="#a7f3d0" font-size="10.5" text-anchor="middle">Dispensation Archived</text>
+
+  <!-- State 4B: Expiration & Automated Quarantine (Bottom) -->
+  <rect x="340" y="380" width="885" height="155" rx="8" fill="#450a0a" stroke="#ef4444" stroke-width="2" filter="url(#shadow94)"/>
+  <rect x="340" y="380" width="885" height="34" rx="8" fill="#991b1b"/>
+  <text x="782" y="403" fill="#ffffff" font-size="13" font-weight="bold" text-anchor="middle">&#9888; STATE 4B: HARD EXPIRY (&gt; 180 DAYS) &amp; AUTOMATED KILL-SWITCH ACTION</text>
+  
+  <rect x="360" y="425" width="265" height="95" rx="6" fill="#0f172a" stroke="#f87171" stroke-width="1"/>
+  <text x="492" y="448" fill="#f87171" font-size="12" font-weight="bold" text-anchor="middle">1. API Certificate Expiry</text>
+  <text x="375" y="473" fill="#f1f5f9" font-size="11">&#8226; Gateway mTLS keys revoked</text>
+  <text x="375" y="493" fill="#f1f5f9" font-size="11">&#8226; Automatic isolation</text>
+  <text x="375" y="510" fill="#fca5a5" font-size="10">&#10008; Subsystem Quarantined</text>
+
+  <rect x="650" y="425" width="265" height="95" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+  <text x="782" y="448" fill="#fbbf24" font-size="12" font-weight="bold" text-anchor="middle">2. Executive Escalation</text>
+  <text x="665" y="473" fill="#f1f5f9" font-size="11">&#8226; Immediate EAB Alert</text>
+  <text x="665" y="493" fill="#f1f5f9" font-size="11">&#8226; VP of Operations notified</text>
+  <text x="665" y="510" fill="#fef08a" font-size="10">&#9888; CapEx Penalty Triggered</text>
+
+  <rect x="940" y="425" width="265" height="95" rx="6" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="1072" y="448" fill="#c084fc" font-size="12" font-weight="bold" text-anchor="middle">3. Phase H Re-Architecture</text>
+  <text x="955" y="473" fill="#f1f5f9" font-size="11">&#8226; Permanent design change</text>
+  <text x="955" y="493" fill="#f1f5f9" font-size="11">&#8226; Triggers Phase A cycle</text>
+  <text x="955" y="510" fill="#e0e7ff" font-size="10">&#10142; Escalated to Change Board</text>
+
+  <!-- Mathematical Bounds Box (Bottom) -->
+  <rect x="30" y="560" width="1200" height="280" rx="10" fill="#1e1b4b" stroke="#f59e0b" stroke-width="2" filter="url(#shadow94)"/>
+  <rect x="30" y="560" width="1200" height="38" rx="10" fill="#b45309"/>
+  <text x="630" y="585" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">RULE GOV-02: MATHEMATICAL DISPENSATION BOUNDS &amp; GOVERNANCE CONSTRAINTS</text>
+
+  <rect x="50" y="615" width="560" height="205" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="330" y="640" fill="#fbbf24" font-size="13" font-weight="bold" text-anchor="middle">Mathematical Constraints Formula</text>
+  <text x="330" y="675" fill="#fde68a" font-size="15" font-weight="bold" text-anchor="middle">&#916;t_dispensation &#8804; 180 calendar days</text>
+  <text x="330" y="705" fill="#fde68a" font-size="15" font-weight="bold" text-anchor="middle">CapEx_remediation &gt; 0</text>
+  <text x="70" y="740" fill="#f1f5f9" font-size="11.5">&#8226; Zero Perpetual Waivers: Technical debt must be bounded in time</text>
+  <text x="70" y="763" fill="#f1f5f9" font-size="11.5">&#8226; Capital Gating: Remediation budget locked in financial ledger</text>
+  <text x="70" y="786" fill="#f1f5f9" font-size="11.5">&#8226; Isolation Mandate: Residual risk R_res &#8804; 0.02 under sandbox</text>
+
+  <rect x="630" y="615" width="580" height="205" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+  <text x="920" y="640" fill="#34d399" font-size="13" font-weight="bold" text-anchor="middle">Active Consortium Dispensation Baseline (DSP-001)</text>
+  <text x="650" y="672" fill="#f1f5f9" font-size="11.5">&#8226; <strong style="color:#38bdf8;">Variance ID:</strong> DSP-001 (Plant 2 Thermal Modbus Sensors)</text>
+  <text x="650" y="700" fill="#f1f5f9" font-size="11.5">&#8226; <strong style="color:#fbbf24;">Granted Horizon:</strong> 120 Days (Expires Month 12)</text>
+  <text x="650" y="728" fill="#f1f5f9" font-size="11.5">&#8226; <strong style="color:#4ade80;">Remediation Package:</strong> WP-107b ($280,000 CapEx Approved)</text>
+  <text x="650" y="756" fill="#f1f5f9" font-size="11.5">&#8226; <strong style="color:#a78bfa;">Status:</strong> 100% Sandbox Isolated (Zero Lateral Ingress Risk)</text>
+  <text x="650" y="784" fill="#f1f5f9" font-size="11.5">&#8226; <strong style="color:#34d399;">Audit Verification:</strong> Certified at Sprint 8 Stage-Gate Review</text>
+
+  <!-- Bottom Legend -->
+  <rect x="30" y="855" width="1200" height="24" rx="4" fill="#0f172a"/>
+  <text x="630" y="872" fill="#94a3b8" font-size="11" text-anchor="middle">TOGAF&#174; ADM Phase G Dispensation Governance &#8226; Rule GOV-02 &#8226; Enterprise Variance State Machine</text>
+</svg>

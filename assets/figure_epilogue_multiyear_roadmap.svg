@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="auto" style="background:#0b1120; border-radius:8px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="roadHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="h1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="h2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="h3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#2e1065"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title & Header -->
+  <rect x="20" y="15" width="960" height="60" rx="6" fill="url(#roadHeaderGrad)" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="42" fill="#38bdf8" font-size="18px" font-weight="700">FIGURE E.3: MULTI-YEAR AI ARCHITECTURE EVOLUTION ROADMAP</text>
+  <text x="40" y="62" fill="#94a3b8" font-size="12px">A 3-Horizon Strategy for Scaling from Industrial Foundational Bedrock to Autonomous Cognitive Swarms</text>
+
+  <!-- HORIZON 1: MONTHS 1 - 12 -->
+  <rect x="20" y="90" width="310" height="440" rx="8" fill="url(#h1Grad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="35" y="105" width="280" height="32" rx="4" fill="#2563eb"/>
+  <text x="45" y="126" fill="#ffffff" font-size="13px" font-weight="700">HORIZON 1: FOUNDATION (M1-M12)</text>
+
+  <rect x="35" y="145" width="280" height="75" rx="4" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+  <text x="45" y="165" fill="#93c5fd" font-size="12px" font-weight="700">1. Data Bedrock &amp; DPP Lineage</text>
+  <text x="45" y="182" fill="#cbd5e1" font-size="11px">&#8226; W3C DID Cryptographic Passports</text>
+  <text x="45" y="197" fill="#cbd5e1" font-size="11px">&#8226; Event Storming &amp; Context Isolation</text>
+  <text x="45" y="212" fill="#4ade80" font-size="10.5px" font-weight="600">&#10003; 100% Raw Ore Provenance Verified</text>
+
+  <rect x="35" y="228" width="280" height="75" rx="4" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+  <text x="45" y="248" fill="#93c5fd" font-size="12px" font-weight="700">2. Deterministic Edge Inference</text>
+  <text x="45" y="265" fill="#cbd5e1" font-size="11px">&#8226; Sub-2.5ms TinyML Vision Gates</text>
+  <text x="45" y="280" fill="#cbd5e1" font-size="11px">&#8226; ISA-95 Level 1-2 PLC Interfacing</text>
+  <text x="45" y="295" fill="#4ade80" font-size="10.5px" font-weight="600">&#10003; Scrap Rate Slashed from 8.2% to 0.4%</text>
+
+  <rect x="35" y="311" width="280" height="75" rx="4" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+  <text x="45" y="331" fill="#93c5fd" font-size="12px" font-weight="700">3. Continuous APM Telemetry</text>
+  <text x="45" y="348" fill="#cbd5e1" font-size="11px">&#8226; OpenTelemetry Core Ingestion</text>
+  <text x="45" y="363" fill="#cbd5e1" font-size="11px">&#8226; Live SCOR Cost/KM Tracking</text>
+  <text x="45" y="378" fill="#4ade80" font-size="10.5px" font-weight="600">&#10003; Unit Cost Slashed to $0.92/km</text>
+
+  <rect x="35" y="394" width="280" height="75" rx="4" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+  <text x="45" y="414" fill="#93c5fd" font-size="12px" font-weight="700">4. HITL Augmented Academy</text>
+  <text x="45" y="431" fill="#cbd5e1" font-size="11px">&#8226; Workforce Retraining &amp; Wage Realignment</text>
+  <text x="45" y="446" fill="#cbd5e1" font-size="11px">&#8226; Tele-Assist Exception Triage</text>
+  <text x="45" y="461" fill="#4ade80" font-size="10.5px" font-weight="600">&#10003; Strike Threat Defused; 100% Certified</text>
+
+  <rect x="35" y="477" width="280" height="42" rx="4" fill="#1e293b"/>
+  <text x="45" y="495" fill="#e2e8f0" font-size="11px" font-weight="700">Milestone Gate: Stage-Gate 3 Clearance</text>
+  <text x="45" y="510" fill="#94a3b8" font-size="10px">Unanimous EAB Sign-off on Production Cutover</text>
+
+  <!-- HORIZON 2: MONTHS 13 - 24 -->
+  <rect x="345" y="90" width="310" height="440" rx="8" fill="url(#h2Grad)" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="360" y="105" width="280" height="32" rx="4" fill="#059669"/>
+  <text x="370" y="126" fill="#ffffff" font-size="13px" font-weight="700">HORIZON 2: SYNCHRONIZATION (M13-M24)</text>
+
+  <rect x="360" y="145" width="280" height="75" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="370" y="165" fill="#6ee7b7" font-size="12px" font-weight="700">1. Cross-Enterprise Smart Contracts</text>
+  <text x="370" y="182" fill="#cbd5e1" font-size="11px">&#8226; Automated Gainsharing &amp; Penalties</text>
+  <text x="370" y="197" fill="#cbd5e1" font-size="11px">&#8226; Direct ERP Billing via APM Events</text>
+  <text x="370" y="212" fill="#38bdf8" font-size="10.5px" font-weight="600">&#8594; Target: Zero-Dispute Invoicing</text>
+
+  <rect x="360" y="228" width="280" height="75" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="370" y="248" fill="#6ee7b7" font-size="12px" font-weight="700">2. Real-Time Adaptive Re-Routing</text>
+  <text x="370" y="265" fill="#cbd5e1" font-size="11px">&#8226; Dynamic Mineral-to-Fleet Dispatch</text>
+  <text x="370" y="280" fill="#cbd5e1" font-size="11px">&#8226; Weather &amp; Traffic Proactive Hedging</text>
+  <text x="370" y="295" fill="#38bdf8" font-size="10.5px" font-weight="600">&#8594; Target: Perfect Delivery (RL.1.1 &#8805; 99.8%)</text>
+
+  <rect x="360" y="311" width="280" height="75" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="370" y="331" fill="#6ee7b7" font-size="12px" font-weight="700">3. Automated AI Compliance Watch</text>
+  <text x="370" y="348" fill="#cbd5e1" font-size="11px">&#8226; Continuous EU AI Act Conformity Checks</text>
+  <text x="370" y="363" fill="#cbd5e1" font-size="11px">&#8226; Automated Model Audit Trail Seals</text>
+  <text x="370" y="378" fill="#38bdf8" font-size="10.5px" font-weight="600">&#8594; Target: Zero Regulatory Non-Conformances</text>
+
+  <rect x="360" y="394" width="280" height="75" rx="4" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="370" y="414" fill="#6ee7b7" font-size="12px" font-weight="700">4. Foundation Model Shadow Upgrades</text>
+  <text x="370" y="431" fill="#cbd5e1" font-size="11px">&#8226; Continuous Shadow Evaluation Pipelines</text>
+  <text x="370" y="446" fill="#cbd5e1" font-size="11px">&#8226; A/B Regression Testing on Factory Edge</text>
+  <text x="370" y="461" fill="#38bdf8" font-size="10.5px" font-weight="600">&#8594; Target: Sub-1hr Blue/Green Swaps</text>
+
+  <rect x="360" y="477" width="280" height="42" rx="4" fill="#1e293b"/>
+  <text x="370" y="495" fill="#e2e8f0" font-size="11px" font-weight="700">Milestone Gate: Full Supply Chain Sync</text>
+  <text x="370" y="510" fill="#94a3b8" font-size="10px">Multi-Tier Automated Telemetry Interoperability</text>
+
+  <!-- HORIZON 3: MONTHS 25 - 48 -->
+  <rect x="670" y="90" width="310" height="440" rx="8" fill="url(#h3Grad)" stroke="#a855f7" stroke-width="1.5"/>
+  <rect x="685" y="105" width="280" height="32" rx="4" fill="#7e22ce"/>
+  <text x="695" y="126" fill="#ffffff" font-size="13px" font-weight="700">HORIZON 3: AUTONOMOUS SWARMS (M25-M48)</text>
+
+  <rect x="685" y="145" width="280" height="75" rx="4" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="695" y="165" fill="#d8b4fe" font-size="12px" font-weight="700">1. Decentralized Multi-Agent Swarms</text>
+  <text x="695" y="182" fill="#cbd5e1" font-size="11px">&#8226; Autonomous Peer-to-Peer Dispatch</text>
+  <text x="695" y="197" fill="#cbd5e1" font-size="11px">&#8226; Dynamic Micro-Consensus at Edge</text>
+  <text x="695" y="212" fill="#facc15" font-size="10.5px" font-weight="600">&#9733; Vision: Self-Organizing Haulage Swarms</text>
+
+  <rect x="685" y="228" width="280" height="75" rx="4" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="695" y="248" fill="#d8b4fe" font-size="12px" font-weight="700">2. Self-Healing Supply Chain Mesh</text>
+  <text x="695" y="265" fill="#cbd5e1" font-size="11px">&#8226; Automated Upstream Order Scaling</text>
+  <text x="695" y="280" fill="#cbd5e1" font-size="11px">&#8226; Autonomous Predictive Part Ordering</text>
+  <text x="695" y="295" fill="#facc15" font-size="10.5px" font-weight="600">&#9733; Vision: Zero-Downtime Closed Loop</text>
+
+  <rect x="685" y="311" width="280" height="75" rx="4" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="695" y="331" fill="#d8b4fe" font-size="12px" font-weight="700">3. Generative Spatial Digital Twins</text>
+  <text x="695" y="348" fill="#cbd5e1" font-size="11px">&#8226; Real-Time Synthetic Plant Simulation</text>
+  <text x="695" y="363" fill="#cbd5e1" font-size="11px">&#8226; Multimodal Physical-AI Validation</text>
+  <text x="695" y="378" fill="#facc15" font-size="10.5px" font-weight="600">&#9733; Vision: 100% Pre-Tested Production Runs</text>
+
+  <rect x="685" y="394" width="280" height="75" rx="4" fill="#0f172a" stroke="#c084fc" stroke-width="1"/>
+  <text x="695" y="414" fill="#d8b4fe" font-size="12px" font-weight="700">4. Ecosystem Capital Reinvestment</text>
+  <text x="695" y="431" fill="#cbd5e1" font-size="11px">&#8226; Compounded Profit-Share Capital Pool</text>
+  <text x="695" y="446" fill="#cbd5e1" font-size="11px">&#8226; Continuous Frontier AI R&amp;D Escrow</text>
+  <text x="695" y="461" fill="#facc15" font-size="10.5px" font-weight="600">&#9733; Vision: Infinite Compounding Advantage</text>
+
+  <rect x="685" y="477" width="280" height="42" rx="4" fill="#1e293b"/>
+  <text x="695" y="495" fill="#e2e8f0" font-size="11px" font-weight="700">Milestone Gate: Cognitive Mastery</text>
+  <text x="695" y="510" fill="#94a3b8" font-size="10px">Autonomous Ecosystem Operating at Scale</text>
+
+  <!-- Bottom Arrow Connector -->
+  <path d="M175 545 L500 545 L825 545" stroke="#475569" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+  <polygon points="830,545 820,540 820,550" fill="#38bdf8"/>
+  <text x="500" y="575" fill="#94a3b8" font-size="11.5px" text-anchor="middle" font-weight="600">The Continuous Transformation Trajectory: Moving from Static Architecture to Living Autonomous Intelligence</text>
+</svg>

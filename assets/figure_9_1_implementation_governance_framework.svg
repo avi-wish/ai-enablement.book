@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 930" width="1360" height="930" style="background:#0f172a; width: 100%; height: auto; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad91" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <filter id="shadow91" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrPurple91" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#c084fc"/>
+    </marker>
+    <marker id="arrGreen91" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#4ade80"/>
+    </marker>
+    <marker id="arrCyan91" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrYellow91" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#fde047"/>
+    </marker>
+  </defs>
+
+  <rect width="1360" height="930" fill="#0f172a" rx="12"/>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="1300" height="70" rx="10" fill="url(#headerGrad91)" filter="url(#shadow91)"/>
+  <text x="680" y="48" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0.5">FIGURE 9.1: TOGAF&#174; ADM PHASE G IMPLEMENTATION GOVERNANCE FRAMEWORK</text>
+  <text x="680" y="73" fill="#e0e7ff" font-size="13.5" font-weight="500" text-anchor="middle">Multi-Enterprise Architecture Oversight, Binding Architecture Contracts &amp; Dual-Track Audit Hierarchy</text>
+
+  <!-- Section 1: Upstream Baselines (Left Column, width=300) -->
+  <rect x="30" y="110" width="300" height="770" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" filter="url(#shadow91)"/>
+  <rect x="30" y="110" width="300" height="42" rx="10" fill="#2563eb"/>
+  <text x="180" y="137" fill="#ffffff" font-size="13.5" font-weight="bold" text-anchor="middle">UPSTREAM INPUTS (PHASE F)</text>
+
+  <!-- ADD Box -->
+  <rect x="45" y="165" width="270" height="115" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="180" y="190" fill="#38bdf8" font-size="12.5" font-weight="bold" text-anchor="middle">Architecture Definition (ADD)</text>
+  <text x="60" y="213" fill="#f1f5f9" font-size="11.5">&#8226; Target ABBs &amp; SBB Specs</text>
+  <text x="60" y="233" fill="#f1f5f9" font-size="11.5">&#8226; Zero-Trust Network Topology</text>
+  <text x="60" y="253" fill="#f1f5f9" font-size="11.5">&#8226; ASIL-D &amp; SCOR RL.1.1 SLAs</text>
+  <text x="60" y="271" fill="#38bdf8" font-size="11" font-weight="bold">&#10003; Baselined in Architecture Repo</text>
+
+  <!-- IMP Box -->
+  <rect x="45" y="292" width="270" height="115" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="180" y="317" fill="#38bdf8" font-size="12.5" font-weight="bold" text-anchor="middle">Implementation Plan (IMP)</text>
+  <text x="60" y="340" fill="#f1f5f9" font-size="11.5">&#8226; 16-Month 3-Wave Roadmap</text>
+  <text x="60" y="360" fill="#f1f5f9" font-size="11.5">&#8226; 5 Critical Path Work Packages</text>
+  <text x="60" y="380" fill="#f1f5f9" font-size="11.5">&#8226; 3 Capital Tranches ($18.0M)</text>
+  <text x="60" y="398" fill="#38bdf8" font-size="11" font-weight="bold">&#10003; PERT Locked (T_e = 15.6m)</text>
+
+  <!-- Contracts Box -->
+  <rect x="45" y="420" width="270" height="155" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <text x="180" y="445" fill="#34d399" font-size="12.5" font-weight="bold" text-anchor="middle">Signed Architecture Contracts</text>
+  <text x="60" y="468" fill="#f1f5f9" font-size="11.5">&#8226; AC-101: DPP Stream Accord</text>
+  <text x="60" y="488" fill="#f1f5f9" font-size="11.5">&#8226; AC-102: Vision Takt Covenants</text>
+  <text x="60" y="508" fill="#f1f5f9" font-size="11.5">&#8226; AC-104: CAN-FD Telemetry SLA</text>
+  <text x="60" y="528" fill="#f1f5f9" font-size="11.5">&#8226; AC-106: Closed-Loop SCOR</text>
+  <text x="60" y="548" fill="#34d399" font-size="11.5" font-weight="bold">&#10003; RULE GOV-01: 100% Signed</text>
+  <text x="60" y="565" fill="#a7f3d0" font-size="10.5">Secp384r1 Cryptographic Seals</text>
+
+  <!-- Compliance Mandates Box -->
+  <rect x="45" y="588" width="270" height="135" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="180" y="613" fill="#fbbf24" font-size="12.5" font-weight="bold" text-anchor="middle">Global Compliance Mandates</text>
+  <text x="60" y="636" fill="#f1f5f9" font-size="11.5">&#8226; EU AI Act (High-Risk Category)</text>
+  <text x="60" y="656" fill="#f1f5f9" font-size="11.5">&#8226; EU Battery Reg 2023/1542</text>
+  <text x="60" y="676" fill="#f1f5f9" font-size="11.5">&#8226; ISO 26262 ASIL-D Safety</text>
+  <text x="60" y="696" fill="#fca5a5" font-size="11" font-weight="bold">&#9888; Statutory Fine: Up to 7% Rev</text>
+  <text x="60" y="713" fill="#fca5a5" font-size="10.5">(&#8804; $35 Million Maximum)</text>
+
+  <!-- Governance Core Box -->
+  <rect x="45" y="735" width="270" height="130" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="180" y="758" fill="#c7d2fe" font-size="12.5" font-weight="bold" text-anchor="middle">Joint EAB Governance Core</text>
+  <text x="60" y="781" fill="#e0e7ff" font-size="11.5">&#8226; Aarav Patel (Risk Guardian)</text>
+  <text x="60" y="801" fill="#e0e7ff" font-size="11.5">&#8226; Sanjay Reddy (Enterprise Systems)</text>
+  <text x="60" y="821" fill="#e0e7ff" font-size="11.5">&#8226; Rohan Gupta (Field Operations)</text>
+  <text x="60" y="845" fill="#4ade80" font-size="11" font-weight="bold">&#10003; Quorum Enforced at All Gates</text>
+
+  <!-- Connector Lines -->
+  <path d="M 330 220 L 370 220 L 370 300 L 380 300" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrCyan91)"/>
+  <path d="M 330 495 L 380 495" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrGreen91)"/>
+  <path d="M 330 655 L 365 655 L 365 575 L 380 575" fill="none" stroke="#fde047" stroke-width="2.5" marker-end="url(#arrYellow91)"/>
+
+  <!-- Section 2: Phase G Governance Engine (Middle Column, width=600) -->
+  <rect x="380" y="110" width="600" height="770" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" filter="url(#shadow91)"/>
+  <rect x="380" y="110" width="600" height="42" rx="10" fill="#4338ca"/>
+  <text x="680" y="137" fill="#ffffff" font-size="13.5" font-weight="bold" text-anchor="middle">PHASE G GOVERNANCE ENGINE: CONTINUOUS AUDIT PIPELINE</text>
+
+  <!-- Track 1 Box -->
+  <rect x="395" y="165" width="570" height="215" rx="8" fill="#0f172a" stroke="#6366f1" stroke-width="1.5"/>
+  <rect x="395" y="165" width="570" height="32" rx="8" fill="#312e81"/>
+  <text x="680" y="187" fill="#c7d2fe" font-size="12.5" font-weight="bold" text-anchor="middle">TRACK 1: CONTINUOUS AUTOMATED FITNESS FUNCTIONS (RULE GOV-03)</text>
+  
+  <rect x="410" y="207" width="168" height="82" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="494" y="228" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">Schema Linter</text>
+  <text x="494" y="247" fill="#f1f5f9" font-size="11" text-anchor="middle">OpenAPI 3.1 &amp; AsyncAPI</text>
+  <text x="494" y="264" fill="#cbd5e1" font-size="10.5" text-anchor="middle">Immutable IDMZ Specs</text>
+  <text x="494" y="280" fill="#4ade80" font-size="11" font-weight="bold" text-anchor="middle">&#10003; Zero Drift</text>
+
+  <rect x="595" y="207" width="170" height="82" rx="6" fill="#1e293b" stroke="#c084fc" stroke-width="1.2"/>
+  <text x="680" y="228" fill="#c084fc" font-size="12" font-weight="bold" text-anchor="middle">ArchUnit Isolation</text>
+  <text x="680" y="247" fill="#f1f5f9" font-size="11" text-anchor="middle">No Direct Cross-DB SQL</text>
+  <text x="680" y="264" fill="#cbd5e1" font-size="10.5" text-anchor="middle">Bounded Context Lock</text>
+  <text x="680" y="280" fill="#4ade80" font-size="11" font-weight="bold" text-anchor="middle">&#10003; Strict Layering</text>
+
+  <rect x="780" y="207" width="170" height="82" rx="6" fill="#1e293b" stroke="#fb7185" stroke-width="1.2"/>
+  <text x="865" y="228" fill="#fb7185" font-size="12" font-weight="bold" text-anchor="middle">ASIL-D Watchdog</text>
+  <text x="865" y="247" fill="#f1f5f9" font-size="11" text-anchor="middle">Latency &#8804; 250ms</text>
+  <text x="865" y="264" fill="#cbd5e1" font-size="10.5" text-anchor="middle">Failover &#8804; 48.2ms</text>
+  <text x="865" y="280" fill="#4ade80" font-size="11" font-weight="bold" text-anchor="middle">&#10003; Deterministic</text>
+
+  <rect x="410" y="298" width="540" height="70" rx="6" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="680" y="318" fill="#c7d2fe" font-size="12" font-weight="bold" text-anchor="middle">Automated Pipeline Execution Outcome</text>
+  <text x="425" y="338" fill="#f1f5f9" font-size="11">&#10003; <strong>Pass:</strong> Cryptographic Build Signed into OCI Registry (SHA-256)</text>
+  <text x="425" y="356" fill="#fca5a5" font-size="11">&#10008; <strong>Fail:</strong> Build Halt, Deploy Blocked &amp; Incident Filed to EAB Queue</text>
+
+  <!-- Track 2 Box -->
+  <rect x="395" y="392" width="570" height="255" rx="8" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+  <rect x="395" y="392" width="570" height="32" rx="8" fill="#0369a1"/>
+  <text x="680" y="414" fill="#e0f2fe" font-size="12.5" font-weight="bold" text-anchor="middle">TRACK 2: FORMAL STAGE-GATE ARCHITECTURE COMPLIANCE REVIEWS</text>
+
+  <!-- 6-Tier Grid Box -->
+  <rect x="410" y="434" width="540" height="115" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1.2"/>
+  <text x="680" y="453" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">6-Tier TOGAF Compliance Classification Matrix</text>
+  
+  <!-- Left Column Tiers -->
+  <text x="425" y="473" fill="#4ade80" font-size="11.5">&#9679; 1. Compliant <tspan fill="#cbd5e1">(100% SBB adherence)</tspan></text>
+  <text x="425" y="493" fill="#60a5fa" font-size="11.5">&#9679; 2. Consistent <tspan fill="#cbd5e1">(Minor syntactic variant)</tspan></text>
+  <text x="425" y="513" fill="#a78bfa" font-size="11.5">&#9679; 3. Conformant <tspan fill="#cbd5e1">(Non-critical difference)</tspan></text>
+
+  <!-- Right Column Tiers -->
+  <text x="690" y="473" fill="#f87171" font-size="11.5">&#9679; 4. Non-Conformant <tspan fill="#fca5a5">(Deploy Blocked)</tspan></text>
+  <text x="690" y="493" fill="#fde047" font-size="11.5">&#9679; 5. Dispensation <tspan fill="#fef08a">(Time-bound waiver)</tspan></text>
+  <text x="690" y="513" fill="#94a3b8" font-size="11.5">&#9679; 6. Irrelevant <tspan fill="#cbd5e1">(Out of governance)</tspan></text>
+  
+  <text x="680" y="538" fill="#94a3b8" font-size="10.5" font-style="italic" text-anchor="middle">Audited at Sprint 4, Sprint 8, and Sprint 12 by Joint Architecture Board</text>
+
+  <!-- Rule GOV-02 Box inside Track 2 -->
+  <rect x="410" y="558" width="540" height="78" rx="6" fill="#1e1b4b" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="680" y="577" fill="#fde68a" font-size="12" font-weight="bold" text-anchor="middle">RULE GOV-02: TIME-BOUND DISPENSATION GOVERNANCE</text>
+  <text x="425" y="597" fill="#f1f5f9" font-size="11">&#8226; Maximum Waiver Window: &#8804; 180 Calendar Days (Strict Cutoff)</text>
+  <text x="425" y="614" fill="#f1f5f9" font-size="11">&#8226; Mandatory: Assigned &amp; Funded Remediation Work Package</text>
+  <text x="425" y="630" fill="#fca5a5" font-size="10.5">&#8226; Kill-Switch: Automatic API Gateway Revocation upon expiry</text>
+
+  <!-- Observability Box -->
+  <rect x="395" y="658" width="570" height="205" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="395" y="658" width="570" height="32" rx="8" fill="#065f46"/>
+  <text x="680" y="680" fill="#a7f3d0" font-size="12.5" font-weight="bold" text-anchor="middle">REAL-TIME TELEMETRY, RUNTIME DRIFT &amp; AUDIT LOGGING</text>
+
+  <text x="415" y="710" fill="#f1f5f9" font-size="11.5">&#8226; High-Frequency CAN-FD Ingestion (250Hz BMS voltage &amp; temp telemetry)</text>
+  <text x="415" y="730" fill="#f1f5f9" font-size="11.5">&#8226; Evidential Model Drift Scoring (Wasserstein Distance W &gt; 0.08 &#10142; Alert)</text>
+  <text x="415" y="750" fill="#f1f5f9" font-size="11.5">&#8226; Immutable W3C PROV-O Model Lineage recorded in WORM Audit Ledger</text>
+  <text x="415" y="770" fill="#f1f5f9" font-size="11.5">&#8226; SCOR sE Safety Telemetry linked directly to Perfect Delivery (RL.1.1 &#8805; 99.8%)</text>
+  
+  <rect x="410" y="788" width="540" height="62" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+  <text x="680" y="812" fill="#4ade80" font-size="12" font-weight="bold" text-anchor="middle">&#10003; 100% Real-Time Forensic Traceability for Regulatory Inquiries</text>
+  <text x="680" y="834" fill="#a7f3d0" font-size="11" text-anchor="middle">Continuous sub-250ms watchdog failover certified under Rule MIG-03</text>
+
+  <!-- Connectors from Middle to Right -->
+  <path d="M 980 270 L 1010 270" fill="none" stroke="#c084fc" stroke-width="2.5" marker-end="url(#arrPurple91)"/>
+  <path d="M 980 520 L 1010 520" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrCyan91)"/>
+  <path d="M 980 760 L 1010 760" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrGreen91)"/>
+
+  <!-- Section 3: Phase G Deliverables & Outputs (Right Column, width=320) -->
+  <rect x="1010" y="110" width="320" height="770" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5" filter="url(#shadow91)"/>
+  <rect x="1010" y="110" width="320" height="42" rx="10" fill="#9333ea"/>
+  <text x="1170" y="137" fill="#ffffff" font-size="13.5" font-weight="bold" text-anchor="middle">GOVERNANCE OUTPUTS &amp; VALUE</text>
+
+  <!-- Deliverable 1 -->
+  <rect x="1025" y="165" width="290" height="125" rx="8" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="1170" y="190" fill="#d8b4fe" font-size="12.5" font-weight="bold" text-anchor="middle">Compliance Assessment Reports</text>
+  <text x="1040" y="213" fill="#f1f5f9" font-size="11.5">&#8226; Formal EAB Gate Audit Dossiers</text>
+  <text x="1040" y="233" fill="#f1f5f9" font-size="11.5">&#8226; Sprint Architecture Scorecards</text>
+  <text x="1040" y="253" fill="#f1f5f9" font-size="11.5">&#8226; Fitness Function Pass: 99.94%</text>
+  <text x="1040" y="275" fill="#c084fc" font-size="11.5" font-weight="bold">&#10003; Published to Repo (Phase G)</text>
+
+  <!-- Deliverable 2 -->
+  <rect x="1025" y="300" width="290" height="125" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="1170" y="325" fill="#fbbf24" font-size="12.5" font-weight="bold" text-anchor="middle">Dispensation &amp; Waiver Registry</text>
+  <text x="1040" y="348" fill="#f1f5f9" font-size="11.5">&#8226; DSP-001: Legacy BMS Modbus</text>
+  <text x="1040" y="368" fill="#f1f5f9" font-size="11.5">&#8226; Expiry Date: M12 (120 Days Left)</text>
+  <text x="1040" y="388" fill="#f1f5f9" font-size="11.5">&#8226; Remediation WP: WP-107b ($280k)</text>
+  <text x="1040" y="410" fill="#fde047" font-size="11.5" font-weight="bold">&#9200; Active Tracking (Rule GOV-02)</text>
+
+  <!-- Deliverable 3 -->
+  <rect x="1025" y="435" width="290" height="145" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="1170" y="460" fill="#67e8f9" font-size="12.5" font-weight="bold" text-anchor="middle">EU AI Act Conformity Dossier</text>
+  <text x="1040" y="483" fill="#f1f5f9" font-size="11.5">&#8226; CE-Mark Compliance Dossier</text>
+  <text x="1040" y="503" fill="#f1f5f9" font-size="11.5">&#8226; High-Risk AI System Certified</text>
+  <text x="1040" y="523" fill="#f1f5f9" font-size="11.5">&#8226; Conformity Score: S_conf = 0.998</text>
+  <text x="1040" y="543" fill="#f1f5f9" font-size="11.5">&#8226; Shield: $35M Fine Protected</text>
+  <text x="1040" y="565" fill="#38bdf8" font-size="11.5" font-weight="bold">&#10003; Approved by Notified Body</text>
+
+  <!-- Deliverable 4 -->
+  <rect x="1025" y="590" width="290" height="125" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1170" y="615" fill="#34d399" font-size="12.5" font-weight="bold" text-anchor="middle">Business Value Realization</text>
+  <text x="1040" y="638" fill="#f1f5f9" font-size="11.5">&#8226; Zero Unplanned Thermal Runaway</text>
+  <text x="1040" y="658" fill="#f1f5f9" font-size="11.5">&#8226; PSD Maintained at 99.88%</text>
+  <text x="1040" y="678" fill="#f1f5f9" font-size="11.5">&#8226; OpEx Savings: $18.4M/yr</text>
+  <text x="1040" y="700" fill="#4ade80" font-size="11.5" font-weight="bold">&#10003; Verified vs Phase A Case</text>
+
+  <!-- Deliverable 5 -->
+  <rect x="1025" y="725" width="290" height="140" rx="8" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="1170" y="750" fill="#ffffff" font-size="12.5" font-weight="bold" text-anchor="middle">Phase H Handover Ready</text>
+  <text x="1040" y="773" fill="#e0e7ff" font-size="11.5">&#8226; Post-Implementation Review set</text>
+  <text x="1040" y="793" fill="#e0e7ff" font-size="11.5">&#8226; Change Request Triaging active</text>
+  <text x="1040" y="813" fill="#e0e7ff" font-size="11.5">&#8226; Model Governance Lifecycle on</text>
+  <text x="1040" y="845" fill="#4ade80" font-size="11.5" font-weight="bold">&#10142; Handover to Phase H (Ch. 10)</text>
+
+  <!-- Bottom Legend / Standards Bar -->
+  <rect x="30" y="892" width="1300" height="26" rx="4" fill="#0f172a"/>
+  <text x="680" y="910" fill="#94a3b8" font-size="11" text-anchor="middle">TOGAF&#174; Standard 10th Edition (Phase G) &#8226; EU Artificial Intelligence Act (Regulation 2024/1689) &#8226; SCOR Digital Standard (sE Enable Safety) &#8226; ISO/IEC 42001</text>
+</svg>
