@@ -11,7 +11,7 @@
       category: "Front Matter",
       items: [
         { id: "title", title: "Title Page", file: "title.html", tag: "Publication", desc: "Book title, subtitle, author credits, and edition details." },
-        { id: "copyright", title: "Copyright Page", file: "copyright.html", tag: "Legal", desc: "Legal disclaimers, ISBN, and TOGAF® trademark notices." },
+        { id: "copyright", title: "Declaration & Standards", file: "copyright.html", tag: "Declaration", desc: "Authorship declaration, LLM collaboration, and framework standards notices." },
         { id: "forward", title: "Foreword", file: "forward.html", tag: "Front Matter", desc: "The strategic bridge between algorithms and boardroom accountability." },
         { id: "preface", title: "Preface", file: "preface.html", tag: "Author's Note", desc: "Why we wrote a boardroom graphic novel about enterprise architecture." },
         { id: "introduction", title: "Introduction", file: "introduction.html", tag: "Orientation", desc: "Overview of tripartite ecosystem scope and architectural guidance." },
