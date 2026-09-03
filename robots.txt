@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avi-wish.github.io/ai-enablement.book/sitemap.xml
