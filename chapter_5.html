@@ -212,8 +212,8 @@
       <!-- SECTION 2: EVENT STORMING - DOMAIN DISCOVERY -->
       <!-- ========================================================================= -->
       <section>
-        <h2>2. Event Storming: Discovering the Terra-Resource Domain</h2>
-        <p>Event Storming, created by <strong>Alberto Brandolini</strong>, is a collaborative workshop technique where domain experts, architects, and engineers explore the entire business domain using colored sticky notes on a long timeline wall. Unlike traditional requirements gathering, Event Storming forces cross-functional discovery by starting with <strong>what happens</strong> (domain events) rather than <em>what the system should do</em> (requirements).</p>
+        <h2>2. Event Storming: Discovering the Terra-Resource Domain<sup><a href="#ref-5-3" id="cite-5-3" class="citation-ref">[3]</a></sup></h2>
+        <p>Event Storming, created by <strong>Alberto Brandolini</strong><sup><a href="#ref-5-3" id="cite-5-3a" class="citation-ref">[3]</a></sup>, is a collaborative workshop technique where domain experts, architects, and engineers explore the entire business domain using colored sticky notes on a long timeline wall. Unlike traditional requirements gathering, Event Storming forces cross-functional discovery by starting with <strong>what happens</strong> (domain events) rather than <em>what the system should do</em> (requirements).</p>
 
         <h3>2.1 The Workshop: Three Progressive Levels</h3>
         <p>Brandolini defines three levels of Event Storming, each progressively more detailed. Terra-Resource's architecture team will execute all three to build a complete domain model.</p>
@@ -435,8 +435,8 @@
         </table>
 
         <!-- 2.5 STANDARD TOGAF CRUD MATRIX (CONSORTIUM RULE DAT-02) -->
-        <h3>2.5 TOGAF&reg; Data Entity to Business Function CRUD Matrix</h3>
-        <p>In accordance with TOGAF&reg; Phase C data architecture guidance and Consortium Rule DAT-02, every core data entity must have unambiguous lifecycle ownership across enterprise functions, verifying that each entity has at least one authoritative Create (C) and Read (R) operation:</p>
+        <h3>2.5 TOGAF&reg; Data Entity to Business Function CRUD Matrix<sup><a href="#ref-5-1" id="cite-5-1" class="citation-ref">[1]</a></sup><sup><a href="#ref-5-5" id="cite-5-5" class="citation-ref">[5]</a></sup></h3>
+        <p>In accordance with TOGAF&reg; Phase C data architecture guidance, DAMA-DMBOK2 standards, and Consortium Rule DAT-02, every core data entity must have unambiguous lifecycle ownership across enterprise functions, verifying that each entity has at least one authoritative Create (C) and Read (R) operation:</p>
 
         <div class="card" style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 0.5rem 0.75rem; font-size: 0.84rem; color: #166534; margin-bottom: 1rem;">
           <strong>Auditor Traceability Note:</strong> This TOGAF CRUD Matrix is derived directly from the DDD Aggregate &amp; Context boundaries established during Event Storming.
@@ -700,8 +700,8 @@
       <!-- SECTION 3: DOMAIN MESSAGE FLOW MODELING -->
       <!-- ========================================================================= -->
       <section>
-        <h2>3. Domain Message Flow Modeling: Designing Inter-Context Communication</h2>
-        <p>With bounded context boundaries identified through Event Storming, the next critical question is: <strong>How do these contexts communicate?</strong> Domain Message Flow Modeling &mdash; a technique popularized by <strong>Nick Tune</strong> and the <strong>DDD Crew</strong> &mdash; answers this by tracing the flow of commands, events, and queries across context boundaries for specific business scenarios.</p>
+        <h2>3. Domain Message Flow Modeling: Designing Inter-Context Communication<sup><a href="#ref-5-4" id="cite-5-4" class="citation-ref">[4]</a></sup></h2>
+        <p>With bounded context boundaries identified through Event Storming, the next critical question is: <strong>How do these contexts communicate?</strong> Domain Message Flow Modeling &mdash; a technique popularized by <strong>Nick Tune</strong> and the <strong>DDD Crew</strong><sup><a href="#ref-5-4" id="cite-5-4a" class="citation-ref">[4]</a></sup> &mdash; answers this by tracing the flow of commands, events, and queries across context boundaries for specific business scenarios.</p>
 
         <h3>3.1 Why Message Flow Modeling Matters</h3>
 
@@ -1594,7 +1594,7 @@ message MineralBatchExtractedEvent {
   bytes cryptographic_batch_hash = 9;
 }</pre>
 
-        <h3>8.2 Digital Product Passport Contract (`DigitalProductPassport.proto`)</h3>
+        <h3>8.2 Digital Product Passport Contract (`DigitalProductPassport.proto`)<sup><a href="#ref-5-2" id="cite-5-2" class="citation-ref">[2]</a></sup><sup><a href="#ref-5-7" id="cite-5-7" class="citation-ref">[7]</a></sup></h3>
         <div class="caption-block">
           <p><strong>Package:</strong> <code>ecosystem.dpp.v1</code> &mdash; Shared Kernel contract published by DPP Trust Engine (WP-TR-04) and consumed by Volt-Tech &amp; Orbit.</p>
         </div>
@@ -1643,7 +1643,7 @@ message DigitalProductPassport {
 }</pre>
 
         <!-- 8.3 PROTOBUF SCHEMA EVOLUTION POLICY & VERSION COMPATIBILITY (CONSORTIUM RULES DEL-03 & GOV-02) -->
-        <h3>8.3 Protobuf Schema Evolution Policy &amp; Version Compatibility</h3>
+        <h3>8.3 Protobuf Schema Evolution Policy &amp; Version Compatibility<sup><a href="#ref-5-6" id="cite-5-6" class="citation-ref">[6]</a></sup></h3>
         <p>In accordance with TOGAF&reg; governance guidance and Consortium Rule GOV-02 (Zero Unrecorded Deviations), the Joint Standards Council ratifies strict schema evolution rules to ensure cross-enterprise forward and backward compatibility:</p>
 
         <table class="options-table">
@@ -1883,6 +1883,90 @@ message DigitalProductPassport {
         <p class="narrator-text">"With clean mineral provenance secured through HSM-signed Digital Product Passports, Volt-Tech can now manufacture high-yield smart batteries without fearing upstream chemical liabilities."</p>
         <p class="narrator-text">"In <strong>Chapter 6: Solving Scalability Friction</strong>, our feed shifts back to Volt-Tech Manufacturing, where Rajesh Iyer must integrate advanced robotics and edge diagnostics onto the physical assembly line &mdash; executing TOGAF Phase D Technology Architecture with the clean data foundation Terra-Resource has now established."</p>
       </div>
+
+      <!-- ========================================================================= -->
+      <!-- CHAPTER REFERENCES & FACT-CHECK VERIFICATION REGISTRY                     -->
+      <!-- ========================================================================= -->
+      <section class="chapter-references">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Chapter 5 References &amp; Fact-Check Verification Registry
+        </h3>
+        <p class="ref-intro">
+          This chapter's data architectures, domain modeling methods, and digital product passport schemas are formally grounded under our <a href="copyright.html">5-Tier Epistemic Taxonomy</a>:
+        </p>
+        <ul class="references-list">
+          <li id="ref-5-1" class="reference-item">
+            <span class="ref-num">[1]</span>
+            <span class="epistemic-badge badge-standard">[STANDARD]</span>
+            <strong>The Open Group</strong> (2022). <em>The TOGAF&reg; Standard, 10th Edition: Phase C &mdash; Data Architecture</em>. Van Haren Publishing. Clauses 6.1 to 6.4.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Specifies Data Entity to Business Function matrices (CRUD analysis), logical data models, data dissemination diagrams, and data security governance.
+            </div>
+            <a href="#cite-5-1" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+
+          <li id="ref-5-2" class="reference-item">
+            <span class="ref-num">[2]</span>
+            <span class="epistemic-badge badge-statute">[STATUTE]</span>
+            <strong>Regulation (EU) 2023/1542</strong> concerning batteries and waste batteries, OJ L 191, 28.7.2023; &amp; <strong>Regulation (EU) 2024/1781</strong> establishing a framework for ecodesign requirements for sustainable products (ESPR), OJ L, 2024/1781, 28.6.2024.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Mandates Digital Product Passports (DPP) containing verified carbon footprint declarations, supply-chain due diligence provenance, and electrochemical batch composition accessible via decentralized identifiers.
+            </div>
+            <a href="#cite-5-2" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+
+          <li id="ref-5-3" class="reference-item">
+            <span class="ref-num">[3]</span>
+            <span class="epistemic-badge badge-academic">[ACADEMIC]</span>
+            <strong>Brandolini, A.</strong> (2021). <em>Introducing EventStorming: An Agile Methodology for Rapid Domain Exploration</em>. Leanpub.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Establishes the three progressive workshop formats (Big Picture, Process, Design-Level) and standardized sticky note semantic coloring (Orange for Events, Blue for Commands, Yellow for Aggregates, Red for Hotspots).
+            </div>
+            <a href="#cite-5-3" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+
+          <li id="ref-5-4" class="reference-item">
+            <span class="ref-num">[4]</span>
+            <span class="epistemic-badge badge-academic">[ACADEMIC]</span>
+            <strong>Tune, N.</strong> (2024). <em>Architecture Modernization: Socio-technical Alignment of Software, Structure and Strategy</em>. Manning Publications.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Defines Domain Message Flow Modeling as the socio-technical bridge between EventStorming and Context Mapping, validating sync/async message flows and bounded context autonomy.
+            </div>
+            <a href="#cite-5-4" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+
+          <li id="ref-5-5" class="reference-item">
+            <span class="ref-num">[5]</span>
+            <span class="epistemic-badge badge-industry">[INDUSTRY]</span>
+            <strong>DAMA International</strong> (2017). <em>DAMA-DMBOK: Data Management Body of Knowledge</em> (2nd Edition). Technics Publications.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Rules for Master Data Management (MDM), System of Record (SoR) designations, and data quality dimensions (Accuracy, Completeness, Timeliness, Lineage).
+            </div>
+            <a href="#cite-5-5" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+
+          <li id="ref-5-6" class="reference-item">
+            <span class="ref-num">[6]</span>
+            <span class="epistemic-badge badge-standard">[STANDARD]</span>
+            <strong>Google LLC</strong> (2023). <em>Protocol Buffers Language Specification (proto3)</em> &amp; <strong>The Apache Software Foundation</strong> <em>Apache Avro Schema Evolution Guarantees</em>.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Backward and forward binary compatibility rules: field tag immutability, reserved index allocation, and additive-only schema evolution policies.
+            </div>
+            <a href="#cite-5-6" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+
+          <li id="ref-5-7" class="reference-item">
+            <span class="ref-num">[7]</span>
+            <span class="epistemic-badge badge-simulation">[SIMULATION]</span>
+            <strong>Terra-Resource DPP Contract &amp; Master Data Model (`ecosystem.dpp.v1`)</strong>.
+            <div class="ref-factcheck">
+              <strong>Fact-Check Verification:</strong> Simulated Protocol Buffer IDL schemas and cryptographic Merkle provenance tokens model how multi-enterprise raw mineral certifications are verified in production.
+            </div>
+            <a href="#cite-5-7" class="back-to-text">&hookleftarrow; back to text</a>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer class="navigation-footer">

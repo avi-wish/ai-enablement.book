@@ -361,10 +361,68 @@
     });
   }
 
+  function setupCitationEnhancements() {
+    // Handle citation clicks with visual pulse highlight
+    document.addEventListener('click', (e) => {
+      const citeLink = e.target.closest('.citation-ref, .back-to-text');
+      if (citeLink) {
+        const targetId = citeLink.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            document.querySelectorAll('.reference-item.highlighted, .citation-ref.highlighted').forEach(el => el.classList.remove('highlighted'));
+            targetEl.classList.add('highlighted');
+            setTimeout(() => {
+              targetEl.classList.remove('highlighted');
+            }, 2500);
+          }
+        }
+      }
+
+      // Handle copy-to-clipboard buttons (BibTeX / APA)
+      const copyBtn = e.target.closest('.cite-copy-btn');
+      if (copyBtn) {
+        const parentBox = copyBtn.closest('.cite-box');
+        if (parentBox) {
+          const codeEl = parentBox.querySelector('code') || parentBox;
+          const textToCopy = codeEl.innerText.replace('Copy BibTeX', '').replace('Copy Citation', '').trim();
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = `
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Copied!
+            `;
+            copyBtn.style.color = '#4ade80';
+            copyBtn.style.borderColor = '#22c55e';
+            setTimeout(() => {
+              copyBtn.innerHTML = originalHTML;
+              copyBtn.style.color = '';
+              copyBtn.style.borderColor = '';
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      }
+    });
+
+    // Check on initial load if hash targets a reference
+    if (window.location.hash) {
+      const targetEl = document.querySelector(window.location.hash);
+      if (targetEl && (targetEl.classList.contains('reference-item') || targetEl.classList.contains('citation-ref'))) {
+        targetEl.classList.add('highlighted');
+        setTimeout(() => targetEl.classList.remove('highlighted'), 2500);
+      }
+    }
+  }
+
   function init() {
     injectHamburgerButton();
     createDrawerDOM();
     setupKeyboardShortcuts();
+    setupCitationEnhancements();
   }
 
   if (document.readyState === 'loading') {

@@ -63,6 +63,18 @@
   </script>
 
   <link rel="stylesheet" href="style.css">
+  <!-- KaTeX LaTeX JS Library & Auto-Render Extension (Project Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
   <script src="image-viewer.js" defer></script>
   <script src="quick-nav.js" defer></script>
 </head>
@@ -118,6 +130,103 @@
             <li style="margin-bottom: 0.5rem;"><strong>Pedagogical Telemetry &amp; Regulatory Modeling:</strong> Specific quantitative performance targets, telemetry data (e.g., 72% loss reduction, 11.4-month payback, composite compliance scores), and engineering formulas are simulated, illustrative case-study models designed to demonstrate how enterprise architects apply mathematical rigor and quantitative fitness functions to AI transformations. Regulatory citations (such as EU AI Act Regulation 2024/1689 fine structures and conformity assessment procedures) are provided for architectural context and must always be verified against primary statutory texts for real-world legal compliance.</li>
             <li><strong>Practice-Based Synthesis, Not Critique:</strong> This work does not aim to critique, highlight limitations of, or dispute established industry frameworks. Rather, it represents the author's continuous self-study and practical synthesis, demonstrating how diverse disciplines unite in practice to solve real-world industrial and AI challenges.</li>
           </ul>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- CITABLE REFERENCE METADATA & HOW TO CITE THIS WORK                        -->
+        <!-- ========================================================================= -->
+        <div style="margin-top: 2.5rem; padding: 1.5rem; border: 1.5px solid #0284c7; border-radius: 10px; background-color: #f0f9ff;">
+          <h3 style="margin-top: 0; color: #0369a1; display: flex; align-items: center; gap: 0.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            How to Cite This Work (Academic &amp; Professional Reference)
+          </h3>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            To cite this publication, its architecture frameworks, or chapter case studies in academic papers, enterprise Architecture Review Board (ARB) submissions, or corporate strategy whitepapers, please use the following standardized bibliographic entries:
+          </p>
+
+          <div style="margin-top: 1rem;">
+            <h4 style="font-size: 0.95rem; color: #0f172a; margin-bottom: 0.25rem;">APA (7th Edition)</h4>
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.88rem; color: #1e293b; font-family: ui-serif, Georgia, serif;">
+              Das, A. (2026). <em>The Reality of Enterprise AI: A Boardroom Trilogy &amp; Enterprise Architecture Narrative</em> (1st Web ed.). Kolkata, India: Open Architecture Knowledge Base. https://avikdas.github.io/AIEnablement/
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <h4 style="font-size: 0.95rem; color: #0f172a; margin-bottom: 0.25rem;">IEEE Style</h4>
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.88rem; color: #1e293b; font-family: ui-monospace, SFMono-Regular, monospace;">
+              A. Das, <em>The Reality of Enterprise AI: A Boardroom Trilogy &amp; Enterprise Architecture Narrative</em>, 1st ed. Kolkata, India: Open Architecture Knowledge Base, 2026. [Online]. Available: https://avikdas.github.io/AIEnablement/
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem;">
+            <h4 style="font-size: 0.95rem; color: #0f172a; margin-bottom: 0.25rem;">BibTeX Entry</h4>
+            <div class="cite-box">
+              <button class="cite-copy-btn" type="button" title="Copy BibTeX citation">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy BibTeX
+              </button>
+              <code>@book{Das2026RealityEnterpriseAI,
+  author    = {Das, Avik},
+  title     = {The Reality of Enterprise AI: A Boardroom Trilogy \& Enterprise Architecture Narrative},
+  year      = {2026},
+  edition   = {1st Web Edition},
+  publisher = {Open Architecture Knowledge Base},
+  address   = {Kolkata, India},
+  url       = {https://avikdas.github.io/AIEnablement/},
+  keywords  = {Enterprise Architecture, TOGAF, Artificial Intelligence, Domain-Driven Design, Supply Chain, SCOR, ISA-95, EU AI Act}
+}</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- 5-TIER EPISTEMIC VERIFICATION TAXONOMY                                    -->
+        <!-- ========================================================================= -->
+        <div style="margin-top: 2rem;">
+          <h3 style="color: #0f172a; margin-bottom: 0.5rem;">Epistemic Verification Taxonomy</h3>
+          <p style="color: #475569; font-size: 0.95rem; line-height: 1.6;">
+            Every reference, formula, benchmark, and architectural rule across this book is labeled with an explicit <strong>Epistemic Badge</strong> to eliminate verification ambiguity and provide instant fact-checking traceability:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; border-top: 3px solid #7e22ce;">
+              <span class="epistemic-badge badge-statute">[STATUTE]</span>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0.5rem 0 0;">
+                Binding statutory legislation and governmental legal directives published in official gazettes (e.g., EU AI Act Regulation 2024/1689, EU Battery Regulation 2023/1542, Delaware General Corporation Law).
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; border-top: 3px solid #0369a1;">
+              <span class="epistemic-badge badge-standard">[STANDARD]</span>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0.5rem 0 0;">
+                Formally ratified consensus standards published by international standard development bodies (e.g., The Open Group TOGAF® 10th Ed., ISO 26262 ASIL-D, ISO/SAE 21434, ANSI/ISA-95, ASCM SCOR-DS v14).
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; border-top: 3px solid #15803d;">
+              <span class="epistemic-badge badge-academic">[ACADEMIC]</span>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0.5rem 0 0;">
+                Peer-reviewed scientific journals, computer science literature, economic theorems, and foundational publications (e.g., Evans' DDD, Little's Queuing Law, Solow's Productivity Paradox, Brandolini's EventStorming).
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; border-top: 3px solid #b45309;">
+              <span class="epistemic-badge badge-industry">[INDUSTRY]</span>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0.5rem 0 0;">
+                Widely recognized empirical enterprise frameworks, industrial quality manuals, and analyst methodologies (e.g., Gartner TIME, AIAG APQP/PPAP 4th Ed., NIST AI RMF 1.0, DAMA-DMBOK2).
+              </p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; border-top: 3px solid #475569;">
+              <span class="epistemic-badge badge-simulation">[SIMULATION]</span>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0.5rem 0 0;">
+                Pedagogical enterprise telemetry and calibrated case study models (e.g., Orbit's $50M quarterly bleed, 72% loss reduction, Kolmogorov-Smirnov drift threshold \(D_{\text{KS}} \ge 0.08\)). All underlying formulas and parametric assumptions are fully disclosed in chapter fact-check notes.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
