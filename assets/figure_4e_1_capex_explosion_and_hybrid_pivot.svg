@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="amberGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="greenGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="blueGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <marker id="arrow4" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowRed4" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f87171" />
+    </marker>
+    <marker id="arrowGreen4" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#4ade80" />
+    </marker>
+    <filter id="shadow4" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad4)" stroke="#334155" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="0.5">
+    FIGURE 4E.1: In-House Build CapEx Collapse &amp; Hybrid Business Architecture Pivot
+  </text>
+  <text x="500" y="60" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">
+    Phase B Business Architecture Exception: Cost S-Curve Inversion, Expired Waiver DSP-BUS-03 &amp; Rule BUS-05 Stop-Work Gate
+  </text>
+
+  <!-- ==================== BOX 1: OPTION B COMMITMENT ==================== -->
+  <rect x="40" y="90" width="280" height="175" rx="8" fill="url(#blueGrad4)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="40" y="90" width="280" height="32" rx="8" fill="#082f49"/>
+  <text x="180" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e0f2fe">
+    1. Canonical Option B (Chapter 4)
+  </text>
+  <text x="55" y="142" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Strategy: 100% In-House Build</text>
+  <text x="55" y="162" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Justification: Protect Proprietary IP</text>
+  <text x="55" y="182" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; CapEx Budget Cap: $8,500,000</text>
+  <text x="55" y="202" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Projected Net Present Value: +$34M</text>
+  <text x="55" y="222" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Staffing Model: 14 Specialized PhDs</text>
+  <text x="55" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Decision Matrix Score: 8.4 vs 6.1</text>
+
+  <!-- Arrow Box 1 -> Box 2 -->
+  <path d="M 320 175 L 365 175" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow4)"/>
+
+  <!-- ==================== BOX 2: SKILLS VACUUM & COST EXPLOSION ==================== -->
+  <rect x="370" y="90" width="260" height="175" rx="8" fill="url(#amberGrad4)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="370" y="90" width="260" height="32" rx="8" fill="#451a03"/>
+  <text x="500" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fef3c7">
+    2. The Talent &amp; CapEx Bleed
+  </text>
+  <text x="385" y="142" font-family="sans-serif" font-size="11.5" fill="#fef3c7">&#8226; Talent Market Dried Up (0 of 14 Hired)</text>
+  <text x="385" y="162" font-family="sans-serif" font-size="11.5" fill="#fca5a5" font-weight="bold">&#8226; Contractor Rates: $180/h &#8594; $450/h</text>
+  <text x="385" y="182" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Monthly Burn Spikes to $1.1M/month</text>
+  <text x="385" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; CapEx Bleeds from $8.5M &#8594; $22.4M</text>
+  <text x="385" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Model Delivery: Only 35% Completed</text>
+  <text x="385" y="242" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Project NPV Inverts to -$12M</text>
+
+  <!-- Arrow Box 2 -> Box 3 -->
+  <path d="M 630 175 L 675 175" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed4)"/>
+
+  <!-- ==================== BOX 3: FISCAL AUDIT CRISIS ==================== -->
+  <rect x="680" y="90" width="280" height="175" rx="8" fill="url(#redGrad4)" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow4)"/>
+  <rect x="680" y="90" width="280" height="32" rx="8" fill="#450a0a"/>
+  <text x="820" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">
+    3. Fiduciary Audit &amp; Debt Threat
+  </text>
+  <text x="695" y="142" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; Q3 Fiscal Audit by Priya Kapoor</text>
+  <text x="695" y="162" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; $13.9M Unbudgeted Overrun Discovered</text>
+  <text x="695" y="182" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Corporate Debt Covenants Threatened</text>
+  <text x="695" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Syndicated Credit Facility Breach Risk</text>
+  <text x="695" y="222" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Boardroom Revolt: Threat to Terminate EA</text>
+  <text x="695" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Gate BUS-03 Certification Falsified</text>
+
+  <!-- Downward Arrow Box 3 -> Box 4 -->
+  <path d="M 820 265 L 820 325" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed4)"/>
+
+  <!-- ==================== BOX 4: AUDIT OF EXPIRED DISPENSATION ==================== -->
+  <rect x="640" y="335" width="320" height="195" rx="8" fill="url(#redGrad4)" stroke="#f87171" stroke-width="2" filter="url(#shadow4)"/>
+  <rect x="640" y="335" width="320" height="32" rx="8" fill="#450a0a"/>
+  <text x="800" y="357" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">
+    4. Missed Gate &amp; Expired Waiver Audit
+  </text>
+  <text x="655" y="387" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>Gate BUS-03:</strong> Milestone Burn-to-Capability</text>
+  <text x="655" y="407" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>DSP-BUS-03:</strong> 90d staffing variance waiver</text>
+  <text x="655" y="427" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Expiration: Expired on Day 91 Unremediated</text>
+  <text x="655" y="447" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Engineering leads hid billing rates in OpEx</text>
+  <text x="655" y="467" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Fiduciary Duty of Loyalty &amp; Care Violated</text>
+  <text x="655" y="487" font-family="sans-serif" font-size="11.5" fill="#fef08a" font-weight="bold">&#8226; EAB Sanction: Immediate Stop-Work Order</text>
+  <text x="655" y="507" font-family="sans-serif" font-size="11.5" fill="#fef08a">&#8226; Mandatory Pivot to Hybrid Architecture</text>
+
+  <!-- Leftward Arrow Box 4 -> Box 5 -->
+  <path d="M 640 435 L 565 435" stroke="#4ade80" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen4)"/>
+
+  <!-- ==================== BOX 5: GOVERNANCE RECOVERY ==================== -->
+  <rect x="40" y="315" width="515" height="235" rx="8" fill="url(#greenGrad4)" stroke="#34d399" stroke-width="2" filter="url(#shadow4)"/>
+  <rect x="40" y="315" width="515" height="32" rx="8" fill="#064e3b"/>
+  <text x="297" y="337" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ecfdf5">
+    5. Phase B Governance Recovery &amp; Hybrid Pivot
+  </text>
+
+  <text x="60" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">Business Architecture Sanctions &amp; Pivot:</text>
+  <text x="60" y="394" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Stop-Work Order:</strong> Terminated external contractor burn</text>
+  <text x="60" y="414" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Pivot to Option C (Hybrid):</strong> Licensed COTS PINN solver</text>
+  <text x="60" y="434" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>IP Enclave Ring-Fencing:</strong> Isolated chemistry parameters</text>
+  <text x="60" y="454" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Rule BUS-05:</strong> Stage-Gate Stop-Work at &gt;15% variance</text>
+  <text x="60" y="474" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>University Research Consortium:</strong> Replaced $450/h contractors</text>
+
+  <text x="325" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15">Financial Recovery &amp; Solvency:</text>
+  <text x="325" y="394" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; CapEx Burn Clamped: Saved $8.2M</text>
+  <text x="325" y="414" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Commercial COTS Integration: 60 days</text>
+  <text x="325" y="434" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; 100% degradation curves delivered</text>
+  <text x="325" y="454" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Restored Positive NPV: +$21.4M</text>
+  <text x="325" y="474" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Bank credit covenants fully secured</text>
+
+  <!-- Bottom Banner in Governance Box -->
+  <rect x="55" y="495" width="485" height="42" rx="4" fill="#042f2e" stroke="#14b8a6" stroke-width="1"/>
+  <text x="297" y="514" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#5eead4">
+    TOGAF Handshake: Business Architecture Handover to Phase C (Data Architecture)
+  </text>
+  <text x="297" y="530" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#ccfbf1">
+    Business Model Canvas &amp; Capability Map Re-baselined with Hybrid Commercial Licensing
+  </text>
+
+  <!-- Bottom Legend -->
+  <rect x="40" y="570" width="920" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="65" cy="587" r="6" fill="#38bdf8"/>
+  <text x="80" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">In-House Target</text>
+  <circle cx="205" cy="587" r="6" fill="#f59e0b"/>
+  <text x="220" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">CapEx Burn S-Curve</text>
+  <circle cx="365" cy="587" r="6" fill="#ef4444"/>
+  <text x="380" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Fiduciary Crisis</text>
+  <circle cx="505" cy="587" r="6" fill="#10b981"/>
+  <text x="520" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Hybrid Architecture Pivot</text>
+  <text x="940" y="591" text-anchor="end" font-family="sans-serif" font-size="11" fill="#64748b">TOGAF ADM Phase B &amp; BIZBOK Guide</text>
+</svg>

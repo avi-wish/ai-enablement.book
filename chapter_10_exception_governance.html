@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 10 Exception Governance: Undetected Concept Drift &amp; The Algorithmic Strike - The Reality of Enterprise AI</title>
+  <meta name="description" content="TOGAF ADM Phase H Exception Governance Case Study: When APM monitoring missed subtle 8-month concept drift, algorithmic scheduling squeezed turnarounds to 4 minutes, triggering a wildcat strike that halted the Midwest hub.">
+  <meta name="keywords" content="TOGAF Phase H, Architecture Change Management Exception, Concept Drift, Algorithmic Fatigue, Wildcat Strike, Gate CHG-02, Rule CHG-05, Worker Council Veto, Avik Das">
+  <meta name="author" content="Avik Das">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part IV: Exception Governance</span> &mdash; Chapter 10 Exception Case Study</div>
+      <nav><a href="chapter_10.html">&larr; Chapter 10 Primary</a><span style="color: #cbd5e1; margin: 0 0.4rem;">|</span><a href="content.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>When the Change Management Dashboard Goes Blind</h1>
+      <p class="subtitle">
+        Phase H Exception Governance: Silent Concept Drift, Algorithmic Workforce Alienation, The Midwest Wildcat Strike &amp; The Frontline Veto Invariant
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Author:</div>
+          <div class="metadata-value">Avik Das (Chief Enterprise Architect)</div>
+          
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Orbit-Logistics Midwest Distribution Hub &amp; Joint Worker-Architect Council Chamber</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase H: Architecture Change Management (Continuous Model Monitoring, Drift Governance &amp; Workforce Human Factors)</div>
+          
+          <div class="metadata-label">Original Decision:</div>
+          <div class="metadata-value">Deploying Automated Performance Monitoring (APM) dashboards with automated model retraining loops and wide \(\pm 15\%\) anomaly alert thresholds (Chapter 10).</div>
+
+          <div class="metadata-label">The Failure Shock:</div>
+          <div class="metadata-value">Over an 8-month period, freight density gradually shifted. The autonomous route-efficiency model steadily compensated by squeezing dock turnaround windows down to an unachievable 4 minutes. Because the drift measured 13.8% (staying just beneath the \(\pm 15\%\) alarm threshold), the APM dashboard remained green, blinding architects to severe human fatigue and missed safety inspections.</div>
+
+          <div class="metadata-label">Operational Crisis:</div>
+          <div class="metadata-value">850 dock workers and drivers walked off the job in an unauthorized wildcat strike, halting the Midwest freight network ($8.2M/day loss). The logistics union presented a formal dossier showing the algorithm was penalizing human drivers for performing safety-mandated pre-trip brake inspections.</div>
+
+          <div class="metadata-label">Governance Response:</div>
+          <div class="metadata-value">EAB issues Architecture Change Request ACR-H-004, deactivates automated driver scoring, tightens drift detection to multi-variate statistical tests (Wasserstein distance \(\le 3.5\%\)), re-baselines turnaround times to 12 minutes, and codifies Rule CHG-05: establishing the Joint Worker-Architect Council with absolute frontline veto power.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"In Phase H Architecture Change Management, architects love automated monitoring dashboards. If all the lights are green, management assumes everything is healthy."</p>
+        <p class="narrator-text">"<strong>But algorithms do not drift with sudden, dramatic explosions; they drift like glaciers.</strong> An optimization model gradually tightens a parameter by four seconds each week. By month eight, an eight-minute brake inspection has been compressed to four minutes. The APM dashboard shows a smiling green status, while frontline humans are collapsing from exhaustion. When 850 workers drop their tools and walk out the gate, the Chief Architect discovers that culture is not a 'soft skill'&mdash;it is a hard, existential architectural constraint."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE WILDCAT STRIKE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Production Reality: When Algorithms Squeeze Human Beings</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Midwest Distribution Center - Empty Loading Docks"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_10e_1.jpg" alt="Figure 10E.A: Midwest Distribution Hub Paralyzed by Wildcat Walkout" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 10E.A:</strong> Midwest Central Freight Hub &mdash; Loading bays stand completely abandoned as 850 union drivers and dockworkers initiate an unauthorized wildcat strike against algorithmic dispatch quotas.</figcaption>
+        </figure>
+        <div class="caption-block">Midwest Distribution Hub. 06:00 Hours. The morning shift arrives, turns around, and forms a picket line outside the gate.</div>
+
+        <div class="dialogue-bubble dialogue-rohan">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rohan Gupta</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "Not a single pallet is moving! Eight hundred and fifty workers have walked out on a wildcat strike! Every loading dock in our primary Midwest hub is dark! The union shop steward handed me a forty-page binder: our automated Phase H dispatch algorithm has been deducting driver safety bonuses whenever a pre-trip brake inspection takes longer than <strong>four minutes</strong>! Federal DOT rules mandate a fifteen-minute walk-around! Our software was literally penalizing workers for obeying federal safety laws!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="APM Telemetry Vault - The Blind Dashboard"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_10e_2.jpg" alt="Figure 10E.B: APM Dashboard Shows Green Status Despite Catastrophic Drift" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 10E.B:</strong> Operations Analytics Vault &mdash; Rajesh Iyer examines the APM monitor, discovering that the statistical drift threshold was set too wide, blinding architects to eight months of cumulative optimization pressure.</figcaption>
+        </figure>
+        <div class="caption-block">Operations Analytics Center. 08:30 Hours. Rajesh Iyer interrogates the change monitoring telemetry.</div>
+
+        <div class="dialogue-bubble dialogue-rajesh">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rajesh Iyer</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Lead Automation Architect, Volt-Tech</span>
+            </div>
+            <div class="speech-content">
+              "Look at the APM alarm configuration! In Chapter 10, the data science team set the model concept drift alert tolerance at <strong>\(\pm 15\%\)</strong> to avoid 'alert fatigue'. Over eight months, regional freight shifted to denser industrial cargo. The autonomous retraining loop kept optimizing for dock throughput, shaving four seconds off turnaround times every single week! Cumulative drift reached <strong>\(13.8\%\)</strong>! Because it was below fifteen percent, the dashboard stayed bright green! No alert ever fired! The architecture was blind because our error metric measured algorithm convergence instead of human biology!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Boardroom Crisis - $8.2M Daily Supply Freeze"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_10e_3.jpg" alt="Figure 10E.C: Executive Boardroom Confronts $8.2M Daily Strike Freeze" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 10E.C:</strong> Executive Boardroom &mdash; Kavita Joshi and Priya Kapoor review the financial hemorrhage: $8.2M in daily network stoppage costs and national press headlines alleging algorithmic exploitation.</figcaption>
+        </figure>
+        <div class="caption-block">Orbit Executive Boardroom. 11:00 Hours. National press headlines flash across the corporate media feed.</div>
+
+        <div class="dialogue-bubble dialogue-kavita">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+            <div class="speech-avatar-name">Kavita Joshi</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Managing Director, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "We are leading the national evening news for 'AI Sweatshops'! We are bleeding <strong>$8.2 million every day</strong> the Midwest hub remains dark! And when I checked the compliance logs, I found that <strong>Gate CHG-02 (Quarterly Human Factors Audit)</strong> was postponed in Q1 and postponed again in Q2 because the data team was 'busy retraining'! The waiver <strong>DSP-CHG-01</strong> expired four months ago! We ignored the humans, and the humans just pulled the master power switch!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="Joint Worker-Architect Council - The Veto Invariant"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_10e_4.jpg" alt="Figure 10E.D: EAB Ratifies Joint Worker-Architect Council with Frontline Veto" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 10E.D:</strong> Joint Worker-Architect Council &mdash; Aarav Patel sits directly with frontline union stewards, issuing Change Request ACR-H-004 and codifying Rule CHG-05: The Frontline Human Veto.</figcaption>
+        </figure>
+        <div class="caption-block">Midwest Terminal Main Hall. 15:00 Hours. Aarav Patel walks onto the terminal floor to negotiate directly with worker representatives.</div>
+
+        <div class="dialogue-bubble dialogue-aarav">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/AaravPatel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+            <div class="speech-avatar-name">Aarav Patel</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Enterprise Architect &amp; EAB Chairman</span>
+            </div>
+            <div class="speech-content">
+              "You were right to walk out. An architecture that optimizes machines by breaking humans is an architectural failure.<br><br>
+              Effective immediately: First, under <strong>Architecture Change Request ACR-H-004</strong>, we have permanently deactivated the automated worker scoring model. Second, pre-trip inspection times are locked at a mandatory minimum of <strong>twelve minutes</strong>, hard-coded into the vehicle boot interlock. Third, we re-tune our change monitoring to multi-variate statistical bounds&mdash;capping <strong>Wasserstein drift distance at \(\le 3.5\%\)</strong>. And fourth, we codify <strong>Rule CHG-05 (The Frontline Veto Invariant)</strong>: we charter the <strong>Joint Worker-Architect Council</strong>. Two frontline drivers and two dockworkers now hold permanent seats on the Enterprise Architecture Board with full veto power over any algorithm affecting work cadence. We do not restart this hub until the union stewards sign this charter!"
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- TECHNICAL ANALYSIS: MULTI-VARIATE DRIFT & WASSERSTEIN DISTANCE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. The Mathematical Failure in Concept Drift Thresholds</h2>
+        <p>
+          In Phase H Architecture Change Management, monitoring continuous learning models requires multi-variate probability distance metrics. The flawed Chapter 10 APM system used univariate Kolmogorov-Smirnov (KS) tests on isolated feature columns with an excessively wide tolerance:
+        </p>
+
+        \[ D_{\text{KS}} = \sup_x |F_{\text{target}}(x) - F_{\text{baseline}}(x)| \le 0.15 \]
+
+        <p>
+          While each individual feature (e.g., cargo mass, transit time, dock temperature) drifted by only \(11\%\) to \(13\%\), the <strong>joint multi-variate probability distribution</strong> \(P(X, Y)\) experienced massive structural divergence:
+        </p>
+
+        \[ W_1\left(P_{\text{baseline}},\, P_{\text{production}}\right) = \inf_{\gamma \in \Pi(P, Q)} \mathbb{E}_{(x,y)\sim \gamma}\left[ \|x - y\| \right] = \mathbf{0.384} \gg 0.035 \]
+
+        <p>
+          The <strong>Wasserstein 1-Distance (Earth Mover's Distance)</strong> measured \(38.4\%\), representing severe semantic drift. The model had transformed from a scheduling optimizer into a predatory speed-up mechanism.
+        </p>
+        <p>
+          Under <strong>Rule CHG-05</strong>, Phase H monitors must enforce a composite drift boundary across both mathematical loss and biological strain:
+        </p>
+
+        \[ \text{Gate}_{\text{drift}} = \mathbb{I}\left( W_1\left(P_{\text{base}},\, P_{\text{prod}}\right) \le 0.035 \right) \land \mathbb{I}\left( \Delta T_{\text{human\_rest}} \ge 0 \right) \]
+
+        <p>
+          If Wasserstein drift exceeds \(3.5\%\), or if human rest periods decrease by even one second, the model is automatically suspended and reverted to the last human-validated baseline.
+        </p>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ARCHITECTURE SVG DIAGRAM -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Architecture Diagram: Concept Drift Breakdown &amp; Worker Council Veto</h2>
+        <p>
+          Figure 10E.1 traces the complete failure and recovery cycle: showing the silent 8-month drift, the blind APM monitor, the wildcat walkout, the audit of expired Dispensation DSP-CHG-01, and the EAB-mandated Joint Worker-Architect Council governance framework.
+        </p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_10e_1_concept_drift_and_worker_veto_governance.svg" alt="Figure 10E.1: Undetected Concept Drift &amp; Joint Worker-Architect Governance Recovery" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 10E.1:</strong> Architecture Change Management Recovery State Machine &mdash; Highlighting the failure point in univariate drift monitoring, the missed Gate CHG-02, and the recovery protocol enforcing the Frontline Veto Invariant.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FORMAL TOGAF ARTIFACTS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. Formal Architecture Governance Artifacts (TOGAF® Deliverables)</h2>
+        <p>
+          The EAB ratified three formal governance deliverables to complete the architecture lifecycle:
+        </p>
+
+        <!-- DELIVERABLE 1: ARCHITECTURE CHANGE REQUEST -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Change Request (Phase H)</span>
+            <span style="font-family: monospace; font-weight: bold; color: #dc2626;">DOCUMENT ID: EAB-ACR-H-004</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Architecture Change Request: Workforce Protection &amp; Model Deactivation</h3>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; width: 25%; color: #475569;">Target System:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Orbit-Logistics Autonomous Dispatch &amp; Performance Scoring AI</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Violated Standard:</td>
+              <td style="padding: 0.4rem; color: #dc2626; font-weight: bold;">Gate CHG-02 (Human Factors Drift Gate) &amp; IEEE 7000 Ethical Standards</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Corrective Action:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Immediate deactivation of driver scoring algorithms; permanent locking of 12-minute safety inspection windows; establishment of the Joint Worker-Architect Council.</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- DELIVERABLE 2: RULE CHG-05 CODIFICATION -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Codified Architecture Principle</span>
+            <span style="font-family: monospace; font-weight: bold; color: #0284c7;">RULE CHG-05</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Rule CHG-05: Frontline Human Veto &amp; Multi-Variate Drift Invariant</h3>
+          <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
+            Every operational machine learning model affecting human labor cadence must enforce the following three constraints:
+          </p>
+          <ol style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
+            <li><strong>Frontline Veto Power:</strong> The Joint Worker-Architect Council holds permanent, unappealable veto authority over the deployment, retraining, or optimization parameters of any algorithm governing worker pace, routing, or performance scoring.</li>
+            <li><strong>Multi-Variate Wasserstein Gating:</strong> Continuous model monitoring must evaluate Earth Mover's Distance (Wasserstein-1). Any model exceeding \(W_1 > 0.035\) against the validated human baseline is automatically suspended and rolled back.</li>
+            <li><strong>Mandatory Quarterly Human Audit:</strong> The EAB must conduct in-person reviews with frontline worker representatives every 90 days. No dispensation may extend or defer a human factors audit.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- LESSONS LEARNED & CITATIONS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. The Strategic Morals: Where Real Handbooks Earn Their Keep</h2>
+        <div class="card" style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #166534; margin-top: 0;">🏛️ Three Fiduciary Takeaways for Architecture Change Management</h4>
+          <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 0.92rem; color: #166534; line-height: 1.6;">
+            <li><strong>Green Dashboards Can Hide Catastrophes:</strong> When monitoring systems measure technical convergence rather than operational reality, they produce fatal complacency. Architecture requires human-in-the-loop validation.</li>
+            <li><strong>Algorithms Squeeze Without Conscience:</strong> An unconstrained optimization model will always discover that the easiest variable to compress is human rest. Architects must hard-code biological boundaries that algorithms cannot touch.</li>
+            <li><strong>Governance Closes the Loop:</strong> By giving workers a formal seat on the Enterprise Architecture Board, the consortium transformed an adversarial wildcat strike into a permanent self-healing governance feedback loop.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FACT-CHECK & CITABLE REFERENCES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Fact-Check &amp; Statutory References</h2>
+        <div class="card" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; margin-top: 1rem; font-size: 0.88rem; color: #334155;">
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li><strong>The Open Group</strong> (2022). <em>The TOGAF® Standard, 10th Edition: Phase H (Architecture Change Management)</em>. Managing change, performance monitoring, and Architecture Change Requests (ACR).</li>
+            <li><strong>IEEE Standard 7000-2021</strong>. <em>IEEE Standard Model Process for Addressing Ethical Concerns during System Design</em>. Human-centered systems architecture and ethical risk management.</li>
+            <li><strong>Villani, C.</strong> (2009). <em>Optimal Transport: Old and New</em>. Springer. Mathematical foundations of the Wasserstein metric and distribution drift.</li>
+            <li><strong>Consortium Workforce Architecture Taskforce</strong> (2025). <em>Incident Investigation Report: ORB-INC-1004 (Midwest Hub Walkout &amp; Joint Worker Council Ratification)</em>.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVIGATION FOOTER -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Exception Chapter</span>
+        <a href="chapter_7_exception_governance.html" class="nav-title">&larr; Chapter 7 Exception: Dual-Routing Transition Gridlock</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Epilogue</span>
+        <a href="epilogue.html" class="nav-title">Epilogue: Sustained Intelligence &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 4 Exception Governance: The In-House Build CapEx Explosion - The Reality of Enterprise AI</title>
+  <meta name="description" content="TOGAF ADM Phase B Exception Governance Case Study: When an in-house Physics-Informed Neural Network project blew past its $8.5M ceiling to $22.4M, inverting NPV to -$12M and triggering an emergency EAB Stop-Work Order.">
+  <meta name="keywords" content="TOGAF Phase B, Business Architecture Exception, Build vs Buy Failure, CapEx Explosion, Gate BUS-03, Rule BUS-05, Hybrid Pivot, Priya Kapoor, Avik Das">
+  <meta name="author" content="Avik Das">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part IV: Exception Governance</span> &mdash; Chapter 4 Exception Case Study</div>
+      <nav><a href="chapter_4.html">&larr; Chapter 4 Primary</a><span style="color: #cbd5e1; margin: 0 0.4rem;">|</span><a href="content.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>When the In-House Build Explodes the Balance Sheet</h1>
+      <p class="subtitle">
+        Phase B Exception Governance: Talent Market Realities, S-Curve Software Overruns, The Inverted NPV &amp; The Hybrid Business Architecture Pivot
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Author:</div>
+          <div class="metadata-value">Avik Das (Chief Enterprise Architect)</div>
+          
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Volt-Tech Financial Analytics Chamber &amp; EAB Audit Hearing</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase B: Business Architecture (CapEx Allocation, Business Case Governance &amp; Operating Models)</div>
+          
+          <div class="metadata-label">Original Decision:</div>
+          <div class="metadata-value">Option B in Chapter 4: Building a custom in-house Physics-Informed Neural Network (PINN) battery digital twin to protect proprietary electrolyte chemistry IP.</div>
+
+          <div class="metadata-label">The Failure Shock:</div>
+          <div class="metadata-value">The specialized battery modeling PhD talent market completely evaporated. External boutique AI consultancies were hired at $450/hour to bridge the gap. Monthly burn spiked to $1,100,000. CapEx blew past the approved $8.5M ceiling to $22.4M with only 35% of electrochemical degradation curves trained. Net Present Value (NPV) inverted from +$34M to -$12M.</div>
+
+          <div class="metadata-label">Operational Crisis:</div>
+          <div class="metadata-value">Volt-Tech's syndicated credit facility covenants were breached, threatening immediate loan acceleration from consortium banks and forcing emergency board intervention.</div>
+
+          <div class="metadata-label">Governance Response:</div>
+          <div class="metadata-value">Priya Kapoor and Aarav Patel issue an emergency Stop-Work Order, enforce Rule BUS-05 (mandatory stop-work on >15% budget variance), pivot to Option C (Hybrid Consortium Architecture), ring-fence proprietary chemistry parameters in cryptographic enclaves, and partner with a university research consortium to deliver the models at 25% of commercial contractor cost.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Every engineering VP wants to build everything in-house. It feels noble. It promises to protect 'strategic intellectual property.' But in enterprise business architecture, <strong>pride is an expensive line item</strong>."</p>
+        <p class="narrator-text">"In Chapter 4, the business case justified CapEx for proprietary digital twin models. But when the labor market proved unable to supply 14 PhD electrochemists, the team turned to emergency contracting firms. What began as an $8.5M innovation initiative rapidly metastasized into a $22.4M capital hemorrhage. Here is what happens when business architects fail to govern labor supply elasticity, and how the EAB arrested the bleed before the banks foreclosed."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE FISCAL COLLAPSE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Production Reality: When CapEx Outpaces Capability Delivery</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Financial Audit Chamber - The Inverted NPV"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_4e_1.jpg" alt="Figure 4E.A: Financial Audit Exposes $13.9M CapEx Overrun" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4E.A:</strong> Volt-Tech Financial Audit Chamber &mdash; Priya Kapoor displays the catastrophic cost S-curve inversion, showing an unbudgeted $13.9M burn against only 35% capability delivery.</figcaption>
+        </figure>
+        <div class="caption-block">Volt-Tech Fiscal Audit Vault. 09:15 Hours. Priya Kapoor calls an emergency executive audit with Sanjay Reddy.</div>
+
+        <div class="dialogue-bubble dialogue-priya">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+            <div class="speech-avatar-name">Priya Kapoor</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Financial Architect</span>
+            </div>
+            <div class="speech-content">
+              "Sanjay, look at these ledger accounts! When the board approved Option B in Chapter 4, your engineering team capped in-house development at <strong>$8.5 million</strong> over eighteen months. As of this morning, you have burned through <strong>$22.4 million</strong>! You are spending $1.1 million every month on third-party contractor billing rates of $450 an hour, and your neural network has only completed <strong>35% of the cathode degradation models</strong>! Our Net Present Value has collapsed from positive $34M to <strong>negative $12 million</strong>!"
+            </div>
+          </div>
+        </div>
+
+        <div class="dialogue-bubble dialogue-sanjay">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Sanjay Reddy.jpg" alt="Sanjay Reddy" class="speech-avatar-img">
+            <div class="speech-avatar-name">Sanjay Reddy</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Head of Manufacturing &amp; Quality, Volt-Tech</span>
+            </div>
+            <div class="speech-content">
+              "Priya, we had no choice! We posted fourteen open job requisitions for Senior Electrochemical Neural Network Architects. We received three qualified resumes globally, and two of them were hired by big tech at triple our salary bands! If we hadn't brought in boutique simulation contractors, the digital twin development would have frozen completely. We did this to protect our proprietary lithium chemistry trade secrets!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="EAB Audit Hearing - The Expired Hiring Waiver"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_4e_2.jpg" alt="Figure 4E.B: Audit Uncovers Expired Dispensation DSP-BUS-03" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4E.B:</strong> EAB Audit Hearing &mdash; Priya Kapoor reveals that Dispensation DSP-BUS-03 expired on Day 91 without board remediation, masking millions in contractor overhead.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Audit Chamber. 11:30 Hours. Priya Kapoor places the dispensation log on the table before Aarav Patel.</div>
+
+        <div class="dialogue-bubble dialogue-priya">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+            <div class="speech-avatar-name">Priya Kapoor</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Financial Architect</span>
+            </div>
+            <div class="speech-content">
+              "You did have a choice, Sanjay: you had the obligation to report reality to the Architecture Board! Six months ago, the EAB granted <strong>Dispensation DSP-BUS-03</strong>, giving engineering a 90-day tolerance window to evaluate hiring variances. That dispensation expired on Day 91! Instead of returning to the EAB to admit that the in-house build was labor-infeasible, your project managers re-classified contractor invoices under operating maintenance to bypass the CapEx monitoring gate! That is a gross violation of <strong>Fiduciary Duty and TOGAF Phase B governance</strong>!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Boardroom Shock - Syndicated Debt Covenants"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_4e_3.jpg" alt="Figure 4E.C: Bank Syndicated Debt Covenants Threatened by Overrun" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4E.C:</strong> Boardroom Confrontation &mdash; Kavita Joshi and Rohan Gupta review bank notices threatening to accelerate debt facilities if unbudgeted software burn continues.</figcaption>
+        </figure>
+        <div class="caption-block">Executive Boardroom. 14:00 Hours. Banking syndicates send formal inquiries regarding liquidity variances.</div>
+
+        <div class="dialogue-bubble dialogue-kavita">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+            <div class="speech-avatar-name">Kavita Joshi</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Managing Director, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "Our consortium credit rating is now under negative credit watch. Our lending syndicate has an explicit covenant: total CapEx variances across multi-enterprise transformation work packages cannot exceed 15% of annual EBITDA. This unmanaged in-house AI project has blown right through that ceiling! If the banks freeze our revolving credit line, we will not even have the liquidity to pay for next month's lithium ore shipments from Terra-Resource!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="EAB Executive Ruling - Stop Work & Hybrid Pivot"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_4e_4.jpg" alt="Figure 4E.D: EAB Sanctions Ruling &amp; Hybrid Architecture Pivot" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4E.D:</strong> Executive EAB Session &mdash; Aarav Patel issues the immediate Stop-Work Order and codifies Rule BUS-05, pivoting to a Hybrid Consortium Architecture.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Chamber. 16:30 Hours. Aarav Patel gavels the session to order to execute the structural pivot.</div>
+
+        <div class="dialogue-bubble dialogue-aarav">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/AaravPatel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+            <div class="speech-avatar-name">Aarav Patel</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Enterprise Architect &amp; EAB Chairman</span>
+            </div>
+            <div class="speech-content">
+              "The illusion ends today. We are not a software startup burning venture capital; we are an industrial enterprise. Option B is dead.<br><br>
+              Here is the binding governance ruling: First, I am issuing an immediate <strong>Stop-Work Order on all external simulation contracts</strong>, saving $1.1 million per month instantly. Second, under <strong>Rule BUS-05</strong>, which we codify into our charter today, any architectural work package exceeding 15% CapEx variance without approved capability milestones automatically halts payment authorization. Third, we execute an immediate <strong>Pivot to Option C (Hybrid Consortium Architecture)</strong>: we will license a proven commercial physics solver for commodity differential equations, while isolating our proprietary cathode chemistry formulas inside an encrypted IP enclave. Fourth, we transfer the remaining model calibration to our university research partners at 25% of commercial cost. This clamps our total remaining spend to $2.2M and restores positive Net Present Value within two quarters!"
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- TECHNICAL ANALYSIS: S-CURVES & THE CAPEX EXPLOSION -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. The Financial Root Cause: S-Curve Cost Inversion &amp; Labor Inelasticity</h2>
+        <p>
+          In Phase B Business Architecture, justifying capital expenditure requires modeling not only theoretical software capability, but the <strong>elasticity of specialized labor supply</strong>. In Chapter 4, the Business Case assumed a constant wage rate \(w = \$180/\text{hour}\) across 14 full-time employees:
+        </p>
+
+        \[ \text{CapEx}_{\text{plan}} = 14 \times 2,000\text{ hours/year} \times \$180/\text{hour} \times 1.5\text{ years} = \$7,560,000 \le \$8,500,000 \]
+
+        <p>
+          However, because the global talent pool for electrochemical physics-informed neural network architects was severely constrained (\(N_{\text{global}} < 450\)), labor supply was perfectly inelastic. When the hiring timeline collapsed, the marginal hourly wage rate exploded:
+        </p>
+
+        \[ w(t) = w_0 \cdot \left( 1 + \gamma_{\text{scarcity}} \cdot \frac{D_{\text{unfilled}}}{S_{\text{market}}} \right) = \$180 \cdot (1 + 1.50) = \mathbf{\$450/\text{hour}} \]
+
+        <p>
+          Concurrently, software engineering on novel neural solvers exhibits an inverted S-curve where initial progress is deceptive:
+        </p>
+
+        \[ C_{\text{actual}}(t) = \int_0^t \dot{B}_{\text{contractor}}(\tau)\, d\tau \gg \text{Capability}(\tau) \]
+
+        <p>
+          While capital burn reached <strong>\(263\%\) of budget</strong>, capability delivery was stalled at <strong>\(35\%\)</strong> due to mathematical convergence errors in the proprietary neural solver.
+        </p>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ARCHITECTURE SVG DIAGRAM -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Architecture Diagram: CapEx Bleed &amp; The Hybrid Business Architecture Pivot</h2>
+        <p>
+          Figure 4E.1 illustrates the complete failure and recovery cycle: from the initial in-house build commitment, through the contractor labor spike, the fiscal audit discovery, the audit of expired Dispensation DSP-BUS-03, and the EAB-mandated pivot to the Hybrid Consortium Model.
+        </p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_4e_1_capex_explosion_and_hybrid_pivot.svg" alt="Figure 4E.1: In-House Build CapEx Collapse &amp; Hybrid Business Architecture Pivot" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 4E.1:</strong> Business Architecture Recovery State Machine &mdash; Highlighting the failure point in labor supply modeling, the missed Gate BUS-03, and the EAB sanctions enforcing the Hybrid Commercial Pivot.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FORMAL TOGAF DELIVERABLES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. Formal Architecture Governance Artifacts (TOGAF® Deliverables)</h2>
+        <p>
+          To re-establish board fiduciary confidence and prevent financial insolvency, the EAB ratified three formal business architecture deliverables:
+        </p>
+
+        <!-- DELIVERABLE 1: NON-COMPLIANCE NOTICE -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Compliance Review</span>
+            <span style="font-family: monospace; font-weight: bold; color: #dc2626;">DOCUMENT ID: EAB-NCN-BUS-001</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Business Architecture Non-Compliance Notice</h3>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; width: 25%; color: #475569;">Target Program:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Volt-Tech Digital Twin Engineering Division</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Violated Standard:</td>
+              <td style="padding: 0.4rem; color: #dc2626; font-weight: bold;">Gate BUS-03 (Milestone Burn Gate) &amp; Rule GOV-02 (Dispensation Expiration)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Incident Description:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Unbudgeted CapEx expenditure of $13.9M under expired Dispensation DSP-BUS-03, re-routing contractor invoices to evade EAB oversight.</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Sanction Imposed:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Immediate issuance of Stop-Work Order; cancellation of external consultancy billing; mandatory transition to Hybrid Architecture Model.</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- DELIVERABLE 2: RULE BUS-05 CODIFICATION -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Codified Architecture Principle</span>
+            <span style="font-family: monospace; font-weight: bold; color: #0284c7;">RULE BUS-05</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Rule BUS-05: Stage-Gate CapEx Burn Ceiling &amp; Automatic Stop-Work Orders</h3>
+          <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
+            Every future architectural business case must enforce the following fiduciary constraints:
+          </p>
+          <ol style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
+            <li><strong>Automated 15% Variance Stop-Work Gate:</strong> Any program work package where cumulative expenditures exceed the baseline milestone budget by more than <strong>15%</strong> (\(\Delta \text{CapEx} / \text{CapEx}_{\text{base}} > 0.15\)) without verified capability milestone sign-off automatically triggers an ERP financial lock, suspending purchase order authority until the EAB formally reviews the variance.</li>
+            <li><strong>IP Enclave Isolation Pattern:</strong> Proprietary intellectual property must be decoupled from commodity computation. Commodity solvers must be licensed under commercial COTS or open standards, with proprietary algorithms restricted to isolated parameters running inside hardware-encrypted enclaves.</li>
+            <li><strong>Labor Supply Elasticity Certification:</strong> Prior to selecting an 'In-House Build' option, the business case must include verified labor market supply analyses signed by Human Resources. If qualified talent supply is fewer than \(3\times\) required staffing, the project must default to a Buy or Hybrid model.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- LESSONS LEARNED & CITATIONS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. The Strategic Morals: Where Real Handbooks Earn Their Keep</h2>
+        <div class="card" style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #166534; margin-top: 0;">🏛️ Three Fiduciary Takeaways for Business Architecture</h4>
+          <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 0.92rem; color: #166534; line-height: 1.6;">
+            <li><strong>Differentiating IP Is Smaller Than You Think:</strong> 80% of any 'proprietary' AI system is commodity plumbing (numerical differential equation solvers, matrix multiplication, standard layers). Only 20% contains your actual chemical or business secret. Don't spend $22M building the commodity 80%.</li>
+            <li><strong>Sunk Cost Fallacy Kills Enterprises:</strong> The hardest architectural decision is calling a Stop-Work Order on a project that has already burned millions. Battle-hardened Chief Architects pull the plug early and pivot to hybrid models.</li>
+            <li><strong>Dispensations Must Have Financial Telemetry:</strong> An engineering waiver without continuous CFO visibility is a financial black hole. When money and architecture aren't bound in the same governance loop, corporate credit lines break.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FACT-CHECK & CITABLE REFERENCES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Fact-Check &amp; Statutory References</h2>
+        <div class="card" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; margin-top: 1rem; font-size: 0.88rem; color: #334155;">
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li><strong>The Open Group</strong> (2022). <em>The TOGAF® Standard, 10th Edition: Phase B (Business Architecture)</em>. Business Models, Value Streams, and Business Capability Mapping.</li>
+            <li><strong>Business Architecture Guild</strong> (2022). <em>A Guide to the Business Architecture Body of Knowledge® (BIZBOK® Guide)</em>. Version 11.0. Business investment prioritization and metrics.</li>
+            <li><strong>Raiffa, H. &amp; Schlaifer, R.</strong> (2000). <em>Applied Statistical Decision Theory</em>. Wiley Classics Library. Risk-adjusted capital allocation and economic stopping rules.</li>
+            <li><strong>Volt-Tech Financial Governance Committee</strong> (2025). <em>Incident Investigation Report: FGC-INC-401 (Digital Twin CapEx Variance &amp; Hybrid Architecture Transition)</em>.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVIGATION FOOTER -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Exception Chapter</span>
+        <a href="chapter_5_exception_governance.html" class="nav-title">&larr; Chapter 5 Exception: Data Mesh Partitions</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Exception Chapter</span>
+        <a href="chapter_3_exception_governance.html" class="nav-title">Chapter 3 Exception: Strategic Order Freeze &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

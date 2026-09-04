@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 8 Exception Governance: Untested Rollback Scripts &amp; Database State Corruption - The Reality of Enterprise AI</title>
+  <meta name="description" content="TOGAF ADM Phase F Exception Governance Case Study: When Wave 2 rollout triggered an emergency rollback, an untested downward database script dropped historical battery calibration data, grounding 400 autonomous trucks.">
+  <meta name="keywords" content="TOGAF Phase F, Migration Planning Exception, Untested Rollback Script, Database Schema Corruption, Gate MIG-04, Rule MIG-05, CapEx Tranche Freeze, Avik Das">
+  <meta name="author" content="Avik Das">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part IV: Exception Governance</span> &mdash; Chapter 8 Exception Case Study</div>
+      <nav><a href="chapter_8.html">&larr; Chapter 8 Primary</a><span style="color: #cbd5e1; margin: 0 0.4rem;">|</span><a href="content.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>When the Rollback Script Destroys the Database</h1>
+      <p class="subtitle">
+        Phase F Exception Governance: Wave 2 Telemetry Bugs, Destructive Downward Migrations, Grounded Autonomous Fleets &amp; The Symmetric Verification Gate
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Author:</div>
+          <div class="metadata-value">Avik Das (Chief Enterprise Architect)</div>
+          
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Joint Enterprise PMO Command Center &amp; Cloud Database Operations Center</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase F: Migration Planning (Rollback Architecture, Schema Invariants &amp; Staged CapEx Gating)</div>
+          
+          <div class="metadata-label">Original Decision:</div>
+          <div class="metadata-value">Implementation and Migration Plan (IMP) Wave 2 staged cutover across 400 autonomous heavy trucks with formal rollback gates (Chapter 8).</div>
+
+          <div class="metadata-label">The Failure Shock:</div>
+          <div class="metadata-value">A telemetry anomaly in the new Wave 2 neural State-of-Health (SoH) model forced an emergency rollback to Wave 1. However, the downward migration script (<code>V2_to_V1_downgrade.sql</code>) was never tested against production database schemas. Running the script executed destructive DDL, dropping critical historical battery calibration and cell degradation tables.</div>
+
+          <div class="metadata-label">Operational Crisis:</div>
+          <div class="metadata-value">400 heavy trucks lost all battery baseline data; onboard vehicle computers entered fail-safe limp mode. The entire Midwest freight corridor was blinded, grounding 40% of the fleet and causing an immediate $6.8M/day in commercial losses and retail delivery defaults.</div>
+
+          <div class="metadata-label">Governance Response:</div>
+          <div class="metadata-value">The EAB issues Architecture Non-Compliance Notice NCN-MIG-003, freezes CapEx Tranche 3 ($18M release), activates Write-Ahead Log (WAL) forensic state reconstruction, and codifies Rule MIG-05: no production release may execute without automated, verified staging dry-runs of both forward and inverse rollback scripts.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"Every enterprise architect includes a pretty box labeled <em>'Rollback Strategy'</em> in their migration blueprint. It gives the steering committee a warm sense of security. But how many architects have actually tested the reverse script under full production load?"</p>
+        <p class="narrator-text">"In Chapter 8, the PMO planned a disciplined 3-wave migration with staged CapEx releases. But when an algorithmic anomaly struck Wave 2, the team panicked, pulled the rollback lever, and discovered that their untested downward script was far more destructive than the bug they were trying to escape. Here is what happens when migration governance forgets that rollback is an architectural deliverable, not a theoretical wish."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE WAVE 2 ROLLBACK COLLAPSE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Production Reality: When Downward Migrations Drop Production Tables</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="PMO Command Center - Wave 2 Telemetry Anomaly"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_8e_1.jpg" alt="Figure 8E.A: Wave 2 Telemetry Anomaly in PMO Command Center" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8E.A:</strong> PMO Command Center &mdash; Rohan Gupta and Rajesh Iyer observe erroneous battery State-of-Health degradation alerts across 400 autonomous trucks following Wave 2 cutover.</figcaption>
+        </figure>
+        <div class="caption-block">Joint Enterprise PMO Command. 02:30 Hours. Three hours into the Wave 2 production cutover, four hundred heavy trucks begin flashing yellow telemetry warnings.</div>
+
+        <div class="dialogue-bubble dialogue-rohan">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rohan Gupta</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "Rajesh, what is happening on the highway telemetry feed? Our autonomous trucks traveling between Chicago and Detroit are reporting sudden 30% battery pack degradation! The onboard speed governors are capping truck speeds at 35 miles per hour to preserve cell chemistry! We have 400 trucks backing up the interstate!"
+            </div>
+          </div>
+        </div>
+
+        <div class="dialogue-bubble dialogue-rajesh">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rajesh Iyer</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Lead Automation Architect, Volt-Tech</span>
+            </div>
+            <div class="speech-content">
+              "It's a telemetry calculation bug in the newly deployed Wave 2 neural State-of-Health firmware! The forward algorithm is misinterpreting ambient humidity readings as internal cell short-circuit impedance! The physical batteries are completely fine, but the software is forcing safety limp mode! We need to execute the <strong>Emergency Rollback Gate</strong> and revert the fleet database to Wave 1 immediately!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Database Ops Center - The Fatal Downward Script"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_8e_2.jpg" alt="Figure 8E.B: Untested Downward Migration Drops Production Schema" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8E.B:</strong> Cloud Database Ops &mdash; The operations team executes <code>V2_to_V1_downgrade.sql</code>, inadvertently triggering destructive <code>DROP TABLE</code> cascades across historical vehicle calibration data.</figcaption>
+        </figure>
+        <div class="caption-block">Database Operations Vault. 03:15 Hours. Database administrators execute the rollback script to restore Wave 1 software.</div>
+
+        <div class="dialogue-bubble dialogue-rajesh">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rajesh Iyer</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Lead Automation Architect, Volt-Tech</span>
+            </div>
+            <div class="speech-content">
+              "STOP! KILL THE CONNECTION! KILL IT NOW!<br><br>
+              Who wrote this downgrade script?! The junior data engineer assumed the schema change was purely additive, so the rollback script includes: <code>DROP TABLE battery_cell_calibration_metrics CASCADE;</code>! It just purged eighteen months of historical impedance baselines, digital twin calibration curves, and cell wear profiles for all 400 trucks! The fleet cannot revert to Wave 1 because Wave 1 requires those calibration tables to initialize vehicle boot sequences! Both versions are dead!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Boardroom Crisis - The 400 Truck Grounding"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_8e_3.jpg" alt="Figure 8E.C: Entire 400-Truck Autonomous Fleet Grounded in Depots" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8E.C:</strong> Orbit Logistics GCC &mdash; Priya Kapoor and Rohan Gupta confront the operational freeze as four hundred autonomous heavy trucks stand dead in regional depots, bleeding $6.8M daily.</figcaption>
+        </figure>
+        <div class="caption-block">Orbit Logistics GCC. 06:00 Hours. Morning sun rises over rows of stranded heavy trucks standing dark in parking stalls.</div>
+
+        <div class="dialogue-bubble dialogue-priya">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+            <div class="speech-avatar-name">Priya Kapoor</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Financial Architect</span>
+            </div>
+            <div class="speech-content">
+              "Four hundred trucks are bricked at charging docks. We cannot legally dispatch a single autonomous vehicle without certified battery telemetry under European and North American vehicle safety mandates! We are losing <strong>$6.8 million per day</strong> in unfulfilled freight contracts, perishable goods are rotting in refrigerated trailers, and our Tier-1 retail customers are preparing formal breach notices!<br><br>
+              Rohan, how did this downgrade script make it to production without passing <strong>Gate MIG-04 (Bi-Directional Migration &amp; Staging Dry-Run Verification)</strong>?"
+            </div>
+          </div>
+        </div>
+
+        <div class="dialogue-bubble dialogue-rohan">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rohan Gupta</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "The PMO was two weeks behind schedule on the Wave 2 milestone. To hit the Q3 executive earnings release, the deployment lead requested <strong>Dispensation DSP-MIG-03</strong> to test forward migrations in staging while deferring the reverse rollback dry-run until 'post-release stabilization'. That dispensation expired twelve days ago! No one audited it. We deployed forward without having a verified backward path."
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="EAB Extraordinary Council - The CapEx Freeze & Symmetric Gate"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_8e_4.jpg" alt="Figure 8E.D: EAB Sanctions Session &amp; CapEx Tranche 3 Freeze" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8E.D:</strong> Executive EAB Session &mdash; Aarav Patel freezes CapEx Tranche 3 ($18M release) and codifies Rule MIG-05: mandatory automated symmetric rollback verification in CI/CD pipelines.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Governance Chamber. 08:30 Hours. Aarav Patel summons the Joint PMO Directors for emergency disciplinary proceedings.</div>
+
+        <div class="dialogue-bubble dialogue-aarav">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/AaravPatel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+            <div class="speech-avatar-name">Aarav Patel</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Enterprise Architect &amp; EAB Chairman</span>
+            </div>
+            <div class="speech-content">
+              "This is an elementary, catastrophic violation of migration engineering. An architectural migration plan that only tests the forward path is not a plan&mdash;it is a trap.<br><br>
+              Here are the binding EAB rulings: First, we invoke <strong>Point-in-Time Database Recovery (PITR)</strong> using our immutable Write-Ahead Logs to restore calibration data up to 03:14:59 UTC. Second, under my authority as EAB Chairman, I am <strong>freezing CapEx Tranche 3 ($18,000,000)</strong>. Not a single dollar of capital will be released to the PMO until we verify complete operational recovery. Third, we codify <strong>Rule MIG-05 (Symmetric Rollback Verification Gate)</strong>: henceforth, no migration script may execute in production unless its exact downward rollback script has achieved 100% data fidelity verification in a cloned staging environment within 48 hours of cutover. And fourth: destructive DDL is permanently banned. All future schema evolutions must follow the <strong>Expand/Contract Pattern</strong>!"
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- TECHNICAL ROOT CAUSE ANALYSIS & SCHEMA RECOVERY -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. The Architecture Root Cause: Destructive DDL vs. The Expand/Contract Pattern</h2>
+        <p>
+          In Phase F Migration Planning, managing technical debt and state transition risks requires strict database schema governance. In Chapter 8, the team celebrated the speed of Wave 2 without evaluating schema backward compatibility.
+        </p>
+        <p>
+          When migrating relational and time-series schemas across distributed autonomous fleets, schema changes fall into two distinct mathematical categories:
+        </p>
+
+        <div class="table-container" style="overflow-x: auto; margin: 1.5rem 0;">
+          <table class="options-table" style="width: 100%; font-size: 0.9rem;">
+            <thead>
+              <tr style="background-color: #0f172a; color: white;">
+                <th>Migration Pattern</th>
+                <th>Forward Action (V1 &rarr; V2)</th>
+                <th>Rollback Action (V2 &rarr; V1)</th>
+                <th>State Entropy &amp; Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Destructive DDL (Flawed Script)</strong></td>
+                <td>Replaces calibration table with new neural feature vectors via <code>ALTER TABLE DROP / ADD</code>.</td>
+                <td>Executes <code>DROP TABLE ... CASCADE</code> to recreate V1 schema.</td>
+                <td><strong style="color: #dc2626;">Catastrophic (Total Data Loss)</strong>: Irreversible loss of historical vehicle state. Zero backward compatibility.</td>
+              </tr>
+              <tr>
+                <td><strong>Expand / Contract Pattern (Rule MIG-05)</strong></td>
+                <td>Adds new columns alongside legacy tables. Both V1 and V2 models write dual telemetry through an abstraction view.</td>
+                <td>Reverts application pointers to legacy columns; no tables are dropped. Old data remains 100% intact.</td>
+                <td><strong style="color: #16a34a;">Zero Entropy (Reversible)</strong>: Rollback time \(\le 30\text{ seconds}\) with zero data loss (\(\text{RPO} = 0\)).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The formal mathematical definition of <strong>Symmetric Migration Invariance</strong> under Rule MIG-05 requires that the composite state transformation operator \(\mathcal{T}_{\text{rollback}} \circ \mathcal{T}_{\text{forward}}\) preserves historical state space \(\mathcal{S}_{\text{historical}}\):
+        </p>
+
+        \[ \forall s \in \mathcal{S}_{\text{historical}}, \quad \left(\mathcal{T}_{\text{rollback}} \circ \mathcal{T}_{\text{forward}}\right)(s) \equiv s \]
+
+        <p>
+          Because the untested downward script executed destructive drops, the operator violated the invariant: \(\left(\mathcal{T}_{\text{rollback}} \circ \mathcal{T}_{\text{forward}}\right)(s) = \emptyset\), resulting in complete state erasure.
+        </p>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ARCHITECTURE SVG DIAGRAM -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Architecture Diagram: Rollback Gate Breakdown &amp; State Recovery</h2>
+        <p>
+          Figure 8E.1 maps the complete failure and recovery lifecycle: illustrating the Wave 2 deployment, the execution of the flawed downward script, the subsequent fleet grounding, the audit of expired Dispensation DSP-MIG-03, and the EAB-mandated Write-Ahead Log (WAL) forensic state restoration.
+        </p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_8e_1_rollback_gate_failure_and_state_recovery.svg" alt="Figure 8E.1: Rollback Gate Failure, Schema Corruption &amp; Migration Governance Recovery" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 8E.1:</strong> Migration Governance State Machine &mdash; Highlighting the failure point in downward schema migration, the missed Gate MIG-04, and the recovery protocol enforcing Symmetric Rollback Verification.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- MATHEMATICAL RECOVERY MODEL -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. Mathematical Modeling: Recovery Objectives &amp; CapEx Release Gating</h2>
+        <p>
+          In migration architecture, the Recovery Point Objective (RPO) and Recovery Time Objective (RTO) are mathematical bounds governing rollback acceptability. The financial impact of the grounding \(C_{\text{incident}}\) was modeled as:
+        </p>
+
+        \[ C_{\text{incident}} = \int_0^{T_{\text{restore}}} \left( N_{\text{trucks}} \cdot \dot{R}_{\text{truck}} + \dot{L}_{\text{spoilage}}(t) \right) dt + P_{\text{contract\_default}} \]
+
+        <p>Where:</p>
+        <ul>
+          <li><strong>\(N_{\text{trucks}} = 400\)</strong> grounded heavy vehicles.</li>
+          <li><strong>\(\dot{R}_{\text{truck}} = \$680/\text{hour}\)</strong> in lost freight throughput per vehicle.</li>
+          <li><strong>\(T_{\text{restore}} = 18.2\text{ hours}\)</strong> required to parse and replay 2.4 terabytes of Write-Ahead Logs (WAL) across the distributed cluster.</li>
+          <li><strong>\(P_{\text{contract\_default}} = \$1,850,000\)</strong> in liquidated damages for missed delivery windows.</li>
+        </ul>
+
+        <p>
+          The total incident cost reached:
+        </p>
+
+        \[ C_{\text{incident}} = (400 \times \$680 \times 18.2) + \$1,850,000 = \$4,950,400 + \$1,850,000 = \mathbf{\$6,800,400} \]
+
+        <div class="card" style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #ef4444; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #991b1b; margin-top: 0;">⚠️ CapEx Release Gating Formula under Rule MIG-05</h4>
+          <p style="font-size: 0.92rem; color: #1e293b; margin-bottom: 0.5rem;">
+            To safeguard enterprise capital, the EAB codified the <strong>CapEx Tranche Release Gate</strong> as a strict boolean predicate:
+          </p>
+          \[ \text{Gate}_{\text{Tranche\_3}} = \mathbb{I}\left( \text{PITR}_{\text{verified}} \land \left( \Delta t_{\text{rollback\_test}} \le 48\text{h} \right) \land \left( \text{Loss}_{\text{data}} \equiv 0 \right) \land \left( \text{DSP}_{\text{expired}} \equiv \emptyset \right) \right) \]
+          <p style="font-size: 0.9rem; color: #334155; margin-bottom: 0;">
+            Unless all four conditions evaluate to TRUE (\(1\)), the $18,000,000 capital tranche remains locked in escrow.
+          </p>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FORMAL TOGAF ARTIFACTS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. Formal Architecture Governance Artifacts (TOGAF® Deliverables)</h2>
+        <p>
+          The EAB ratified three formal governance deliverables to close the migration planning gap and re-baseline the enterprise transformation roadmap:
+        </p>
+
+        <!-- DELIVERABLE 1: NON-COMPLIANCE NOTICE -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Compliance Review</span>
+            <span style="font-family: monospace; font-weight: bold; color: #dc2626;">DOCUMENT ID: EAB-NCN-MIG-003</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Migration Planning Non-Compliance Notice</h3>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; width: 25%; color: #475569;">Target Program:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Joint Enterprise PMO (Wave 2 Deployment Lead)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Violated Standard:</td>
+              <td style="padding: 0.4rem; color: #dc2626; font-weight: bold;">Gate MIG-04 (Rollback Verification) &amp; Rule GOV-02 (Dispensation Expiration)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Incident Description:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Execution of untested downward database script in production under expired Dispensation DSP-MIG-03, causing unrecoverable schema destruction across 400 vehicles.</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Sanction Imposed:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Immediate suspension of Wave 2 rollout; freeze of CapEx Tranche 3 ($18M release); mandatory PMO architectural re-certification.</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- DELIVERABLE 2: RULE MIG-05 CODIFICATION -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Codified Architecture Principle</span>
+            <span style="font-family: monospace; font-weight: bold; color: #0284c7;">RULE MIG-05</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Rule MIG-05: Symmetric Rollback &amp; Expand/Contract Invariant</h3>
+          <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
+            Every future work package in the Implementation and Migration Plan must satisfy the following three binding constraints:
+          </p>
+          <ol style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
+            <li><strong>Automated Staging Rollback CI/CD Gate:</strong> Prior to production cutover, the CI/CD deployment pipeline must deploy the forward migration to a cloned staging database containing production-scale data, execute automated validation tests, immediately execute the inverse rollback script, and verify that the resulting database checksum matches the pre-migration baseline 100%.</li>
+            <li><strong>Prohibition of Destructive DDL:</strong> <code>DROP TABLE</code>, <code>DROP COLUMN</code>, and destructive type coercions are permanently prohibited in forward migration scripts. All schema changes must use the Expand/Contract Pattern, deprecating legacy structures across a minimum of two full migration waves.</li>
+            <li><strong>Automated Pre-Flight Dispensation Sweep:</strong> The release deployment engine must query the Architecture Dispensation Register; if any associated waiver has expired or will expire within 14 calendar days, the pipeline automatically aborts the release.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- LESSONS LEARNED & CITATIONS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>5. The Strategic Morals: Where Real Handbooks Earn Their Keep</h2>
+        <div class="card" style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #166534; margin-top: 0;">🏛️ Three Fiduciary Takeaways for Migration Planning</h4>
+          <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 0.92rem; color: #166534; line-height: 1.6;">
+            <li><strong>Rollback Is a First-Class Citizen:</strong> If you haven't tested the downward path, you haven't engineered a migration; you have executed a gamble. Real handbooks mandate that the reverse path is tested with the exact same rigor as the forward path.</li>
+            <li><strong>Never Trust Delivery Schedule Pressure:</strong> When milestones slip, the first thing engineering teams cut is rollback verification. Staged CapEx gating (freezing tranche releases) is the Chief Architect's strongest tool to maintain governance discipline.</li>
+            <li><strong>Expand/Contract Is the Only Safe Way:</strong> In high-throughput industrial and autonomous systems, state is precious. Destructive migrations are an unforgivable architectural sin.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FACT-CHECK & CITABLE REFERENCES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Fact-Check &amp; Statutory References</h2>
+        <div class="card" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; margin-top: 1rem; font-size: 0.88rem; color: #334155;">
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li><strong>The Open Group</strong> (2022). <em>The TOGAF® Standard, 10th Edition: Phase F (Migration Planning)</em>. Implementation and Migration Plan (IMP), Transition Architecture sequencing, and CapEx release gates.</li>
+            <li><strong>DAMA International</strong> (2017). <em>DAMA-DMBOK: Data Management Body of Knowledge (2nd Edition)</em>. Database operations, schema evolution patterns, and disaster recovery point objectives (RPO).</li>
+            <li><strong>Fowler, M. &amp; Sadalage, P.</strong> (2006). <em>Refactoring Databases: Evolutionary Database Design</em>. Addison-Wesley. The Transition Phase / Expand and Contract Pattern.</li>
+            <li><strong>Consortium PMO Governance Committee</strong> (2025). <em>Incident Investigation Report: PMO-INC-802 (Wave 2 Database Schema Corruption &amp; CapEx Gating Enforcement)</em>. Joint PMO Technical Report.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVIGATION FOOTER -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Exception Chapter</span>
+        <a href="chapter_6_exception_governance.html" class="nav-title">&larr; Chapter 6 Exception: Sub-2.5ms TinyML Thermal Throttling</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Exception Chapter</span>
+        <a href="chapter_5_exception_governance.html" class="nav-title">Chapter 5 Exception: Data Mesh Lag &amp; DPP Serialization &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

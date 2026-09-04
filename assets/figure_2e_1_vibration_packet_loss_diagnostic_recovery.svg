@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="amberGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="greenGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="blueGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowRed2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f87171" />
+    </marker>
+    <marker id="arrowGreen2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#4ade80" />
+    </marker>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad2)" stroke="#334155" stroke-width="2"/>
+
+  <text x="500" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="0.5">
+    FIGURE 2E.1: Diagnostic Telemetry Vibration Loss &amp; WAL Ingestion Recovery
+  </text>
+  <text x="500" y="60" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">
+    Requirements Management Exception: 5.8G Road Vibration, 22% Packet Drops &amp; Rule REQ-04 Shaker-Table Invariant
+  </text>
+
+  <!-- Box 1 -->
+  <rect x="40" y="90" width="280" height="175" rx="8" fill="url(#blueGrad2)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow2)"/>
+  <rect x="40" y="90" width="280" height="32" rx="8" fill="#082f49"/>
+  <text x="180" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e0f2fe">1. Diagnostic Baseline (Ch 2)</text>
+  <text x="55" y="142" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Model: In-Memory UDP Ring Buffer</text>
+  <text x="55" y="162" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Goal: Minimize Edge RAM Footprint</text>
+  <text x="55" y="182" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Testing: Lab Benchmarks with Clean Data</text>
+  <text x="55" y="202" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Assumed Zero Mechanical Shock</text>
+  <text x="55" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; DSP-REQ-02: 60d UDP Waiver Granted</text>
+  <text x="55" y="242" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Persistent Disk Journaling Omitted</text>
+
+  <path d="M 320 175 L 365 175" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow2)"/>
+
+  <!-- Box 2 -->
+  <rect x="370" y="90" width="260" height="175" rx="8" fill="url(#amberGrad2)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow2)"/>
+  <rect x="370" y="90" width="260" height="32" rx="8" fill="#451a03"/>
+  <text x="500" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fef3c7">2. 5.8G Vibration &amp; Drop</text>
+  <text x="385" y="142" font-family="sans-serif" font-size="11.5" fill="#fef3c7">&#8226; Mountain Haul Road Shocks (5.8G)</text>
+  <text x="385" y="162" font-family="sans-serif" font-size="11.5" fill="#fca5a5" font-weight="bold">&#8226; Silent UDP Packet Loss of 22%</text>
+  <text x="385" y="182" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; High-Frequency Vibration Clipped</text>
+  <text x="385" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Predictive AI Blinded to Harmonics</text>
+  <text x="385" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; False Clean Health Signals Generated</text>
+  <text x="385" y="242" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; DSP-REQ-02 Expired Without Action</text>
+
+  <path d="M 630 175 L 675 175" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed2)"/>
+
+  <!-- Box 3 -->
+  <rect x="680" y="90" width="280" height="175" rx="8" fill="url(#redGrad2)" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow2)"/>
+  <rect x="680" y="90" width="280" height="32" rx="8" fill="#450a0a"/>
+  <text x="820" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">3. Catastrophic Seizure</text>
+  <text x="695" y="142" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; 3 Heavy Trucks Seize on Route 66</text>
+  <text x="695" y="162" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; Bearing Overheat Destroys Drivetrain</text>
+  <text x="695" y="182" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Stranded Freight Loss: $1,200,000</text>
+  <text x="695" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Zero Anomaly Alerts Fired by AI Model</text>
+  <text x="695" y="222" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Executive Trust in Predictive AI Broken</text>
+  <text x="695" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Gate REQ-03 Audit Triggered</text>
+
+  <path d="M 820 265 L 820 325" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed2)"/>
+
+  <!-- Box 4 -->
+  <rect x="640" y="335" width="320" height="195" rx="8" fill="url(#redGrad2)" stroke="#f87171" stroke-width="2" filter="url(#shadow2)"/>
+  <rect x="640" y="335" width="320" height="32" rx="8" fill="#450a0a"/>
+  <text x="800" y="357" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">4. Missed Gate &amp; Expired Waiver Audit</text>
+  <text x="655" y="387" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>Gate REQ-03:</strong> Vibration Loss Gate bypassed</text>
+  <text x="655" y="407" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>DSP-REQ-02:</strong> UDP waiver expired 52 days prior</text>
+  <text x="655" y="427" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Lab data used synthetic white noise, not road shock</text>
+  <text x="655" y="447" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Non-functional requirements (NFRs) invalidated</text>
+  <text x="655" y="467" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Architecture Requirements Specification Frozen</text>
+  <text x="655" y="487" font-family="sans-serif" font-size="11.5" fill="#fef08a" font-weight="bold">&#8226; EAB Sanction: Predictive Fleet Rollout Halted</text>
+  <text x="655" y="507" font-family="sans-serif" font-size="11.5" fill="#fef08a">&#8226; Full Diagnostic Re-Architecture Ordered</text>
+
+  <path d="M 640 435 L 565 435" stroke="#4ade80" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen2)"/>
+
+  <!-- Box 5 -->
+  <rect x="40" y="315" width="515" height="235" rx="8" fill="url(#greenGrad2)" stroke="#34d399" stroke-width="2" filter="url(#shadow2)"/>
+  <rect x="40" y="315" width="515" height="32" rx="8" fill="#064e3b"/>
+  <text x="297" y="337" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ecfdf5">5. Requirements Governance Recovery &amp; Dual WAL Mandate</text>
+  <text x="60" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">Diagnostic Redesign &amp; Invariants:</text>
+  <text x="60" y="394" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Dual-Ring Transactional WAL:</strong> RocksDB persistent logging</text>
+  <text x="60" y="414" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Rule REQ-04:</strong> Mandatory Physical Shaker-Table Stress Gate</text>
+  <text x="60" y="434" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Zero-Loss Protocol:</strong> Store-and-forward edge sync with ACK</text>
+  <text x="60" y="454" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Ruggedized NVMe:</strong> Military-spec solid-state flash on trucks</text>
+  <text x="60" y="474" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Re-baselined Failure Taxonomy:</strong> Added 5.8G harmonic classes</text>
+
+  <text x="325" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15">Operational Outcome &amp; Fidelity:</text>
+  <text x="325" y="394" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Packet drop reduced from 22% to 0.001%</text>
+  <text x="325" y="414" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Vibration anomalies detected 48h early</text>
+  <text x="325" y="434" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Drivetrain failures dropped to zero</text>
+  <text x="325" y="454" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Shaker-table tests passed at 8.0G</text>
+  <text x="325" y="474" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Predictive AI credibility restored</text>
+
+  <rect x="55" y="495" width="485" height="42" rx="4" fill="#042f2e" stroke="#14b8a6" stroke-width="1"/>
+  <text x="297" y="514" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#5eead4">
+    TOGAF Handshake: Requirements Management Handover to Phase A (Architecture Vision)
+  </text>
+  <text x="297" y="530" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#ccfbf1">
+    Architecture Requirements Specification (ARS) Re-baselined with Physical Shaker Proofs
+  </text>
+
+  <rect x="40" y="570" width="920" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="65" cy="587" r="6" fill="#38bdf8"/>
+  <text x="80" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">UDP Ring Buffer</text>
+  <circle cx="205" cy="587" r="6" fill="#f59e0b"/>
+  <text x="220" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">5.8G Vibration Drops</text>
+  <circle cx="365" cy="587" r="6" fill="#ef4444"/>
+  <text x="380" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Mechanical Seizure</text>
+  <circle cx="515" cy="587" r="6" fill="#10b981"/>
+  <text x="530" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Dual-Ring WAL Ingestion</text>
+  <text x="940" y="591" text-anchor="end" font-family="sans-serif" font-size="11" fill="#64748b">TOGAF ADM Requirements Mgmt &amp; MIL-STD-810H</text>
+</svg>

@@ -823,6 +823,21 @@
       </div>
 
       <!-- ========================================================================= -->
+      <!-- COMPANION CASE: EXCEPTION GOVERNANCE                                      -->
+      <!-- ========================================================================= -->
+      <div class="card" style="background: #fff1f2; border: 1.5px solid #fecdd3; border-left: 5px solid #e11d48; padding: 1.25rem; margin: 2rem 0; border-radius: 8px;">
+        <h3 style="color: #9f1239; margin-top: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">
+          <span>⚠️ When Migration Rollbacks Fail: Companion Exception Case 8</span>
+        </h3>
+        <p style="font-size: 0.95rem; color: #4c0519; margin-bottom: 0.75rem; line-height: 1.6;">
+          What happens when an automated rollback script accidentally truncates downstream operational telemetry? Unpack how Wave 2 cutover experienced an unhandled database migration exception, executed a cascading <code>DROP TABLE</code> during rollback that wiped 14 days of operational history, grounded 400 delivery vans, bled $6.8M/day, froze CapEx Tranche 3, and codified <strong>Rule MIG-05 (Immutable Zero-Loss Rollback Verification)</strong>.
+        </p>
+        <a href="chapter_8_exception_governance.html" class="btn" style="display: inline-block; background: #e11d48; color: white; padding: 0.55rem 1.1rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+          Read Exception Governance Case 8: Wave 2 Rollback Gate Failure &amp; Cascade &rarr;
+        </a>
+      </div>
+
+      <!-- ========================================================================= -->
       <!-- CHAPTER REFERENCES & FACT-CHECK VERIFICATION REGISTRY -->
       <!-- ========================================================================= -->
       <section class="chapter-references">

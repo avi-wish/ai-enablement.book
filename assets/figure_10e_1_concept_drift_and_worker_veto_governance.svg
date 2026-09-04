@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="amberGrad10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="greenGrad10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="blueGrad10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <marker id="arrow10" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowRed10" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f87171" />
+    </marker>
+    <marker id="arrowGreen10" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#4ade80" />
+    </marker>
+    <filter id="shadow10" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad10)" stroke="#334155" stroke-width="2"/>
+
+  <text x="500" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="0.5">
+    FIGURE 10E.1: Undetected Concept Drift &amp; Joint Worker-Architect Governance Recovery
+  </text>
+  <text x="500" y="60" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">
+    Phase H Architecture Change Management Exception: Silent Drift, Wildcat Strike &amp; Rule CHG-05 Human Veto Invariant
+  </text>
+
+  <!-- Box 1 -->
+  <rect x="40" y="90" width="280" height="175" rx="8" fill="url(#blueGrad10)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow10)"/>
+  <rect x="40" y="90" width="280" height="32" rx="8" fill="#082f49"/>
+  <text x="180" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e0f2fe">1. Continuous Evolution (Ch 10)</text>
+  <text x="55" y="142" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Model: Automated Performance Monitor (APM)</text>
+  <text x="55" y="162" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Target: Continuous Turnaround Optimization</text>
+  <text x="55" y="182" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Flawed Threshold: &#177;15% Alarm Tolerance</text>
+  <text x="55" y="202" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; DSP-CHG-01: 90d Unsupervised Tuning</text>
+  <text x="55" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Assumption: Algorithms Do Not Drift Silently</text>
+  <text x="55" y="242" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Human-in-the-Loop Reviews Postponed</text>
+
+  <path d="M 320 175 L 365 175" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow10)"/>
+
+  <!-- Box 2 -->
+  <rect x="370" y="90" width="260" height="175" rx="8" fill="url(#amberGrad10)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow10)"/>
+  <rect x="370" y="90" width="260" height="32" rx="8" fill="#451a03"/>
+  <text x="500" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fef3c7">2. Silent 8-Month Concept Drift</text>
+  <text x="385" y="142" font-family="sans-serif" font-size="11.5" fill="#fef3c7">&#8226; Freight Density Increases Gradually</text>
+  <text x="385" y="162" font-family="sans-serif" font-size="11.5" fill="#fca5a5" font-weight="bold">&#8226; Model Squeezes Turnaround to 4 Minutes</text>
+  <text x="385" y="182" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Safety Inspection Times Penalized</text>
+  <text x="385" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Drift Measures 13.8% (Below 15% Cap)</text>
+  <text x="385" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; APM Stays Green; Zero Alarms Fire</text>
+  <text x="385" y="242" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; DSP-CHG-01 Lapsed by 4 Months</text>
+
+  <path d="M 630 175 L 675 175" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed10)"/>
+
+  <!-- Box 3 -->
+  <rect x="680" y="90" width="280" height="175" rx="8" fill="url(#redGrad10)" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow10)"/>
+  <rect x="680" y="90" width="280" height="32" rx="8" fill="#450a0a"/>
+  <text x="820" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">3. Wildcat Strike &amp; Hub Halt</text>
+  <text x="695" y="142" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; Driver Fatigue &amp; Stress Spikes</text>
+  <text x="695" y="162" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; 850 Workers Walk Out in Wildcat Strike</text>
+  <text x="695" y="182" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Midwest Central Hub Halted: $8.2M/day</text>
+  <text x="695" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Union Files Algorithmic Abuse Grievance</text>
+  <text x="695" y="222" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Reputational &amp; Labor Crisis</text>
+  <text x="695" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Gate CHG-02 Bypassed Twice</text>
+
+  <path d="M 820 265 L 820 325" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed10)"/>
+
+  <!-- Box 4 -->
+  <rect x="640" y="335" width="320" height="195" rx="8" fill="url(#redGrad10)" stroke="#f87171" stroke-width="2" filter="url(#shadow10)"/>
+  <rect x="640" y="335" width="320" height="32" rx="8" fill="#450a0a"/>
+  <text x="800" y="357" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">4. Missed Gate &amp; Expired Waiver Audit</text>
+  <text x="655" y="387" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>Gate CHG-02:</strong> Quarterly Human Audit postponed</text>
+  <text x="655" y="407" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>DSP-CHG-01:</strong> Retraining waiver expired 120d ago</text>
+  <text x="655" y="427" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; APM monitored error rate, not human strain</text>
+  <text x="655" y="447" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Zero human feedback loop implemented</text>
+  <text x="655" y="467" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Architecture Contract AC-106 Violated</text>
+  <text x="655" y="487" font-family="sans-serif" font-size="11.5" fill="#fef08a" font-weight="bold">&#8226; EAB Sanction: Emergency Model Deactivation</text>
+  <text x="655" y="507" font-family="sans-serif" font-size="11.5" fill="#fef08a">&#8226; Formal Change Request ACR-H-004 Codified</text>
+
+  <path d="M 640 435 L 565 435" stroke="#4ade80" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen10)"/>
+
+  <!-- Box 5 -->
+  <rect x="40" y="315" width="515" height="235" rx="8" fill="url(#greenGrad10)" stroke="#34d399" stroke-width="2" filter="url(#shadow10)"/>
+  <rect x="40" y="315" width="515" height="32" rx="8" fill="#064e3b"/>
+  <text x="297" y="337" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ecfdf5">5. Phase H Governance Recovery &amp; Worker Council Veto</text>
+  <text x="60" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">Change Management Sanctions &amp; Redesign:</text>
+  <text x="60" y="394" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>ACR-H-004:</strong> Deactivated automated scoring algorithm</text>
+  <text x="60" y="414" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Rule CHG-05:</strong> Joint Worker-Architect Council established</text>
+  <text x="60" y="434" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Frontline Veto Power:</strong> Unanimous worker veto on schedule AI</text>
+  <text x="60" y="454" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Multi-Variate Drift Bounds:</strong> Wasserstein distance &#8804; 3.5%</text>
+  <text x="60" y="474" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Restored Human Pace:</strong> Turnaround re-baselined to 12 minutes</text>
+
+  <text x="325" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15">Labor Resolution &amp; Trust:</text>
+  <text x="325" y="394" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Strike resolved within 24 hours</text>
+  <text x="325" y="414" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; 850 workers returned to duty</text>
+  <text x="325" y="434" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Union ratified Joint Council agreement</text>
+  <text x="325" y="454" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Safety checks restored to priority</text>
+  <text x="325" y="474" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Sustained intelligence achieved</text>
+
+  <rect x="55" y="495" width="485" height="42" rx="4" fill="#042f2e" stroke="#14b8a6" stroke-width="1"/>
+  <text x="297" y="514" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#5eead4">
+    TOGAF Handshake: Architecture Change Management Cycling Back to Preliminary Phase
+  </text>
+  <text x="297" y="530" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#ccfbf1">
+    ADM Architecture Repository Synchronized with Human-in-the-Loop Fiduciary Veto Invariant
+  </text>
+
+  <rect x="40" y="570" width="920" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="65" cy="587" r="6" fill="#38bdf8"/>
+  <text x="80" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">APM Telemetry</text>
+  <circle cx="205" cy="587" r="6" fill="#f59e0b"/>
+  <text x="220" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Silent Drift</text>
+  <circle cx="340" cy="587" r="6" fill="#ef4444"/>
+  <text x="355" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Wildcat Strike</text>
+  <circle cx="495" cy="587" r="6" fill="#10b981"/>
+  <text x="510" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Worker Council Veto</text>
+  <text x="940" y="591" text-anchor="end" font-family="sans-serif" font-size="11" fill="#64748b">TOGAF ADM Phase H &amp; IEEE 7000 Ethics</text>
+</svg>

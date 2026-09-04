@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 7 Exception Governance: Dual-Routing Transition Gridlock &amp; The Interstate Seizure - The Reality of Enterprise AI</title>
+  <meta name="description" content="TOGAF ADM Phase E Exception Governance Case Study: When Transition Architecture 2 ran legacy human dispatch and AI routing in parallel, contradictory dock write locks deadlocked 180 heavy trucks on Interstate 80.">
+  <meta name="keywords" content="TOGAF Phase E, Opportunities &amp; Solutions Exception, Transition Architecture Gridlock, Dual Dispatch Contention, Gate SOL-03, Rule SOL-04, Single Master Authority, Avik Das">
+  <meta name="author" content="Avik Das">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part IV: Exception Governance</span> &mdash; Chapter 7 Exception Case Study</div>
+      <nav><a href="chapter_7.html">&larr; Chapter 7 Primary</a><span style="color: #cbd5e1; margin: 0 0.4rem;">|</span><a href="content.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>When Transition Architectures Fight for the Same Dock</h1>
+      <p class="subtitle">
+        Phase E Exception Governance: Dual-Run Dispatch Contention, Contradictory Write Locks, The 14-Hour Interstate Seizure &amp; The Single Authority Mandate
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Author:</div>
+          <div class="metadata-value">Avik Das (Chief Enterprise Architect)</div>
+          
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Orbit-Logistics Regional Hub Alpha &amp; Interstate 80 Freight Staging Terminal</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Phase E: Opportunities &amp; Solutions (Transition Architectures, Work Package Integration &amp; Operational Coexistence)</div>
+          
+          <div class="metadata-label">Original Decision:</div>
+          <div class="metadata-value">Transition Architecture 2 (TA-2) in Chapter 7: Running legacy manual dispatch and autonomous AI routing concurrently in a staged parallel run across regional freight hubs.</div>
+
+          <div class="metadata-label">The Failure Shock:</div>
+          <div class="metadata-value">Legacy human dispatchers manually overrode high-voltage charging bay reservations while the AI engine assigned the exact same bays to autonomous trucks. The dual-write conflict deadlocked 180 heavy commercial vehicles, backing traffic up onto Interstate 80 for 14 hours and ruining $4,500,000 in perishable refrigerated freight.</div>
+
+          <div class="metadata-label">Operational Crisis:</div>
+          <div class="metadata-value">State Highway Patrol declared a regional transportation emergency, citing Orbit-Logistics for public highway blockage. Retail partners filed formal damage claims, and the regional hub faced immediate municipal operating license suspension.</div>
+
+          <div class="metadata-label">Governance Response:</div>
+          <div class="metadata-value">The EAB executes an emergency 48-hour fallback to Transition Architecture 1 (TA-1), issues Non-Compliance Notice NCN-SOL-003, codifies Rule SOL-04 (Single Master Authority Invariant), and deploys distributed token leases (Redis Redlock) across all physical charging and loading infrastructure.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"In software architecture, running systems in 'parallel' is a standard risk mitigation pattern. You run the old system and the new system side-by-side, comparing their outputs until you feel safe to cut over."</p>
+        <p class="narrator-text">"<strong>But in physical logistics, two systems cannot occupy the same asphalt.</strong> When your legacy human dispatch console tells a human driver to park in Bay 4, while your autonomous routing AI tells a robot truck to charge in Bay 4, you don't get 'redundancy'&mdash;you get two forty-ton machines staring at each other with their air brakes locked, while one hundred and eighty trucks back up behind them onto the public highway. Here is what happens when Transition Architectures lack a single master arbiter."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE INTERSTATE GRIDLOCK -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Production Reality: When Two Masters Claim the Same Resource</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Regional Hub Alpha - Charging Dock Deadlock"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_7e_1.jpg" alt="Figure 7E.A: Two Heavy Trucks Deadlocked in Charging Dock" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 7E.A:</strong> Regional Hub Alpha &mdash; An autonomous electric truck and a human-driven rig deadlock at the entrance to Charging Bay 4 after concurrent dispatch assignments trigger mutual locking.</figcaption>
+        </figure>
+        <div class="caption-block">Regional Hub Alpha. 14:00 Hours. Transition Architecture 2 is operating its scheduled parallel run.</div>
+
+        <div class="dialogue-bubble dialogue-rohan">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rohan Gupta</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "We have a dead-stall at the central throat of Hub Alpha! The autonomous AI dispatched Truck #109 to Rapid-Charge Bay 4 based on battery thermal telemetry. At the exact same second, the legacy manual floor supervisor used his radio console to assign Bay 4 to a human contractor hauling frozen poultry! Neither vehicle will yield: the autonomous truck's safety perimeter won't move forward because the human cab is obstructing its LiDAR, and the human driver refuses to reverse into a blind turn! The entire intake queue is frozen solid!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Hub Dispatch Tower - The Dual Write Contention"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_7e_2.jpg" alt="Figure 7E.B: Dispatch Tower Telemetry Shows Contradictory Write Locks" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 7E.B:</strong> Central Dispatch Tower &mdash; Rajesh Iyer identifies the architectural split-brain: legacy mainframe dispatch and cloud microservices hold concurrent write locks on physical hub slots.</figcaption>
+        </figure>
+        <div class="caption-block">Central Dispatch Tower. 15:30 Hours. Queue buffers overflow across both dispatch consoles.</div>
+
+        <div class="dialogue-bubble dialogue-rajesh">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rajesh Iyer</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Lead Automation Architect, Volt-Tech</span>
+            </div>
+            <div class="speech-content">
+              "Look at the database locks! Under <strong>Transition Architecture 2</strong>, we allowed both the legacy AS/400 dispatch system and our newly deployed autonomous optimization microservice to write directly to the facility slot table! There was no distributed lock manager! The legacy database committed the human assignment at 14:00:01, while the Kafka dispatch consumer committed the AI reservation at 14:00:02! Neither system checked the other's lock state! It's a classic distributed split-brain executed on physical concrete!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="Interstate 80 Corridor - 14-Hour Gridlock"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_7e_3.jpg" alt="Figure 7E.C: 180 Heavy Trucks Backed onto Interstate 80" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 7E.C:</strong> Interstate 80 Aerial Telemetry &mdash; A fourteen-mile traffic jam backs up onto the interstate as 180 commercial rigs remain deadlocked outside Hub Alpha, destroying $4.5M in refrigerated goods.</figcaption>
+        </figure>
+        <div class="caption-block">Interstate 80 Interchange. 20:00 Hours. State police cruisers flash emergency lights across miles of stationary trucks.</div>
+
+        <div class="dialogue-bubble dialogue-kavita">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Kavita Joshi.jpg" alt="Kavita Joshi" class="speech-avatar-img">
+            <div class="speech-avatar-name">Kavita Joshi</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Managing Director, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "The tailback just crossed fourteen miles onto Interstate 80! State Highway Patrol has declared an active civil emergency! We have <strong>one hundred and eighty heavy trucks</strong> trapped on the highway with their engines idling! The refrigeration units on forty trailers have run out of diesel; that is <strong>$4.5 million in spoiled dairy and produce</strong>! The governor's office called our CEO twenty minutes ago threatening to suspend our state commercial operating authority! How did this transition design pass governance?"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="EAB Extraordinary Council - Single Arbiter Mandate"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_7e_4.jpg" alt="Figure 7E.D: EAB Chairman Aarav Patel Orders Fallback to TA-1 and Codifies Rule SOL-04" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 7E.D:</strong> Executive EAB Session &mdash; Aarav Patel enforces immediate 48-hour fallback to Transition Architecture 1 and codifies Rule SOL-04: The Single Master Authority Invariant.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Chamber. 22:30 Hours. Aarav Patel summons the logistics architecture leads to restore order.</div>
+
+        <div class="dialogue-bubble dialogue-aarav">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/AaravPatel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+            <div class="speech-avatar-name">Aarav Patel</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Enterprise Architect &amp; EAB Chairman</span>
+            </div>
+            <div class="speech-content">
+              "A parallel run is only an architectural safeguard if state authority is unified. Allowing two autonomous agents to hold concurrent write locks on shared physical space is an elementary failure of transition engineering.<br><br>
+              Here are the binding EAB directives: First, under <strong>Architecture Non-Compliance Notice NCN-SOL-003</strong>, we immediately execute an <strong>emergency 48-hour fallback to Transition Architecture 1 (TA-1)</strong>, disabling automated dock reservation to let human dispatchers manually flush the interstate backlog. Second, we codify <strong>Rule SOL-04 (Single Master Authority Invariant)</strong>: in any transition architecture, regardless of phase, all physical resource writes must route through a single, serialized state machine. Third, we deploy <strong>Distributed Mutual Exclusion (Redis Redlock with 120-second lease timeouts)</strong> across all physical bays before TA-2 is re-authorized. No physical asset will ever have two software masters again!"
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- TECHNICAL ANALYSIS: DEADLOCK PERCOLATION & REDLOCK -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. The Mathematics of Transition Deadlock &amp; Distributed Locking</h2>
+        <p>
+          In Phase E Opportunities &amp; Solutions, Transition Architectures must manage resource contention across heterogeneous operating models. The failure in Transition Architecture 2 (TA-2) was a textbook <strong>Coffman Deadlock</strong> in physical queuing space:
+        </p>
+        <ol>
+          <li><strong>Mutual Exclusion:</strong> A charging bay \(B_k\) can accommodate exactly one physical vehicle at a time.</li>
+          <li><strong>Hold and Wait:</strong> Vehicle \(V_1\) occupies the approach apron while waiting for Bay \(B_4\); Vehicle \(V_2\) occupies Bay \(B_4\) while waiting for clearance to depart.</li>
+          <li><strong>No Preemption:</strong> A 40-ton autonomous truck cannot be physically pre-empted without moving.</li>
+          <li><strong>Circular Wait:</strong> Incoming vehicles wait on occupied bays, while departed vehicles are blocked from egress by the backed-up queue.</li>
+        </ol>
+        <p>
+          The percolation threshold of the queuing network \(\rho = \lambda / \mu\) crossed unity (\(\rho > 1.0\)), causing the queue length \(L_q\) to grow asymptotically:
+        </p>
+
+        \[ L_q(t) = L_0 + (\lambda_{\text{in}} - \mu_{\text{clear}}) \cdot t \]
+
+        <p>
+          With \(\lambda_{\text{in}} = 24\text{ trucks/hour}\) and \(\mu_{\text{clear}} = 0\) due to the physical deadlock, the queue expanded by <strong>24 trucks every hour</strong>, backing 14 miles onto the interstate within 8 hours.
+        </p>
+        <p>
+          Under <strong>Rule SOL-04</strong>, the system enforces a <strong>Distributed Token Lease</strong> with strict lease duration \(T_{\text{lease}}\):
+        </p>
+
+        \[ T_{\text{lease}} \ge 2 \cdot \text{RTT}_{\text{network}} + \Delta t_{\text{docking}} + \tau_{\text{clock\_skew}} \]
+
+        <p>
+          Both human dispatch consoles and autonomous routing agents must acquire a cryptographically signed lease token before issuing movement directives to any vehicle.
+        </p>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ARCHITECTURE SVG DIAGRAM -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Architecture Diagram: Dual-Dispatch Contention &amp; Arbiter Recovery</h2>
+        <p>
+          Figure 7E.1 illustrates the transition breakdown: from the unconstrained parallel run in TA-2, through the contradictory write locks, the 180-truck interstate gridlock, the audit of expired Dispensation DSP-SOL-07, and the EAB-mandated Single Master Authority recovery loop.
+        </p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_7e_1_dual_dispatch_gridlock_and_single_authority.svg" alt="Figure 7E.1: Dual-Routing Transition Gridlock &amp; Single Authority Invariant" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 7E.1:</strong> Transition Architecture Recovery State Machine &mdash; Highlighting the failure point in un-synchronized parallel runs, the missed Gate SOL-03, and the recovery protocol enforcing the Single Master Authority Invariant.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FORMAL TOGAF ARTIFACTS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. Formal Architecture Governance Artifacts (TOGAF® Deliverables)</h2>
+        <p>
+          The EAB ratified three formal governance deliverables to restructure the Transition Architecture roadmap:
+        </p>
+
+        <!-- DELIVERABLE 1: NON-COMPLIANCE NOTICE -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Compliance Review</span>
+            <span style="font-family: monospace; font-weight: bold; color: #dc2626;">DOCUMENT ID: EAB-NCN-SOL-003</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Opportunities &amp; Solutions Non-Compliance Notice</h3>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; width: 25%; color: #475569;">Target Program:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Orbit-Logistics Regional Hub Operations (TA-2 Rollout)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Violated Standard:</td>
+              <td style="padding: 0.4rem; color: #dc2626; font-weight: bold;">Gate SOL-03 (State Synchronization Gate) &amp; Rule GOV-02 (Dispensation Ceiling)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Failure Description:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Deployment of uncoordinated dual-write dispatching under expired Dispensation DSP-SOL-07, causing physical deadlock of 180 trucks and $4.5M cargo spoilage.</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Sanction Imposed:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Immediate 48-hour fallback to Transition Architecture 1 (TA-1); suspension of automated dispatch until Redis Redlock implementation is verified.</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- DELIVERABLE 2: RULE SOL-04 CODIFICATION -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Codified Architecture Principle</span>
+            <span style="font-family: monospace; font-weight: bold; color: #0284c7;">RULE SOL-04</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Rule SOL-04: Single Master Authority Invariant</h3>
+          <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
+            Every Transition Architecture governing shared physical or computational resources must enforce the following three constraints:
+          </p>
+          <ol style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
+            <li><strong>Single Master Authority:</strong> In any transition phase where legacy and target systems operate in parallel, exactly one system must hold exclusive write authority for physical state allocation. Dual-write architectures to shared resource pools are prohibited.</li>
+            <li><strong>Distributed Token Leases:</strong> All physical reservations (bays, docks, chargers) must use distributed mutex leases with explicit time-to-live (TTL) bounds (\(\le 120\text{ seconds}\)). If an agent fails to claim a leased slot within the TTL, the lock automatically expires and returns to the pool.</li>
+            <li><strong>Mandatory Fallback State Machine:</strong> Every Transition Architecture (TA-n) must maintain an automated, pre-tested fallback path to TA-(n-1) that can be activated in \(\le 15\text{ minutes}\) without data loss.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- LESSONS LEARNED & CITATIONS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. The Strategic Morals: Where Real Handbooks Earn Their Keep</h2>
+        <div class="card" style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #166534; margin-top: 0;">🏛️ Three Fiduciary Takeaways for Transition Architectures</h4>
+          <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 0.92rem; color: #166534; line-height: 1.6;">
+            <li><strong>Coexistence Is Harder Than Cutover:</strong> Building a transition architecture where two systems run in parallel is twice as complex as the target architecture itself. If you don't engineer the arbiter, your transition state will fail.</li>
+            <li><strong>Asphalt Is Zero-Sum:</strong> You can spin up virtual machines in parallel, but you cannot park two trucks in the same bay. Physical architecture requires strict mutual exclusion.</li>
+            <li><strong>Always Know Your Fallback Step:</strong> Falling back to TA-1 within two hours saved Hub Alpha from catastrophic permanent closure. Battle-hardened Chief Architects never advance to TA-2 without keeping TA-1 warm.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FACT-CHECK & CITABLE REFERENCES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Fact-Check &amp; Statutory References</h2>
+        <div class="card" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; margin-top: 1rem; font-size: 0.88rem; color: #334155;">
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li><strong>The Open Group</strong> (2022). <em>The TOGAF® Standard, 10th Edition: Phase E (Opportunities &amp; Solutions)</em>. Transition Architectures, Work Packages, and Coexistence Strategies.</li>
+            <li><strong>Sanfilippo, S.</strong> (2014). <em>Distributed locks with Redis (Redlock Algorithm)</em>. Redis Documentation. Mutual exclusion and distributed lease management.</li>
+            <li><strong>Coffman, E. G., Elphick, M., &amp; Shoshani, A.</strong> (1971). <em>System Deadlocks</em>. ACM Computing Surveys, 3(2), 67-78.</li>
+            <li><strong>Consortium Logistics Operations Committee</strong> (2025). <em>Incident Investigation Report: ORB-INC-701 (Hub Alpha Deadlock &amp; Redlock Invariant Deployment)</em>.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVIGATION FOOTER -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Exception Chapter</span>
+        <a href="chapter_2_exception_governance.html" class="nav-title">&larr; Chapter 2 Exception: Diagnostic Vibration Loss</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Exception Chapter</span>
+        <a href="chapter_10_exception_governance.html" class="nav-title">Chapter 10 Exception: Undetected Drift &amp; Wildcat Strike &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

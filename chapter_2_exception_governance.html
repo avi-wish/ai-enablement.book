@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2 Exception Governance: Diagnostic Telemetry Vibration Loss &amp; The Drivetrain Seizure - The Reality of Enterprise AI</title>
+  <meta name="description" content="TOGAF ADM Requirements Management Exception Governance Case Study: When 5.8G haul-road vibrations caused 22% silent UDP packet drops in the diagnostic ring buffer, blinding predictive models and destroying 3 truck drivetrains.">
+  <meta name="keywords" content="TOGAF Requirements Management, Baseline Diagnostics Exception, UDP Packet Loss, Haul Road Vibration, Gate REQ-03, Rule REQ-04, Shaker Table Testing, Avik Das">
+  <meta name="author" content="Avik Das">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Part IV: Exception Governance</span> &mdash; Chapter 2 Exception Case Study</div>
+      <nav><a href="chapter_2.html">&larr; Chapter 2 Primary</a><span style="color: #cbd5e1; margin: 0 0.4rem;">|</span><a href="content.html">Table of Contents</a></nav>
+    </header>
+
+    <main>
+      <h1>When Synthetic Diagnostics Meet Haul-Road Physics</h1>
+      <p class="subtitle">
+        Requirements Management Exception Governance: 5.8G Mechanical Road Shocks, Silent UDP Packet Erasure, Drivetrain Seizures &amp; The Shaker-Table Mandate
+      </p>
+
+      <!-- ========================================================================= -->
+      <!-- METADATA CARD -->
+      <!-- ========================================================================= -->
+      <div class="metadata-card">
+        <div class="metadata-grid">
+          <div class="metadata-label">Author:</div>
+          <div class="metadata-value">Avik Das (Chief Enterprise Architect)</div>
+          
+          <div class="metadata-label">Setting:</div>
+          <div class="metadata-value">Orbit-Logistics Route 66 Fleet Depot &amp; Telemetry Diagnostic Lab</div>
+          
+          <div class="metadata-label">ADM Phase:</div>
+          <div class="metadata-value">Requirements Management &amp; Baseline Diagnostics (Non-Functional Requirements NFRs, Physical Telemetry &amp; Sensor Integrity)</div>
+          
+          <div class="metadata-label">Original Decision:</div>
+          <div class="metadata-value">In Chapter 2: Deployment of an in-memory lightweight UDP ring buffer for edge sensor telemetry to minimize RAM consumption on fleet telematics gateways.</div>
+
+          <div class="metadata-label">The Failure Shock:</div>
+          <div class="metadata-value">Operating on rugged mountain haul roads with 5.8G mechanical shock profiles, the unbuffered UDP stream experienced silent packet loss of 22% during peak vibration transients. The predictive maintenance AI was blinded to high-frequency harmonic vibration signatures, outputting false 'Green' health signals while mechanical bearings degraded into catastrophic thermal seizure.</div>
+
+          <div class="metadata-label">Operational Crisis:</div>
+          <div class="metadata-value">Three heavy autonomous trucks suffered total drivetrain lockup on public interstate highways, destroying three $180,000 motor assemblies and stranding $1,200,000 in perishable freight. Executive trust in predictive AI telemetry evaporated overnight.</div>
+
+          <div class="metadata-label">Governance Response:</div>
+          <div class="metadata-value">The EAB invalidates the diagnostic baseline, issues Architecture Non-Compliance Notice NCN-REQ-002, halts predictive maintenance expansion, mandates dual-ring transactional Write-Ahead Logging (WAL) on ruggedized military-spec NVMe flash, and codifies Rule REQ-04: Mandatory Physical Shaker-Table Qualification at 8.0G.</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- NARRATOR INTRODUCTION -->
+      <!-- ========================================================================= -->
+      <div class="narrator-block">
+        <img src="assets/Shruti/shruti_go_green_1787204906619_transparent.png" alt="Shruti" class="shruti-avatar">
+        <p class="narrator-text">"In software engineering, developers test edge data pipelines by generating synthetic JSON packets on their laptops. The packets arrive in pristine order, with zero noise and zero drops. The test passes, and the architecture gate is certified."</p>
+        <p class="narrator-text">"<strong>Then the algorithm is installed on a 40-ton autonomous truck rumbling over washboard asphalt at sixty miles an hour.</strong> Physical vibration does not care about your clean synthetic test suite. When road shocks shake your edge gateway at 5.8G, unacknowledged UDP packets vanish into thin air&mdash;and your machine learning models celebrate a healthy bearing while the metal welds itself together at 600 degrees. Here is where diagnostic requirements management earns its keep."</p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COMIC STORYLINE: THE HIGHWAY SEIZURE -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>The Production Reality: When 5.8G Shocks Blind the Predictive Model</h2>
+
+        <!-- Panel 1 -->
+        <div id="panel-1" class="panel-marker" data-scene="Route 66 Corridor - Truck Drivetrain Seizure"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_2e_1.jpg" alt="Figure 2E.A: Autonomous Heavy Truck Bearing Seizure on Interstate" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2E.A:</strong> Interstate Freight Corridor &mdash; Truck #402 suffers catastrophic main bearing seizure; thermal friction welds the driveshaft as telemetry monitors show a false 'Normal' status.</figcaption>
+        </figure>
+        <div class="caption-block">Interstate 40 Haul Corridor. 03:45 Hours. Truck #402 grinds to a smoking halt as emergency mechanical locks fire.</div>
+
+        <div class="dialogue-bubble dialogue-rohan">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rohan Gupta.jpg" alt="Rohan Gupta" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rohan Gupta</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">VP Field Operations, Orbit-Logistics</span>
+            </div>
+            <div class="speech-content">
+              "Three trucks! Three brand-new autonomous electric trucks have seized their main differential bearings in less than forty-eight hours! The drivers behind them had to swerve across three lanes of traffic to avoid a rear-end collision! We were promised that the Chapter 2 diagnostic data layer would give us forty-eight hours of predictive warning before bearing fatigue! Look at the dashboard: five minutes before the bearing welded itself into solid iron, the AI health score was reporting <strong>98.4% nominal</strong>!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="panel-2" class="panel-marker" data-scene="Telemetry Lab - The 22% Packet Drop"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_2e_2.jpg" alt="Figure 2E.B: Diagnostic Lab Discovers 22% Silent Packet Loss" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2E.B:</strong> Diagnostic Telemetry Lab &mdash; Rajesh Iyer inspects the edge gateway memory logs, discovering that 22% of high-frequency vibration packets were dropped by the in-memory ring buffer under physical road shocks.</figcaption>
+        </figure>
+        <div class="caption-block">Telemetry Engineering Lab. 07:15 Hours. Forensic network captures reveal massive dropouts in raw accelerometer packets.</div>
+
+        <div class="dialogue-bubble dialogue-rajesh">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Rajesh Iyer.jpg" alt="Rajesh Iyer" class="speech-avatar-img">
+            <div class="speech-avatar-name">Rajesh Iyer</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Lead Automation Architect, Volt-Tech</span>
+            </div>
+            <div class="speech-content">
+              "Rohan, the AI didn't fail its calculation; it was starved of data! In Chapter 2, we chose an in-memory UDP ring buffer to save edge microcontroller RAM. On a smooth test track, UDP packet drop was 0.02%. But on mountain haul roads with washboard gravel, physical chassis vibration hit <strong>5.8G shocks at 45 Hertz</strong>! The network interface queue overflowed, dropping <strong>22% of all accelerometer packets</strong>! And because bearing spalling generates high-frequency harmonic transients, the exact microsecond spikes that signal bearing failure were precisely the packets that were dropped! The model saw a smooth, clean signal because the noise had been filtered out by packet loss!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="panel-3" class="panel-marker" data-scene="EAB Audit Hearing - The Expired UDP Waiver"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_2e_3.jpg" alt="Figure 2E.C: EAB Audit Uncovers Expired Dispensation DSP-REQ-02" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2E.C:</strong> EAB Governance Hearing &mdash; Priya Kapoor exposes that Dispensation DSP-REQ-02 expired 52 days ago, leaving vehicles running unacknowledged UDP protocols instead of persistent journaling.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Chamber. 11:00 Hours. Priya Kapoor presents the requirements compliance audit.</div>
+
+        <div class="dialogue-bubble dialogue-priya">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/Priya Kapoor.jpg" alt="Priya Kapoor" class="speech-avatar-img">
+            <div class="speech-avatar-name">Priya Kapoor</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Financial Architect</span>
+            </div>
+            <div class="speech-content">
+              "And why was an unacknowledged UDP ring buffer running on commercial highway trucks in the first place? Because during the Requirements phase, the telemetry team requested <strong>Dispensation DSP-REQ-02</strong> to defer ruggedized NVMe solid-state drives and run in-memory buffers for sixty days! That dispensation expired fifty-two days ago! The engineering leads bypassed <strong>Gate REQ-03 (High-G Lossless Verification)</strong> by testing with synthetic white noise instead of mounting the sensor box on an actual mechanical shaker table! We paid $1.2 million in cargo claims because a sixty-day waiver was allowed to become permanent technical debt!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div id="panel-4" class="panel-marker" data-scene="EAB Executive Ruling - Dual WAL Mandate"></div>
+        <figure class="my-8 text-center">
+          <img src="assets/ExceptionImages/panel_2e_4.jpg" alt="Figure 2E.D: EAB Chairman Aarav Patel Codifies Rule REQ-04 Shaker Table Mandate" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2E.D:</strong> Executive EAB Session &mdash; Aarav Patel invalidates the diagnostic baseline, ordering immediate fleet retrofits with dual-ring RocksDB Write-Ahead Logging and codifying Rule REQ-04.</figcaption>
+        </figure>
+        <div class="caption-block">EAB Chamber. 14:30 Hours. Aarav Patel enforces the requirements remediation mandate.</div>
+
+        <div class="dialogue-bubble dialogue-aarav">
+          <div class="speech-avatar-col">
+            <img src="assets/ComicChars/faces/AaravPatel.jpg" alt="Aarav Patel" class="speech-avatar-img">
+            <div class="speech-avatar-name">Aarav Patel</div>
+          </div>
+          <div class="speech-balloon">
+            <div class="speech-header">
+              <span class="speech-char-role">Chief Enterprise Architect &amp; EAB Chairman</span>
+            </div>
+            <div class="speech-content">
+              "In enterprise architecture, <strong>requirements are not certified in code; they are certified in physical physics</strong>.<br><br>
+              Here are the binding EAB rulings: First, under <strong>Architecture Non-Compliance Notice NCN-REQ-002</strong>, the Chapter 2 Diagnostic Baseline is declared formally invalid; all predictive maintenance automated dispatch decisions are suspended until re-certification. Second, we ban in-memory UDP transport for critical telemetry across all vehicles. Third, we mandate the deployment of <strong>Dual-Ring Transactional Write-Ahead Logging (RocksDB on military-spec NVMe flash)</strong> with store-and-forward edge acknowledgment. Fourth, we codify <strong>Rule REQ-04 (The Shaker-Table Invariant)</strong>: no diagnostic telemetry gateway may pass gate clearance without sustaining <strong>8.0G mechanical shaker-table testing for 72 continuous hours</strong> with zero packet loss. The fleet stays grounded until the first twenty trucks are retrofitted!"
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- TECHNICAL ANALYSIS: SHOCK PHYSICS & NYQUIST CRITERIA -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>1. Physical Harmonic Loss &amp; Nyquist Aliasing Under Vibration</h2>
+        <p>
+          In Requirements Management, non-functional requirements (NFRs) for sensor telemetry cannot rely on synthetic signal generators. Accelerometers mounted on industrial vehicle unsprung axles experience non-linear shock spectrums governed by road profile roughness:
+        </p>
+
+        \[ a_{\text{shock}}(t) = \sum_{k=1}^m A_k \sin\left(2\pi f_k t + \phi_k\right) + \Gamma_{\text{impact}}(t) \]
+
+        <p>
+          Where transient mechanical impacts \(\Gamma_{\text{impact}}(t)\) generate acceleration peaks exceeding <strong>\(5.8\text{G}\) (\(56.9\text{ m/s}^2\))</strong>.
+        </p>
+        <p>
+          Under the flawed in-memory UDP design, when network queues saturated, packet drops occurred in clusters of length \(\tau_{\text{burst}} \in [150\text{ms},\, 450\text{ms}]\). By the <strong>Nyquist-Shannon Sampling Theorem</strong>, reconstructing bearing fault frequencies \(f_{\text{fault}} \in [1.2\text{ kHz},\, 3.8\text{ kHz}]\) requires a continuous, non-interrupted sampling rate \(f_s \ge 2 f_{\text{fault}} \ge 7.6\text{ kHz}\).
+        </p>
+        <p>
+          A \(22\%\) burst drop destroyed the high-frequency harmonic peaks:
+        </p>
+
+        \[ \text{SNR}_{\text{effective}} = \text{SNR}_{\text{nominal}} - 10 \log_{10}\left(\frac{1}{1 - P_{\text{drop}}}\right) \approx 32\text{ dB} - 1.08\text{ dB} - \text{Aliasing Noise} \ll 12\text{ dB} \]
+
+        <p>
+          The neural classifier experienced severe aliasing, mistaking the absence of sensor packets for low mechanical vibration, and outputting an erroneous 'Healthy' classification right up to mechanical seizure.
+        </p>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- ARCHITECTURE SVG DIAGRAM -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>2. Architecture Diagram: Telemetry Vibration Breakdown &amp; Dual WAL Recovery</h2>
+        <p>
+          Figure 2E.1 illustrates the diagnostic breakdown: from the in-memory UDP buffer, through the 5.8G haul road shock, the silent packet loss, the drivetrain mechanical seizure, the audit of expired Dispensation DSP-REQ-02, and the EAB-mandated RocksDB Dual WAL recovery loop.
+        </p>
+
+        <figure class="my-8 text-center">
+          <img src="assets/figure_2e_1_vibration_packet_loss_diagnostic_recovery.svg" alt="Figure 2E.1: Diagnostic Telemetry Vibration Loss &amp; WAL Ingestion Recovery" style="width: 100%; max-width: 980px; height: auto; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
+          <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 2E.1:</strong> Diagnostic Requirements State Machine &mdash; Highlighting the failure point in UDP memory buffering, the missed Gate REQ-03, and the recovery protocol enforcing Shaker-Table Physical Qualification.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FORMAL TOGAF ARTIFACTS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>3. Formal Architecture Governance Artifacts (TOGAF® Deliverables)</h2>
+        <p>
+          The EAB ratified three formal governance deliverables to restructure the consortium diagnostic baseline:
+        </p>
+
+        <!-- DELIVERABLE 1: NON-COMPLIANCE NOTICE -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Compliance Review</span>
+            <span style="font-family: monospace; font-weight: bold; color: #dc2626;">DOCUMENT ID: EAB-NCN-REQ-002</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Requirements Management Non-Compliance Notice</h3>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; width: 25%; color: #475569;">Target Subsystem:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Orbit-Logistics Fleet Telematics Edge Gateway</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Violated Standard:</td>
+              <td style="padding: 0.4rem; color: #dc2626; font-weight: bold;">Gate REQ-03 (High-G Lossless Verification) &amp; Rule GOV-02 (Dispensation Ceiling)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Failure Description:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Operation of unbuffered UDP telemetry under expired Dispensation DSP-REQ-02 (52 days overdue), causing 22% packet loss and 3 vehicle drivetrain seizures.</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.4rem; font-weight: bold; color: #475569;">Sanction Imposed:</td>
+              <td style="padding: 0.4rem; color: #0f172a;">Immediate suspension of predictive fleet dispatching; mandatory retrofit of Dual-Ring RocksDB WAL storage across all 400 trucks.</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- DELIVERABLE 2: RULE REQ-04 CODIFICATION -->
+        <div class="card" style="margin: 1.5rem 0; border: 1.5px solid #e2e8f0; padding: 1.5rem; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Codified Architecture Principle</span>
+            <span style="font-family: monospace; font-weight: bold; color: #0284c7;">RULE REQ-04</span>
+          </div>
+          <h3 style="margin-top: 0; color: #0f172a;">Rule REQ-04: Shaker-Table Physical Stress Invariant</h3>
+          <p style="font-size: 0.9rem; color: #334155; line-height: 1.5;">
+            Every hardware telemetry gateway and edge sensor node must satisfy the following physical certification gate:
+          </p>
+          <ol style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
+            <li><strong>8.0G Mechanical Vibration Stress Proof:</strong> Prior to production firmware flashing, the assembled gateway must operate for 72 continuous hours mounted to an electrodynamic shaker table executing MIL-STD-810H random vibration profiles up to 8.0G RMS across frequencies from 5 Hz to 2,000 Hz. Packet loss must measure \(\le 0.001\%\).</li>
+            <li><strong>Mandatory Local Transactional Persistence:</strong> Telemetry gateways must write all sensor readings to an embedded, transactional write-ahead log (RocksDB / SQLite WAL) before transmitting across wireless networks. Store-and-forward protocols with cryptographic ACKs are mandatory.</li>
+            <li><strong>Ban on Synthetic-Only Gate Approvals:</strong> No non-functional requirement (NFR) relating to physical telemetry or edge computing may be certified using simulated or synthetic software generators alone. Physical environmental proof is required for EAB sign-off.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- LESSONS LEARNED & CITATIONS -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>4. The Strategic Morals: Where Real Handbooks Earn Their Keep</h2>
+        <div class="card" style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #166534; margin-top: 0;">🏛️ Three Fiduciary Takeaways for Requirements Management</h4>
+          <ol style="margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 0.92rem; color: #166534; line-height: 1.6;">
+            <li><strong>Software Tests Lie; Physics Never Does:</strong> A data ingestion pipeline that passes unit tests on developer laptops will fail on asphalt haul roads. Real architecture requires testing in the dirt, heat, and vibration of the physical plant.</li>
+            <li><strong>Packet Loss Disguises Catastrophe:</strong> In predictive maintenance, missing data is not neutral noise; it frequently masks the exact high-frequency harmonic peaks of mechanical failure. Always engineer for zero-loss ingestion.</li>
+            <li><strong>Temporary Buffers Are Permanent Traps:</strong> Granting a sixty-day dispensation for an in-memory buffer because 'persistent flash is expensive' cost $1.2M in stranded freight. When architecture cuts hardware corners, operational budgets bleed.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- FACT-CHECK & CITABLE REFERENCES -->
+      <!-- ========================================================================= -->
+      <section>
+        <h2>Fact-Check &amp; Statutory References</h2>
+        <div class="card" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; margin-top: 1rem; font-size: 0.88rem; color: #334155;">
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li><strong>The Open Group</strong> (2022). <em>The TOGAF® Standard, 10th Edition: Requirements Management</em>. Establishing and managing non-functional architectural requirements (NFRs).</li>
+            <li><strong>United States Department of Defense</strong> (2019). <em>MIL-STD-810H: Environmental Engineering Considerations and Laboratory Tests</em>. Method 514.8 (Vibration Testing).</li>
+            <li><strong>ISO 13373-1:2002</strong>. <em>Condition monitoring and diagnostics of machines &mdash; Vibration condition monitoring &mdash; Part 1: General procedures</em>. Nyquist sampling and vibration frequency analysis.</li>
+            <li><strong>Orbit-Logistics Telematics Safety Group</strong> (2025). <em>Incident Investigation Report: ORB-INC-203 (Route 66 Drivetrain Seizures &amp; Shaker-Table Validation)</em>.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVIGATION FOOTER -->
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Exception Chapter</span>
+        <a href="chapter_1_exception_governance.html" class="nav-title">&larr; Chapter 1 Exception: Principle 1 Breach</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Next Exception Chapter</span>
+        <a href="chapter_7_exception_governance.html" class="nav-title">Chapter 7 Exception: Dual-Routing Transition Gridlock &rarr;</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad7" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="amberGrad7" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="greenGrad7" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="blueGrad7" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <marker id="arrow7" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowRed7" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f87171" />
+    </marker>
+    <marker id="arrowGreen7" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#4ade80" />
+    </marker>
+    <filter id="shadow7" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad7)" stroke="#334155" stroke-width="2"/>
+
+  <text x="500" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="0.5">
+    FIGURE 7E.1: Dual-Routing Transition Gridlock &amp; Single Authority Invariant
+  </text>
+  <text x="500" y="60" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">
+    Phase E Opportunities &amp; Solutions Exception: Dual Dispatch Contention, Interstate Lockup &amp; Rule SOL-04 Arbiter Mandate
+  </text>
+
+  <!-- Box 1 -->
+  <rect x="40" y="90" width="280" height="175" rx="8" fill="url(#blueGrad7)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow7)"/>
+  <rect x="40" y="90" width="280" height="32" rx="8" fill="#082f49"/>
+  <text x="180" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e0f2fe">1. Transition Arch TA-2 (Ch 7)</text>
+  <text x="55" y="142" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Strategy: Staged 3-Phase Transition</text>
+  <text x="55" y="162" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Model: Dual Run (Manual + AI Engine)</text>
+  <text x="55" y="182" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Shared Assets: Charging Docks &amp; Gates</text>
+  <text x="55" y="202" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Assumption: Human Dispatchers Cooperate</text>
+  <text x="55" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; DSP-SOL-07: 60d Dual-Write Waiver</text>
+  <text x="55" y="242" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Automated Arbitration Omitted</text>
+
+  <path d="M 320 175 L 365 175" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow7)"/>
+
+  <!-- Box 2 -->
+  <rect x="370" y="90" width="260" height="175" rx="8" fill="url(#amberGrad7)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow7)"/>
+  <rect x="370" y="90" width="260" height="32" rx="8" fill="#451a03"/>
+  <text x="500" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fef3c7">2. Contradictory Write Locks</text>
+  <text x="385" y="142" font-family="sans-serif" font-size="11.5" fill="#fef3c7">&#8226; AI Dispatches Autonomous Fleet</text>
+  <text x="385" y="162" font-family="sans-serif" font-size="11.5" fill="#fca5a5" font-weight="bold">&#8226; Manual Dispatcher Overrides Charging Bay 4</text>
+  <text x="385" y="182" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Dual Concurrent Locks on Same Asset</text>
+  <text x="385" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Two Trucks Attempt Same Dock Slot</text>
+  <text x="385" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Deadlock Cascades Across Hub</text>
+  <text x="385" y="242" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; DSP-SOL-07 Lapsed 19 Days Prior</text>
+
+  <path d="M 630 175 L 675 175" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed7)"/>
+
+  <!-- Box 3 -->
+  <rect x="680" y="90" width="280" height="175" rx="8" fill="url(#redGrad7)" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow7)"/>
+  <rect x="680" y="90" width="280" height="32" rx="8" fill="#450a0a"/>
+  <text x="820" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">3. 14-Hour Interstate Seizure</text>
+  <text x="695" y="142" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; 180 Trucks Back Onto Interstate 80</text>
+  <text x="695" y="162" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; 14-Hour Complete Traffic Freeze</text>
+  <text x="695" y="182" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Perishable Cargo Ruined: $4,500,000</text>
+  <text x="695" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; State Highway Police Intervene</text>
+  <text x="695" y="222" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Front-Page National News Disgrace</text>
+  <text x="695" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Gate SOL-03 Bypass Uncovered</text>
+
+  <path d="M 820 265 L 820 325" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed7)"/>
+
+  <!-- Box 4 -->
+  <rect x="640" y="335" width="320" height="195" rx="8" fill="url(#redGrad7)" stroke="#f87171" stroke-width="2" filter="url(#shadow7)"/>
+  <rect x="640" y="335" width="320" height="32" rx="8" fill="#450a0a"/>
+  <text x="800" y="357" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">4. Missed Gate &amp; Expired Waiver Audit</text>
+  <text x="655" y="387" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>Gate SOL-03:</strong> State Arbiter Verification skipped</text>
+  <text x="655" y="407" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>DSP-SOL-07:</strong> Dual-write waiver expired without renewal</text>
+  <text x="655" y="427" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; No automated distributed lock protocol</text>
+  <text x="655" y="447" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Operations bypassed EAB state machine</text>
+  <text x="655" y="467" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Architecture Contract AC-105 Violated</text>
+  <text x="655" y="487" font-family="sans-serif" font-size="11.5" fill="#fef08a" font-weight="bold">&#8226; EAB Sanction: Immediate Fallback to TA-1</text>
+  <text x="655" y="507" font-family="sans-serif" font-size="11.5" fill="#fef08a">&#8226; Single Authority Arbiter Codification</text>
+
+  <path d="M 640 435 L 565 435" stroke="#4ade80" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen7)"/>
+
+  <!-- Box 5 -->
+  <rect x="40" y="315" width="515" height="235" rx="8" fill="url(#greenGrad7)" stroke="#34d399" stroke-width="2" filter="url(#shadow7)"/>
+  <rect x="40" y="315" width="515" height="32" rx="8" fill="#064e3b"/>
+  <text x="297" y="337" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ecfdf5">5. Solutions Governance Recovery &amp; Arbiter Mandate</text>
+  <text x="60" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">Transition Redesign &amp; Invariants:</text>
+  <text x="60" y="394" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Emergency 48h Fallback to TA-1:</strong> Cleared logistics gridlock</text>
+  <text x="60" y="414" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Rule SOL-04:</strong> Single Master Authority Invariant codified</text>
+  <text x="60" y="434" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Distributed Token Lease:</strong> Redis Redlock on physical docks</text>
+  <text x="60" y="454" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Unified Dispatch API:</strong> Manual and AI routes funnel to 1 queue</text>
+  <text x="60" y="474" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>NCN-SOL-003:</strong> Non-Compliance Notice issued to Regional PMO</text>
+
+  <text x="325" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15">Operational Outcome &amp; Safety:</text>
+  <text x="325" y="394" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; 180 trucks cleared in 6 hours</text>
+  <text x="325" y="414" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Zero conflicting bay assignments</text>
+  <text x="325" y="434" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Automated lease expires in 120s</text>
+  <text x="325" y="454" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Resumed TA-2 with zero contention</text>
+  <text x="325" y="474" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Multi-enterprise SCOR sync restored</text>
+
+  <rect x="55" y="495" width="485" height="42" rx="4" fill="#042f2e" stroke="#14b8a6" stroke-width="1"/>
+  <text x="297" y="514" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#5eead4">
+    TOGAF Handshake: Opportunities &amp; Solutions Handover to Phase F (Migration Planning)
+  </text>
+  <text x="297" y="530" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#ccfbf1">
+    Transition Architecture Building Blocks (ABB) Re-certified with Mutual Exclusion Primitives
+  </text>
+
+  <rect x="40" y="570" width="920" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="65" cy="587" r="6" fill="#38bdf8"/>
+  <text x="80" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Transition TA-2</text>
+  <circle cx="215" cy="587" r="6" fill="#f59e0b"/>
+  <text x="230" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Contradictory Locks</text>
+  <circle cx="370" cy="587" r="6" fill="#ef4444"/>
+  <text x="385" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Interstate Gridlock</text>
+  <circle cx="510" cy="587" r="6" fill="#10b981"/>
+  <text x="525" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Single Arbiter Invariant</text>
+  <text x="940" y="591" text-anchor="end" font-family="sans-serif" font-size="11" fill="#64748b">TOGAF ADM Phase E &amp; SCOR Level 3</text>
+</svg>

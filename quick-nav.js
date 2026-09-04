@@ -48,6 +48,22 @@
       ]
     },
     {
+      category: "Part IV: Exception Governance Chronicles",
+      badge: "Phases Preliminary – H",
+      items: [
+        { id: "chapter_1_exception", num: "1E", title: "Ch 1 Exception: Principle 1 Breach", file: "chapter_1_exception_governance.html", tag: "Preliminary Exception", desc: "Northern Mine telemetry scrubber, $18.4M ruined cathodes, and HSM attestation mandate." },
+        { id: "chapter_2_exception", num: "2E", title: "Ch 2 Exception: Diagnostic Vibration Loss", file: "chapter_2_exception_governance.html", tag: "Requirements Exception", desc: "5.8G haul road vibration, 22% UDP packet drops, drivetrain lockup, and RocksDB Dual-WAL." },
+        { id: "chapter_3_exception", num: "3E", title: "Ch 3 Exception: Strategic Order Freeze", file: "chapter_3_exception_governance.html", tag: "Phase A Exception", desc: "Binary order freeze, 450 factory furloughs, $28M default claims, and Rule VIS-03 Throttled Ingestion." },
+        { id: "chapter_4_exception", num: "4E", title: "Ch 4 Exception: In-House Build CapEx Bleed", file: "chapter_4_exception_governance.html", tag: "Phase B Exception", desc: "In-house PINN digital twin costs explode to $22.4M, inverting NPV to -$12M; EAB stops work." },
+        { id: "chapter_5_exception", num: "5E", title: "Ch 5 Exception: Data Mesh Partitions", file: "chapter_5_exception_governance.html", tag: "Phase C Exception", desc: "Fiber split creates 45s event lag, swapping DPP serial numbers and impounding $32M at Rotterdam." },
+        { id: "chapter_6_exception", num: "6E", title: "Ch 6 Exception: TinyML Thermal Throttling", file: "chapter_6_exception_governance.html", tag: "Phase D Exception", desc: "Summer 42°C plant heat throttles MCU clock, causing a $350k robot collision; Peltier watchdog mandate." },
+        { id: "chapter_7_exception", num: "7E", title: "Ch 7 Exception: Dual-Routing Gridlock", file: "chapter_7_exception_governance.html", tag: "Phase E Exception", desc: "Parallel dispatch creates contradictory dock locks, freezing 180 trucks on I-80 for 14 hours." },
+        { id: "chapter_8_exception", num: "8E", title: "Ch 8 Exception: Rollback State Corruption", file: "chapter_8_exception_governance.html", tag: "Phase F Exception", desc: "Untested downward migration drops calibration tables across 400 trucks; CapEx Tranche 3 frozen." },
+        { id: "chapter_9_exception", num: "9E", title: "Ch 9 Exception: Expired Dispensation & Rogue Proxy", file: "chapter_9_exception_governance.html", tag: "Phase G Exception", desc: "DSP-001 expires on Day 121; rogue reverse proxy triggers EU AI Act Art 99 €15M breach notice." },
+        { id: "chapter_10_exception", num: "10E", title: "Ch 10 Exception: Undetected Concept Drift", file: "chapter_10_exception_governance.html", tag: "Phase H Exception", desc: "APM misses 8 months of drift; turnaround squeezed to 4 minutes; 850 workers wildcat strike." }
+      ]
+    },
+    {
       category: "Epilogue & Back Matter",
       items: [
         { id: "epilogue", num: "E", title: "Epilogue: The Roadmap to Sustained Intelligence", file: "epilogue.html", tag: "Epilogue / Summit", desc: "Ecosystem summit, unified covenants, and permanent adaptation roadmap." },

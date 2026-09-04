@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="amberGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="greenGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="blueGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <marker id="arrow6" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowRed6" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f87171" />
+    </marker>
+    <marker id="arrowGreen6" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#4ade80" />
+    </marker>
+    <filter id="shadow6" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad6)" stroke="#334155" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="0.5">
+    FIGURE 6E.1: TinyML Thermal Throttling Breakdown &amp; Hardware Watchdog Recovery
+  </text>
+  <text x="500" y="60" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">
+    Phase D Technology Architecture Exception: Silicon Die Saturation, Bypassed Gate TECH-04 &amp; Active Peltier Redesign
+  </text>
+
+  <!-- ==================== BOX 1: NOMINAL BASELINE ==================== -->
+  <rect x="40" y="90" width="280" height="175" rx="8" fill="url(#blueGrad6)" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow6)"/>
+  <rect x="40" y="90" width="280" height="32" rx="8" fill="#082f49"/>
+  <text x="180" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e0f2fe">
+    1. Canonical Design (Chapter 6)
+  </text>
+  <text x="55" y="142" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Target: Sub-2.5ms Edge Inference</text>
+  <text x="55" y="162" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Topology: Joint-Mounted MCU (TinyML)</text>
+  <text x="55" y="182" font-family="sans-serif" font-size="11.5" fill="#e0f2fe">&#8226; Clock Speed: 480 MHz ARM Cortex-M7</text>
+  <text x="55" y="202" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Lab Tested: 2.1ms Latency at 21&#176;C</text>
+  <text x="55" y="222" font-family="sans-serif" font-size="11.5" fill="#bae6fd">&#8226; Cooling: Passive Convection Only</text>
+  <text x="55" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Certified Under Winter Lab Conditions</text>
+
+  <!-- Arrow Box 1 -> Box 2 -->
+  <path d="M 320 175 L 365 175" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow6)"/>
+
+  <!-- ==================== BOX 2: THERMAL SURGE & FAILURE ==================== -->
+  <rect x="370" y="90" width="260" height="175" rx="8" fill="url(#amberGrad6)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow6)"/>
+  <rect x="370" y="90" width="260" height="32" rx="8" fill="#451a03"/>
+  <text x="500" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fef3c7">
+    2. Summer Thermal Saturation
+  </text>
+  <text x="385" y="142" font-family="sans-serif" font-size="11.5" fill="#fef3c7">&#8226; Factory Ambient: Spikes to 42&#176;C</text>
+  <text x="385" y="162" font-family="sans-serif" font-size="11.5" fill="#fef3c7">&#8226; Motor Joint Dissipation: +46&#176;C Delta</text>
+  <text x="385" y="182" font-family="sans-serif" font-size="11.5" fill="#fca5a5" font-weight="bold">&#8226; Die Junction: Reaches 88&#176;C Ceiling</text>
+  <text x="385" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Silicon Throttles: 480MHz &#8594; 120MHz</text>
+  <text x="385" y="222" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Inference Spikes: 2.1ms &#8594; 38.6ms</text>
+  <text x="385" y="242" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Latency Boundary Exceeded 15&#215;</text>
+
+  <!-- Arrow Box 2 -> Box 3 -->
+  <path d="M 630 175 L 675 175" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed6)"/>
+
+  <!-- ==================== BOX 3: COLLISION & CRISIS ==================== -->
+  <rect x="680" y="90" width="280" height="175" rx="8" fill="url(#redGrad6)" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow6)"/>
+  <rect x="680" y="90" width="280" height="32" rx="8" fill="#450a0a"/>
+  <text x="820" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">
+    3. Gripper Collision &amp; Line Halt
+  </text>
+  <text x="695" y="142" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; Collision Window Missed by 36.1ms</text>
+  <text x="695" y="162" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; Robot Crashes into Battery Pack Chassis</text>
+  <text x="695" y="182" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Physical Damage: $350,000 Loss</text>
+  <text x="695" y="202" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Plant 2 Assembly Halted for 72 Hours</text>
+  <text x="695" y="222" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Gate TECH-04 Bypass Uncovered</text>
+  <text x="695" y="242" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Dispensation DSP-TEC-02 Expired</text>
+
+  <!-- Downward Arrow from Box 3 -> Box 4 -->
+  <path d="M 820 265 L 820 325" stroke="#f87171" stroke-width="2.5" fill="none" marker-end="url(#arrowRed6)"/>
+
+  <!-- ==================== BOX 4: AUDIT & GOVERNANCE BREACH ==================== -->
+  <rect x="640" y="335" width="320" height="195" rx="8" fill="url(#redGrad6)" stroke="#f87171" stroke-width="2" filter="url(#shadow6)"/>
+  <rect x="640" y="335" width="320" height="32" rx="8" fill="#450a0a"/>
+  <text x="800" y="357" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fecaca">
+    4. Missed Gate &amp; Expired Waiver Audit
+  </text>
+  <text x="655" y="387" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>Gate TECH-04:</strong> Thermal Chamber Testing skipped</text>
+  <text x="655" y="407" font-family="sans-serif" font-size="11.5" fill="#fee2e2">&#8226; <strong>DSP-TEC-02:</strong> 90d waiver for uncooled boards</text>
+  <text x="655" y="427" font-family="sans-serif" font-size="11.5" fill="#ffffff" font-weight="bold">&#8226; Expiration: Expired 41 days before crash!</text>
+  <text x="655" y="447" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Heat sink procurement de-prioritized by plant</text>
+  <text x="655" y="467" font-family="sans-serif" font-size="11.5" fill="#fca5a5">&#8226; Architecture Contract AC-103 Breached</text>
+  <text x="655" y="487" font-family="sans-serif" font-size="11.5" fill="#fef08a" font-weight="bold">&#8226; Liquidated Damages: $240,000 Supplier Penalty</text>
+  <text x="655" y="507" font-family="sans-serif" font-size="11.5" fill="#fef08a">&#8226; Immediate EAB Emergency Intervention</text>
+
+  <!-- Leftward Arrow from Box 4 -> Box 5 -->
+  <path d="M 640 435 L 565 435" stroke="#4ade80" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen6)"/>
+
+  <!-- ==================== BOX 5: GOVERNANCE REDESIGN ==================== -->
+  <rect x="40" y="315" width="515" height="235" rx="8" fill="url(#greenGrad6)" stroke="#34d399" stroke-width="2" filter="url(#shadow6)"/>
+  <rect x="40" y="315" width="515" height="32" rx="8" fill="#064e3b"/>
+  <text x="297" y="337" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ecfdf5">
+    5. Phase D Governance Redesign &amp; Watchdog Circuit
+  </text>
+
+  <text x="60" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">Architectural Remediation Mandate:</text>
+  <text x="60" y="394" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Active Peltier Cooling:</strong> Solid-state thermoelectric heat pump</text>
+  <text x="60" y="414" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Dual-Core Asymmetric Lockstep:</strong> Core 0 (ML), Core 1 (Safety)</text>
+  <text x="60" y="434" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Analog Hardware Watchdog:</strong> Independent comparator trips in &#8804; 1.0ms</text>
+  <text x="60" y="454" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Rule TECH-05:</strong> Mandatory +15&#176;C Thermal Oven Stress Gate</text>
+  <text x="60" y="474" font-family="sans-serif" font-size="11.5" fill="#ecfdf5">&#8226; <strong>Automated Hardware Lockout:</strong> No firmware flash without cooling probe</text>
+
+  <text x="325" y="372" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15">Operational Recovery &amp; Bounds:</text>
+  <text x="325" y="394" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Max Die Temp clamped at 54&#176;C</text>
+  <text x="325" y="414" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Guaranteed Latency: 1.82ms &#177; 0.15ms</text>
+  <text x="325" y="434" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Zero software dependency for safety halt</text>
+  <text x="325" y="454" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Line 2 resumed with zero collisions</text>
+  <text x="325" y="474" font-family="sans-serif" font-size="11.5" fill="#d1fae5">&#8226; Supplier funded $240k Peltier retrofit</text>
+
+  <!-- Bottom Banner in Governance Box -->
+  <rect x="55" y="495" width="485" height="42" rx="4" fill="#042f2e" stroke="#14b8a6" stroke-width="1"/>
+  <text x="297" y="514" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#5eead4">
+    TOGAF Handshake: Technology Architecture Handover to Phase E (Transition Architecture)
+  </text>
+  <text x="297" y="530" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#ccfbf1">
+    Architecture Building Block ABB-TECH-04 Updated &amp; Standard Hardware Bill of Materials Frozen
+  </text>
+
+  <!-- Bottom Legend -->
+  <rect x="40" y="570" width="920" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="65" cy="587" r="6" fill="#38bdf8"/>
+  <text x="80" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Baseline Model</text>
+  <circle cx="205" cy="587" r="6" fill="#f59e0b"/>
+  <text x="220" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Thermal Throttling</text>
+  <circle cx="365" cy="587" r="6" fill="#ef4444"/>
+  <text x="380" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Collision Crash</text>
+  <circle cx="505" cy="587" r="6" fill="#10b981"/>
+  <text x="520" y="591" font-family="sans-serif" font-size="11" fill="#cbd5e1">Watchdog Redesign</text>
+  <text x="940" y="591" text-anchor="end" font-family="sans-serif" font-size="11" fill="#64748b">ISO 13849-1 Cat 4 &amp; TOGAF ADM Phase D</text>
+</svg>
