@@ -432,6 +432,24 @@
               </tbody>
             </table>
           </div>
+        <div style="margin-top: 1.5rem;">
+          <h3>Core Architecture, Regulatory &amp; Governance Terms:</h3>
+          <dl>
+            <dt>Architecture Contract (TOGAF&reg; Phase F &amp; G):</dt>
+            <dd>An enterprise architecture governance instrument defined under the TOGAF&reg; Standard. It represents a joint accountability agreement between the Architecture Board, business sponsors, and delivery teams that establishes architecture deliverables, non-functional quality envelopes, and conformance metrics. While distinct from external commercial contracts, in multi-enterprise consortia it is formally mirrored in vendor Master Services Agreements (MSAs) and inter-company SLAs.</dd>
+
+            <dt>TIME Framework (Gartner, Inc.):</dt>
+            <dd>An industry application portfolio rationalization framework developed by Gartner (Tolerate, Invest, Migrate, Eliminate). Categorizes software systems by technical health and strategic business value to prioritize modernization, refactoring, or retirement during TOGAF Phase C (Information Systems Architectures).</dd>
+
+            <dt>EU AI Act Conformity Pathways (Regulation (EU) 2024/1689):</dt>
+            <dd>The European regulatory compliance framework for high-risk artificial intelligence. Distinguishes standalone logistics and fleet dispatch systems (Annex III Point 2, governed by provider <em>Internal Control</em> under Annex VI, Article 43(2) with ISO/IEC 42001 certification) from vehicle guidance and braking safety systems (governed under Article 6(1) and Annex I Section B via the automotive <em>EU Type-Approval Framework</em> under Regulation (EU) 2018/858 / GSR 2019/2144). Statutory penalties are structured under Article 99(4) (up to &euro;15,000,000 or 3% of worldwide annual turnover for high-risk non-compliance) versus Article 99(3) (&euro;35,000,000 or 7% for prohibited practices under Article 5).</dd>
+
+            <dt>Shapley Additive exPlanations (SHAP):</dt>
+            <dd>A cooperative game-theoretic method for explaining individual machine learning predictions by computing Shapley feature attributions \(\phi_i\) that satisfy local accuracy (\(\sum \phi_i = f(x) - \mathbb{E}[f(x)]\)). In high-integrity operations, explainability is quantified using local surrogate fidelity (\(R^2 \ge 0.95\)) and top-\(k\) attribution coverage (\(\ge 95\%\) of prediction variance explained) rather than a naked percentage probability.</dd>
+
+            <dt>Model Distribution Drift (\(D_{\text{KS}}\) &amp; \(\text{PSI}\)):</dt>
+            <dd>Statistical variance between baseline training distributions and production inference telemetry. Quantified using rigorous statistical metrics, including the Kolmogorov-Smirnov test statistic (\(D_{\text{KS}} \ge 0.08\)) and Population Stability Index (\(\text{PSI} \ge 0.10\)), triggering automated safe fallbacks and model retraining loops.</dd>
+          </dl>
         </div>
       </section>
 

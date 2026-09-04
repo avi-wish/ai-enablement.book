@@ -174,9 +174,9 @@
   <rect x="50" y="602" width="1100" height="210" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
 
   <!-- Item 1 -->
-  <text x="70" y="626" fill="#38bdf8" font-size="11.5" font-weight="bold">1. Contractual Enforceability:</text>
-  <text x="70" y="643" fill="#cbd5e1" font-size="10.5">All six Architecture Contracts (AC-101 through AC-106) carry legally binding covenants ratified by corporate counsels and risk guardians.</text>
-  <text x="70" y="658" fill="#94a3b8" font-size="10">Deviations trigger automatic financial penalty charges and escrow drawdown freezes.</text>
+  <text x="70" y="626" fill="#38bdf8" font-size="11.5" font-weight="bold">1. Governance Enforceability:</text>
+  <text x="70" y="643" fill="#cbd5e1" font-size="10.5">All six Architecture Contracts (AC-101 through AC-106) carry formal governance covenants ratified by architecture boards and delivery leads.</text>
+  <text x="70" y="658" fill="#94a3b8" font-size="10">Deviations trigger automatic remediation work packages, escrow freezes, and CI/CD fitness gate halts.</text>
 
   <!-- Item 2 -->
   <text x="70" y="682" fill="#34d399" font-size="11.5" font-weight="bold">2. Upstream Architecture Closure:</text>

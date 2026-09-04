@@ -66,8 +66,8 @@
   <text x="60" y="636" fill="#f1f5f9" font-size="11.5">&#8226; EU AI Act (High-Risk Category)</text>
   <text x="60" y="656" fill="#f1f5f9" font-size="11.5">&#8226; EU Battery Reg 2023/1542</text>
   <text x="60" y="676" fill="#f1f5f9" font-size="11.5">&#8226; ISO 26262 ASIL-D Safety</text>
-  <text x="60" y="696" fill="#fca5a5" font-size="11" font-weight="bold">&#9888; Statutory Fine: Up to 7% Rev</text>
-  <text x="60" y="713" fill="#fca5a5" font-size="10.5">(&#8804; $35 Million Maximum)</text>
+  <text x="60" y="696" fill="#fca5a5" font-size="10.5" font-weight="bold">&#9888; Art. 99(4): Up to 3% (&#8364;15M)</text>
+  <text x="60" y="713" fill="#fca5a5" font-size="10">&#9888; Art. 99(3): Up to 7% (&#8364;35M)</text>
 
   <!-- Governance Core Box -->
   <rect x="45" y="735" width="270" height="130" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
@@ -189,8 +189,8 @@
   <text x="1040" y="483" fill="#f1f5f9" font-size="11.5">&#8226; CE-Mark Compliance Dossier</text>
   <text x="1040" y="503" fill="#f1f5f9" font-size="11.5">&#8226; High-Risk AI System Certified</text>
   <text x="1040" y="523" fill="#f1f5f9" font-size="11.5">&#8226; Conformity Score: S_conf = 0.998</text>
-  <text x="1040" y="543" fill="#f1f5f9" font-size="11.5">&#8226; Shield: $35M Fine Protected</text>
-  <text x="1040" y="565" fill="#38bdf8" font-size="11.5" font-weight="bold">&#10003; Approved by Notified Body</text>
+  <text x="1040" y="543" fill="#f1f5f9" font-size="11.5">&#8226; Shield: &#8364;15M Fine Protected (Art. 99(4))</text>
+  <text x="1040" y="565" fill="#38bdf8" font-size="11.5" font-weight="bold">&#10003; Verified Conformity &amp; Type-Approval</text>
 
   <!-- Deliverable 4 -->
   <rect x="1025" y="590" width="290" height="125" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>

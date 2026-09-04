@@ -447,7 +447,7 @@
           \text{PSI} = \sum_{b=1}^{B} \left( P_{\text{actual}}(b) - P_{\text{expected}}(b) \right) \times \ln\left( \frac{P_{\text{actual}}(b)}{P_{\text{expected}}(b)} \right) \ge 0.15
         \]
 
-        <p>When \(\text{PSI} \ge 0.15\), the CI/CD pipeline immediately launches a shadow container running 1,000,000 synthetic edge cases. Only if the candidate model maintains sub-\(2.5\text{ms}\) latency, \(\ge 99.2\%\) SHAP explainability fidelity, and positive unit economics does the EAB issue a cryptographic deployment token.</p>
+        <p>When \(\text{PSI} \ge 0.15\), the CI/CD pipeline immediately launches a shadow container running 1,000,000 synthetic edge cases. Only if the candidate model maintains sub-\(2.5\text{ms}\) latency, local surrogate explanation fidelity \(R^2 \ge 0.95\), Shapley attribution coverage \(\ge 95\%\), and positive unit economics does the EAB issue a cryptographic deployment token.</p>
       </section>
 
       <!-- ========================================================================= -->
@@ -460,7 +460,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
           <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem;">
             <h4 style="color: #1e293b; margin-top: 0; font-size: 1.05rem;">Covenant 1: The Anti-Obfuscation Mandate</h4>
-            <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">No machine learning system may be placed in a production decision path unless its outputs can be decomposed into human-interpretable feature attributions (\(\text{SHAP} \ge 99.2\%\)) and audited under EU AI Act Article 14.</p>
+            <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">No machine learning system may be placed in a production decision path unless its outputs can be decomposed into human-interpretable feature attributions with local explanation fidelity (\(R^2 \ge 0.95\)) and Shapley attribution coverage (\(\ge 95\%\)) audited under EU AI Act Article 14.</p>
           </div>
 
           <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem;">

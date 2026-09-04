@@ -434,9 +434,9 @@
           </tbody>
         </table>
 
-        <!-- 2.5 STANDARD TOGAF CRUD MATRIX (TOGAF RULE DAT-02) -->
+        <!-- 2.5 STANDARD TOGAF CRUD MATRIX (CONSORTIUM RULE DAT-02) -->
         <h3>2.5 TOGAF&reg; Data Entity to Business Function CRUD Matrix</h3>
-        <p>In accordance with TOGAF&reg; Phase C standards (Rule DAT-02), every core data entity must have unambiguous lifecycle ownership across enterprise functions, verifying that each entity has at least one authoritative Create (C) and Read (R) operation:</p>
+        <p>In accordance with TOGAF&reg; Phase C data architecture guidance and Consortium Rule DAT-02, every core data entity must have unambiguous lifecycle ownership across enterprise functions, verifying that each entity has at least one authoritative Create (C) and Read (R) operation:</p>
 
         <div class="card" style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 0.5rem 0.75rem; font-size: 0.84rem; color: #166534; margin-bottom: 1rem;">
           <strong>Auditor Traceability Note:</strong> This TOGAF CRUD Matrix is derived directly from the DDD Aggregate &amp; Context boundaries established during Event Storming.
@@ -512,9 +512,9 @@
           </tbody>
         </table>
 
-        <!-- 2.6 SYSTEM OF RECORD (SOR) DESIGNATION TABLE (TOGAF RULE DAT-01) -->
+        <!-- 2.6 SYSTEM OF RECORD (SOR) DESIGNATION TABLE (CONSORTIUM RULE DAT-01) -->
         <h3>2.6 Data Entity System of Record (SoR) Designation Table</h3>
-        <p>In accordance with TOGAF&reg; Rule DAT-01, every enterprise data entity must have exactly one authoritative <strong>System of Record (SoR)</strong> with strictly bounded downstream systems of engagement:</p>
+        <p>In accordance with Consortium Architecture Rule DAT-01 (codified under TOGAF Phase C), every enterprise data entity must have exactly one authoritative <strong>System of Record (SoR)</strong> with strictly bounded downstream systems of engagement:</p>
 
         <table class="options-table">
           <thead>
@@ -572,9 +572,9 @@
           </tbody>
         </table>
 
-        <!-- 2.7 DATA SECURITY CLASSIFICATION REGISTER (TOGAF RULE DAT-03) -->
+        <!-- 2.7 DATA SECURITY CLASSIFICATION REGISTER (CONSORTIUM RULE DAT-03) -->
         <h3>2.7 Data Security &amp; Regulatory Classification Register</h3>
-        <p>In accordance with TOGAF&reg; Rule DAT-03, all data assets across the extraction and passport pipeline are assigned formal security tiers with explicit encryption, retention, and access policies:</p>
+        <p>In accordance with Consortium Architecture Rule DAT-03 (codified under TOGAF Phase C), all data assets across the extraction and passport pipeline are assigned formal security tiers with explicit encryption, retention, and access policies:</p>
 
         <table class="options-table">
           <thead>
@@ -1487,9 +1487,9 @@
           <figcaption class="mt-3 text-sm text-slate-500 font-medium"><strong>Figure 5.6B:</strong> Data Pipeline Quality Stabilization &mdash; Daily event ingestion scaling from 250 to 12,500 records while assay purity variance collapses from &plusmn;4.8% to &plusmn;0.1%.</figcaption>
         </figure>
 
-        <!-- 7.3 LEGACY RECORD HITL EXCEPTION WORKFLOW (TOGAF RULE REQ-02) -->
+        <!-- 7.3 LEGACY RECORD HITL EXCEPTION WORKFLOW (CONSORTIUM RULE REQ-02) -->
         <h3>7.3 Legacy Record HITL Exception Remediation Workflow (WP-TR-03)</h3>
-        <p>In accordance with TOGAF&reg; Rule REQ-02 (Operational bounds for edge failure cases), historical assay records that fail automated ACL deterministic parsing are routed through a structured <strong>Human-in-the-Loop (HITL) Exception Pipeline</strong> with strict resolution SLAs:</p>
+        <p>In accordance with Consortium Architecture Rule REQ-02 (Operational bounds for edge failure cases), historical assay records that fail automated ACL deterministic parsing are routed through a structured <strong>Human-in-the-Loop (HITL) Exception Pipeline</strong> with strict resolution SLAs:</p>
 
         <figure class="my-8 text-center">
           <img src="assets/figure_5_7_hitl_exception_tree.svg" alt="Figure 5.7: Legacy Record HITL Exception Remediation Decision Tree" style="max-width: 100%; max-height: 620px; width: auto; height: auto; object-fit: contain; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 0 auto; display: block;">
@@ -1642,9 +1642,9 @@ message DigitalProductPassport {
   uint32 schema_version = 12;         // Version 1
 }</pre>
 
-        <!-- 8.3 PROTOBUF SCHEMA EVOLUTION POLICY & VERSION COMPATIBILITY (TOGAF RULE DEL-03 & GOV-02) -->
+        <!-- 8.3 PROTOBUF SCHEMA EVOLUTION POLICY & VERSION COMPATIBILITY (CONSORTIUM RULES DEL-03 & GOV-02) -->
         <h3>8.3 Protobuf Schema Evolution Policy &amp; Version Compatibility</h3>
-        <p>In accordance with TOGAF&reg; Governance standards (Rule GOV-02: Zero Unrecorded Deviations), the Joint Standards Council ratifies strict schema evolution rules to ensure cross-enterprise forward and backward compatibility:</p>
+        <p>In accordance with TOGAF&reg; governance guidance and Consortium Rule GOV-02 (Zero Unrecorded Deviations), the Joint Standards Council ratifies strict schema evolution rules to ensure cross-enterprise forward and backward compatibility:</p>
 
         <table class="options-table">
           <thead>

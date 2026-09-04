@@ -154,7 +154,7 @@ function renderEuAiActRadarChart() {
                     pointRadius: 5
                 },
                 {
-                    label: "Statutory Conformity Threshold (99.50%)",
+                    label: "EAB Stage-Gate Quality Threshold (99.50%)",
                     data: [99.5, 99.5, 99.5, 99.5, 99.5, 99.5, 99.5],
                     borderColor: "rgba(239, 68, 68, 0.75)",
                     borderWidth: 1.8,
