@@ -873,6 +873,124 @@
       </div>
 
       <!-- ========================================================================= -->
+      <!-- ONE-PAGE EXIT CRITERIA PIN-TO-THE-WALL REFERENCE SHEET                    -->
+      <!-- ========================================================================= -->
+      <section class="exit-criteria-sheet" id="phase-gate-06-exit">
+        <div class="exit-sheet-header">
+          <div class="exit-header-left">
+            <h2 class="exit-sheet-title">
+              <span>📌</span> Phase Gate 06 Exit Criteria: Technology Architecture &amp; Deterministic Edge Runtime
+            </h2>
+            <p class="exit-sheet-subtitle">
+              TOGAF&reg; ADM Phase D &mdash; Pin-to-the-Wall Executive Sign-Off &amp; Operational Gate Reference
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <span class="exit-tag-badge">Phase Gate Checklist</span>
+            <span class="exit-gate-id">GATE-06: PHASE D</span>
+          </div>
+        </div>
+
+        <div class="exit-grid">
+          <!-- COLUMN 1: ARTIFACTS PRODUCED -->
+          <div class="exit-col artifacts">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Artifacts Produced (5)</span>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">TAD-EDGE-06</span><strong>Technology Architecture Document (TAD)</strong></div>
+              <div class="exit-item-desc">Defines ISA-95 Purdue hierarchy, vehicle NPU topologies, edge depot micro-clusters, and cloud training interfaces.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">TINYML-QUANT-06</span><strong>Model Quantization Standard</strong></div>
+              <div class="exit-item-desc">INT8/FP16 quantization recipes, maximum memory limits (\(<256\text{KB}\) SRAM), and static compile profiles on ARM Cortex-M55.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">FALLBACK-DET-06</span><strong>Deterministic Safety Fallback Matrix</strong></div>
+              <div class="exit-item-desc">Hard-coded lookup tables and hardware watchdog circuits that instantly seize control if model inference exceeds \(2.5\text{ms}\).</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">RULE-TECH-05</span><strong>Thermal Envelope Specification</strong></div>
+              <div class="exit-item-desc">Codifies Rule TECH-05: mandatory silicon frequency guarantees under sustained \(45^\circ\text{C}\) factory floor temperatures.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">DEPOT-IOT-06</span><strong>Smart Depot Grid Blueprint</strong></div>
+              <div class="exit-item-desc">Local edge gateway architectures, OCPP 2.0.1 managed charging, and zero-trust ISA/IEC 62443 network segmentation.</div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: APPROVALS NEEDED -->
+          <div class="exit-col approvals">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <span>Approvals Needed (4)</span>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Chief Technology Officer (CTO)</div>
+              <div class="approval-mandate">Approval of multi-tier technology stacks, edge hardware budgets, and high-level infrastructure topology blueprints.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Technology Strategy Clearance</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Head of Industrial Cybersecurity (OT/IT)</div>
+              <div class="approval-mandate">Verification of ISA/IEC 62443 compliance, Purdue Level 3 demilitarized zones, and air-gapped PLC boundaries.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>OT Isolation Sign-off</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Lead Embedded Systems Architect (Rajesh Iyer)</div>
+              <div class="approval-mandate">Hardware-in-the-loop sign-off confirming sub-2.5ms deterministic watchdog timing and zero memory leak profiles.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Firmware Timing Validation</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Fleet Infrastructure &amp; Depot Operations Lead</div>
+              <div class="approval-mandate">Physical deployment sign-off on depot power distribution, charging pedestals, and cellular fallback uplinks.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Physical Facilities Sign-off</span></div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: COMMON MISTAKES -->
+          <div class="exit-col mistakes">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Common Mistakes &amp; Traps</span>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Non-Deterministic AI in Control Loops</div>
+              <div class="mistake-mechanism">Deploying probabilistic neural models directly to kinematic actuators without hard real-time deterministic fallbacks.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Enforce dual-plane architecture: TinyML advises parameters; deterministic state machines drive actuators.</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Thermal Silicon Throttling Blindness</div>
+              <div class="mistake-mechanism">Testing edge boards only in air-conditioned labs; high ambient factory heat causes clock throttling and deadline misses.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Codify Rule TECH-05: validate all edge microcontrollers inside an environmental chamber up to \(60^\circ\text{C}\).</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Bridging OT Directly to Cloud</div>
+              <div class="mistake-mechanism">Connecting operational shop-floor CAN buses directly to public MQTT brokers, exposing factory safety systems to cyber attacks.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Enforce strict ISA-95 Level 3 DMZ mediation with unidirectional data diodes and mutual TLS.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exit-footer-bar">
+          <div><strong>Phase Gate Acceptance:</strong> TAD ratified &bull; INT8 model quantization locked &bull; Deterministic watchdog certified.</div>
+          <div class="exit-footer-check">&#x2713; AUTHORIZED FOR PHASE E (OPPORTUNITIES &amp; SOLUTIONS)</div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
       <!-- CHAPTER REFERENCES & FACT-CHECK VERIFICATION REGISTRY -->
       <!-- ========================================================================= -->
       <section class="chapter-references">

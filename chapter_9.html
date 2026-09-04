@@ -1018,6 +1018,124 @@
       </div>
 
       <!-- ========================================================================= -->
+      <!-- ONE-PAGE EXIT CRITERIA PIN-TO-THE-WALL REFERENCE SHEET                    -->
+      <!-- ========================================================================= -->
+      <section class="exit-criteria-sheet" id="phase-gate-09-exit">
+        <div class="exit-sheet-header">
+          <div class="exit-header-left">
+            <h2 class="exit-sheet-title">
+              <span>📌</span> Phase Gate 09 Exit Criteria: Implementation Governance &amp; Architecture Contracts
+            </h2>
+            <p class="exit-sheet-subtitle">
+              TOGAF&reg; ADM Phase G &mdash; Pin-to-the-Wall Executive Sign-Off &amp; Operational Gate Reference
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <span class="exit-tag-badge">Phase Gate Checklist</span>
+            <span class="exit-gate-id">GATE-09: PHASE G</span>
+          </div>
+        </div>
+
+        <div class="exit-grid">
+          <!-- COLUMN 1: ARTIFACTS PRODUCED -->
+          <div class="exit-col artifacts">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Artifacts Produced (5)</span>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">AC-REG-09</span><strong>Architecture Contracts (AC-101..108)</strong></div>
+              <div class="exit-item-desc">Legally binding governance contracts enforcing schema stability, sub-2.5ms latency, HSM encryption, and non-drift SLAs.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">FITNESS-CI-09</span><strong>Automated CI/CD Fitness Functions</strong></div>
+              <div class="exit-item-desc">Automated pipeline tests blocking merge requests that violate latency budgets, schema registries, or memory footprints.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">EU-CONF-09</span><strong>EU AI Act Conformity Declaration</strong></div>
+              <div class="exit-item-desc">Annex IV technical documentation, SHAP tree-explainability telemetry, and human-in-the-loop operational audit logs.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">DISP-LOG-09</span><strong>Dispensation &amp; Remediation Register</strong></div>
+              <div class="exit-item-desc">Strictly time-bound 90-day dispensations with escrowed remediation funding and automated Day-121 credential kill-switches.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">RULE-GOV-06</span><strong>Regulatory Self-Disclosure Workflow</strong></div>
+              <div class="exit-item-desc">Codifies Rule GOV-06: automated 72-hour statutory incident notification protocol under EU AI Act Article 73.</div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: APPROVALS NEEDED -->
+          <div class="exit-col approvals">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <span>Approvals Needed (4)</span>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">EAB Implementation Governance Chair</div>
+              <div class="approval-mandate">Verification that all deployed systems strictly comply with signed Architecture Contracts and pass automated fitness gates.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Governance Authority</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Chief Legal Officer &amp; Compliance Counsel</div>
+              <div class="approval-mandate">Statutory sign-off on EU AI Act high-risk declarations, product liability indemnifications, and audit logging trails.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Statutory Compliance Clearance</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Lead DevSecOps Architect</div>
+              <div class="approval-mandate">Production pipeline sign-off certifying automated fitness gates and credential kill-switches are active in CI/CD.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Pipeline Gate Validation</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Independent AI Safety Auditor</div>
+              <div class="approval-mandate">Third-party external certification of model fairness, SHAP explainability accuracy, and training data provenance.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>External Audit Certification</span></div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: COMMON MISTAKES -->
+          <div class="exit-col mistakes">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Common Mistakes &amp; Traps</span>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ "Honor System" Governance</div>
+              <div class="mistake-mechanism">Treating Architecture Contracts as static PDF documents; teams silently drift away from contracts without automated checks.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Codify Architecture Contracts into automated CI/CD fitness functions that fail builds on violation.</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Perpetual Unfunded Dispensations</div>
+              <div class="mistake-mechanism">Granting temporary architecture waivers that repeatedly renew without remediation funds, entrenching permanent technical debt.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Enforce strict 90-day expiration kill-switches with mandatory escrowed remediation budgets.</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Post-Hoc Compliance Scramble</div>
+              <div class="mistake-mechanism">Waiting until after production deployment to compile EU AI Act compliance evidence, risking €15M statutory fines.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Auto-generate model cards, lineage hashes, and SHAP explainability logs inside the CI/CD pipeline.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exit-footer-bar">
+          <div><strong>Phase Gate Acceptance:</strong> Architecture contracts active &bull; CI/CD fitness gates passing &bull; EU AI Act conformity certified.</div>
+          <div class="exit-footer-check">&#x2713; AUTHORIZED FOR PHASE H (CHANGE MANAGEMENT)</div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
       <!-- CHAPTER REFERENCES & FACT-CHECK VERIFICATION REGISTRY -->
       <!-- ========================================================================= -->
       <section class="chapter-references">

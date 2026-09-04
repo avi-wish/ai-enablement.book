@@ -2108,6 +2108,124 @@ message DigitalProductPassport {
       </div>
 
       <!-- ========================================================================= -->
+      <!-- ONE-PAGE EXIT CRITERIA PIN-TO-THE-WALL REFERENCE SHEET                    -->
+      <!-- ========================================================================= -->
+      <section class="exit-criteria-sheet" id="phase-gate-05-exit">
+        <div class="exit-sheet-header">
+          <div class="exit-header-left">
+            <h2 class="exit-sheet-title">
+              <span>📌</span> Phase Gate 05 Exit Criteria: Data Architecture &amp; Domain Contract Integrity
+            </h2>
+            <p class="exit-sheet-subtitle">
+              TOGAF&reg; ADM Phase C &mdash; Pin-to-the-Wall Executive Sign-Off &amp; Operational Gate Reference
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <span class="exit-tag-badge">Phase Gate Checklist</span>
+            <span class="exit-gate-id">GATE-05: PHASE C</span>
+          </div>
+        </div>
+
+        <div class="exit-grid">
+          <!-- COLUMN 1: ARTIFACTS PRODUCED -->
+          <div class="exit-col artifacts">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Artifacts Produced (5)</span>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">DDD-CTX-05</span><strong>Strategic Context Map</strong></div>
+              <div class="exit-item-desc">Formal boundary definitions across mining extraction, pack assembly, and fleet dispatch with Anti-Corruption Layers (ACLs).</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">UBIQ-DICT-05</span><strong>Ubiquitous Language Dictionary</strong></div>
+              <div class="exit-item-desc">Disambiguates ecosystem terms (e.g., cell state-of-health vs. pack runtime degradation) to prevent catastrophic semantic bugs.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">DATA-CTR-05</span><strong>Formal Data Contracts Repository</strong></div>
+              <div class="exit-item-desc">Protobuf and AsyncAPI event schemas versioned under SemVer with automated schema registry breaking-change validation.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">DPP-SPEC-05</span><strong>Digital Product Passport (DPP) Spec</strong></div>
+              <div class="exit-item-desc">Cryptographic battery passport lineage specification enforcing Rule DATA-06 (Multi-Enterprise Vector Clock causality).</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">GOV-MESH-05</span><strong>Data Mesh Governance Charter</strong></div>
+              <div class="exit-item-desc">Defines domain data product ownership, federated computational policies, and cross-boundary SLA/SLO commitments.</div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: APPROVALS NEEDED -->
+          <div class="exit-col approvals">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <span>Approvals Needed (4)</span>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Chief Data Officer (CDO)</div>
+              <div class="approval-mandate">Approval of Data Mesh operating model, data product schemas, and cross-enterprise lifecycle retention standards.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Data Governance Authority</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Chief Information Security Officer (CISO)</div>
+              <div class="approval-mandate">Cryptographic validation of asymmetric DPP signatures, HSM key custody, and cross-border regulatory data isolation.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Cryptographic Audit Pass</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Domain Data Product Owners (Mining, OEM, Fleet)</div>
+              <div class="approval-mandate">Mutual bilateral execution of data contracts, schema change notification windows, and availability SLO guarantees.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Tri-Domain Contract Binding</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Lead Enterprise Data Architect</div>
+              <div class="approval-mandate">Verification of zero unversioned payloads across Kafka topics and active ACL mediation between incompatible legacy protocols.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Architecture Conformance</span></div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: COMMON MISTAKES -->
+          <div class="exit-col mistakes">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Common Mistakes &amp; Traps</span>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ The Centralized Data Swamp</div>
+              <div class="mistake-mechanism">Dumping uncurated IoT telemetry from all three enterprises into a single monolithic lake without domain ownership or schema enforcement.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Enforce Data Mesh: publish versioned Data Products governed by domain teams with enforceable contracts.</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Semantic Divergence Collisions</div>
+              <div class="mistake-mechanism">Allowing mining and fleet engineering teams to use differing definitions of battery temperature and state-of-charge.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Build an immutable Ubiquitous Language Dictionary enforced at Anti-Corruption Layer boundaries.</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Wall-Clock Causality Inversion</div>
+              <div class="mistake-mechanism">Relying on physical NTP timestamps across subsea network splits, causing out-of-order writes that corrupt passport serials.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Codify Rule DATA-06: replace wall clocks with logical Vector Clocks for causal order consensus.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exit-footer-bar">
+          <div><strong>Phase Gate Acceptance:</strong> Data Contracts published in registry &bull; Vector clock lineage certified &bull; DPP schemas locked.</div>
+          <div class="exit-footer-check">&#x2713; AUTHORIZED FOR PHASE D (TECHNOLOGY ARCHITECTURE)</div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
       <!-- CHAPTER REFERENCES & FACT-CHECK VERIFICATION REGISTRY                     -->
       <!-- ========================================================================= -->
       <section class="chapter-references">

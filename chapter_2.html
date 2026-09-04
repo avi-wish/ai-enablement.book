@@ -1422,6 +1422,124 @@
       </div>
 
       <!-- ========================================================================= -->
+      <!-- ONE-PAGE EXIT CRITERIA PIN-TO-THE-WALL REFERENCE SHEET                    -->
+      <!-- ========================================================================= -->
+      <section class="exit-criteria-sheet" id="phase-gate-02-exit">
+        <div class="exit-sheet-header">
+          <div class="exit-header-left">
+            <h2 class="exit-sheet-title">
+              <span>📌</span> Phase Gate 02 Exit Criteria: Requirements Management &amp; Diagnostic Physical Bounds
+            </h2>
+            <p class="exit-sheet-subtitle">
+              TOGAF&reg; Requirements Management &mdash; Pin-to-the-Wall Executive Sign-Off &amp; Operational Gate Reference
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <span class="exit-tag-badge">Phase Gate Checklist</span>
+            <span class="exit-gate-id">GATE-02: REQUIREMENTS</span>
+          </div>
+        </div>
+
+        <div class="exit-grid">
+          <!-- COLUMN 1: ARTIFACTS PRODUCED -->
+          <div class="exit-col artifacts">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Artifacts Produced (5)</span>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">RTM-DIAG-01</span><strong>Requirements Traceability Matrix</strong></div>
+              <div class="exit-item-desc">Bi-directional mapping: Board fiduciary commitments &rarr; functional capabilities &rarr; non-functional physical constraints &rarr; verification test cases.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">NFR-ENV-02</span><strong>Non-Functional Operational Bounds</strong></div>
+              <div class="exit-item-desc">Codified physical envelopes: \(\Delta T_{\text{total}} \le 2.5\text{ms}\) telemetry latency, \(3.65\text{V} \pm 2\text{mV}\) cell balancing, and \(5.8\text{G}\) vibration limits.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">GAP-MAT-02</span><strong>Baseline vs. Target Gap Matrix</strong></div>
+              <div class="exit-item-desc">Pinpoints the $50M quarterly fleet degradation as an upstream Volt-Tech pack manufacturing variance rather than downstream driver negligence.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">AUDIT-REP-02</span><strong>Diagnostic Telemetry Audit Report</strong></div>
+              <div class="exit-item-desc">Rigorous fault-tree analysis detailing CAN bus buffer overflows, UDP drop rates, and thermal runaway kinetics across haul roads.</div>
+            </div>
+
+            <div class="exit-item">
+              <div><span class="code-badge">RULE-REQ-04</span><strong>Vibration Envelope Specification</strong></div>
+              <div class="exit-item-desc">Codifies Rule REQ-04 requiring all edge compute and antenna mounts to undergo cyclic \(5.8\text{G}\) random vibration testing.</div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: APPROVALS NEEDED -->
+          <div class="exit-col approvals">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <span>Approvals Needed (4)</span>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Chief Enterprise Architect</div>
+              <div class="approval-mandate">Verification of 100% bi-directional traceability across all business requirements, NFRs, and architecture repository schemas.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Mathematical Consistency</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">VP of Fleet Operations (Orbit)</div>
+              <div class="approval-mandate">Formal acceptance of diagnostic root-cause evidence exonerating dispatch operations from battery pack degradation liability.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Operational Concurrence</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Chief Quality Officer (Volt-Tech OEM)</div>
+              <div class="approval-mandate">Legally binding commercial concurrence acknowledging upstream pack manufacturing variances and inverter thermal limits.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Warranty Liability Acceptance</span></div>
+            </div>
+
+            <div class="approval-card">
+              <div class="authority-role">Lead Embedded &amp; Edge Architect</div>
+              <div class="approval-mandate">Firmware verification that CAN bus sampling, edge RocksDB write-ahead logs, and watchdog circuits respect the \(2.5\text{ms}\) bound.</div>
+              <div class="signoff-bar"><span>Sign-off: Required</span><span>Hardware In-The-Loop Sign-Off</span></div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: COMMON MISTAKES -->
+          <div class="exit-col mistakes">
+            <div class="exit-col-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Common Mistakes &amp; Traps</span>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Blaming Downstream Symptoms</div>
+              <div class="mistake-mechanism">Assuming battery pack degradation is caused by driver aggression or depot charging routines without inspecting upstream manufacturing telemetry.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Build an end-to-end RTM connecting cell manufacturing variances to downstream thermal failures.</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Soft &amp; Unenforceable NFRs</div>
+              <div class="mistake-mechanism">Writing subjective requirements like "telemetry must be low latency" without explicit mathematical and physical threshold bounds.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Define hard mathematical bounds: \(\Delta T_{\text{total}} \le 2.5\text{ms}\) and \(3.65\text{V} \pm 2\text{mV}\).</div>
+            </div>
+
+            <div class="mistake-card">
+              <div class="mistake-title">⚠️ Benign Lab Testing Bias</div>
+              <div class="mistake-mechanism">Certifying AI and telemetry software exclusively in climate-controlled test benches, missing harsh \(5.8\text{G}\) physical haul-road stresses.</div>
+              <div class="mistake-cure">&#x2714; <strong>Remedy:</strong> Mandate Rule REQ-04: conduct Hardware-in-the-Loop physical stress envelope testing before signing off.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exit-footer-bar">
+          <div><strong>Phase Gate Acceptance:</strong> Requirements Traceability Matrix validated &bull; Physical operational envelopes codified &bull; Tri-party audit signed off.</div>
+          <div class="exit-footer-check">&#x2713; READY FOR PHASE A (BOARDROOM SHOWDOWN)</div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
       <!-- CHAPTER REFERENCES & FACT-CHECK VERIFICATION REGISTRY                     -->
       <!-- ========================================================================= -->
       <section class="chapter-references">
