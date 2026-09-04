@@ -706,6 +706,26 @@
         <h3>7.2 Fiduciary ROI &amp; Payback Period Calculation</h3>
         <p>The total capital expenditure (CapEx) authorized for the Phase D Technology Architecture implementation was <strong>$38.0 Million</strong> across both enterprises ($22M at Volt-Tech for industrial edge clusters and robotic retrofits; $16M at Orbit for Megawatt charging edge hubs and BESS stationary buffers). The annualized economic returns are calculated as follows:</p>
 
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h4 style="margin-top: 0; color: #0369a1; font-size: 1.1rem; font-weight: bold;">The Method: Deriving Edge AI &amp; Infrastructure Payback Velocity</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            Evaluating edge infrastructure payback requires contrasting capital equipment costs against multi-stream operational friction reduction. The payback period formula isolates physical scrap elimination, inference egress savings, and warranty loss avoidance:
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.1rem; color: #0369a1; font-weight: bold;">
+              \[ P_{\text{Tech Arch}} = \frac{\text{CapEx}_{\text{Volt-Tech}} + \text{CapEx}_{\text{Orbit}}}{\Delta \text{Scrap} + \Delta \text{Cloud Egress} + \Delta \text{Fleet Downtime}} \times 12\text{ months} \]
+            </div>
+          </div>
+          <p style="color: #334155; font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.5rem;">
+            <strong>Realistic Industry Benchmark:</strong> In heavy manufacturing and automotive logistics, edge AI deployments that resolve acute production bottlenecks typically achieve payback in <strong>4 to 12 months</strong>, as stopping a single high-volume line stoppage yields massive immediate savings. General IT infrastructure rollouts without acute scrap bottlenecks typically take <strong>18 to 24 months</strong>.
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.05rem; color: #0369a1; font-weight: bold;">
+              \[ P = \frac{\$38.00\text{M}}{\$34.2\text{M} + \$2.16\text{M} + \$72.0\text{M}} \times 12\text{ months} = \frac{\$38.00\text{M}}{\$108.36\text{M}/\text{year}} \times 12\text{ months} = \mathbf{4.21\text{ Months}} \]
+            </div>
+          </div>
+        </div>
+
         <ul>
           <li><strong>Volt-Tech Scrap &amp; Downtime Reduction:</strong> Eliminating 20-minute conveyor shutdowns and reducing battery pack scrap from 8.6% to 0.02% recovers <strong>$34.2 Million annually</strong>.</li>
           <li><strong>Cloud Bandwidth &amp; Inference OpEx Elimination:</strong> Moving 500 FPS vision pipelines from cloud APIs to local edge GPUs saves <strong>$2.16 Million annually</strong> in egress fees.</li>

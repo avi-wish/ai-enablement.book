@@ -2390,6 +2390,51 @@ B.3:                            ████████████████
           </div>
         </div>
 
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #16a34a; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h3 style="margin-top: 0; color: #15803d; font-size: 1.15rem; font-weight: bold;">The Method: Deriving Capital Payback Period &amp; Fiduciary ROI</h3>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            A claim of an <em>"11.4-month payback"</em> is arbitrary without the underlying fiduciary derivation. In business and enterprise architecture, establishing financial viability requires breaking down capital deployment into discrete tranches, modeling recurring operational delta savings, and comparing against standard corporate hurdle rates.
+          </p>
+          
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">1. Mathematical Payback Formulation</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            The simple capital payback period \(P_{\text{simple}}\) (in months) is the ratio of upfront capital deployment to annualized net operational cash savings:
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.15rem; color: #15803d; font-weight: bold;">
+              \[ P_{\text{simple}} = \frac{\text{CapEx}_{\text{hardware}} + \text{CapEx}_{\text{tooling}} + \text{CapEx}_{\text{training}}}{\Delta \text{Annual OpEx Savings} - \text{Recurring Maintenance}} \times 12\text{ months} \]
+            </div>
+          </div>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            For multi-year capital horizon governance, Priya also calculates the <strong>Discounted Payback Period</strong> (\(t^*\)), solving for the exact month where cumulative discounted cash inflows equal initial capital:
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.15rem; color: #15803d; font-weight: bold;">
+              \[ \sum_{t=1}^{t^*} \frac{\text{Net Cash Flow}_t}{(1 + r_{\text{WACC}})^t} \ge \text{CapEx}_0 \quad (r_{\text{WACC}} = 10.0\%) \]
+            </div>
+          </div>
+
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">2. Realistic Industry Payback Benchmark Ranges</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+            Enterprise architects must benchmark investment proposals against empirical manufacturing and IT realities:
+          </p>
+          <ul style="color: #334155; font-size: 0.92rem; line-height: 1.6; margin-left: 1.25rem; margin-bottom: 0;">
+            <li><strong>Operational AI &amp; Shop-Floor Quality Automation:</strong> Realistic range is <strong>6 to 18 months</strong>. Automated vision and TinyML inspection deliver immediate returns by slashing scrap rates and rework scrap costs on high-volume production lines.</li>
+            <li><strong>Core Enterprise Replatforming &amp; Cloud ERP Overhauls:</strong> Realistic range is <strong>18 to 36 months</strong>. Slower returns due to extensive data migration, cross-enterprise change management, and organizational friction.</li>
+            <li><strong>Governance Red Flags:</strong> Any industrial business case promising payback in under 3 months typically ignores ongoing sensor maintenance, data labeling OpEx, or vendor lock-in. Projections exceeding 36 months carry extreme technology obsolescence risk.</li>
+          </ul>
+
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">3. Calibrated Case Study Derivation</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+            Volt-Tech's $18.0M deployment ($14.2M reallocated capital + $3.8M automated robotics) recovers $12.4M annually in eliminated scrap and $6.5M in line throughput gains, offset by $2.6M in recurring cloud/API subscriptions, delivering \(\Delta \text{Net OpEx} = \$18.9\text{M} / \text{year}\):
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.1rem; color: #15803d; font-weight: bold;">
+              \[ P_{\text{Volt-Tech}} = \frac{\$18.00\text{M}}{\$18.90\text{M}/\text{year}} \times 12\text{ months} = \mathbf{11.43\text{ Months}} \approx \mathbf{11.4\text{ Months}} \]
+            </div>
+          </div>
+        </div>
+
         <h3>Summary: Enterprise Architect Decision Map</h3>
                 <div class="togaf-deliverable-badge">
           <div class="badge-left">

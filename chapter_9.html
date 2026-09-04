@@ -241,7 +241,7 @@
         </div>
         <div class="speech-balloon">
           <div class="speech-content">
-            "Not a chance! Our ArchUnit architectural fitness function intercepted the pull request in <strong>4.1 seconds</strong>. The rule <code>noClasses().thatResideIn('..telemetry..').should().accessClassesThat().resideIn('..database..')</code> failed instantly, aborting the build and notifying the developer that all telemetry must traverse the canonical IDMZ OpenAPI 3.1 gateway. Architecture in Phase G is not a static PDF; it is executable code!"
+            "Not a chance! Our pipeline fitness architecture splits verification into two distinct envelopes. For pre-merge developer loops, we enforce a strict latency ceiling of \(T_{\text{budget}} \le 5.0\text{s}\) to protect developer flow&mdash;cognitive engineering benchmarks show that pipeline checks exceeding 10 seconds cause developers to context-switch or bypass hooks. Our fast-tier ArchUnit AST and bytecode inspection intercepted this pull request in <strong>4.1 seconds</strong> (ArchUnit layer check took 1.2s, Spectral OpenAPI lint took 0.8s, schema contract assertion took 1.8s, and HSM cryptographic sealing took 0.3s). The rule <code>noClasses().thatResideIn('..telemetry..').should().accessClassesThat().resideIn('..database..')</code> failed instantly, aborting the build and notifying the developer that all telemetry must traverse the canonical IDMZ OpenAPI 3.1 gateway. Heavy multi-hour HIL endurance tests are pushed to the asynchronous nightly gate. Architecture in Phase G is not a static PDF; it is an engineered, budgeted fitness gate!"
           </div>
         </div>
       </div>
@@ -261,7 +261,7 @@
         </div>
         <div class="speech-balloon">
           <div class="speech-content">
-            "Aarav, Priya, we have encountered an operational hurdle in Battery Pack Plant 2. Thirty-two legacy thermal chamber sensors communicate via unencrypted Modbus RTU, which violates our AES-256 Zero-Trust standard. Retooling the sensors will take 90 days. We are formally requesting <strong>Dispensation DSP-001</strong> to operate in production under an isolated VLAN sandbox."
+            "Aarav, Priya, we have an operational hurdle in Battery Pack Plant 2. Thirty-two legacy thermal chamber sensors communicate via unencrypted Modbus RTU, violating our AES-256 Zero-Trust architecture contract. Our engineering lead time breakdown for permanent hardware remediation is 80 calendar days: 30 days for hardened sensor procurement (\(T_{\text{procure}}\)), 25 days for bridge firmware engineering (\(T_{\text{dev}}\)), and 25 days for bench testing and plant cutover (\(T_{\text{deploy}}\)). We formally request <strong>Dispensation DSP-001</strong> to operate temporarily under an isolated VLAN sandbox."
           </div>
         </div>
       </div>
@@ -276,7 +276,7 @@
             <span class="speech-char-role">Fiscal Architect, Volt-Tech</span>
           </div>
           <div class="speech-content">
-            "Under TOGAF Phase G and our project governance charter, dispensations cannot be indefinite blank checks. Under <strong>Rule GOV-02 (Dispensation Expiration)</strong>, three conditions must be met: first, the duration cannot exceed <strong>180 calendar days</strong>; second, Sanjay must commit a funded remediation work package (WP-107b, budgeted at $280,000); third, our API gateway must be configured with an automated kill-switch that revokes access if remediation is not certified by Day 120."
+            "Under TOGAF Phase G, an Architecture Board never guesses dispensation windows or grants blank checks. We size windows using our risk-calibrated formula: \(T_{\text{disp}} = \min(T_{\text{ceiling}},\, \lceil k_{\text{buffer}} \cdot \sum T_{\text{phase}} \rceil)\). Applying our standard \(1.5\times\) contingency buffer to your 80-day baseline (\(\lceil 1.5 \times 80\text{d} \rceil\)) establishes a <strong>120-calendar-day dispensation horizon</strong>. This sits comfortably below our enterprise hard ceiling of 180 days under <strong>Rule GOV-02</strong>. Furthermore, you must fund work package WP-107b ($280,000) and accept an automated gateway kill-switch if Day 120 lapses without signed compliance."
           </div>
         </div>
       </div>
@@ -288,7 +288,7 @@
         </div>
         <div class="speech-balloon">
           <div class="speech-content">
-            "Agreed. Risk assessment confirms that the isolated sandbox limits lateral breach risk to \(R_{\text{res}} \le 0.012\). Dispensation DSP-001 is formally approved with a strict 120-day remediation horizon. We do not accumulate invisible technical debt."
+            "Agreed. Risk modeling confirms that the isolated sandbox limits lateral breach risk to \(R_{\text{res}} \le 0.012\). Dispensation DSP-001 is formally approved with a strict 120-day horizon. Sizing waivers with engineering lead times and explicit buffer multipliers ensures we remediate technical debt on a disciplined clock instead of accumulating unmanaged risk."
           </div>
         </div>
       </div>
@@ -343,7 +343,7 @@
         </div>
         <div class="speech-balloon">
           <div class="speech-content">
-            "Architects and Directors: our quantitative conformity assessment scoring engine reports an aggregate compliance score of \(S_{\text{conformity}} = 0.9984\), far exceeding our internal EAB stage-gate quality threshold of \(0.995\). With Technical Service automotive type-approval validation completed under Regulation (EU) 2018/858 and Annex VI internal control verified, the consortium has formally signed the <strong>EU AI Act CE Mark Declaration of Conformity</strong>!"
+            "Architects and Directors: our quantitative conformity assessment scoring engine has evaluated 42 rigorous statutory checklist inputs across the EU AI Act's 7 mandatory pillars. With all critical safety interlocks passing at 100% under our zero-defect safety constraint and audited pillar weights applied, our aggregate conformity score reaches \(S_{\text{conformity}} = 0.9984\). This comfortably exceeds our internal EAB quality gate of \(0.995\) and the statutory benchmark range of \(0.95 - 0.98\) required for commercial operation. With Technical Service automotive type-approval validation completed under Regulation (EU) 2018/858 and Annex VI internal control verified, the consortium has formally signed the <strong>EU AI Act CE Mark Declaration of Conformity</strong>!"
           </div>
         </div>
       </div>
@@ -545,11 +545,68 @@
 
         <div class="formula-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 4px solid #16a34a; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
           <div class="formula-math" style="font-size: 1.25rem; color: #15803d; font-weight: bold; overflow-x: auto; max-width: 100%;">
-            \[ \Phi_{\text{pipeline}} = \bigwedge_{j=1}^{M} \text{Assert}_j(\text{Artifact}) = \mathbf{TRUE}, \quad \text{Latency}_{\text{eval}} \le 5.0\text{ seconds} \]
+            \[ \Phi_{\text{pipeline}} = \bigwedge_{j=1}^{M} \text{Assert}_j(\text{Artifact}) = \mathbf{TRUE}, \quad \text{Latency}_{\text{eval}} \le T_{\text{budget}} \]
           </div>
           <div style="font-size: 0.88rem; color: #166534; margin-top: 0.5rem; font-weight: 500;">
             Where any \(\text{Assert}_j = \text{FALSE}\) triggers immediate pipeline termination, build rejection, and automated incident filing to the EAB triage queue.
           </div>
+        </div>
+
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h3 style="margin-top: 0; color: #0369a1; font-size: 1.15rem; font-weight: bold;">The Method: Deriving Pipeline Fitness Gate Latency Budgets &amp; Execution Envelopes</h3>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            A metric like <em>"4.1-second gate"</em> is pedagogically empty without the engineering method used to derive it. In modern continuous delivery, architectural fitness functions cannot be placed into pipelines arbitrarily. An enterprise architect sizes fitness gates by balancing <strong>developer cognitive flow thresholds</strong> against <strong>verification depth</strong> across a multi-tiered execution hierarchy.
+          </p>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            According to classic human-computer interaction models (Miller 1968, Nielsen 1993), an interactive pre-commit or pre-merge gate must respond in <strong>under 10 seconds</strong> to preserve the engineer's cognitive train of thought. If pre-merge checks exceed 10–15 seconds, developers switch tasks, open email or browser tabs, or use git flags (e.g. <code>--no-verify</code>) to bypass architectural controls. Conversely, deep hardware-in-the-loop (HIL) fault injection or 10,000-cycle battery thermal stress runs cannot possibly finish in seconds. Therefore, Phase G governance partitions fitness checks into three explicit operational envelopes:
+          </p>
+          <div style="overflow-x: auto; margin: 1rem 0;">
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.92rem;">
+              <thead>
+                <tr style="background-color: var(--card-bg);">
+                  <th style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: left;">CI/CD Gate Tier</th>
+                  <th style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: left;">Verification Scope &amp; Target Assets</th>
+                  <th style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Industry Latency Range</th>
+                  <th style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Consortium Gate Budget (\(T_{\text{budget}}\))</th>
+                  <th style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">Calibrated Case-Study Execution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">Tier 1: Pre-Merge Fast Gate</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Bytecode AST parsing, ArchUnit layer boundaries, OpenAPI Spectral schema linter, cryptographic hash seals.</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">\(3.0 - 10.0\text{ s}\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold; color: #0284c7;">\(\le 5.0\text{ s}\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(4.10\text{ s}\) (Passed ✓)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">Tier 2: Async PR Integration Gate</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Container vulnerability scanning (Trivy), contract fuzz testing, mock telemetry ingestion replay.</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">\(5.0 - 20.0\text{ min}\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold; color: #0284c7;">\(\le 15.0\text{ min}\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(11.8\text{ min}\) (Passed ✓)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); font-weight: bold;">Tier 3: Nightly Full Regression Gate</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color);">Hardware-in-the-Loop (HIL) physical rig simulation, 10,000 thermal cycles, ASIL-D fault injection.</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">\(1.0 - 4.0\text{ hr}\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold; color: #0284c7;">\(\le 3.0\text{ hr}\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(2.4\text{ hr}\) (Passed ✓)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+            The mathematical formulation for sizing the Tier-1 gate budget requires that the total latency is the sum of parallelized assertion stages:
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.1rem; color: #0369a1; font-weight: bold;">
+              \[ T_{\text{gate, interactive}} = \sum_{i=1}^{M} t_{\text{check}, i} = t_{\text{ArchUnit}} + t_{\text{Spectral}} + t_{\text{Contract}} + t_{\text{HSM}} \le T_{\text{budget}} \le 5.0\text{ seconds} \]
+            </div>
+          </div>
+          <p style="color: #475569; font-size: 0.88rem; line-height: 1.6; margin-top: 0.5rem; margin-bottom: 0;">
+            In Rajesh Iyer's live demonstration (Figure 9.3B), the four checks execute in \(1.2\text{s} + 0.8\text{s} + 1.8\text{s} + 0.3\text{s} = \mathbf{4.10\text{ seconds}}\). It stays safely within the \(5.0\text{s}\) budget and well below the \(10.0\text{s}\) human cognitive flow threshold, ensuring developers never experience disruptive build lag while preventing architectural drift before code merges.
+          </p>
         </div>
 
         <h4>Codified Fitness Function Implementation Examples:</h4>
@@ -587,11 +644,118 @@
 
         <div class="formula-card" style="background: #f0f9ff; border: 1.5px solid #38bdf8; border-left: 4px solid #0284c7; border-radius: 8px; padding: 1.25rem; text-align: center; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow-x: auto; -webkit-overflow-scrolling: touch;">
           <div class="formula-math" style="font-size: 1.25rem; color: #0369a1; font-weight: bold; overflow-x: auto; max-width: 100%;">
-            \[ S_{\text{conformity}} = \sum_{k=1}^{7} w_k \cdot P_k = \mathbf{0.9984} \ge 0.995 \]
+            \[ S_{\text{conformity}} = \sum_{k=1}^{7} w_k \cdot C_k = \mathbf{0.9984} \ge 0.995 \]
           </div>
           <div style="font-size: 0.88rem; color: #475569; margin-top: 0.5rem; font-weight: 500;">
-            Where \(w_k\) represents internal governance weights (\(\sum w_k = 1.0\)), \(P_k \in [0, 1]\) is the audited compliance score across the 7 mandatory EU AI Act pillars, and \(0.995\) is the Consortium Architecture Board's stage-gate release threshold for CE Mark declaration.
+            Where \(w_k\) represents internal governance weights (\(\sum w_k = 1.0\)), \(C_k \in [0, 1]\) is the audited compliance score across the 7 mandatory EU AI Act statutory pillars, and \(0.995\) is the Consortium Architecture Board's stage-gate release threshold for CE Mark declaration.
           </div>
+        </div>
+
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h3 style="margin-top: 0; color: #0369a1; font-size: 1.15rem; font-weight: bold;">The Method: Multi-Attribute Conformity Checklist Inputs &amp; Scoring Engine</h3>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            A number like <em>"0.9984 conformity score"</em> teaches nothing in isolation. Real-world compliance under the EU AI Act (Regulation 2024/1689 Annex III / Articles 9–15) and ISO/IEC 42001 requires a rigorous multi-attribute checklist method. The conformity score is neither subjective nor unweighted: it aggregates concrete, auditable engineering inputs across the seven statutory pillars, subject to non-negotiable safety interlocks.
+          </p>
+          
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">1. Mandatory Checklist Inputs Across the 7 Statutory Pillars</h4>
+          <p style="color: #475569; font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem;">
+            Each statutory pillar requires specific engineering inputs, test artifacts, and verification logs before an auditor assigns a sub-score:
+          </p>
+          <div style="overflow-x: auto; margin: 0.75rem 0 1.25rem 0;">
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.90rem;">
+              <thead>
+                <tr style="background-color: var(--card-bg);">
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: left;">Statutory Pillar (EU AI Act)</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: left;">Mandatory Checklist Inputs &amp; Technical Artifacts</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">Weight (\(w_k\))</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">Audited Score (\(C_k\))</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">Weighted Contribution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 9: Risk Management</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">ISO 42001 / ISO 26262 FMEA hazard register, residual thermal runaway risk bounds (\(R \le 10^{-6}\)), post-market monitoring plan.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.20\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(99.80\%\) (\(0.998\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.1996\)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 10: Data Governance</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Dataset curation manifests, statistical bias checks (Disparate Impact Ratio \(0.80 \le \text{DIR} \le 1.25\)), DPP mineral provenance tokens.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.15\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(99.90\%\) (\(0.999\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.14985\)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 11: Technical Documentation</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Annex IV compliance dossier, automated neural network model cards, hyperparameter manifests, OpenAPI 3.1 interface schemas.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.15\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(99.50\%\) (\(0.995\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.14925\)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 12: Record-Keeping</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Deterministic CAN-FD telemetry event logs, 10-year write-once-read-many (WORM) audit retention, HSM Secp384r1 timestamping.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.15\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(100.00\%\) (\(1.000\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.15000\)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 13: Transparency</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Operational Design Domain (ODD) limits, real-time Shapley feature attribution fidelity (\(R^2 \ge 0.95\)), driver display human-factored warnings.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.15\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(99.70\%\) (\(0.997\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.14955\)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 14: Human Oversight (HITL)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Tele-assist triage workstation ergonomics, \(\le 200\text{ms}\) physical emergency override actuator, degraded friction stopping bounds.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.10\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(99.90\%\) (\(0.999\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.09990\)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Art 15: Accuracy &amp; Cyber</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Adversarial noise testing (\(>99.9\%\) pass), Kolmogorov-Smirnov drift bounds (\(D_{\text{KS}} < 0.08\)), sub-250ms AUTOSAR failover.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(0.10\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #16a34a; font-weight: bold;">\(99.80\%\) (\(0.998\))</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; font-weight: bold;">\(0.09980\)</td>
+                </tr>
+                <tr style="background: #f1f5f9; font-weight: bold;">
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color);" colspan="2">Composite Conformity Index (\(S_{\text{conformity}} = \sum w_k \cdot C_k\))</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;">\(\sum = 1.00\)</td>
+                  <td style="padding: 0.6rem; border: 1px solid var(--border-color); text-align: center;" colspan="2"><span style="color: #0284c7; font-size: 1.05rem;">\(0.99835 \approx \mathbf{0.9984}\)</span> (Target: \(\ge 0.995\))</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">2. The Mathematical Scoring Model &amp; Zero-Defect Safety Constraint</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            Each pillar score \(C_k\) is the arithmetic mean of its \(N_k\) verified binary and metric checklist assertions (\(s_{k,j} \in [0, 1]\)):
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.15rem; color: #0369a1; font-weight: bold;">
+              \[ C_k = \frac{1}{N_k}\sum_{j=1}^{N_k} s_{k,j}, \quad \text{subject to: } \min_{j \in \text{Critical Safety}} s_{k,j} = \mathbf{1.0} \]
+            </div>
+          </div>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            Crucially, the scoring engine enforces a <strong>Zero-Defect Safety Constraint</strong>: if even one critical safety interlock fails (for example, if emergency brake takeover latency exceeds \(200\text{ms}\) or battery thermal disconnect is unverified), the entire pillar score collapses to zero (\(C_k = 0\)), immediately aborting the CE Mark declaration regardless of how high the other criteria score.
+          </p>
+
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">3. Realistic Industry Conformity Benchmark Ranges</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+            Enterprise architects must understand how release gates vary across regulatory risk profiles:
+          </p>
+          <ul style="color: #334155; font-size: 0.92rem; line-height: 1.6; margin-left: 1.25rem; margin-bottom: 0;">
+            <li><strong>Standard Commercial Enterprise AI (Low-to-Medium Risk):</strong> Typical conformity thresholds range between \(0.85 - 0.92\). Minor gaps in data provenance or hyperparameter logs are permissible via conditional acceptance.</li>
+            <li><strong>Industrial Mission-Critical Operations (High Risk - Non-Life-Critical):</strong> Thresholds range between \(0.92 - 0.97\). Enforces automated schema linters and full WORM audit ledgers.</li>
+            <li><strong>Safety-Critical Automotive (ASIL-D) &amp; Annex III Critical Infrastructure:</strong> Thresholds range between \(0.980 - 0.999\). Demands zero-defect safety interlocks, formal type-approval testing, and verified mathematical kinematic envelopes.</li>
+          </ul>
+          <p style="color: #475569; font-size: 0.88rem; line-height: 1.6; margin-top: 0.75rem; margin-bottom: 0;">
+            By establishing an internal EAB gate of \(0.995\) and verifying an audited score of \(\mathbf{0.9984}\), the consortium ensures that its autonomous heavy trucks pass Technical Service audits under Regulation (EU) 2018/858 with zero regulatory vulnerability.
+          </p>
         </div>
 
         <h4>Detailed Formulation of the 7 Statutory Compliance Pillars:</h4>
@@ -669,6 +833,88 @@
             <li><strong style="color: #92400e;">Funded Work Package:</strong> Every waiver must have an assigned engineering owner and a funded remediation work package registered in the PMO backlog.</li>
             <li><strong style="color: #92400e;">Re-Architecting Trigger:</strong> If a variance cannot be remediated within 180 days, it is escalated to trigger a formal Phase A change cycle under TOGAF Phase H.</li>
           </ol>
+        </div>
+
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #d97706; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <h3 style="margin-top: 0; color: #92400e; font-size: 1.15rem; font-weight: bold;">The Method: Sizing Architectural Dispensation Windows &amp; Technical Debt Horizons</h3>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            A dispensation horizon like <em>"120 days"</em> or <em>"180 days"</em> cannot be plucked from thin air. In professional implementation governance, an Architecture Board sizes waiver windows by analyzing the critical path of the permanent remediation work package, applying an engineering uncertainty multiplier, and bounding the result against enterprise risk policy ceilings.
+          </p>
+          
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">1. The Mathematical Window Sizing Formula</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            The dispensation window \(T_{\text{dispensation}}\) is calculated by summing the discrete engineering phases of the remediation plan, scaling by an uncertainty buffer \(k_{\text{buffer}} \in [1.25, 1.50]\), and capping at the policy ceiling \(T_{\text{policy\_ceiling}}\):
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.15rem; color: #b45309; font-weight: bold;">
+              \[ T_{\text{dispensation}} = \min\left(T_{\text{policy\_ceiling}},\, \left\lceil k_{\text{buffer}} \cdot (T_{\text{procure}} + T_{\text{dev}} + T_{\text{test}} + T_{\text{deploy}}) \right\rceil\right) \]
+            </div>
+          </div>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6;">
+            Where:
+          </p>
+          <ul style="color: #334155; font-size: 0.90rem; line-height: 1.6; margin-left: 1.25rem;">
+            <li>\(T_{\text{procure}}\): Hardware procurement lead time, supplier RFQ, and delivery to staging facility.</li>
+            <li>\(T_{\text{dev}}\): Software driver adaptation, translation gateway firmware engineering, or schema migration.</li>
+            <li>\(T_{\text{test}}\): Bench validation, Hardware-in-the-Loop regression, and cryptographic security auditing.</li>
+            <li>\(T_{\text{deploy}}\): Production line downtime window, physical retrofits, and operational cutover.</li>
+            <li>\(k_{\text{buffer}}\): Risk contingency multiplier (\(1.25\times\) for pure software; \(1.50\times\) for physical factory hardware and automotive firmware subject to supply chain volatility).</li>
+            <li>\(T_{\text{policy\_ceiling}}\): Hard institutional limit (Rule GOV-02 mandates \(180\text{ calendar days}\); software interfaces typically capped at \(90\text{ days}\)).</li>
+          </ul>
+
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">2. Realistic Benchmark Ranges by Architecture Variance Archetype</h4>
+          <div style="overflow-x: auto; margin: 0.75rem 0 1.25rem 0;">
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-color); font-size: 0.90rem;">
+              <thead>
+                <tr style="background-color: var(--card-bg);">
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: left;">Variance Archetype</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: left;">Remediation Critical Path Components</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">Buffer (\(k_{\text{buffer}}\))</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">Realistic Industry Range</th>
+                  <th style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">Policy Hard Ceiling</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Software API &amp; Schema Drift</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Client library updates, backward-compatible API adapter, automated consumer contract tests.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(1.20 - 1.25\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #0284c7; font-weight: bold;">\(30 - 60\text{ days}\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(60\text{ days}\) (2 Sprints)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Cross-Enterprise Integration Contract</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Partner IDMZ gateway configuration, mTLS cert rotation, multi-party data governance validation.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(1.30 - 1.35\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #0284c7; font-weight: bold;">\(60 - 90\text{ days}\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(90\text{ days}\) (1 Quarter)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); font-weight: bold;">Embedded OT Hardware &amp; Sensor Retool</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color);">Component procurement, PCB spin/re-flashing, industrial environmental chamber certification, factory cutover.</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center;">\(1.40 - 1.50\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #0284c7; font-weight: bold;">\(90 - 180\text{ days}\)</td>
+                  <td style="padding: 0.55rem; border: 1px solid var(--border-color); text-align: center; color: #dc2626; font-weight: bold;">\(180\text{ days}\) (Rule GOV-02)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="color: #0f172a; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1rem;">3. Calibrated Case Study Derivation (DSP-001)</h4>
+          <p style="color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+            For Sanjay Reddy's Plant 2 Modbus sensor variance (DSP-001), the engineering breakdown in work package WP-107b specifies:
+            \(T_{\text{procure}} = 30\text{d}\), \(T_{\text{dev}} = 25\text{d}\), \(T_{\text{test}} = 15\text{d}\), and \(T_{\text{deploy}} = 10\text{d}\).
+            Summing these gives a nominal duration of \(T_{\text{remed}} = 80\text{ calendar days}\).
+            Because custom automotive hardware carries supplier volatility, Priya applies \(k_{\text{buffer}} = 1.50\):
+          </p>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; text-align: center; margin: 0.5rem 0;">
+            <div class="formula-math" style="font-size: 1.1rem; color: #b45309; font-weight: bold;">
+              \[ T_{\text{disp}} = \min\left(180,\, \lceil 1.50 \times 80\text{ days} \rceil\right) = \min(180, 120) = \mathbf{120\text{ Calendar Days}} \]
+            </div>
+          </div>
+          <p style="color: #475569; font-size: 0.88rem; line-height: 1.6; margin-top: 0.5rem; margin-bottom: 0;">
+            The resulting 120-day horizon gives the engineering team exactly the calibrated margin needed to safely cut over to encrypted sensors, while maintaining strict fiduciary boundaries against lingering technical debt.
+          </p>
         </div>
 
         <h4>Active Consortium Dispensation Register (Phase G Audit Baseline):</h4>
