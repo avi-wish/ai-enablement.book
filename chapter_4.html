@@ -398,6 +398,49 @@
         <h2>5. TOGAF&reg; ADM Phase B Step-by-Step Architecture Process<sup><a href="#ref-4-1" id="cite-4-1" class="citation-ref">[1]</a></sup><sup><a href="#ref-4-4" id="cite-4-4" class="citation-ref">[4]</a></sup></h2>
         <p>Following the standardized TOGAF ADM Phase B methodology and BIZBOK&reg; capability standards, the Enterprise Architecture team executes <strong>eight mandatory steps</strong> to deliver Volt-Tech's target Business Architecture. For each step, multiple competing approaches are evaluated before the Enterprise Architect presents the selected option with evidence-based rationale.</p>
 
+        <!-- MASTER REUSABLE ADR FRAMEWORK (RULE TECH-03) -->
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 1.25rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 0.75rem;">
+            <h3 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-weight: bold; display: flex; align-items: center; gap: 8px;">
+              <span>📐 Enterprise Architecture Standard: The Reusable Multi-Criteria ADR Framework</span>
+            </h3>
+            <span style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid #bae6fd;">RULE TECH-03 COMPLIANT</span>
+          </div>
+          <p style="color: #334155; font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            In high-stakes enterprise transformations, architectural options must never be evaluated against ad-hoc, shifting criteria (e.g. inventing <em>"Board Appeal"</em> in one meeting and <em>"Change Management"</em> in another) nor decorated with ungrounded emoji traffic lights. Under <strong>TOGAF&reg; Standard Phase B</strong> and <strong>IEEE Std 42010</strong>, every significant architectural trade-off is codified as an <strong>Architecture Decision Record (ADR)</strong> evaluated against a <strong>fixed 5-criteria orthogonal taxonomy</strong> using a calibrated 1&ndash;5 scoring rubric and multi-stakeholder evaluator attribution.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin: 1rem 0;">
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px;">
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.85rem; margin-bottom: 4px;">1. Fixed 5-Criteria Taxonomy (\(C_1\)&ndash;\(C_5\))</div>
+              <ul style="font-size: 0.82rem; color: #475569; margin: 0; padding-left: 18px; line-height: 1.5;">
+                <li><strong>\(C_1\) Strategic Fit &amp; Moat:</strong> Proprietary IP retention &amp; competitive differentiation.</li>
+                <li><strong>\(C_2\) Fiduciary Impact:</strong> CapEx/OpEx, 5-year TCO, IRR &amp; payback period (\(&lt;12\text{mo}\)).</li>
+                <li><strong>\(C_3\) Execution Velocity:</strong> Delivery timeline, factory retooling &amp; partner lead times.</li>
+                <li><strong>\(C_4\) Risk &amp; Safety:</strong> ASIL-D safety, cryptographic security, single points of failure.</li>
+                <li><strong>\(C_5\) Change &amp; Adoption:</strong> Workforce learning curve, depot union buy-in &amp; customer SLA.</li>
+              </ul>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px;">
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.85rem; margin-bottom: 4px;">2. Calibrated 1&ndash;5 Scoring Rubric &amp; Thresholds</div>
+              <ul style="font-size: 0.82rem; color: #475569; margin: 0; padding-left: 18px; line-height: 1.5;">
+                <li><strong>Score 5 &mdash; Optimal (🟢):</strong> Payback \(&lt;12\text{mo}\); zero safety blocker; \(&gt;90\%\) IP retained.</li>
+                <li><strong>Score 4 &mdash; Favorable (🟢):</strong> Payback \(12\text{--}18\text{mo}\); minor manageable overhead.</li>
+                <li><strong>Score 3 &mdash; Acceptable (🟡):</strong> Payback \(18\text{--}24\text{mo}\); requires active risk dispensation.</li>
+                <li><strong>Score 2 &mdash; Marginal (🟡):</strong> Payback \(24\text{--}36\text{mo}\); severe workforce friction or lock-in.</li>
+                <li><strong>Score 1 &mdash; Fatal Blocker (🔴):</strong> Payback \(&gt;36\text{mo}\); safety/regulatory violation; rejected.</li>
+                <li><strong>Composite Score Formula:</strong> \(S = \sum_{i=1}^5 w_i \cdot s_i \quad (\sum w_i = 1.00)\)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="background: #f1f5f9; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #334155; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;">
+            <div><strong>Multi-Stakeholder Evaluator Panel ("Who Scored It"):</strong> \(C_1\) Aarav Patel (CTO) &bull; \(C_2\) Priya Kapoor (Fiscal Architect) &bull; \(C_3\) Rajesh Iyer (VP Ops) &bull; \(C_4\) Sanjay Reddy (Risk Guardian) &bull; \(C_5\) Kavita Joshi (HR) &amp; Anjali Mehra (Customer Partner)</div>
+            <div><span style="color: #16a34a; font-weight: 700;">🟢 Selected (\(S \ge 3.80\))</span> | <span style="color: #d97706; font-weight: 700;">🟡 Conditional (\(2.50 \le S &lt; 3.80\))</span> | <span style="color: #dc2626; font-weight: 700;">🔴 Disqualified (\(S &lt; 2.50\))</span></div>
+          </div>
+        </div>
+
         <h3>Step 1: Select Reference Models, Viewpoints &amp; Tools</h3>
 
         <h4>Decision Point: Which Reference Model Framework to Adopt?</h4>
@@ -1345,52 +1388,71 @@
             <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase B, Phase E</span>
           </div>
         </div>
-<table class="options-table">
+        <div style="margin: 1rem 0; font-size: 0.86rem; color: #475569; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <div><strong>ADR-04-01:</strong> Target Operating Model Architecture &bull; <strong>Decision Gate:</strong> Architecture Board Gate B.1</div>
+          <div><strong>Evaluation Method:</strong> Weighted Multi-Criteria (\(S = \sum w_i s_i\)) &bull; <strong>Scale:</strong> 1 (Fatal) to 5 (Optimal)</div>
+        </div>
+
+        <table class="options-table" style="font-size: 0.84rem;">
           <thead>
             <tr>
-              <th>Option</th>
-              <th>Description</th>
-              <th>Capital Intensity</th>
-              <th>Strategic Control</th>
-              <th>Time to Market</th>
-              <th>Risk Profile</th>
+              <th style="width: 5%;">#</th>
+              <th style="width: 22%;">Candidate Option</th>
+              <th style="width: 14%;">\(C_1\) Strategic Moat<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(25% &bull; Aarav Patel)</span></th>
+              <th style="width: 15%;">\(C_2\) Fiduciary / Payback<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(30% &bull; Priya Kapoor)</span></th>
+              <th style="width: 15%;">\(C_3\) Execution Speed<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Rajesh Iyer)</span></th>
+              <th style="width: 14%;">\(C_4\) Risk &amp; Safety<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Sanjay Reddy)</span></th>
+              <th style="width: 15%;">\(C_5\) Change / Adoption<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Kavita / Anjali)</span></th>
+              <th style="width: 10%;">Score (\(S\)) &amp; Outcome</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>A. Full Vertical Integration (Double Down)</td>
-              <td>Invest additional $80M+ for dedicated gigafactory, 200+ cell chemists, proprietary cloud datacenter</td>
-              <td>🔴 Extreme ($120M+)</td>
-              <td>🟢 Maximum</td>
-              <td>🔴 36&ndash;48 months</td>
-              <td>🔴 Catastrophic if cell chemistry fails</td>
+              <td>A</td>
+              <td><strong>Full Vertical Integration (Double Down)</strong><br><span style="font-size: 0.76rem; color: #64748b;">Invest $80M+ in gigafactory, 200 chemists, in-house cell chemistry</span></td>
+              <td>4.0 / 5 (1.00)<br><span style="font-size: 0.74rem; color: #64748b;">100% IP control, but diluted core</span></td>
+              <td>1.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #dc2626;">-$45M NPV, payback &gt;48mo</span></td>
+              <td>1.0 / 5 (0.15)<br><span style="font-size: 0.74rem; color: #dc2626;">36&ndash;48mo factory commissioning</span></td>
+              <td>1.0 / 5 (0.15)<br><span style="font-size: 0.74rem; color: #dc2626;">81% yield; fatal warranty risk</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #64748b;">Massive chemical workforce strain</span></td>
+              <td><strong style="color: #dc2626;">1.90 🔴</strong><br><span style="font-size: 0.72rem; color: #dc2626; font-weight: bold;">REJECTED</span></td>
             </tr>
             <tr>
-              <td>B. Complete Outsource (Asset-Light OEM)</td>
-              <td>Outsource battery cells, pack assembly, BMS firmware, AND cloud telemetry &mdash; brand/integrator only</td>
-              <td>🟢 Minimal ($5M)</td>
-              <td>🔴 Near-zero IP</td>
-              <td>🟢 6&ndash;8 months</td>
-              <td>🔴 Commodity trap, zero differentiation</td>
+              <td>B</td>
+              <td><strong>Complete Outsource (Asset-Light OEM)</strong><br><span style="font-size: 0.76rem; color: #64748b;">Outsource cells, pack assembly, firmware, and cloud &mdash; brand badge only</span></td>
+              <td>1.0 / 5 (0.25)<br><span style="font-size: 0.74rem; color: #dc2626;">Zero retained IP; commodity trap</span></td>
+              <td>4.0 / 5 (1.20)<br><span style="font-size: 0.74rem; color: #16a34a;">Minimal $5M CapEx, 3% margins</span></td>
+              <td>5.0 / 5 (0.75)<br><span style="font-size: 0.74rem; color: #16a34a;">6&ndash;8mo off-the-shelf pack delivery</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #d97706;">Black-box vendor firmware risk</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #d97706;">Customer rejects generic rebrand</span></td>
+              <td><strong style="color: #d97706;">2.80 🟡</strong><br><span style="font-size: 0.72rem; color: #d97706; font-weight: bold;">CONDITIONAL</span></td>
             </tr>
             <tr class="selected-row">
-              <td><strong>C. Horizontal Partner Scaling (Selective Outsource + Retained Moat)</strong></td>
-              <td>Outsource commodity cell fabrication to Tier-1; RETAIN proprietary BMS intelligence, TinyML edge AI, pack design, truck integration</td>
-              <td>🟡 Moderate ($14.2M)</td>
-              <td>🟡 Strong moat on high-value IP</td>
-              <td>🟡 11&ndash;14 months</td>
-              <td>🟡 Manageable partner dependency</td>
+              <td>C</td>
+              <td><strong>Horizontal Partner Scaling (Retained Moat)</strong><br><span style="font-size: 0.76rem; color: #15803d;">Outsource commodity cell fab to Tier-1; retain proprietary BMS, TinyML, and pack integration</span></td>
+              <td><strong>5.0 / 5 (1.25)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Retains core AI &amp; battery IP moat</span></td>
+              <td><strong>5.0 / 5 (1.50)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">$14.2M net, 11.4mo payback, $68.4M NPV</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">11&ndash;14mo, aligns with Orbit SLA</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">HSM hardware boundary &amp; ASIL-D</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Fusion Pods cross-train seamlessly</span></td>
+              <td><strong style="color: #16a34a;">4.55 🟢</strong><br><span style="font-size: 0.72rem; color: #16a34a; font-weight: bold;">SELECTED</span></td>
             </tr>
             <tr>
-              <td>D. Platform Ecosystem Model</td>
-              <td>Build open battery platform standard, license BMS to other OEMs, monetize telemetry data as service</td>
-              <td>🟡 Moderate ($18M)</td>
-              <td>🟢 High (platform owner)</td>
-              <td>🔴 24&ndash;30 months</td>
-              <td>🟡 Market adoption uncertainty</td>
+              <td>D</td>
+              <td><strong>Platform Ecosystem Model</strong><br><span style="font-size: 0.76rem; color: #64748b;">Build open platform standard, license BMS to other OEMs, monetize telemetry API</span></td>
+              <td>4.0 / 5 (1.00)<br><span style="font-size: 0.74rem; color: #16a34a;">High platform leverage &amp; data moat</span></td>
+              <td>3.0 / 5 (0.90)<br><span style="font-size: 0.74rem; color: #d97706;">$18M CapEx; unproven SaaS stream</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #dc2626;">24&ndash;30mo consortia standardization</span></td>
+              <td>3.0 / 5 (0.45)<br><span style="font-size: 0.74rem; color: #d97706;">Multi-OEM IP dispute exposure</span></td>
+              <td>3.0 / 5 (0.45)<br><span style="font-size: 0.74rem; color: #d97706;">Complex partner consortium politics</span></td>
+              <td><strong style="color: #d97706;">3.10 🟡</strong><br><span style="font-size: 0.72rem; color: #d97706; font-weight: bold;">CONDITIONAL</span></td>
             </tr>
           </tbody>
         </table>
+
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin: 0.5rem 0 1.25rem 0; font-size: 0.80rem; color: #475569;">
+          <strong>Evaluator Sign-Off &amp; Weighting Rationale:</strong> In Phase B Target Operating Model formulation, Fiduciary Return (\(w_2 = 30\%\)) and Strategic IP Preservation (\(w_1 = 25\%\)) carry 55% of the total decision weight because Volt-Tech faces immediate contractual termination without capital discipline. Option C wins with a composite score of <strong>4.55 / 5.0 (🟢)</strong>, satisfying all hurdle rates. Evaluated and ratified by Priya Kapoor (Fiscal), Rajesh Iyer (Ops), Sanjay Reddy (Risk), and Aarav Patel (CTO).
+        </div>
 
         <div class="narrator-block">
           <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
@@ -1785,52 +1847,71 @@
             <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase E, Phase F</span>
           </div>
         </div>
-<table class="options-table">
+        <div style="margin: 1rem 0; font-size: 0.86rem; color: #475569; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <div><strong>ADR-04-02:</strong> Transformation Sequencing Strategy &amp; Delivery Roadmap &bull; <strong>Decision Gate:</strong> Architecture Board Gate B.2</div>
+          <div><strong>Evaluation Method:</strong> Weighted Multi-Criteria (\(S = \sum w_i s_i\)) &bull; <strong>Scale:</strong> 1 (Fatal) to 5 (Optimal)</div>
+        </div>
+
+        <table class="options-table" style="font-size: 0.84rem;">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Option</th>
-              <th>Description</th>
-              <th>Duration</th>
-              <th>Risk</th>
-              <th>Change Management</th>
+              <th style="width: 5%;">#</th>
+              <th style="width: 22%;">Candidate Option</th>
+              <th style="width: 14%;">\(C_1\) Strategic Moat<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(20% &bull; Aarav Patel)</span></th>
+              <th style="width: 15%;">\(C_2\) Fiduciary / Payback<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(25% &bull; Priya Kapoor)</span></th>
+              <th style="width: 15%;">\(C_3\) Execution Speed<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(25% &bull; Rajesh Iyer)</span></th>
+              <th style="width: 14%;">\(C_4\) Risk &amp; Safety<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Sanjay Reddy)</span></th>
+              <th style="width: 15%;">\(C_5\) Change / Adoption<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Kavita / Anjali)</span></th>
+              <th style="width: 10%;">Score (\(S\)) &amp; Outcome</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>A</td>
-              <td>Big Bang (Parallel Execution)</td>
-              <td>Execute all streams simultaneously &mdash; cell partner, Fusion Pod, TinyML, cloud, DPP all at once</td>
-              <td>6&ndash;8 months</td>
-              <td>🔴 Extreme integration risk, resource conflicts</td>
-              <td>🔴 Organization overwhelmed</td>
+              <td><strong>Big Bang (Parallel Execution)</strong><br><span style="font-size: 0.76rem; color: #64748b;">Execute all streams simultaneously &mdash; cell partner, Fusion Pod, TinyML, cloud, DPP all at once</span></td>
+              <td>3.0 / 5 (0.60)<br><span style="font-size: 0.74rem; color: #64748b;">Ambitious, but brittle multi-stream lock</span></td>
+              <td>2.0 / 5 (0.50)<br><span style="font-size: 0.74rem; color: #dc2626;">High cash burn, zero intermediate revenue</span></td>
+              <td>2.0 / 5 (0.50)<br><span style="font-size: 0.74rem; color: #dc2626;">6&ndash;8mo target, but catastrophic deadlock</span></td>
+              <td>1.0 / 5 (0.15)<br><span style="font-size: 0.74rem; color: #dc2626;">Prohibitive integration blast radius</span></td>
+              <td>1.0 / 5 (0.15)<br><span style="font-size: 0.74rem; color: #dc2626;">Workforce overwhelmed; culture rejection</span></td>
+              <td><strong style="color: #dc2626;">1.90 🔴</strong><br><span style="font-size: 0.72rem; color: #dc2626; font-weight: bold;">REJECTED</span></td>
             </tr>
             <tr>
               <td>B</td>
-              <td>Sequential Waterfall</td>
-              <td>Complete each stream fully before starting next: Cells &rarr; Pods &rarr; Edge AI &rarr; Cloud &rarr; DPP</td>
-              <td>24&ndash;30 months</td>
-              <td>🟢 Low per-phase risk</td>
-              <td>🔴 Far exceeds Orbit-Logistics patience</td>
+              <td><strong>Sequential Waterfall</strong><br><span style="font-size: 0.76rem; color: #64748b;">Complete each stream fully before starting next: Cells &rarr; Pods &rarr; Edge AI &rarr; Cloud &rarr; DPP</span></td>
+              <td>3.0 / 5 (0.60)<br><span style="font-size: 0.74rem; color: #64748b;">Orderly, but misses market window</span></td>
+              <td>2.0 / 5 (0.50)<br><span style="font-size: 0.74rem; color: #dc2626;">Delayed payback; 24mo cash bleed</span></td>
+              <td>1.0 / 5 (0.25)<br><span style="font-size: 0.74rem; color: #dc2626;">24&ndash;30mo duration violates contract</span></td>
+              <td>4.0 / 5 (0.60)<br><span style="font-size: 0.74rem; color: #16a34a;">Low per-phase blast radius</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #dc2626;">Exceeds customer patience; Orbit cancels</span></td>
+              <td><strong style="color: #dc2626;">2.25 🔴</strong><br><span style="font-size: 0.72rem; color: #dc2626; font-weight: bold;">REJECTED</span></td>
             </tr>
             <tr class="selected-row">
               <td>C</td>
-              <td><strong>Phased Overlapping Waves (3 Phases)</strong></td>
-              <td>Three overlapping phases with gate reviews: B.1 (Foundation), B.2 (Capability Build), B.3 (Production &amp; Delivery)</td>
-              <td>11&ndash;14 months</td>
-              <td>🟡 Managed risk with gates</td>
-              <td>🟡 Manageable with Fusion Pod structure</td>
+              <td><strong>Phased Overlapping Waves (3 Phases)</strong><br><span style="font-size: 0.76rem; color: #15803d;">Three overlapping phases with gate reviews: B.1 (Foundation), B.2 (Capability Build), B.3 (Production &amp; Delivery)</span></td>
+              <td><strong>5.0 / 5 (1.00)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Disciplined gate-driven capability growth</span></td>
+              <td><strong>5.0 / 5 (1.25)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">11.4mo payback; tranche-gated releases</span></td>
+              <td><strong>4.0 / 5 (1.00)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">11&ndash;14mo delivery hits Orbit SLA target</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Gates B.1&ndash;B.3 isolate cross-phase risks</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Fusion Pods absorb change progressively</span></td>
+              <td><strong style="color: #16a34a;">4.45 🟢</strong><br><span style="font-size: 0.72rem; color: #16a34a; font-weight: bold;">SELECTED</span></td>
             </tr>
             <tr>
               <td>D</td>
-              <td>MVP &rarr; Scale (Lean Startup)</td>
-              <td>Build minimum viable Smart Battery for single Orbit-Logistics route, validate, then scale</td>
-              <td>8&ndash;10 months MVP, 18+ full</td>
-              <td>🟡 Low initial risk, slow scale</td>
-              <td>🟡 May frustrate contractual deadlines</td>
+              <td><strong>MVP &rarr; Scale (Lean Startup)</strong><br><span style="font-size: 0.76rem; color: #64748b;">Build minimum viable Smart Battery for single Orbit-Logistics route, validate, then scale</span></td>
+              <td>3.0 / 5 (0.60)<br><span style="font-size: 0.74rem; color: #64748b;">Validates single route, slow enterprise scale</span></td>
+              <td>3.0 / 5 (0.75)<br><span style="font-size: 0.74rem; color: #d97706;">Piecemeal CapEx; delayed fleet-wide ROI</span></td>
+              <td>3.0 / 5 (0.75)<br><span style="font-size: 0.74rem; color: #d97706;">8&ndash;10mo pilot, but 18+ mo full fleet delivery</span></td>
+              <td>4.0 / 5 (0.60)<br><span style="font-size: 0.74rem; color: #16a34a;">Contained pilot exposure</span></td>
+              <td>3.0 / 5 (0.45)<br><span style="font-size: 0.74rem; color: #d97706;">Customer frustrated by unscaled pilot bounds</span></td>
+              <td><strong style="color: #d97706;">3.15 🟡</strong><br><span style="font-size: 0.72rem; color: #d97706; font-weight: bold;">CONDITIONAL</span></td>
             </tr>
           </tbody>
         </table>
+
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin: 0.5rem 0 1.25rem 0; font-size: 0.80rem; color: #475569;">
+          <strong>Evaluator Sign-Off &amp; Weighting Rationale:</strong> For roadmap sequencing, Execution Velocity (\(w_3 = 25\%\)) and Fiduciary Payback (\(w_2 = 25\%\)) carry equal top priority because Volt-Tech's survival depends on delivering working production batteries inside Orbit-Logistics' 12-month contractual window. Option C earns <strong>4.45 / 5.0 (🟢)</strong>, successfully isolating risk via Gates B.1&ndash;B.3. Signed off by Rajesh Iyer (VP Ops), Priya Kapoor (Fiscal), Sanjay Reddy (Risk), and Anjali Mehra (Customer Sponsor).
+        </div>
 
         <div class="narrator-block">
           <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
@@ -2315,52 +2396,71 @@ B.3:                            ████████████████
             <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase E, Phase F, CFOs</span>
           </div>
         </div>
-<table class="options-table">
+        <div style="margin: 1rem 0; font-size: 0.86rem; color: #475569; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <div><strong>ADR-04-03:</strong> Fiduciary Investment Model &amp; Capital Release Structure &bull; <strong>Decision Gate:</strong> Architecture Board &amp; CFO Gate B.3</div>
+          <div><strong>Evaluation Method:</strong> Weighted Multi-Criteria (\(S = \sum w_i s_i\)) &bull; <strong>Scale:</strong> 1 (Fatal) to 5 (Optimal)</div>
+        </div>
+
+        <table class="options-table" style="font-size: 0.84rem;">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Option</th>
-              <th>Description</th>
-              <th>Upfront Cost</th>
-              <th>Cash Flow Profile</th>
-              <th>Board Appeal</th>
+              <th style="width: 5%;">#</th>
+              <th style="width: 22%;">Candidate Option</th>
+              <th style="width: 14%;">\(C_1\) Strategic Moat<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(20% &bull; Aarav Patel)</span></th>
+              <th style="width: 15%;">\(C_2\) Fiduciary / Payback<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(35% &bull; Priya Kapoor)</span></th>
+              <th style="width: 15%;">\(C_3\) Execution Speed<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Rajesh Iyer)</span></th>
+              <th style="width: 14%;">\(C_4\) Risk &amp; Safety<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Sanjay Reddy)</span></th>
+              <th style="width: 15%;">\(C_5\) Change / Ratification<br><span style="font-weight: normal; font-size: 0.72rem; color: #64748b;">(15% &bull; Executive Board)</span></th>
+              <th style="width: 10%;">Score (\(S\)) &amp; Outcome</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>A</td>
-              <td>Full CapEx Investment</td>
-              <td>Purchase all equipment, build all labs, hire all staff as CapEx in Year 0</td>
-              <td>$14.2M (Year 0)</td>
-              <td>Front-loaded cost, back-loaded returns</td>
-              <td>🟡 Moderate &mdash; large upfront ask</td>
+              <td><strong>Full CapEx Investment (Year 0)</strong><br><span style="font-size: 0.76rem; color: #64748b;">Purchase all robotics, labs, and staffing as upfront CapEx in Year 0</span></td>
+              <td>4.0 / 5 (0.80)<br><span style="font-size: 0.74rem; color: #16a34a;">Full ownership of physical and lab IP</span></td>
+              <td>2.0 / 5 (0.70)<br><span style="font-size: 0.74rem; color: #d97706;">$14.2M unhedged ask; front-loaded burn</span></td>
+              <td>3.0 / 5 (0.45)<br><span style="font-size: 0.74rem; color: #64748b;">Slower procurement across all streams</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #d97706;">High financial exposure if Stage 1 stalls</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #d97706;">Board skeptical of large unhedged check</span></td>
+              <td><strong style="color: #d97706;">2.55 🟡</strong><br><span style="font-size: 0.72rem; color: #d97706; font-weight: bold;">MARGINAL</span></td>
             </tr>
             <tr>
               <td>B</td>
-              <td>OpEx Leasing &amp; SaaS Model</td>
-              <td>Lease robotics, subscribe to cloud platforms, contract consultants</td>
-              <td>$3.8M/yr recurring</td>
-              <td>Smooth cash flow, perpetual expense</td>
-              <td>🟡 Lower upfront, higher 5-year TCO</td>
+              <td><strong>OpEx Leasing &amp; SaaS Model</strong><br><span style="font-size: 0.76rem; color: #64748b;">Lease robotics, subscribe to cloud platforms, contract implementation consultants</span></td>
+              <td>2.0 / 5 (0.40)<br><span style="font-size: 0.74rem; color: #d97706;">Zero asset equity; leased commoditization</span></td>
+              <td>2.0 / 5 (0.70)<br><span style="font-size: 0.74rem; color: #d97706;">$3.8M/yr compounds to $19M 5y TCO</span></td>
+              <td>4.0 / 5 (0.60)<br><span style="font-size: 0.74rem; color: #16a34a;">Rapid commercial SaaS &amp; robot setup</span></td>
+              <td>3.0 / 5 (0.45)<br><span style="font-size: 0.74rem; color: #64748b;">Vendor pricing lock-in &amp; ongoing SLAs</span></td>
+              <td>3.0 / 5 (0.45)<br><span style="font-size: 0.74rem; color: #64748b;">CFO rejects perpetual operational bleed</span></td>
+              <td><strong style="color: #d97706;">2.60 🟡</strong><br><span style="font-size: 0.72rem; color: #d97706; font-weight: bold;">UNFAVORABLE</span></td>
             </tr>
             <tr class="selected-row">
               <td>C</td>
-              <td><strong>Hybrid CapEx/OpEx with Phased Release</strong></td>
-              <td>Proprietary moat assets as CapEx; commodity services as OpEx; investment in 3 gate-reviewed tranches</td>
-              <td>$6.5M CapEx + $2.6M/yr OpEx</td>
-              <td>Balanced, risk-gated, matches phased roadmap</td>
-              <td>🟢 High &mdash; demonstrates fiscal discipline</td>
+              <td><strong>Hybrid CapEx/OpEx with Phased Release</strong><br><span style="font-size: 0.76rem; color: #15803d;">Proprietary moat assets as CapEx; commodity services as OpEx; investment in 3 gate-reviewed tranches</span></td>
+              <td><strong>5.0 / 5 (1.00)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">CapEx funds core moat; OpEx pays cloud</span></td>
+              <td><strong>5.0 / 5 (1.75)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">11.4mo payback, $68.4M NPV, 42.6% IRR</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Tranches synchronize with 11&ndash;14mo roadmap</span></td>
+              <td><strong>4.0 / 5 (0.60)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Tranche gates insulate capital from risk</span></td>
+              <td><strong>5.0 / 5 (0.75)</strong><br><span style="font-size: 0.74rem; color: #16a34a;">Unanimous board approval &amp; ratification</span></td>
+              <td><strong style="color: #16a34a;">4.70 🟢</strong><br><span style="font-size: 0.72rem; color: #16a34a; font-weight: bold;">SELECTED</span></td>
             </tr>
             <tr>
               <td>D</td>
-              <td>Revenue-Funded (Self-Financing)</td>
-              <td>Fund entirely from warranty reserve savings ($34M/yr) and existing revenue</td>
-              <td>$0 new capital</td>
-              <td>Zero board approval needed, delayed start</td>
-              <td>🔴 Too slow &mdash; savings don't exist until transformation completes</td>
+              <td><strong>Revenue-Funded (Self-Financing Bootstrap)</strong><br><span style="font-size: 0.76rem; color: #64748b;">Fund entirely from warranty reserve savings ($34M/yr) and existing revenue</span></td>
+              <td>2.0 / 5 (0.40)<br><span style="font-size: 0.74rem; color: #dc2626;">Starves transformation of upfront scale</span></td>
+              <td>1.0 / 5 (0.35)<br><span style="font-size: 0.74rem; color: #dc2626;">Fatal flaw: warranty savings do not exist yet</span></td>
+              <td>1.0 / 5 (0.15)<br><span style="font-size: 0.74rem; color: #dc2626;">Impossible delay; misses contract window</span></td>
+              <td>1.0 / 5 (0.15)<br><span style="font-size: 0.74rem; color: #dc2626;">Extreme operational insolvency risk</span></td>
+              <td>2.0 / 5 (0.30)<br><span style="font-size: 0.74rem; color: #dc2626;">Board rejects unrealistic bootstrap fantasy</span></td>
+              <td><strong style="color: #dc2626;">1.35 🔴</strong><br><span style="font-size: 0.72rem; color: #dc2626; font-weight: bold;">REJECTED</span></td>
             </tr>
           </tbody>
         </table>
+
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin: 0.5rem 0 1.25rem 0; font-size: 0.80rem; color: #475569;">
+          <strong>Evaluator Sign-Off &amp; Weighting Rationale:</strong> In the Fiduciary Investment Model ADR, Fiduciary Impact (\(w_2 = 35\%\)) carries the highest weighting in accordance with CFO hurdle rate requirements. Option C achieves an outstanding <strong>4.70 / 5.0 (🟢)</strong> by funding moat-building assets (robotics, HIL labs) as CapEx while isolating commodity infrastructure in OpEx. Evaluated and approved by Priya Kapoor (Fiscal Architect), Aarav Patel (CTO), Rajesh Iyer (Ops), and ratified unanimously by the Executive Board.
+        </div>
 
         <div class="narrator-block">
           <img src="assets/narayan_debnath_avatar.jpg" alt="Narayan Debnath" class="shruti-avatar" style="border-radius: 50%;">
