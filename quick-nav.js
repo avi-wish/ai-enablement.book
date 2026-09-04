@@ -384,15 +384,15 @@
       if (copyBtn) {
         const parentBox = copyBtn.closest('.cite-box');
         if (parentBox) {
-          const codeEl = parentBox.querySelector('code') || parentBox;
-          const textToCopy = codeEl.innerText.replace('Copy BibTeX', '').replace('Copy Citation', '').trim();
-          navigator.clipboard.writeText(textToCopy).then(() => {
+          const codeEl = parentBox.querySelector('code') || parentBox.querySelector('pre') || parentBox;
+          const rawText = (codeEl.textContent || codeEl.innerText || '').replace('Copy BibTeX', '').replace('Copy Citation', '').trim();
+          navigator.clipboard.writeText(rawText).then(() => {
             const originalHTML = copyBtn.innerHTML;
             copyBtn.innerHTML = `
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              Copied!
+              <span>Copied!</span>
             `;
             copyBtn.style.color = '#4ade80';
             copyBtn.style.borderColor = '#22c55e';
