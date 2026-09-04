@@ -216,6 +216,16 @@
       <h3>Diagnostic Phase Stakeholder Engagement Matrix</h3>
       <p>To ensure the forensic audit satisfies both board fiduciary oversight and engineering precision, the diagnostic investigation maps stakeholder concerns to target requirement vectors:</p>
 
+      <div class="togaf-deliverable-badge">
+        <div class="badge-left">
+          <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Stakeholder Management Plan (§ Diagnostic Viewpoint)</span>
+          <span class="badge-tag-artifact">Matrix</span>
+        </div>
+        <div class="badge-right">
+          <span class="badge-phase-pill badge-phase-producer">Produces: Requirements Management</span>
+          <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase A, Phase B, Phase C</span>
+        </div>
+      </div>
       <table class="options-table">
         <thead>
           <tr>
@@ -761,6 +771,16 @@
         <h3>Requirements Conflict Resolution Log (Consortium Rule REQ-03)</h3>
         <p>In high-throughput autonomous systems, functional ambitions often collide with physical, economic, and cryptographic realities. The Requirements Management process formally logs and resolves these tensions:</p>
 
+        <div class="togaf-deliverable-badge">
+          <div class="badge-left">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Requirements Specification (ARS) (§ Trade-Off Log)</span>
+            <span class="badge-tag-artifact">Matrix / Log</span>
+          </div>
+          <div class="badge-right">
+            <span class="badge-phase-pill badge-phase-producer">Produces: Requirements Management</span>
+            <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase B, Phase C, Phase D, Architecture Board</span>
+          </div>
+        </div>
         <table class="options-table">
           <thead>
             <tr>
@@ -800,6 +820,16 @@
         <h3>ABB-to-ABB Communication &amp; Interface Matrix</h3>
         <p>To prevent architectural ambiguity during downstream Phase C (Application) and Phase D (Technology) implementation, the diagnostic building blocks define formal inter-ABB communication contracts:</p>
 
+        <div class="togaf-deliverable-badge">
+          <div class="badge-left">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Definition Document (ADD) (§4 Application Architecture)</span>
+            <span class="badge-tag-artifact">Matrix (ABB-to-ABB)</span>
+          </div>
+          <div class="badge-right">
+            <span class="badge-phase-pill badge-phase-producer">Produces: Requirements Management</span>
+            <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase C2, Phase D, Integration Leads</span>
+          </div>
+        </div>
         <table class="options-table">
           <thead>
             <tr>
@@ -1062,6 +1092,16 @@
         <h3>Quantified Diagnostic Risk Register (Initial vs. Residual Risk)<sup><a href="#ref-2-3" id="cite-2-3" class="citation-ref">[3]</a></sup></h3>
         <p>In accordance with TOGAF&reg; risk management guidance, ISO 31000 standards<sup><a href="#ref-2-3" id="cite-2-3a" class="citation-ref">[3]</a></sup>, and Consortium Architecture Rule TECH-01, all identified enterprise risks must be formally quantified using the standard formula \(\text{Risk Level} = \text{Likelihood} \times \text{Impact}\) (scaled 1&ndash;5), demonstrating that architectural mitigations reduce all critical risks to acceptable residual bounds:</p>
 
+        <div class="togaf-deliverable-badge">
+          <div class="badge-left">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Requirements Specification (ARS) (§ Risk &amp; Constraint Register)</span>
+            <span class="badge-tag-artifact">Register / Log</span>
+          </div>
+          <div class="badge-right">
+            <span class="badge-phase-pill badge-phase-producer">Produces: Requirements Management</span>
+            <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase E, Phase F, Phase G</span>
+          </div>
+        </div>
         <table class="options-table">
           <thead>
             <tr>
@@ -1290,6 +1330,16 @@
 ► Parallel Track: WP-03 runs concurrently with WP-02 in Weeks 5–10</pre>
         </div>
 
+        <div class="togaf-deliverable-badge">
+          <div class="badge-left">
+            <span class="badge-tag-deliverable">🏛️ TOGAF Deliverable: Architecture Roadmap (§ Work Package Precedence &amp; Dependency Model)</span>
+            <span class="badge-tag-artifact">Matrix / Schedule</span>
+          </div>
+          <div class="badge-right">
+            <span class="badge-phase-pill badge-phase-producer">Produces: Requirements Management</span>
+            <span class="badge-phase-pill badge-phase-consumer">Consumes: Phase E (Solutions), Phase F (Migration)</span>
+          </div>
+        </div>
         <table class="options-table">
           <thead>
             <tr>
@@ -1331,6 +1381,18 @@
             </tr>
           </tbody>
         </table>
+
+        <!-- Phase Forward Handshake Nodes -->
+        <div class="caption-block" style="margin-top: 2rem;">
+          <h4>📌 Phase Forward Handshake Nodes (Requirements Pass-Through to Phases B, C, &amp; D)</h4>
+          <p>Requirements Management continuously stewards cross-phase constraints, formally handing over the diagnostic audit findings into the downstream ADM cycle:</p>
+          <ul>
+            <li><strong>Forward Directives for Phase B (Business Architecture):</strong> Pass the root-cause taxonomy (NFR-04) and the diagnostic stakeholder matrix to ensure the Business Capability Map explicitly models battery diagnostics and teleoperation escalation.</li>
+            <li><strong>Forward Directives for Phase C (Information Systems Architecture):</strong> Mandate the ABB-to-ABB communication protocols (gRPC/Protobuf over mTLS, Kafka topic partitioning) and data boundary invariants identified in the ABB Interface Matrix.</li>
+            <li><strong>Forward Directives for Phase D (Technology Architecture):</strong> Enforce edge compute latency thresholds (NFR-01: &le;10ms inference) and TPM 2.0 cryptographic hardware isolation (NFR-03) directly into silicon procurement specifications.</li>
+            <li><strong>Forward Directives for Phase E &amp; F (Solutions &amp; Migration Planning):</strong> Deliver the PERT work package sequence (WP-01 &rarr; WP-02 &amp; WP-03 &rarr; WP-04) as the non-negotiable architectural baseline for tranche investment releases.</li>
+          </ul>
+        </div>
       </section>
 
       <!-- ========================================================================= -->

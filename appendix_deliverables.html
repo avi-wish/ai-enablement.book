@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix: Master TOGAF® Deliverables &amp; Table Lineage Crosswalk - The Reality of Enterprise AI</title>
+  <meta name="description" content="Systematic Master Mapping of all 68 tables in The Reality of Enterprise AI to formal TOGAF deliverables, producing ADM phases, and consuming ADM phases per RULE DEL-04.">
+  <meta name="author" content="Avik Das">
+  <link rel="stylesheet" href="style.css">
+  <!-- KaTeX CSS & JS for LaTeX Math Rendering (Rule 2) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+  <script src="image-viewer.js" defer></script>
+  <script src="quick-nav.js" defer></script>
+  <style>
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 0.85rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .filter-input {
+      padding: 0.45rem 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      flex-grow: 1;
+      min-width: 220px;
+    }
+    .filter-select {
+      padding: 0.45rem 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-part">Master Reference Appendix:</span> TOGAF® Deliverable &amp; Lineage Crosswalk</div>
+      <nav><a href="content.html">&larr; Table of Contents</a><span style="color: #cbd5e1; margin: 0 0.4rem;">|</span><a href="glossary.html">Master Glossary &rarr;</a></nav>
+    </header>
+
+    <main>
+      <section>
+        <h1>Master TOGAF® Deliverable, Producer &amp; Consumer Lineage Matrix</h1>
+        <p class="subtitle">
+          Exhaustive Architectural Crosswalk of All 68 Tables across Chapters 1–9 &bull; Standardized under Consortium Rule DEL-04
+        </p>
+
+        <div class="card" style="background: #f0f9ff; border: 1.5px solid #bae6fd; border-left: 4px solid #0284c7; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #0369a1; margin-top: 0;">🏛️ The Architecture Content Framework in Practice</h4>
+          <p style="margin-bottom: 0.5rem; font-size: 0.92rem; color: #1e293b;">
+            In classical enterprise architecture, tables and models must not exist as unclassified presentation widgets. Under <strong>The TOGAF® Standard Architecture Content Framework</strong> and <strong>Consortium Rule DEL-04</strong>, every structured table represents a formally classified <strong>Architecture Artifact</strong> (Catalog, Matrix, or Register/Log) belonging to an approved <strong>TOGAF Deliverable</strong>.
+          </p>
+          <p style="margin-bottom: 0; font-size: 0.92rem; color: #1e293b;">
+            This appendix provides complete bi-directional lineage: identifying which ADM Phase produces each table, which downstream phases consume it as an architecture mandate, and which formal handshake governs the handover.
+          </p>
+        </div>
+
+        <div class="filter-bar">
+          <label for="tableFilter" style="font-weight: 700; color: #334155; font-size: 0.9rem;">Filter Lineage:</label>
+          <input type="text" id="tableFilter" class="filter-input" placeholder="Search by title, deliverable, or phase..." onkeyup="filterDeliverables()">
+          <select id="phaseFilter" class="filter-select" onchange="filterDeliverables()">
+            <option value="">All Producing Phases</option>
+            <option value="Preliminary Phase">Preliminary Phase</option>
+            <option value="Requirements Management">Requirements Management</option>
+            <option value="Phase A">Phase A: Architecture Vision</option>
+            <option value="Phase B">Phase B: Business Architecture</option>
+            <option value="Phase C1">Phase C1: Data Architecture</option>
+            <option value="Phase D">Phase D: Technology Architecture</option>
+            <option value="Phase E">Phase E: Opportunities &amp; Solutions</option>
+            <option value="Phase F">Phase F: Migration Planning</option>
+            <option value="Phase G">Phase G: Implementation Governance</option>
+          </select>
+        </div>
+
+        <div class="table-container" style="overflow-x: auto; margin: 1.5rem 0;">
+          <table class="options-table" id="deliverablesTable" style="font-size: 0.88rem; width: 100%;">
+            <thead>
+              <tr style="background-color: #0f172a; color: #ffffff;">
+                <th style="width: 40px; text-align: center;">#</th>
+                <th style="width: 22%;">Table Title &amp; Chapter</th>
+                <th style="width: 20%;">TOGAF Deliverable &amp; Section</th>
+                <th style="width: 10%;">Artifact Type</th>
+                <th style="width: 13%;">Producing Phase</th>
+                <th style="width: 14%;">Consuming Phase(s)</th>
+                <th style="width: 21%;">Handshake Purpose &amp; Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="deliverable-row" data-phase="Preliminary Phase" data-deliverable="Communications Plan & Stakeholder Management Plan (§ Stakeholder Map)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">1</td>
+                <td>
+                  <a href="chapter_1.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 1.1: Stakeholder Power / Interest Engagement Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 1</div>
+                </td>
+                <td>
+                  <strong>Communications Plan & Stakeholder Management Plan (§ Stakeholder Map)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Preliminary Phase</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase A, Phase B, Architecture Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Identifies political capital, decision rights, and governance cadence for multi-enterprise sponsors.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Preliminary Phase" data-deliverable="Architecture Vision (§ Problem Statement & Baseline Scenarios)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">2</td>
+                <td>
+                  <a href="chapter_1.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 1.2: Orbit-Logistics: Key Delivery Service Metrics Under Scrutiny</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 1</div>
+                </td>
+                <td>
+                  <strong>Architecture Vision (§ Problem Statement & Baseline Scenarios)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Preliminary Phase</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase A, Requirements Management</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes operational failure baselines (2.0) that trigger the multi-enterprise AI transformation.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Preliminary Phase" data-deliverable="Architecture Governance Framework (§ Enterprise Repository Model)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">3</td>
+                <td>
+                  <a href="chapter_1.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 1.3: Federated Ecosystem Repository Partitioning Model & Access Governance</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 1</div>
+                </td>
+                <td>
+                  <strong>Architecture Governance Framework (§ Enterprise Repository Model)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog / Schema</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Preliminary Phase</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">All ADM Phases (Phases A–H)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Defines physical & logical isolation, classification tiers, and read/write rights across consortium boundaries.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Preliminary Phase (Business Sponsors)" data-deliverable="Request for Architecture Work (RfAW)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">4</td>
+                <td>
+                  <a href="chapter_1.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 1.4: Request for Architecture Work (RfAW) — Ecosystem Initiation Template</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 1</div>
+                </td>
+                <td>
+                  <strong>Request for Architecture Work (RfAW)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Formal Deliverable</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Preliminary Phase (Business Sponsors)</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase A (Architecture Vision)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  The formal executive commission authorizing resource allocation and triggering Phase A of the ADM.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Requirements Management" data-deliverable="Stakeholder Management Plan (§ Diagnostic Viewpoint)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">5</td>
+                <td>
+                  <a href="chapter_2.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 2.1: Diagnostic Phase Stakeholder Engagement Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 2</div>
+                </td>
+                <td>
+                  <strong>Stakeholder Management Plan (§ Diagnostic Viewpoint)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Requirements Management</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase A, Phase B, Phase C</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Focuses engagement specifically around root-cause diagnostics, telemetry access, and data ownership.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Requirements Management" data-deliverable="Architecture Requirements Specification (ARS) (§ Trade-Off Log)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">6</td>
+                <td>
+                  <a href="chapter_2.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 2.2: Requirements Conflict Resolution Log (Consortium Rule REQ-03)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 2</div>
+                </td>
+                <td>
+                  <strong>Architecture Requirements Specification (ARS) (§ Trade-Off Log)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Requirements Management</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase C, Phase D, Architecture Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Formalizes trade-offs (e.g., latency vs. cryptographic proof) so downstream architects don't re-litigate decisions.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Requirements Management" data-deliverable="Architecture Definition Document (ADD) (§4 Application Architecture)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">7</td>
+                <td>
+                  <a href="chapter_2.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 2.3: ABB-to-ABB Communication & Interface Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 2</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) (§4 Application Architecture)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix (ABB-to-ABB)</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Requirements Management</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase D, Integration Leads</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes preliminary conceptual interaction contracts between logical architecture building blocks.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Requirements Management" data-deliverable="Architecture Requirements Specification (ARS) (§ Risk & Constraint Register)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">8</td>
+                <td>
+                  <a href="chapter_2.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 2.4: Quantified Diagnostic Risk Register (Initial vs. Residual Risk)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 2</div>
+                </td>
+                <td>
+                  <strong>Architecture Requirements Specification (ARS) (§ Risk & Constraint Register)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Register / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Requirements Management</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F, Phase G</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Quantifies Likelihood × Impact to mandate risk-reduction tranches in solution sequencing.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Requirements Management" data-deliverable="Architecture Roadmap (§ Work Package Precedence & Dependency Model)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">9</td>
+                <td>
+                  <a href="chapter_2.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 2.5: Work Package Sequencing & Critical Path Analysis (PERT Network Precedence)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 2</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ Work Package Precedence & Dependency Model)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Schedule</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Requirements Management</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E (Solutions), Phase F (Migration)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Generates the acyclic PERT critical path to ensure foundational data capabilities precede AI edge inference.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase A" data-deliverable="Statement of Architecture Work (SOW) & Architecture Vision (§ Strategic Objectives)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">10</td>
+                <td>
+                  <a href="chapter_3.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 3.1: Phase A Strategic Objectives & Key Results (OKRs)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 3</div>
+                </td>
+                <td>
+                  <strong>Statement of Architecture Work (SOW) & Architecture Vision (§ Strategic Objectives)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase A</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase E, Architecture Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Binds technical milestones directly to board-level financial objectives (EBITDA, scrap reduction).
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase A" data-deliverable="Business Transformation Readiness Assessment">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">11</td>
+                <td>
+                  <a href="chapter_3.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 3.2: Transformation Readiness Remediation Roadmap</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 3</div>
+                </td>
+                <td>
+                  <strong>Business Transformation Readiness Assessment</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Roadmap</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase A</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase E, Phase F</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Audits organizational readiness across culture, skills, and tooling, mandating enablement work packages.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase A" data-deliverable="Statement of Architecture Work (SOW) (§ Fiduciary Sign-Off Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">12</td>
+                <td>
+                  <a href="chapter_3.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 3.3: Formal Fiduciary Sign-Off Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 3</div>
+                </td>
+                <td>
+                  <strong>Statement of Architecture Work (SOW) (§ Fiduciary Sign-Off Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Sign-Off</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase A</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Architecture Board, Steering Committee</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Secures legally binding multi-enterprise sign-off before entering domain modeling.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase A" data-deliverable="Architecture Requirements Specification (ARS) (§ Performance Measurement Framework)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">13</td>
+                <td>
+                  <a href="chapter_3.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 3.4: KPI Measurement & Verification Methodology Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 3</div>
+                </td>
+                <td>
+                  <strong>Architecture Requirements Specification (ARS) (§ Performance Measurement Framework)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase A</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase G (Governance)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Codifies how each KPI will be calculated, measured, and verified during implementation audits.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase A" data-deliverable="Architecture Principles Catalog & Traceability Matrix">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">14</td>
+                <td>
+                  <a href="chapter_3.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 3.5: Architecture Principles Application Log (Traceability to Chapter 1)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 3</div>
+                </td>
+                <td>
+                  <strong>Architecture Principles Catalog & Traceability Matrix</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase A</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase C, Phase D, Phase G</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Traces high-level principles (e.g., 'Edge First', 'Zero Data Drift') to specific architectural constraints.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase A" data-deliverable="Communications Plan">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">15</td>
+                <td>
+                  <a href="chapter_3.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 3.6: Phase A Stakeholder Communication Plan</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 3</div>
+                </td>
+                <td>
+                  <strong>Communications Plan</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog / Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase A</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phases B, C, D, E, F, G, H</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes meeting cadences, distribution lists, and escalation mechanisms across the consortium.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Framework Evaluation Record)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">16</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.1: Decision Point: Which Reference Model Framework to Adopt?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Framework Evaluation Record)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase C</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Selects SCOR + AIAG + TOGAF integration over ad-hoc modeling.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Catalog 1)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">17</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.2: 1. Driver / Goal / Objective Catalog</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Catalog 1)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C, Phase D, Phase E</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Maps corporate drivers to quantifiable business objectives.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Catalog 3)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">18</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.3: 3. Organization / Actor & Role Catalog</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Catalog 3)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C, Phase G (RACI)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Defines business actors, human-in-the-loop supervisors, and accountability.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Catalog 5)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">19</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.4: 5. Process / Event / Control / Product Catalog</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Catalog 5)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1 (Data), Phase C2 (App)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Translates core business events into data pipeline triggers and software products.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B (Handshake)" data-deliverable="Architecture Definition Document (ADD) §4 Application Architecture (Portfolio Pre-Classification)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">20</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.5: Phase C2 Application Portfolio Pre-Classification (TIME Model)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §4 Application Architecture (Portfolio Pre-Classification)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B (Handshake)</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2 (Application Architecture)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Categorizes legacy apps into Tolerate, Invest, Migrate, Eliminate for Phase C2 rationalization.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B (Handshake)" data-deliverable="Architecture Requirements Specification (ARS) (§ NFR Pass-Through)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">21</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.6: NFR Inheritance Pass-Through Table (Traceability to Chapter 2)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Requirements Specification (ARS) (§ NFR Pass-Through)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B (Handshake)</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase C2, Phase D</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Forwards latency, security, and throughput constraints from Chapter 2 into technical phases.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (§ Methodology Annex)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">22</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.7: Architectural Method Crosswalk: DDD + TOGAF Phase B</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (§ Methodology Annex)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase C2</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Formalizes mapping between Business Capabilities and DDD Bounded Contexts.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Business Glossary)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">23</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.8: 1. Ecosystem Business Glossary & Semantic Terminology Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Business Glossary)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1 (Ubiquitous Language)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes unambiguous business terms to eliminate domain misunderstandings.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Information Architecture)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">24</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.9: 3. Business Information Concepts to Capability Realization Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Information Architecture)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1 (Data Architecture)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Links business capabilities to the business entities they create, read, and mutate.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Baseline Trade-Off Log)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">25</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.10: Decision Point: How to Model the Current-State Architecture?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Baseline Trade-Off Log)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Selects capability-based discovery over exhaustive monolithic process mapping.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Target Operating Model)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">26</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.11: Decision Point: What Target Operating Model Should Volt-Tech Adopt?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Target Operating Model)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase E</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Chooses a federated ecosystem hub-and-spoke operating model.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §6 Gap Analysis (§ Methodology Evaluation)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">27</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.12: Decision Point: Which Gap Analysis Methodology?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §6 Gap Analysis (§ Methodology Evaluation)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase E</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes the formal TOGAF gap analysis syntax (Retained, New, Deprecated).
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §6 Gap Analysis (§ Business Domain Gaps)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">28</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.13: Consolidated Business Gap Analysis Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §6 Gap Analysis (§ Business Domain Gaps)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E (Opportunities & Solutions), Phase F (Migration)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Directly feeds Phase E work packages by isolating all missing business capabilities.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Roadmap (§ Decommissioning Schedule)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">29</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.14: Capability Decommission & Divestment Register</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ Decommissioning Schedule)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Register / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F (Migration)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Mandates sun-setting of manual battery testing and obsolete logistics routing.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Definition Document (ADD) §2 Business Architecture (Value Stream Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">30</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.15: Value Stream to Business Capability Cross-Reference Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §2 Business Architecture (Value Stream Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase C2, Phase E</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Proves how target capabilities directly deliver stages in the customer value stream.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Roadmap (§ Sequencing Strategy Evaluation)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">31</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.16: Decision Point: What Transformation Sequencing Strategy?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ Sequencing Strategy Evaluation)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Chooses value-stream driven tranche releases over horizontal platform layers.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Governance Plan (§ Cross-Domain Change Protocol)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">32</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.17: Decision Point: How to Manage Cross-Domain Cascade Effects?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Governance Plan (§ Cross-Domain Change Protocol)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G, Phase H</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes automated CI/CD architectural fitness gates for interface drift.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B (Handshake)" data-deliverable="Architecture Change Management Plan (§ ACR Impact Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">33</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.18: Architectural Change Request (ACR) Impact Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Change Management Plan (§ ACR Impact Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B (Handshake)</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase C2, Phase D</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Pre-evaluates how business shifts alter downstream data schemas and infrastructure.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Change Management Plan (§ Operational Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">34</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.19: Dynamic Architecture Change Management: Real-World Operational Feedback</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Change Management Plan (§ Operational Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G, Phase H</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Categorizes change triggers into Simplicity, Incremental, or Re-architecting cycles.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B / Phase H" data-deliverable="Statement of Architecture Work (SOW) / Phase H Re-Trigger Deliverable">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">35</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.20: Phase A Re-Trigger Mini-Charter: Orbit Depot Electrical Grid Overhaul</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Statement of Architecture Work (SOW) / Phase H Re-Trigger Deliverable</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Mini-Charter / Deliverable</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B / Phase H</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase A (Orbit Re-Trigger Cycle)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Re-triggers a new Phase A cycle for heavy fleet electrical charging infrastructure.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Governance Framework (§ Review Protocol)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">36</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.21: Decision Point: How to Structure the Stakeholder Review & Approval?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Governance Framework (§ Review Protocol)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase B, Phase G</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Selects formal gated sign-off over informal advisory reviews.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Business Case & Financial Schedule (§ Investment Structuring)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">37</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.22: Decision Point: Which Financial Investment Model?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Business Case & Financial Schedule (§ Investment Structuring)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F, CFOs</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Evaluates consortium cost-sharing and CapEx amortization schedules.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase B" data-deliverable="Architecture Decision Record (ADR) (§ Phase B Consolidated Summary Log)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">38</td>
+                <td>
+                  <a href="chapter_4.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 4.23: Summary: Enterprise Architect Decision Map</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 4</div>
+                </td>
+                <td>
+                  <strong>Architecture Decision Record (ADR) (§ Phase B Consolidated Summary Log)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Register / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase B</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C, Phase D, Phase E, Architecture Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Consolidated architectural log summarizing all formal trade-offs made in Phase B.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Data Architecture Governance Charter & Workshop Protocol">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">39</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.1: 2.1 The Workshop: Three Progressive Levels</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Data Architecture Governance Charter & Workshop Protocol</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog / Plan</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase C2</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Outlines Big Picture, Process Modeling, and Software Design workshop scopes.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Standards Information Base (Modeling Standard)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">40</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.2: 2.2 Event Storming Notation: The Sticky Note Color Code</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Standards Information Base (Modeling Standard)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase C2 Domain Teams</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes domain workshop visual standards across business and technical leads.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (Logical Data Model / Aggregate Invariants)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">41</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.3: 2.4 Aggregate Design: Consistency Boundaries</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (Logical Data Model / Aggregate Invariants)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2 (Application Architecture)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Enforces transactional boundaries and domain invariants for software microservices.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (CRUD Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">42</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.4: 2.5 TOGAF Data Entity to Business Function CRUD Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (CRUD Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase D</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Authoritative matrix mapping data aggregates to Create, Read, Update, Delete rights.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (Master Data Management & SoR Log)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">43</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.5: 2.6 Data Entity System of Record (SoR) Designation Table</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (Master Data Management & SoR Log)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog / Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase D, Integration Leads</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Prevents split-brain state by designating single authoritative masters for all entities.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture & ARS (§ Security Register)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">44</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.6: 2.7 Data Security & Regulatory Classification Register</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture & ARS (§ Security Register)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Register / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase D (Security), Phase G (Compliance Audit)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Dictates encryption standards (AES-256-GCM, mTLS) and EU DPP regulatory mandates.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1/C2" data-deliverable="Architecture Definition Document (ADD) §4 Application Architecture (Integration Reference Catalog)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">45</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.7: 4.1 The Nine Context Mapping Patterns</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §4 Application Architecture (Integration Reference Catalog)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1/C2</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase D</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Defines formal relationship semantics (ACL, Shared Kernel, Customer-Supplier, OHS/PL).
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1/C2" data-deliverable="Architecture Definition Document (ADD) §4 Application Architecture (Interface Specifications)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">46</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.8: 4.3 Context Mapping Decisions: The Architecture Board Review</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §4 Application Architecture (Interface Specifications)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1/C2</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase G</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Formalizes integration contracts between Terra, Volt-Tech, and Orbit bounded contexts.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1/C2" data-deliverable="Architecture Definition Document (ADD) §3/§4 Info Systems Architecture (Event Choreography)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">47</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.9: 4.5 End-to-End Multi-Enterprise Message Flow (The Full Value Stream)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3/§4 Info Systems Architecture (Event Choreography)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Sequence</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1/C2</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase D (Brokers), Phase E</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Traces end-to-end event choreography from mine extraction to battery passport issuance.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (Enterprise Data Dictionary)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">48</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.10: 5. The Ubiquitous Language: Terra-Resource Domain Glossary</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (Enterprise Data Dictionary)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Engineering Teams</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Rigorous data definitions preventing costly naming collisions across domain models.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (Trade-Off Log)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">49</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.11: Decision Point 1: What Data Architecture Model Best Supports the Mineral-to-Passport Lifecycle?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (Trade-Off Log)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C1, Phase D</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Rejects monolithic data lake in favor of a federated Domain Data Mesh.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Roadmap (§ Data Migration Strategy)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">50</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.12: Decision Point 2: How Should Terra-Resource Remediate 30 Years of Unstructured Extraction Data?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ Data Migration Strategy)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Rejects big-bang rewrite in favor of an event-driven Strangler Fig remediation.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (Verification Architecture)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">51</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.13: Decision Point 3: How Should Mineral Provenance Be Cryptographically Verified and Shared?</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (Verification Architecture)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase D, Phase G</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Rejects public blockchain in favor of mTLS + HSM signed Merkle trees.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Roadmap (§ SBB Work Package Portfolio)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">52</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.14: 7. From Domain Architecture to Execution: Predefined Work Packages (WP-TR-01 to WP-TR-04)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ SBB Work Package Portfolio)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog / Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E (Opportunities), Phase F (Migration)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Translates domain aggregates into budgeted, schedulable execution work packages.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Operational Architecture / SOPs (§ Exception Handling Workflow)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">53</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.15: 7.3 Legacy Record HITL Exception Remediation Workflow (WP-TR-03)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Operational Architecture / SOPs (§ Exception Handling Workflow)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Workflow</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G, Plant Floor Operations</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Codifies human-in-the-loop exception handling SLAs and escalation rules.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Standards Information Base (Data Governance Policy)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">54</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.16: 8.3 Protobuf Schema Evolution Policy & Version Compatibility</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Standards Information Base (Data Governance Policy)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Policy / Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase G (CI/CD Gates)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Enforces strict backwards-compatibility rules for distributed message evolution.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Definition Document (ADD) §3 Data Architecture (Schema Compatibility Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">55</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.17: Schema Version Interoperability Matrix</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §3 Data Architecture (Schema Compatibility Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase C2, Phase D, QA/Integration</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Verifies cross-version wire compatibility across v1, v2, and future v3 consumers.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase C1" data-deliverable="Architecture Roadmap (§ CapEx/OpEx Schedule)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">56</td>
+                <td>
+                  <a href="chapter_5.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 5.18: 9. Fiduciary Business Case & Financial Schedule ($25M Investment)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 5</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ CapEx/OpEx Schedule)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Financial Schedule</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase C1</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F, Steering Committee</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Amortizes the data governance CapEx against operational savings over 3 years.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase D" data-deliverable="Architecture Requirements Specification (ARS) (§ Non-Functional Latency SLA Model)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">57</td>
+                <td>
+                  <a href="chapter_6.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 6.1: 1.1 The Mathematical Formulation of Line Velocity & Latency Budget</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 6</div>
+                </td>
+                <td>
+                  <strong>Architecture Requirements Specification (ARS) (§ Non-Functional Latency SLA Model)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix / Formula</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase D</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase D, Phase G (Automated Gates)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Mathematical proof decomposing line velocity into strict edge compute hop budgets.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase D" data-deliverable="Architecture Definition Document (ADD) §5 Technology Architecture (SBB Catalog & Hardware Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">58</td>
+                <td>
+                  <a href="chapter_6.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 6.2: 2.1 Architecture Building Blocks (ABB) & Solution Building Blocks (SBB)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 6</div>
+                </td>
+                <td>
+                  <strong>Architecture Definition Document (ADD) §5 Technology Architecture (SBB Catalog & Hardware Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog / Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase D</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E (Procurement & Solutions), Phase G</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Binds logical technology blocks (ABBs) to physical vendor hardware models (SBBs).
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase D" data-deliverable="Architecture Requirements Specification (ARS) (§ SCOR Targets)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">59</td>
+                <td>
+                  <a href="chapter_6.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 6.3: 7.1 Multi-Enterprise Performance Scorecard</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 6</div>
+                </td>
+                <td>
+                  <strong>Architecture Requirements Specification (ARS) (§ SCOR Targets)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase D</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G, Executive Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Benchmarks Phase D engineering outputs against multi-enterprise SCOR metrics.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase D" data-deliverable="Architecture Repository Index (§ Phase D Artifact Index)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">60</td>
+                <td>
+                  <a href="chapter_6.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 6.4: 8. Key Architecture Artifacts Produced in Phase D</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 6</div>
+                </td>
+                <td>
+                  <strong>Architecture Repository Index (§ Phase D Artifact Index)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase D</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F, Architecture Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Catalogs formal storage vaults, authorities, and standards for all Phase D deliverables.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase E" data-deliverable="Transition Architecture Strategy (§ Migration Trade-off Evaluation)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">61</td>
+                <td>
+                  <a href="chapter_7.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 7.1: 1.1 The Anti-Pattern: Big-Bang Deployment vs. Phased Transition Architectures</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 7</div>
+                </td>
+                <td>
+                  <strong>Transition Architecture Strategy (§ Migration Trade-off Evaluation)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Decision Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase E</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase E, Phase F, Executive Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Justifies intermediate transition states (TS1, TS2) over high-risk big-bang cuts.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase E" data-deliverable="Architecture Roadmap (§ Value Realization Framework & Milestone Metrics)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">62</td>
+                <td>
+                  <a href="chapter_7.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 7.2: 4.1 Synchronized Multi-Enterprise Performance Scorecard</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 7</div>
+                </td>
+                <td>
+                  <strong>Architecture Roadmap (§ Value Realization Framework & Milestone Metrics)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase E</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase F, Phase G, CFOs</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Traces operational metric shifts across Transition State 1, State 2, and Target State.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase E" data-deliverable="Architecture Repository Index (§ Phase E Artifact Catalog)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">63</td>
+                <td>
+                  <a href="chapter_7.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 7.3: 8. Key Architecture Artifacts Produced in Phase E (Opportunities & Solutions)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 7</div>
+                </td>
+                <td>
+                  <strong>Architecture Repository Index (§ Phase E Artifact Catalog)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Catalog</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase E</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase F (Migration Planning), Phase G (Governance)</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Catalogs the Transition Roadmap, Work Package Matrix, and Cross-Enterprise Contracts.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase F" data-deliverable="Implementation & Migration Plan (§ Governance Baseline)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">64</td>
+                <td>
+                  <a href="chapter_8.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 8.1: 1. Phase F in Context: Migration Planning & Execution Sequencing</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 8</div>
+                </td>
+                <td>
+                  <strong>Implementation & Migration Plan (§ Governance Baseline)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Comparison Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase F</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G, PMO, Engineering Leads</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Establishes governing rules of formal PERT/CPM scheduling over unmanaged agile delivery.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase F" data-deliverable="Implementation & Migration Plan (§ Portfolio Prioritization Matrix)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">65</td>
+                <td>
+                  <a href="chapter_8.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 8.2: 2. Work Package Prioritization Matrix & Portfolio Scoring</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 8</div>
+                </td>
+                <td>
+                  <strong>Implementation & Migration Plan (§ Portfolio Prioritization Matrix)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase F</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G (Implementation Governance), PMO, Steering Committee</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Scores work packages by Value vs. Risk to assign scheduled deployment waves.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase G" data-deliverable="Implementation Governance Charter (§ Compliance Baseline)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">66</td>
+                <td>
+                  <a href="chapter_9.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 9.1: 1. Phase G in Context: Implementation Governance & The Compliance Moat</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 9</div>
+                </td>
+                <td>
+                  <strong>Implementation Governance Charter (§ Compliance Baseline)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Comparison Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase G</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase G, Phase H, Dev Teams</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Codifies automated architectural enforcement gates vs. shadow AI development.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase G" data-deliverable="Architecture Contract (Formal TOGAF Deliverable)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">67</td>
+                <td>
+                  <a href="chapter_9.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 9.2: Anatomy of a Binding Architecture Contract (Rule GOV-01)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 9</div>
+                </td>
+                <td>
+                  <strong>Architecture Contract (Formal TOGAF Deliverable)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Contract Catalog / Matrix</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase G</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Implementation Partners, Engineering Leads, Audit</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  The formal legal/technical agreement binding engineering teams to architectural SLAs.
+                </td>
+              </tr>
+              <tr class="deliverable-row" data-phase="Phase G" data-deliverable="Architecture Dispensation Register (Compliance Assessment)">
+                <td style="font-weight: 700; text-align: center; color: #64748b;">68</td>
+                <td>
+                  <a href="chapter_9.html" style="color: #0284c7; font-weight: 600; text-decoration: none;">Table 9.3: Active Consortium Dispensation Register (Phase G Audit Baseline)</a>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">Chapter 9</div>
+                </td>
+                <td>
+                  <strong>Architecture Dispensation Register (Compliance Assessment)</strong>
+                </td>
+                <td>
+                  <span class="badge-tag-artifact">Register / Log</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-producer">Phase G</span>
+                </td>
+                <td>
+                  <span class="badge-phase-pill badge-phase-consumer">Phase H (Change Management), Architecture Board</span>
+                </td>
+                <td style="font-size: 0.84rem; color: #334155; line-height: 1.4;">
+                  Tracks approved variances, expiry dates, and mandatory remediation work packages.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="navigation-footer">
+      <div class="nav-button prev">
+        <span class="nav-label">Previous Reference</span>
+        <a href="glossary.html" class="nav-title">&larr; Master Glossary &amp; Bibliography</a>
+      </div>
+      <div class="nav-button next">
+        <span class="nav-label">Back to Book</span>
+        <a href="content.html" class="nav-title">Master Table of Contents &rarr;</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function filterDeliverables() {
+      const query = document.getElementById('tableFilter').value.toLowerCase();
+      const phase = document.getElementById('phaseFilter').value.toLowerCase();
+      const rows = document.querySelectorAll('.deliverable-row');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const matchesQuery = !query || text.includes(query);
+        const matchesPhase = !phase || row.getAttribute('data-phase').toLowerCase().includes(phase);
+
+        if (matchesQuery && matchesPhase) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

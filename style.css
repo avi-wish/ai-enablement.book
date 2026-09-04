@@ -2712,4 +2712,94 @@ body.quick-nav-open {
   border: none;
 }
 
+/* ========================================================================= */
+/* TOGAF ARCHITECTURAL DELIVERABLE & LINEAGE BADGE STYLES                    */
+/* ========================================================================= */
+
+.togaf-deliverable-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-bottom: 2px solid #0284c7;
+  border-radius: 8px 8px 0 0;
+  padding: 0.55rem 0.85rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.82rem;
+  color: #334155;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.togaf-deliverable-badge .badge-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.togaf-deliverable-badge .badge-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.badge-tag-deliverable {
+  font-weight: 700;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.badge-tag-artifact {
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+.badge-phase-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  line-height: 1.2;
+}
+
+.badge-phase-producer {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+}
+
+.badge-phase-consumer {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.togaf-deliverable-badge + table,
+.togaf-deliverable-badge + .table-responsive > table,
+.togaf-deliverable-badge + div > table {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-top: none !important;
+}
+
+
 
