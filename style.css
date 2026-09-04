@@ -1522,8 +1522,9 @@ section svg:not(.katex svg):not(.katex-html svg):not(.icon):not(.avatar):not(.fi
   will-change: transform;
 }
 
-.lightbox-media-image {
-  max-width: 94vw;
+.lightbox-media-image,
+.lightbox-media-svg {
+  max-width: min(94vw, 1400px);
   max-height: calc(100vh - 120px);
   width: auto;
   height: auto;
@@ -1532,22 +1533,12 @@ section svg:not(.katex svg):not(.katex-html svg):not(.icon):not(.avatar):not(.fi
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-  pointer-events: none;
   background: #ffffff;
+  box-sizing: border-box;
 }
 
-.lightbox-media-svg {
-  max-width: 94vw;
-  max-height: calc(100vh - 120px);
-  width: auto;
-  height: auto;
-  margin: auto;
-  display: block;
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-  box-sizing: border-box;
+.lightbox-media-image {
+  pointer-events: none;
 }
 
 /* Lightbox Footer */

@@ -209,10 +209,9 @@
     canvasEl.style.transition = 'none';
 
     // Clone or render media
-    const isSvg = mediaEl.tagName.toLowerCase() === 'svg' || !!mediaEl.querySelector('svg');
+    const isSvg = mediaEl.tagName.toLowerCase() === 'svg' || (mediaEl.tagName.toLowerCase() !== 'img' && !!mediaEl.querySelector('svg'));
     const isImg = mediaEl.tagName.toLowerCase() === 'img';
     const rawSrc = isImg ? (mediaEl.currentSrc || mediaEl.src || mediaEl.getAttribute('src') || '') : '';
-    const isSvgFile = isImg && (rawSrc.toLowerCase().includes('.svg') || rawSrc.toLowerCase().endsWith('.svg'));
 
     if (isSvg) {
       const svgOriginal = mediaEl.tagName.toLowerCase() === 'svg' ? mediaEl : mediaEl.querySelector('svg');
@@ -221,19 +220,30 @@
       svgClone.removeAttribute('style'); // remove inline constraints
 
       // Ensure viewBox exists for responsive vector scaling
-      if (!svgClone.getAttribute('viewBox')) {
-        const w = parseFloat(svgOriginal.getAttribute('width')) || svgOriginal.clientWidth || 950;
-        const h = parseFloat(svgOriginal.getAttribute('height')) || svgOriginal.clientHeight || 600;
+      let w = 1200, h = 800;
+      const vb = svgClone.getAttribute('viewBox');
+      if (vb) {
+        const parts = vb.split(/[\s,]+/).map(Number);
+        if (parts.length === 4 && parts[2] > 0 && parts[3] > 0) {
+          w = parts[2];
+          h = parts[3];
+        }
+      } else {
+        w = parseFloat(svgOriginal.getAttribute('width')) || svgOriginal.clientWidth || 1200;
+        h = parseFloat(svgOriginal.getAttribute('height')) || svgOriginal.clientHeight || 800;
         svgClone.setAttribute('viewBox', `0 0 ${w} ${h}`);
       }
-      svgClone.removeAttribute('width');
-      svgClone.removeAttribute('height');
-      svgClone.style.maxWidth = 'min(94vw, 1200px)';
+
+      svgClone.setAttribute('width', w);
+      svgClone.setAttribute('height', h);
+      svgClone.style.maxWidth = 'min(94vw, 1400px)';
       svgClone.style.maxHeight = 'calc(100vh - 120px)';
       svgClone.style.width = 'auto';
       svgClone.style.height = 'auto';
+      svgClone.style.aspectRatio = `${w} / ${h}`;
       svgClone.style.margin = 'auto';
       svgClone.style.display = 'block';
+      svgClone.style.background = '#ffffff';
 
       // Create SVG blob url for "Open in new tab"
       try {
@@ -248,14 +258,17 @@
       }
 
       canvasEl.appendChild(svgClone);
-      requestAnimationFrame(() => applyDefaultCoverZoom(false));
+      currentScale = 1.0;
+      translateX = 0;
+      translateY = 0;
+      updateTransform(false);
     } else if (isImg) {
       const img = document.createElement('img');
       img.src = rawSrc;
       img.alt = mediaEl.alt || title;
       img.className = 'lightbox-media-image';
       img.draggable = false;
-      img.style.maxWidth = 'min(94vw, 1200px)';
+      img.style.maxWidth = 'min(94vw, 1400px)';
       img.style.maxHeight = 'calc(100vh - 120px)';
       img.style.width = 'auto';
       img.style.height = 'auto';
@@ -267,7 +280,7 @@
         if (activeMediaEl.naturalWidth && activeMediaEl.naturalHeight) {
           img.style.aspectRatio = `${activeMediaEl.naturalWidth} / ${activeMediaEl.naturalHeight}`;
         } else if (activeMediaEl.getAttribute('width') && activeMediaEl.getAttribute('height')) {
-          img.style.aspectRatio = `${activeMediaEl.getAttribute('width')} / ${activeMediaEl.getAttribute('height')}`;
+          img.style.aspectRatio = `${parseFloat(activeMediaEl.getAttribute('width'))} / ${parseFloat(activeMediaEl.getAttribute('height'))}`;
         }
       }
 
@@ -276,54 +289,10 @@
       btnOpenNew.style.display = 'inline-flex';
       canvasEl.appendChild(img);
 
-      if (img.complete && img.naturalWidth > 0) {
-        requestAnimationFrame(() => applyDefaultCoverZoom(false));
-      } else {
-        img.onload = () => {
-          if (isOpen) applyDefaultCoverZoom(false);
-        };
-      }
-
-      // If this is an SVG file loaded via <img>, asynchronously fetch and parse into true inline vector SVG
-      if (isSvgFile) {
-        fetch(rawSrc)
-          .then(res => {
-            if (!res.ok) throw new Error('SVG fetch failed: ' + res.status);
-            return res.text();
-          })
-          .then(svgText => {
-            if (!isOpen || activeMediaEl !== mediaEl) return;
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(svgText, 'image/svg+xml');
-            const parsedSvg = doc.querySelector('svg');
-            if (parsedSvg && !doc.querySelector('parsererror')) {
-              parsedSvg.classList.add('lightbox-media-svg');
-              parsedSvg.removeAttribute('style');
-
-              if (!parsedSvg.getAttribute('viewBox')) {
-                const w = parseFloat(parsedSvg.getAttribute('width')) || 950;
-                const h = parseFloat(parsedSvg.getAttribute('height')) || 600;
-                parsedSvg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-              }
-              parsedSvg.removeAttribute('width');
-              parsedSvg.removeAttribute('height');
-              parsedSvg.style.maxWidth = 'min(94vw, 1200px)';
-              parsedSvg.style.maxHeight = 'calc(100vh - 120px)';
-              parsedSvg.style.width = 'auto';
-              parsedSvg.style.height = 'auto';
-              parsedSvg.style.margin = 'auto';
-              parsedSvg.style.display = 'block';
-              parsedSvg.style.background = '#ffffff';
-
-              canvasEl.innerHTML = '';
-              canvasEl.appendChild(parsedSvg);
-              applyDefaultCoverZoom(false);
-            }
-          })
-          .catch(() => {
-            // Silently fall back to <img> element already in canvas
-          });
-      }
+      currentScale = 1.0;
+      translateX = 0;
+      translateY = 0;
+      updateTransform(false);
     }
 
     // Reset transformations
@@ -374,72 +343,17 @@
   let defaultTranslateY = 0;
 
   function calculateCoverMetrics() {
-    if (!canvasWrapper || !canvasEl) return { scale: 1.0, tx: 0, ty: 0 };
-
-    const stageRect = canvasWrapper.getBoundingClientRect();
-    if (!stageRect.width || !stageRect.height) {
-      return { scale: 1.0, tx: 0, ty: 0 };
-    }
-
-    const media = canvasEl.querySelector('.lightbox-media-image, .lightbox-media-svg');
-    if (!media) return { scale: 1.0, tx: 0, ty: 0 };
-
-    let mw = 0;
-    let mh = 0;
-
-    if (media.tagName.toLowerCase() === 'img') {
-      mw = media.naturalWidth || media.clientWidth || parseFloat(media.getAttribute('width')) || 0;
-      mh = media.naturalHeight || media.clientHeight || parseFloat(media.getAttribute('height')) || 0;
-      if (!mw || !mh) {
-        if (activeMediaEl) {
-          mw = activeMediaEl.naturalWidth || activeMediaEl.clientWidth || parseFloat(activeMediaEl.getAttribute('width')) || 0;
-          mh = activeMediaEl.naturalHeight || activeMediaEl.clientHeight || parseFloat(activeMediaEl.getAttribute('height')) || 0;
-        }
-      }
-      if (!mw || !mh) {
-        mw = stageRect.width * 0.85;
-        mh = stageRect.height * 0.85;
-      }
-    } else if (media.tagName.toLowerCase() === 'svg') {
-      const viewBox = media.getAttribute('viewBox');
-      if (viewBox) {
-        const parts = viewBox.split(/[\s,]+/).map(Number);
-        if (parts.length === 4 && parts[2] > 0 && parts[3] > 0) {
-          mw = parts[2];
-          mh = parts[3];
-        }
-      }
-      if (!mw || !mh) {
-        mw = media.clientWidth || parseFloat(media.getAttribute('width')) || stageRect.width * 0.85;
-        mh = media.clientHeight || parseFloat(media.getAttribute('height')) || stageRect.height * 0.85;
-      }
-    }
-
-    // Available target stage viewport
-    const availableW = stageRect.width * 0.94;
-    const availableH = stageRect.height * 0.88;
-
-    const scaleX = availableW / (mw || 1);
-    const scaleY = availableH / (mh || 1);
-
-    // Initial scale: optimally fill the stage while keeping the diagram 100% centered
-    let optimalScale = Math.min(scaleX, scaleY);
-    if (optimalScale > 1.8) optimalScale = 1.8;
-    if (optimalScale < 0.3) optimalScale = 0.3;
-
-    // Both translations are strictly 0 to guarantee exact geometric centering on screen
-    return { scale: optimalScale, tx: 0, ty: 0 };
+    return { scale: 1.0, tx: 0, ty: 0 };
   }
 
   function applyDefaultCoverZoom(animate = false) {
-    const metrics = calculateCoverMetrics();
-    defaultCoverScale = metrics.scale;
-    defaultTranslateX = metrics.tx;
-    defaultTranslateY = metrics.ty;
+    defaultCoverScale = 1.0;
+    defaultTranslateX = 0;
+    defaultTranslateY = 0;
 
-    currentScale = metrics.scale;
-    translateX = metrics.tx;
-    translateY = metrics.ty;
+    currentScale = 1.0;
+    translateX = 0;
+    translateY = 0;
 
     updateTransform(animate);
   }
@@ -502,32 +416,14 @@
   }
 
   function toggleFitOrFull() {
-    const stageRect = canvasWrapper ? canvasWrapper.getBoundingClientRect() : null;
-    const media = canvasEl ? canvasEl.querySelector('.lightbox-media-image, .lightbox-media-svg') : null;
-    
-    let fitScale = 1.0;
-    if (stageRect && media) {
-      let mw = media.naturalWidth || (media.getAttribute('viewBox') ? media.getAttribute('viewBox').split(/[\s,]+/)[2] : media.clientWidth) || stageRect.width;
-      let mh = media.naturalHeight || (media.getAttribute('viewBox') ? media.getAttribute('viewBox').split(/[\s,]+/)[3] : media.clientHeight) || stageRect.height;
-      fitScale = Math.min((stageRect.width * 0.92) / mw, (stageRect.height * 0.88) / mh);
-      if (fitScale > 1.0) fitScale = 1.0;
-    }
-
-    if (Math.abs(currentScale - defaultCoverScale) < 0.1) {
-      // Currently at cover, switch to Fit
-      currentScale = Math.max(fitScale, MIN_SCALE);
-      translateX = 0;
-      translateY = 0;
-    } else if (Math.abs(currentScale - fitScale) < 0.1) {
-      // Currently at fit, switch to 2.0x
-      currentScale = Math.max(defaultCoverScale * 1.5, 2.0);
+    if (currentScale <= 1.05) {
+      currentScale = 2.0;
       translateX = 0;
       translateY = 0;
     } else {
-      // Return to cover
-      currentScale = defaultCoverScale;
-      translateX = defaultTranslateX;
-      translateY = defaultTranslateY;
+      currentScale = 1.0;
+      translateX = 0;
+      translateY = 0;
     }
     updateTransform(true);
   }
